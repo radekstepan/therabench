@@ -21,8 +21,18 @@ function createRunId(): string {
 }
 
 /**
+ * Removes XML-style thinking/scratchpad blocks from a model's response.
+ * @param responseText The raw text from the candidate model.
+ * @returns The cleaned text, with thinking blocks removed.
+ */
+function stripThinkingBlocks(responseText: string): string {
+  // This regex finds all occurrences of <think>...</think> blocks,
+  // including those that span multiple lines (due to the 's' flag).
+  return responseText.replace(/<think>.*?<\/think>/gs, '').trim();
+}
+
+/**
  * Pre-scans all QA files to build a flat list of every single question to be evaluated.
- * This is necessary to get the total count for the progress bar.
  */
 async function loadAllEvaluationItems(dir: string): Promise<EvaluationItem[]> {
   const sourceFiles = await findFilesByExtension(dir, '.txt');
@@ -57,13 +67,11 @@ export async function runEvaluation(dir: string, opts: { candidateModel?: string
   const runId = createRunId();
   const runMeta: RunMeta = { runId, candidateModel: candidateModelName, startedAt: new Date().toISOString() };
 
-  // 1. Pre-load all evaluation items to get a total count.
   const evalItems = await loadAllEvaluationItems(dir);
   if (evalItems.length === 0) {
     throw new Error('No Q&A pairs found to evaluate. Run `thera-bench init` first.');
   }
 
-  // 2. Setup and start the progress bar.
   const progressBar = new cliProgress.SingleBar({
     format: `${chalk.cyan('{bar}')} | {percentage}% | {value}/{total} Questions`,
     barCompleteChar: '\u2588',
@@ -75,39 +83,38 @@ export async function runEvaluation(dir: string, opts: { candidateModel?: string
   const limit = pLimit(cfg.maxParallel);
   const resultsByFile = new Map<string, EvaluationResult[]>();
 
-  // 3. Process each individual Q&A pair.
   const evaluationPromises = evalItems.map(item => limit(async () => {
     const candidatePrompt = `Context:\n${item.sourceContent}\n\nQuestion: ${item.qaPair.question}\n\nAnswer:`;
-    const candidateAnswer = await candidateClient.generate({ prompt: candidatePrompt });
+    const rawCandidateAnswer = await candidateClient.generate({ prompt: candidatePrompt });
+
+    // FIX: Clean the candidate's answer before sending it for evaluation.
+    const finalCandidateAnswer = stripThinkingBlocks(rawCandidateAnswer);
 
     const metrics = await calculateMetrics({
       expertClient,
       question: item.qaPair.question,
       context: item.sourceContent,
       groundTruthAnswer: item.qaPair.answer,
-      candidateAnswer,
+      candidateAnswer: finalCandidateAnswer, // Use the cleaned answer for judging.
     });
 
     const result: EvaluationResult = {
       question: item.qaPair.question,
       ground_truth_answer: item.qaPair.answer,
-      candidate_answer: candidateAnswer,
+      candidate_answer: finalCandidateAnswer, // Store the cleaned answer in the results.
       ...metrics,
     };
     
-    // Group results by their original source file
     if (!resultsByFile.has(item.sourcePath)) {
       resultsByFile.set(item.sourcePath, []);
     }
     resultsByFile.get(item.sourcePath)!.push(result);
 
-    // 4. Increment the progress bar after each item is fully processed.
     progressBar.increment();
   }));
 
   await Promise.all(evaluationPromises);
 
-  // 5. Stop the progress bar and write the grouped results to files.
   progressBar.stop();
   for (const [sourcePath, results] of resultsByFile.entries()) {
     const evalFile: EvaluationFile = { runMeta, results };
