@@ -1,41 +1,44 @@
-/**
- * A simple promise-based delay function.
- * @param ms - The number of milliseconds to wait.
- */
-export function delay(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+import { delay } from './delay.js'; // A separate simple delay function
+import * as limiter from './limiter.js';
 
 interface RetryOptions {
   retries: number;
-  initialDelay: number; // in ms
+  initialDelay: number; // in ms, for local retry
 }
 
 /**
- * A higher-order function that wraps an async function with retry logic.
- * It specifically targets retryable errors like '429 Too Many Requests'.
- * @param fn - The async function to execute.
- * @param options - Configuration for retries and delay.
- * @returns The result of the wrapped function.
+ * A higher-order function that wraps an async function with both:
+ * 1. An initial adaptive delay to pace requests.
+ * 2. A local retry-with-backoff mechanism for the specific call.
  */
-export async function withRetry<T>(
+export async function withAdaptiveRetry<T>(
   fn: () => Promise<T>,
-  options: RetryOptions = { retries: 5, initialDelay: 2000 }
+  options: RetryOptions = { retries: 5, initialDelay: 1000 }
 ): Promise<T> {
+  // 1. Wait for the current global adaptive delay before starting.
+  const globalDelay = limiter.getDelay();
+  if (globalDelay > 0) {
+    await delay(globalDelay);
+  }
+
   let lastError: Error | undefined;
 
   for (let i = 0; i < options.retries; i++) {
     try {
-      return await fn();
+      const result = await fn();
+      // On success, slightly decrease the global delay for the next operation.
+      limiter.decreaseDelay();
+      return result;
     } catch (error: any) {
       lastError = error;
-      // Only retry on specific, transient errors like rate limiting.
       if (error.message && error.message.includes('429')) {
-        const delayTime = options.initialDelay * Math.pow(2, i) + Math.random() * 1000;
-        console.warn(`\n[WARN] Rate limit hit. Retrying in ${(delayTime / 1000).toFixed(1)}s... (Attempt ${i + 1}/${options.retries})`);
-        await delay(delayTime);
+        // 2. On rate limit, increase the global delay significantly.
+        limiter.increaseDelay();
+        // Also apply a local, randomized backoff for this specific retry attempt.
+        const localRetryDelay = options.initialDelay * Math.pow(2, i) + Math.random() * 1000;
+        await delay(localRetryDelay);
       } else {
-        // For non-retryable errors (e.g., 401 Unauthorized, 400 Bad Request), fail fast.
+        // For non-retryable errors, fail fast.
         throw error;
       }
     }

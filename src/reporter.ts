@@ -10,11 +10,21 @@ const THRESHOLDS = {
   judge_score: 8,
 };
 
-function formatScore(label: string, value: number, threshold: number): string {
+/**
+ * Formats a score for display, now including its scale.
+ * @param label - The name of the metric.
+ * @param scale - The scale of the metric (e.g., "(0-1)").
+ * @param value - The score.
+ * @param threshold - The passing threshold for the score.
+ * @returns A color-coded, formatted string.
+ */
+function formatScore(label: string, scale: string, value: number, threshold: number): string {
   const pass = value >= threshold;
   const color = pass ? chalk.green : chalk.red;
   const icon = pass ? '✅' : '❌';
-  return `${label.padEnd(14)} ${color(value.toFixed(2).padStart(5))} ${icon}`;
+
+  const fullLabel = `${label} ${chalk.gray(scale)}`.padEnd(34); // Pad to align the scores
+  return `${fullLabel} ${color(value.toFixed(2).padStart(5))} ${icon}`;
 }
 
 export async function generateReport(dir: string, runId?: string, asJson = false) {
@@ -38,7 +48,6 @@ export async function generateReport(dir: string, runId?: string, asJson = false
   }
 
   if (!runMeta) {
-    // If we have a runId but haven't loaded the meta yet, load it from the first file.
     const firstFileContent = await readJsonFile<EvaluationFile>(runFiles[0]);
     if (!firstFileContent?.runMeta) {
         throw new Error(`Could not read metadata from evaluation files for run ID ${finalRunId}.`);
@@ -92,9 +101,10 @@ export async function generateReport(dir: string, runId?: string, asJson = false
   const runDate = new Date(runMeta.startedAt).toLocaleString();
   console.log(chalk.bold(`Run #${runMeta.runId} — ${runMeta.candidateModel}`) + ` ⏱  ${runDate}`);
   console.log('─'.repeat(60));
-  console.log(formatScore('Faithfulness', avgFaithfulness, THRESHOLDS.faithfulness));
-  console.log(formatScore('Relevancy', avgRelevancy, THRESHOLDS.relevancy));
-  console.log(formatScore('Judge score', avgJudgeScore, THRESHOLDS.judge_score));
+  // Call formatScore with the explicit scale.
+  console.log(formatScore('Faithfulness', '(0-1)', avgFaithfulness, THRESHOLDS.faithfulness));
+  console.log(formatScore('Relevancy',    '(0-1)', avgRelevancy, THRESHOLDS.relevancy));
+  console.log(formatScore('Judge score',  '(0-10)', avgJudgeScore, THRESHOLDS.judge_score));
   console.log('─'.repeat(60));
   const resultColor = overallResult === 'PASS' ? chalk.green.bold : chalk.red.bold;
   console.log(`${resultColor(overallResult)} (${passedCount}/${passedMetrics.length} thresholds met)`);
