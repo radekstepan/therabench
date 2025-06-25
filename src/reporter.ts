@@ -1,7 +1,7 @@
 import path from 'path';
 import chalk from 'chalk';
 import { findFilesByExtension, readJsonFile } from './fs-utils.js';
-import { getLatestRunId } from './evaluator.js';
+import { getLatestRunInfo } from './evaluator.js';
 import type { EvaluationFile, EvaluationResult, RunMeta } from './types.js';
 
 const THRESHOLDS = {
@@ -17,31 +17,39 @@ function formatScore(label: string, value: number, threshold: number): string {
   return `${label.padEnd(14)} ${color(value.toFixed(2).padStart(5))} ${icon}`;
 }
 
-export async function generateReport(dataDir: string, runId?: string, asJson = false) {
+export async function generateReport(dir: string, runId?: string, asJson = false) {
   let finalRunId = runId;
+  let runMeta: RunMeta | null = null;
+  
   if (!finalRunId) {
-    const latest = await getLatestRunId(dataDir);
-    if (!latest) {
+    const latestRunInfo = await getLatestRunInfo(dir);
+    if (!latestRunInfo) {
       throw new Error('No runs found. Use `thera-bench eval` to create one.');
     }
-    finalRunId = latest.id;
-  }
-  
-  const runDir = path.join(dataDir, 'runs', finalRunId);
-  const runMeta = await readJsonFile<RunMeta>(path.join(runDir, '_meta.json'));
-  if (!runMeta) {
-    throw new Error(`Could not find metadata for run ID ${finalRunId}.`);
+    finalRunId = latestRunInfo.runId;
+    runMeta = latestRunInfo;
   }
 
-  const evalFiles = await findFilesByExtension(runDir, '.eval.json');
-  if (evalFiles.length === 0) {
+  const allFiles = await findFilesByExtension(dir, '.eval.json');
+  const runFiles = allFiles.filter(file => file.includes(`.${finalRunId}.`));
+
+  if (runFiles.length === 0) {
     throw new Error(`No evaluation result files found for run ID ${finalRunId}.`);
   }
 
+  if (!runMeta) {
+    // If we have a runId but haven't loaded the meta yet, load it from the first file.
+    const firstFileContent = await readJsonFile<EvaluationFile>(runFiles[0]);
+    if (!firstFileContent?.runMeta) {
+        throw new Error(`Could not read metadata from evaluation files for run ID ${finalRunId}.`);
+    }
+    runMeta = firstFileContent.runMeta;
+  }
+  
   const allResults: EvaluationResult[] = [];
-  for (const file of evalFiles) {
+  for (const file of runFiles) {
     const content = await readJsonFile<EvaluationFile>(file);
-    if (content && content.results) {
+    if (content?.results) {
       allResults.push(...content.results);
     }
   }

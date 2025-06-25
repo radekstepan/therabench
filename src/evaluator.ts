@@ -1,22 +1,19 @@
 import fs from 'fs/promises';
 import path from 'path';
 import pLimit from 'p-limit';
+import chalk from 'chalk';
 import { cfg } from './config.js';
 import { OpenAIClient } from './model/OpenAIClient.js';
 import { OllamaClient } from './model/OllamaClient.js';
 import { calculateMetrics } from './metrics.js';
-import { findFilesByExtension, readJsonFile, ensureDir } from './fs-utils.js';
+import { findFilesByExtension, readJsonFile } from './fs-utils.js';
 import type { QAPairsFile, RunMeta, EvaluationResult, EvaluationFile } from './types.js';
 
 function createRunId(): string {
   return new Date().toISOString().replace(/[:.]/g, '-');
 }
 
-function sanitizeModelName(name: string): string {
-    return name.replace(/[:/]/g, '_');
-}
-
-export async function runEvaluation(sourceDir: string, dataDir: string, opts: { candidateModel?: string }): Promise<string> {
+export async function runEvaluation(dir: string, opts: { candidateModel?: string }): Promise<string> {
   const candidateModelName = opts.candidateModel ?? cfg.candidate.model;
   console.log(`Starting evaluation for model: ${candidateModelName}`);
 
@@ -24,31 +21,23 @@ export async function runEvaluation(sourceDir: string, dataDir: string, opts: { 
   const expertClient = new OpenAIClient(cfg.expert);
 
   const runId = createRunId();
-  const runDir = path.join(dataDir, 'runs', runId);
-  const qaPairsDir = path.join(dataDir, 'qa_pairs');
-  await ensureDir(runDir);
+  const runMeta: RunMeta = { runId, candidateModel: candidateModelName, startedAt: new Date().toISOString() };
 
-  const runMeta: RunMeta = {
-    runId,
-    candidateModel: candidateModelName,
-    startedAt: new Date().toISOString(),
-  };
-  await fs.writeFile(path.join(runDir, '_meta.json'), JSON.stringify(runMeta, null, 2));
-
-  const sourceFiles = await findFilesByExtension(sourceDir, '.txt');
+  const sourceFiles = await findFilesByExtension(dir, '.txt');
   if (sourceFiles.length === 0) {
-    throw new Error(`No .txt files found in source directory: ${sourceDir}`);
+    throw new Error(`No .txt files found in directory: ${dir}`);
   }
 
   const limit = pLimit(cfg.maxParallel);
   let processedCount = 0;
+  let skippedCount = 0;
 
   const evaluationPromises = sourceFiles.map(sourcePath => limit(async () => {
-    const basename = path.basename(sourcePath, '.txt');
-    const qaPath = path.join(qaPairsDir, `${basename}.qa.json`);
-
+    const qaPath = sourcePath.replace(/\.txt$/, '.qa.json');
     const qaFile = await readJsonFile<QAPairsFile>(qaPath);
+
     if (!qaFile || !qaFile.qa_pairs || qaFile.qa_pairs.length === 0) {
+      skippedCount++;
       return; // Skip if no corresponding QA file exists
     }
 
@@ -76,36 +65,29 @@ export async function runEvaluation(sourceDir: string, dataDir: string, opts: { 
     }
 
     const evalFile: EvaluationFile = { runMeta, results: resultsForFile };
-    const outputPath = path.join(runDir, `${basename}.eval.json`);
+    const outputPath = sourcePath.replace(/\.txt$/, `.${runId}.eval.json`);
     await fs.writeFile(outputPath, JSON.stringify(evalFile, null, 2));
     
     processedCount++;
-    process.stdout.write(`\r  Evaluated ${processedCount}/${sourceFiles.length} transcripts...`);
+    process.stdout.write(chalk.blue(`\r  Evaluated ${processedCount}/${sourceFiles.length} transcripts...`));
   }));
 
   await Promise.all(evaluationPromises);
+
+  if (skippedCount > 0) {
+    console.log(chalk.yellow(`\nSkipped ${skippedCount} transcript(s) that did not have a corresponding .qa.json file.`));
+  }
+
   return runId;
 }
 
-export async function getLatestRunId(dataDir: string): Promise<{id: string, meta: RunMeta} | null> {
-    const runsBaseDir = path.join(dataDir, 'runs');
-    try {
-        const runDirs = await fs.readdir(runsBaseDir, { withFileTypes: true });
-        const sortedDirs = runDirs
-            .filter(d => d.isDirectory())
-            .map(d => d.name)
-            .sort()
-            .reverse();
-        
-        if (sortedDirs.length > 0) {
-            const latestRunId = sortedDirs[0];
-            const meta = await readJsonFile<RunMeta>(path.join(runsBaseDir, latestRunId, '_meta.json'));
-            if (!meta) return null;
-            return { id: latestRunId, meta };
-        }
-        return null;
-    } catch (error: any) {
-        if (error.code === 'ENOENT') return null;
-        throw error;
-    }
+export async function getLatestRunInfo(dir: string): Promise<RunMeta | null> {
+    const evalFiles = await findFilesByExtension(dir, '.eval.json');
+    if (evalFiles.length === 0) return null;
+
+    // The run ID is a timestamp, so sorting filenames gives the latest.
+    const latestFile = evalFiles.sort().reverse()[0];
+    const latestEval = await readJsonFile<EvaluationFile>(latestFile);
+    
+    return latestEval?.runMeta ?? null;
 }
