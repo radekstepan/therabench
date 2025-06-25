@@ -1,23 +1,30 @@
 {
   "name": "thera-bench",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A batteries-included framework for evaluating LLM performance against a ground-truth dataset.",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "thera-bench": "dist/index.js"
+    "thera-bench": "bin/thera-bench-cli.js"
   },
+  "files": [
+    "dist/",
+    "bin/",
+    "schema.sql"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/index.ts",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "llm",
     "benchmark",
     "evaluation",
     "ollama",
-    "openai"
+    "openai",
+    "infisical"
   ],
   "author": "",
   "license": "ISC",

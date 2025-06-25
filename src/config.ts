@@ -10,7 +10,9 @@ function getEnv(key: string,
   if (defaultValue !== undefined) {
     return defaultValue;
   }
-  throw new Error(`Missing required environment variable: ${key}`);
+  // When using the Infisical wrapper, the real secret is injected before this code runs.
+  // If it's still missing, it means it wasn't set in .env or resolved by Infisical.
+  throw new Error(`Missing required environment variable: ${key}. Please set it in your .env file or Infisical project.`);
 }
 
 export const cfg = {
