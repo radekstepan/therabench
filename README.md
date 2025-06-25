@@ -4,6 +4,8 @@ A self-contained, file-based framework for evaluating LLM performance in a singl
 
 `thera-bench` provides a transparent, portable, and version-controllable system for benchmarking Large Language Models. It reads your local documents, generates a reviewable ground-truth dataset, and stores all evaluation results as plain-text JSON files right next to your source documents.
 
+![Screenshot](screenshot.png)
+
 ### Core Features
 
 *   **Single Directory Model**: No complex setup. All you need is one folder with your `.txt` files. All generated files live alongside their source.
