@@ -1,6 +1,6 @@
 {
   "name": "thera-bench",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A batteries-included framework for evaluating LLM performance against a ground-truth dataset.",
   "type": "module",
   "main": "dist/index.js",
@@ -15,7 +15,11 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
+    "dev": "infisical run -- tsx src/index.ts",
+    "bench:init": "infisical run -- tsx src/index.ts init",
+    "bench:eval": "infisical run -- tsx src/index.ts eval",
+    "bench:report": "infisical run -- tsx src/index.ts report",
+    "bench:replay": "infisical run -- tsx src/index.ts replay",
     "prepublishOnly": "npm run build"
   },
   "keywords": [

@@ -1,32 +1,51 @@
 import 'dotenv/config';
 
-function getEnv(key: string,
-  defaultValue?: string
-): string {
+/**
+ * Gets a required environment variable. Throws an error if it's not set.
+ */
+function getRequiredEnv(key: string): string {
   const value = process.env[key];
-  if (value) {
-    return value;
+  if (value === undefined || value.trim() === '') {
+    throw new Error(`Missing required environment variable: ${key}. Please set it in your .env file or Infisical project.`);
   }
-  if (defaultValue !== undefined) {
-    return defaultValue;
-  }
-  // When using the Infisical wrapper, the real secret is injected before this code runs.
-  // If it's still missing, it means it wasn't set in .env or resolved by Infisical.
-  throw new Error(`Missing required environment variable: ${key}. Please set it in your .env file or Infisical project.`);
+  return value;
 }
+
+/**
+ * Resolves a secret value.
+ * It first reads the value of `keyName` from the environment.
+ * It then checks if that value is a reference to ANOTHER environment variable.
+ * This enables the pattern: `EXPERT_API_KEY=OPENAI_API_KEY` in .env, where
+ * Infisical provides the actual value for `OPENAI_API_KEY`.
+ *
+ * @param keyName The primary key to look up (e.g., 'EXPERT_API_KEY').
+ * @returns The resolved secret.
+ */
+function resolveSecret(keyName: string): string {
+  // Get the initial value, which could be the secret itself or a reference name.
+  const valueOrReference = getRequiredEnv(keyName);
+
+  // Check if this value corresponds to another environment variable.
+  const resolvedValue = process.env[valueOrReference];
+
+  // If `resolvedValue` exists, it means `valueOrReference` was a reference.
+  // Otherwise, `valueOrReference` was the literal secret.
+  return resolvedValue ?? valueOrReference;
+}
+
 
 export const cfg = {
   db: {
     path: process.env.DB_PATH ?? 'thera-bench.db',
   },
   expert: {
-    base: getEnv('EXPERT_BASE_URL'),
-    model: getEnv('EXPERT_MODEL'),
-    key: getEnv('EXPERT_API_KEY'),
+    base: getRequiredEnv('EXPERT_BASE_URL'),
+    model: getRequiredEnv('EXPERT_MODEL'),
+    key: resolveSecret('EXPERT_API_KEY'),
   },
   candidate: {
-    base: getEnv('CANDIDATE_BASE_URL'),
-    model: getEnv('CANDIDATE_MODEL'),
+    base: getRequiredEnv('CANDIDATE_BASE_URL'),
+    model: getRequiredEnv('CANDIDATE_MODEL'),
   },
-  maxParallel: Number(getEnv('MAX_CONCURRENCY', '4')),
+  maxParallel: Number(process.env.MAX_CONCURRENCY ?? 4),
 };
