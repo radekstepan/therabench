@@ -9,14 +9,14 @@ const program = new Command();
 program
   .name('thera-bench')
   .version(pkg.version)
-  .description(pkg.description);
+  .description('A database-free, file-based framework for evaluating LLM performance.');
 
 program
-  .command('init <folder>')
-  .description('Import .txt transcripts and generate ground-truth Q&A pairs with the expert model.')
-  .action(async (folder) => {
+  .command('init <sourceDir> <dataDir>')
+  .description('Generate ground-truth Q&A files from .txt transcripts.')
+  .action(async (sourceDir, dataDir) => {
     try {
-      await initCmd(folder);
+      await initCmd(sourceDir, dataDir);
       console.log(chalk.green('\n✅ Initialization complete.'));
     } catch (error) {
       console.error(chalk.red('\n❌ Initialization failed:'), error instanceof Error ? error.message : error);
@@ -25,12 +25,12 @@ program
   });
 
 program
-  .command('eval')
-  .description('Evaluate the candidate model against the ground-truth dataset.')
+  .command('eval <sourceDir> <dataDir>')
+  .description('Evaluate a candidate model and write results to a new run directory.')
   .option('-m, --model <id>', 'Override candidate model from .env (e.g., "llama3:70b")')
-  .action(async (options) => {
+  .action(async (sourceDir, dataDir, options) => {
     try {
-      await evalCmd(options);
+      await evalCmd(sourceDir, dataDir, options);
     } catch (error) {
       console.error(chalk.red('\n❌ Evaluation failed:'), error instanceof Error ? error.message : error);
       process.exit(1);
@@ -38,12 +38,12 @@ program
   });
 
 program
-  .command('report [run_id]')
-  .description('Display a scoreboard for a specific run, or the latest run if no ID is provided.')
+  .command('report <dataDir> [runId]')
+  .description('Display a scoreboard for a specific run, or the latest run.')
   .option('--json', 'Output report as JSON')
-  .action(async (run_id, options) => {
+  .action(async (dataDir, runId, options) => {
     try {
-      await reportCmd(run_id, options);
+      await reportCmd(dataDir, runId, options);
     } catch (error) {
       console.error(chalk.red('\n❌ Report generation failed:'), error instanceof Error ? error.message : error);
       process.exit(1);
@@ -51,23 +51,15 @@ program
   });
 
 program
-  .command('replay')
+  .command('replay <sourceDir> <dataDir>')
   .description('Rerun the last evaluation configuration to check for score stability.')
-  .action(async () => {
+  .action(async (sourceDir, dataDir) => {
     try {
-      await replayCmd();
+      await replayCmd(sourceDir, dataDir);
     } catch (error) {
       console.error(chalk.red('\n❌ Replay failed:'), error instanceof Error ? error.message : error);
       process.exit(1);
     }
   });
 
-// Wrapper to make top-level await and error handling clean
-const main = async () => {
-  await program.parseAsync(process.argv);
-};
-
-main();
-
-// Re-export command handlers for potential programmatic use
-export * from './commands.js';
+program.parseAsync(process.argv);

@@ -1,30 +1,29 @@
-export interface Transcript {
-  id: number;
-  sha256: string;
-  path: string;
-  content: string;
-}
-
 export interface QAPair {
-  id: number;
-  transcript_id: number;
   question: string;
   answer: string;
   span: string;
 }
 
-export interface Run {
-  id: number;
-  started_at: string;
-  candidate_model: string;
-  settings_json: string;
+export interface QAPairsFile {
+  qa_pairs: QAPair[];
 }
 
-export interface Result {
-  run_id: number;
-  qa_id: number;
+export interface EvaluationResult {
+  question: string;
+  ground_truth_answer: string;
   candidate_answer: string;
   faithfulness: number;
   relevancy: number;
   judge_score: number;
+}
+
+export interface RunMeta {
+  runId: string;
+  candidateModel: string;
+  startedAt: string;
+}
+
+export interface EvaluationFile {
+  runMeta: RunMeta;
+  results: EvaluationResult[];
 }

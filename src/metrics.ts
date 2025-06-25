@@ -11,7 +11,7 @@ interface MetricInputs {
 interface MetricScores {
   faithfulness: number;
   relevancy: number;
-  judgeScore: number;
+  judge_score: number;
 }
 
 async function getJsonScore(client: ModelClient, prompt: string): Promise<number> {
@@ -97,5 +97,5 @@ export async function calculateMetrics(inputs: MetricInputs): Promise<MetricScor
     getJudgeScore(inputs.expertClient, inputs.question, inputs.groundTruthAnswer, inputs.candidateAnswer),
   ]);
 
-  return { faithfulness, relevancy, judgeScore };
+  return { faithfulness, relevancy, judge_score: judgeScore };
 }

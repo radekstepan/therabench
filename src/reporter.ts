@@ -1,5 +1,8 @@
+import path from 'path';
 import chalk from 'chalk';
-import { dbOps } from './db.js';
+import { findFilesByExtension, readJsonFile } from './fs-utils.js';
+import { getLatestRunId } from './evaluator.js';
+import type { EvaluationFile, EvaluationResult, RunMeta } from './types.js';
 
 const THRESHOLDS = {
   faithfulness: 0.90,
@@ -14,25 +17,42 @@ function formatScore(label: string, value: number, threshold: number): string {
   return `${label.padEnd(14)} ${color(value.toFixed(2).padStart(5))} ${icon}`;
 }
 
-export async function generateReport(runId?: number, asJson = false) {
-  const finalRunId = runId ?? dbOps.getLatestRunId();
+export async function generateReport(dataDir: string, runId?: string, asJson = false) {
+  let finalRunId = runId;
   if (!finalRunId) {
-    throw new Error('No runs found. Use `thera-bench eval` to create one.');
+    const latest = await getLatestRunId(dataDir);
+    if (!latest) {
+      throw new Error('No runs found. Use `thera-bench eval` to create one.');
+    }
+    finalRunId = latest.id;
+  }
+  
+  const runDir = path.join(dataDir, 'runs', finalRunId);
+  const runMeta = await readJsonFile<RunMeta>(path.join(runDir, '_meta.json'));
+  if (!runMeta) {
+    throw new Error(`Could not find metadata for run ID ${finalRunId}.`);
   }
 
-  const runInfo = dbOps.getRunInfo(finalRunId);
-  if (!runInfo) {
-    throw new Error(`Run with ID ${finalRunId} not found.`);
+  const evalFiles = await findFilesByExtension(runDir, '.eval.json');
+  if (evalFiles.length === 0) {
+    throw new Error(`No evaluation result files found for run ID ${finalRunId}.`);
   }
 
-  const results = dbOps.getRunResults(finalRunId);
-  if (results.length === 0) {
-    throw new Error(`No results found for run ID ${finalRunId}. The run may have failed.`);
+  const allResults: EvaluationResult[] = [];
+  for (const file of evalFiles) {
+    const content = await readJsonFile<EvaluationFile>(file);
+    if (content && content.results) {
+      allResults.push(...content.results);
+    }
   }
 
-  const avgFaithfulness = results.reduce((sum, r) => sum + r.faithfulness, 0) / results.length;
-  const avgRelevancy = results.reduce((sum, r) => sum + r.relevancy, 0) / results.length;
-  const avgJudgeScore = results.reduce((sum, r) => sum + r.judge_score, 0) / results.length;
+  if (allResults.length === 0) {
+    throw new Error(`No results could be loaded for run ID ${finalRunId}.`);
+  }
+
+  const avgFaithfulness = allResults.reduce((sum, r) => sum + r.faithfulness, 0) / allResults.length;
+  const avgRelevancy = allResults.reduce((sum, r) => sum + r.relevancy, 0) / allResults.length;
+  const avgJudgeScore = allResults.reduce((sum, r) => sum + r.judge_score, 0) / allResults.length;
 
   const passedMetrics = [
     avgFaithfulness >= THRESHOLDS.faithfulness,
@@ -43,10 +63,10 @@ export async function generateReport(runId?: number, asJson = false) {
   const overallResult = passedCount === passedMetrics.length ? 'PASS' : 'FAIL';
   
   const reportData = {
-    run_id: runInfo.id,
-    candidate_model: runInfo.candidate_model,
-    started_at: runInfo.started_at,
-    question_count: results.length,
+    run_id: runMeta.runId,
+    candidate_model: runMeta.candidateModel,
+    started_at: runMeta.startedAt,
+    question_count: allResults.length,
     scores: {
       faithfulness: parseFloat(avgFaithfulness.toFixed(4)),
       relevancy: parseFloat(avgRelevancy.toFixed(4)),
@@ -61,13 +81,13 @@ export async function generateReport(runId?: number, asJson = false) {
     return;
   }
 
-  const runDate = new Date(runInfo.started_at).toLocaleString();
-  console.log(chalk.bold(`Run #${runInfo.id} — ${runInfo.candidate_model}`) + ` ⏱  ${runDate}`);
-  console.log('─'.repeat(50));
+  const runDate = new Date(runMeta.startedAt).toLocaleString();
+  console.log(chalk.bold(`Run #${runMeta.runId} — ${runMeta.candidateModel}`) + ` ⏱  ${runDate}`);
+  console.log('─'.repeat(60));
   console.log(formatScore('Faithfulness', avgFaithfulness, THRESHOLDS.faithfulness));
   console.log(formatScore('Relevancy', avgRelevancy, THRESHOLDS.relevancy));
   console.log(formatScore('Judge score', avgJudgeScore, THRESHOLDS.judge_score));
-  console.log('─'.repeat(50));
+  console.log('─'.repeat(60));
   const resultColor = overallResult === 'PASS' ? chalk.green.bold : chalk.red.bold;
   console.log(`${resultColor(overallResult)} (${passedCount}/${passedMetrics.length} thresholds met)`);
 }
