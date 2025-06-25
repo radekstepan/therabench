@@ -3,8 +3,7 @@ import path from 'path';
 import pLimit from 'p-limit';
 import chalk from 'chalk';
 import { cfg } from './config.js';
-import { OpenAIClient } from './model/OpenAIClient.js';
-import { OllamaClient } from './model/OllamaClient.js';
+import { OpenAIClient } from './model/OpenAIClient.js'; // The only client we need now
 import { calculateMetrics } from './metrics.js';
 import { findFilesByExtension, readJsonFile } from './fs-utils.js';
 import type { QAPairsFile, RunMeta, EvaluationResult, EvaluationFile } from './types.js';
@@ -17,8 +16,13 @@ export async function runEvaluation(dir: string, opts: { candidateModel?: string
   const candidateModelName = opts.candidateModel ?? cfg.candidate.model;
   console.log(`Starting evaluation for model: ${candidateModelName}`);
 
-  const candidateClient = new OllamaClient({ ...cfg.candidate, model: candidateModelName });
+  // Use the universal OpenAIClient for both expert and candidate models
   const expertClient = new OpenAIClient(cfg.expert);
+  const candidateClient = new OpenAIClient({
+    base: cfg.candidate.base,
+    model: candidateModelName,
+    key: cfg.candidate.key,
+  });
 
   const runId = createRunId();
   const runMeta: RunMeta = { runId, candidateModel: candidateModelName, startedAt: new Date().toISOString() };
@@ -38,7 +42,7 @@ export async function runEvaluation(dir: string, opts: { candidateModel?: string
 
     if (!qaFile || !qaFile.qa_pairs || qaFile.qa_pairs.length === 0) {
       skippedCount++;
-      return; // Skip if no corresponding QA file exists
+      return;
     }
 
     const sourceContent = await fs.readFile(sourcePath, 'utf-8');
@@ -84,10 +88,7 @@ export async function runEvaluation(dir: string, opts: { candidateModel?: string
 export async function getLatestRunInfo(dir: string): Promise<RunMeta | null> {
     const evalFiles = await findFilesByExtension(dir, '.eval.json');
     if (evalFiles.length === 0) return null;
-
-    // The run ID is a timestamp, so sorting filenames gives the latest.
     const latestFile = evalFiles.sort().reverse()[0];
     const latestEval = await readJsonFile<EvaluationFile>(latestFile);
-    
     return latestEval?.runMeta ?? null;
 }
