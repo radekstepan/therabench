@@ -10,20 +10,11 @@ const THRESHOLDS = {
   judge_score: 8,
 };
 
-/**
- * Formats a score for display, now including its scale.
- * @param label - The name of the metric.
- * @param scale - The scale of the metric (e.g., "(0-1)").
- * @param value - The score.
- * @param threshold - The passing threshold for the score.
- * @returns A color-coded, formatted string.
- */
 function formatScore(label: string, scale: string, value: number, threshold: number): string {
   const pass = value >= threshold;
   const color = pass ? chalk.green : chalk.red;
   const icon = pass ? '✅' : '❌';
-
-  const fullLabel = `${label} ${chalk.gray(scale)}`.padEnd(34); // Pad to align the scores
+  const fullLabel = `${label} ${chalk.gray(scale)}`.padEnd(34);
   return `${fullLabel} ${color(value.toFixed(2).padStart(5))} ${icon}`;
 }
 
@@ -33,65 +24,49 @@ export async function generateReport(dir: string, runId?: string, asJson = false
   
   if (!finalRunId) {
     const latestRunInfo = await getLatestRunInfo(dir);
-    if (!latestRunInfo) {
-      throw new Error('No runs found. Use `thera-bench eval` to create one.');
-    }
+    if (!latestRunInfo) throw new Error('No runs found. Use `thera-bench eval` to create one.');
     finalRunId = latestRunInfo.runId;
     runMeta = latestRunInfo;
   }
-
+  
   const allFiles = await findFilesByExtension(dir, '.eval.json');
   const runFiles = allFiles.filter(file => file.includes(`.${finalRunId}.`));
 
-  if (runFiles.length === 0) {
-    throw new Error(`No evaluation result files found for run ID ${finalRunId}.`);
-  }
-
+  if (runFiles.length === 0) throw new Error(`No evaluation result files found for run ID ${finalRunId}.`);
+  
   if (!runMeta) {
     const firstFileContent = await readJsonFile<EvaluationFile>(runFiles[0]);
-    if (!firstFileContent?.runMeta) {
-        throw new Error(`Could not read metadata from evaluation files for run ID ${finalRunId}.`);
-    }
+    if (!firstFileContent?.runMeta) throw new Error(`Could not read metadata for run ID ${finalRunId}.`);
     runMeta = firstFileContent.runMeta;
   }
   
   const allResults: EvaluationResult[] = [];
   for (const file of runFiles) {
     const content = await readJsonFile<EvaluationFile>(file);
-    if (content?.results) {
-      allResults.push(...content.results);
-    }
+    if (content?.results) allResults.push(...content.results);
   }
 
-  if (allResults.length === 0) {
-    throw new Error(`No results could be loaded for run ID ${finalRunId}.`);
-  }
+  if (allResults.length === 0) throw new Error(`No results could be loaded for run ID ${finalRunId}.`);
 
-  const avgFaithfulness = allResults.reduce((sum, r) => sum + r.faithfulness, 0) / allResults.length;
+  const hasFaithfulness = runMeta.runType === 'rag';
+  const faithfulnessResults = allResults.filter(r => r.faithfulness !== null).map(r => r.faithfulness as number);
+  const avgFaithfulness = hasFaithfulness && faithfulnessResults.length > 0 ? faithfulnessResults.reduce((sum, r) => sum + r, 0) / faithfulnessResults.length : null;
   const avgRelevancy = allResults.reduce((sum, r) => sum + r.relevancy, 0) / allResults.length;
   const avgJudgeScore = allResults.reduce((sum, r) => sum + r.judge_score, 0) / allResults.length;
 
-  const passedMetrics = [
-    avgFaithfulness >= THRESHOLDS.faithfulness,
-    avgRelevancy >= THRESHOLDS.relevancy,
-    avgJudgeScore >= THRESHOLDS.judge_score,
-  ];
-  const passedCount = passedMetrics.filter(Boolean).length;
-  const overallResult = passedCount === passedMetrics.length ? 'PASS' : 'FAIL';
+  // --- FIX: Dynamically build the list of checks ---
+  const checks: boolean[] = [];
+  if (hasFaithfulness && avgFaithfulness !== null) {
+    checks.push(avgFaithfulness >= THRESHOLDS.faithfulness);
+  }
+  checks.push(avgRelevancy >= THRESHOLDS.relevancy);
+  checks.push(avgJudgeScore >= THRESHOLDS.judge_score);
+
+  const passedCount = checks.filter(Boolean).length;
+  const totalMetrics = checks.length;
+  const overallResult = passedCount === totalMetrics ? 'PASS' : 'FAIL';
   
-  const reportData = {
-    run_id: runMeta.runId,
-    candidate_model: runMeta.candidateModel,
-    started_at: runMeta.startedAt,
-    question_count: allResults.length,
-    scores: {
-      faithfulness: parseFloat(avgFaithfulness.toFixed(4)),
-      relevancy: parseFloat(avgRelevancy.toFixed(4)),
-      judge_score: parseFloat(avgJudgeScore.toFixed(4)),
-    },
-    thresholds: THRESHOLDS,
-    overall_result: overallResult,
-  };
+  const reportData = { run_id: runMeta.runId, run_type: runMeta.runType, candidate_model: runMeta.candidateModel, started_at: runMeta.startedAt, question_count: allResults.length, scores: { faithfulness: avgFaithfulness ? parseFloat(avgFaithfulness.toFixed(4)) : null, relevancy: parseFloat(avgRelevancy.toFixed(4)), judge_score: parseFloat(avgJudgeScore.toFixed(4)) }, thresholds: THRESHOLDS, overall_result: overallResult };
 
   if (asJson) {
     console.log(JSON.stringify(reportData, null, 2));
@@ -99,13 +74,15 @@ export async function generateReport(dir: string, runId?: string, asJson = false
   }
 
   const runDate = new Date(runMeta.startedAt).toLocaleString();
-  console.log(chalk.bold(`Run #${runMeta.runId} — ${runMeta.candidateModel}`) + ` ⏱  ${runDate}`);
+  const runTypeLabel = runMeta.runType === 'knowledge' ? ' (Knowledge)' : ' (RAG)';
+  console.log(chalk.bold(`Run #${runMeta.runId}${runTypeLabel} — ${runMeta.candidateModel}`) + ` ⏱  ${runDate}`);
   console.log('─'.repeat(60));
-  // Call formatScore with the explicit scale.
-  console.log(formatScore('Faithfulness', '(0-1)', avgFaithfulness, THRESHOLDS.faithfulness));
+  if (hasFaithfulness && avgFaithfulness !== null) {
+    console.log(formatScore('Faithfulness', '(0-1)', avgFaithfulness, THRESHOLDS.faithfulness));
+  }
   console.log(formatScore('Relevancy',    '(0-1)', avgRelevancy, THRESHOLDS.relevancy));
   console.log(formatScore('Judge score',  '(0-10)', avgJudgeScore, THRESHOLDS.judge_score));
   console.log('─'.repeat(60));
   const resultColor = overallResult === 'PASS' ? chalk.green.bold : chalk.red.bold;
-  console.log(`${resultColor(overallResult)} (${passedCount}/${passedMetrics.length} thresholds met)`);
+  console.log(`${resultColor(overallResult)} (${passedCount}/${totalMetrics} thresholds met)`);
 }

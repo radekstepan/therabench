@@ -1,5 +1,6 @@
-import { delay } from './delay.js'; // A separate simple delay function
+import { delay } from './delay.js';
 import * as limiter from './limiter.js';
+import chalk from 'chalk';
 
 interface RetryOptions {
   retries: number;
@@ -31,14 +32,24 @@ export async function withAdaptiveRetry<T>(
       return result;
     } catch (error: any) {
       lastError = error;
+      
+      // Check for retryable errors
       if (error.message && error.message.includes('429')) {
-        // 2. On rate limit, increase the global delay significantly.
+        // Handle rate limits by increasing the global delay.
         limiter.increaseDelay();
-        // Also apply a local, randomized backoff for this specific retry attempt.
         const localRetryDelay = options.initialDelay * Math.pow(2, i) + Math.random() * 1000;
         await delay(localRetryDelay);
-      } else {
-        // For non-retryable errors, fail fast.
+        continue; // Go to next retry attempt
+      } else if (error.message && error.message.includes('Unexpected end of JSON input')) {
+        // FIX: Handle incomplete/empty JSON responses, which are transient errors.
+        console.warn(chalk.yellow(`\n[WARN] Received incomplete JSON from API. Retrying... (Attempt ${i + 1}/${options.retries})`));
+        // Apply a local retry delay but do NOT increase the global pacer.
+        const localRetryDelay = options.initialDelay * (i + 1);
+        await delay(localRetryDelay);
+        continue; // Go to next retry attempt
+      }
+      else {
+        // For non-retryable errors (e.g., 401 Unauthorized, 400 Bad Request), fail fast.
         throw error;
       }
     }

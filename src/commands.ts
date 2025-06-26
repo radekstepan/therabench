@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { generateQaFiles } from './expert-labeler.js';
-import { runEvaluation, getLatestRunInfo } from './evaluator.js';
+import { runEvaluation, runKnowledgeEvaluation, getLatestRunInfo } from './evaluator.js';
 import { generateReport } from './reporter.js';
 
 export async function initCmd(dir: string) {
@@ -15,8 +15,16 @@ export async function initCmd(dir: string) {
 }
 
 export async function evalCmd(dir: string, options: { model?: string }) {
-  console.log(chalk.cyan('--- Thera-Bench Evaluation ---'));
+  console.log(chalk.cyan('--- Thera-Bench RAG Evaluation ---'));
   const runId = await runEvaluation(dir, { candidateModel: options.model });
+  console.log(chalk.green(`\n✅ Evaluation complete. Run ID: ${runId}`));
+  console.log(chalk.cyan('\n--- Evaluation Report ---'));
+  await generateReport(dir, runId);
+}
+
+export async function evalKnowledgeCmd(dir: string, options: { model?: string }) {
+  console.log(chalk.cyan('--- Thera-Bench Knowledge Evaluation ---'));
+  const runId = await runKnowledgeEvaluation(dir, { candidateModel: options.model });
   console.log(chalk.green(`\n✅ Evaluation complete. Run ID: ${runId}`));
   console.log(chalk.cyan('\n--- Evaluation Report ---'));
   await generateReport(dir, runId);
@@ -36,5 +44,9 @@ export async function replayCmd(dir: string) {
   const modelToReplay = latestRunInfo.candidateModel;
   console.log(`Replaying last evaluation for model: ${chalk.yellow(modelToReplay)}`);
   
-  await evalCmd(dir, { model: modelToReplay });
+  if (latestRunInfo.runType === 'knowledge') {
+      await evalKnowledgeCmd(dir, { model: modelToReplay });
+  } else {
+      await evalCmd(dir, { model: modelToReplay });
+  }
 }

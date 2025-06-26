@@ -1,4 +1,4 @@
-import { ModelClient } from './model/ModelClient.js';
+import { type ModelClient } from './model/ModelClient.js';
 
 interface MetricInputs {
   expertClient: ModelClient;
@@ -8,8 +8,10 @@ interface MetricInputs {
   candidateAnswer: string;
 }
 
+interface KnowledgeMetricInputs extends Omit<MetricInputs, 'context'> {}
+
 interface MetricScores {
-  faithfulness: number;
+  faithfulness: number | null;
   relevancy: number;
   judge_score: number;
 }
@@ -24,7 +26,7 @@ async function getJsonScore(client: ModelClient, prompt: string): Promise<number
       return 0.0;
     }
     return score;
-  } catch (e) {
+  } catch (e: any) {
     console.error("Error getting or parsing score from LLM", e);
     return 0.0;
   }
@@ -98,4 +100,13 @@ export async function calculateMetrics(inputs: MetricInputs): Promise<MetricScor
   ]);
 
   return { faithfulness, relevancy, judge_score: judgeScore };
+}
+
+export async function calculateKnowledgeMetrics(inputs: KnowledgeMetricInputs): Promise<MetricScores> {
+  const [relevancy, judgeScore] = await Promise.all([
+    calculateRelevancy(inputs.expertClient, inputs.question, inputs.candidateAnswer),
+    getJudgeScore(inputs.expertClient, inputs.question, inputs.groundTruthAnswer, inputs.candidateAnswer),
+  ]);
+
+  return { faithfulness: null, relevancy, judge_score: judgeScore };
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { initCmd, evalCmd, reportCmd, replayCmd } from './commands.js';
+import { initCmd, evalCmd, evalKnowledgeCmd, reportCmd, replayCmd } from './commands.js';
 import pkg from '../package.json' with { type: 'json' };
 
 const program = new Command();
@@ -9,7 +9,7 @@ const program = new Command();
 program
   .name('thera-bench')
   .version(pkg.version)
-  .description('A self-contained, file-based framework for evaluating LLM performance in a single directory.');
+  .description('A self-contained, file-based framework for evaluating LLM performance.');
 
 program
   .command('init <dir>')
@@ -26,13 +26,26 @@ program
 
 program
   .command('eval <dir>')
-  .description('Evaluate a candidate model and generate new *.eval.json files.')
-  .option('-m, --model <id>', 'Override candidate model from .env (e.g., "llama3:70b")')
+  .description('Evaluate a model\'s ability to answer questions using provided context (RAG).')
+  .option('-m, --model <id>', 'Override candidate model from .env')
   .action(async (dir, options) => {
     try {
       await evalCmd(dir, options);
     } catch (error) {
-      console.error(chalk.red('\n❌ Evaluation failed:'), error instanceof Error ? error.message : error);
+      console.error(chalk.red('\n❌ RAG Evaluation failed:'), error instanceof Error ? error.message : error);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('eval-knowledge <dir>')
+  .description("Evaluate a model's built-in knowledge (no context provided).")
+  .option('-m, --model <id>', 'Override candidate model from .env')
+  .action(async (dir, options) => {
+    try {
+      await evalKnowledgeCmd(dir, options);
+    } catch (error) {
+      console.error(chalk.red('\n❌ Knowledge Evaluation failed:'), error instanceof Error ? error.message : error);
       process.exit(1);
     }
   });

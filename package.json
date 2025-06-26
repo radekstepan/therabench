@@ -1,6 +1,6 @@
 {
   "name": "thera-bench",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A self-contained, file-based framework for evaluating any OpenAI-compatible LLM.",
   "type": "module",
   "main": "dist/index.js",
@@ -17,6 +17,7 @@
     "dev": "infisical run -- tsx src/index.ts",
     "bench:init": "infisical run -- tsx src/index.ts init",
     "bench:eval": "infisical run -- tsx src/index.ts eval",
+    "bench:eval-knowledge": "infisical run -- tsx src/index.ts eval-knowledge",
     "bench:report": "infisical run -- tsx src/index.ts report",
     "bench:replay": "infisical run -- tsx src/index.ts replay",
     "prepublishOnly": "npm run build"

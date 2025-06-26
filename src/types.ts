@@ -12,13 +12,14 @@ export interface EvaluationResult {
   question: string;
   ground_truth_answer: string;
   candidate_answer: string;
-  faithfulness: number;
+  faithfulness: number | null;
   relevancy: number;
   judge_score: number;
 }
 
 export interface RunMeta {
   runId: string;
+  runType: 'rag' | 'knowledge';
   candidateModel: string;
   startedAt: string;
 }
