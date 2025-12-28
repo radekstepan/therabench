@@ -61,8 +61,7 @@ async function queryCandidateModel(prompt: string): Promise<string> {
     
     return completion.choices[0].message.content || '';
   } catch (e) {
-    console.warn(`⚠️ Could not reach candidate model at ${CANDIDATE_MODEL_URL}. Using Mock response.`);
-    return `[Mock Response] I hear that you are struggling with "${prompt.substring(0, 20)}...". Let's use some techniques to help.`;
+    throw new Error(`Could not reach candidate model at ${CANDIDATE_MODEL_URL}: ${e instanceof Error ? e.message : String(e)}`);
   }
 }
 
