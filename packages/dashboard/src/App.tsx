@@ -39,8 +39,10 @@ function cn(...inputs: ClassValue[]) {
 }
 
 function getScoreColor(score: number) {
+  // Thresholds: >=80 green, 61-79 neutral, 41-60 orange, <=40 red
   if (score >= 80) return "text-emerald-500";
-  if (score >= 60) return "text-amber-500";
+  if (score <= 40) return "text-red-500";
+  if (score <= 60) return "text-amber-500";
   return "text-zinc-500";
 }
 
@@ -1117,7 +1119,7 @@ export default function App() {
               >
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-mono text-zinc-600">{q.id}</span>
-                  <div className="font-medium truncate pr-4 flex-1">{q.title}</div>
+                  <div className="font-medium truncate flex-1">{q.title}</div>
                   <span className={cn(getScoreColor(q.avgScore), 'ml-2')}>{q.runCount > 0 ? `${q.avgScore}%` : '-'}</span>
                 </div>
               </button>
