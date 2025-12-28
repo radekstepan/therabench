@@ -155,10 +155,42 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
       }
     } catch (error: any) {
       console.warn(`   Attempt ${attempt}/${maxRetries}: Judge API error: ${error.message}`);
+      
+      // Log detailed error information
+      if (error.status) {
+        console.error(`   HTTP Status: ${error.status}`);
+      }
+      if (error.code) {
+        console.error(`   Error Code: ${error.code}`);
+      }
+      if (error.response) {
+        console.error(`   Response Body: ${JSON.stringify(error.response, null, 2)}`);
+      }
+      
       if (attempt === maxRetries) {
+        // Save detailed error info to debug file
+        const debugDir = path.join(__dirname, '../debug');
+        if (!fs.existsSync(debugDir)) {
+          fs.mkdirSync(debugDir, { recursive: true });
+        }
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const debugFile = path.join(debugDir, `api-error-${timestamp}.json`);
+        const errorDetails = {
+          model: EXPERT_MODEL_NAME,
+          attempt,
+          message: error.message,
+          status: error.status,
+          code: error.code,
+          response: error.response,
+          stack: error.stack,
+          fullError: JSON.stringify(error, Object.getOwnPropertyNames(error), 2)
+        };
+        fs.writeFileSync(debugFile, JSON.stringify(errorDetails, null, 2));
+        console.error(`   Full error details saved to: ${debugFile}`);
+        
         return {
           score: 0,
-          reasoning: `Evaluation failed after 3 attempts: ${error.message}`,
+          reasoning: `Evaluation failed after 3 attempts: ${error.message} (Status: ${error.status || 'unknown'})`,
           flags: ["api-error"],
           metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
           evaluatorModel: EXPERT_MODEL_NAME,
