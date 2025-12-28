@@ -60,13 +60,13 @@ function getModelLabels(modelName: string) {
 const ModelLabels = ({ modelName }: { modelName: string }) => {
   const labels = getModelLabels(modelName);
   if (labels.length === 0) return null;
-  
+
   return (
-    <div className="flex flex-wrap gap-1.5 mt-1">
+    <span className="flex-shrink-0 ml-2 flex items-center gap-1">
       {labels.map((label, idx) => (
-        <span 
+        <span
           key={idx}
-          className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border"
+          className="flex-shrink-0 inline-block px-2 py-0.5 rounded text-[10px] font-medium border"
           style={{
             backgroundColor: `${label.color}20`,
             borderColor: `${label.color}40`,
@@ -76,7 +76,7 @@ const ModelLabels = ({ modelName }: { modelName: string }) => {
           {label.text}
         </span>
       ))}
-    </div>
+    </span>
   );
 };
 
@@ -488,8 +488,12 @@ const ComparisonRow = ({
       >
         <td className="p-4 text-center w-16 text-zinc-500 font-mono text-sm">#{rank}</td>
         <td className="p-4">
-          <div className="font-medium text-zinc-200">{run.modelName}</div>
-          <ModelLabels modelName={run.modelName} />
+          <div className="font-medium text-zinc-200">
+            <div className="flex items-center gap-2">
+              <span className="truncate flex-1 min-w-0">{run.modelName}</span>
+              <ModelLabels modelName={run.modelName} />
+            </div>
+          </div>
           <div className="text-xs text-zinc-500 font-mono mt-0.5">
             {new Date(run.timestamp).toLocaleString('en-US', { 
               month: 'short', 
@@ -1250,9 +1254,11 @@ export default function App() {
                       <td className="px-6 py-4 text-zinc-500 font-mono">#{stat.scoreRank}</td>
                       <td className="px-6 py-4">
                         <div className="font-medium text-white group-hover:text-emerald-400 transition-colors">
-                          {stat.name}
+                          <div className="flex items-center gap-2">
+                            <span className="truncate flex-1 min-w-0">{stat.name}</span>
+                            <ModelLabels modelName={stat.name} />
+                          </div>
                         </div>
-                        <ModelLabels modelName={stat.name} />
                       </td>
                       <td className="px-6 py-4 text-right text-zinc-400">{stat.count}</td>
                       <td className="px-6 py-4 text-right font-medium text-white">{stat.avgScore}</td>
