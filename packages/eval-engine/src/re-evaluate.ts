@@ -213,6 +213,21 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
   };
 }
 
+/**
+ * Deduplicate results by runId and questionId (keep the last occurrence)
+ */
+function deduplicateResults(results: ModelRun[]): ModelRun[] {
+  const seen = new Map<string, ModelRun>();
+  
+  for (const run of results) {
+    const key = `${run.runId}|${run.questionId}`;
+    // Keep the last occurrence (which has the most assessments)
+    seen.set(key, run);
+  }
+  
+  return Array.from(seen.values());
+}
+
 async function main() {
   try {
     // Check if old format exists and warn user
@@ -230,7 +245,14 @@ async function main() {
     const questions: QuestionNode[] = Array.isArray(questionsData) ? questionsData : questionsData.questions;
     
     // Load all existing results from the multi-file structure
-    const allResults = loadAllResults();
+    const allResultsRaw = loadAllResults();
+    
+    // Deduplicate in case there are already duplicates in the files
+    const allResults = deduplicateResults(allResultsRaw);
+    
+    if (allResultsRaw.length !== allResults.length) {
+      console.warn(`⚠️  Found ${allResultsRaw.length - allResults.length} duplicate results, cleaned up.`);
+    }
     
     if (allResults.length === 0) {
       console.error('❌ No results found to re-evaluate.');
@@ -238,7 +260,7 @@ async function main() {
     }
 
     const judgeModel = EXPERT_MODEL_NAME;
-    console.log(`🚀 Starting re-evaluation of ${allResults.length} results using judge: ${judgeModel}`);
+    console.log(`🚀 Starting re-evaluation using judge: ${judgeModel}`);
     console.log('   (Candidate models will NOT be called again)');
 
     // Prioritize questions that haven't been judged by this model yet
@@ -251,10 +273,17 @@ async function main() {
       return aHasJudgment ? 1 : -1;
     });
     
-    const unevaluatedCount = sortedResults.filter(r => !(r.aiAssessments?.[judgeModel]?.length)).length;
-    if (unevaluatedCount > 0) {
-      console.log(`   📋 Prioritizing ${unevaluatedCount} unevaluated questions first`);
-    }
+    const unevaluatedCount = sortedResults.filter(r => {
+      const judgeHistory = r.aiAssessments?.[judgeModel] || [];
+      const hasBeenEvaluated = Array.isArray(judgeHistory) ? judgeHistory.length > 0 : Object.keys(judgeHistory).length > 0;
+      return !hasBeenEvaluated;
+    }).length;
+    
+    const alreadyEvaluatedCount = sortedResults.length - unevaluatedCount;
+    
+    console.log(`   📊 Total responses: ${sortedResults.length}`);
+    console.log(`   ✅ Already evaluated by ${judgeModel}: ${alreadyEvaluatedCount} (will skip)`);
+    console.log(`   🔄 To be evaluated: ${unevaluatedCount}`);
 
     // Group results by candidate model and timestamp for saving
     const resultsByRun = new Map<string, { candidateModel: string; timestamp: string; runs: ModelRun[] }>();
@@ -262,6 +291,8 @@ async function main() {
     // Save batch size - save every N evaluations to disk
     const SAVE_BATCH_SIZE = 10;
     let processedCount = 0;
+    let evaluatedCount = 0;
+    let skippedCount = 0;
 
     // Work with results to re-evaluate them
     for (let i = 0; i < sortedResults.length; i++) {
@@ -273,22 +304,53 @@ async function main() {
           continue;
       }
 
+      // Check if this judge has already evaluated this response
+      const existingAssessments = run.aiAssessments || {};
+      const judgeHistory = existingAssessments[judgeModel] || [];
+      const hasBeenEvaluated = Array.isArray(judgeHistory) ? judgeHistory.length > 0 : Object.keys(judgeHistory).length > 0;
+      
+      if (hasBeenEvaluated) {
+        console.log(`\n[${i + 1}/${sortedResults.length}] ⏭️  Skipping run: ${run.runId} (${run.modelName}) - already evaluated by ${judgeModel}`);
+        
+        skippedCount++;
+        
+        // Still add to resultsByRun to ensure it's saved
+        const runKey = `${run.modelName}|${run.timestamp}`;
+        if (!resultsByRun.has(runKey)) {
+          resultsByRun.set(runKey, {
+            candidateModel: run.modelName,
+            timestamp: run.timestamp,
+            runs: []
+          });
+        }
+        
+        const existingRuns = resultsByRun.get(runKey)!.runs;
+        const existingIndex = existingRuns.findIndex(r => r.questionId === run.questionId && r.runId === run.runId);
+        
+        if (existingIndex < 0) {
+          existingRuns.push(run);
+        }
+        
+        continue;
+      }
+
       console.log(`\n[${i + 1}/${sortedResults.length}] Re-judging run: ${run.runId} (${run.modelName})`);
       
       const assessment = await runJudge(question, run.response);
       
-      // Get existing assessments for this judge
-      const existingAssessments = run.aiAssessments || {};
+      evaluatedCount++;
+      
+      // Get the most recent score for comparison (reuse existingAssessments and judgeHistory from above)
       const judgeKey = assessment.evaluatorModel || judgeModel;
-      const judgeHistory = existingAssessments[judgeKey] || [];
+      const currentJudgeHistory = existingAssessments[judgeKey] || [];
       
       // Get the most recent score for comparison
-      const oldScore = judgeHistory.length > 0 ? judgeHistory[judgeHistory.length - 1].score : 'N/A';
+      const oldScore = currentJudgeHistory.length > 0 ? currentJudgeHistory[currentJudgeHistory.length - 1].score : 'N/A';
       console.log(`   -> New Score: ${assessment.score}/100 (Previous: ${oldScore})`);
 
       // Append the new assessment to the history
-      judgeHistory.push(assessment);
-      existingAssessments[judgeKey] = judgeHistory;
+      currentJudgeHistory.push(assessment);
+      existingAssessments[judgeKey] = currentJudgeHistory;
 
       // Update the run
       const updatedRun: ModelRun = {
@@ -305,7 +367,18 @@ async function main() {
           runs: []
         });
       }
-      resultsByRun.get(runKey)!.runs.push(updatedRun);
+      
+      // Deduplicate: only add if this questionId isn't already in the runs array
+      const existingRuns = resultsByRun.get(runKey)!.runs;
+      const existingIndex = existingRuns.findIndex(r => r.questionId === updatedRun.questionId && r.runId === updatedRun.runId);
+      
+      if (existingIndex >= 0) {
+        // Replace existing run with updated version
+        existingRuns[existingIndex] = updatedRun;
+      } else {
+        // Add new run
+        existingRuns.push(updatedRun);
+      }
       
       processedCount++;
       
@@ -327,6 +400,9 @@ async function main() {
     }
 
     console.log(`\n✅ Re-evaluation complete!`);
+    console.log(`   📊 Total responses: ${sortedResults.length}`);
+    console.log(`   🔄 Newly evaluated: ${evaluatedCount}`);
+    console.log(`   ⏭️  Skipped (already evaluated): ${skippedCount}`);
   } catch (error) {
     console.error('❌ Error during re-evaluation:', error);
     process.exit(1);
