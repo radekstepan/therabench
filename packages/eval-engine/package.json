@@ -4,12 +4,14 @@
   "main": "dist/index.js",
   "bin": {
     "eval-engine": "./bin/eval.js",
-    "eval-gen": "./bin/gen.js"
+    "eval-gen": "./bin/gen.js",
+    "eval-rejudge": "./bin/re-eval.js"
   },
   "scripts": {
     "build": "tsc",
     "gen": "node bin/gen.js",
-    "eval": "node bin/eval.js"
+    "eval": "node bin/eval.js",
+    "re-eval": "node bin/re-eval.js"
   },
   "dependencies": {
     "dotenv": "^16.0.0",

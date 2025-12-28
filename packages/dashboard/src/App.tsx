@@ -492,14 +492,17 @@ const ComparisonRow = ({
             {new Date(run.timestamp).toLocaleString('en-US', { 
               month: 'short', 
               day: 'numeric', 
-              year: 'numeric',
-              hour: '2-digit',
+              year: 'numeric', 
+              hour: '2-digit', 
               minute: '2-digit'
             })}
           </div>
         </td>
         <td className="p-4 text-right">
-          <div className={cn("inline-block px-3 py-1 rounded-full text-sm font-bold border", getScoreBg(run.effectiveScore), getScoreColor(run.effectiveScore))}>
+          <div 
+            className={cn("inline-block px-3 py-1 rounded-full text-sm font-bold border", getScoreBg(run.effectiveScore), getScoreColor(run.effectiveScore))}
+            title={run.aiAssessment.evaluatorModel ? `Evaluated by ${run.aiAssessment.evaluatorModel}` : undefined}
+          >
             {run.effectiveScore}
           </div>
           {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><Gavel className="w-3 h-3"/> Reviewed</div>}

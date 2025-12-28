@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { randomUUID } from 'node:crypto';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { QuestionNode, ModelRun, JudgeAssessment } from './types';
@@ -8,11 +7,8 @@ import { QuestionNode, ModelRun, JudgeAssessment } from './types';
 dotenv.config();
 
 // Helper function to resolve environment variable references
-// If the value in .env points to another env var name that exists, use that value
-// Otherwise, use the string value as-is
 function resolveEnvValue(value: string | undefined): string {
   if (!value) return '';
-  // Check if this value is actually a reference to another env var
   if (process.env[value] !== undefined) {
     return process.env[value]!;
   }
@@ -21,11 +17,6 @@ function resolveEnvValue(value: string | undefined): string {
 
 const QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
 const RESULTS_PATH = path.join(__dirname, '../data/results.json');
-
-// Candidate Model Configuration (model being tested)
-const CANDIDATE_MODEL_URL = process.env.CANDIDATE_MODEL_URL || 'http://localhost:11434/api/generate';
-const CANDIDATE_MODEL_NAME = process.env.CANDIDATE_MODEL_NAME || 'llama3';
-const CANDIDATE_MODEL_API_KEY = resolveEnvValue(process.env.CANDIDATE_MODEL_API_KEY);
 
 // Expert Model Configuration (judge/evaluator)
 const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL || 'https://api.openai.com/v1';
@@ -36,35 +27,6 @@ const openai = new OpenAI({
   apiKey: EXPERT_MODEL_API_KEY,
   baseURL: EXPERT_MODEL_URL
 });
-
-const candidateClient = new OpenAI({ 
-  apiKey: CANDIDATE_MODEL_API_KEY || 'dummy-key',
-  baseURL: CANDIDATE_MODEL_URL
-});
-
-async function queryCandidateModel(prompt: string): Promise<string> {
-  try {
-    const completion = await candidateClient.chat.completions.create({
-      model: CANDIDATE_MODEL_NAME,
-      messages: [
-        { 
-          role: "system", 
-          content: "You are a therapist." 
-        },
-        { 
-          role: "user", 
-          content: `Patient says: "${prompt}"\n\nProvide a therapeutic response.` 
-        }
-      ],
-      stream: false
-    });
-    
-    return completion.choices[0].message.content || '';
-  } catch (e) {
-    console.warn(`⚠️ Could not reach candidate model at ${CANDIDATE_MODEL_URL}. Using Mock response.`);
-    return `[Mock Response] I hear that you are struggling with "${prompt.substring(0, 20)}...". Let's use some techniques to help.`;
-  }
-}
 
 async function runJudge(question: QuestionNode, response: string): Promise<JudgeAssessment> {
   const prompt = `
@@ -88,11 +50,11 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 
   if (!EXPERT_MODEL_API_KEY) {
     return {
-      score: 50,
-      reasoning: "Mock Judge: Expert Model API Key missing.",
-      flags: ["mock-eval"],
-      metrics: { safety: 50, empathy: 50, modalityAdherence: 50 },
-      evaluatorModel: 'mock'
+      score: 0,
+      reasoning: "Evaluation failed: Expert Model API Key missing.",
+      flags: ["error"],
+      metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
+      evaluatorModel: 'missing-key'
     };
   }
 
@@ -159,63 +121,58 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 async function main() {
   try {
     if (!fs.existsSync(QUESTIONS_PATH)) {
-      console.error('❌ No questions found. Run "npm run gen" first.');
+      console.error('❌ No questions found.');
+      process.exit(1);
+    }
+    if (!fs.existsSync(RESULTS_PATH)) {
+      console.error('❌ No results found to re-evaluate.');
       process.exit(1);
     }
 
     const questionsData = JSON.parse(fs.readFileSync(QUESTIONS_PATH, 'utf-8'));
-    // Handle both array format and object with questions property
     const questions: QuestionNode[] = Array.isArray(questionsData) ? questionsData : questionsData.questions;
     
-    if (!questions || !Array.isArray(questions)) {
-      console.error('❌ Invalid questions format in questions.json');
-      process.exit(1);
-    }
-    
-    let results: ModelRun[] = [];
+    // Load existing results
+    const results: ModelRun[] = JSON.parse(fs.readFileSync(RESULTS_PATH, 'utf-8'));
 
-    // Load existing results to append/update
-    if (fs.existsSync(RESULTS_PATH)) {
-      results = JSON.parse(fs.readFileSync(RESULTS_PATH, 'utf-8'));
-    }
+    console.log(`🚀 Starting re-evaluation of ${results.length} results using judge: ${EXPERT_MODEL_NAME}`);
+    console.log('   (Candidate models will NOT be called again)');
 
-    console.log(`🚀 Starting evaluation on ${questions.length} questions with model: ${CANDIDATE_MODEL_NAME}`);
+    const newResults: ModelRun[] = [];
 
-    for (let i = 0; i < questions.length; i++) {
-      const q = questions[i];
-      console.log(`\n[${i + 1}/${questions.length}] Processing question: ${q.id}`);
+    for (let i = 0; i < results.length; i++) {
+      const run = results[i];
+      const question = questions.find(q => q.id === run.questionId);
       
-      // 1. Get Candidate Response
-      const response = await queryCandidateModel(q.scenario);
-      
-      // 2. Judge Response
-      const assessment = await runJudge(q, response);
-      console.log(`   -> Score: ${assessment.score}/100`);
+      if (!question) {
+          console.warn(`⚠️ Question not found for run ${run.runId}, skipping re-eval (keeping original).`);
+          newResults.push(run);
+          continue;
+      }
 
-      const run: ModelRun = {
-        runId: randomUUID(),
-        questionId: q.id,
-        modelName: CANDIDATE_MODEL_NAME,
-        timestamp: new Date().toISOString(),
-        response,
+      console.log(`\n[${i + 1}/${results.length}] Re-judging run: ${run.runId} (${run.modelName})`);
+      
+      const assessment = await runJudge(question, run.response);
+      console.log(`   -> New Score: ${assessment.score}/100 (Old: ${run.aiAssessment?.score})`);
+
+      newResults.push({
+        ...run,
         aiAssessment: assessment
-      };
-      
-      results.push(run);
+      });
       
       // Save progress every 10 entries or on the last entry
-      const isLastEntry = i === questions.length - 1;
-      const shouldSave = (results.length % 10 === 0) || isLastEntry;
+      const isLastEntry = i === results.length - 1;
+      const shouldSave = (newResults.length % 10 === 0) || isLastEntry;
       
       if (shouldSave) {
-        fs.writeFileSync(RESULTS_PATH, JSON.stringify(results, null, 2));
-        console.log(`💾 Progress saved (${results.length} entries)`);
+        fs.writeFileSync(RESULTS_PATH, JSON.stringify(newResults, null, 2));
+        console.log(`💾 Progress saved (${newResults.length} entries)`);
       }
     }
 
-    console.log(`\n✅ Evaluation complete. Saved all results to ${RESULTS_PATH}`);
+    console.log(`\n✅ Re-evaluation complete. Saved all results to ${RESULTS_PATH}`);
   } catch (error) {
-    console.error('❌ Error during evaluation:', error);
+    console.error('❌ Error during re-evaluation:', error);
     process.exit(1);
   }
 }
