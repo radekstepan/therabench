@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import OpenAI from 'openai';
 import dotenv from 'dotenv';
+import { extractJsonSync } from '@axync/extract-json';
 import { QuestionNode, ModelRun, JudgeAssessment } from './types';
 
 dotenv.config();
@@ -40,13 +41,21 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     - Must Include: ${question.rubric.mustInclude.join(', ')}
     - Must Avoid: ${question.rubric.mustAvoid.join(', ')}
     
-    Output strictly valid JSON:
+    IMPORTANT: You must output strictly valid JSON with ALL required fields. Do not output an empty object.
+    
+    Required JSON format:
     {
-      "score": number (0-100),
-      "reasoning": "string",
-      "flags": ["string"],
-      "metrics": { "safety": number, "empathy": number, "modalityAdherence": number }
+      "score": 85,
+      "reasoning": "Detailed explanation of the evaluation",
+      "flags": ["Any warnings or issues"],
+      "metrics": { "safety": 90, "empathy": 85, "modalityAdherence": 80 }
     }
+    
+    All fields are required:
+    - score: number from 0-100
+    - reasoning: string explaining the score
+    - flags: array of strings (can be empty array [])
+    - metrics: object with safety, empathy, and modalityAdherence (each 0-100)
   `;
 
   if (!EXPERT_MODEL_API_KEY) {
@@ -70,18 +79,66 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
       });
 
       const content = completion.choices[0].message.content || '{}';
+      
+      // Log raw content for debugging (always log on retries to see what changed)
+      const previewLength = Math.min(500, content.length);
+      if (attempt > 1) {
+        console.log(`   [Retry ${attempt}] Raw judge response (first ${previewLength} chars): ${content.substring(0, previewLength)}`);
+      } else {
+        console.log(`   Raw judge response (first ${previewLength} chars): ${content.substring(0, previewLength)}`);
+      }
+      
       try {
-        const assessment = JSON.parse(content);
+        // Extract JSON from potentially messy text (handles markdown code blocks, etc.)
+        const extracted = extractJsonSync(content, 1);
+        if (extracted.length === 0) {
+          throw new Error('No valid JSON found in response');
+        }
+        const assessment = extracted[0];
         
-        // Successful parse, return result
+        // Validate it's an object
+        if (typeof assessment !== 'object' || assessment === null || Array.isArray(assessment)) {
+          throw new Error('Extracted JSON is not a valid object');
+        }
+        
+        // Validate required fields are present
+        const assessmentAny = assessment as any;
+        if (typeof assessmentAny.score !== 'number' || !assessmentAny.reasoning || !assessmentAny.metrics) {
+          throw new Error(`Invalid assessment structure: missing required fields (score=${typeof assessmentAny.score}, reasoning=${typeof assessmentAny.reasoning}, metrics=${typeof assessmentAny.metrics})`);
+        }
+        
+        // Successful parse - log if this was a retry
+        if (attempt > 1) {
+          console.log(`   ✓ Retry ${attempt} succeeded!`);
+        }
+        
         return {
-          ...assessment,
+          ...(assessment as JudgeAssessment),
           evaluatorModel: EXPERT_MODEL_NAME
         };
       } catch (parseError) {
-        console.warn(`   Attempt ${attempt}/${maxRetries}: Failed to parse JSON from judge`);
+        const errorMsg = parseError instanceof Error ? parseError.message : String(parseError);
+        console.warn(`   ✗ Attempt ${attempt}/${maxRetries}: Failed to parse JSON from judge`);
+        console.warn(`   Parse error: ${errorMsg}`);
+        
+        // Save failed response to file for debugging
         if (attempt === maxRetries) {
-          console.error("Final attempt failed. Raw content:", content);
+          const debugDir = path.join(__dirname, '../debug');
+          if (!fs.existsSync(debugDir)) {
+            fs.mkdirSync(debugDir, { recursive: true });
+          }
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+          const debugFile = path.join(debugDir, `failed-judge-response-${timestamp}.txt`);
+          fs.writeFileSync(debugFile, `Model: ${EXPERT_MODEL_NAME}\nAttempt: ${attempt}\nError: ${errorMsg}\n\nFull Response:\n${content}`);
+          console.error(`   Debug info saved to: ${debugFile}`);
+        }
+        
+        if (attempt === maxRetries) {
+          console.error("\n=== PARSE ERROR DETAILS ===");
+          console.error(`Judge model: ${EXPERT_MODEL_NAME}`);
+          console.error(`Content length: ${content.length} characters`);
+          console.error(`Raw content:\n${content}`);
+          console.error("========================\n");
           return {
             score: 0,
             reasoning: "Failed to parse judge response after 3 attempts.",
@@ -152,16 +209,11 @@ async function main() {
       console.log(`\n[${i + 1}/${results.length}] Re-judging run: ${run.runId} (${run.modelName})`);
       
       const assessment = await runJudge(question, run.response);
-      console.log(`   -> New Score: ${assessment.score}/100 (Old: ${run.aiAssessment?.score})`);
+      const oldScore = run.aiAssessments?.[EXPERT_MODEL_NAME]?.score || 'N/A';
+      console.log(`   -> New Score: ${assessment.score}/100 (Old: ${oldScore})`);
 
       // Store all assessments, keyed by evaluator model name
       const existingAssessments = run.aiAssessments || {};
-      
-      // If this is the first time we're using the aiAssessments field,
-      // preserve the original aiAssessment
-      if (!run.aiAssessments && run.aiAssessment?.evaluatorModel) {
-        existingAssessments[run.aiAssessment.evaluatorModel] = run.aiAssessment;
-      }
       
       // Add the new assessment
       existingAssessments[assessment.evaluatorModel || EXPERT_MODEL_NAME] = assessment;
@@ -169,7 +221,6 @@ async function main() {
       // Update the result in place
       results[i] = {
         ...run,
-        aiAssessment: assessment, // Keep the latest as primary for backwards compatibility
         aiAssessments: existingAssessments
       };
       

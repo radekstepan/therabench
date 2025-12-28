@@ -1,637 +1,20 @@
 import { useState, useEffect, useMemo } from 'react';
-import { 
-  LayoutDashboard, 
-  Trophy, 
-  Brain, 
-  Shield, 
-  Activity, 
-  ChevronDown, 
-  ChevronRight, 
-  Save, 
-  Download, 
-  Trash2,
-  Search,
-  Gavel,
-  History,
-  Info,
-  Edit2,
-  Plus,
-  X,
-  ArrowUpDown
-} from 'lucide-react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
-import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ModelConfig } from './types';
+import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride } from './types';
+
+// Components
+import { Sidebar } from './components/Sidebar';
+import { Dashboard } from './components/Dashboard';
+import { QuestionDetail } from './components/QuestionDetail';
+import { QuestionEditModal } from './components/QuestionEditModal';
+import { ConfirmModal } from './components/ConfirmModal';
 
 // --- Data Importing ---
 import questionsDataRaw from '../../eval-engine/data/questions.json';
 import resultsData from '../../eval-engine/data/results.json';
-import modelConfigData from '../../eval-engine/data/model-config.json';
 
 // Extract questions array from the JSON structure
 const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;
-const modelConfigs: ModelConfig[] = modelConfigData;
-
-// --- Utility ---
-function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-function getScoreColor(score: number) {
-  // Thresholds: >=80 green, 61-79 neutral, 41-60 orange, <=40 red
-  if (score >= 80) return "text-emerald-500";
-  if (score <= 40) return "text-red-500";
-  if (score <= 60) return "text-amber-500";
-  return "text-zinc-500";
-}
-
-function getModelLabels(modelName: string) {
-  const config = modelConfigs.find(c => c.modelName === modelName);
-  return config?.labels || [];
-}
-
-// (stripCategoryFromTitle removed — titles always show category tokens)
-
-// --- Components ---
-
-const ModelLabels = ({ modelName }: { modelName: string }) => {
-  const labels = getModelLabels(modelName);
-  if (labels.length === 0) return null;
-
-  return (
-    <span className="flex-shrink-0 ml-2 flex items-center gap-1">
-      {labels.map((label, idx) => (
-        <span
-          key={idx}
-          className="flex-shrink-0 inline-block px-2 py-0.5 rounded text-[10px] font-medium border"
-          style={{
-            backgroundColor: `${label.color}20`,
-            borderColor: `${label.color}40`,
-            color: label.color
-          }}
-        >
-          {label.text}
-        </span>
-      ))}
-    </span>
-  );
-};
-
-// (ModelNameWithTooltip removed — not used)
-
-const QuestionEditModal = ({
-  question,
-  isOpen,
-  onClose,
-  onSave
-}: {
-  question: QuestionNode;
-  isOpen: boolean;
-  onClose: () => void;
-  onSave: (override: QuestionOverride) => void;
-}) => {
-  const [editTitle, setEditTitle] = useState(question.title);
-  const [editScenario, setEditScenario] = useState(question.scenario);
-  const [editMustInclude, setEditMustInclude] = useState<string[]>(question.rubric.mustInclude);
-  const [editMustAvoid, setEditMustAvoid] = useState<string[]>(question.rubric.mustAvoid);
-  const [newInclude, setNewInclude] = useState('');
-  const [newAvoid, setNewAvoid] = useState('');
-
-  useEffect(() => {
-    if (isOpen) {
-      setEditTitle(question.title);
-      setEditScenario(question.scenario);
-      setEditMustInclude(question.rubric.mustInclude);
-      setEditMustAvoid(question.rubric.mustAvoid);
-    }
-  }, [isOpen, question]);
-
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
-    };
-    window.addEventListener('keydown', handleEscape);
-    return () => window.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
-
-  const handleSave = () => {
-    onSave({
-      title: editTitle,
-      scenario: editScenario,
-      rubric: {
-        mustInclude: editMustInclude,
-        mustAvoid: editMustAvoid
-      },
-      lastUpdated: Date.now()
-    });
-    onClose();
-  };
-
-  return (
-    <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4" style={{zIndex: 10000}} onClick={onClose}>
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
-        <div className="sticky top-0 bg-zinc-900 border-b border-zinc-800 p-6 flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-white">Edit Question</h2>
-          <button onClick={onClose} className="text-zinc-500 hover:text-white transition-colors">
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        <div className="p-6 space-y-6">
-          <div>
-            <label className="text-sm font-semibold text-zinc-400 mb-2 block">Title</label>
-            <input
-              type="text"
-              value={editTitle}
-              onChange={(e) => setEditTitle(e.target.value)}
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
-            />
-          </div>
-
-          <div>
-            <label className="text-sm font-semibold text-zinc-400 mb-2 block">Scenario</label>
-            <textarea
-              rows={4}
-              value={editScenario}
-              onChange={(e) => setEditScenario(e.target.value)}
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
-            />
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm font-semibold text-emerald-500 mb-2 block">Must Include</label>
-              <div className="space-y-2">
-                {editMustInclude.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm">
-                    <span className="flex-1 text-zinc-300">{item}</span>
-                    <button
-                      onClick={() => setEditMustInclude(editMustInclude.filter((_, idx) => idx !== i))}
-                      className="text-zinc-600 hover:text-red-400 transition-colors"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </div>
-                ))}
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={newInclude}
-                    onChange={(e) => setNewInclude(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && newInclude.trim()) {
-                        setEditMustInclude([...editMustInclude, newInclude.trim()]);
-                        setNewInclude('');
-                      }
-                    }}
-                    placeholder="Add item..."
-                    className="flex-1 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
-                  />
-                  <button
-                    onClick={() => {
-                      if (newInclude.trim()) {
-                        setEditMustInclude([...editMustInclude, newInclude.trim()]);
-                        setNewInclude('');
-                      }
-                    }}
-                    className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-emerald-400 rounded"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label className="text-sm font-semibold text-red-500 mb-2 block">Must Avoid</label>
-              <div className="space-y-2">
-                {editMustAvoid.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm">
-                    <span className="flex-1 text-zinc-300">{item}</span>
-                    <button
-                      onClick={() => setEditMustAvoid(editMustAvoid.filter((_, idx) => idx !== i))}
-                      className="text-zinc-600 hover:text-red-400 transition-colors"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </div>
-                ))}
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={newAvoid}
-                    onChange={(e) => setNewAvoid(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && newAvoid.trim()) {
-                        setEditMustAvoid([...editMustAvoid, newAvoid.trim()]);
-                        setNewAvoid('');
-                      }
-                    }}
-                    placeholder="Add item..."
-                    className="flex-1 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-red-500"
-                  />
-                  <button
-                    onClick={() => {
-                      if (newAvoid.trim()) {
-                        setEditMustAvoid([...editMustAvoid, newAvoid.trim()]);
-                        setNewAvoid('');
-                      }
-                    }}
-                    className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-red-400 rounded"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="sticky bottom-0 bg-zinc-900 border-t border-zinc-800 p-6 flex justify-end gap-3">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 text-zinc-400 hover:text-white transition-colors"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSave}
-            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-medium transition-colors flex items-center gap-2"
-          >
-            <Save className="w-4 h-4" />
-            Save Changes
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const RubricEditor = ({ 
-  rubric, 
-  isEditing, 
-  onToggleEdit, 
-  onSave 
-}: { 
-  rubric: Rubric;
-  isEditing: boolean;
-  onToggleEdit: () => void;
-  onSave: (rubric: Rubric) => void;
-}) => {
-  const [editedRubric, setEditedRubric] = useState<Rubric>(rubric);
-  const [newIncludeItem, setNewIncludeItem] = useState('');
-  const [newAvoidItem, setNewAvoidItem] = useState('');
-
-  useEffect(() => {
-    setEditedRubric(rubric);
-  }, [rubric, isEditing]);
-
-  const handleSave = () => {
-    onSave(editedRubric);
-  };
-
-  const addIncludeItem = () => {
-    if (newIncludeItem.trim()) {
-      setEditedRubric({
-        ...editedRubric,
-        mustInclude: [...editedRubric.mustInclude, newIncludeItem.trim()]
-      });
-      setNewIncludeItem('');
-    }
-  };
-
-  const addAvoidItem = () => {
-    if (newAvoidItem.trim()) {
-      setEditedRubric({
-        ...editedRubric,
-        mustAvoid: [...editedRubric.mustAvoid, newAvoidItem.trim()]
-      });
-      setNewAvoidItem('');
-    }
-  };
-
-  const removeIncludeItem = (index: number) => {
-    setEditedRubric({
-      ...editedRubric,
-      mustInclude: editedRubric.mustInclude.filter((_, i) => i !== index)
-    });
-  };
-
-  const removeAvoidItem = (index: number) => {
-    setEditedRubric({
-      ...editedRubric,
-      mustAvoid: editedRubric.mustAvoid.filter((_, i) => i !== index)
-    });
-  };
-
-  if (!isEditing) {
-    return (
-      <div className="flex gap-6 text-xs text-zinc-500">
-        <div className="flex-1">
-          <span className="text-emerald-500 font-semibold block mb-1">Must Include:</span>
-          <ul className="list-disc list-inside space-y-0.5">
-            {rubric.mustInclude.map((m, i) => <li key={i}>{m}</li>)}
-          </ul>
-        </div>
-        <div className="flex-1">
-          <span className="text-red-500 font-semibold block mb-1">Must Avoid:</span>
-          <ul className="list-disc list-inside space-y-0.5">
-            {rubric.mustAvoid.map((m, i) => <li key={i}>{m}</li>)}
-          </ul>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-5">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-sm font-semibold text-white">Edit Rubric</h3>
-        <div className="flex gap-2">
-          <button
-            onClick={() => {
-              setEditedRubric(rubric);
-              onToggleEdit();
-            }}
-            className="px-3 py-1 text-xs text-zinc-400 hover:text-white transition-colors"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSave}
-            className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-xs font-medium transition-colors flex items-center gap-1"
-          >
-            <Save className="w-3 h-3" />
-            Save Changes
-          </button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 gap-6">
-        <div>
-          <div className="text-emerald-500 font-semibold text-sm mb-2">Must Include:</div>
-          <div className="space-y-2">
-            {editedRubric.mustInclude.map((item, i) => (
-              <div key={i} className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded px-3 py-2 text-sm">
-                <span className="flex-1 text-zinc-300">{item}</span>
-                <button
-                  onClick={() => removeIncludeItem(i)}
-                  className="text-zinc-600 hover:text-red-400 transition-colors"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              </div>
-            ))}
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={newIncludeItem}
-                onChange={(e) => setNewIncludeItem(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && addIncludeItem()}
-                placeholder="Add new item..."
-                className="flex-1 bg-zinc-900 border border-zinc-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors"
-              />
-              <button
-                onClick={addIncludeItem}
-                className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-emerald-400 rounded transition-colors"
-              >
-                <Plus className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div className="text-red-500 font-semibold text-sm mb-2">Must Avoid:</div>
-          <div className="space-y-2">
-            {editedRubric.mustAvoid.map((item, i) => (
-              <div key={i} className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded px-3 py-2 text-sm">
-                <span className="flex-1 text-zinc-300">{item}</span>
-                <button
-                  onClick={() => removeAvoidItem(i)}
-                  className="text-zinc-600 hover:text-red-400 transition-colors"
-                >
-                  <X className="w-3 h-3" />
-                </button>
-              </div>
-            ))}
-            <div className="flex gap-2">
-              <input
-                type="text"
-                value={newAvoidItem}
-                onChange={(e) => setNewAvoidItem(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && addAvoidItem()}
-                placeholder="Add new item..."
-                className="flex-1 bg-zinc-900 border border-zinc-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-red-500 transition-colors"
-              />
-              <button
-                onClick={addAvoidItem}
-                className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-red-400 rounded transition-colors"
-              >
-                <Plus className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const ComparisonRow = ({ 
-  run, 
-  rank, 
-  isExpanded, 
-  onToggle, 
-  onSaveOverride,
-  selectedJudges
-}: { 
-  run: AugmentedResult, 
-  rank: number, 
-  isExpanded: boolean, 
-  onToggle: () => void,
-  onSaveOverride: (runId: string, override: HumanOverride) => void,
-  selectedJudges: Set<string>
-}) => {
-  const [editScore, setEditScore] = useState(run.effectiveScore);
-  const [editNotes, setEditNotes] = useState(run.override?.expertNotes || '');
-
-  // Reset local state when run changes or override updates
-  useEffect(() => {
-    setEditScore(run.effectiveScore);
-    setEditNotes(run.override?.expertNotes || '');
-  }, [run.effectiveScore, run.override]);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSaveOverride(run.runId, {
-      manualScore: Number(editScore),
-      expertNotes: editNotes,
-      rankAdjustment: 0,
-      lastUpdated: Date.now()
-    });
-  };
-
-  return (
-    <>
-      <tr 
-        onClick={onToggle} 
-        className={cn(
-          "cursor-pointer transition-colors border-b border-zinc-800/50",
-          isExpanded ? "bg-zinc-800/40" : "hover:bg-zinc-800/20"
-        )}
-      >
-        <td className="px-3 py-2 text-center w-16 text-zinc-500 font-mono text-sm whitespace-nowrap">#{rank}</td>
-        <td className="px-3 py-2 max-w-0">
-          <div className="font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
-            {run.modelName}
-          </div>
-          <div className="text-xs text-zinc-500 font-mono mt-0.5 whitespace-nowrap">
-            {new Date(run.timestamp).toLocaleString('en-US', { 
-              month: 'short', 
-              day: 'numeric', 
-              year: 'numeric', 
-              hour: '2-digit', 
-              minute: '2-digit'
-            })}
-          </div>
-        </td>
-        <td className="px-3 py-2 w-36 whitespace-nowrap">
-          <ModelLabels modelName={run.modelName} />
-        </td>
-        <td className="px-3 py-2 text-right whitespace-nowrap">
-          <div 
-            className={cn("text-sm font-bold", getScoreColor(run.effectiveScore))}
-          >
-            {run.effectiveScore}%
-          </div>
-          {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><Gavel className="w-3 h-3"/> Reviewed</div>}
-        </td>
-        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
-        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
-        <td className="px-3 py-2 text-right whitespace-nowrap">
-          {isExpanded ? <ChevronDown className="w-5 h-5 ml-auto text-zinc-500" /> : <ChevronRight className="w-5 h-5 ml-auto text-zinc-500" />}
-        </td>
-      </tr>
-      
-      {isExpanded && (
-        <tr>
-          <td colSpan={6} className="bg-zinc-900/30 p-0">
-            <div className="border-b border-zinc-800/50 p-6 grid grid-cols-12 gap-8">
-              {/* Left: Response & Analysis */}
-              <div className="col-span-8 space-y-6">
-                <div>
-                  <h4 className="text-sm font-medium text-emerald-400 mb-3 flex items-center gap-2">
-                    <Brain className="w-4 h-4" /> Model Response
-                  </h4>
-                  <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-zinc-300 leading-relaxed text-sm whitespace-pre-wrap">
-                    {run.response}
-                  </div>
-                </div>
-
-                {/* Show all judge assessments */}
-                {run.aiAssessments && Object.keys(run.aiAssessments).length > 1 ? (
-                  <div>
-                    <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                      <Shield className="w-4 h-4" /> AI Evaluations
-                      {selectedJudges.size > 0 && selectedJudges.size < Object.keys(run.aiAssessments).length && (
-                        <span className="text-xs text-amber-400">(filtered)</span>
-                      )}
-                    </h4>
-                    <div className="space-y-4">
-                      {Object.entries(run.aiAssessments)
-                        .filter(([judgeModel]) => selectedJudges.size === 0 || selectedJudges.has(judgeModel))
-                        .map(([judgeModel, assessment]) => (
-                        <div key={judgeModel} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-mono text-zinc-500">{judgeModel}</span>
-                            <div className="flex items-center gap-4">
-                              <span className={cn("text-sm font-bold", getScoreColor(assessment.score))}>
-                                Score: {assessment.score}%
-                              </span>
-                              <span className="text-xs text-zinc-600">Safety: {assessment.metrics.safety}</span>
-                              <span className="text-xs text-zinc-600">Empathy: {assessment.metrics.empathy}</span>
-                              <span className="text-xs text-zinc-600">Modality: {assessment.metrics.modalityAdherence}</span>
-                            </div>
-                          </div>
-                          <div className="text-sm text-zinc-400 italic">
-                            "{assessment.reasoning}"
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <div>
-                    <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                      <Shield className="w-4 h-4" /> AI Evaluation Reasoning
-                      {run.aiAssessment.evaluatorModel && (
-                        <span className="text-xs text-zinc-600 font-mono ml-auto">by {run.aiAssessment.evaluatorModel}</span>
-                      )}
-                    </h4>
-                    <div className="text-sm text-zinc-400 italic bg-zinc-900/50 p-4 rounded-lg border border-zinc-800/50">
-                      "{run.aiAssessment.reasoning}"
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Right: Review Form */}
-              <div className="col-span-4 bg-zinc-950 border border-zinc-800 rounded-xl p-5 h-fit">
-                <h4 className="text-sm font-medium text-white mb-4 flex items-center gap-2">
-                  <Gavel className="w-4 h-4 text-amber-500" /> Expert Review
-                </h4>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1.5 block">Score (0-100)</label>
-                    <input 
-                      type="number" 
-                      min="0" max="100"
-                      value={editScore}
-                      onChange={(e) => setEditScore(Number(e.target.value))}
-                      className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500 transition-colors font-mono"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="text-xs text-zinc-500 uppercase tracking-wider font-semibold mb-1.5 block">Notes</label>
-                    <textarea 
-                      rows={4}
-                      value={editNotes}
-                      onChange={(e) => setEditNotes(e.target.value)}
-                      placeholder="Explain why the score was adjusted..."
-                      className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
-                    />
-                  </div>
-
-                  <button 
-                    type="submit" 
-                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg py-2 text-sm font-medium transition-colors flex items-center justify-center gap-2"
-                  >
-                    <Save className="w-4 h-4" />
-                    Save & Rerank
-                  </button>
-                  
-                  {run.override && (
-                    <div className="text-center text-xs text-zinc-500 pt-2">
-                      Last updated: {new Date(run.override.lastUpdated).toLocaleDateString()}
-                    </div>
-                  )}
-                </form>
-              </div>
-            </div>
-          </td>
-        </tr>
-      )}
-    </>
-  );
-};
 
 export default function App() {
   const [overrides, setOverrides] = useState<Record<string, HumanOverride>>({});
@@ -655,11 +38,9 @@ export default function App() {
   const availableJudges = useMemo(() => {
     const judges = new Set<string>();
     (resultsData as ModelRun[]).forEach(r => {
-      // Get judges from aiAssessments if available
       if (r.aiAssessments) {
         Object.keys(r.aiAssessments).forEach(judge => judges.add(judge));
       } else if (r.aiAssessment.evaluatorModel) {
-        // Fallback to single aiAssessment
         judges.add(r.aiAssessment.evaluatorModel);
       }
     });
@@ -709,10 +90,8 @@ export default function App() {
         let effectiveEmpathy: number;
         
         if (override) {
-          // Manual override takes precedence for score
           effectiveScore = override.manualScore;
         } else if (r.aiAssessments) {
-          // Average scores from selected judges (or all if none selected)
           const judgeScores = Object.entries(r.aiAssessments)
             .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
             .map(([_, assessment]) => assessment.score);
@@ -720,15 +99,12 @@ export default function App() {
           if (judgeScores.length > 0) {
             effectiveScore = Math.round(judgeScores.reduce((a, b) => a + b, 0) / judgeScores.length);
           } else {
-            // No selected judges matched, use primary assessment
             effectiveScore = r.aiAssessment.score;
           }
         } else {
-          // Fall back to single assessment
           effectiveScore = r.aiAssessment.score;
         }
         
-        // Calculate averaged metrics from selected judges
         if (r.aiAssessments) {
           const selectedAssessments = Object.entries(r.aiAssessments)
             .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
@@ -760,9 +136,8 @@ export default function App() {
           effectiveEmpathy
         } as AugmentedResult;
       })
-      .filter(r => r.question) // Filter out orphans
+      .filter(r => r.question)
       .filter(r => {
-        // Filter by selected judges (keep if any selected judge has evaluated it)
         if (selectedJudges.size === 0) return true;
         if (r.aiAssessments) {
           return Object.keys(r.aiAssessments).some(judge => selectedJudges.has(judge));
@@ -773,27 +148,53 @@ export default function App() {
 
   // Model Leaderboard Stats
   const modelStats = useMemo(() => {
-    const stats: Record<string, { totalScore: number; safety: number; empathy: number; count: number }> = {};
+    const stats: Record<string, { totalScore: number; safety: number; empathy: number; count: number; judgeScoreMap: Record<string, number[]> }> = {};
     
     augmentedResults.forEach(r => {
       if (!stats[r.modelName]) {
-        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, count: 0 };
+        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, count: 0, judgeScoreMap: {} };
       }
       stats[r.modelName].totalScore += r.effectiveScore;
       stats[r.modelName].safety += r.effectiveSafety;
       stats[r.modelName].empathy += r.effectiveEmpathy;
       stats[r.modelName].count += 1;
+      
+      if (r.aiAssessments) {
+        Object.entries(r.aiAssessments).forEach(([judge, assessment]) => {
+          if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+            if (!stats[r.modelName].judgeScoreMap[judge]) {
+              stats[r.modelName].judgeScoreMap[judge] = [];
+            }
+            stats[r.modelName].judgeScoreMap[judge].push(assessment.score);
+          }
+        });
+      } else if (r.aiAssessment.evaluatorModel) {
+        const judge = r.aiAssessment.evaluatorModel;
+        if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+          if (!stats[r.modelName].judgeScoreMap[judge]) {
+            stats[r.modelName].judgeScoreMap[judge] = [];
+          }
+          stats[r.modelName].judgeScoreMap[judge].push(r.aiAssessment.score);
+        }
+      }
     });
 
-    const mapped = Object.entries(stats).map(([name, s]) => ({
-      name,
-      avgScore: Math.round(s.totalScore / s.count),
-      avgSafety: Math.round(s.safety / s.count),
-      avgEmpathy: Math.round(s.empathy / s.count),
-      count: s.count
-    }));
+    const mapped = Object.entries(stats).map(([name, s]) => {
+      const judgeScores = Object.entries(s.judgeScoreMap).map(([judge, scores]) => ({
+        judge,
+        score: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+      })).sort((a, b) => b.score - a.score);
+      
+      return {
+        name,
+        avgScore: Math.round(s.totalScore / s.count),
+        avgSafety: Math.round(s.safety / s.count),
+        avgEmpathy: Math.round(s.empathy / s.count),
+        count: s.count,
+        judgeScores
+      };
+    });
 
-    // Apply sorting
     return mapped.sort((a, b) => {
       let comparison = 0;
       
@@ -817,15 +218,12 @@ export default function App() {
       
       return leaderboardSortDirection === 'asc' ? comparison : -comparison;
     });
-  }, [augmentedResults, leaderboardSortBy, leaderboardSortDirection]);
+  }, [augmentedResults, leaderboardSortBy, leaderboardSortDirection, selectedJudges]);
 
-  // Calculate score-based ranks for leaderboard (and top performer)
   const modelStatsWithRank = useMemo(() => {
     const sortedByScore = [...modelStats].sort((a, b) => {
-      // Sort by score first (descending)
       const scoreDiff = b.avgScore - a.avgScore;
       if (scoreDiff !== 0) return scoreDiff;
-      // Then by name (ascending) for consistent ranks when scores are tied
       return a.name.localeCompare(b.name);
     });
     const ranks = new Map<string, number>();
@@ -838,12 +236,10 @@ export default function App() {
     }));
   }, [modelStats]);
 
-  // Top performer (always the #1 ranked model by score)
   const topPerformer = useMemo(() => {
     return modelStatsWithRank.find(stat => stat.scoreRank === 1);
   }, [modelStatsWithRank]);
 
-  // Question List for Sidebar
   const questionList = useMemo(() => {
     return (questionsData as QuestionNode[]).map(q => {
       const runs = augmentedResults.filter(r => r.questionId === q.id);
@@ -862,10 +258,7 @@ export default function App() {
     });
   }, [augmentedResults, searchTerm, categoryFilter]);
 
-  // Active Data for Details View
-  const activeQuestion = selectedQuestionId ? (
-    questionsData as QuestionNode[]
-  ).find(q => q.id === selectedQuestionId) : null;
+  const activeQuestion = selectedQuestionId ? (questionsData as QuestionNode[]).find(q => q.id === selectedQuestionId) : null;
   
   const activeQuestionWithOverrides = activeQuestion ? {
     ...activeQuestion,
@@ -877,7 +270,6 @@ export default function App() {
   const activeRuns = useMemo(() => {
     const runs = augmentedResults.filter(r => r.questionId === selectedQuestionId);
     
-    // Sort the runs
     const sorted = [...runs].sort((a, b) => {
       let comparison = 0;
       
@@ -904,13 +296,10 @@ export default function App() {
     return sorted;
   }, [augmentedResults, selectedQuestionId, sortBy, sortDirection]);
 
-  // Calculate score-based ranks for Model Responses
   const activeRunsWithRank = useMemo(() => {
     const sortedByScore = [...activeRuns].sort((a, b) => {
-      // Sort by score first (descending)
       const scoreDiff = b.effectiveScore - a.effectiveScore;
       if (scoreDiff !== 0) return scoreDiff;
-      // Then by model name (ascending) for consistent ranks when scores are tied
       return a.modelName.localeCompare(b.modelName);
     });
     const ranks = new Map<string, number>();
@@ -926,10 +315,6 @@ export default function App() {
   const handleSaveOverride = (runId: string, override: HumanOverride) => {
     const updated = saveOverride(runId, override);
     setOverrides(updated);
-  };
-
-  const handleClear = () => {
-    setIsConfirmModalOpen(true);
   };
 
   const handleConfirmClear = () => {
@@ -960,340 +345,58 @@ export default function App() {
     }
   };
 
+  const handleJudgeSelect = (judge: string) => {
+    const newSelected = new Set(selectedJudges);
+    if (newSelected.has(judge)) {
+      newSelected.delete(judge);
+    } else {
+      newSelected.add(judge);
+    }
+    setSelectedJudges(newSelected);
+  };
+
+  const handleViewChange = (newView: 'dashboard' | 'questions', questionId: string | null) => {
+    setView(newView);
+    setSelectedQuestionId(questionId);
+    setExpandedRunId(null);
+  };
+
   return (
     <div className="flex h-screen bg-zinc-950 text-zinc-100 font-sans overflow-hidden">
-      
-      {/* Sidebar Navigation */}
-      <div className="w-64 flex flex-col border-r border-zinc-800 bg-zinc-950/50">
-        <div className="p-4 border-b border-zinc-800">
-          <div className="flex items-center gap-2 text-emerald-500 font-semibold mb-1">
-            <Activity className="w-5 h-5" />
-            <span>Thera<span className="text-white">Bench</span></span>
-          </div>
-          <div className="text-xs text-zinc-500">Therapy Model Evaluator</div>
-        </div>
+      <Sidebar
+        view={view}
+        selectedQuestionId={selectedQuestionId}
+        searchTerm={searchTerm}
+        categoryFilter={categoryFilter}
+        questionList={questionList}
+        availableJudges={availableJudges}
+        selectedJudges={selectedJudges}
+        judgeDropdownOpen={judgeDropdownOpen}
+        onViewChange={handleViewChange}
+        onSearchChange={setSearchTerm}
+        onCategoryChange={setCategoryFilter}
+        onJudgeDropdownToggle={() => setJudgeDropdownOpen(!judgeDropdownOpen)}
+        onJudgeSelect={handleJudgeSelect}
+        onSelectAllJudges={() => setSelectedJudges(new Set(availableJudges))}
+        onClearAllJudges={() => setSelectedJudges(new Set())}
+        onExport={() => exportData(resultsData as ModelRun[], overrides, questionsData as QuestionNode[], rubricOverrides, questionOverrides)}
+        onClear={() => setIsConfirmModalOpen(true)}
+      />
 
-        <nav className="flex-1 overflow-y-auto py-4 px-2 space-y-1">
-          <button 
-            onClick={() => { setView('dashboard'); setSelectedQuestionId(null); setExpandedRunId(null); }}
-            className={cn(
-              "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
-              view === 'dashboard' ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
-            )}
-          >
-            <LayoutDashboard className="w-4 h-4" />
-            Overview
-          </button>
-          
-          {/* Judge Filter Dropdown */}
-          {availableJudges.length > 0 && (
-            <div className="pt-4 pb-2">
-              <div className="px-3 mb-2 flex items-center justify-between">
-                <div className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">
-                  Judges ({availableJudges.length})
-                </div>
-                {/* filter indicator removed per UX request */}
-              </div>
-              <div className="px-2">
-                <button
-                  onClick={() => setJudgeDropdownOpen(!judgeDropdownOpen)}
-                  className={cn(
-                    "w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-xs transition-colors border",
-                    selectedJudges.size === availableJudges.length
-                      ? "bg-zinc-900 text-zinc-400 border-zinc-800 hover:bg-zinc-800"
-                      : "bg-amber-900/20 text-amber-400 border-amber-500/30 hover:bg-amber-900/30"
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    <Gavel className="w-3 h-3" />
-                    <span>
-                      {selectedJudges.size === 0
-                        ? "No judges (showing all)"
-                        : selectedJudges.size === availableJudges.length
-                        ? "All judges"
-                        : `${selectedJudges.size} of ${availableJudges.length} selected`}
-                    </span>
-                  </div>
-                  {judgeDropdownOpen ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
-                </button>
-                {judgeDropdownOpen && (
-                  <div className="mt-2 bg-zinc-900 border border-zinc-800 rounded-lg p-2 space-y-1">
-                    {availableJudges.map(judge => {
-                      const isSelected = selectedJudges.has(judge);
-                      return (
-                        <button
-                          key={judge}
-                          onClick={() => {
-                            const newSelected = new Set(selectedJudges);
-                            if (isSelected) {
-                              newSelected.delete(judge);
-                            } else {
-                              newSelected.add(judge);
-                            }
-                            setSelectedJudges(newSelected);
-                          }}
-                          className={cn(
-                            "w-full text-left px-2 py-1.5 rounded text-xs transition-colors flex items-center gap-2",
-                            // Do not highlight the whole row when selected; keep row neutral
-                            isSelected
-                              ? "bg-zinc-800 text-zinc-200"
-                              : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
-                          )}
-                        >
-                          <div
-                            className={cn(
-                              "w-3 h-3 rounded-full flex-shrink-0 border-2 transition-all",
-                              // Fill the circle fully green when selected, otherwise empty
-                              isSelected
-                                ? "bg-emerald-600 border-emerald-600"
-                                : "border-zinc-600 bg-transparent"
-                            )}
-                          />
-                          <span className="font-mono text-[10px] flex-1">{judge}</span>
-                        </button>
-                      );
-                    })}
-                    <div className="pt-2 mt-2 border-t border-zinc-800 flex gap-2">
-                      <button
-                        onClick={() => setSelectedJudges(new Set(availableJudges))}
-                        className="flex-1 px-2 py-1 text-[10px] text-zinc-500 hover:text-emerald-400 transition-colors"
-                      >
-                        Select All
-                      </button>
-                      <button
-                        onClick={() => setSelectedJudges(new Set())}
-                        className="flex-1 px-2 py-1 text-[10px] text-zinc-500 hover:text-red-400 transition-colors"
-                      >
-                        Clear All
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          
-          <div className="pt-4 pb-2 px-3 text-xs font-semibold text-zinc-600 uppercase tracking-wider">
-            Questions ({questionList.length})
-          </div>
-          
-          <div className="px-2 mb-2 space-y-2">
-            <div className="flex gap-1 flex-wrap">
-              {['all', 'CBT', 'DBT', 'ACT'].map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setCategoryFilter(cat)}
-                  className={cn(
-                    "px-2 py-1 rounded text-[10px] font-medium uppercase transition-colors",
-                    categoryFilter === cat 
-                      ? "bg-emerald-600 text-white" 
-                      : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
-                  )}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-            <div className="relative">
-              <Search className="absolute left-2 top-2 w-3 h-3 text-zinc-500" />
-              <input 
-                type="text" 
-                placeholder="Filter..." 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-zinc-900 border border-zinc-800 rounded px-7 py-1.5 text-xs text-zinc-300 focus:outline-none focus:border-zinc-700"
-              />
-            </div>
-          </div>
-
-          <div className="space-y-0.5">
-                {questionList.map(q => (
-              <button
-                key={q.id}
-                onClick={() => { setView('questions'); setSelectedQuestionId(q.id); setExpandedRunId(null); }}
-                className={cn(
-                  "w-full text-left px-3 py-2.5 rounded-lg text-xs transition-all relative group",
-                  selectedQuestionId === q.id ? "bg-emerald-900/10 text-emerald-400" : "text-zinc-400 hover:bg-zinc-900"
-                )}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-mono text-zinc-600">{q.id}</span>
-                  <div className="font-medium truncate flex-1">{q.title}</div>
-                  <span className={cn(getScoreColor(q.avgScore), 'ml-2')}>{q.runCount > 0 ? `${q.avgScore}%` : '-'}</span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </nav>
-
-        <div className="p-4 border-t border-zinc-800 space-y-2">
-          <button 
-            onClick={() => exportData(resultsData as ModelRun[], overrides, questionsData as QuestionNode[], rubricOverrides, questionOverrides)}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded text-xs text-zinc-300 transition-colors"
-          >
-            <Download className="w-3 h-3" /> Export JSON
-          </button>
-           <button 
-            onClick={handleClear}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 hover:bg-red-900/20 text-red-400/50 hover:text-red-400 rounded text-xs transition-colors"
-          >
-            <Trash2 className="w-3 h-3" /> Reset
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content Area */}
       <main className="flex-1 flex flex-col h-full overflow-hidden bg-zinc-950">
         {view === 'dashboard' ? (
-          <div className="p-8 max-w-5xl mx-auto w-full overflow-y-auto">
-            <header className="mb-8">
-              <h1 className="text-3xl font-light text-white mb-2">Model Leaderboard</h1>
-              <p className="text-zinc-500">Aggregated performance across {questionsData.length} therapeutic scenarios.</p>
-            </header>
-
-
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-              {topPerformer && (
-                <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-2xl relative overflow-hidden flex flex-col">
-                  <div className="absolute top-4 right-4 text-emerald-500/20"><Trophy className="w-16 h-16" /></div>
-                  <div className="relative z-10">
-                    <div className="text-emerald-500 text-sm font-medium uppercase tracking-wide mb-1">Top Performer</div>
-                  </div>
-                  <div className="flex-1 flex flex-col justify-center relative z-10">
-                    <div className="text-2xl font-bold text-white mb-1">{topPerformer.name}</div>
-                    <div className="text-3xl font-light text-emerald-400">{topPerformer.avgScore}% <span className="text-sm text-emerald-600/70 ml-1">avg</span></div>
-                  </div>
-                </div>
-              )}
-              <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl flex flex-col">
-                <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Total Evaluations</div>
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="text-4xl font-light text-white">{augmentedResults.length}</div>
-                </div>
-              </div>
-              <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl flex flex-col">
-                 <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Reviews Completed</div>
-                 <div className="flex-1 flex items-center justify-center">
-                   <div className="text-4xl font-light text-amber-400">{Object.keys(overrides).length}</div>
-                 </div>
-              </div>
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-visible">
-              <table className="w-full text-left">
-                <thead className="bg-zinc-900/50 border-b border-zinc-800">
-                  <tr>
-                    <th className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Rank</th>
-                    <th 
-                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors w-full"
-                      onClick={() => handleLeaderboardSort('name')}
-                    >
-                      <div className="flex items-center gap-1">
-                        Model Name
-                        <ArrowUpDown className={cn(
-                          "w-3 h-3 transition-transform",
-                          leaderboardSortBy === 'name'
-                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                            : 'text-zinc-400'
-                        )} />
-                      </div>
-                    </th>
-                    <th className="px-2 py-2 whitespace-nowrap" />
-                    <th 
-                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                      onClick={() => handleLeaderboardSort('score')}
-                    >
-                      <div className="flex items-center justify-end gap-1">
-                        Avg Score
-                        <ArrowUpDown className={cn(
-                          "w-3 h-3 transition-transform",
-                          leaderboardSortBy === 'score'
-                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                            : 'text-zinc-400'
-                        )} />
-                      </div>
-                    </th>
-                    <th 
-                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                      onClick={() => handleLeaderboardSort('safety')}
-                    >
-                      <div className="flex items-center justify-center gap-1 group relative">
-                        Safety
-                        <ArrowUpDown className={cn(
-                          "w-3 h-3 transition-transform",
-                          leaderboardSortBy === 'safety'
-                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                            : 'text-zinc-400'
-                        )} />
-                        <Info className="w-3 h-3 cursor-help ml-1" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
-                          <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
-                          Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
-                        </div>
-                      </div>
-                    </th>
-                    <th 
-                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                      onClick={() => handleLeaderboardSort('empathy')}
-                    >
-                      <div className="flex items-center justify-center gap-1 group relative">
-                        Empathy
-                        <ArrowUpDown className={cn(
-                          "w-3 h-3 transition-transform",
-                          leaderboardSortBy === 'empathy'
-                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                            : 'text-zinc-400'
-                        )} />
-                        <Info className="w-3 h-3 cursor-help ml-1" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
-                          <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
-                          Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
-                        </div>
-                      </div>
-                    </th>
-                    <th 
-                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                      onClick={() => handleLeaderboardSort('runs')}
-                    >
-                      <div className="flex items-center justify-end gap-1">
-                        Runs
-                        <ArrowUpDown className={cn(
-                          "w-3 h-3 transition-transform",
-                          leaderboardSortBy === 'runs'
-                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                            : 'text-zinc-400'
-                        )} />
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-800">
-                  {modelStatsWithRank.map((stat) => (
-                    <tr key={stat.name} className="group hover:bg-zinc-800/50 transition-colors">
-                      <td className="px-4 py-2 text-zinc-500 font-mono whitespace-nowrap">#{stat.scoreRank}</td>
-                      <td className="px-4 py-2 max-w-0">
-                        <div className="font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
-                          {stat.name}
-                        </div>
-                      </td>
-                      <td className="px-2 py-2 align-middle whitespace-nowrap">
-                        <ModelLabels modelName={stat.name} />
-                      </td>
-                      <td className={cn("px-4 py-2 text-right font-bold whitespace-nowrap", getScoreColor(stat.avgScore))}>{stat.avgScore}%</td>
-                      <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgSafety}</td>
-                      <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgEmpathy}</td>
-                      <td className="px-4 py-2 text-right text-zinc-400 whitespace-nowrap">{stat.count}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <Dashboard
+            modelStats={modelStatsWithRank}
+            topPerformer={topPerformer}
+            totalEvaluations={augmentedResults.length}
+            reviewsCompleted={Object.keys(overrides).length}
+            sortBy={leaderboardSortBy}
+            sortDirection={leaderboardSortDirection}
+            onSort={handleLeaderboardSort}
+          />
         ) : (
-          /* Question Detail View */
           activeQuestionWithOverrides ? (
-            <div className="flex flex-col h-full">
+            <>
               <QuestionEditModal 
                 question={activeQuestionWithOverrides}
                 isOpen={isQuestionModalOpen}
@@ -1303,157 +406,26 @@ export default function App() {
                   setQuestionOverrides(updated);
                 }}
               />
-              
-              {/* Question Header */}
-              <div className="bg-zinc-900/50 border-b border-zinc-800 p-8">
-                <div className="max-w-5xl mx-auto">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">                        <span className="text-zinc-600 font-mono text-xs">{activeQuestionWithOverrides.id}</span>                        <span className={cn(
-                          "px-2 py-0.5 rounded text-xs font-medium border",
-                          activeQuestionWithOverrides.category === 'Safety' ? "bg-red-900/20 text-red-400 border-red-900/30" : "bg-sky-900/20 text-sky-400 border-sky-900/30"
-                        )}>
-                          {activeQuestionWithOverrides.category}
-                        </span>
-                        <span className="text-zinc-500 text-xs">Difficulty: {activeQuestionWithOverrides.difficulty}</span>
-                      </div>
-                      <h2 className="text-2xl font-light text-white">{activeQuestionWithOverrides.title}</h2>
-                    </div>
-                    <button
-                      onClick={() => setIsQuestionModalOpen(true)}
-                      className="p-2 text-zinc-600 hover:text-emerald-400 hover:bg-zinc-900 rounded-lg transition-colors"
-                      title="Edit question"
-                    >
-                      <Edit2 className="w-5 h-5" />
-                    </button>
-                  </div>
-                  
-                  <div className="bg-zinc-950 border border-zinc-800 p-5 rounded-xl text-zinc-300 italic mb-6">
-                    "{activeQuestionWithOverrides.scenario}"
-                  </div>
-
-                  <RubricEditor 
-                    rubric={activeQuestionWithOverrides.rubric}
-                    isEditing={editingRubric}
-                    onToggleEdit={() => setEditingRubric(!editingRubric)}
-                    onSave={(newRubric) => {
-                      const updated = saveRubricOverride(activeQuestionWithOverrides.id, newRubric);
-                      setRubricOverrides(updated);
-                      setEditingRubric(false);
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Comparison Table Area */}
-              <div className="flex-1 overflow-y-auto bg-zinc-950 p-8">
-                <div className="max-w-5xl mx-auto">
-                   <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-lg font-medium text-white flex items-center gap-2">
-                        <History className="w-5 h-5 text-zinc-500" /> Model Responses
-                      </h3>
-                      <span className="text-xs text-zinc-500">{activeRuns.length} runs found</span>
-                   </div>
-
-                   {activeRuns.length === 0 ? (
-                     <div className="text-center py-20 border border-dashed border-zinc-800 rounded-xl">
-                       <p className="text-zinc-500">No models have been run on this question yet.</p>
-                     </div>
-                   ) : (
-                     <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-visible shadow-lg">
-                       <table className="w-full">
-                         <thead className="bg-zinc-900/50 border-b border-zinc-800">
-                           <tr>
-                             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase w-16 text-center whitespace-nowrap">Rank</th>
-                             <th 
-                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase cursor-pointer hover:text-zinc-300 transition-colors w-full"
-                               onClick={() => handleSort('model')}
-                             >
-                               <div className="flex items-center gap-1">
-                                 Model
-                                 <ArrowUpDown className={cn(
-                                   "w-3 h-3 transition-transform",
-                                   sortBy === 'model'
-                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                                     : 'text-zinc-400'
-                                 )} />
-                               </div>
-                             </th>
-                             <th className="px-2 py-2 whitespace-nowrap" />
-                             <th 
-                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                               onClick={() => handleSort('score')}
-                             >
-                               <div className="flex items-center justify-end gap-1">
-                                 Score
-                                 <ArrowUpDown className={cn(
-                                   "w-3 h-3 transition-transform",
-                                   sortBy === 'score'
-                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                                     : 'text-zinc-400'
-                                 )} />
-                               </div>
-                             </th>
-                             <th 
-                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                               onClick={() => handleSort('safety')}
-                             >
-                               <div className="flex items-center justify-center gap-1 group relative">
-                                 Safety
-                                 <ArrowUpDown className={cn(
-                                   "w-3 h-3 transition-transform",
-                                   sortBy === 'safety'
-                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                                     : 'text-zinc-400'
-                                 )} />
-                                 <Info className="w-3 h-3 cursor-help ml-1" />
-                                 <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
-                                   <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
-                                   Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
-                                 </div>
-                               </div>
-                             </th>
-                             <th 
-                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                               onClick={() => handleSort('empathy')}
-                             >
-                               <div className="flex items-center justify-center gap-1 group relative">
-                                 Empathy
-                                 <ArrowUpDown className={cn(
-                                   "w-3 h-3 transition-transform",
-                                   sortBy === 'empathy'
-                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                                     : 'text-zinc-400'
-                                 )} />
-                                 <Info className="w-3 h-3 cursor-help ml-1" />
-                                 <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
-                                   <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
-                                   Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
-                                 </div>
-                               </div>
-                             </th>
-                             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right w-16 whitespace-nowrap">Run</th>
-                           </tr>
-                         </thead>
-                         <tbody className="bg-zinc-900">
-                           {activeRunsWithRank.map((run) => (
-                             <ComparisonRow 
-                               key={run.runId} 
-                               run={run} 
-                               rank={run.scoreRank}
-                               isExpanded={expandedRunId === run.runId}
-                               onToggle={() => setExpandedRunId(expandedRunId === run.runId ? null : run.runId)}
-                               onSaveOverride={handleSaveOverride}
-                               selectedJudges={selectedJudges}
-                             />
-                           ))}
-                         </tbody>
-                       </table>
-                     </div>
-                   )}
-                </div>
-              </div>
-            </div>
+              <QuestionDetail
+                question={activeQuestionWithOverrides}
+                runs={activeRunsWithRank}
+                expandedRunId={expandedRunId}
+                editingRubric={editingRubric}
+                sortBy={sortBy}
+                sortDirection={sortDirection}
+                selectedJudges={selectedJudges}
+                onEditQuestion={() => setIsQuestionModalOpen(true)}
+                onToggleRubricEdit={() => setEditingRubric(!editingRubric)}
+                onSaveRubric={(newRubric) => {
+                  const updated = saveRubricOverride(activeQuestionWithOverrides.id, newRubric);
+                  setRubricOverrides(updated);
+                  setEditingRubric(false);
+                }}
+                onToggleRun={(runId) => setExpandedRunId(expandedRunId === runId ? null : runId)}
+                onSaveOverride={handleSaveOverride}
+                onSort={handleSort}
+              />
+            </>
           ) : (
             <div className="flex items-center justify-center h-full text-zinc-500">
               Select a question from the sidebar to view details.
@@ -1462,31 +434,11 @@ export default function App() {
         )}
       </main>
 
-      {/* Confirm Modal */}
-      {isConfirmModalOpen && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={() => setIsConfirmModalOpen(false)}>
-          <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-lg font-semibold text-white mb-3">Confirm Reset</h3>
-            <p className="text-zinc-400 text-sm mb-6">
-              Clear all manual reviews and rubric edits? This action cannot be undone.
-            </p>
-            <div className="flex gap-3 justify-end">
-              <button
-                onClick={() => setIsConfirmModalOpen(false)}
-                className="px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleConfirmClear}
-                className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-sm font-medium transition-colors"
-              >
-                Clear All Data
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <ConfirmModal
+        isOpen={isConfirmModalOpen}
+        onClose={() => setIsConfirmModalOpen(false)}
+        onConfirm={handleConfirmClear}
+      />
     </div>
   );
 }
