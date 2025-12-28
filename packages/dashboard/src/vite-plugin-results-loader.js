@@ -2,6 +2,17 @@
  * Vite plugin to load results from multi-file structure
  * This replaces the single results.json import with a merged dataset
  */
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 import fs from 'fs';
 import path from 'path';
 function loadAllResults(resultsDir) {
@@ -9,7 +20,8 @@ function loadAllResults(resultsDir) {
         console.warn('⚠️  Results directory not found, returning empty array');
         return [];
     }
-    var allResults = [];
+    // Use a Map to merge runs by runId
+    var resultsMap = new Map();
     try {
         // Traverse the directory structure
         var candidateDirs = fs.readdirSync(resultsDir);
@@ -33,7 +45,21 @@ function loadAllResults(resultsDir) {
                     try {
                         var runs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
                         if (Array.isArray(runs)) {
-                            allResults.push.apply(allResults, runs);
+                            // Merge runs with the same runId
+                            for (var _c = 0, runs_1 = runs; _c < runs_1.length; _c++) {
+                                var run = runs_1[_c];
+                                if (resultsMap.has(run.runId)) {
+                                    // Merge aiAssessments from this file into existing run
+                                    var existing = resultsMap.get(run.runId);
+                                    if (run.aiAssessments) {
+                                        existing.aiAssessments = __assign(__assign({}, existing.aiAssessments), run.aiAssessments);
+                                    }
+                                }
+                                else {
+                                    // First time seeing this runId
+                                    resultsMap.set(run.runId, run);
+                                }
+                            }
                         }
                     }
                     catch (error) {
@@ -46,7 +72,7 @@ function loadAllResults(resultsDir) {
     catch (error) {
         console.error('Error loading results:', error);
     }
-    return allResults;
+    return Array.from(resultsMap.values());
 }
 export default function resultsLoaderPlugin() {
     var virtualModuleId = 'virtual:results';
@@ -60,8 +86,10 @@ export default function resultsLoaderPlugin() {
         },
         load: function (id) {
             if (id === resolvedVirtualModuleId) {
-                var resultsDir = path.join(__dirname, '../eval-engine/data/results');
-                var oldResultsPath = path.join(__dirname, '../eval-engine/data/results.json');
+                // Use path relative to this file's location
+                var pluginDir = path.dirname(new URL(import.meta.url).pathname);
+                var resultsDir = path.resolve(pluginDir, '../../eval-engine/data/results');
+                var oldResultsPath = path.resolve(pluginDir, '../../eval-engine/data/results.json');
                 var results = [];
                 // Try loading from new structure first
                 if (fs.existsSync(resultsDir)) {

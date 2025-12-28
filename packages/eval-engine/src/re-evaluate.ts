@@ -258,6 +258,10 @@ async function main() {
 
     // Group results by candidate model and timestamp for saving
     const resultsByRun = new Map<string, { candidateModel: string; timestamp: string; runs: ModelRun[] }>();
+    
+    // Save batch size - save every N evaluations to disk
+    const SAVE_BATCH_SIZE = 10;
+    let processedCount = 0;
 
     // Work with results to re-evaluate them
     for (let i = 0; i < sortedResults.length; i++) {
@@ -302,10 +306,21 @@ async function main() {
         });
       }
       resultsByRun.get(runKey)!.runs.push(updatedRun);
+      
+      processedCount++;
+      
+      // Save incrementally every SAVE_BATCH_SIZE evaluations
+      if (processedCount % SAVE_BATCH_SIZE === 0) {
+        console.log(`\n💾 [Progress Save] Saving batch at ${processedCount}/${sortedResults.length}...`);
+        for (const [, { candidateModel, timestamp, runs }] of resultsByRun.entries()) {
+          saveResults(runs, candidateModel, judgeModel, timestamp);
+        }
+        console.log(`   ✓ Batch saved to disk`);
+      }
     }
 
-    // Save results back to their respective files
-    console.log(`\n💾 Saving updated results to multi-file structure...`);
+    // Final save for any remaining results
+    console.log(`\n💾 Saving final results to multi-file structure...`);
     for (const [, { candidateModel, timestamp, runs }] of resultsByRun.entries()) {
       saveResults(runs, candidateModel, judgeModel, timestamp);
       console.log(`   Saved ${runs.length} results for ${candidateModel}/${judgeModel}/${timestamp}`);
