@@ -34,6 +34,8 @@ export interface ModelRun {
   timestamp: string;
   response: string;
   aiAssessment: JudgeAssessment;
+  // Store assessments from multiple judges, keyed by evaluator model name
+  aiAssessments?: Record<string, JudgeAssessment>;
 }
 
 export interface HumanOverride {

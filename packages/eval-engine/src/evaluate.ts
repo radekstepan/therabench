@@ -199,7 +199,10 @@ async function main() {
         modelName: CANDIDATE_MODEL_NAME,
         timestamp: new Date().toISOString(),
         response,
-        aiAssessment: assessment
+        aiAssessment: assessment,
+        aiAssessments: {
+          [assessment.evaluatorModel || EXPERT_MODEL_NAME]: assessment
+        }
       };
       
       results.push(run);

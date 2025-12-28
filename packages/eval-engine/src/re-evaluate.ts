@@ -156,9 +156,22 @@ async function main() {
       const assessment = await runJudge(question, run.response);
       console.log(`   -> New Score: ${assessment.score}/100 (Old: ${run.aiAssessment?.score})`);
 
+      // Store all assessments, keyed by evaluator model name
+      const existingAssessments = run.aiAssessments || {};
+      
+      // If this is the first time we're using the aiAssessments field,
+      // preserve the original aiAssessment
+      if (!run.aiAssessments && run.aiAssessment?.evaluatorModel) {
+        existingAssessments[run.aiAssessment.evaluatorModel] = run.aiAssessment;
+      }
+      
+      // Add the new assessment
+      existingAssessments[assessment.evaluatorModel || EXPERT_MODEL_NAME] = assessment;
+
       newResults.push({
         ...run,
-        aiAssessment: assessment
+        aiAssessment: assessment, // Keep the latest as primary for backwards compatibility
+        aiAssessments: existingAssessments
       });
       
       // Save progress after each entry
