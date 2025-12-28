@@ -2,10 +2,14 @@
   "name": "@eval/engine",
   "version": "0.1.0",
   "main": "dist/index.js",
+  "bin": {
+    "eval-engine": "./bin/eval.js",
+    "eval-gen": "./bin/gen.js"
+  },
   "scripts": {
     "build": "tsc",
-    "gen": "ts-node src/generate.ts",
-    "eval": "ts-node src/evaluate.ts"
+    "gen": "node bin/gen.js",
+    "eval": "node bin/eval.js"
   },
   "dependencies": {
     "dotenv": "^16.0.0",

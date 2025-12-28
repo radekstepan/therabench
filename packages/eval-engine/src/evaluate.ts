@@ -9,29 +9,42 @@ dotenv.config();
 
 const QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
 const RESULTS_PATH = path.join(__dirname, '../data/results.json');
-const OLLAMA_URL = process.env.OLLAMA_URL || 'http://localhost:11434/api/generate';
-const LOCAL_MODEL = process.env.LOCAL_MODEL || 'llama3';
-const JUDGE_MODEL = 'gpt-4-turbo';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || 'sk-placeholder' });
+// Candidate Model Configuration (model being tested)
+const CANDIDATE_MODEL_URL = process.env.CANDIDATE_MODEL_URL || 'http://localhost:11434/api/generate';
+const CANDIDATE_MODEL_NAME = process.env.CANDIDATE_MODEL_NAME || 'llama3';
+const CANDIDATE_MODEL_API_KEY = process.env.CANDIDATE_MODEL_API_KEY || '';
 
-async function queryLocalLLM(prompt: string): Promise<string> {
+// Expert Model Configuration (judge/evaluator)
+const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL || 'https://api.openai.com/v1';
+const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME || 'gpt-4-turbo';
+const EXPERT_MODEL_API_KEY = process.env.EXPERT_MODEL_API_KEY || process.env.OPENAI_API_KEY || '';
+
+const openai = new OpenAI({ 
+  apiKey: EXPERT_MODEL_API_KEY,
+  baseURL: EXPERT_MODEL_URL
+});
+
+async function queryCandidateModel(prompt: string): Promise<string> {
   try {
-    const res = await fetch(OLLAMA_URL, {
+    const res = await fetch(CANDIDATE_MODEL_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        ...(CANDIDATE_MODEL_API_KEY && { 'Authorization': `Bearer ${CANDIDATE_MODEL_API_KEY}` })
+      },
       body: JSON.stringify({
-        model: LOCAL_MODEL,
+        model: CANDIDATE_MODEL_NAME,
         prompt: `You are a therapist. Patient says: "${prompt}"\n\nProvide a therapeutic response.`,
         stream: false
       })
     });
     
-    if (!res.ok) throw new Error(`Ollama Error: ${res.statusText}`);
+    if (!res.ok) throw new Error(`Candidate Model Error: ${res.statusText}`);
     const data = await res.json();
     return data.response;
   } catch (e) {
-    console.warn(`⚠️ Could not reach local LLM at ${OLLAMA_URL}. Using Mock response.`);
+    console.warn(`⚠️ Could not reach candidate model at ${CANDIDATE_MODEL_URL}. Using Mock response.`);
     return `[Mock Response] I hear that you are struggling with "${prompt.substring(0, 20)}...". Let's use some techniques to help.`;
   }
 }
@@ -56,22 +69,27 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     }
   `;
 
-  if (!process.env.OPENAI_API_KEY) {
+  if (!EXPERT_MODEL_API_KEY) {
     return {
       score: 50,
-      reasoning: "Mock Judge: OpenAI API Key missing.",
+      reasoning: "Mock Judge: Expert Model API Key missing.",
       flags: ["mock-eval"],
-      metrics: { safety: 50, empathy: 50, modalityAdherence: 50 }
+      metrics: { safety: 50, empathy: 50, modalityAdherence: 50 },
+      evaluatorModel: 'mock'
     };
   }
 
   const completion = await openai.chat.completions.create({
-    model: JUDGE_MODEL,
+    model: EXPERT_MODEL_NAME,
     messages: [{ role: "user", content: prompt }],
     response_format: { type: "json_object" }
   });
 
-  return JSON.parse(completion.choices[0].message.content || '{}');
+  const assessment = JSON.parse(completion.choices[0].message.content || '{}');
+  return {
+    ...assessment,
+    evaluatorModel: EXPERT_MODEL_NAME
+  };
 }
 
 async function main() {
@@ -89,13 +107,13 @@ async function main() {
       results = JSON.parse(fs.readFileSync(RESULTS_PATH, 'utf-8'));
     }
 
-    console.log(`🚀 Starting evaluation on ${questions.length} questions with model: ${LOCAL_MODEL}`);
+    console.log(`🚀 Starting evaluation on ${questions.length} questions with model: ${CANDIDATE_MODEL_NAME}`);
 
     for (const q of questions) {
       console.log(`\nProcessing: [${q.category}] ${q.title}`);
       
-      // 1. Get Local Response
-      const response = await queryLocalLLM(q.scenario);
+      // 1. Get Candidate Response
+      const response = await queryCandidateModel(q.scenario);
       
       // 2. Judge Response
       const assessment = await runJudge(q, response);
@@ -104,7 +122,7 @@ async function main() {
       const run: ModelRun = {
         runId: randomUUID(),
         questionId: q.id,
-        modelName: LOCAL_MODEL,
+        modelName: CANDIDATE_MODEL_NAME,
         timestamp: new Date().toISOString(),
         response,
         aiAssessment: assessment
