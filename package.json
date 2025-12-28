@@ -1,0 +1,18 @@
+{
+  "name": "therapy-llm-eval",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "build": "lerna run build",
+    "eval:gen": "lerna run gen --scope=@eval/engine",
+    "eval:run": "lerna run eval --scope=@eval/engine",
+    "ui": "lerna run dev --scope=@eval/dashboard"
+  },
+  "devDependencies": {
+    "lerna": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
