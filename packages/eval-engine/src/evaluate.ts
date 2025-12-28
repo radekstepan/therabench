@@ -282,6 +282,10 @@ async function main() {
     console.log(`   Run Timestamp: ${runTimestamp}\n`);
 
     const results: ModelRun[] = [];
+    
+    // Save batch size - save every N evaluations to disk
+    const SAVE_BATCH_SIZE = 10;
+    let processedCount = 0;
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
@@ -306,9 +310,18 @@ async function main() {
       };
       
       results.push(run);
+      processedCount++;
+      
+      // Save incrementally every SAVE_BATCH_SIZE evaluations
+      if (processedCount % SAVE_BATCH_SIZE === 0) {
+        console.log(`\n💾 [Progress Save] Saving batch at ${processedCount}/${questions.length}...`);
+        saveResults(results, CANDIDATE_MODEL_NAME, judgeModel, runTimestamp);
+        console.log(`   ✓ Batch saved to disk\n`);
+      }
     }
 
-    // Save all results for this evaluation run to the new structure
+    // Final save for all results (including any remaining after last batch)
+    console.log(`\n💾 Saving final results...`);
     saveResults(results, CANDIDATE_MODEL_NAME, judgeModel, runTimestamp);
     
     console.log(`\n✅ Evaluation complete!`);
