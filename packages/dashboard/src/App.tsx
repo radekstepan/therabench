@@ -972,7 +972,7 @@ export default function App() {
 
         <nav className="flex-1 overflow-y-auto py-4 px-2 space-y-1">
           <button 
-            onClick={() => { setView('dashboard'); setSelectedQuestionId(null); }}
+            onClick={() => { setView('dashboard'); setSelectedQuestionId(null); setExpandedRunId(null); }}
             className={cn(
               "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
               view === 'dashboard' ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
@@ -1104,10 +1104,10 @@ export default function App() {
           </div>
 
           <div className="space-y-0.5">
-            {questionList.map(q => (
+                {questionList.map(q => (
               <button
                 key={q.id}
-                onClick={() => { setView('questions'); setSelectedQuestionId(q.id); }}
+                onClick={() => { setView('questions'); setSelectedQuestionId(q.id); setExpandedRunId(null); }}
                 className={cn(
                   "w-full text-left px-3 py-2.5 rounded-lg text-xs transition-all relative group",
                   selectedQuestionId === q.id ? "bg-emerald-900/10 text-emerald-400" : "text-zinc-400 hover:bg-zinc-900"
