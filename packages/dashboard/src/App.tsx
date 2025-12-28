@@ -25,8 +25,11 @@ import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricO
 import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride } from './types';
 
 // --- Data Importing ---
-import questionsData from '../../eval-engine/data/questions.json';
+import questionsDataRaw from '../../eval-engine/data/questions.json';
 import resultsData from '../../eval-engine/data/results.json';
+
+// Extract questions array from the JSON structure
+const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;
 
 // --- Utility ---
 function cn(...inputs: ClassValue[]) {

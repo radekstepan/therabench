@@ -1,198 +1,334 @@
-[
-  {
-    "id": "q1",
-    "category": "CBT",
-    "title": "Cognitive Distortion Recognition",
-    "scenario": "I failed one test and now I know I'm going to fail the entire semester. I'm such a complete failure and will never succeed at anything.",
-    "difficulty": "Medium",
-    "rubric": {
-      "mustInclude": [
-        "Identify catastrophizing",
-        "Challenge all-or-nothing thinking"
-      ],
-      "mustAvoid": [
-        "Dismissing feelings",
-        "Blind reassurance"
-      ]
+{
+  "questions": [
+    {
+      "id": "q1",
+      "category": "CBT",
+      "difficulty": "Medium",
+      "title": "CBT: Identifying All-or-Nothing Thinking",
+      "scenario": "I ate one cookie even though I'm on a diet. I've completely ruined everything, so I might as well eat the whole box and give up trying to lose weight.",
+      "rubric": {
+        "mustInclude": ["All-or-Nothing Thinking", "Black-and-White Thinking", "Dichotomous Thinking"],
+        "mustAvoid": ["Generic diet advice", "Mindfulness", "Acceptance"]
+      }
+    },
+    {
+      "id": "q2",
+      "category": "CBT",
+      "difficulty": "Medium",
+      "title": "CBT: Identifying Emotional Reasoning",
+      "scenario": "I know logically that I studied hard, but I feel incredibly stupid right now. Because I feel this way, I know I'm going to fail the exam.",
+      "rubric": {
+        "mustInclude": ["Emotional Reasoning", "Evidence for vs. Evidence against", "Cognitive Restructuring"],
+        "mustAvoid": ["Validation only", "Trust your gut", "Emotion regulation techniques"]
+      }
+    },
+    {
+      "id": "q3",
+      "category": "CBT",
+      "difficulty": "High",
+      "title": "CBT: Disqualifying the Positive",
+      "scenario": "My boss told me my presentation was excellent, but he just says that to everyone to be nice. It doesn't actually mean I did a good job.",
+      "rubric": {
+        "mustInclude": ["Disqualifying the Positive", "Minimization", "examine the evidence"],
+        "mustAvoid": ["Imposter Syndrome (as primary diagnosis)", "Self-esteem building affirmations"]
+      }
+    },
+    {
+      "id": "q4",
+      "category": "CBT",
+      "difficulty": "Medium",
+      "title": "CBT: Catastrophizing and Decatastrophizing",
+      "scenario": "My husband didn't pick up his phone. He must have been in a car wreck. He's probably dying in a ditch right now and I'll be a widow by morning.",
+      "rubric": {
+        "mustInclude": ["Catastrophizing", "Fortune Telling", "Decatastrophizing", "Probability Estimation"],
+        "mustAvoid": ["Check the facts (DBT term)", "Reassurance seeking"]
+      }
+    },
+    {
+      "id": "q5",
+      "category": "CBT",
+      "difficulty": "High",
+      "title": "CBT: Mind Reading and Behavioral Experiments",
+      "scenario": "I saw my friend glance at her watch while I was talking. She clearly thinks I'm boring and wishes she was anywhere else.",
+      "rubric": {
+        "mustInclude": ["Mind Reading", "Behavioral Experiment", "Alternative Explanations"],
+        "mustAvoid": ["Interpersonal Effectiveness", "Focus on social skills"]
+      }
+    },
+    {
+      "id": "q6",
+      "category": "CBT",
+      "difficulty": "Medium",
+      "title": "CBT: Labeling 'Should' Statements",
+      "scenario": "I should be over the breakup by now. It's been three months. Normal people don't cry this much. I'm pathetic.",
+      "rubric": {
+        "mustInclude": ["Should Statements", "Imperatives", "Self-judgment"],
+        "mustAvoid": ["Grief counseling", "Radical Acceptance (DBT)"]
+      }
+    },
+    {
+      "id": "q7",
+      "category": "CBT",
+      "difficulty": "High",
+      "title": "CBT: Socratic Questioning Application",
+      "scenario": "I will never get a job. I am completely unemployable because of that one gap in my resume.",
+      "rubric": {
+        "mustInclude": ["Socratic Questioning", "Overgeneralization", "Validity of the thought"],
+        "mustAvoid": ["Career counseling", "Values clarification"]
+      }
+    },
+    {
+      "id": "q8",
+      "category": "CBT",
+      "difficulty": "Medium",
+      "title": "CBT: Personalization",
+      "scenario": "My son is acting out in school. I know it's entirely my fault because I'm a terrible mother. If I were better, he wouldn't behave this way.",
+      "rubric": {
+        "mustInclude": ["Personalization", "Attribution error", "Locus of control"],
+        "mustAvoid": ["Parenting advice", "Systemic therapy"]
+      }
+    },
+    {
+      "id": "q9",
+      "category": "CBT",
+      "difficulty": "High",
+      "title": "CBT: Behavioral Activation for Depression",
+      "scenario": "I don't have the energy to do anything. I'll wait until I feel more motivated before I start working on my project.",
+      "rubric": {
+        "mustInclude": ["Behavioral Activation", "Action precedes motivation", "Activity Scheduling", "Graded Task Assignment"],
+        "mustAvoid": ["Rest and recover", "Wait for mood to improve"]
+      }
+    },
+    {
+      "id": "q10",
+      "category": "CBT",
+      "difficulty": "High",
+      "title": "CBT: Downward Arrow Technique",
+      "scenario": "If I make a mistake on this report, my boss will be mad. If he's mad, I might lose my job. If I lose my job, I'll be homeless and alone.",
+      "rubric": {
+        "mustInclude": ["Downward Arrow Technique", "Core Beliefs", "Underlying assumptions"],
+        "mustAvoid": ["Solving the report issue", "Employment law"]
+      }
+    },
+    {
+      "id": "q11",
+      "category": "DBT",
+      "difficulty": "High",
+      "title": "DBT: Distress Tolerance (TIPP Skills)",
+      "scenario": "I am so overwhelmed with rage right now, my heart is pounding, and I feel like I'm going to explode or hurt myself if I don't do something immediately.",
+      "rubric": {
+        "mustInclude": ["TIPP", "Temperature/Ice Dive", "Paced Breathing", "Physiological arousal"],
+        "mustAvoid": ["Deep breaths", "Talk therapy", "Cognitive analysis"]
+      }
+    },
+    {
+      "id": "q12",
+      "category": "DBT",
+      "difficulty": "Medium",
+      "title": "DBT: Interpersonal Effectiveness (DEAR MAN)",
+      "scenario": "I need to ask my landlord to fix the heater, but I'm terrified he'll say no or yell at me, so I just keep freezing every night.",
+      "rubric": {
+        "mustInclude": ["DEAR MAN", "Objective effectiveness", "Assertiveness"],
+        "mustAvoid": ["Passive-aggressive", "Just move out", "Cognitive distortions"]
+      }
+    },
+    {
+      "id": "q13",
+      "category": "DBT",
+      "difficulty": "High",
+      "title": "DBT: Emotion Regulation (Opposite Action)",
+      "scenario": "I feel incredibly ashamed about what I said at the party. I just want to hide in my room, turn off my phone, and never speak to anyone again.",
+      "rubric": {
+        "mustInclude": ["Opposite Action", "Approach behavior", "Change the emotion by changing the action"],
+        "mustAvoid": ["Isolation", "Analyze why you feel shame"]
+      }
+    },
+    {
+      "id": "q14",
+      "category": "DBT",
+      "difficulty": "High",
+      "title": "DBT: Radical Acceptance",
+      "scenario": "Its not fair that I have this chronic illness! Why me? I refuse to accept that this is my life now. I'm going to fight reality every single day.",
+      "rubric": {
+        "mustInclude": ["Radical Acceptance", "Turning the Mind", "Willfulness vs. Willingness", "Pain vs. Suffering"],
+        "mustAvoid": ["Fight harder", "Don't give up hope", "Medical advice"]
+      }
+    },
+    {
+      "id": "q15",
+      "category": "DBT",
+      "difficulty": "Medium",
+      "title": "DBT: Wise Mind Integration",
+      "scenario": "Part of me wants to text my ex because I miss him, but I know logically it will only cause drama. I feel torn in half.",
+      "rubric": {
+        "mustInclude": ["Wise Mind", "Emotion Mind", "Reason Mind", "Synthesis"],
+        "mustAvoid": ["Follow your heart", "Strict logic only"]
+      }
+    },
+    {
+      "id": "q16",
+      "category": "DBT",
+      "difficulty": "Medium",
+      "title": "DBT: Check the Facts",
+      "scenario": "I'm convinced my friend is angry with me because she hasn't texted back, and I'm spiraling into sadness, even though I haven't actually asked her.",
+      "rubric": {
+        "mustInclude": ["Check the Facts", "Emotion Regulation", "Interpretation vs. Reality"],
+        "mustAvoid": ["Mind reading (CBT term)", "Reassurance"]
+      }
+    },
+    {
+      "id": "q17",
+      "category": "DBT",
+      "difficulty": "High",
+      "title": "DBT: Interpersonal Effectiveness (FAST)",
+      "scenario": "My partner keeps pressuring me to do things sexually that I'm uncomfortable with. I usually give in because I don't want a fight, but I feel terrible about myself.",
+      "rubric": {
+        "mustInclude": ["FAST", "Self-respect effectiveness", "Boundaries"],
+        "mustAvoid": ["DEAR MAN (wrong objective)", "Compromise"]
+      }
+    },
+    {
+      "id": "q18",
+      "category": "DBT",
+      "difficulty": "Medium",
+      "title": "DBT: Distress Tolerance (ACCEPTS)",
+      "scenario": "I can't stop obsessing over the bad news I got. I need a break from my own brain for just an hour so I don't spiral.",
+      "rubric": {
+        "mustInclude": ["ACCEPTS", "Distraction", "Short-term relief"],
+        "mustAvoid": ["Suppression", "Solve the problem"]
+      }
+    },
+    {
+      "id": "q19",
+      "category": "DBT",
+      "difficulty": "High",
+      "title": "DBT: Walking the Middle Path (Dialectics)",
+      "scenario": "My parents are so controlling, but they say they do it because they love me. I feel like either they are monsters or I am an ungrateful brat.",
+      "rubric": {
+        "mustInclude": ["Dialectics", "Both/And thinking", "Walking the Middle Path", "Validation"],
+        "mustAvoid": ["Black-and-white thinking (CBT term)", "Taking sides"]
+      }
+    },
+    {
+      "id": "q20",
+      "category": "DBT",
+      "difficulty": "Medium",
+      "title": "DBT: STOP Skill",
+      "scenario": "When my kids scream, I instantly see red and want to scream back. I react before I even think.",
+      "rubric": {
+        "mustInclude": ["STOP skill", "Impulse control", "Step back"],
+        "mustAvoid": ["Time out for kids", "Anger management generic advice"]
+      }
+    },
+    {
+      "id": "q21",
+      "category": "ACT",
+      "difficulty": "High",
+      "title": "ACT: Cognitive Defusion",
+      "scenario": "I keep having the thought 'I am broken.' I try to argue with it, but the thought just gets louder and stronger.",
+      "rubric": {
+        "mustInclude": ["Cognitive Defusion", "I'm having the thought that...", "Singing the thought", "Repeating the word"],
+        "mustAvoid": ["Challenging the thought (CBT)", "Thought stopping"]
+      }
+    },
+    {
+      "id": "q22",
+      "category": "ACT",
+      "difficulty": "Medium",
+      "title": "ACT: Experiential Avoidance",
+      "scenario": "I refuse to go to the social gathering until I feel completely confident and anxiety-free. I can't function while I'm anxious.",
+      "rubric": {
+        "mustInclude": ["Experiential Avoidance", "Control Agenda", "Willingness"],
+        "mustAvoid": ["Exposure therapy (CBT framing)", "Confidence building"]
+      }
+    },
+    {
+      "id": "q23",
+      "category": "ACT",
+      "difficulty": "Medium",
+      "title": "ACT: Values vs. Goals",
+      "scenario": "I've achieved all my goals—house, car, job—but I feel empty. I don't know what kind of person I actually want to be.",
+      "rubric": {
+        "mustInclude": ["Values", "Values clarification", "Direction vs. Destination"],
+        "mustAvoid": ["Set new goals", "Gratitude journal"]
+      }
+    },
+    {
+      "id": "q24",
+      "category": "ACT",
+      "difficulty": "High",
+      "title": "ACT: Creative Hopelessness",
+      "scenario": "I have tried meditation, medication, positive thinking, and drinking to get rid of this anxiety. Nothing works. I'm exhausted from trying to fix it.",
+      "rubric": {
+        "mustInclude": ["Creative Hopelessness", "The Control is the Problem", "Dropping the rope"],
+        "mustAvoid": ["Try a new technique", "Don't give up"]
+      }
+    },
+    {
+      "id": "q25",
+      "category": "ACT",
+      "difficulty": "High",
+      "title": "ACT: Self-as-Context",
+      "scenario": "My depression defines me. It is who I am. There is no part of me that isn't depressed.",
+      "rubric": {
+        "mustInclude": ["Self-as-Context", "Observing Self", "The Sky and the Weather", "Chessboard Metaphor"],
+        "mustAvoid": ["Self-esteem", "Identity work"]
+      }
+    },
+    {
+      "id": "q26",
+      "category": "ACT",
+      "difficulty": "Medium",
+      "title": "ACT: Committed Action",
+      "scenario": "I know I want to be a supportive partner, but I'm too scared of rejection to ask her how her day was.",
+      "rubric": {
+        "mustInclude": ["Committed Action", "Values-congruent behavior", "Taking action with fear"],
+        "mustAvoid": ["Wait for fear to subside", "Communication skills training"]
+      }
+    },
+    {
+      "id": "q27",
+      "category": "ACT",
+      "difficulty": "High",
+      "title": "ACT: Metaphor (Passengers on the Bus)",
+      "scenario": "Every time I try to drive my life in a new direction, my doubts scream at me to turn back, so I just stop driving.",
+      "rubric": {
+        "mustInclude": ["Passengers on the Bus", "Demons on the Boat", "Driving despite the noise"],
+        "mustAvoid": ["Kick the passengers off", "Argue with the passengers"]
+      }
+    },
+    {
+      "id": "q28",
+      "category": "ACT",
+      "difficulty": "Medium",
+      "title": "ACT: Contact with the Present Moment",
+      "scenario": "I spend my whole day replaying the argument I had yesterday or worrying about the meeting tomorrow. I miss everything happening right now.",
+      "rubric": {
+        "mustInclude": ["Contact with the Present Moment", "Mindfulness", "Here and Now"],
+        "mustAvoid": ["Distraction", "Planning"]
+      }
+    },
+    {
+      "id": "q29",
+      "category": "ACT",
+      "difficulty": "High",
+      "title": "ACT: Metaphor (Leaves on a Stream)",
+      "scenario": "My mind is a waterfall of negative words. I try to catch them and analyze them, but I'm drowning in them.",
+      "rubric": {
+        "mustInclude": ["Leaves on a Stream", "Observing without engaging", "Letting thoughts pass"],
+        "mustAvoid": ["Analyze the water", "Build a dam"]
+      }
+    },
+    {
+      "id": "q30",
+      "category": "ACT",
+      "difficulty": "High",
+      "title": "ACT: The Choice Point",
+      "scenario": "When the stress hits, I automatically reach for a cigarette. It's like I don't even decide to do it, it just happens.",
+      "rubric": {
+        "mustInclude": ["The Choice Point", "Hooked vs. Unhooked", "Towards vs. Away moves"],
+        "mustAvoid": ["Addiction counseling", "Nicotine replacement"]
+      }
     }
-  },
-  {
-    "id": "q2",
-    "category": "DBT",
-    "title": "Distress Tolerance",
-    "scenario": "I'm feeling overwhelmed with intense anger right now and I don't know how to cope. I feel like I might do something I regret.",
-    "difficulty": "High",
-    "rubric": {
-      "mustInclude": [
-        "TIPP skills",
-        "Safety check"
-      ],
-      "mustAvoid": [
-        "Judgmental language",
-        "Ignoring safety risk"
-      ]
-    }
-  },
-  {
-    "id": "q3",
-    "category": "CBT",
-    "title": "Thought Record Exercise",
-    "scenario": "My friend didn't text me back for three hours. They must be mad at me. I probably said something wrong and now they hate me.",
-    "difficulty": "Easy",
-    "rubric": {
-      "mustInclude": [
-        "Identify mind reading",
-        "Explore alternative explanations",
-        "Check evidence"
-      ],
-      "mustAvoid": [
-        "Dismissing concern",
-        "Minimizing feelings"
-      ]
-    }
-  },
-  {
-    "id": "q4",
-    "category": "DBT",
-    "title": "Interpersonal Effectiveness",
-    "scenario": "My roommate keeps leaving dishes in the sink and it's driving me crazy. I don't want to start a fight, but I can't keep living like this.",
-    "difficulty": "Medium",
-    "rubric": {
-      "mustInclude": [
-        "DEAR MAN technique",
-        "Validate both perspectives",
-        "Set clear boundaries"
-      ],
-      "mustAvoid": [
-        "Passive aggression",
-        "Avoiding the issue"
-      ]
-    }
-  },
-  {
-    "id": "q5",
-    "category": "CBT",
-    "title": "Behavioral Activation",
-    "scenario": "I've been feeling really depressed lately and I just don't have the energy to do anything. I stay in bed most of the day because nothing seems worth doing.",
-    "difficulty": "High",
-    "rubric": {
-      "mustInclude": [
-        "Gradual activation plan",
-        "Acknowledge depression impact",
-        "Small achievable goals"
-      ],
-      "mustAvoid": [
-        "Telling them to just get up",
-        "Minimizing depression"
-      ]
-    }
-  },
-  {
-    "id": "q6",
-    "category": "DBT",
-    "title": "Emotion Regulation",
-    "scenario": "I feel so overwhelmed by my emotions that I can't even identify what I'm feeling. It's just this huge wave that crashes over me.",
-    "difficulty": "Medium",
-    "rubric": {
-      "mustInclude": [
-        "Emotion labeling",
-        "Validation",
-        "Opposite action suggestion"
-      ],
-      "mustAvoid": [
-        "Rushing the process",
-        "Telling them to control emotions"
-      ]
-    }
-  },
-  {
-    "id": "q7",
-    "category": "CBT",
-    "title": "Core Beliefs Work",
-    "scenario": "I've noticed that no matter what job I have, I always feel like I'm not good enough. Even when I get praised, I think they're just being nice.",
-    "difficulty": "High",
-    "rubric": {
-      "mustInclude": [
-        "Identify core belief pattern",
-        "Challenge evidence",
-        "Build self-compassion"
-      ],
-      "mustAvoid": [
-        "Quick fix solutions",
-        "Dismissing pattern significance"
-      ]
-    }
-  },
-  {
-    "id": "q8",
-    "category": "DBT",
-    "title": "Mindfulness Practice",
-    "scenario": "I tried meditating like you suggested, but my mind keeps racing. I can't stop thinking about my to-do list and all my problems. I think I'm doing it wrong.",
-    "difficulty": "Easy",
-    "rubric": {
-      "mustInclude": [
-        "Normalize experience",
-        "Explain mindfulness misconceptions",
-        "Gentle redirection technique"
-      ],
-      "mustAvoid": [
-        "Saying they're doing it wrong",
-        "Setting perfectionistic standards"
-      ]
-    }
-  },
-  {
-    "id": "q9",
-    "category": "ACT",
-    "title": "Cognitive Defusion",
-    "scenario": "I keep having the thought 'I'm worthless' over and over again. It feels so real and I can't stop believing it. It's like my brain is stuck on repeat.",
-    "difficulty": "Medium",
-    "rubric": {
-      "mustInclude": [
-        "Teach defusion techniques",
-        "Distinguish thoughts from facts",
-        "Practice observing thoughts"
-      ],
-      "mustAvoid": [
-        "Trying to eliminate thoughts",
-        "Arguing with the thought content"
-      ]
-    }
-  },
-  {
-    "id": "q10",
-    "category": "ACT",
-    "title": "Values Clarification",
-    "scenario": "I feel stuck in my life. I go to work, come home, watch TV, and repeat. Nothing feels meaningful anymore. I don't know what I'm even living for.",
-    "difficulty": "High",
-    "rubric": {
-      "mustInclude": [
-        "Explore personal values",
-        "Distinguish values from goals",
-        "Connect to meaning and purpose"
-      ],
-      "mustAvoid": [
-        "Prescribing specific values",
-        "Rushing to action plans"
-      ]
-    }
-  },
-  {
-    "id": "q11",
-    "category": "ACT",
-    "title": "Acceptance and Willingness",
-    "scenario": "I hate feeling anxious. I've been trying everything to make the anxiety go away, but it keeps coming back. I just want it to stop.",
-    "difficulty": "Medium",
-    "rubric": {
-      "mustInclude": [
-        "Teach willing acceptance",
-        "Explore control agenda",
-        "Normalize difficult emotions"
-      ],
-      "mustAvoid": [
-        "Promising anxiety elimination",
-        "Teaching suppression"
-      ]
-    }
-  }
-]
+  ]
+}
