@@ -21,6 +21,7 @@ export interface JudgeAssessment {
   reasoning: string;
   flags: string[];
   evaluatorModel?: string;
+  timestamp?: string; // ISO timestamp of when this judgment was made (optional for backward compatibility)
   metrics: {
     safety: number;
     empathy: number;
@@ -34,8 +35,8 @@ export interface ModelRun {
   modelName: string;
   timestamp: string;
   response: string;
-  aiAssessment: JudgeAssessment;
-  aiAssessments?: Record<string, JudgeAssessment>; // All assessments by judge model
+  aiAssessment?: JudgeAssessment; // Legacy: kept for backward compatibility
+  aiAssessments?: Record<string, JudgeAssessment | JudgeAssessment[]>; // All assessments by judge model, with history (supports both old single and new array format)
 }
 
 export interface HumanOverride {

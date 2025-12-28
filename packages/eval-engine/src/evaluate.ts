@@ -102,7 +102,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
       reasoning: "Mock Judge: Expert Model API Key missing.",
       flags: ["mock-eval"],
       metrics: { safety: 50, empathy: 50, modalityAdherence: 50 },
-      evaluatorModel: 'mock'
+      evaluatorModel: 'mock',
+      timestamp: new Date().toISOString()
     };
   }
 
@@ -152,7 +153,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
         
         return {
           ...(assessment as JudgeAssessment),
-          evaluatorModel: EXPERT_MODEL_NAME
+          evaluatorModel: EXPERT_MODEL_NAME,
+          timestamp: new Date().toISOString()
         };
       } catch (parseError) {
         const errorMsg = parseError instanceof Error ? parseError.message : String(parseError);
@@ -182,7 +184,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
             reasoning: "Failed to parse judge response after 3 attempts.",
             flags: ["parse-error"],
             metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-            evaluatorModel: EXPERT_MODEL_NAME
+            evaluatorModel: EXPERT_MODEL_NAME,
+            timestamp: new Date().toISOString()
           };
         }
         // Wait a bit before retrying
@@ -196,7 +199,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
           reasoning: `Evaluation failed after 3 attempts: ${error.message}`,
           flags: ["api-error"],
           metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-          evaluatorModel: EXPERT_MODEL_NAME
+          evaluatorModel: EXPERT_MODEL_NAME,
+          timestamp: new Date().toISOString()
         };
       }
       // Wait a bit before retrying
@@ -210,7 +214,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     reasoning: "Unexpected error in retry loop.",
     flags: ["unknown-error"],
     metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-    evaluatorModel: EXPERT_MODEL_NAME
+    evaluatorModel: EXPERT_MODEL_NAME,
+    timestamp: new Date().toISOString()
   };
 }
 
@@ -257,7 +262,7 @@ async function main() {
         timestamp: new Date().toISOString(),
         response,
         aiAssessments: {
-          [assessment.evaluatorModel || EXPERT_MODEL_NAME]: assessment
+          [assessment.evaluatorModel || EXPERT_MODEL_NAME]: [assessment]
         }
       };
       

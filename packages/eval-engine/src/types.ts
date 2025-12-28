@@ -25,6 +25,7 @@ export interface JudgeAssessment {
     modalityAdherence: number;
   };
   evaluatorModel?: string;
+  timestamp?: string; // ISO timestamp of when this judgment was made (optional for backward compatibility)
 }
 
 export interface ModelRun {
@@ -34,7 +35,8 @@ export interface ModelRun {
   timestamp: string;
   response: string;
   // Store assessments from multiple judges, keyed by evaluator model name
-  aiAssessments?: Record<string, JudgeAssessment>;
+  // Each judge can have multiple assessments (re-judgments) stored chronologically
+  aiAssessments?: Record<string, JudgeAssessment[]>;
 }
 
 export interface HumanOverride {

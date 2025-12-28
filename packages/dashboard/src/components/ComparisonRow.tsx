@@ -109,24 +109,65 @@ export const ComparisonRow = ({
                     <div className="space-y-4">
                       {Object.entries(run.aiAssessments)
                         .filter(([judgeModel]) => selectedJudges.size === 0 || selectedJudges.has(judgeModel))
-                        .map(([judgeModel, assessment]) => (
-                        <div key={judgeModel} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <span className="text-xs font-mono text-zinc-500">{judgeModel}</span>
-                            <div className="flex items-center gap-4">
-                              <span className={cn("text-sm font-bold", getScoreColor(assessment.score))}>
-                                Score: {assessment.score}%
-                              </span>
-                              <span className="text-xs text-zinc-600">Safety: {assessment.metrics.safety}</span>
-                              <span className="text-xs text-zinc-600">Empathy: {assessment.metrics.empathy}</span>
-                              <span className="text-xs text-zinc-600">Modality: {assessment.metrics.modalityAdherence}</span>
+                        .map(([judgeModel, assessments]) => {
+                          // Handle both array and single assessment for backward compatibility
+                          const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
+                          
+                          return (
+                            <div key={judgeModel} className="space-y-2">
+                              <div className="text-xs font-mono text-zinc-500 flex items-center gap-2">
+                                {judgeModel}
+                                {assessmentArray.length > 1 && (
+                                  <span className="text-xs text-emerald-400">
+                                    ({assessmentArray.length} judgments)
+                                  </span>
+                                )}
+                              </div>
+                              {assessmentArray.map((assessment, index) => (
+                                <div 
+                                  key={index} 
+                                  className={cn(
+                                    "bg-zinc-900 border rounded-lg p-4 transition-colors",
+                                    index === assessmentArray.length - 1 
+                                      ? "border-emerald-800/50" 
+                                      : "border-zinc-800 opacity-70"
+                                  )}
+                                >
+                                  <div className="flex items-center justify-between mb-2">
+                                    <div className="flex items-center gap-2">
+                                      {index === assessmentArray.length - 1 && assessmentArray.length > 1 && (
+                                        <span className="text-xs bg-emerald-900/30 text-emerald-400 px-2 py-0.5 rounded border border-emerald-800">
+                                          Latest
+                                        </span>
+                                      )}
+                                      {assessment.timestamp && (
+                                        <span className="text-xs text-zinc-600">
+                                          {new Date(assessment.timestamp).toLocaleString('en-US', { 
+                                            month: 'short', 
+                                            day: 'numeric',
+                                            hour: '2-digit', 
+                                            minute: '2-digit'
+                                          })}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                      <span className={cn("text-sm font-bold", getScoreColor(assessment.score))}>
+                                        Score: {assessment.score}%
+                                      </span>
+                                      <span className="text-xs text-zinc-600">Safety: {assessment.metrics.safety}</span>
+                                      <span className="text-xs text-zinc-600">Empathy: {assessment.metrics.empathy}</span>
+                                      <span className="text-xs text-zinc-600">Modality: {assessment.metrics.modalityAdherence}</span>
+                                    </div>
+                                  </div>
+                                  <div className="text-sm text-zinc-400 italic">
+                                    "{assessment.reasoning}"
+                                  </div>
+                                </div>
+                              ))}
                             </div>
-                          </div>
-                          <div className="text-sm text-zinc-400 italic">
-                            "{assessment.reasoning}"
-                          </div>
-                        </div>
-                      ))}
+                          );
+                        })}
                     </div>
                   </div>
                 ) : run.aiAssessment ? (

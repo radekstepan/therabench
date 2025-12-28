@@ -40,7 +40,7 @@ export default function App() {
     (resultsData as ModelRun[]).forEach(r => {
       if (r.aiAssessments) {
         Object.keys(r.aiAssessments).forEach(judge => judges.add(judge));
-      } else if (r.aiAssessment.evaluatorModel) {
+      } else if (r.aiAssessment?.evaluatorModel) {
         judges.add(r.aiAssessment.evaluatorModel);
       }
     });
@@ -85,6 +85,7 @@ export default function App() {
         const override = overrides[r.runId];
         
         // Calculate effective score and metrics from selected judges
+        // Use the most recent judgment from each judge
         let effectiveScore: number;
         let effectiveSafety: number;
         let effectiveEmpathy: number;
@@ -94,7 +95,13 @@ export default function App() {
         } else if (r.aiAssessments) {
           const judgeScores = Object.entries(r.aiAssessments)
             .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
-            .map(([_, assessment]) => assessment.score);
+            .map(([_, assessments]) => {
+              // Handle both array and single assessment for backward compatibility
+              const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
+              // Get the most recent assessment (last in array)
+              return assessmentArray.length > 0 ? assessmentArray[assessmentArray.length - 1].score : 0;
+            })
+            .filter(score => score > 0);
           
           if (judgeScores.length > 0) {
             effectiveScore = Math.round(judgeScores.reduce((a, b) => a + b, 0) / judgeScores.length);
@@ -108,7 +115,12 @@ export default function App() {
         if (r.aiAssessments) {
           const selectedAssessments = Object.entries(r.aiAssessments)
             .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
-            .map(([_, assessment]) => assessment.metrics)
+            .flatMap(([_, assessments]) => {
+              // Handle both array and single assessment for backward compatibility
+              const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
+              // Get the most recent assessment (last in array)
+              return assessmentArray.length > 0 ? [assessmentArray[assessmentArray.length - 1].metrics] : [];
+            })
             .filter(metrics => metrics && typeof metrics.safety === 'number' && typeof metrics.empathy === 'number');
           
           if (selectedAssessments.length > 0) {
@@ -142,7 +154,7 @@ export default function App() {
         if (r.aiAssessments) {
           return Object.keys(r.aiAssessments).some(judge => selectedJudges.has(judge));
         }
-        return r.aiAssessment.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
+        return r.aiAssessment?.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
       });
   }, [overrides, selectedJudges]);
 
@@ -160,15 +172,20 @@ export default function App() {
       stats[r.modelName].count += 1;
       
       if (r.aiAssessments) {
-        Object.entries(r.aiAssessments).forEach(([judge, assessment]) => {
+        Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
           if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
             if (!stats[r.modelName].judgeScoreMap[judge]) {
               stats[r.modelName].judgeScoreMap[judge] = [];
             }
-            stats[r.modelName].judgeScoreMap[judge].push(assessment.score);
+            // Handle both array and single assessment for backward compatibility
+            const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
+            // Use most recent assessment
+            if (assessmentArray.length > 0) {
+              stats[r.modelName].judgeScoreMap[judge].push(assessmentArray[assessmentArray.length - 1].score);
+            }
           }
         });
-      } else if (r.aiAssessment.evaluatorModel) {
+      } else if (r.aiAssessment?.evaluatorModel) {
         const judge = r.aiAssessment.evaluatorModel;
         if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
           if (!stats[r.modelName].judgeScoreMap[judge]) {
@@ -281,10 +298,10 @@ export default function App() {
           comparison = a.effectiveScore - b.effectiveScore;
           break;
         case 'safety':
-          comparison = a.aiAssessment.metrics.safety - b.aiAssessment.metrics.safety;
+          comparison = a.effectiveSafety - b.effectiveSafety;
           break;
         case 'empathy':
-          comparison = a.aiAssessment.metrics.empathy - b.aiAssessment.metrics.empathy;
+          comparison = a.effectiveEmpathy - b.effectiveEmpathy;
           break;
         default:
           comparison = 0;

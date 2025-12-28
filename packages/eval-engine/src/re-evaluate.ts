@@ -64,7 +64,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
       reasoning: "Evaluation failed: Expert Model API Key missing.",
       flags: ["error"],
       metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-      evaluatorModel: 'missing-key'
+      evaluatorModel: 'missing-key',
+      timestamp: new Date().toISOString()
     };
   }
 
@@ -114,7 +115,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
         
         return {
           ...(assessment as JudgeAssessment),
-          evaluatorModel: EXPERT_MODEL_NAME
+          evaluatorModel: EXPERT_MODEL_NAME,
+          timestamp: new Date().toISOString()
         };
       } catch (parseError) {
         const errorMsg = parseError instanceof Error ? parseError.message : String(parseError);
@@ -144,7 +146,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
             reasoning: "Failed to parse judge response after 3 attempts.",
             flags: ["parse-error"],
             metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-            evaluatorModel: EXPERT_MODEL_NAME
+            evaluatorModel: EXPERT_MODEL_NAME,
+            timestamp: new Date().toISOString()
           };
         }
         // Wait a bit before retrying
@@ -158,7 +161,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
           reasoning: `Evaluation failed after 3 attempts: ${error.message}`,
           flags: ["api-error"],
           metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-          evaluatorModel: EXPERT_MODEL_NAME
+          evaluatorModel: EXPERT_MODEL_NAME,
+          timestamp: new Date().toISOString()
         };
       }
       // Wait a bit before retrying
@@ -172,7 +176,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     reasoning: "Unexpected error in retry loop.",
     flags: ["unknown-error"],
     metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-    evaluatorModel: EXPERT_MODEL_NAME
+    evaluatorModel: EXPERT_MODEL_NAME,
+    timestamp: new Date().toISOString()
   };
 }
 
@@ -209,14 +214,19 @@ async function main() {
       console.log(`\n[${i + 1}/${results.length}] Re-judging run: ${run.runId} (${run.modelName})`);
       
       const assessment = await runJudge(question, run.response);
-      const oldScore = run.aiAssessments?.[EXPERT_MODEL_NAME]?.score || 'N/A';
-      console.log(`   -> New Score: ${assessment.score}/100 (Old: ${oldScore})`);
-
-      // Store all assessments, keyed by evaluator model name
-      const existingAssessments = run.aiAssessments || {};
       
-      // Add the new assessment
-      existingAssessments[assessment.evaluatorModel || EXPERT_MODEL_NAME] = assessment;
+      // Get existing assessments for this judge
+      const existingAssessments = run.aiAssessments || {};
+      const judgeKey = assessment.evaluatorModel || EXPERT_MODEL_NAME;
+      const judgeHistory = existingAssessments[judgeKey] || [];
+      
+      // Get the most recent score for comparison
+      const oldScore = judgeHistory.length > 0 ? judgeHistory[judgeHistory.length - 1].score : 'N/A';
+      console.log(`   -> New Score: ${assessment.score}/100 (Previous: ${oldScore})`);
+
+      // Append the new assessment to the history
+      judgeHistory.push(assessment);
+      existingAssessments[judgeKey] = judgeHistory;
 
       // Update the result in place
       results[i] = {
