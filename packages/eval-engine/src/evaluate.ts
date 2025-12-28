@@ -134,8 +134,9 @@ async function main() {
 
     console.log(`🚀 Starting evaluation on ${questions.length} questions with model: ${CANDIDATE_MODEL_NAME}`);
 
-    for (const q of questions) {
-      console.log(`\nProcessing: [${q.category}] ${q.title}`);
+    for (let i = 0; i < questions.length; i++) {
+      const q = questions[i];
+      console.log(`\n[${i + 1}/${questions.length}] Processing question: ${q.id}`);
       
       // 1. Get Candidate Response
       const response = await queryCandidateModel(q.scenario);
