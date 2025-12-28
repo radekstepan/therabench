@@ -1,6 +1,6 @@
-# CBT/DBT LLM Evaluator
+# TheraBench
 
-A local evaluation platform for testing how well Small Language Models (SLMs) and LLMs respond to therapeutic scenarios (CBT, DBT, ACT).
+An evaluation platform for testing how well Small Language Models (SLMs) and LLMs respond to therapeutic scenarios (CBT, DBT, ACT).
 
 ## 🏗 Architecture
 
