@@ -98,7 +98,7 @@ export const ComparisonRow = ({
                 </div>
 
                 {/* Show all judge assessments */}
-                {run.aiAssessments && Object.keys(run.aiAssessments).length > 1 ? (
+                {run.aiAssessments && Object.keys(run.aiAssessments).length > 0 ? (
                   <div>
                     <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
                       <Shield className="w-4 h-4" /> AI Evaluations
@@ -129,7 +129,7 @@ export const ComparisonRow = ({
                       ))}
                     </div>
                   </div>
-                ) : (
+                ) : run.aiAssessment ? (
                   <div>
                     <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
                       <Shield className="w-4 h-4" /> AI Evaluation Reasoning
@@ -141,7 +141,7 @@ export const ComparisonRow = ({
                       "{run.aiAssessment.reasoning}"
                     </div>
                   </div>
-                )}
+                ) : null}
               </div>
 
               {/* Right: Review Form */}

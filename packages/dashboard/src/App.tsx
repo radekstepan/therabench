@@ -99,10 +99,10 @@ export default function App() {
           if (judgeScores.length > 0) {
             effectiveScore = Math.round(judgeScores.reduce((a, b) => a + b, 0) / judgeScores.length);
           } else {
-            effectiveScore = r.aiAssessment.score;
+            effectiveScore = r.aiAssessment?.score ?? 0;
           }
         } else {
-          effectiveScore = r.aiAssessment.score;
+          effectiveScore = r.aiAssessment?.score ?? 0;
         }
         
         if (r.aiAssessments) {
