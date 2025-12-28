@@ -20,7 +20,10 @@ function resolveEnvValue(value: string | undefined): string {
 }
 
 // Note: Ensure OPENAI_API_KEY is set in your .env file or injected by Infisical
-const openai = new OpenAI({ apiKey: resolveEnvValue(process.env.OPENAI_API_KEY) || 'sk-placeholder' });
+const openai = new OpenAI({ 
+  apiKey: resolveEnvValue(process.env.OPENAI_API_KEY) || 'sk-placeholder',
+  timeout: 120000 // 2 minutes
+});
 
 const OUTPUT_PATH = path.join(__dirname, '../data/questions.json');
 

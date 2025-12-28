@@ -25,7 +25,8 @@ const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
 
 const openai = new OpenAI({ 
   apiKey: EXPERT_MODEL_API_KEY,
-  baseURL: EXPERT_MODEL_URL
+  baseURL: EXPERT_MODEL_URL,
+  timeout: 120000 // 2 minutes
 });
 
 async function runJudge(question: QuestionNode, response: string): Promise<JudgeAssessment> {
@@ -160,14 +161,8 @@ async function main() {
         aiAssessment: assessment
       });
       
-      // Save progress every 10 entries or on the last entry
-      const isLastEntry = i === results.length - 1;
-      const shouldSave = (newResults.length % 10 === 0) || isLastEntry;
-      
-      if (shouldSave) {
-        fs.writeFileSync(RESULTS_PATH, JSON.stringify(newResults, null, 2));
-        console.log(`💾 Progress saved (${newResults.length} entries)`);
-      }
+      // Save progress after each entry
+      fs.writeFileSync(RESULTS_PATH, JSON.stringify(newResults, null, 2));
     }
 
     console.log(`\n✅ Re-evaluation complete. Saved all results to ${RESULTS_PATH}`);

@@ -610,6 +610,24 @@ export default function App() {
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
+  
+  // Extract unique judges from results
+  const availableJudges = useMemo(() => {
+    const judges = new Set<string>();
+    (resultsData as ModelRun[]).forEach(r => {
+      if (r.aiAssessment.evaluatorModel) {
+        judges.add(r.aiAssessment.evaluatorModel);
+      }
+    });
+    return Array.from(judges).sort();
+  }, []);
+  
+  const [selectedJudges, setSelectedJudges] = useState<Set<string>>(new Set(availableJudges));
+  
+  // Initialize selected judges when available judges change
+  useEffect(() => {
+    setSelectedJudges(new Set(availableJudges));
+  }, [availableJudges]);
 
   // Load Overrides
   useEffect(() => {
@@ -632,21 +650,27 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isConfirmModalOpen, isQuestionModalOpen]);
 
-  // Merge Data
+  // Merge Data and filter by selected judges
   const augmentedResults = useMemo(() => {
     if (!Array.isArray(resultsData) || !Array.isArray(questionsData)) return [];
     
-    return (resultsData as ModelRun[]).map((r) => {
-      const q = (questionsData as QuestionNode[]).find((q) => q.id === r.questionId);
-      const override = overrides[r.runId];
-      return { 
-        ...r, 
-        question: q!, 
-        override, 
-        effectiveScore: override ? override.manualScore : r.aiAssessment.score 
-      } as AugmentedResult;
-    }).filter(r => r.question); // Filter out orphans
-  }, [overrides]);
+    return (resultsData as ModelRun[])
+      .filter(r => {
+        // Filter by selected judges
+        if (selectedJudges.size === 0) return true; // If no judges selected, show all
+        return r.aiAssessment.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
+      })
+      .map((r) => {
+        const q = (questionsData as QuestionNode[]).find((q) => q.id === r.questionId);
+        const override = overrides[r.runId];
+        return { 
+          ...r, 
+          question: q!, 
+          override, 
+          effectiveScore: override ? override.manualScore : r.aiAssessment.score 
+        } as AugmentedResult;
+      }).filter(r => r.question); // Filter out orphans
+  }, [overrides, selectedJudges]);
 
   // Model Leaderboard Stats
   const modelStats = useMemo(() => {
@@ -945,24 +969,92 @@ export default function App() {
               <p className="text-zinc-500">Aggregated performance across {questionsData.length} therapeutic scenarios.</p>
             </header>
 
+            {/* Judge Filter */}
+            {availableJudges.length > 0 && (
+              <div className="mb-6 bg-zinc-900 border border-zinc-800 rounded-xl p-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2 text-zinc-400">
+                    <Gavel className="w-4 h-4" />
+                    <span className="text-sm font-medium">Judges:</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {availableJudges.map(judge => {
+                      const isSelected = selectedJudges.has(judge);
+                      return (
+                        <button
+                          key={judge}
+                          onClick={() => {
+                            const newSelected = new Set(selectedJudges);
+                            if (isSelected) {
+                              newSelected.delete(judge);
+                            } else {
+                              newSelected.add(judge);
+                            }
+                            setSelectedJudges(newSelected);
+                          }}
+                          className={cn(
+                            "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
+                            isSelected 
+                              ? "bg-emerald-600 text-white border-2 border-emerald-500" 
+                              : "bg-zinc-800 text-zinc-500 border-2 border-zinc-700 hover:border-zinc-600"
+                          )}
+                        >
+                          {judge}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  {selectedJudges.size !== availableJudges.length && (
+                    <button
+                      onClick={() => setSelectedJudges(new Set(availableJudges))}
+                      className="ml-auto text-xs text-zinc-500 hover:text-emerald-400 transition-colors"
+                    >
+                      Select All
+                    </button>
+                  )}
+                  {selectedJudges.size > 0 && selectedJudges.size < availableJudges.length && (
+                    <button
+                      onClick={() => setSelectedJudges(new Set())}
+                      className="text-xs text-zinc-500 hover:text-red-400 transition-colors"
+                    >
+                      Clear All
+                    </button>
+                  )}
+                </div>
+                <div className="mt-2 text-xs text-zinc-600">
+                  {selectedJudges.size === 0 ? (
+                    <span className="text-amber-500">⚠️ No judges selected - showing all results</span>
+                  ) : (
+                    <span>Showing results from {selectedJudges.size} of {availableJudges.length} judge{availableJudges.length !== 1 ? 's' : ''}</span>
+                  )}
+                </div>
+              </div>
+            )}
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {topPerformer && (
-                <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-2xl relative overflow-hidden">
+                <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-2xl relative overflow-hidden flex flex-col">
                   <div className="absolute top-4 right-4 text-emerald-500/20"><Trophy className="w-16 h-16" /></div>
                   <div className="relative z-10">
                     <div className="text-emerald-500 text-sm font-medium uppercase tracking-wide mb-1">Top Performer</div>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center relative z-10">
                     <div className="text-2xl font-bold text-white mb-1">{topPerformer.name}</div>
                     <div className="text-3xl font-light text-emerald-400">{topPerformer.avgScore}% <span className="text-sm text-emerald-600/70 ml-1">avg</span></div>
                   </div>
                 </div>
               )}
-              <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
-                <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1">Total Evaluations</div>
-                <div className="text-4xl font-light text-white">{augmentedResults.length}</div>
+              <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl flex flex-col">
+                <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Total Evaluations</div>
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="text-4xl font-light text-white">{augmentedResults.length}</div>
+                </div>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
-                 <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1">Reviews Completed</div>
-                 <div className="text-4xl font-light text-amber-400">{Object.keys(overrides).length}</div>
+              <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl flex flex-col">
+                 <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Reviews Completed</div>
+                 <div className="flex-1 flex items-center justify-center">
+                   <div className="text-4xl font-light text-amber-400">{Object.keys(overrides).length}</div>
+                 </div>
               </div>
             </div>
 
