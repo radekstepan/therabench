@@ -57,3 +57,13 @@ export interface AugmentedResult extends ModelRun {
   override?: HumanOverride;
   effectiveScore: number;
 }
+
+export interface ModelLabel {
+  text: string;
+  color: string;
+}
+
+export interface ModelConfig {
+  modelName: string;
+  labels: ModelLabel[];
+}

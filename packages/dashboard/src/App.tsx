@@ -22,14 +22,16 @@ import {
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
-import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride } from './types';
+import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ModelConfig } from './types';
 
 // --- Data Importing ---
 import questionsDataRaw from '../../eval-engine/data/questions.json';
 import resultsData from '../../eval-engine/data/results.json';
+import modelConfigData from '../../eval-engine/data/model-config.json';
 
 // Extract questions array from the JSON structure
 const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;
+const modelConfigs: ModelConfig[] = modelConfigData;
 
 // --- Utility ---
 function cn(...inputs: ClassValue[]) {
@@ -48,7 +50,35 @@ function getScoreBg(score: number) {
   return "bg-red-500/10 border-red-500/20";
 }
 
+function getModelLabels(modelName: string) {
+  const config = modelConfigs.find(c => c.modelName === modelName);
+  return config?.labels || [];
+}
+
 // --- Components ---
+
+const ModelLabels = ({ modelName }: { modelName: string }) => {
+  const labels = getModelLabels(modelName);
+  if (labels.length === 0) return null;
+  
+  return (
+    <div className="flex flex-wrap gap-1.5 mt-1">
+      {labels.map((label, idx) => (
+        <span 
+          key={idx}
+          className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium border"
+          style={{
+            backgroundColor: `${label.color}20`,
+            borderColor: `${label.color}40`,
+            color: label.color
+          }}
+        >
+          {label.text}
+        </span>
+      ))}
+    </div>
+  );
+};
 
 const QuestionEditModal = ({
   question,
@@ -457,6 +487,7 @@ const ComparisonRow = ({
         <td className="p-4 text-center w-16 text-zinc-500 font-mono text-sm">#{rank}</td>
         <td className="p-4">
           <div className="font-medium text-zinc-200">{run.modelName}</div>
+          <ModelLabels modelName={run.modelName} />
           <div className="text-xs text-zinc-500 font-mono mt-0.5">
             {new Date(run.timestamp).toLocaleString('en-US', { 
               month: 'short', 
@@ -998,7 +1029,12 @@ export default function App() {
                   {modelStatsWithRank.map((stat) => (
                     <tr key={stat.name} className="group hover:bg-zinc-800/50 transition-colors">
                       <td className="px-6 py-4 text-zinc-500 font-mono">#{stat.scoreRank}</td>
-                      <td className="px-6 py-4 font-medium text-white group-hover:text-emerald-400 transition-colors">{stat.name}</td>
+                      <td className="px-6 py-4">
+                        <div className="font-medium text-white group-hover:text-emerald-400 transition-colors">
+                          {stat.name}
+                        </div>
+                        <ModelLabels modelName={stat.name} />
+                      </td>
                       <td className="px-6 py-4 text-right text-zinc-400">{stat.count}</td>
                       <td className="px-6 py-4 text-right font-medium text-white">{stat.avgScore}</td>
                       <td className="px-6 py-4 text-center text-zinc-400">{stat.avgSafety}</td>
