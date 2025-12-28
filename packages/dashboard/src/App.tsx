@@ -39,21 +39,17 @@ function cn(...inputs: ClassValue[]) {
 }
 
 function getScoreColor(score: number) {
-  if (score >= 80) return "text-emerald-400";
-  if (score >= 60) return "text-amber-400";
-  return "text-red-400";
-}
-
-function getScoreBg(score: number) {
-  if (score >= 80) return "bg-emerald-500/10 border-emerald-500/20";
-  if (score >= 60) return "bg-amber-500/10 border-amber-500/20";
-  return "bg-red-500/10 border-red-500/20";
+  if (score >= 80) return "text-emerald-500";
+  if (score >= 60) return "text-amber-500";
+  return "text-zinc-500";
 }
 
 function getModelLabels(modelName: string) {
   const config = modelConfigs.find(c => c.modelName === modelName);
   return config?.labels || [];
 }
+
+// (stripCategoryFromTitle removed — titles always show category tokens)
 
 // --- Components ---
 
@@ -79,6 +75,8 @@ const ModelLabels = ({ modelName }: { modelName: string }) => {
     </span>
   );
 };
+
+// (ModelNameWithTooltip removed — not used)
 
 const QuestionEditModal = ({
   question,
@@ -486,15 +484,12 @@ const ComparisonRow = ({
           isExpanded ? "bg-zinc-800/40" : "hover:bg-zinc-800/20"
         )}
       >
-        <td className="p-4 text-center w-16 text-zinc-500 font-mono text-sm">#{rank}</td>
-        <td className="p-4">
-          <div className="font-medium text-zinc-200">
-            <div className="flex items-center gap-2">
-              <span className="truncate flex-1 min-w-0">{run.modelName}</span>
-              <ModelLabels modelName={run.modelName} />
-            </div>
+        <td className="px-3 py-2 text-center w-16 text-zinc-500 font-mono text-sm whitespace-nowrap">#{rank}</td>
+        <td className="px-3 py-2 max-w-0">
+          <div className="font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
+            {run.modelName}
           </div>
-          <div className="text-xs text-zinc-500 font-mono mt-0.5">
+          <div className="text-xs text-zinc-500 font-mono mt-0.5 whitespace-nowrap">
             {new Date(run.timestamp).toLocaleString('en-US', { 
               month: 'short', 
               day: 'numeric', 
@@ -504,18 +499,21 @@ const ComparisonRow = ({
             })}
           </div>
         </td>
-        <td className="p-4 text-right">
+        <td className="px-3 py-2 w-36 whitespace-nowrap">
+          <ModelLabels modelName={run.modelName} />
+        </td>
+        <td className="px-3 py-2 text-right whitespace-nowrap">
           <div 
-            className={cn("inline-block px-3 py-1 rounded-full text-sm font-bold border", getScoreBg(run.effectiveScore), getScoreColor(run.effectiveScore))}
+            className={cn("text-sm font-bold", getScoreColor(run.effectiveScore))}
             title={run.aiAssessment.evaluatorModel ? `Evaluated by ${run.aiAssessment.evaluatorModel}` : undefined}
           >
-            {run.effectiveScore}
+            {run.effectiveScore}%
           </div>
           {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><Gavel className="w-3 h-3"/> Reviewed</div>}
         </td>
-        <td className="p-4 text-center text-zinc-400 font-mono">{run.effectiveSafety}</td>
-        <td className="p-4 text-center text-zinc-400 font-mono">{run.effectiveEmpathy}</td>
-        <td className="p-4 text-right">
+        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
+        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
+        <td className="px-3 py-2 text-right whitespace-nowrap">
           {isExpanded ? <ChevronDown className="w-5 h-5 ml-auto text-zinc-500" /> : <ChevronRight className="w-5 h-5 ml-auto text-zinc-500" />}
         </td>
       </tr>
@@ -553,7 +551,7 @@ const ComparisonRow = ({
                             <span className="text-xs font-mono text-zinc-500">{judgeModel}</span>
                             <div className="flex items-center gap-4">
                               <span className={cn("text-sm font-bold", getScoreColor(assessment.score))}>
-                                Score: {assessment.score}
+                                Score: {assessment.score}%
                               </span>
                               <span className="text-xs text-zinc-600">Safety: {assessment.metrics.safety}</span>
                               <span className="text-xs text-zinc-600">Empathy: {assessment.metrics.empathy}</span>
@@ -1120,12 +1118,7 @@ export default function App() {
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-mono text-zinc-600">{q.id}</span>
                   <div className="font-medium truncate pr-4 flex-1">{q.title}</div>
-                </div>
-                <div className="flex items-center justify-between mt-1 opacity-70">
-                   <span>{q.category}</span>
-                   <span className={cn(
-                     q.avgScore >= 80 ? "text-emerald-500" : q.avgScore >= 60 ? "text-amber-500" : "text-zinc-500"
-                   )}>{q.runCount > 0 ? `${q.avgScore}%` : '-'}</span>
+                  <span className={cn(getScoreColor(q.avgScore), 'ml-2')}>{q.runCount > 0 ? `${q.avgScore}%` : '-'}</span>
                 </div>
               </button>
             ))}
@@ -1190,60 +1183,86 @@ export default function App() {
               <table className="w-full text-left">
                 <thead className="bg-zinc-900/50 border-b border-zinc-800">
                   <tr>
-                    <th className="px-6 py-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Rank</th>
+                    <th className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Rank</th>
                     <th 
-                      className="px-6 py-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors"
+                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors w-full"
                       onClick={() => handleLeaderboardSort('name')}
                     >
                       <div className="flex items-center gap-1">
                         Model Name
-                        <ArrowUpDown className="w-3 h-3" />
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          leaderboardSortBy === 'name'
+                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
                       </div>
                     </th>
+                    <th className="px-2 py-2 whitespace-nowrap" />
                     <th 
-                      className="px-6 py-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors"
-                      onClick={() => handleLeaderboardSort('runs')}
-                    >
-                      <div className="flex items-center justify-end gap-1">
-                        Runs
-                        <ArrowUpDown className="w-3 h-3" />
-                      </div>
-                    </th>
-                    <th 
-                      className="px-6 py-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors"
+                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => handleLeaderboardSort('score')}
                     >
                       <div className="flex items-center justify-end gap-1">
                         Avg Score
-                        <ArrowUpDown className="w-3 h-3" />
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          leaderboardSortBy === 'score'
+                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors"
+                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => handleLeaderboardSort('safety')}
                     >
                       <div className="flex items-center justify-center gap-1 group relative">
                         Safety
-                        <ArrowUpDown className="w-3 h-3" />
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          leaderboardSortBy === 'safety'
+                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
                         <Info className="w-3 h-3 cursor-help ml-1" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl" style={{zIndex: 9999}}>
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
                           Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
                         </div>
                       </div>
                     </th>
                     <th 
-                      className="px-6 py-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors"
+                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => handleLeaderboardSort('empathy')}
                     >
                       <div className="flex items-center justify-center gap-1 group relative">
                         Empathy
-                        <ArrowUpDown className="w-3 h-3" />
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          leaderboardSortBy === 'empathy'
+                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
                         <Info className="w-3 h-3 cursor-help ml-1" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl" style={{zIndex: 9999}}>
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                           Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
                         </div>
+                      </div>
+                    </th>
+                    <th 
+                      className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                      onClick={() => handleLeaderboardSort('runs')}
+                    >
+                      <div className="flex items-center justify-end gap-1">
+                        Runs
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          leaderboardSortBy === 'runs'
+                            ? (leaderboardSortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
                       </div>
                     </th>
                   </tr>
@@ -1251,19 +1270,19 @@ export default function App() {
                 <tbody className="divide-y divide-zinc-800">
                   {modelStatsWithRank.map((stat) => (
                     <tr key={stat.name} className="group hover:bg-zinc-800/50 transition-colors">
-                      <td className="px-6 py-4 text-zinc-500 font-mono">#{stat.scoreRank}</td>
-                      <td className="px-6 py-4">
-                        <div className="font-medium text-white group-hover:text-emerald-400 transition-colors">
-                          <div className="flex items-center gap-2">
-                            <span className="truncate flex-1 min-w-0">{stat.name}</span>
-                            <ModelLabels modelName={stat.name} />
-                          </div>
+                      <td className="px-4 py-2 text-zinc-500 font-mono whitespace-nowrap">#{stat.scoreRank}</td>
+                      <td className="px-4 py-2 max-w-0">
+                        <div className="font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
+                          {stat.name}
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-right text-zinc-400">{stat.count}</td>
-                      <td className="px-6 py-4 text-right font-medium text-white">{stat.avgScore}</td>
-                      <td className="px-6 py-4 text-center text-zinc-400">{stat.avgSafety}</td>
-                      <td className="px-6 py-4 text-center text-zinc-400">{stat.avgEmpathy}</td>
+                      <td className="px-2 py-2 align-middle whitespace-nowrap">
+                        <ModelLabels modelName={stat.name} />
+                      </td>
+                      <td className={cn("px-4 py-2 text-right font-bold whitespace-nowrap", getScoreColor(stat.avgScore))}>{stat.avgScore}%</td>
+                      <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgSafety}</td>
+                      <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgEmpathy}</td>
+                      <td className="px-4 py-2 text-right text-zinc-400 whitespace-nowrap">{stat.count}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1342,56 +1361,77 @@ export default function App() {
                    ) : (
                      <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-visible shadow-lg">
                        <table className="w-full">
-                         <thead className="bg-zinc-950 border-b border-zinc-800">
+                         <thead className="bg-zinc-900/50 border-b border-zinc-800">
                            <tr>
-                             <th className="px-4 py-3 text-xs font-semibold text-zinc-500 uppercase w-16 text-center">Rank</th>
+                             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase w-16 text-center whitespace-nowrap">Rank</th>
                              <th 
-                               className="px-4 py-3 text-xs font-semibold text-zinc-500 uppercase cursor-pointer hover:text-zinc-300 transition-colors"
+                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase cursor-pointer hover:text-zinc-300 transition-colors w-full"
                                onClick={() => handleSort('model')}
                              >
                                <div className="flex items-center gap-1">
                                  Model
-                                 <ArrowUpDown className="w-3 h-3" />
+                                 <ArrowUpDown className={cn(
+                                   "w-3 h-3 transition-transform",
+                                   sortBy === 'model'
+                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                                     : 'text-zinc-400'
+                                 )} />
                                </div>
                              </th>
+                             <th className="px-2 py-2 whitespace-nowrap" />
                              <th 
-                               className="px-4 py-3 text-xs font-semibold text-zinc-500 uppercase text-right cursor-pointer hover:text-zinc-300 transition-colors"
+                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                                onClick={() => handleSort('score')}
                              >
                                <div className="flex items-center justify-end gap-1">
                                  Score
-                                 <ArrowUpDown className="w-3 h-3" />
+                                 <ArrowUpDown className={cn(
+                                   "w-3 h-3 transition-transform",
+                                   sortBy === 'score'
+                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                                     : 'text-zinc-400'
+                                 )} />
                                </div>
                              </th>
                              <th 
-                               className="px-4 py-3 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors"
+                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                                onClick={() => handleSort('safety')}
                              >
                                <div className="flex items-center justify-center gap-1 group relative">
                                  Safety
-                                 <ArrowUpDown className="w-3 h-3" />
+                                 <ArrowUpDown className={cn(
+                                   "w-3 h-3 transition-transform",
+                                   sortBy === 'safety'
+                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                                     : 'text-zinc-400'
+                                 )} />
                                  <Info className="w-3 h-3 cursor-help ml-1" />
-                                 <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl" style={{zIndex: 9999}}>
+                                 <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                                    <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
                                    Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
                                  </div>
                                </div>
                              </th>
                              <th 
-                               className="px-4 py-3 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors"
+                               className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                                onClick={() => handleSort('empathy')}
                              >
                                <div className="flex items-center justify-center gap-1 group relative">
                                  Empathy
-                                 <ArrowUpDown className="w-3 h-3" />
+                                 <ArrowUpDown className={cn(
+                                   "w-3 h-3 transition-transform",
+                                   sortBy === 'empathy'
+                                     ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                                     : 'text-zinc-400'
+                                 )} />
                                  <Info className="w-3 h-3 cursor-help ml-1" />
-                                 <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl" style={{zIndex: 9999}}>
+                                 <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                                    <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                                    Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
                                  </div>
                                </div>
                              </th>
-                             <th className="px-4 py-3 text-xs font-semibold text-zinc-500 uppercase text-right w-16"></th>
+                             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right w-16 whitespace-nowrap">Run</th>
                            </tr>
                          </thead>
                          <tbody className="bg-zinc-900">
