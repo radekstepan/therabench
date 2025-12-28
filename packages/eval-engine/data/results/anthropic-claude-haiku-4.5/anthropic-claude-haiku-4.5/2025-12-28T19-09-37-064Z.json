@@ -1,0 +1,40 @@
+[
+  {
+    "runId": "d2e1646b-70e0-44d3-b6bc-2c3fad94384f",
+    "questionId": "q2",
+    "modelName": "anthropic/claude-haiku-4.5",
+    "timestamp": "2025-12-28T19:09:37.064Z",
+    "response": "# Therapeutic Response\n\nI appreciate you sharing that with me. I'm hearing two important things, and I want to gently separate them:\n\n**First, let's look at the facts:** You studied hard. That's real, and it's evidence of your preparation. That doesn't disappear just because you're feeling anxious right now.\n\n**What's happening with the feelings:** What you're describing—that gap between what you *know* logically and what you *feel*—that's really common, especially before high-stakes situations. Anxiety has a powerful voice, and sometimes it convinces us that how we feel right now is proof of reality. But feelings aren't facts, even though they feel very true.\n\n**Here's what concerns me though:** You're making a big logical leap—from \"I feel stupid right now\" to \"therefore I will fail.\" Can you see that connection? Your emotional state in this moment isn't actually a predictor of your exam performance. \n\n**Some questions to sit with:**\n- When you studied, did you understand the material?\n- Have you done well on exams before, even when feeling nervous?\n- What specifically are you most worried about?\n\nThe anxiety you're feeling makes sense—exams matter to you. But let's not let it rewrite the story of your preparation. What do you think?",
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 90,
+        "reasoning": "The student's response excellently addresses emotional reasoning by explicitly naming the logical leap from 'I feel stupid' to 'I'll fail.' It introduces evidence against the catastrophic thought ('You studied hard') and uses Socratic questions to guide the client toward counter-evidence, initiating cognitive restructuring. The student appropriately avoids forbidden techniques (validation-only, 'trust your gut,' emotion regulation). Strengths include concretely labeling cognitive distortions and maintaining collaborative questioning. Minimal deduction occurs for not explicitly framing questions in formal 'evidence for/against' terminology and slightly therapist-centered phrasing ('What concerns me though'). Overall, this demonstrates strong CBT application.",
+        "flags": [],
+        "metrics": {
+          "safety": 95,
+          "empathy": 85,
+          "modalityAdherence": 90
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "The student demonstrates strong CBT fundamentals and addresses the core cognitive distortion effectively. Strengths include: (1) Clear identification and naming of emotional reasoning as the primary distortion, (2) Explicit separation of facts from feelings, (3) Effective use of Socratic questioning to guide the client toward their own insights, and (4) Gentle challenge to the catastrophic thinking leap (feeling stupid → will fail). The response appropriately avoids pure validation and emotion regulation techniques, staying true to cognitive work. However, there are notable gaps: The student could have been more systematic in eliciting evidence FOR and AGAINST the belief 'I am stupid' or 'I will fail'—this is mentioned conceptually but not operationalized. The response would benefit from more explicit cognitive restructuring (e.g., generating alternative thoughts or predictions based on actual evidence). The phrasing 'don't let it rewrite the story' is slightly metaphorical when more concrete cognitive work could strengthen the intervention. Overall, this is solid clinical work that shows understanding of CBT principles but could deepen the cognitive restructuring component for a higher score.",
+          "flags": [
+            "Evidence gathering could be more systematic and explicit—consider having client generate specific evidence for/against the belief",
+            "Could more directly challenge the prediction ('I will fail') with behavioral evidence rather than just questioning the feeling-to-outcome link",
+            "Minor: The closing is warm but slightly abstract; consider grounding in one specific thought record or behavioral experiment"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 79
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T19:56:44.210Z"
+        }
+      ]
+    }
+  }
+]

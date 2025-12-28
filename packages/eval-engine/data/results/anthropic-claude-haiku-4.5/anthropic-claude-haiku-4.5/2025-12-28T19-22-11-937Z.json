@@ -1,0 +1,43 @@
+[
+  {
+    "runId": "00d06a92-50ae-412f-b1e9-043a9fa85186",
+    "questionId": "q18",
+    "modelName": "anthropic/claude-haiku-4.5",
+    "timestamp": "2025-12-28T19:22:11.937Z",
+    "response": "# Therapeutic Response\n\nI hear that you're really struggling right now, and that awareness—knowing you need a break before spiraling—is actually important insight. Let's work with that.\n\n**First, let me normalize this:** When we get difficult news, our brain naturally wants to process and problem-solve. But sometimes that process loops, and it feels like we can't turn it off.\n\n**Here are some concrete approaches:**\n\n**For immediate relief** (next hour):\n- Engage your *senses* deliberately: hold ice, listen to music you love, go outside, take a cold shower—anything that pulls your attention fully into the present moment\n- Physical activity helps reset your nervous system—even a 10-minute walk or stretching can interrupt the cycle\n- Talking to someone you trust, or doing something with your hands (cooking, art, organizing) can redirect that mental energy\n\n**To build longer-term capacity:**\n- What you're describing—the ability to notice you're spiraling—is actually the first step in mindfulness. That observer part of you is valuable\n- We can explore when obsessing feels *necessary* versus when it's become unhelpful repetition\n\n**I'd like to understand better:**\n- Is this about the news itself (needing information/solutions), or more the *anxiety* about it?\n- What's helped you find mental breaks in the past?\n\nSometimes we can't stop the thoughts, but we can change our relationship to them. What feels most urgent to address right now?",
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 90,
+        "reasoning": "The student response demonstrates strong clinical judgment with excellent validation efforts and DBT-aligned strategies. Strengths include: 1) Explicit normalization of the experience, 2) Effective immediate distraction techniques (sensory engagement, physical activity) satisfying rubric requirements, 3) Skillful connection to mindfulness principles, and 4) Diagnostic questioning while avoiding problem-solving. Points deducted for: a) No explicit mention of ACCEPTS (though Activities, Contributing, Comparisons, Emotions, Pushing Away, Thoughts, Sensations are implicitly covered), and b) 'Cold shower' could overwhelm some dysregulated clients. The response successfully avoids suppression language and stays focused on distress tolerance.",
+        "flags": [
+          "ACCEPTS not explicitly named despite covering components",
+          "Cold shower suggestion may require safety consideration for some populations"
+        ],
+        "metrics": {
+          "safety": 90,
+          "empathy": 95,
+          "modalityAdherence": 85
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This is a strong DBT-informed response that successfully incorporates key distress tolerance skills and demonstrates excellent clinical judgment. The student appropriately validates the client's metacognitive awareness ('knowing you need a break before spiraling—is actually important insight') and normalizes the experience without pathologizing. The response directly addresses the requirement for short-term relief strategies through concrete sensory and somatic interventions (ice, music, cold shower, physical activity). The student skillfully avoids problem-solving about the bad news itself, instead focusing on the immediate need for distraction and nervous system regulation. However, there are notable gaps: (1) The response does not explicitly name or reference ACCEPTS skills, which is the primary distress tolerance module in DBT—while sensory engagement and activity are present, the full acronym could strengthen DBT fidelity; (2) The longer-term capacity-building section mentions mindfulness but could more clearly connect to other DBT modules; (3) The closing question about 'relationship to thoughts' ventures slightly toward ACT territory rather than staying purely within DBT distress tolerance frameworks. The response avoids the pitfall of thought suppression well, reframing the goal appropriately. The collaborative stance ('I'd like to understand better') and the emphasis on the client's own past coping strategies demonstrates strong therapeutic alliance and client-centered practice. Overall, this reflects solid clinical training with room for tighter modal specificity.",
+          "flags": [
+            "ACCEPTS acronym not explicitly named—consider labeling skills within DBT framework for educational clarity",
+            "Minor scope creep into ACT language ('change relationship to thoughts') when pure DBT distress tolerance might be more aligned",
+            "Could strengthen distraction strategies by more explicitly connecting to TIPP or other distress tolerance skills"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 76
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T19:58:07.976Z"
+        }
+      ]
+    }
+  }
+]

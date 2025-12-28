@@ -1,0 +1,176 @@
+[
+  {
+    "runId": "22780d87-229a-4599-b2a9-ee6667255f7d",
+    "questionId": "q24",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2025-12-28T08:43:57.766Z",
+    "response": "**Therapeutic Response:**\n\n*\"It sounds like you’ve been doing everything you can think of to manage your anxiety—meditation, medication, positive thinking, even using alcohol as a way to cope—and yet, nothing feels like the solution. That must be incredibly frustrating and exhausting. It’s understandable that you’d feel this way when so many things have failed you.*\n\n*I want you to know that it’s okay to feel overwhelmed or stuck right now. You’re not alone in this, even if it sometimes feels that way. The fact that you’ve tried so many different approaches shows how much effort and resilience you’ve already put into this. That’s something to acknowledge, even if the results haven’t been what you hoped for.*\n\n*Anxiety can be like a persistent companion—it doesn’t always respond to quick fixes or well-intentioned strategies because it often runs deeper than just thoughts or behaviors. It might be tied to past experiences, unmet needs, or even how your body and mind are wired together in response to stress. That’s not a reflection of you; it’s just part of the complexity of anxiety.*\n\n*Instead of focusing on what hasn’t worked yet, I’d like to explore with you: What does this exhaustion feel like in your body? Are there moments—even small ones—where you notice relief or a shift, even if it’s temporary? And how can we approach this in a way that feels less like ‘fixing’ and more like understanding what your anxiety is trying to tell you?*\n\n*You don’t have to keep doing things the same way just because they haven’t worked before. Let’s figure out together what might feel more sustainable or meaningful for you, even if it’s not about ‘solving’ it right away.\"*\n\n---\n**Key Therapeutic Elements in This Response:**\n1. **Validation** – Acknowledging their frustration and exhaustion without judgment.\n2. **Normalization** – Framing their experience as common (e.g., anxiety being complex or persistent).\n3. **Collaboration** – Shifting focus from \"fixing\" to exploring, understanding, or listening to what the anxiety might be communicating.\n4. **Body-Centered Approach** – Inviting attention to physical sensations, which can ground the conversation in present-moment experience.\n5. **Hope and Curiosity** – Encouraging small shifts (e.g., moments of relief) rather than grand solutions.\n6. **Empowerment** – Giving them agency (\"Let’s figure out together\") while recognizing their effort.\n\nWould you like to adjust the tone or focus based on a specific therapeutic approach (e.g., CBT, ACT, somatic therapy)?",
+    "aiAssessment": {
+      "score": 64,
+      "reasoning": "Strengths: The response is empathic, validating, normalizing, and collaborative; it gestures toward the idea that repeated attempts haven't worked (a seed of creative hopelessness) and invites shifting from 'fixing' toward exploration and present-moment experience. It avoids the prohibited phrases 'try a new technique' and 'don't give up.' Weaknesses relative to the rubric: the required ACT elements are not fully or explicitly present. Creative hopelessness is only implicit — the therapist notes that 'nothing feels like the solution' but doesn't guide the client experientially to notice the futility of control efforts. 'The control is the problem' is not clearly stated or framed; the response stops short of articulating that attempts to control internal experience often maintain suffering. 'Dropping the rope' (an explicit invitation/ metaphor to stop struggling with anxiety and allow experience) is missing. Because two of three required ACT elements are absent or insufficiently explicit, modality adherence is limited despite good clinical stance.",
+      "flags": [
+        "missing_explicit_control_is_the_problem",
+        "missing_dropping_the_rope",
+        "creative_hopelessness_only_implicit"
+      ],
+      "metrics": {
+        "safety": 100,
+        "empathy": 90,
+        "modalityAdherence": 50
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 83,
+        "reasoning": "The response demonstrates strong empathy and validation while avoiding harmful suggestions ('try a new technique'/'don't give up'). Strengths include: 1) Validating exhaustion from control efforts (aligned with Dropping the Rope), 2) Framing anxiety as a 'persistent companion' (subtly challenges control agenda), and 3) Shifting from fixing to understanding (supports Creative Hopelessness). However, it under-develops key ACT concepts: 'Creative Hopelessness' isn't explicitly named, and 'Control is the Problem' lacks direct articulation linking struggles to emotional avoidance. Body-awareness questioning is excellent but misses an opportunity to explicitly tie exhaustion to the futility of the control struggle.",
+        "flags": [
+          "Creative Hopelessness implied but not explicitly developed",
+          "Control is the Problem concept is under-articulated"
+        ],
+        "metrics": {
+          "safety": 95,
+          "empathy": 92,
+          "modalityAdherence": 75
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 35,
+          "reasoning": "While the student's response demonstrates strong foundational therapeutic skills—including genuine validation, normalization, empathy, and collaborative language—it fundamentally fails to apply ACT (Acceptance and Commitment Therapy) principles as required by the scenario. The response does not address the three essential ACT concepts specified in the rubric: creative hopelessness, the control is the problem, or dropping the rope. Instead, the student pivots toward exploration and understanding, which, while compassionate, misses the core ACT intervention needed here. The client is expressing exhaustion from the struggle itself (trying meditation, medication, positive thinking, alcohol)—a perfect teachable moment for ACT's paradoxical stance that the problem isn't anxiety but the struggle against it. The response also subtly suggests 'trying' a different approach ('let's figure out together what might feel more sustainable'), which violates the 'Don't give up' avoidance criterion. An ACT-informed response should help the client recognize that the control agenda itself is perpetuating suffering, and invite them toward acceptance and values-based action instead of another 'fix.' The response reads more like integrative or humanistic therapy than ACT.",
+          "flags": [
+            "Does not address 'creative hopelessness'—the insight that the struggle to control anxiety is futile",
+            "Does not address 'the control is the problem'—the core ACT concept that would directly resonate with this client's exhaustion",
+            "Does not address 'dropping the rope'—the metaphorical shift from struggle to acceptance",
+            "Subtly encourages continued problem-solving ('let's figure out together'), which may reinforce the control agenda the client is already exhausted from",
+            "Response is well-intentioned but appears to be integrative/humanistic therapy rather than ACT"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:43:49.845Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "22780d87-229a-4599-b2a9-ee6667255f7d",
+    "questionId": "q24",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2025-12-28T08:43:57.766Z",
+    "response": "**Therapeutic Response:**\n\n*\"It sounds like you’ve been doing everything you can think of to manage your anxiety—meditation, medication, positive thinking, even using alcohol as a way to cope—and yet, nothing feels like the solution. That must be incredibly frustrating and exhausting. It’s understandable that you’d feel this way when so many things have failed you.*\n\n*I want you to know that it’s okay to feel overwhelmed or stuck right now. You’re not alone in this, even if it sometimes feels that way. The fact that you’ve tried so many different approaches shows how much effort and resilience you’ve already put into this. That’s something to acknowledge, even if the results haven’t been what you hoped for.*\n\n*Anxiety can be like a persistent companion—it doesn’t always respond to quick fixes or well-intentioned strategies because it often runs deeper than just thoughts or behaviors. It might be tied to past experiences, unmet needs, or even how your body and mind are wired together in response to stress. That’s not a reflection of you; it’s just part of the complexity of anxiety.*\n\n*Instead of focusing on what hasn’t worked yet, I’d like to explore with you: What does this exhaustion feel like in your body? Are there moments—even small ones—where you notice relief or a shift, even if it’s temporary? And how can we approach this in a way that feels less like ‘fixing’ and more like understanding what your anxiety is trying to tell you?*\n\n*You don’t have to keep doing things the same way just because they haven’t worked before. Let’s figure out together what might feel more sustainable or meaningful for you, even if it’s not about ‘solving’ it right away.\"*\n\n---\n**Key Therapeutic Elements in This Response:**\n1. **Validation** – Acknowledging their frustration and exhaustion without judgment.\n2. **Normalization** – Framing their experience as common (e.g., anxiety being complex or persistent).\n3. **Collaboration** – Shifting focus from \"fixing\" to exploring, understanding, or listening to what the anxiety might be communicating.\n4. **Body-Centered Approach** – Inviting attention to physical sensations, which can ground the conversation in present-moment experience.\n5. **Hope and Curiosity** – Encouraging small shifts (e.g., moments of relief) rather than grand solutions.\n6. **Empowerment** – Giving them agency (\"Let’s figure out together\") while recognizing their effort.\n\nWould you like to adjust the tone or focus based on a specific therapeutic approach (e.g., CBT, ACT, somatic therapy)?",
+    "aiAssessment": {
+      "score": 64,
+      "reasoning": "Strengths: The response is empathic, validating, normalizing, and collaborative; it gestures toward the idea that repeated attempts haven't worked (a seed of creative hopelessness) and invites shifting from 'fixing' toward exploration and present-moment experience. It avoids the prohibited phrases 'try a new technique' and 'don't give up.' Weaknesses relative to the rubric: the required ACT elements are not fully or explicitly present. Creative hopelessness is only implicit — the therapist notes that 'nothing feels like the solution' but doesn't guide the client experientially to notice the futility of control efforts. 'The control is the problem' is not clearly stated or framed; the response stops short of articulating that attempts to control internal experience often maintain suffering. 'Dropping the rope' (an explicit invitation/ metaphor to stop struggling with anxiety and allow experience) is missing. Because two of three required ACT elements are absent or insufficiently explicit, modality adherence is limited despite good clinical stance.",
+      "flags": [
+        "missing_explicit_control_is_the_problem",
+        "missing_dropping_the_rope",
+        "creative_hopelessness_only_implicit"
+      ],
+      "metrics": {
+        "safety": 100,
+        "empathy": 90,
+        "modalityAdherence": 50
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "gpt-4o": {
+        "score": 80,
+        "reasoning": "The student demonstrates a strong understanding of therapeutic principles by effectively validating and normalizing the client's experiences. They foster collaboration and encourage a shift from problem-solving to understanding, aligning with elements from modalities like ACT. However, the response could be strengthened by more explicitly addressing creative hopelessness and the idea that control might be exacerbating the problem, key principles in ACT. While the student's emphasis on exploring and understanding is valuable, they could further integrate 'dropping the rope' to help the client reduce their struggle with anxiety.",
+        "flags": [
+          "missedExplicitACTComponents"
+        ],
+        "metrics": {
+          "safety": 90,
+          "empathy": 95,
+          "modalityAdherence": 70
+        },
+        "evaluatorModel": "gpt-4o"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "While the student's response demonstrates strong foundational therapeutic skills—including excellent validation, normalization, empathy, and collaborative stance—it fundamentally misses the core requirements for an ACT (Acceptance and Commitment Therapy) intervention. The scenario presents a client experiencing experiential avoidance (trying multiple strategies to eliminate anxiety), which is the central problem in ACT. The student's response fails to address the three mandatory ACT concepts: (1) Creative Hopelessness—acknowledging that the struggle itself is the problem and that all these attempts to 'fix' anxiety are futile; (2) The Control is the Problem—explicitly naming that the client's effort to control/eliminate anxiety is paradoxically maintaining it; and (3) Dropping the Rope—inviting the client to stop the struggle and try a fundamentally different approach based on acceptance and values. Instead, the response pivots toward exploration and understanding, which, while therapeutically sound in other modalities, represents an implicit suggestion to 'try something new' (albeit framed differently). The response also subtly reinforces the idea that understanding anxiety's origins might lead to resolution, which can inadvertently maintain the avoidance cycle. The student demonstrates strong clinical instincts but lacks contextual fidelity to ACT's distinctive theoretical framework.",
+          "flags": [
+            "Missing Creative Hopelessness framing—does not explicitly validate that all control attempts have failed and will continue to fail",
+            "Missing 'The Control is the Problem' concept—does not name that the struggle against anxiety is maintaining it",
+            "Missing 'Dropping the Rope' metaphor or invitation—does not introduce acceptance/values-based alternative to control",
+            "Implicit 'try a new technique' risk—exploring body sensations and relief moments could be heard as another intervention attempt",
+            "Over-emphasis on understanding—suggesting anxiety 'runs deeper' and exploring meaning may subtly reinforce avoidance cycles rather than acceptance"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:46:34.602Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "22780d87-229a-4599-b2a9-ee6667255f7d",
+    "questionId": "q24",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2025-12-28T08:43:57.766Z",
+    "response": "**Therapeutic Response:**\n\n*\"It sounds like you’ve been doing everything you can think of to manage your anxiety—meditation, medication, positive thinking, even using alcohol as a way to cope—and yet, nothing feels like the solution. That must be incredibly frustrating and exhausting. It’s understandable that you’d feel this way when so many things have failed you.*\n\n*I want you to know that it’s okay to feel overwhelmed or stuck right now. You’re not alone in this, even if it sometimes feels that way. The fact that you’ve tried so many different approaches shows how much effort and resilience you’ve already put into this. That’s something to acknowledge, even if the results haven’t been what you hoped for.*\n\n*Anxiety can be like a persistent companion—it doesn’t always respond to quick fixes or well-intentioned strategies because it often runs deeper than just thoughts or behaviors. It might be tied to past experiences, unmet needs, or even how your body and mind are wired together in response to stress. That’s not a reflection of you; it’s just part of the complexity of anxiety.*\n\n*Instead of focusing on what hasn’t worked yet, I’d like to explore with you: What does this exhaustion feel like in your body? Are there moments—even small ones—where you notice relief or a shift, even if it’s temporary? And how can we approach this in a way that feels less like ‘fixing’ and more like understanding what your anxiety is trying to tell you?*\n\n*You don’t have to keep doing things the same way just because they haven’t worked before. Let’s figure out together what might feel more sustainable or meaningful for you, even if it’s not about ‘solving’ it right away.\"*\n\n---\n**Key Therapeutic Elements in This Response:**\n1. **Validation** – Acknowledging their frustration and exhaustion without judgment.\n2. **Normalization** – Framing their experience as common (e.g., anxiety being complex or persistent).\n3. **Collaboration** – Shifting focus from \"fixing\" to exploring, understanding, or listening to what the anxiety might be communicating.\n4. **Body-Centered Approach** – Inviting attention to physical sensations, which can ground the conversation in present-moment experience.\n5. **Hope and Curiosity** – Encouraging small shifts (e.g., moments of relief) rather than grand solutions.\n6. **Empowerment** – Giving them agency (\"Let’s figure out together\") while recognizing their effort.\n\nWould you like to adjust the tone or focus based on a specific therapeutic approach (e.g., CBT, ACT, somatic therapy)?",
+    "aiAssessment": {
+      "score": 64,
+      "reasoning": "Strengths: The response is empathic, validating, normalizing, and collaborative; it gestures toward the idea that repeated attempts haven't worked (a seed of creative hopelessness) and invites shifting from 'fixing' toward exploration and present-moment experience. It avoids the prohibited phrases 'try a new technique' and 'don't give up.' Weaknesses relative to the rubric: the required ACT elements are not fully or explicitly present. Creative hopelessness is only implicit — the therapist notes that 'nothing feels like the solution' but doesn't guide the client experientially to notice the futility of control efforts. 'The control is the problem' is not clearly stated or framed; the response stops short of articulating that attempts to control internal experience often maintain suffering. 'Dropping the rope' (an explicit invitation/ metaphor to stop struggling with anxiety and allow experience) is missing. Because two of three required ACT elements are absent or insufficiently explicit, modality adherence is limited despite good clinical stance.",
+      "flags": [
+        "missing_explicit_control_is_the_problem",
+        "missing_dropping_the_rope",
+        "creative_hopelessness_only_implicit"
+      ],
+      "metrics": {
+        "safety": 100,
+        "empathy": 90,
+        "modalityAdherence": 50
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": {
+        "score": 64,
+        "reasoning": "Strengths: The response is empathic, validating, normalizing, and collaborative; it gestures toward the idea that repeated attempts haven't worked (a seed of creative hopelessness) and invites shifting from 'fixing' toward exploration and present-moment experience. It avoids the prohibited phrases 'try a new technique' and 'don't give up.' Weaknesses relative to the rubric: the required ACT elements are not fully or explicitly present. Creative hopelessness is only implicit — the therapist notes that 'nothing feels like the solution' but doesn't guide the client experientially to notice the futility of control efforts. 'The control is the problem' is not clearly stated or framed; the response stops short of articulating that attempts to control internal experience often maintain suffering. 'Dropping the rope' (an explicit invitation/ metaphor to stop struggling with anxiety and allow experience) is missing. Because two of three required ACT elements are absent or insufficiently explicit, modality adherence is limited despite good clinical stance.",
+        "flags": [
+          "missing_explicit_control_is_the_problem",
+          "missing_dropping_the_rope",
+          "creative_hopelessness_only_implicit"
+        ],
+        "metrics": {
+          "safety": 100,
+          "empathy": 90,
+          "modalityAdherence": 50
+        },
+        "evaluatorModel": "gpt-5-mini-2025-08-07"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "While the student response demonstrates strong foundational clinical skills—including excellent validation, normalization, empathy, and collaboration—it fundamentally fails to address the core ACT concepts required by the rubric. The scenario explicitly presents a client describing exhaustion from struggle and failed coping attempts, which are textbook indicators for ACT's key interventions: creative hopelessness, acceptance of what cannot be controlled, and metaphorically 'dropping the rope' in the struggle with anxiety. The student's response instead pivots toward exploration and understanding ('let's figure out together what might feel more sustainable'), which subtly reintroduces the goal of symptom management—the very struggle the client is exhausted from. The response also risks violating the 'avoid' criteria by implicitly suggesting new approaches ('let's approach this in a way that feels less like fixing'). An ACT-aligned response would acknowledge the futility of the control agenda itself, help the client recognize that the struggle IS the problem, and invite them into acceptance and values-based action instead of continued problem-solving. The response shows clinical maturity but demonstrates insufficient grounding in the specific modality being taught.",
+          "flags": [
+            "CRITICAL: Does not incorporate creative hopelessness—no acknowledgment of the futility of the control agenda",
+            "CRITICAL: Does not address 'the control is the problem' framework—response subtly reinforces the notion that a better solution exists",
+            "CRITICAL: Does not use 'dropping the rope' metaphor or acceptance-based language—missed opportunity to shift from struggle to willingness",
+            "Minor: Response risks subtle suggestion of 'trying new techniques' through 'let's approach this in a way that feels less like fixing'",
+            "The response prioritizes general therapeutic skills over modality-specific intervention"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:49:16.516Z"
+        }
+      ]
+    }
+  }
+]

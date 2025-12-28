@@ -1,0 +1,169 @@
+[
+  {
+    "runId": "832564ce-3d9e-47ec-a011-4d11b2a1b8bf",
+    "questionId": "q2",
+    "modelName": "moonshotai/kimi-k2:free",
+    "timestamp": "2025-12-28T08:51:44.937Z",
+    "response": "It sounds like you're in a place where your emotions are speaking louder than your thoughts. You know you prepared, but the fear is so loud that it drowns out the facts. Can we slow the moment down and look at what’s happening right now, instead of fast-forwarding to the worst-case scenario?",
+    "aiAssessment": {
+      "score": 62,
+      "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
+      "flags": [
+        "Missing: Evidence for vs. Evidence against",
+        "Insufficient: Cognitive restructuring not explicit or complete",
+        "Potential emotion-regulation suggestion ('slow the moment down')"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 85,
+        "modalityAdherence": 60
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 85,
+        "reasoning": "The student accurately identified emotional reasoning ('drowns out the facts') and initiated cognitive restructuring by challenging catastrophization ('instead of fast-forwarding'). However, missed explicit evidence analysis - did not guide client to examine proof of preparation versus failure predictions. Effectively avoided validation-only responses and emotion regulation techniques as prohibited.",
+        "flags": [
+          "Incomplete evidence analysis"
+        ],
+        "metrics": {
+          "safety": 95,
+          "empathy": 90,
+          "modalityAdherence": 80
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates good foundational skills in this response. They effectively identify emotional reasoning (recognizing that feeling stupid ≠ being stupid) and attempt to redirect the client from catastrophizing to present-moment awareness. The metaphor of emotions 'speaking louder' is accessible and validates the client's experience without being purely validating. However, the response falls short of the CBT requirements. Most critically, it lacks systematic exploration of evidence for and against the catastrophic belief ('I will fail the exam'). The student doesn't ask the client to examine past exam performance, study quality, or specific content mastery—essential interventions in cognitive restructuring. Additionally, the phrase 'Can we slow the moment down' borders on emotion regulation technique language rather than pure cognitive work. The response is empathetic and directionally sound, but incomplete in delivering the core CBT interventions specified.",
+          "flags": [
+            "Missing evidence examination: No exploration of evidence for/against the failing belief",
+            "Incomplete cognitive restructuring: Identifies the distortion but doesn't systematically challenge it",
+            "Could strengthen by asking specific Socratic questions about past performance or preparation quality"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:49:55.320Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "832564ce-3d9e-47ec-a011-4d11b2a1b8bf",
+    "questionId": "q2",
+    "modelName": "moonshotai/kimi-k2:free",
+    "timestamp": "2025-12-28T08:51:44.937Z",
+    "response": "It sounds like you're in a place where your emotions are speaking louder than your thoughts. You know you prepared, but the fear is so loud that it drowns out the facts. Can we slow the moment down and look at what’s happening right now, instead of fast-forwarding to the worst-case scenario?",
+    "aiAssessment": {
+      "score": 62,
+      "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
+      "flags": [
+        "Missing: Evidence for vs. Evidence against",
+        "Insufficient: Cognitive restructuring not explicit or complete",
+        "Potential emotion-regulation suggestion ('slow the moment down')"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 85,
+        "modalityAdherence": 60
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "gpt-4o": {
+        "score": 80,
+        "reasoning": "The student's response is effective in recognizing the client's emotional reasoning, highlighting the way emotions are overshadowing logical thoughts. The invitation to slow down and assess the situation is a good step toward cognitive restructuring, but it falls short of directly addressing the evidence for versus evidence against the client's fear of failing the exam. The student avoids merely validating the client's feelings and does not use emotion regulation techniques, which aligns with the scenario requirements.",
+        "flags": [],
+        "metrics": {
+          "safety": 85,
+          "empathy": 90,
+          "modalityAdherence": 70
+        },
+        "evaluatorModel": "gpt-4o"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates good foundational skills in identifying emotional reasoning and using metaphor to create distance from unhelpful thought patterns. The response validates the client's preparation work and gently redirects toward present-moment analysis rather than catastrophizing. However, the response falls short of the CBT rubric requirements. Most critically, it lacks explicit cognitive restructuring—there is no systematic examination of evidence for and against the feared outcome (failing the exam). The student names the problem ('emotions speaking louder') but doesn't guide the client through the core CBT technique of evaluating the evidence base for the catastrophic prediction. The response also leans slightly toward emotion regulation framing ('slow the moment down') rather than pure cognitive work, though this is minor. The invitation to examine 'what's happening right now' is good directional work but needs to be paired with specific cognitive challenges (e.g., 'What evidence do you have that you'll fail vs. evidence you'll pass?'). The response is clinically sound and empathic but incomplete as a CBT intervention.",
+          "flags": [
+            "Missing explicit Evidence For/Against analysis of the catastrophic belief",
+            "No structured cognitive restructuring or thought record implementation",
+            "Could more directly challenge the emotional reasoning fallacy with concrete questioning"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:52:13.040Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "832564ce-3d9e-47ec-a011-4d11b2a1b8bf",
+    "questionId": "q2",
+    "modelName": "moonshotai/kimi-k2:free",
+    "timestamp": "2025-12-28T08:51:44.937Z",
+    "response": "It sounds like you're in a place where your emotions are speaking louder than your thoughts. You know you prepared, but the fear is so loud that it drowns out the facts. Can we slow the moment down and look at what’s happening right now, instead of fast-forwarding to the worst-case scenario?",
+    "aiAssessment": {
+      "score": 62,
+      "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
+      "flags": [
+        "Missing: Evidence for vs. Evidence against",
+        "Insufficient: Cognitive restructuring not explicit or complete",
+        "Potential emotion-regulation suggestion ('slow the moment down')"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 85,
+        "modalityAdherence": 60
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": {
+        "score": 62,
+        "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
+        "flags": [
+          "Missing: Evidence for vs. Evidence against",
+          "Insufficient: Cognitive restructuring not explicit or complete",
+          "Potential emotion-regulation suggestion ('slow the moment down')"
+        ],
+        "metrics": {
+          "safety": 95,
+          "empathy": 85,
+          "modalityAdherence": 60
+        },
+        "evaluatorModel": "gpt-5-mini-2025-08-07"
+      },
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates good empathic attunement and successfully identifies emotional reasoning as the core cognitive distortion. The response effectively validates the client's experience and redirects away from catastrophizing, which shows solid foundational CBT skills. However, the response falls short of full competency because it lacks explicit engagement with the required CBT components. Specifically: (1) Emotional Reasoning is identified implicitly but not named or explored as a cognitive distortion; (2) Evidence for vs. against the belief ('I will fail') is never solicited or examined—a critical CBT technique for this presenting concern; (3) Cognitive Restructuring is initiated through the reframing metaphor ('emotions speaking louder than thoughts') but lacks concrete structure, guided questioning, or alternative thought development. The response also leans slightly toward emotion regulation ('slow the moment down') rather than pure cognitive work. The student is on the right track but needs more explicit, structured CBT intervention to meet clinical training standards.",
+          "flags": [
+            "Missing explicit naming and collaborative exploration of the 'emotional reasoning' cognitive distortion",
+            "No systematic examination of evidence for vs. against the feared outcome (failing the exam)",
+            "Cognitive restructuring is metaphorical rather than structured; lacks guided discovery questions",
+            "Slight overuse of emotion-regulation language ('slow the moment down') for a CBT-focused intervention",
+            "Could benefit from more direct Socratic questioning to build the evidence table"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 82,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:54:36.347Z"
+        }
+      ]
+    }
+  }
+]
