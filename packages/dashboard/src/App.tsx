@@ -448,13 +448,15 @@ const ComparisonRow = ({
   rank, 
   isExpanded, 
   onToggle, 
-  onSaveOverride 
+  onSaveOverride,
+  selectedJudges
 }: { 
   run: AugmentedResult, 
   rank: number, 
   isExpanded: boolean, 
   onToggle: () => void,
-  onSaveOverride: (runId: string, override: HumanOverride) => void
+  onSaveOverride: (runId: string, override: HumanOverride) => void,
+  selectedJudges: Set<string>
 }) => {
   const [editScore, setEditScore] = useState(run.effectiveScore);
   const [editNotes, setEditNotes] = useState(run.override?.expertNotes || '');
@@ -507,8 +509,8 @@ const ComparisonRow = ({
           </div>
           {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><Gavel className="w-3 h-3"/> Reviewed</div>}
         </td>
-        <td className="p-4 text-center text-zinc-400 font-mono">{run.aiAssessment.metrics.safety}</td>
-        <td className="p-4 text-center text-zinc-400 font-mono">{run.aiAssessment.metrics.empathy}</td>
+        <td className="p-4 text-center text-zinc-400 font-mono">{run.effectiveSafety}</td>
+        <td className="p-4 text-center text-zinc-400 font-mono">{run.effectiveEmpathy}</td>
         <td className="p-4 text-right">
           {isExpanded ? <ChevronDown className="w-5 h-5 ml-auto text-zinc-500" /> : <ChevronRight className="w-5 h-5 ml-auto text-zinc-500" />}
         </td>
@@ -529,17 +531,51 @@ const ComparisonRow = ({
                   </div>
                 </div>
 
-                <div>
-                   <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                    <Shield className="w-4 h-4" /> AI Evaluation Reasoning
-                    {run.aiAssessment.evaluatorModel && (
-                      <span className="text-xs text-zinc-600 font-mono ml-auto">by {run.aiAssessment.evaluatorModel}</span>
-                    )}
-                  </h4>
-                  <div className="text-sm text-zinc-400 italic bg-zinc-900/50 p-4 rounded-lg border border-zinc-800/50">
-                    "{run.aiAssessment.reasoning}"
+                {/* Show all judge assessments */}
+                {run.aiAssessments && Object.keys(run.aiAssessments).length > 1 ? (
+                  <div>
+                    <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
+                      <Shield className="w-4 h-4" /> AI Evaluations
+                      {selectedJudges.size > 0 && selectedJudges.size < Object.keys(run.aiAssessments).length && (
+                        <span className="text-xs text-amber-400">(filtered)</span>
+                      )}
+                    </h4>
+                    <div className="space-y-4">
+                      {Object.entries(run.aiAssessments)
+                        .filter(([judgeModel]) => selectedJudges.size === 0 || selectedJudges.has(judgeModel))
+                        .map(([judgeModel, assessment]) => (
+                        <div key={judgeModel} className="bg-zinc-900 border border-zinc-800 rounded-lg p-4">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs font-mono text-zinc-500">{judgeModel}</span>
+                            <div className="flex items-center gap-4">
+                              <span className={cn("text-sm font-bold", getScoreColor(assessment.score))}>
+                                Score: {assessment.score}
+                              </span>
+                              <span className="text-xs text-zinc-600">Safety: {assessment.metrics.safety}</span>
+                              <span className="text-xs text-zinc-600">Empathy: {assessment.metrics.empathy}</span>
+                              <span className="text-xs text-zinc-600">Modality: {assessment.metrics.modalityAdherence}</span>
+                            </div>
+                          </div>
+                          <div className="text-sm text-zinc-400 italic">
+                            "{assessment.reasoning}"
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div>
+                    <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
+                      <Shield className="w-4 h-4" /> AI Evaluation Reasoning
+                      {run.aiAssessment.evaluatorModel && (
+                        <span className="text-xs text-zinc-600 font-mono ml-auto">by {run.aiAssessment.evaluatorModel}</span>
+                      )}
+                    </h4>
+                    <div className="text-sm text-zinc-400 italic bg-zinc-900/50 p-4 rounded-lg border border-zinc-800/50">
+                      "{run.aiAssessment.reasoning}"
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Right: Review Form */}
@@ -610,12 +646,17 @@ export default function App() {
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
+  const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   
   // Extract unique judges from results
   const availableJudges = useMemo(() => {
     const judges = new Set<string>();
     (resultsData as ModelRun[]).forEach(r => {
-      if (r.aiAssessment.evaluatorModel) {
+      // Get judges from aiAssessments if available
+      if (r.aiAssessments) {
+        Object.keys(r.aiAssessments).forEach(judge => judges.add(judge));
+      } else if (r.aiAssessment.evaluatorModel) {
+        // Fallback to single aiAssessment
         judges.add(r.aiAssessment.evaluatorModel);
       }
     });
@@ -655,21 +696,76 @@ export default function App() {
     if (!Array.isArray(resultsData) || !Array.isArray(questionsData)) return [];
     
     return (resultsData as ModelRun[])
-      .filter(r => {
-        // Filter by selected judges
-        if (selectedJudges.size === 0) return true; // If no judges selected, show all
-        return r.aiAssessment.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
-      })
       .map((r) => {
         const q = (questionsData as QuestionNode[]).find((q) => q.id === r.questionId);
         const override = overrides[r.runId];
+        
+        // Calculate effective score and metrics from selected judges
+        let effectiveScore: number;
+        let effectiveSafety: number;
+        let effectiveEmpathy: number;
+        
+        if (override) {
+          // Manual override takes precedence for score
+          effectiveScore = override.manualScore;
+        } else if (r.aiAssessments) {
+          // Average scores from selected judges (or all if none selected)
+          const judgeScores = Object.entries(r.aiAssessments)
+            .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
+            .map(([_, assessment]) => assessment.score);
+          
+          if (judgeScores.length > 0) {
+            effectiveScore = Math.round(judgeScores.reduce((a, b) => a + b, 0) / judgeScores.length);
+          } else {
+            // No selected judges matched, use primary assessment
+            effectiveScore = r.aiAssessment.score;
+          }
+        } else {
+          // Fall back to single assessment
+          effectiveScore = r.aiAssessment.score;
+        }
+        
+        // Calculate averaged metrics from selected judges
+        if (r.aiAssessments) {
+          const selectedAssessments = Object.entries(r.aiAssessments)
+            .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
+            .map(([_, assessment]) => assessment.metrics)
+            .filter(metrics => metrics && typeof metrics.safety === 'number' && typeof metrics.empathy === 'number');
+          
+          if (selectedAssessments.length > 0) {
+            effectiveSafety = Math.round(
+              selectedAssessments.reduce((a, b) => a + b.safety, 0) / selectedAssessments.length
+            );
+            effectiveEmpathy = Math.round(
+              selectedAssessments.reduce((a, b) => a + b.empathy, 0) / selectedAssessments.length
+            );
+          } else {
+            effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
+            effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
+          }
+        } else {
+          effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
+          effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
+        }
+        
         return { 
           ...r, 
           question: q!, 
           override, 
-          effectiveScore: override ? override.manualScore : r.aiAssessment.score 
+          effectiveScore,
+          effectiveSafety,
+          effectiveEmpathy
         } as AugmentedResult;
-      }).filter(r => r.question); // Filter out orphans
+      })
+      .filter(r => r.question) // Filter out orphans
+      .filter(r => {
+        // Filter by selected judges (keep if any selected judge has evaluated it)
+        if (selectedJudges.size === 0) return true;
+        if (r.aiAssessments) {
+          return Object.keys(r.aiAssessments).some(judge => selectedJudges.has(judge));
+        }
+        return r.aiAssessment.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
+      });
   }, [overrides, selectedJudges]);
 
   // Model Leaderboard Stats
@@ -681,8 +777,8 @@ export default function App() {
         stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, count: 0 };
       }
       stats[r.modelName].totalScore += r.effectiveScore;
-      stats[r.modelName].safety += r.aiAssessment.metrics.safety;
-      stats[r.modelName].empathy += r.aiAssessment.metrics.empathy;
+      stats[r.modelName].safety += r.effectiveSafety;
+      stats[r.modelName].empathy += r.effectiveEmpathy;
       stats[r.modelName].count += 1;
     });
 
@@ -886,6 +982,94 @@ export default function App() {
             Overview
           </button>
           
+          {/* Judge Filter Dropdown */}
+          {availableJudges.length > 0 && (
+            <div className="pt-4 pb-2">
+              <div className="px-3 mb-2 flex items-center justify-between">
+                <div className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">
+                  Judges ({availableJudges.length})
+                </div>
+                {/* filter indicator removed per UX request */}
+              </div>
+              <div className="px-2">
+                <button
+                  onClick={() => setJudgeDropdownOpen(!judgeDropdownOpen)}
+                  className={cn(
+                    "w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-xs transition-colors border",
+                    selectedJudges.size === availableJudges.length
+                      ? "bg-zinc-900 text-zinc-400 border-zinc-800 hover:bg-zinc-800"
+                      : "bg-amber-900/20 text-amber-400 border-amber-500/30 hover:bg-amber-900/30"
+                  )}
+                >
+                  <div className="flex items-center gap-2">
+                    <Gavel className="w-3 h-3" />
+                    <span>
+                      {selectedJudges.size === 0
+                        ? "No judges (showing all)"
+                        : selectedJudges.size === availableJudges.length
+                        ? "All judges"
+                        : `${selectedJudges.size} of ${availableJudges.length} selected`}
+                    </span>
+                  </div>
+                  {judgeDropdownOpen ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
+                </button>
+                {judgeDropdownOpen && (
+                  <div className="mt-2 bg-zinc-900 border border-zinc-800 rounded-lg p-2 space-y-1">
+                    {availableJudges.map(judge => {
+                      const isSelected = selectedJudges.has(judge);
+                      return (
+                        <button
+                          key={judge}
+                          onClick={() => {
+                            const newSelected = new Set(selectedJudges);
+                            if (isSelected) {
+                              newSelected.delete(judge);
+                            } else {
+                              newSelected.add(judge);
+                            }
+                            setSelectedJudges(newSelected);
+                          }}
+                          className={cn(
+                            "w-full text-left px-2 py-1.5 rounded text-xs transition-colors flex items-center gap-2",
+                            // Do not highlight the whole row when selected; keep row neutral
+                            isSelected
+                              ? "bg-zinc-800 text-zinc-200"
+                              : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
+                          )}
+                        >
+                          <div
+                            className={cn(
+                              "w-3 h-3 rounded-full flex-shrink-0 border-2 transition-all",
+                              // Fill the circle fully green when selected, otherwise empty
+                              isSelected
+                                ? "bg-emerald-600 border-emerald-600"
+                                : "border-zinc-600 bg-transparent"
+                            )}
+                          />
+                          <span className="font-mono text-[10px] flex-1">{judge}</span>
+                        </button>
+                      );
+                    })}
+                    <div className="pt-2 mt-2 border-t border-zinc-800 flex gap-2">
+                      <button
+                        onClick={() => setSelectedJudges(new Set(availableJudges))}
+                        className="flex-1 px-2 py-1 text-[10px] text-zinc-500 hover:text-emerald-400 transition-colors"
+                      >
+                        Select All
+                      </button>
+                      <button
+                        onClick={() => setSelectedJudges(new Set())}
+                        className="flex-1 px-2 py-1 text-[10px] text-zinc-500 hover:text-red-400 transition-colors"
+                      >
+                        Clear All
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+          
           <div className="pt-4 pb-2 px-3 text-xs font-semibold text-zinc-600 uppercase tracking-wider">
             Questions ({questionList.length})
           </div>
@@ -969,67 +1153,7 @@ export default function App() {
               <p className="text-zinc-500">Aggregated performance across {questionsData.length} therapeutic scenarios.</p>
             </header>
 
-            {/* Judge Filter */}
-            {availableJudges.length > 0 && (
-              <div className="mb-6 bg-zinc-900 border border-zinc-800 rounded-xl p-4">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 text-zinc-400">
-                    <Gavel className="w-4 h-4" />
-                    <span className="text-sm font-medium">Judges:</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {availableJudges.map(judge => {
-                      const isSelected = selectedJudges.has(judge);
-                      return (
-                        <button
-                          key={judge}
-                          onClick={() => {
-                            const newSelected = new Set(selectedJudges);
-                            if (isSelected) {
-                              newSelected.delete(judge);
-                            } else {
-                              newSelected.add(judge);
-                            }
-                            setSelectedJudges(newSelected);
-                          }}
-                          className={cn(
-                            "px-3 py-1.5 rounded-lg text-xs font-medium transition-all",
-                            isSelected 
-                              ? "bg-emerald-600 text-white border-2 border-emerald-500" 
-                              : "bg-zinc-800 text-zinc-500 border-2 border-zinc-700 hover:border-zinc-600"
-                          )}
-                        >
-                          {judge}
-                        </button>
-                      );
-                    })}
-                  </div>
-                  {selectedJudges.size !== availableJudges.length && (
-                    <button
-                      onClick={() => setSelectedJudges(new Set(availableJudges))}
-                      className="ml-auto text-xs text-zinc-500 hover:text-emerald-400 transition-colors"
-                    >
-                      Select All
-                    </button>
-                  )}
-                  {selectedJudges.size > 0 && selectedJudges.size < availableJudges.length && (
-                    <button
-                      onClick={() => setSelectedJudges(new Set())}
-                      className="text-xs text-zinc-500 hover:text-red-400 transition-colors"
-                    >
-                      Clear All
-                    </button>
-                  )}
-                </div>
-                <div className="mt-2 text-xs text-zinc-600">
-                  {selectedJudges.size === 0 ? (
-                    <span className="text-amber-500">⚠️ No judges selected - showing all results</span>
-                  ) : (
-                    <span>Showing results from {selectedJudges.size} of {availableJudges.length} judge{availableJudges.length !== 1 ? 's' : ''}</span>
-                  )}
-                </div>
-              </div>
-            )}
+
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {topPerformer && (
@@ -1273,6 +1397,7 @@ export default function App() {
                                isExpanded={expandedRunId === run.runId}
                                onToggle={() => setExpandedRunId(expandedRunId === run.runId ? null : run.runId)}
                                onSaveOverride={handleSaveOverride}
+                               selectedJudges={selectedJudges}
                              />
                            ))}
                          </tbody>

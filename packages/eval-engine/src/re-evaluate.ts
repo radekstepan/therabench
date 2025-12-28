@@ -139,15 +139,13 @@ async function main() {
     console.log(`🚀 Starting re-evaluation of ${results.length} results using judge: ${EXPERT_MODEL_NAME}`);
     console.log('   (Candidate models will NOT be called again)');
 
-    const newResults: ModelRun[] = [];
-
+    // Work with results in place to avoid losing data on interruption
     for (let i = 0; i < results.length; i++) {
       const run = results[i];
       const question = questions.find(q => q.id === run.questionId);
       
       if (!question) {
           console.warn(`⚠️ Question not found for run ${run.runId}, skipping re-eval (keeping original).`);
-          newResults.push(run);
           continue;
       }
 
@@ -168,14 +166,15 @@ async function main() {
       // Add the new assessment
       existingAssessments[assessment.evaluatorModel || EXPERT_MODEL_NAME] = assessment;
 
-      newResults.push({
+      // Update the result in place
+      results[i] = {
         ...run,
         aiAssessment: assessment, // Keep the latest as primary for backwards compatibility
         aiAssessments: existingAssessments
-      });
+      };
       
-      // Save progress after each entry
-      fs.writeFileSync(RESULTS_PATH, JSON.stringify(newResults, null, 2));
+      // Save all results after each entry to preserve progress
+      fs.writeFileSync(RESULTS_PATH, JSON.stringify(results, null, 2));
     }
 
     console.log(`\n✅ Re-evaluation complete. Saved all results to ${RESULTS_PATH}`);

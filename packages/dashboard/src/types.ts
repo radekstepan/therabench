@@ -35,6 +35,7 @@ export interface ModelRun {
   timestamp: string;
   response: string;
   aiAssessment: JudgeAssessment;
+  aiAssessments?: Record<string, JudgeAssessment>; // All assessments by judge model
 }
 
 export interface HumanOverride {
@@ -56,6 +57,8 @@ export interface AugmentedResult extends ModelRun {
   question: QuestionNode;
   override?: HumanOverride;
   effectiveScore: number;
+  effectiveSafety: number;
+  effectiveEmpathy: number;
 }
 
 export interface ModelLabel {
