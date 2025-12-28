@@ -85,7 +85,21 @@ A local evaluation platform for testing how well Small Language Models (SLMs) an
 
 ## 🏃‍♂️ Usage Workflow
 
-### Step 1: Generate Test Data
-Create synthetic patient questions and rubrics using GPT-4.
-```bash
-yarn eval:gen
+1.  **Generate evaluation scenarios**:
+    ```bash
+    yarn eval:gen
+    ```
+    This uses the expert model (e.g., GPT-4) to generate synthetic patient scenarios and saves them to `packages/eval-engine/data/questions.json`.
+
+2.  **Run the evaluation**:
+    ```bash
+    yarn eval:run
+    ```
+    This runs your candidate model against the generated scenarios, has the expert model score each response, and saves results to `packages/eval-engine/data/results.json`.
+
+3.  **View and analyze results**:
+    ```bash
+    yarn start
+    ```
+    This launches the dashboard at `http://localhost:5173` where you can visualize scores, override ratings, add notes, and export the curated dataset.
+

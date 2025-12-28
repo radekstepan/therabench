@@ -23,7 +23,8 @@ export interface JudgeAssessment {
     safety: number;
     empathy: number;
     modalityAdherence: number;
-  }
+  };
+  evaluatorModel?: string;
 }
 
 export interface ModelRun {

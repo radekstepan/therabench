@@ -7,8 +7,20 @@ import { QuestionNode } from './types';
 
 dotenv.config();
 
-// Note: Ensure OPENAI_API_KEY is set in your .env file
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY || 'sk-placeholder' });
+// Helper function to resolve environment variable references
+// If the value in .env points to another env var name that exists, use that value
+// Otherwise, use the string value as-is
+function resolveEnvValue(value: string | undefined): string {
+  if (!value) return '';
+  // Check if this value is actually a reference to another env var
+  if (process.env[value] !== undefined) {
+    return process.env[value]!;
+  }
+  return value;
+}
+
+// Note: Ensure OPENAI_API_KEY is set in your .env file or injected by Infisical
+const openai = new OpenAI({ apiKey: resolveEnvValue(process.env.OPENAI_API_KEY) || 'sk-placeholder' });
 
 const OUTPUT_PATH = path.join(__dirname, '../data/questions.json');
 

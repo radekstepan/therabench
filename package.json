@@ -7,7 +7,7 @@
   "scripts": {
     "start": "yarn workspace @eval/dashboard dev",
     "dev": "yarn workspace @eval/dashboard dev",
-    "build": "yarn workspace @eval/dashboard build",
+    "build": "yarn workspace @eval/engine build && yarn workspace @eval/dashboard build",
     "preview": "yarn workspace @eval/dashboard preview",
     "eval:gen": "yarn workspace @eval/engine gen",
     "eval:run": "yarn workspace @eval/engine eval"
@@ -15,5 +15,6 @@
   "devDependencies": {
     "lerna": "^8.0.0",
     "typescript": "^5.0.0"
-  }
+  },
+  "license": "MIT"
 }
