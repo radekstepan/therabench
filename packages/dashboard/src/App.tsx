@@ -507,7 +507,6 @@ const ComparisonRow = ({
         <td className="px-3 py-2 text-right whitespace-nowrap">
           <div 
             className={cn("text-sm font-bold", getScoreColor(run.effectiveScore))}
-            title={run.aiAssessment.evaluatorModel ? `Evaluated by ${run.aiAssessment.evaluatorModel}` : undefined}
           >
             {run.effectiveScore}%
           </div>
