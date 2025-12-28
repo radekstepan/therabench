@@ -201,9 +201,25 @@ async function main() {
     console.log(`🚀 Starting re-evaluation of ${results.length} results using judge: ${EXPERT_MODEL_NAME}`);
     console.log('   (Candidate models will NOT be called again)');
 
+    // Prioritize questions that haven't been judged by this model yet
+    // This helps when retrying after parse failures or when adding new candidate models
+    const sortedResults = [...results].sort((a, b) => {
+      const aHasJudgment = (a.aiAssessments?.[EXPERT_MODEL_NAME]?.length || 0) > 0;
+      const bHasJudgment = (b.aiAssessments?.[EXPERT_MODEL_NAME]?.length || 0) > 0;
+      
+      // Sort unevaluated (no judgments) before evaluated (has judgments)
+      if (aHasJudgment === bHasJudgment) return 0;
+      return aHasJudgment ? 1 : -1;
+    });
+    
+    const unevaluatedCount = sortedResults.filter(r => !(r.aiAssessments?.[EXPERT_MODEL_NAME]?.length)).length;
+    if (unevaluatedCount > 0) {
+      console.log(`   📋 Prioritizing ${unevaluatedCount} unevaluated questions first`);
+    }
+
     // Work with results in place to avoid losing data on interruption
-    for (let i = 0; i < results.length; i++) {
-      const run = results[i];
+    for (let i = 0; i < sortedResults.length; i++) {
+      const run = sortedResults[i];
       const question = questions.find(q => q.id === run.questionId);
       
       if (!question) {
@@ -211,7 +227,7 @@ async function main() {
           continue;
       }
 
-      console.log(`\n[${i + 1}/${results.length}] Re-judging run: ${run.runId} (${run.modelName})`);
+      console.log(`\n[${i + 1}/${sortedResults.length}] Re-judging run: ${run.runId} (${run.modelName})`);
       
       const assessment = await runJudge(question, run.response);
       
@@ -228,11 +244,14 @@ async function main() {
       judgeHistory.push(assessment);
       existingAssessments[judgeKey] = judgeHistory;
 
-      // Update the result in place
-      results[i] = {
-        ...run,
-        aiAssessments: existingAssessments
-      };
+      // Update the result - find the original index in the results array
+      const originalIndex = results.findIndex(r => r.runId === run.runId);
+      if (originalIndex !== -1) {
+        results[originalIndex] = {
+          ...run,
+          aiAssessments: existingAssessments
+        };
+      }
       
       // Save all results after each entry to preserve progress
       fs.writeFileSync(RESULTS_PATH, JSON.stringify(results, null, 2));
