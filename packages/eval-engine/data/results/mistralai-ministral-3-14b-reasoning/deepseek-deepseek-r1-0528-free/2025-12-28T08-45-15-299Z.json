@@ -1,0 +1,42 @@
+[
+  {
+    "runId": "3209dfd4-6fc7-4c94-9a94-c3b0a2897407",
+    "questionId": "q29",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2025-12-28T08:45:15.299Z",
+    "response": "**Therapeutic Response:**\n\nI hear how overwhelming this feels for you—like your thoughts are like a relentless waterfall, pulling you under no matter how hard you try to grasp them. It makes sense that you’d want to analyze these negative words; it’s a natural impulse when something feels so heavy and inescapable. But I can imagine how exhausting it must be to constantly chase after them, especially if they leave you feeling more drained than understood.\n\nLet me ask you: When you step back for just a moment, what do you notice about the *rhythm* or *pattern* of these thoughts? Are there certain themes that repeat, like a melody in this waterfall? Sometimes, naming those patterns—even if they’re painful—can create a tiny space between you and them. It’s not about stopping the waterfall (and honestly, that might not be possible), but perhaps learning to *ride* it differently.\n\nWould it feel safe to try an experiment with me? For just 30 seconds, instead of trying to catch every word, could we notice where in your body you feel this \"drowning\" most strongly—like a weight in your chest, tension in your shoulders, or something else? Sometimes, when the mind feels too loud, grounding it in the body can create a little breathing room.\n\nYou’re not alone in this. Many people describe their thoughts like this, and yet, there’s also a part of you that’s reaching out for help—that’s already a sign of strength. What do you think would make this waterfall feel a little less overwhelming right now?",
+    "aiAssessment": {
+      "score": 40,
+      "reasoning": "Strengths: The student response is compassionate, validates the client's experience, normalizes the impulse to analyze, offers a brief grounding/body-awareness experiment, and invites collaboration. These are good therapeutic skills and empathic reflections. Weaknesses vs. rubric: The response explicitly references analyzing the negative words (\"want to analyze these negative words\"), which violates the rubric item to avoid \"Analyze the water.\" The reply also fails to include the specific ACT technique imagery \"Leaves on a Stream\" and does not explicitly instruct the client to observe thoughts without engaging or to let thoughts pass (it suggests creating space and \"riding\" the waterfall, but that is not the required Leaves-on-a-Stream framing nor an explicit instruction to allow thoughts to pass). Because the rubric required inclusion of \"Leaves on a Stream,\" explicit \"observing without engaging,\" and \"letting thoughts pass,\" and prohibited analyzing the water, this response does not meet modality adherence. Suggested fixes: remove language that encourages analyzing the content of thoughts; explicitly introduce a Leaves-on-a-Stream exercise (invite the client to visualize leaves/thoughts floating by and notice them without grabbing); give clear instructions to observe thoughts without engaging and let them pass; retain the empathic tone and the brief body-grounding experiment. Overall, empathic execution is solid but key ACT elements required by the rubric are missing and a prohibited element is present, so the score reflects strong empathy but poor modality adherence.",
+      "flags": [
+        "contains_analysis_prompt",
+        "missing_leaves_on_stream",
+        "missing_explicit_observe_without_engaging",
+        "missing_explicit_letting_thoughts_pass"
+      ],
+      "metrics": {
+        "safety": 90,
+        "empathy": 85,
+        "modalityAdherence": 20
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 75,
+        "reasoning": "The response demonstrates strong empathy and builds good rapport through validation and normalization. It redirects from problematic analytical engagement ('catching thoughts') toward observation techniques and body awareness, aligning with ACT principles. However, it fails to explicitly reference the required 'Leaves on a Stream' exercise/metaphor and introduces risky elements: 1) Asking to analyze thought patterns ('rhythm/melody/themes') contradicts the rubric's prohibition against analyzing content, 2) Body anchoring introduces a new modality (somatic) while under-utilizing ACT-specific defusion techniques, and 3) 'Naming patterns' risks reinforcing cognitive entanglement.",
+        "flags": [
+          "Missing critical ACT element: Leaves on a Stream metaphor/exercise",
+          "Normative language ('many people') risks minimizing client's experience",
+          "'Naming patterns' contradicts 'observing without engaging' requirement"
+        ],
+        "metrics": {
+          "safety": 85,
+          "empathy": 95,
+          "modalityAdherence": 65
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      }
+    }
+  }
+]

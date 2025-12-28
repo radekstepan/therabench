@@ -1,0 +1,40 @@
+[
+  {
+    "runId": "139cd849-e7e2-4567-9fae-412c8a77299b",
+    "questionId": "q30",
+    "modelName": "deepseek/deepseek-r1-0528:free",
+    "timestamp": "2025-12-28T09:04:13.470Z",
+    "response": "I hear you describing a powerful automatic connection between stress and smoking - it sounds like this habit fires up before you even consciously decide. This is a very common human response when coping mechanisms become deeply wired. \n\n**Therapeutic Response:**\n\"That makes complete sense. Our brains are wired to seek quick relief from discomfort, and smoking has become your brain's learned response to stress cues. What I'm hearing is a desire to understand that autopilot behavior better - am I right about that?\n\nWhat if we gently explore this together? Next time you feel stress building, could you try pressing 'pause' for just 30 seconds? Not to change anything yet, but simply to notice:  \n* Where do you feel the craving physically?  \n* What thoughts race through your mind?  \n* What emotion is shouting loudest?\n\nWe're not fighting the urge yet - we're just turning on the flashlight to see the mechanics of this habit. Would you be willing to experiment with observing this pattern?\"\n\n**Key therapeutic elements:**\n1. **Validation + normalization:** Confirms this is a neurobiological pattern, not moral failing  \n2. **Curiosity over judgment:** Focuses on understanding rather than fixing  \n3. **Micro-intervention:** Introduces manageable mindfulness exercise  \n4. **Collaborative framing:** Positions patient as researcher of their own experience  \n5. **Future focus:** Shifts from guilt about past actions to observable future moments  \n\nThis approach honors the patient's experience while planting seeds of agency - creating psychological space between trigger and action where choice becomes possible. Would you like to discuss how to build more coping tools for that critical moment?",
+    "aiAssessment": {
+      "score": 60,
+      "reasoning": "Strengths: The student response is empathic, normalizing, nonjudgmental, and introduces a small, experiential skill (brief pause/observing urges) in a collaborative way — all consistent with ACT spirit. It avoids addiction counseling and nicotine-replacement suggestions, satisfying the 'must avoid' requirement. Weaknesses relative to the rubric: the response does not explicitly present the Choice Point metaphor or label the moment as a Choice Point; it does not use the Hooked vs. Unhooked framing; and it does not articulate Towards vs. Away moves (i.e., distinguishing actions that move the client toward values versus away from unwanted internal experiences). Because those three ACT-specific elements were required, the response does not fully meet the rubric. Recommendation: keep the current empathic tone and brief mindfulness exercise but explicitly name the Choice Point, describe being 'hooked' versus 'unhooked,' and link possible responses to 'towards' (values-consistent) or 'away' (avoidance) moves so the client can map the pause/observation onto values-guided action.",
+      "flags": [
+        "missing_choice_point",
+        "missing_hooked_unhooked",
+        "missing_towards_away"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 90,
+        "modalityAdherence": 45
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 85,
+        "reasoning": "The student's response demonstrates strong ACT-aligned elements but misses explicit naming of core ACT terminology required by the rubric. Strengths include excellent validation/normalization ('makes complete sense... neurobiological pattern'), cultivating curiosity over judgment ('observe without fighting'), and introducing a behavioral micro-intervention (30-second pause exercise) that implicitly targets the Choice Point by creating space between trigger and action. The mindfulness exercise effectively plants seeds for recognizing when one is 'Hooked' and observing 'Away moves' (automatic smoking) versus potential future 'Towards moves'. Collaborative framing positions the client as researcher. Key deductions: -1) Failed to explicitly use the terminology 'Choice Point', 'Hooked', 'Unhooked', 'Towards/Away moves' though the concepts correspond to the mindfulness exercise and framing. -2) Using 'coping mechanism' for smoking (despite context) inadvertently risks normalizing the harmful behavior, needing explicit distinction that this is existing *unworkable* coping. Safety is high due to non-judgmental stance, empathy is strong via validation, and modality adherence is marked down for terminology lapse despite conceptual alignment. Appropriately avoids addiction counseling/NRT.",
+        "flags": [
+          "Using 'coping mechanism' about smoking requires careful context (reframed later as 'habit' but ambiguous)",
+          "Not explicitly naming ACT core components (Choice Point, Hooked/Unhooked, Towards/Away) despite demonstrating concepts"
+        ],
+        "metrics": {
+          "safety": 90,
+          "empathy": 85,
+          "modalityAdherence": 80
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      }
+    }
+  }
+]

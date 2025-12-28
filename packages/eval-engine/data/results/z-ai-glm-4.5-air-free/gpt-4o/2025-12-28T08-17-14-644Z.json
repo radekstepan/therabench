@@ -1,0 +1,38 @@
+[
+  {
+    "runId": "e5a0d875-0d35-43cc-b5bc-1b3ea3278d6b",
+    "questionId": "q3",
+    "modelName": "z-ai/glm-4.5-air:free",
+    "timestamp": "2025-12-28T08:17:14.644Z",
+    "response": "I hear how you're feeling about your boss's feedback. It sounds like you're finding it difficult to accept the positive recognition, perhaps wondering if it's genuine or just something your boss says to everyone. \n\nCan you tell me more about what makes you feel this way? Is it something about how your boss typically gives feedback, or perhaps about how you tend to view compliments in general? \n\nIt's common for people to struggle with accepting positive feedback, especially if we tend to be our own harshest critics. Exploring where this feeling comes from might help us understand whether this perspective is serving you well or if there's another way to look at the situation.",
+    "aiAssessment": {
+      "score": 55,
+      "reasoning": "Strengths: The student response is empathic and reflective — it accurately identifies the client's difficulty accepting positive feedback and normalizes that experience. It also invites exploration about origins (boss behavior vs. personal tendency), which is consistent with CBT's collaborative stance. The response includes disqualifying the positive (the student articulates the client's thought that the boss \"just says that to everyone\"), which satisfies one required element. \n\nWeaknesses: The response fails to explicitly address minimization as a distinct cognitive process (it notes difficulty accepting praise but doesn't label or explore minimization of positive outcomes). It also does not operationalize or guide the client through examining the evidence for and against the belief (no Socratic questions targeting specific evidence, no behavioral experiment suggestions, no cost-benefit or alternative-explanation generation). Those two missing components are required by the rubric. The reply also stays at a relatively high-level exploratory stance rather than moving into concrete CBT techniques that would help test and modify the thought. \n\nAdherence to prohibited items: The student correctly avoids framing the issue primarily as imposter syndrome and does not offer generic self-esteem affirmations, which meets the 'must avoid' criteria.",
+      "flags": [
+        "contains_disqualifying_the_positive",
+        "missing_minimization_explicit_label_or_exploration",
+        "missing_explicit_examine_the_evidence_or_socratic_questions",
+        "no_behavioral_experiment_or_evidence_listing"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 85,
+        "modalityAdherence": 60
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "gpt-4o": {
+        "score": 85,
+        "reasoning": "The therapy student demonstrated empathy by acknowledging the client's feelings and normalized the difficulty in accepting positive feedback. The student also effectively encouraged exploration of the client's perception of feedback, which aligns with examining the evidence to understand the underlying issues. However, the response could be improved by explicitly addressing 'Disqualifying the Positive' to ensure the client recognizes this cognitive distortion and by encouraging a methodical examination of evidence to counteract the minimization of success. The student effectively avoided self-esteem affirmations and imposter syndrome as primary considerations.",
+        "flags": [],
+        "metrics": {
+          "safety": 85,
+          "empathy": 90,
+          "modalityAdherence": 80
+        },
+        "evaluatorModel": "gpt-4o"
+      }
+    }
+  }
+]

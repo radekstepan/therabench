@@ -1,0 +1,40 @@
+[
+  {
+    "runId": "bd27c37e-ab04-488b-b998-42355a0c8312",
+    "questionId": "q1",
+    "modelName": "gpt-4o",
+    "timestamp": "2025-12-28T08:46:50.229Z",
+    "response": "It sounds like you're experiencing some frustration and disappointment with yourself. It's important to remember that one cookie doesn't define your entire journey or progress. It's quite common to feel tempted to give up when things don't go as planned, but let's take a moment to reframe this situation. \n\nRather than viewing eating one cookie as a failure, it could be more helpful to see it as a small slip-up in a much larger context. Everyone experiences setbacks, but what matters is how you respond to them. You have the opportunity to learn from this experience and move forward. \n\nLet's explore how you can practice self-compassion and establish a realistic plan for handling similar situations in the future. How does that sound to you?",
+    "aiAssessment": {
+      "score": 60,
+      "reasoning": "Strengths: The student response is empathic, normalizes a common reaction, uses reasonable CBT-style reframing (slip vs. failure), and invites collaborative problem-solving (self-compassion, planning). It avoids giving generic diet instructions and does not rely on mindfulness or explicit acceptance language. Weaknesses: The response fails to label the core cognitive distortion(s) present in the client's statement. The rubric required explicit identification of All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking, none of which are named. In CBT it is important to help clients identify the specific distortion so they can challenge it; the student's reply misses this step. Overall the tone and approach are good, but omission of the required cognitive-labeling reduces modality adherence and lowers the score.",
+      "flags": [
+        "Missing_All-or-Nothing Thinking",
+        "Missing_Black-and-White Thinking",
+        "Missing_Dichotomous Thinking"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 85,
+        "modalityAdherence": 60
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 76,
+        "reasoning": "The response effectively demonstrates empathy and correctly addresses the underlying cognitive distortion (reframing 'failure' as a 'small slip-up'). However, it misses crucial rubric requirements by not explicitly naming the cognitive distortion type (all-or-nothing/black-and-white/dichotomous thinking) – a core CBT skill. It successfully avoids forbidden elements (diet advice, mindfulness, acceptance), explaining the higher modality adherence score. The inclusion of 'self-compassion' could verge on acceptance-based approaches, flagged below.",
+        "flags": [
+          "Did not explicitly name cognitive distortions (required by rubric)",
+          "Risk of 'self-compassion' entering ACT territory"
+        ],
+        "metrics": {
+          "safety": 92,
+          "empathy": 95,
+          "modalityAdherence": 70
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      }
+    }
+  }
+]

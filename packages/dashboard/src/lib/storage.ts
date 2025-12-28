@@ -43,25 +43,25 @@ export const saveQuestionOverride = (questionId: string, override: QuestionOverr
 };
 
 export const exportData = (originalResults: ModelRun[], overrides: Record<string, HumanOverride>, questions: QuestionNode[], rubricOverrides: Record<string, Rubric>, questionOverrides: Record<string, QuestionOverride>) => {
-    const merged = originalResults.map(r => {
-        const override = overrides[r.runId];
-        if (override) {
+    // Only export results that have been modified by the user
+    const modifiedResults = originalResults
+        .filter(r => overrides[r.runId])
+        .map(r => {
+            const override = overrides[r.runId];
             return {
                 ...r,
                 humanOverride: override,
-                // We keep the original AI assessment but maybe add a flag
                 isReviewed: true
             };
-        }
-        return r;
-    });
+        });
 
-    // Include questions with their overrides
-    const questionsWithOverrides = questions.map(q => {
-        const questionOverride = questionOverrides[q.id];
-        const rubricOverride = rubricOverrides[q.id];
-        
-        if (questionOverride || rubricOverride) {
+    // Only export questions that have been modified
+    const modifiedQuestions = questions
+        .filter(q => questionOverrides[q.id] || rubricOverrides[q.id])
+        .map(q => {
+            const questionOverride = questionOverrides[q.id];
+            const rubricOverride = rubricOverrides[q.id];
+            
             return {
                 ...q,
                 ...(questionOverride?.title && { title: questionOverride.title }),
@@ -69,21 +69,20 @@ export const exportData = (originalResults: ModelRun[], overrides: Record<string
                 rubric: questionOverride?.rubric || rubricOverride || q.rubric,
                 modified: true
             };
-        }
-        return q;
-    });
+        });
 
     const exportData = {
-        results: merged,
-        questions: questionsWithOverrides,
-        exportDate: new Date().toISOString()
+        results: modifiedResults,
+        questions: modifiedQuestions,
+        exportDate: new Date().toISOString(),
+        note: 'This file contains only user modifications. To merge with default results, import this file and merge the arrays by runId/questionId.'
     };
 
     const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `evaluated_dataset_${new Date().toISOString().slice(0,10)}.json`;
+    a.download = `user_edits_${new Date().toISOString().slice(0,10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
 };

@@ -1,0 +1,42 @@
+[
+  {
+    "runId": "4db394a8-061a-4eda-8bb8-ad9699c7e1de",
+    "questionId": "q25",
+    "modelName": "gpt-4o",
+    "timestamp": "2025-12-28T08:48:37.345Z",
+    "response": "I hear how overwhelming and all-encompassing your depression feels right now. It sounds like it has become such a significant part of your identity that it's difficult to see any other parts of yourself. Together, we can explore ways to gently unpack this. We can work to identify and reconnect with other aspects of who you are, as well as find ways to manage and cope with the depression. Remember, you are not alone in this, and there is hope for finding moments of yourself beyond the depression. How does that idea sit with you?",
+    "aiAssessment": {
+      "score": 25,
+      "reasoning": "The student demonstrates empathic attunement and offers collaborative next steps, which is clinically useful. However, the response fails to include the required ACT-specific elements: there is no Self-as-Context language or explicit Observing Self invitation (e.g., noticing thoughts/feelings from a perspective that is not the content), no Sky-and-Weather metaphor (thoughts/feelings as weather passing in the sky), and no Chessboard metaphor (self as the board with thoughts as pieces). Instead, the student explicitly frames the problem as identity-related—'such a significant part of your identity'—which is directly contraindicated by the rubric's instruction to avoid identity work/self-esteem framing. Because the required ACT metaphors and perspective language are absent and a forbidden identity-focus is present, the response does not meet the rubric despite being empathic and collaborative.",
+      "flags": [
+        "missing_self_as_context",
+        "missing_observing_self",
+        "missing_sky_and_weather_metaphor",
+        "missing_chessboard_metaphor",
+        "contains_identity_work"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 85,
+        "modalityAdherence": 20
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 40,
+        "reasoning": "The student response demonstrates strong empathy and validation skills (e.g., 'I hear how overwhelming...'), but critically fails to meet core ACT technical requirements. Required concepts (Self-as-Context, Observing Self, Sky/Weather, Chessboard Metaphor) are entirely absent. Instead, the response engages in prohibited identity work through phrases like 'significant part of your identity' and 'reconnect with other aspects of who you are,' which directly contradicts the rubric's avoidance mandate. While clinically appropriate for non-ACT contexts, the response does not adhere to the assigned modality framework.",
+        "flags": [
+          "MISSING REQUIRED ACT CONCEPTS: No integration of Self-as-Context/Observing Self/Sky-Weather/Chessboard",
+          "FORBIDDEN CONTENT USED: Engaged in identity work explicitly prohibited"
+        ],
+        "metrics": {
+          "safety": 90,
+          "empathy": 85,
+          "modalityAdherence": 20
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      }
+    }
+  }
+]

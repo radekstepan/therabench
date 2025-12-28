@@ -11,7 +11,7 @@ import { ConfirmModal } from './components/ConfirmModal';
 
 // --- Data Importing ---
 import questionsDataRaw from '../../eval-engine/data/questions.json';
-import resultsData from '../../eval-engine/data/results.json';
+import resultsData from 'virtual:results';
 
 // Extract questions array from the JSON structure
 const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;

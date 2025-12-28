@@ -5,6 +5,7 @@ import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { extractJsonSync } from '@axync/extract-json';
 import { QuestionNode, ModelRun, JudgeAssessment } from './types';
+import { saveResults, checkForOldFormat } from './results-manager';
 
 dotenv.config();
 
@@ -21,7 +22,6 @@ function resolveEnvValue(value: string | undefined): string {
 }
 
 const QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
-const RESULTS_PATH = path.join(__dirname, '../data/results.json');
 
 // Candidate Model Configuration (model being tested)
 const CANDIDATE_MODEL_URL = process.env.CANDIDATE_MODEL_URL || 'http://localhost:11434/api/generate';
@@ -253,6 +253,12 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 
 async function main() {
   try {
+    // Check if old format exists and warn user
+    if (checkForOldFormat()) {
+      console.warn('\n⚠️  Warning: Old results.json format detected.');
+      console.warn('   Run "npm run migrate:results" to convert to the new multi-file structure.\n');
+    }
+
     if (!fs.existsSync(QUESTIONS_PATH)) {
       console.error('❌ No questions found. Run "npm run gen" first.');
       process.exit(1);
@@ -266,19 +272,20 @@ async function main() {
       console.error('❌ Invalid questions format in questions.json');
       process.exit(1);
     }
+
+    const runTimestamp = new Date().toISOString();
+    const judgeModel = EXPERT_MODEL_NAME;
     
-    let results: ModelRun[] = [];
+    console.log(`🚀 Starting evaluation on ${questions.length} questions`);
+    console.log(`   Candidate Model: ${CANDIDATE_MODEL_NAME}`);
+    console.log(`   Judge Model: ${judgeModel}`);
+    console.log(`   Run Timestamp: ${runTimestamp}\n`);
 
-    // Load existing results to append/update
-    if (fs.existsSync(RESULTS_PATH)) {
-      results = JSON.parse(fs.readFileSync(RESULTS_PATH, 'utf-8'));
-    }
-
-    console.log(`🚀 Starting evaluation on ${questions.length} questions with model: ${CANDIDATE_MODEL_NAME}`);
+    const results: ModelRun[] = [];
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
-      console.log(`\n[${i + 1}/${questions.length}] Processing question: ${q.id}`);
+      console.log(`[${i + 1}/${questions.length}] Processing question: ${q.id}`);
       
       // 1. Get Candidate Response
       const response = await queryCandidateModel(q.scenario);
@@ -291,20 +298,21 @@ async function main() {
         runId: randomUUID(),
         questionId: q.id,
         modelName: CANDIDATE_MODEL_NAME,
-        timestamp: new Date().toISOString(),
+        timestamp: runTimestamp,
         response,
         aiAssessments: {
-          [assessment.evaluatorModel || EXPERT_MODEL_NAME]: [assessment]
+          [assessment.evaluatorModel || judgeModel]: [assessment]
         }
       };
       
       results.push(run);
-      
-      // Save progress after each entry
-      fs.writeFileSync(RESULTS_PATH, JSON.stringify(results, null, 2));
     }
 
-    console.log(`\n✅ Evaluation complete. Saved all results to ${RESULTS_PATH}`);
+    // Save all results for this evaluation run to the new structure
+    saveResults(results, CANDIDATE_MODEL_NAME, judgeModel, runTimestamp);
+    
+    console.log(`\n✅ Evaluation complete!`);
+    console.log(`   Saved ${results.length} results to: data/results/${CANDIDATE_MODEL_NAME}/${judgeModel}/`);
   } catch (error) {
     console.error('❌ Error during evaluation:', error);
     process.exit(1);

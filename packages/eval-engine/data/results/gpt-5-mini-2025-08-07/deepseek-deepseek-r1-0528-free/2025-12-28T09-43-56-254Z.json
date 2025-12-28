@@ -1,0 +1,38 @@
+[
+  {
+    "runId": "2bbed68b-15ff-4c7c-979a-09b60690b1aa",
+    "questionId": "q2",
+    "modelName": "gpt-5-mini-2025-08-07",
+    "timestamp": "2025-12-28T09:43:56.254Z",
+    "response": "That sounds really hard — feeling that way right before an exam is scary and exhausting. It makes sense you’d jump to “I’m going to fail” when you feel so down on yourself.\n\nA few things to notice and try right now:\n- Reflection: there are two different statements here — “I studied hard” (evidence) and “I feel stupid” (emotion). Feeling stupid is an emotional experience, not proof of how much you know. This is a common cognitive distortion called emotional reasoning. Another one here is fortune‑telling: assuming you will fail because of how you feel now.\n- Quick reframe you can practice: “I studied hard and I’m anxious right now. Anxiety is making me feel incompetent, but that feeling isn’t evidence I’ll fail. I’ve prepared, and I can use strategies during the exam to show what I know.”\n- Short exercises to reduce the intensity of the feeling:\n  - Grounding: 5–4–3–2–1 (name 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste or notice in your body).\n  - Breathing: slow box breathing (inhale 4s — hold 4s — exhale 4s — hold 4s) for a minute or two.\n  - Reality test: rate how certain you are that you will fail from 0–100, then list evidence for and against that belief for 1–2 minutes. Often certainty drops when you do this.\n- Test‑taking tips to translate preparation into better performance: answer easiest questions first, mark and skip ones that block you, time‑check every 10–15 minutes, take quick calming breaths before each new section or question.\n- Be compassionate: remind yourself you deserve kindness now — “I’m anxious, but I did prepare. I’ll do my best.”\n\nIf you want, we can do a quick evidence-for/against list together or practice a one‑minute grounding or breathing script before you go into the exam. Which would you prefer?",
+    "aiAssessment": {
+      "score": 75,
+      "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
+      "flags": [
+        "used_emotion_regulation_techniques"
+      ],
+      "metrics": {
+        "safety": 95,
+        "empathy": 90,
+        "modalityAdherence": 70
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": {
+        "score": 85,
+        "reasoning": "The student demonstrates strong CBT application: correctly identifies emotional reasoning and fortune-telling distortion, provides clear cognitive restructuring ('Quick reframe'), incorporates evidence-for/against reality testing, offers structured collaborative behavioral strategies, and maintains empathetic framing ('That sounds really hard'). Major deduction (-15 points) occurs for including prohibited emotion regulation techniques (grounding, breathing) under rubric's 'Must Avoid'. Other elements show clinical sophistication: validating while redirecting cognitive focus, providing actionable test-taking strategies, and ending with collaborative choice.",
+        "flags": [
+          "Included prohibited emotion regulation techniques (grounding/breathing)",
+          "Modality adherence impacted by rubric violation"
+        ],
+        "metrics": {
+          "safety": 90,
+          "empathy": 85,
+          "modalityAdherence": 80
+        },
+        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+      }
+    }
+  }
+]

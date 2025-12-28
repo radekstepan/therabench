@@ -4,6 +4,7 @@ import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { extractJsonSync } from '@axync/extract-json';
 import { QuestionNode, ModelRun, JudgeAssessment } from './types';
+import { loadAllResults, saveResults, checkForOldFormat } from './results-manager';
 
 dotenv.config();
 
@@ -17,7 +18,6 @@ function resolveEnvValue(value: string | undefined): string {
 }
 
 const QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
-const RESULTS_PATH = path.join(__dirname, '../data/results.json');
 
 // Expert Model Configuration (judge/evaluator)
 const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL || 'https://api.openai.com/v1';
@@ -215,41 +215,51 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 
 async function main() {
   try {
+    // Check if old format exists and warn user
+    if (checkForOldFormat()) {
+      console.warn('\n⚠️  Warning: Old results.json format detected.');
+      console.warn('   Run "npm run migrate:results" to convert to the new multi-file structure.\n');
+    }
+
     if (!fs.existsSync(QUESTIONS_PATH)) {
       console.error('❌ No questions found.');
-      process.exit(1);
-    }
-    if (!fs.existsSync(RESULTS_PATH)) {
-      console.error('❌ No results found to re-evaluate.');
       process.exit(1);
     }
 
     const questionsData = JSON.parse(fs.readFileSync(QUESTIONS_PATH, 'utf-8'));
     const questions: QuestionNode[] = Array.isArray(questionsData) ? questionsData : questionsData.questions;
     
-    // Load existing results
-    const results: ModelRun[] = JSON.parse(fs.readFileSync(RESULTS_PATH, 'utf-8'));
+    // Load all existing results from the multi-file structure
+    const allResults = loadAllResults();
+    
+    if (allResults.length === 0) {
+      console.error('❌ No results found to re-evaluate.');
+      process.exit(1);
+    }
 
-    console.log(`🚀 Starting re-evaluation of ${results.length} results using judge: ${EXPERT_MODEL_NAME}`);
+    const judgeModel = EXPERT_MODEL_NAME;
+    console.log(`🚀 Starting re-evaluation of ${allResults.length} results using judge: ${judgeModel}`);
     console.log('   (Candidate models will NOT be called again)');
 
     // Prioritize questions that haven't been judged by this model yet
-    // This helps when retrying after parse failures or when adding new candidate models
-    const sortedResults = [...results].sort((a, b) => {
-      const aHasJudgment = (a.aiAssessments?.[EXPERT_MODEL_NAME]?.length || 0) > 0;
-      const bHasJudgment = (b.aiAssessments?.[EXPERT_MODEL_NAME]?.length || 0) > 0;
+    const sortedResults = [...allResults].sort((a, b) => {
+      const aHasJudgment = (a.aiAssessments?.[judgeModel]?.length || 0) > 0;
+      const bHasJudgment = (b.aiAssessments?.[judgeModel]?.length || 0) > 0;
       
       // Sort unevaluated (no judgments) before evaluated (has judgments)
       if (aHasJudgment === bHasJudgment) return 0;
       return aHasJudgment ? 1 : -1;
     });
     
-    const unevaluatedCount = sortedResults.filter(r => !(r.aiAssessments?.[EXPERT_MODEL_NAME]?.length)).length;
+    const unevaluatedCount = sortedResults.filter(r => !(r.aiAssessments?.[judgeModel]?.length)).length;
     if (unevaluatedCount > 0) {
       console.log(`   📋 Prioritizing ${unevaluatedCount} unevaluated questions first`);
     }
 
-    // Work with results in place to avoid losing data on interruption
+    // Group results by candidate model and timestamp for saving
+    const resultsByRun = new Map<string, { candidateModel: string; timestamp: string; runs: ModelRun[] }>();
+
+    // Work with results to re-evaluate them
     for (let i = 0; i < sortedResults.length; i++) {
       const run = sortedResults[i];
       const question = questions.find(q => q.id === run.questionId);
@@ -265,7 +275,7 @@ async function main() {
       
       // Get existing assessments for this judge
       const existingAssessments = run.aiAssessments || {};
-      const judgeKey = assessment.evaluatorModel || EXPERT_MODEL_NAME;
+      const judgeKey = assessment.evaluatorModel || judgeModel;
       const judgeHistory = existingAssessments[judgeKey] || [];
       
       // Get the most recent score for comparison
@@ -276,20 +286,32 @@ async function main() {
       judgeHistory.push(assessment);
       existingAssessments[judgeKey] = judgeHistory;
 
-      // Update the result - find the original index in the results array
-      const originalIndex = results.findIndex(r => r.runId === run.runId);
-      if (originalIndex !== -1) {
-        results[originalIndex] = {
-          ...run,
-          aiAssessments: existingAssessments
-        };
-      }
+      // Update the run
+      const updatedRun: ModelRun = {
+        ...run,
+        aiAssessments: existingAssessments
+      };
       
-      // Save all results after each entry to preserve progress
-      fs.writeFileSync(RESULTS_PATH, JSON.stringify(results, null, 2));
+      // Group by candidate model and original timestamp
+      const runKey = `${run.modelName}|${run.timestamp}`;
+      if (!resultsByRun.has(runKey)) {
+        resultsByRun.set(runKey, {
+          candidateModel: run.modelName,
+          timestamp: run.timestamp,
+          runs: []
+        });
+      }
+      resultsByRun.get(runKey)!.runs.push(updatedRun);
     }
 
-    console.log(`\n✅ Re-evaluation complete. Saved all results to ${RESULTS_PATH}`);
+    // Save results back to their respective files
+    console.log(`\n💾 Saving updated results to multi-file structure...`);
+    for (const [, { candidateModel, timestamp, runs }] of resultsByRun.entries()) {
+      saveResults(runs, candidateModel, judgeModel, timestamp);
+      console.log(`   Saved ${runs.length} results for ${candidateModel}/${judgeModel}/${timestamp}`);
+    }
+
+    console.log(`\n✅ Re-evaluation complete!`);
   } catch (error) {
     console.error('❌ Error during re-evaluation:', error);
     process.exit(1);
