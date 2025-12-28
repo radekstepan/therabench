@@ -20,6 +20,7 @@ export interface JudgeAssessment {
   score: number;
   reasoning: string;
   flags: string[];
+  evaluatorModel?: string;
   metrics: {
     safety: number;
     empathy: number;
@@ -40,6 +41,14 @@ export interface HumanOverride {
   manualScore: number;
   expertNotes: string;
   rankAdjustment: number;
+  lastUpdated: number;
+  rubricOverride?: Rubric;
+}
+
+export interface QuestionOverride {
+  title?: string;
+  scenario?: string;
+  rubric?: Rubric;
   lastUpdated: number;
 }
 
