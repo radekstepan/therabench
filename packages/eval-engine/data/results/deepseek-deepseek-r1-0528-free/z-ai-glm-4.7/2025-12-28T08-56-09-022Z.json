@@ -1,0 +1,51 @@
+[
+  {
+    "runId": "aa440c35-515d-4760-ba6d-59c66c119f5f",
+    "questionId": "q3",
+    "modelName": "deepseek/deepseek-r1-0528:free",
+    "timestamp": "2025-12-28T08:56:09.022Z",
+    "response": "I hear how conflicted you feel about your boss's praise. It sounds like part of you wants to believe the recognition, but another part questions whether it's genuine. Let's unpack this together.  \n\nWhen you say \"he says that to everyone,\" would you say that reflects more about your boss's behavior, or perhaps about how you view your own work? Many people struggle to trust praise even when it's earned, especially if they're used to dismissing their accomplishments.  \n\nWhat if we explore both possibilities:  \n- First, what might be some *alternative reasons* your boss could have praised you?  \n- Second, what specific evidence did you have that made *your presentation genuinely strong*? (The research you included? How you handled questions?)  \n\nAnd I'm curious—if a colleague received this compliment and believed it, how would their reaction differ from yours?  \n\nWould you be willing to identify one piece of evidence that proves your presentation was objectively good? We could start building from there.  \n\n*(Therapeutic goals: Validate cognitive dissonance, challenge automatic negative thought, encourage evidence-based reasoning, and create distance through perspective-taking—all while respecting the client's lived experience.)*",
+    "aiAssessment": {
+      "score": 94,
+      "reasoning": "The student response effectively meets the rubric requirements. It explicitly addresses disqualifying the positive (asking whether the boss's comment reflects the boss or the client's view), identifies minimization (noting the client's tendency to dismiss accomplishments), and asks for examination of the evidence (specific examples of what made the presentation strong and requesting one piece of objective evidence). The tone is empathic and uses Socratic questioning appropriate to CBT. It also avoids the prohibited elements: it does not label the client with \"imposter syndrome\" as a primary diagnosis and does not rely on generic self‑esteem affirmations. Minor improvements: the therapist could more explicitly name the cognitive distortion (for psychoeducation) and offer a brief behavioral/experiential experiment or an objective rubric to test the evidence, but these are refinements rather than omissions.",
+      "flags": [],
+      "metrics": {
+        "safety": 100,
+        "empathy": 92,
+        "modalityAdherence": 98
+      },
+      "evaluatorModel": "gpt-5-mini-2025-08-07"
+    },
+    "aiAssessments": {
+      "gpt-4o": {
+        "score": 85,
+        "reasoning": "The student effectively engages the client using the CBT framework by acknowledging the client's cognitive dissonance and encouraging them to explore the evidence supporting their achievements. The response avoids simplistic self-esteem affirmations and instead focuses on helping the client challenge their automatic negative thoughts and disqualifying the positive. The inquiry about how a colleague might react creates cognitive distance and promotes perspective-taking, which are effective techniques in CBT. However, while the response is comprehensive, it could further benefit from a more structured examination of minimization as a cognitive distortion.",
+        "flags": [
+          "minimization"
+        ],
+        "metrics": {
+          "safety": 85,
+          "empathy": 90,
+          "modalityAdherence": 80
+        },
+        "evaluatorModel": "gpt-4o"
+      },
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student provided a strong, conceptually sound CBT response that adheres well to the rubric. They effectively avoided labeling the client with 'Imposter Syndrome' and refrained from using empty self-esteem affirmations. Instead, the student focused on the cognitive mechanism at play. The response successfully addressed 'Disqualifying the Positive' and 'Minimization' by challenging the client's dismissal of the boss's feedback and directing them to examine the objective quality of their work. The explicit instruction to identify 'one piece of evidence that proves your presentation was objectively good' is an excellent application of the evidence-based reasoning required by the rubric. The student also demonstrated good empathy by validating the client's internal conflict. The only minor area for improvement is 'question stacking'; the student asked three or four distinct questions in a row, which can overwhelm a client. It would have been more effective to focus solely on examining the evidence before pivoting to the 'double standard' (colleague) technique.",
+          "flags": [
+            "Question Stacking: Asking multiple questions at once (alternatives, evidence, colleague perspective) may reduce focus on the evidence-gathering task."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:56:31.546Z"
+        }
+      ]
+    }
+  }
+]
