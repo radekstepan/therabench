@@ -1,125 +1,142 @@
 /**
- * Helper utilities for managing the multi-file results structure
+ * Helper utilities for managing the results structure
  * 
- * Structure: data/results/{candidateModel}/{judgeModel}/{timestamp}.json
+ * New Structure: data/results/{candidateModel}/{judgeModel}.json
+ * This avoids file fragmentation while keeping file sizes manageable.
  */
 
 import fs from 'fs';
 import path from 'path';
-import { ModelRun } from './types';
+import { ModelRun, JudgeAssessment } from './types';
 
 const RESULTS_DIR = path.join(__dirname, '../data/results');
 
 function sanitizeFileName(name: string): string {
-  // Replace characters that are problematic in file/folder names
   return name.replace(/[^a-zA-Z0-9.-]/g, '-');
 }
 
-function getTimestampFileName(timestamp: string): string {
-  // Convert ISO timestamp to filesystem-safe format
-  // e.g., "2025-12-28T07:18:26.388Z" -> "2025-12-28T07-18-26-388Z"
-  return timestamp.replace(/:/g, '-').replace(/\./g, '-');
-}
-
 /**
- * Save evaluation results to the multi-file structure
+ * Save evaluation results to the simplified file structure.
+ * Merges new runs with existing data in the file.
  */
-export function saveResults(runs: ModelRun[], candidateModel: string, judgeModel: string, timestamp: string): void {
+export function saveResults(runs: ModelRun[], candidateModel: string, judgeModel: string): void {
   const candidateDir = sanitizeFileName(candidateModel);
-  const judgeDir = sanitizeFileName(judgeModel);
-  const dirPath = path.join(RESULTS_DIR, candidateDir, judgeDir);
+  const judgeFile = `${sanitizeFileName(judgeModel)}.json`;
+  const dirPath = path.join(RESULTS_DIR, candidateDir);
+  const filePath = path.join(dirPath, judgeFile);
   
-  // Create directory structure
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
   }
+
+  // 1. Load existing results for this candidate/judge pair
+  let existingRuns: ModelRun[] = [];
+  if (fs.existsSync(filePath)) {
+    try {
+      existingRuns = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    } catch (e) {
+      console.warn(`⚠️ Corrupt file found at ${filePath}, starting fresh for this batch.`);
+    }
+  }
+
+  // 2. Create a map for merging
+  const resultsMap = new Map<string, ModelRun>();
+  existingRuns.forEach(r => resultsMap.set(r.runId, r));
+
+  // 3. Merge new runs
+  runs.forEach(newRun => {
+    // Filter assessments to only this judge to prevent cross-contamination in this file
+    const filteredAssessments: Record<string, JudgeAssessment[]> = {};
+    if (newRun.aiAssessments && newRun.aiAssessments[judgeModel]) {
+      filteredAssessments[judgeModel] = newRun.aiAssessments[judgeModel];
+    }
+
+    const runToSave = {
+      ...newRun,
+      aiAssessments: filteredAssessments
+    };
+
+    if (resultsMap.has(newRun.runId)) {
+      const existing = resultsMap.get(newRun.runId)!;
+      
+      // Merge assessments for this judge
+      const mergedAssessments = { ...existing.aiAssessments };
+      const existingJudgments = mergedAssessments[judgeModel] || [];
+      const newJudgments = filteredAssessments[judgeModel] || [];
+
+      // Combine and deduplicate by timestamp/score
+      const combined = [...existingJudgments];
+      for (const newJ of newJudgments) {
+        const isDuplicate = combined.some(e => e.timestamp === newJ.timestamp && e.score === newJ.score);
+        if (!isDuplicate) {
+          combined.push(newJ);
+        }
+      }
+      
+      mergedAssessments[judgeModel] = combined;
+
+      resultsMap.set(newRun.runId, {
+        ...existing,
+        ...runToSave, // Update metadata
+        aiAssessments: mergedAssessments
+      });
+    } else {
+      resultsMap.set(newRun.runId, runToSave);
+    }
+  });
   
-  const fileName = `${getTimestampFileName(timestamp)}.json`;
-  const filePath = path.join(dirPath, fileName);
-  
-  fs.writeFileSync(filePath, JSON.stringify(runs, null, 2));
+  // 4. Write back
+  fs.writeFileSync(filePath, JSON.stringify(Array.from(resultsMap.values()), null, 2));
 }
 
 /**
- * Load all results from the multi-file structure
+ * Load all results from the directory structure
  */
 export function loadAllResults(): ModelRun[] {
   if (!fs.existsSync(RESULTS_DIR)) {
     return [];
   }
   
-  const allResults: ModelRun[] = [];
+  const allResultsMap = new Map<string, ModelRun>();
   
-  // Traverse the directory structure
-  const candidateDirs = fs.readdirSync(RESULTS_DIR);
-  
-  for (const candidateDir of candidateDirs) {
-    const candidatePath = path.join(RESULTS_DIR, candidateDir);
+  // Traverse: data/results/{candidate}/{judge}.json
+  try {
+    const candidateDirs = fs.readdirSync(RESULTS_DIR);
     
-    if (!fs.statSync(candidatePath).isDirectory()) {
-      continue;
-    }
-    
-    const judgeDirs = fs.readdirSync(candidatePath);
-    
-    for (const judgeDir of judgeDirs) {
-      const judgePath = path.join(candidatePath, judgeDir);
+    for (const candidateDir of candidateDirs) {
+      const candidatePath = path.join(RESULTS_DIR, candidateDir);
+      if (!fs.statSync(candidatePath).isDirectory()) continue;
       
-      if (!fs.statSync(judgePath).isDirectory()) {
-        continue;
-      }
+      const files = fs.readdirSync(candidatePath).filter(f => f.endsWith('.json'));
       
-      const resultFiles = fs.readdirSync(judgePath).filter(f => f.endsWith('.json'));
-      
-      for (const file of resultFiles) {
-        const filePath = path.join(judgePath, file);
+      for (const file of files) {
+        const filePath = path.join(candidatePath, file);
         try {
-          const runs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-          if (Array.isArray(runs)) {
-            allResults.push(...runs);
+          const runs: ModelRun[] = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+          
+          // Merge into global map
+          for (const run of runs) {
+            if (allResultsMap.has(run.runId)) {
+              const existing = allResultsMap.get(run.runId)!;
+              // Merge assessments
+              const mergedAssessments = { ...existing.aiAssessments, ...run.aiAssessments };
+              allResultsMap.set(run.runId, { ...existing, aiAssessments: mergedAssessments });
+            } else {
+              allResultsMap.set(run.runId, run);
+            }
           }
         } catch (error) {
-          console.warn(`Warning: Failed to load results from ${filePath}:`, error);
+          console.warn(`Warning: Failed to load ${filePath}`);
         }
       }
     }
+  } catch (e) {
+    console.error('Error loading results:', e);
   }
   
-  return allResults;
+  return Array.from(allResultsMap.values());
 }
 
-/**
- * Get the path where results for a specific combination would be saved
- */
-export function getResultsPath(candidateModel: string, judgeModel: string, timestamp: string): string {
-  const candidateDir = sanitizeFileName(candidateModel);
-  const judgeDir = sanitizeFileName(judgeModel);
-  const fileName = `${getTimestampFileName(timestamp)}.json`;
-  
-  return path.join(RESULTS_DIR, candidateDir, judgeDir, fileName);
-}
-
-/**
- * Check if the old results.json exists and should be migrated
- */
 export function checkForOldFormat(): boolean {
-  const oldPath = path.join(__dirname, '../data/results.json');
-  return fs.existsSync(oldPath);
-}
-
-/**
- * Load results from the old single-file format (for backward compatibility)
- */
-export function loadOldFormatResults(): ModelRun[] {
-  const oldPath = path.join(__dirname, '../data/results.json');
-  if (!fs.existsSync(oldPath)) {
-    return [];
-  }
-  
-  try {
-    return JSON.parse(fs.readFileSync(oldPath, 'utf-8'));
-  } catch (error) {
-    console.warn('Warning: Failed to load old format results.json:', error);
-    return [];
-  }
+  return false; // Deprecated check
 }
