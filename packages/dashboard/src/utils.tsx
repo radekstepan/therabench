@@ -28,3 +28,27 @@ export function getModelLabels(modelName: string) {
   const config = modelConfigs.find(c => c.modelName === modelName);
   return config?.labels || [];
 }
+
+// Helper function to extract sortable value from model labels
+export function getModelLabelSortValue(modelName: string): { isOnline: boolean; gb: number; name: string } {
+  const labels = getModelLabels(modelName);
+  
+  // Check if model is online
+  const isOnline = labels.some(label => label.text.toLowerCase() === 'online');
+  
+  if (isOnline) {
+    return { isOnline: true, gb: 0, name: modelName };
+  }
+  
+  // Parse GB value from labels
+  let gb = Infinity; // Default to end if no GB found
+  for (const label of labels) {
+    const match = label.text.match(/([\d.]+)\s*GB/i);
+    if (match) {
+      gb = parseFloat(match[1]);
+      break;
+    }
+  }
+  
+  return { isOnline: false, gb, name: modelName };
+}

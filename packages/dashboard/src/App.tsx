@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
 import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride } from './types';
+import { getModelLabelSortValue } from './utils';
 
 // Components
 import { Sidebar } from './components/Sidebar';
@@ -28,9 +29,9 @@ export default function App() {
   const [editingRubric, setEditingRubric] = useState(false);
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-  const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy'>('score');
+  const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy'>('score');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   
@@ -234,6 +235,23 @@ export default function App() {
         case 'empathy':
           comparison = a.avgEmpathy - b.avgEmpathy;
           break;
+        case 'label':
+          const labelA = getModelLabelSortValue(a.name);
+          const labelB = getModelLabelSortValue(b.name);
+          
+          // Online models come first
+          if (labelA.isOnline && !labelB.isOnline) {
+            comparison = -1;
+          } else if (!labelA.isOnline && labelB.isOnline) {
+            comparison = 1;
+          } else if (labelA.isOnline && labelB.isOnline) {
+            // Both online: sort alphabetically by name
+            comparison = labelA.name.localeCompare(labelB.name);
+          } else {
+            // Both local: sort by GB value (high to low)
+            comparison = labelB.gb - labelA.gb;
+          }
+          break;
       }
       
       return leaderboardSortDirection === 'asc' ? comparison : -comparison;
@@ -305,6 +323,23 @@ export default function App() {
           break;
         case 'empathy':
           comparison = a.effectiveEmpathy - b.effectiveEmpathy;
+          break;
+        case 'label':
+          const labelA = getModelLabelSortValue(a.modelName);
+          const labelB = getModelLabelSortValue(b.modelName);
+          
+          // Online models come first
+          if (labelA.isOnline && !labelB.isOnline) {
+            comparison = -1;
+          } else if (!labelA.isOnline && labelB.isOnline) {
+            comparison = 1;
+          } else if (labelA.isOnline && labelB.isOnline) {
+            // Both online: sort alphabetically by name
+            comparison = labelA.name.localeCompare(labelB.name);
+          } else {
+            // Both local: sort by GB value (high to low)
+            comparison = labelB.gb - labelA.gb;
+          }
           break;
         default:
           comparison = 0;

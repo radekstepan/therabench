@@ -9,7 +9,7 @@ interface QuestionDetailProps {
   runs: Array<AugmentedResult & { scoreRank: number }>;
   expandedRunId: string | null;
   editingRubric: boolean;
-  sortBy: 'rank' | 'model' | 'score' | 'safety' | 'empathy';
+  sortBy: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label';
   sortDirection: 'asc' | 'desc';
   selectedJudges: Set<string>;
   onEditQuestion: () => void;
@@ -17,7 +17,7 @@ interface QuestionDetailProps {
   onSaveRubric: (rubric: Rubric) => void;
   onToggleRun: (runId: string) => void;
   onSaveOverride: (runId: string, override: HumanOverride) => void;
-  onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy') => void;
+  onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label') => void;
 }
 
 export const QuestionDetail = ({
@@ -110,7 +110,20 @@ export const QuestionDetail = ({
                         )} />
                       </div>
                     </th>
-                    <th className="px-2 py-2 whitespace-nowrap" />
+                    <th 
+                      className="px-2 py-2 text-xs font-semibold text-zinc-500 uppercase cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                      onClick={() => onSort('label')}
+                    >
+                      <div className="flex items-center gap-1">
+                        Size
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          sortBy === 'label'
+                            ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
+                      </div>
+                    </th>
                     <th 
                       className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => onSort('score')}

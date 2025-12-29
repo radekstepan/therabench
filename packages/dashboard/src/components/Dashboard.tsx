@@ -18,9 +18,9 @@ interface DashboardProps {
   topPerformer: ModelStat | undefined;
   totalEvaluations: number;
   reviewsCompleted: number;
-  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy';
+  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label';
   sortDirection: 'asc' | 'desc';
-  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy') => void;
+  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label') => void;
 }
 
 export const Dashboard = ({
@@ -85,7 +85,20 @@ export const Dashboard = ({
                   )} />
                 </div>
               </th>
-              <th className="px-2 py-2 whitespace-nowrap" />
+              <th 
+                className="px-2 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                onClick={() => onSort('label')}
+              >
+                <div className="flex items-center gap-1">
+                  Size
+                  <ArrowUpDown className={cn(
+                    "w-3 h-3 transition-transform",
+                    sortBy === 'label'
+                      ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                      : 'text-zinc-400'
+                  )} />
+                </div>
+              </th>
               <th 
                 className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                 onClick={() => onSort('score')}
