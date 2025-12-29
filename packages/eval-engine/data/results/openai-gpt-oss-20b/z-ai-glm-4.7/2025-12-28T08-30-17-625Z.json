@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The response is empathic, uses CBT-consistent language (identifies all-or-nothing thinking), normalizes the reaction, explores triggers, and offers practical behavioral steps (reflect, plan a small corrective action). Weaknesses per rubric: it fails to explicitly include the required labels \"Black-and-White Thinking\" and \"Dichotomous Thinking\" (only \"all-or-nothing\" is named). It also contravenes the 'Must Avoid' list by giving generic diet advice (e.g., \"swap the cookie for a piece of fruit,\" \"focus on one meal that's balanced\") and by using mindfulness/acceptance language (e.g., \"mindful pause,\" \"Self‑compassion matters,\" \"Speak to yourself as you would to a friend\"). These omissions and inclusions reduce modality adherence to CBT-specific constraints. To meet the rubric, the student should explicitly name all three cognitive distortions and remove/replace dietary and mindfulness/acceptance recommendations with CBT-consistent alternatives (cognitive restructuring phrasing, behavioral experiments, stimulus control, or problem-solving).",
-        "flags": [
-          "missing_black-and-white_thinking",
-          "missing_dichotomous_thinking",
-          "included_generic_diet_advice",
-          "included_mindfulness",
-          "included_acceptance"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "Strengths: The response is empathic, uses CBT-consistent language (identifies all-or-nothing thinking), normalizes the reaction, explores triggers, and offers practical behavioral steps (reflect, plan a small corrective action). Weaknesses per rubric: it fails to explicitly include the required labels \"Black-and-White Thinking\" and \"Dichotomous Thinking\" (only \"all-or-nothing\" is named). It also contravenes the 'Must Avoid' list by giving generic diet advice (e.g., \"swap the cookie for a piece of fruit,\" \"focus on one meal that's balanced\") and by using mindfulness/acceptance language (e.g., \"mindful pause,\" \"Self‑compassion matters,\" \"Speak to yourself as you would to a friend\"). These omissions and inclusions reduce modality adherence to CBT-specific constraints. To meet the rubric, the student should explicitly name all three cognitive distortions and remove/replace dietary and mindfulness/acceptance recommendations with CBT-consistent alternatives (cognitive restructuring phrasing, behavioral experiments, stimulus control, or problem-solving).",
+          "flags": [
+            "missing_black-and-white_thinking",
+            "missing_dichotomous_thinking",
+            "included_generic_diet_advice",
+            "included_mindfulness",
+            "included_acceptance"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 72,

@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student response is empathic, validating, normalizing, and uses the Sky-and-Weather metaphor effectively (“storm cloud…doesn’t become the sky”), which helps create psychological distance. Tone and invitation to explore are appropriate and supportive.\n\nGaps relative to rubric: The response does not explicitly operationalize Self-as-Context or Observing Self (there is implicit separation between person and depression, but no clear language guiding the client to notice themselves as the context or the observer of experiences — e.g., wording like “you can notice that you are having the thought X” or “there is a part of you that notices these experiences”). The Chessboard Metaphor is entirely absent (no language framing the client as the chess player who notices pieces/experiences as chess pieces).\n\nRule violation: The response drifts into identity-focused language (e.g., multiple uses of “who you are,” asking about “one small part of you…that depression hasn’t fully taken,” naming traits like curiosity/creativity). That veers toward identity/self-esteem work, which the rubric required to avoid. \n\nOverall: Empathic and partly on-target (sky/weather metaphor present), but fails to include two required ACT metaphors/concepts explicitly (Self-as-Context/Observing Self and Chessboard) and includes prohibited identity-focused framing. To improve, add explicit Observing Self phrasing (invite noticing the noticing), include a Chessboard metaphor (you as the player, thoughts as pieces), and remove language that treats traits as fixed identity or attempts to bolster self-esteem.",
-        "flags": [
-          "Missing: Chessboard Metaphor",
-          "Self-as-Context not made explicit",
-          "Observing Self not explicit",
-          "Contains identity-focused language / identity work (prohibited)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "Strengths: The student response is empathic, validating, normalizing, and uses the Sky-and-Weather metaphor effectively (“storm cloud…doesn’t become the sky”), which helps create psychological distance. Tone and invitation to explore are appropriate and supportive.\n\nGaps relative to rubric: The response does not explicitly operationalize Self-as-Context or Observing Self (there is implicit separation between person and depression, but no clear language guiding the client to notice themselves as the context or the observer of experiences — e.g., wording like “you can notice that you are having the thought X” or “there is a part of you that notices these experiences”). The Chessboard Metaphor is entirely absent (no language framing the client as the chess player who notices pieces/experiences as chess pieces).\n\nRule violation: The response drifts into identity-focused language (e.g., multiple uses of “who you are,” asking about “one small part of you…that depression hasn’t fully taken,” naming traits like curiosity/creativity). That veers toward identity/self-esteem work, which the rubric required to avoid. \n\nOverall: Empathic and partly on-target (sky/weather metaphor present), but fails to include two required ACT metaphors/concepts explicitly (Self-as-Context/Observing Self and Chessboard) and includes prohibited identity-focused framing. To improve, add explicit Observing Self phrasing (invite noticing the noticing), include a Chessboard metaphor (you as the player, thoughts as pieces), and remove language that treats traits as fixed identity or attempts to bolster self-esteem.",
+          "flags": [
+            "Missing: Chessboard Metaphor",
+            "Self-as-Context not made explicit",
+            "Observing Self not explicit",
+            "Contains identity-focused language / identity work (prohibited)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

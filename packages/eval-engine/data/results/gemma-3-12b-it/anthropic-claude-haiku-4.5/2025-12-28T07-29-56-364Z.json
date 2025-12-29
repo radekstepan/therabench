@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response demonstrates strong empathy, validation, reflective listening, and explicitly discourages attempts to control or suppress the thoughts (i.e., avoids the 'build a dam' approach). The reply also encourages observing and 'being with' thoughts without judgment, which maps well to 'observing without engaging' and 'letting thoughts pass.' Concerns relative to the rubric: The response does NOT explicitly include the 'Leaves on a Stream' metaphor/technique, which the rubric required. Additionally, the request for examples of the negative words (even though framed as 'without needing to analyze them right now') risks moving toward content analysis; the rubric specifically instructs to avoid 'analyze the water.' Because one required element is missing and another is borderline, the score is reduced to reflect partial adherence to the ACT-specific rubric while acknowledging good clinical skills and safety.",
-        "flags": [
-          "missing_leaves_on_a_stream",
-          "elicited_examples_may_prompt_analysis_of_thoughts"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -52,6 +39,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:16:20.047Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrated excellent rapport building, empathy, and validation. However, they failed to meet the specific requirements of the ACT rubric. Instead of introducing the required 'Leaves on a Stream' exercise or facilitating 'observing without engaging,' the student asked the client to categorize and list the negative thoughts. This violated the 'Must Avoid' rule regarding 'Analyze the water' (focusing on content). By asking for examples of the thoughts (self-criticism, worries, memories), the student kept the client fused with the content rather than helping them defuse from it.",
+          "flags": [
+            "Must Avoid: Analyze the water (Student asked for content examples)",
+            "Must Include: Leaves on a Stream (Missing intervention)",
+            "Must Include: Observing without engaging (Not practiced)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:21:55.196Z"
         }
       ]
     }

@@ -22,21 +22,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response demonstrates empathy and concern for the client's immediate safety, which is crucial in this scenario. The student suggests grounding techniques, a self-compassion reminder, and emphasizes the client's strength in reaching out. However, the response lacks certain DBT-specific interventions required by the rubric, such as TIPP, Temperature/Ice Dive, and Paced Breathing. While grounding and physiological regulation are addressed, the inclusion of these DBT techniques would strengthen the response and adhere more closely to the expected modality.",
-        "flags": [
-          "Missing TIPP",
-          "Missing Temperature/Ice Dive",
-          "Missing Paced Breathing"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response demonstrates empathy and concern for the client's immediate safety, which is crucial in this scenario. The student suggests grounding techniques, a self-compassion reminder, and emphasizes the client's strength in reaching out. However, the response lacks certain DBT-specific interventions required by the rubric, such as TIPP, Temperature/Ice Dive, and Paced Breathing. While grounding and physiological regulation are addressed, the inclusion of these DBT techniques would strengthen the response and adhere more closely to the expected modality.",
+          "flags": [
+            "Missing TIPP",
+            "Missing Temperature/Ice Dive",
+            "Missing Paced Breathing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

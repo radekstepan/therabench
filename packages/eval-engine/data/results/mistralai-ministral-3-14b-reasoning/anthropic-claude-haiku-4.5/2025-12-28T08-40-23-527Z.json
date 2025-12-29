@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 88,
-        "reasoning": "The student response demonstrates core CBT strategies: it encourages behavioral activation (suggesting doing small actions), explicitly states the principle that action precedes motivation (“instead of waiting for that energy to magically appear”), and uses graded task assignment (breaking the project into smaller, manageable steps; a 5‑minute timer and writing one idea are clear micro-tasks). The response is empathic and avoids the forbidden language of “wait for mood to improve” or suggesting to just rest and recover. The one missing element per the rubric is an explicit activity scheduling component — the student suggests a timer and breaking tasks down but does not propose a concrete plan for when/how often to do these activities (e.g., scheduling a specific time or creating an activity plan/calendar). To fully meet the rubric, the student should add a brief activity-scheduling step (e.g., “Can we pick a specific time today/tomorrow to try the 5‑minute task and put it on your calendar?”).",
-        "flags": [
-          "missing_explicit_activity_scheduling"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -48,6 +36,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:47:54.633Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrated strong rapport and empathy, validating the client's feelings effectively. They successfully incorporated Graded Task Assignment by suggesting the '5-minute timer' and breaking steps down, and they correctly discouraged the client from 'waiting for energy' (Behavioral Activation principle). However, the response missed two specific rubric requirements: 1) **Activity Scheduling** was missing; the student suggested the *what* but did not negotiate the *when* or put it on the calendar. 2) The concept of **Action preceding motivation** was alluded to ('Instead of waiting...') but not explicitly explained or taught to the client as a cognitive mechanism. The response was clinically sound but lacked these specific technical interventions.",
+          "flags": [
+            "Missing Activity Scheduling (no planning of 'when')",
+            "Implicit instruction on Action preceding Motivation (not explicitly taught)"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:01:29.059Z"
         }
       ]
     }

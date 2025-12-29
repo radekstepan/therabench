@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 82,
-        "reasoning": "Strengths: The student correctly identified and labeled the client's tendency to 'discount' praise (disqualifying the positive) and pointed out the tendency to focus on what invalidates positive feedback. They asked evidence-focused, Socratic questions (“Where does that belief come from? Is it based on observation…?”), which meets the 'examine the evidence' requirement. The response is empathic, validates the client's feelings, and invites exploration of internal processes—appropriate CBT technique. \n\nWeaknesses: The reply includes a self‑esteem affirmation (“takes away the personal validation you deserve to feel” / “It’s wonderful…”) which the rubric required avoiding; this introduces reassurance/praise rather than maintaining a purely Socratic stance. The response lightly interprets/internalizes motives for protection from disappointment, which is acceptable but could be framed more cautiously as a hypothesis to test. The student avoided diagnosing imposter syndrome (good). \n\nRecommendation: Remove direct affirmational language and instead maintain Socratic curiosity and behavioral/cognitive experiments (e.g., ask for concrete examples of the boss saying the same to others, suggest observing frequency, testing alternative explanations, or asking the boss for more specific feedback).",
-        "flags": [
-          "self_esteem_affirmation_present"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -49,6 +37,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:22:11.248Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 82,
+          "reasoning": "The student response demonstrates strong empathy and rapport, validating the client's feelings of emptiness effectively. The student successfully addresses 'Disqualifying the Positive' by exploring the underlying belief that 'excellent' doesn't count because it's applied to everyone. However, the response falls short of explicitly structuring an 'Examine the Evidence' technique. While the student asks questions about the belief's origin ('Where does that belief come from?'), they shift quickly to a reframing argument ('even if he says it to everyone...') rather than collaboratively gathering data to test the validity of the thought. Additionally, the statement 'It’s almost like you’re protecting yourself...' edges towards psychodynamic interpretation rather than strict cognitive behavioral analysis of the situation. The response also leans slightly into reassurance ('the personal validation you deserve to feel') rather than strictly using Socratic questioning to lead the client to that conclusion.",
+          "flags": [
+            "Missed explicit 'Examine the Evidence' structure",
+            "Slight reliance on reframing over data collection",
+            "Borderline psychodynamic interpretation ('protecting yourself')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:22:56.069Z"
         }
       ]
     }

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "Strengths: The student response demonstrates clear empathy, validation, and curiosity — reflects feelings, normalizes the struggle, asks open questions, and highlights courage. Tone and safety are appropriate. Weaknesses relative to the rubric: the response does not include the required metaphors 'Passengers on the Bus', 'Demons on the Boat', and 'Driving despite the noise'. Inclusion of those metaphors was mandatory. The response also correctly avoids the prohibited directives ('Kick the passengers off', 'Argue with the passengers'). To improve: explicitly incorporate the three required metaphors (e.g., name the doubts as 'passengers on the bus' and acknowledge 'demons on the boat' while encouraging 'driving despite the noise'), keep the empathetic stance already present, and avoid giving directive or confrontational instructions. Because the student met clinical skill expectations for empathy and safety but failed to include the required metaphors, I gave a mid-level score.",
-        "flags": [
-          "missing_metaphors: Passengers on the Bus; Demons on the Boat; Driving despite the noise",
-          "no_prohibited_phrases_detected"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 50,
+          "reasoning": "Strengths: The student response demonstrates clear empathy, validation, and curiosity — reflects feelings, normalizes the struggle, asks open questions, and highlights courage. Tone and safety are appropriate. Weaknesses relative to the rubric: the response does not include the required metaphors 'Passengers on the Bus', 'Demons on the Boat', and 'Driving despite the noise'. Inclusion of those metaphors was mandatory. The response also correctly avoids the prohibited directives ('Kick the passengers off', 'Argue with the passengers'). To improve: explicitly incorporate the three required metaphors (e.g., name the doubts as 'passengers on the bus' and acknowledge 'demons on the boat' while encouraging 'driving despite the noise'), keep the empathetic stance already present, and avoid giving directive or confrontational instructions. Because the student met clinical skill expectations for empathy and safety but failed to include the required metaphors, I gave a mid-level score.",
+          "flags": [
+            "missing_metaphors: Passengers on the Bus; Demons on the Boat; Driving despite the noise",
+            "no_prohibited_phrases_detected"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

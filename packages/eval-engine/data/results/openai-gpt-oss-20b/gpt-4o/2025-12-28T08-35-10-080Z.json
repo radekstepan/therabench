@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response demonstrates empathy and a good understanding of the client's issues but contains elements that conflict with the principles of ACT (Acceptance and Commitment Therapy). The student highlights the idea of avoidance and partially addresses the control agenda by suggesting manageable steps. However, the response leans towards a CBT framing by introducing 'confidence building' and structured steps as a way to manage anxiety, which ACT usually approaches through acceptance of experiences rather than confidence building or skill training. The core focus on willingness, experiential avoidance, and living according to one's values isn't as strong as it could be, indicating room for improvement in modality adherence.",
-        "flags": [
-          "exposure_therapy_fringe",
-          "confidence_building"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response demonstrates empathy and a good understanding of the client's issues but contains elements that conflict with the principles of ACT (Acceptance and Commitment Therapy). The student highlights the idea of avoidance and partially addresses the control agenda by suggesting manageable steps. However, the response leans towards a CBT framing by introducing 'confidence building' and structured steps as a way to manage anxiety, which ACT usually approaches through acceptance of experiences rather than confidence building or skill training. The core focus on willingness, experiential avoidance, and living according to one's values isn't as strong as it could be, indicating room for improvement in modality adherence.",
+          "flags": [
+            "exposure_therapy_fringe",
+            "confidence_building"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

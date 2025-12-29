@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student response shows strong empathy and validation, asks open questions about the client's thoughts and what 'spiraling' looks like, and invites collaborative problem-solving — all appropriate DBT/CBT interviewing moves. It also avoids the prohibited CBT label 'mind reading' and does not provide false reassurance.\n\nLimitations: The response does not explicitly perform a 'check the facts' skill (e.g., asking what evidence the client has that the friend is angry, whether the friend has replied to others, or whether any alternative explanations exist). It also does not offer concrete DBT emotion-regulation or distress-tolerance strategies (mindfulness grounding, paced breathing, opposite action, self-soothing, or ACCEPTS/IMPROVE techniques) to help the client manage the immediate escalation. The distinction between interpretation and reality is only briefly suggested (“without assuming the worst”) rather than operationalized (e.g., guiding the client to test the belief or consider alternative explanations).\n\nTo improve: explicitly prompt for evidence and alternative explanations (check the facts), name and teach one or two brief DBT skills the client can use in the moment, and guide a behavioral test (e.g., drafting a neutral message to the friend or waiting a specified time and observing the outcome) to contrast interpretation vs. reality.",
-        "flags": [
-          "missing_explicit_check_the_facts",
-          "no_specific_DBT_emotion-regulation_skills_offered",
-          "interpretation_vs_reality_not_explicitly_operationalized"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:48:33.910Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provides a supportive and empathetic response, successfully creating a safe space and avoiding reassurance or mind reading. However, the response fails to adhere to the specific DBT requirements and rubric constraints. The student does not explicitly perform 'Check the Facts'; instead of guiding the client to examine the evidence for the interpretation (friend is angry) versus the event (friend hasn't texted), the student asks exploratory questions about thoughts and past memories. While validating, this approach does not help the client distinguish 'Interpretation vs. Reality' in the moment. Furthermore, 'Emotion Regulation' is mentioned conceptually ('taking care of your own emotional needs') but no specific DBT regulation skill (e.g., Opposite Action, TIPP) is offered to address the 'spiraling'. The response is clinically sound generally but lacks the specific DBT interventions requested.",
+          "flags": [
+            "Missed Intervention: Check the Facts",
+            "Missed Intervention: Emotion Regulation",
+            "Missed Application: Interpretation vs. Reality",
+            "Over-reliance on exploration vs. skill application"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:04:38.369Z"
         }
       ]
     }

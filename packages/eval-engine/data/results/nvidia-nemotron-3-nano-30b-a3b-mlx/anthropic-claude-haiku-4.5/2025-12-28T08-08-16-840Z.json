@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student response clearly validates the client, names values (wanting to be a supportive partner), and repeatedly encourages taking action despite fear (small exposures, practice, a breathing/imagery exercise). These elements align with ACT principles of values‑congruent behavior and committed action with acceptance of distress. The response also includes an acceptance‑oriented practice (noticing sensations, labeling, breathing) which supports acting in the presence of fear. \n\nWeaknesses: The response explicitly includes and models communication skills training (specific scripts, phrasing, 'I' statements, fallback lines) and mentions cognitive restructuring—techniques more characteristic of traditional CBT/skills training rather than pure ACT. The rubric explicitly required avoiding communication skills training; that inclusion reduces modality adherence. Overall modality adherence to ACT is moderate because while acceptance and committed action are present, the addition of directive skill prompts and cognitive restructuring departs from a clean ACT approach. \n\nGiven these positives and the clear rubric violation around communication skills training (and some CBT language), the response earns a good but not excellent score.",
-        "flags": [
-          "committed_action_present",
-          "values_congruent_behavior_present",
-          "taking_action_with_fear_present",
-          "includes_communication_skills_training (violates rubric)",
-          "mentions_cognitive_restructuring (non-ACT technique)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -59,6 +43,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:07:44.419Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrated high empathy and correctly identified the client's value of being a supportive partner. However, the response failed to adhere to the specific ACT constraints provided in the rubric. The most significant error was the inclusion of Communication Skills Training (Section 3 and Section 4), where the student provided specific scripts and 'low-stakes practice' to modify *how* the client asks the question. In ACT, the focus should be on the function of the behavior (values-consistency) rather than the form (changing the script to avoid rejection). Additionally, the response violated the instruction to avoid 'waiting for fear to subside' by incorporating relaxation techniques and visualization (Section 8) aimed at reducing anxiety and replacing fear before taking action. The response utilized a CBT/exposure hierarchy approach rather than fostering 'willingness' to take committed action alongside the existing fear.",
+          "flags": [
+            "Prohibited: Communication Skills Training",
+            "Prohibited: Fear reduction strategies used",
+            "Modality drift: Used CBT techniques instead of ACT"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:40:48.136Z"
         }
       ]
     }

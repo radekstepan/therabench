@@ -23,21 +23,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 60,
-        "reasoning": "The student's response provides a comprehensive approach to addressing the client's anxiety about attending social gatherings, including empathy, validation, and practical coping strategies. However, it emphasizes exposure therapy and confidence building, which are not aligned with the rubric requirements for focusing on experiential avoidance, control agenda, and willingness. ACT techniques focus on accepting emotions rather than eliminating anxiety through graded exposure and confidence-building strategies.",
-        "flags": [
-          "Avoided discussing experiential avoidance",
-          "Included exposure therapy",
-          "Focused on confidence building"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student's response provides a comprehensive approach to addressing the client's anxiety about attending social gatherings, including empathy, validation, and practical coping strategies. However, it emphasizes exposure therapy and confidence building, which are not aligned with the rubric requirements for focusing on experiential avoidance, control agenda, and willingness. ACT techniques focus on accepting emotions rather than eliminating anxiety through graded exposure and confidence-building strategies.",
+          "flags": [
+            "Avoided discussing experiential avoidance",
+            "Included exposure therapy",
+            "Focused on confidence building"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

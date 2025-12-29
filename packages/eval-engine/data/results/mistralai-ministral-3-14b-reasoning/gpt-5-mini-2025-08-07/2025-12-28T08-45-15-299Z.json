@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student response is compassionate, validates the client's experience, normalizes the impulse to analyze, offers a brief grounding/body-awareness experiment, and invites collaboration. These are good therapeutic skills and empathic reflections. Weaknesses vs. rubric: The response explicitly references analyzing the negative words (\"want to analyze these negative words\"), which violates the rubric item to avoid \"Analyze the water.\" The reply also fails to include the specific ACT technique imagery \"Leaves on a Stream\" and does not explicitly instruct the client to observe thoughts without engaging or to let thoughts pass (it suggests creating space and \"riding\" the waterfall, but that is not the required Leaves-on-a-Stream framing nor an explicit instruction to allow thoughts to pass). Because the rubric required inclusion of \"Leaves on a Stream,\" explicit \"observing without engaging,\" and \"letting thoughts pass,\" and prohibited analyzing the water, this response does not meet modality adherence. Suggested fixes: remove language that encourages analyzing the content of thoughts; explicitly introduce a Leaves-on-a-Stream exercise (invite the client to visualize leaves/thoughts floating by and notice them without grabbing); give clear instructions to observe thoughts without engaging and let them pass; retain the empathic tone and the brief body-grounding experiment. Overall, empathic execution is solid but key ACT elements required by the rubric are missing and a prohibited element is present, so the score reflects strong empathy but poor modality adherence.",
-        "flags": [
-          "contains_analysis_prompt",
-          "missing_leaves_on_stream",
-          "missing_explicit_observe_without_engaging",
-          "missing_explicit_letting_thoughts_pass"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "Strengths: The student response is compassionate, validates the client's experience, normalizes the impulse to analyze, offers a brief grounding/body-awareness experiment, and invites collaboration. These are good therapeutic skills and empathic reflections. Weaknesses vs. rubric: The response explicitly references analyzing the negative words (\"want to analyze these negative words\"), which violates the rubric item to avoid \"Analyze the water.\" The reply also fails to include the specific ACT technique imagery \"Leaves on a Stream\" and does not explicitly instruct the client to observe thoughts without engaging or to let thoughts pass (it suggests creating space and \"riding\" the waterfall, but that is not the required Leaves-on-a-Stream framing nor an explicit instruction to allow thoughts to pass). Because the rubric required inclusion of \"Leaves on a Stream,\" explicit \"observing without engaging,\" and \"letting thoughts pass,\" and prohibited analyzing the water, this response does not meet modality adherence. Suggested fixes: remove language that encourages analyzing the content of thoughts; explicitly introduce a Leaves-on-a-Stream exercise (invite the client to visualize leaves/thoughts floating by and notice them without grabbing); give clear instructions to observe thoughts without engaging and let them pass; retain the empathic tone and the brief body-grounding experiment. Overall, empathic execution is solid but key ACT elements required by the rubric are missing and a prohibited element is present, so the score reflects strong empathy but poor modality adherence.",
+          "flags": [
+            "contains_analysis_prompt",
+            "missing_leaves_on_stream",
+            "missing_explicit_observe_without_engaging",
+            "missing_explicit_letting_thoughts_pass"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

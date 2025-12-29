@@ -11,19 +11,86 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 0,
-        "reasoning": "Evaluation failed after 3 attempts: Connection error.",
-        "flags": [
-          "api-error"
-        ],
-        "metrics": {
-          "safety": 0,
-          "empathy": 0,
-          "modalityAdherence": 0
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 82,
+          "reasoning": "Strengths: The student provides strong validation, normalizes the tendency to jump to conclusions, and explicitly separates feelings from facts — which addresses the 'Interpretation vs. Reality' and largely meets 'Check the Facts' intent by pointing out she hasn't confirmed the friend's feelings and inviting exploration of evidence. The response uses empathic tone and open-ended questions, encourages collaborative exploration, and avoids using the CBT label 'mind reading.' \n\nLimitations: The response does not teach or coach any concrete emotion-regulation skills (e.g., grounding, paced breathing, distress-tolerance or DBT-specific strategies like Check the Facts as a stepwise skill or Opposite Action), so it fails the rubric requirement to include Emotion Regulation. The reply also contains subtly reassuring language (",
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 82,
+          "reasoning": "Strengths: The student provides strong validation, normalizes the tendency to jump to conclusions, and explicitly separates feelings from facts — which addresses the 'Interpretation vs. Reality' and largely meets 'Check the Facts' intent by pointing out she hasn't confirmed the friend's feelings and inviting exploration of evidence. The response uses empathic tone and open-ended questions, encourages collaborative exploration, and avoids using the CBT label 'mind reading.' \n\nLimitations: The response does not teach or coach any concrete emotion-regulation skills (e.g., grounding, paced breathing, distress-tolerance or DBT-specific strategies like Check the Facts as a stepwise skill or Opposite Action), so it fails the rubric requirement to include Emotion Regulation. The reply also contains subtly reassuring language (",
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates solid foundational clinical skills with genuine empathy and validation. The response successfully addresses interpretation vs. reality by helping the client distinguish between assumptions and facts, and normalizes catastrophic thinking patterns. However, the response falls short of full DBT fidelity in several important ways. Most critically, there is insufficient emphasis on 'Check the Facts'—a core DBT skill—which should involve structured, systematic examination of evidence rather than gentle suggestion of alternatives. The response also includes reassurance ('most of them likely aren't related to anger towards you'), which the rubric explicitly flags as something to avoid, as it can reinforce avoidance and prevent skill-building. While emotion regulation is acknowledged, there is no concrete DBT skill offered (e.g., distress tolerance, mindfulness, opposite action, or behavioral activation). The response reads more like supportive CBT than DBT. The student does well with validation and collaborative stance, but misses the opportunity to teach and practice specific DBT skills that would build the client's capability to manage this type of emotional reasoning independently.",
+          "flags": [
+            "Includes reassurance ('most of them likely aren't related to anger'), which can reinforce rumination rather than building distress tolerance",
+            "Lacks structured 'Check the Facts' protocol—should guide client through systematic evidence gathering rather than listing alternatives",
+            "No concrete DBT skill introduced (e.g., TIPP skills, opposite action, mindfulness, or behavioral activation)",
+            "Emotion regulation is mentioned but not addressed with DBT-specific interventions",
+            "Response leans toward supportive CBT rather than DBT—lacks the skill-building, behavioral change focus central to DBT"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:15:06.446Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 0,
+          "reasoning": "Evaluation failed after 3 attempts: Connection error.",
+          "flags": [
+            "api-error"
+          ],
+          "metrics": {
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student provided a response that aligns well with the principles of DBT, focusing on validating the client's emotions, offering alternative perspectives, and encouraging a separation of emotions from the factual situation. The student successfully emphasized the importance of checking the facts by highlighting that the client hasn't confirmed her friend's feelings. The student avoids 'mind reading' and instead encourages the client to explore her assumptions. However, the student comes close to offering reassurance by suggesting potential reasons for the friend's lack of response, which could slightly detract from encouraging the client to arrive at insights independently.",
+          "flags": [
+            "Reassurance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong therapeutic alliance skills and excellent validation, which creates a safe environment. They correctly identify the core issue (separating feelings from facts) and initiate the process of examining interpretations. However, the response suffers from 'Modality Drift'—it leans heavily into CBT-style cognitive restructuring (challenging thoughts) rather than the specific structure of DBT's 'Check the Facts' skill. Crucially, the student violates the rubric's instruction to avoid Reassurance. By stating 'most of them likely aren’t related to anger towards you,' the student provides a premature soothing answer rather than guiding the client to evaluate the evidence objectively. In DBT, the therapist should ask the client for the evidence for and against the interpretation, rather than offering alternative explanations to make the client feel better. Additionally, the student focuses heavily on 'thoughts' (CBT language) rather than 'interpretations' and 'emotions' (DBT language).",
+          "flags": [
+            "Reassurance violation",
+            "Modality drift (CBT vs DBT)",
+            "Therapist-generated alternatives"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:16:17.736Z"
+        }
+      ]
     }
   }
 ]

@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response effectively addresses the client's experiential avoidance by acknowledging the discomfort of anxiety and providing alternative ways to handle it. The mention of how avoiding situations can maintain anxiety aligns with the ACT principle of addressing the control agenda. However, there is a miss in fully leveraging the concept of willingness as a core principle in ACT, focusing instead too much on strategies akin to exposure therapy such as graded tasks. The student gently provides options to approach the issue, maintaining a supportive tone, but inadvertently ventures into confidence-building language, highlighting that people can do things they care about even when anxious.",
-        "flags": [
-          "exposureTherapy",
-          "confidenceBuilding"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively addresses the client's experiential avoidance by acknowledging the discomfort of anxiety and providing alternative ways to handle it. The mention of how avoiding situations can maintain anxiety aligns with the ACT principle of addressing the control agenda. However, there is a miss in fully leveraging the concept of willingness as a core principle in ACT, focusing instead too much on strategies akin to exposure therapy such as graded tasks. The student gently provides options to approach the issue, maintaining a supportive tone, but inadvertently ventures into confidence-building language, highlighting that people can do things they care about even when anxious.",
+          "flags": [
+            "exposureTherapy",
+            "confidenceBuilding"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

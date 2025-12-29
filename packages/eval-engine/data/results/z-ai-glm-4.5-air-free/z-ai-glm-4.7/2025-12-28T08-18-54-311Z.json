@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: The student demonstrates clear empathy and normalizes the client's experience. They correctly use behavioral activation principles by encouraging small actions and explicitly state the principle that action can precede and generate motivation. They also employ graded task assignment by proposing a 'tiny step' (e.g., opening the file, writing one idea) and invite collaborative brainstorming. They avoid advising the client to rest or to wait for mood to improve, satisfying the 'must avoid' criteria.\n\nLimitation: The response does not include activity scheduling — a concrete plan for when the client will do the small step (e.g., setting a specific time, using a calendar or implementation intention). Because 'Activity Scheduling' is a required element of the rubric and is missing, the response is incomplete for a full CBT intervention. Suggestion: add a scheduled, time-bound plan (e.g., 'Could you schedule 10 minutes at X time today to open the file?') and brief implementation-intention phrasing to strengthen the intervention.",
-        "flags": [
-          "missing_activity_scheduling"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student demonstrates clear empathy and normalizes the client's experience. They correctly use behavioral activation principles by encouraging small actions and explicitly state the principle that action can precede and generate motivation. They also employ graded task assignment by proposing a 'tiny step' (e.g., opening the file, writing one idea) and invite collaborative brainstorming. They avoid advising the client to rest or to wait for mood to improve, satisfying the 'must avoid' criteria.\n\nLimitation: The response does not include activity scheduling — a concrete plan for when the client will do the small step (e.g., setting a specific time, using a calendar or implementation intention). Because 'Activity Scheduling' is a required element of the rubric and is missing, the response is incomplete for a full CBT intervention. Suggestion: add a scheduled, time-bound plan (e.g., 'Could you schedule 10 minutes at X time today to open the file?') and brief implementation-intention phrasing to strengthen the intervention.",
+          "flags": [
+            "missing_activity_scheduling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 90,

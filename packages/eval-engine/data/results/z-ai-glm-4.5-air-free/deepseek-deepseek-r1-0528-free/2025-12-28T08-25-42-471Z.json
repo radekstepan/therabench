@@ -20,20 +20,106 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 80,
-        "reasoning": "The student demonstrated strong empathy and validated the client's experience appropriately. They effectively explored the metaphor and avoided forbidden strategies like arguing with or eliminating the doubts. However, they missed key ACT modality requirements: they did not introduce essential ACT metaphors like 'Passengers on the Bus' or 'Demons on the Boat' to frame the doubts, nor did they explicitly encourage 'driving despite the noise'—instead opting for a generic question about navigating differently. While clinically sound and safe, the omission of ACT-specific framework elements reduced modality adherence.",
-        "flags": [
-          "No ACT metaphor use (Passengers/Demons)",
-          "Encouragement of 'driving despite noise' was implicit rather than explicit"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 50,
+          "reasoning": "Strengths: The student response demonstrates clear empathy, validation, and curiosity — reflects feelings, normalizes the struggle, asks open questions, and highlights courage. Tone and safety are appropriate. Weaknesses relative to the rubric: the response does not include the required metaphors 'Passengers on the Bus', 'Demons on the Boat', and 'Driving despite the noise'. Inclusion of those metaphors was mandatory. The response also correctly avoids the prohibited directives ('Kick the passengers off', 'Argue with the passengers'). To improve: explicitly incorporate the three required metaphors (e.g., name the doubts as 'passengers on the bus' and acknowledge 'demons on the boat' while encouraging 'driving despite the noise'), keep the empathetic stance already present, and avoid giving directive or confrontational instructions. Because the student met clinical skill expectations for empathy and safety but failed to include the required metaphors, I gave a mid-level score.",
+          "flags": [
+            "missing_metaphors: Passengers on the Bus; Demons on the Boat; Driving despite the noise",
+            "no_prohibited_phrases_detected"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 50,
+          "reasoning": "Strengths: The student response demonstrates clear empathy, validation, and curiosity — reflects feelings, normalizes the struggle, asks open questions, and highlights courage. Tone and safety are appropriate. Weaknesses relative to the rubric: the response does not include the required metaphors 'Passengers on the Bus', 'Demons on the Boat', and 'Driving despite the noise'. Inclusion of those metaphors was mandatory. The response also correctly avoids the prohibited directives ('Kick the passengers off', 'Argue with the passengers'). To improve: explicitly incorporate the three required metaphors (e.g., name the doubts as 'passengers on the bus' and acknowledge 'demons on the boat' while encouraging 'driving despite the noise'), keep the empathetic stance already present, and avoid giving directive or confrontational instructions. Because the student met clinical skill expectations for empathy and safety but failed to include the required metaphors, I gave a mid-level score.",
+          "flags": [
+            "missing_metaphors: Passengers on the Bus; Demons on the Boat; Driving despite the noise",
+            "no_prohibited_phrases_detected"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathic attunement and validation skills, effectively reflecting the client's metaphor and normalizing their experience. However, the response significantly misses core ACT competencies required by the rubric. The student fails to introduce or reference the three essential metaphors: 'Passengers on the Bus,' 'Demons on the Boat,' or the ACT principle of 'Driving despite the noise.' Instead, the response focuses on exploring the content of doubts and seeking reassurance-based solutions ('What would help you navigate this differently?'), which moves toward cognitive restructuring rather than acceptance and commitment. The question about what doubts 'might be afraid would happen' risks reinforcing experiential avoidance by treating the doubts as problems to solve rather than passengers to carry. While the therapeutic stance is warm and the validation is genuine, the intervention lacks the specific ACT framework that would help the client practice values-aligned action in the presence of internal obstacles.",
+          "flags": [
+            "Missing all three required ACT metaphors from rubric",
+            "Implicit suggestion to resolve/understand doubts rather than accept and move past them",
+            "No introduction of the core ACT concept of 'defusion' or observing thoughts without fusion",
+            "Question structure may reinforce experiential avoidance",
+            "Opportunity missed to redirect toward values and committed action"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 38
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:24:26.115Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 80,
+          "reasoning": "The student demonstrated strong empathy and validated the client's experience appropriately. They effectively explored the metaphor and avoided forbidden strategies like arguing with or eliminating the doubts. However, they missed key ACT modality requirements: they did not introduce essential ACT metaphors like 'Passengers on the Bus' or 'Demons on the Boat' to frame the doubts, nor did they explicitly encourage 'driving despite the noise'—instead opting for a generic question about navigating differently. While clinically sound and safe, the omission of ACT-specific framework elements reduced modality adherence.",
+          "flags": [
+            "No ACT metaphor use (Passengers/Demons)",
+            "Encouragement of 'driving despite noise' was implicit rather than explicit"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student response shows empathy by acknowledging the client's challenge and validating the metaphor of driving one's life. The response encourages the client to explore their doubts further and recognizes the client's courage in identifying these patterns. However, it misses key elements from ACT, such as using metaphors like 'Passengers on the Bus' or 'Demons on the Boat' to normalize the experience of having doubts without engaging in battles with them. Additionally, the response doesn't explicitly guide the client to 'drive despite the noise.' Therefore, adherence to ACT modality could be improved.",
+          "flags": [
+            "missing metaphors",
+            "lack of explicit guidance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrated strong empathy and rapport, validating the client's feelings and acknowledging the driving metaphor effectively. However, the response failed to meet the specific technical requirements of the ACT rubric. The student did not introduce the required metaphors ('Passengers on the Bus' or 'Demons on the Boat') to address the client's struggle. Instead of pivoting to the concept of 'driving despite the noise' using these specific metaphors, the student asked content-focused questions about what the doubts say and what they are afraid of. This approach risks getting stuck in the content of the thoughts (engaging with the passengers) rather than fostering acceptance and defusion, resulting in low modality adherence despite good general counseling skills.",
+          "flags": [
+            "Missing required ACT metaphors (Passengers on the Bus, Demons on the Boat)",
+            "Did not introduce concept of driving despite the noise",
+            "Risk of content fusion by investigating fears of the doubts"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:10:28.112Z"
+        }
+      ]
     }
   }
 ]

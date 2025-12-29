@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response effectively identifies the automatic nature of the client's behavior and acknowledges the connection between stress and smoking. The student shows empathy by recognizing the client's situation as common and validates their awareness as an important step toward change. However, the response does not explicitly incorporate concepts such as 'The Choice Point,' 'Hooked vs. Unhooked,' and 'Towards vs. Away moves,' which are integral to an ACT approach. Additionally, while the student encourages mindfulness by inquiring about bodily sensations and the idea of pausing, they could more explicitly relate these to ACT-specific techniques.",
-        "flags": [
-          "Missing explicit ACT concepts",
-          "Potential need for further exploration of ACT framework"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively identifies the automatic nature of the client's behavior and acknowledges the connection between stress and smoking. The student shows empathy by recognizing the client's situation as common and validates their awareness as an important step toward change. However, the response does not explicitly incorporate concepts such as 'The Choice Point,' 'Hooked vs. Unhooked,' and 'Towards vs. Away moves,' which are integral to an ACT approach. Additionally, while the student encourages mindfulness by inquiring about bodily sensations and the idea of pausing, they could more explicitly relate these to ACT-specific techniques.",
+          "flags": [
+            "Missing explicit ACT concepts",
+            "Potential need for further exploration of ACT framework"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

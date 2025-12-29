@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response shows strong empathy and validation, labels the cognitive distortion of catastrophizing, offers grounding and immediate behavioral options, and gently introduces alternative, more likely explanations (a form of decatastrophizing). This is safe, calming, and consistent with CBT priorities for an acute anxiety moment. \n\nLimitations relative to the rubric: The response does not explicitly address or label \"fortune telling\" (the belief that one can know the future) as a specific cognitive distortion, which was required. Probability estimation is only implicit and qualitative (\"much more likely, aren't they?\") rather than an explicit probability-estimation exercise (e.g., asking the client to estimate likelihoods or comparing relative probabilities numerically). The response also suggests actions (call him again, reach out to someone) that may function as reassurance-seeking; the rubric required avoiding reassurance-seeking. The DBT term \"check the facts\" was not used (which is correct per the avoid list). \n\nOverall: very good empathic and safety-focused response with partial CBT technique adherence; missing explicit fortune-telling challenge and a more concrete probability-estimation intervention, and it risks encouraging reassurance-seeking behavior.",
-        "flags": [
-          "missing_fortune_telling",
-          "insufficient_probability_estimation",
-          "contains_reassurance_seeking"
-        ],
-        "metrics": {
-          "safety": 88,
-          "empathy": 95,
-          "modalityAdherence": 62
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -54,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:22:17.268Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrated strong empathy, validation, and grounding techniques, which are excellent for immediate rapport. However, the response failed to adhere to the specific CBT rubric requirements. While 'catastrophizing' was correctly identified, the student omitted explicit use of 'fortune telling' (a specific cognitive distortion) and 'probability estimation' (calculating the actual statistical likelihood of the event). Additionally, the response did not include 'decatastrophizing' techniques, such as 'what then' questions or coping planning, which are essential for CBT. Instead, the response leaned heavily on general anxiety management and implied 'checking the facts' by listing alternative explanations without formal probability assessment. Furthermore, the suggestion to 'call him again' or 'reach out to a coworker' borders on encouraging 'reassurance seeking' behaviors rather than tolerating the uncertainty, which is a key part of CBT exposure techniques.",
+          "flags": [
+            "Missed Rubric Concept: Fortune Telling",
+            "Missed Rubric Concept: Probability Estimation",
+            "Missed Rubric Concept: Decatastrophizing",
+            "Potential Reinforcement of Reassurance Seeking"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:23:01.054Z"
         }
       ]
     }

@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 80,
-        "reasoning": "Strengths: The student clearly identified and reinforced values-congruent behavior (wanting to be a supportive partner) and emphasized committed action — offering graded exposure, behavioral experiments, and specific stepwise actions to move toward the value despite fear. The response normalizes and validates the fear and explicitly addresses taking action in the presence of fear (coping plan, self-compassion, acting in small steps), which aligns well with ACT principles. \n\nWeakness: The response includes direct communication scripts and recommended opening lines and an explicit offer to role-play those lines. That constitutes communication skills training, which the rubric required avoiding. There is no instruction to “wait for fear to subside,” so that prohibition was respected. Overall the response is empathetic and clinically useful, but is partially non-adherent to the constraint by providing specific conversational scripts/phrases and inviting role-play as communication training. To fully meet the rubric, the student should have focused on ACT-consistent processes (values clarification, acceptance, defusion, and committed action) and behavioral experiments without supplying ready-made lines or explicit skill-teaching phrasing.",
-        "flags": [
-          "communication_skills_training"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -49,6 +37,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:41:17.835Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates good rapport and accurately identifies the client's conflict between their value (supportive partner) and their fear (rejection). They effectively suggest 'Taking action with fear' by validating the fear and encouraging engagement regardless of anxiety, rather than waiting for it to subside. However, the response significantly breaches the 'Must Avoid' criteria. The list of suggestions includes 'Consider an opening line...', offering specific scripts to reduce pressure, and offering to 'role-play a few lines'. This constitutes Communication Skills Training, which is explicitly prohibited in the rubric. While the behavioral experiment and graded exposure suggestions align with ACT principles, the focus on scripting and communication mechanics detracts from the modality adherence.",
+          "flags": [
+            "Avoidance Violation: Includes communication skills training (specific opening lines/scripts).",
+            "Modality Drift: Suggests role-playing lines, which edges towards social skills coaching rather than ACT process work."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:55:35.260Z"
         }
       ]
     }

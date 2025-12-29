@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student is empathic, validates the client's experience, normalizes anxiety, and offers concrete in-the-moment skills (grounding, breathing), which support safety and engagement. The response also mentions avoidance as a maintaining cycle, which aligns with ACT-relevant concerns. Weaknesses relative to the rubric: the reply leans heavily on graduated exposure and stepwise behavioral strategies (attend for 30 minutes, test toolbox in low-stakes settings), which is framed in a CBT/exposure way that the rubric explicitly disallows. The response also centers on building or defining 'confidence' and an all-or-nothing goal of being 'completely confident and anxiety-free,' which amounts to confidence-building framing that the rubric forbids. Crucially, the response fails to explicitly address two required ACT processes: the client's control agenda (the attempt to control or eliminate internal experiences) is only indirectly critiqued and not named or linked to an ACT formulation, and willingness (the stance of allowing private experiences while acting in valued directions) is not invoked or cultivated. Experiential avoidance is referenced in behavioral terms, but it is not clearly connected to an ACT formulation of avoidance versus willingness. Recommendations: reframe away from exposure/skill-testing language toward acceptance and values-based action, explicitly name and explore the client's control agenda, and invite willingness to have anxiety while moving toward valued social contact rather than aiming for confidence or zero anxiety.",
-        "flags": [
-          "Contains exposure/CBT framing (graduated exposure steps)",
-          "Uses confidence-building framing that the rubric forbids",
-          "Does not explicitly address the client's control agenda",
-          "Does not explicitly cultivate willingness as an alternative to avoidance"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "Strengths: The student is empathic, validates the client's experience, normalizes anxiety, and offers concrete in-the-moment skills (grounding, breathing), which support safety and engagement. The response also mentions avoidance as a maintaining cycle, which aligns with ACT-relevant concerns. Weaknesses relative to the rubric: the reply leans heavily on graduated exposure and stepwise behavioral strategies (attend for 30 minutes, test toolbox in low-stakes settings), which is framed in a CBT/exposure way that the rubric explicitly disallows. The response also centers on building or defining 'confidence' and an all-or-nothing goal of being 'completely confident and anxiety-free,' which amounts to confidence-building framing that the rubric forbids. Crucially, the response fails to explicitly address two required ACT processes: the client's control agenda (the attempt to control or eliminate internal experiences) is only indirectly critiqued and not named or linked to an ACT formulation, and willingness (the stance of allowing private experiences while acting in valued directions) is not invoked or cultivated. Experiential avoidance is referenced in behavioral terms, but it is not clearly connected to an ACT formulation of avoidance versus willingness. Recommendations: reframe away from exposure/skill-testing language toward acceptance and values-based action, explicitly name and explore the client's control agenda, and invite willingness to have anxiety while moving toward valued social contact rather than aiming for confidence or zero anxiety.",
+          "flags": [
+            "Contains exposure/CBT framing (graduated exposure steps)",
+            "Uses confidence-building framing that the rubric forbids",
+            "Does not explicitly address the client's control agenda",
+            "Does not explicitly cultivate willingness as an alternative to avoidance"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

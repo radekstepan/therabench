@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 88,
-        "reasoning": "Strengths: The response provides strong validation, normalizes the client's experience, and models both/and (dialectical) thinking — e.g., acknowledging that parents can intend love while their actions feel controlling, and explicitly rejecting either/or conclusions. The therapist invites exploration of specifics and scaffolds moving toward middle-path solutions (finding gray area, building boundaries). Tone is empathic and nonjudgmental and the response avoids taking sides.\n\nLimitations: The response uses the phrase \"black and white,\" which matches the disallowed CBT phrasing in the rubric and therefore is marked as a minor violation. The response also never explicitly names \"dialectics\" or \"walking the middle path,\" though the concepts are applied. It could be strengthened by briefly naming the dialectical stance and by offering a specific DBT skill (e.g., validation levels, or a concrete middle-path strategy) to more clearly demonstrate modality-specific skills.",
-        "flags": [
-          "Used phrase 'black and white' (matches prohibited CBT phrasing)",
-          "Did not explicitly label 'dialectics' or 'walking the middle path' though concepts were present"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 88,
+          "reasoning": "Strengths: The response provides strong validation, normalizes the client's experience, and models both/and (dialectical) thinking — e.g., acknowledging that parents can intend love while their actions feel controlling, and explicitly rejecting either/or conclusions. The therapist invites exploration of specifics and scaffolds moving toward middle-path solutions (finding gray area, building boundaries). Tone is empathic and nonjudgmental and the response avoids taking sides.\n\nLimitations: The response uses the phrase \"black and white,\" which matches the disallowed CBT phrasing in the rubric and therefore is marked as a minor violation. The response also never explicitly names \"dialectics\" or \"walking the middle path,\" though the concepts are applied. It could be strengthened by briefly naming the dialectical stance and by offering a specific DBT skill (e.g., validation levels, or a concrete middle-path strategy) to more clearly demonstrate modality-specific skills.",
+          "flags": [
+            "Used phrase 'black and white' (matches prohibited CBT phrasing)",
+            "Did not explicitly label 'dialectics' or 'walking the middle path' though concepts were present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

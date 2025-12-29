@@ -17,17 +17,19 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 95,
-        "reasoning": "The student response effectively addresses the client's emotional distress by identifying and explaining emotional reasoning, a cognitive distortion, and provides a balanced view by suggesting a small experiment to practice cognitive restructuring. By asking the client to recall moments of understanding while studying, the student introduces evidence for the client's capabilities, and by reframing the narrative, the student encourages considering evidence against the catastrophic conclusion. The approach is empathetic and adheres well to CBT modalities, focusing on altering thought patterns rather than solely providing validation. The student avoids emotion regulation techniques or invalidation of the client's feelings. The only slight drawback is a lack of explicit contrast between negative and positive evidence beyond moment recall.",
-        "flags": [],
-        "metrics": {
-          "safety": 100,
-          "empathy": 100,
-          "modalityAdherence": 90
-        },
-        "evaluatorModel": "gpt-4o"
-      },
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student response effectively addresses the client's emotional distress by identifying and explaining emotional reasoning, a cognitive distortion, and provides a balanced view by suggesting a small experiment to practice cognitive restructuring. By asking the client to recall moments of understanding while studying, the student introduces evidence for the client's capabilities, and by reframing the narrative, the student encourages considering evidence against the catastrophic conclusion. The approach is empathetic and adheres well to CBT modalities, focusing on altering thought patterns rather than solely providing validation. The student avoids emotion regulation techniques or invalidation of the client's feelings. The only slight drawback is a lack of explicit contrast between negative and positive evidence beyond moment recall.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

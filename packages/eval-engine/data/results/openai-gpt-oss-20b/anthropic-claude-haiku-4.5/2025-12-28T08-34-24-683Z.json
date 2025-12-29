@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 92,
-        "reasoning": "Strengths: The student response demonstrates clear validation (e.g., \"caught in a really painful tug-of-war,\" \"ambivalence can be exhausting,\" \"It's normal to feel torn\") and avoids taking sides. It strongly conveys Both/And thinking (\"You’re not a brat... you’re not a monster\" and acknowledging both parents' love and the experience of feeling controlled) and promotes the Walking the Middle Path by suggesting finding middle ground, boundary negotiation, and collaborative conversation scripts. The response also operationalizes dialectical thinking by helping the client 'untangle pieces' and compare love vs. control side-by-side. Practical next steps (comparison list, conversation framework, setting a specific time) are concrete and helpful. Areas for improvement: the student could be more explicit in naming or briefly teaching DBT-specific dialectical concepts (e.g., explicitly framing the dilemma as a dialectic) and could offer one or two specific DBT skills (e.g., validation strategies to use in conversation, a brief DBT-style interpersonal effectiveness script like DEAR MAN or GIVE) or safety-assessment wording if control may be abusive. Overall it meets rubric requirements and avoids the prohibited elements.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 96,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -44,6 +34,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:16:07.469Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student response demonstrates strong empathy and active listening, accurately reflecting the client's ambivalence. The response successfully avoids taking sides and refrains from invalidating the client's extreme emotions. Validation of the client's experience ('You’re not a brat... and you’re not a monster') is present. However, the response falls short on specific DBT modalities. While it mentions 'ambivalence,' it does not explicitly introduce or operationalize the core DBT concepts of Dialectics or 'Walking the Middle Path' by name or through dialectical questioning strategies (e.g., finding the thesis and antithesis to create a synthesis). The questions posed are insightful but lean more towards general exploration rather than dialectical analysis. Furthermore, the student uses the term 'black-and-white thinking' implicitly by asking the client to weigh evidence for being a 'brat' versus them being 'monsters,' which can inadvertently reinforce the dichotomy rather than synthesizing it dialectically. The advice to make a comparison list risks reinforcing the split rather than helping the client hold two opposing truths simultaneously (Both/And).",
+          "flags": [
+            "Missing explicit use of 'Dialectics' or 'Walking the Middle Path' terminology/strategies",
+            "Questions risk reinforcing black-and-white thinking by asking for evidence for each extreme",
+            "Missing explicit 'Both/And' validation or synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:51:42.471Z"
         }
       ]
     }

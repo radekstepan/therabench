@@ -23,19 +23,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student demonstrates empathy and correctly identifies the client's feeling of being overwhelmed. However, the response leans towards examining the thought, which could equate to 'analyzing the water,' a point that should be avoided according to the rubric. While the student suggests understanding what the thought is trying to say, this might promote engagement with the thought rather than observing and letting it pass as proposed by the 'Leaves on a Stream' metaphor. More focus on observing without engaging and letting the thoughts pass could enhance adherence to the ACT approach.",
-        "flags": [
-          "Analyze the water"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates empathy and correctly identifies the client's feeling of being overwhelmed. However, the response leans towards examining the thought, which could equate to 'analyzing the water,' a point that should be avoided according to the rubric. While the student suggests understanding what the thought is trying to say, this might promote engagement with the thought rather than observing and letting it pass as proposed by the 'Leaves on a Stream' metaphor. More focus on observing without engaging and letting the thoughts pass could enhance adherence to the ACT approach.",
+          "flags": [
+            "Analyze the water"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

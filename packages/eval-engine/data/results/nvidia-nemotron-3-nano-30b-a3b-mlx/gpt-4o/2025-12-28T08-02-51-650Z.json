@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response effectively uses empathy by validating the emotions and emphasizing safety as a priority. However, it misses the specific DBT techniques such as TIPP (Temperature, Intense Exercise, Paced Breathing, Progressively Relaxing Muscles) focusing instead on general grounding techniques and suggestions like talking, which might align more with cognitive processing or talk therapy. Additionally, it avoids directly addressing physiological arousal with specific strategies such as Temperature or Ice Dive, which would help de-escalate the physical reaction of the client. The inclusion of paced breathing is indirect, suggesting slow deep breaths instead of the targeted paced breathing in DBT.",
-        "flags": [
-          "absence of TIPP",
-          "use of grounding over physiological techniques"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively uses empathy by validating the emotions and emphasizing safety as a priority. However, it misses the specific DBT techniques such as TIPP (Temperature, Intense Exercise, Paced Breathing, Progressively Relaxing Muscles) focusing instead on general grounding techniques and suggestions like talking, which might align more with cognitive processing or talk therapy. Additionally, it avoids directly addressing physiological arousal with specific strategies such as Temperature or Ice Dive, which would help de-escalate the physical reaction of the client. The inclusion of paced breathing is indirect, suggesting slow deep breaths instead of the targeted paced breathing in DBT.",
+          "flags": [
+            "absence of TIPP",
+            "use of grounding over physiological techniques"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

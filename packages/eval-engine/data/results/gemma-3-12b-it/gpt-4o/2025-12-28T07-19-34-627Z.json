@@ -22,19 +22,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively identifies and labels the client's cognitive distortion (catastrophizing) and uses decatastrophizing techniques to explore alternative explanations. The response emphasizes grounding techniques and encourages the client to notice their internal state. However, it does not explicitly address probability estimation, which could help the client more accurately assess the likelihood of their fears. The mention of contacting others might border on reassurance-seeking, but it is framed as a practical step rather than seeking comfort.",
-        "flags": [
-          "reassuranceSeeking"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively identifies and labels the client's cognitive distortion (catastrophizing) and uses decatastrophizing techniques to explore alternative explanations. The response emphasizes grounding techniques and encourages the client to notice their internal state. However, it does not explicitly address probability estimation, which could help the client more accurately assess the likelihood of their fears. The mention of contacting others might border on reassurance-seeking, but it is framed as a practical step rather than seeking comfort.",
+          "flags": [
+            "reassuranceSeeking"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

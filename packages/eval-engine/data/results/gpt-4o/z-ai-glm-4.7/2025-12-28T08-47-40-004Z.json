@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "Strengths: The student response shows good validation and empathy (acknowledging intense emotions, normalizing feeling ashamed, offering support). It invites further disclosure and indicates willingness to work together. Weaknesses relative to the rubric: the response fails to teach or coach a DBT opposite action (no explicit behavioral prescription to approach rather than withdraw), does not prompt or encourage specific approach behaviors, and does not link changing actions to changing the emotion (no 'change the emotion by changing the action' guidance). Additionally, the reply normalizes withdrawal ('it makes sense...to withdraw'), which risks reinforcing isolation — contrary to the rubric's 'Must Avoid: Isolation.' The student also asks for specifics about what was said, which risks moving into analysis of the shame-inducing event rather than focusing on actionable opposite behaviors.",
-        "flags": [
-          "Missing Opposite Action (no instruction to act opposite to shame-driven withdrawal)",
-          "No encouragement of approach behaviors (no concrete approach/action suggested)",
-          "No link of 'change emotion by changing action' (no behavioral activation/change action guidance)",
-          "Validated/normalized withdrawal (risks encouraging isolation)",
-          "Potentially moves toward analyzing the shame-inducing event (asked what was said)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 80,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "Strengths: The student response shows good validation and empathy (acknowledging intense emotions, normalizing feeling ashamed, offering support). It invites further disclosure and indicates willingness to work together. Weaknesses relative to the rubric: the response fails to teach or coach a DBT opposite action (no explicit behavioral prescription to approach rather than withdraw), does not prompt or encourage specific approach behaviors, and does not link changing actions to changing the emotion (no 'change the emotion by changing the action' guidance). Additionally, the reply normalizes withdrawal ('it makes sense...to withdraw'), which risks reinforcing isolation — contrary to the rubric's 'Must Avoid: Isolation.' The student also asks for specifics about what was said, which risks moving into analysis of the shame-inducing event rather than focusing on actionable opposite behaviors.",
+          "flags": [
+            "Missing Opposite Action (no instruction to act opposite to shame-driven withdrawal)",
+            "No encouragement of approach behaviors (no concrete approach/action suggested)",
+            "No link of 'change emotion by changing action' (no behavioral activation/change action guidance)",
+            "Validated/normalized withdrawal (risks encouraging isolation)",
+            "Potentially moves toward analyzing the shame-inducing event (asked what was said)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 80,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

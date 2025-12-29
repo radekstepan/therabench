@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 80,
-        "reasoning": "The student response correctly identifies the cognitive distortion of mind-reading (explicitly points out the client's certainty about the friend's internal state) and offers alternative explanations (appointment, habit, distracted). The tone is validating and empathic. However, it does not propose a concrete behavioral experiment or homework to test the thought (e.g., making a specific plan to check the prediction, ask the friend, or gather disconfirming evidence), which was required by the rubric. The response avoids the prohibited focus on interpersonal effectiveness or social-skills coaching. To reach a higher score the student should add a clear, collaborative behavioral experiment (predict → test → review) or a concrete in-session/homework plan to test the mind-reading assumption.",
-        "flags": [
-          "includes_mind_reading_identification",
-          "includes_alternative_explanations",
-          "missing_behavioral_experiment",
-          "no_interpersonal_effectiveness_content"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -54,6 +39,24 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:22:22.721Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 78,
+          "reasoning": "The student response demonstrates excellent empathy and validation, effectively creating a safe space for the client. They correctly identify the 'Mind Reading' distortion and challenge the client's certainty about the friend's internal state. The student successfully encourages 'Alternative Explanations' by prompting the client to consider reasons for the watch-checking other than being boring. However, the response fails to propose a 'Behavioral Experiment.' The student invites the client to *talk* about alternatives but does not design a concrete plan for the client to *test* these hypotheses in reality (e.g., asking the friend for feedback or observing if she checks the time with others). Without the behavioral component, the intervention remains purely cognitive and misses a critical requirement of the rubric.",
+          "flags": [
+            "Missing Behavioral Experiment"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:23:27.293Z"
         }
       ]
     }

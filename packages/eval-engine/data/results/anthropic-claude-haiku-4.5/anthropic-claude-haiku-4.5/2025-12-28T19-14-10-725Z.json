@@ -6,20 +6,7 @@
     "timestamp": "2025-12-28T19:14:10.725Z",
     "response": "# Therapeutic Response\n\nI appreciate you sharing that. I'd like to gently offer a different perspective that might help.\n\nWhat you're describing—waiting for motivation to come before taking action—is something many people experience, but it often works in reverse of how we expect. **Motivation frequently follows action rather than preceding it.**\n\nHere's what I mean: when we wait for the \"right feeling\" first, we can get stuck in a cycle where low energy prevents us from doing anything, which then reinforces the low energy and depletes motivation further.\n\n**What might be worth trying:**\n\n- Start very small—not with the whole project, but with one tiny step (5-10 minutes)\n- Notice what happens to your energy *after* you begin, rather than expecting it beforehand\n- Sometimes our brain and body need to move first; the motivation catches up\n\n**I'm also curious:**\n- How long have you been feeling this lack of energy?\n- Is this a pattern for you, or something newer?\n- Are there other things happening—sleep, stress, mood—that might be contributing?\n\nThis could be regular procrastination, or it might signal something like depression or burnout that deserves attention. Either way, we can work through this together, but I want to make sure we're addressing what's really going on beneath the surface.\n\nWhat feels true for you right now?",
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response effectively incorporates core CBT principles: it clearly emphasizes 'action precedes motivation' and utilizes 'graded task assignment' through micro-steps (5-10 min efforts). It demonstrates implicit 'behavioral activation' by targeting the avoidance cycle and encouraging activity initiation to disrupt low-energy patterns. However, 'activity scheduling' (structured planning of specific tasks/times) is absent. Crucially, the student avoids counter-therapeutic suggestions like resting or waiting for mood improvement. While empathetic and clinically sound (especially noting potential depression/burnout), the omission of activity scheduling and lack of explicit BA terminology prevents a higher score.",
-        "flags": [
-          "Missing Activity Scheduling",
-          "Behavioral Activation not explicitly named"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -37,6 +24,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T19:57:19.718Z"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student response demonstrates a strong grasp of CBT principles, specifically the relationship between action and motivation, and effectively introduces Graded Task Assignments by suggesting a small, manageable start (5-10 minutes). The tone is empathetic and validating. However, the response falls slightly short on the 'Activity Scheduling' requirement; while the student suggests *what* to do (a graded task), they do not explicitly *schedule* it with the client (e.g., agreeing on a specific time to perform the task), which is a key component of Behavioral Activation protocols. The assessment regarding depression/burnout is appropriate but slightly shifted focus away from immediate intervention.",
+          "flags": [
+            "Activity Scheduling suggested but not concretized/planned with client"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T21:57:58.742Z"
         }
       ]
     }

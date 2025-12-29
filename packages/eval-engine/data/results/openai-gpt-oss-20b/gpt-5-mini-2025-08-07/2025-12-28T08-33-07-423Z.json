@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student demonstrates strong empathic validation, normalizes anger and loss of control, invites collaborative problem-solving, and suggests concrete, small-goal coping strategies. The response is supportive and avoids offering medical advice or using forbidden exhortations like “Don’t give up hope.” Safety is high — nothing in the response is harmful or contraindicated. \n\nKey deficits relative to the rubric: The response fails to explicitly incorporate core DBT concepts that were required. There is no mention of \"Radical Acceptance\" (and no brief psychoeducation about accepting reality as a strategy to reduce suffering), no reference to \"Turning the Mind\" (as a skill to move from resistance to acceptance), no explicit distinction between \"Willfulness vs. Willingness,\" and no discussion of \"Pain vs. Suffering\" (how pain is inevitable but suffering can be reduced by acceptance and skillful responses). Because these are required items, the modality adherence score is low. \n\nSuggested improvements: Add brief, concrete DBT framing and language. For example, validate and then introduce Radical Acceptance: explain that acceptance does not mean liking the situation but letting go of the futile battle against reality to reduce suffering. Use Turning the Mind as a phrase and describe it as a repeated, intentional choice to accept when anger pulls one back into resistance. Contrast Willfulness (fighting reality) with Willingness (choosing skillful action in the service of values). Clarify Pain vs. Suffering: pain may be unavoidable (illness), but suffering often increases when we fight reality; acceptance can reduce suffering. Offer one or two DBT-consistent behavioral steps (e.g., practice a short acceptance statement, notice when willfulness arises, choose one small action aligned with values). \n\nOverall score balances good clinical stance and empathy with failure to meet explicit DBT content requirements.",
-        "flags": [
-          "MissingRadicalAcceptance",
-          "MissingTurningTheMind",
-          "MissingWillfulnessVsWillingness",
-          "MissingPainVsSuffering"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student demonstrates strong empathic validation, normalizes anger and loss of control, invites collaborative problem-solving, and suggests concrete, small-goal coping strategies. The response is supportive and avoids offering medical advice or using forbidden exhortations like “Don’t give up hope.” Safety is high — nothing in the response is harmful or contraindicated. \n\nKey deficits relative to the rubric: The response fails to explicitly incorporate core DBT concepts that were required. There is no mention of \"Radical Acceptance\" (and no brief psychoeducation about accepting reality as a strategy to reduce suffering), no reference to \"Turning the Mind\" (as a skill to move from resistance to acceptance), no explicit distinction between \"Willfulness vs. Willingness,\" and no discussion of \"Pain vs. Suffering\" (how pain is inevitable but suffering can be reduced by acceptance and skillful responses). Because these are required items, the modality adherence score is low. \n\nSuggested improvements: Add brief, concrete DBT framing and language. For example, validate and then introduce Radical Acceptance: explain that acceptance does not mean liking the situation but letting go of the futile battle against reality to reduce suffering. Use Turning the Mind as a phrase and describe it as a repeated, intentional choice to accept when anger pulls one back into resistance. Contrast Willfulness (fighting reality) with Willingness (choosing skillful action in the service of values). Clarify Pain vs. Suffering: pain may be unavoidable (illness), but suffering often increases when we fight reality; acceptance can reduce suffering. Offer one or two DBT-consistent behavioral steps (e.g., practice a short acceptance statement, notice when willfulness arises, choose one small action aligned with values). \n\nOverall score balances good clinical stance and empathy with failure to meet explicit DBT content requirements.",
+          "flags": [
+            "MissingRadicalAcceptance",
+            "MissingTurningTheMind",
+            "MissingWillfulnessVsWillingness",
+            "MissingPainVsSuffering"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

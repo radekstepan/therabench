@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "The student response demonstrates strong clinical skills: warm validation, reflective listening, normalizing ambivalence, exploration of consequences, and practical behavioral suggestions (boundary-setting, urge delay, grounding). It avoids the forbidden phrases and does not moralize or rush to solutions. However, it fails to explicitly use the DBT-specific nomenclature required by the rubric: it maps emotion vs. reasoning using “heart” and “mind” but never names Emotion Mind, Reasonable/Reason Mind, Wise Mind, or explicitly states the synthesis (Wise Mind as the integration of Emotion and Reason). Because the rubric explicitly required those terms and a clear synthesis statement, modality adherence to DBT is reduced despite the clinically solid approach. Minor suggestions: explicitly introduce the DBT constructs (Emotion Mind, Reasonable Mind, Wise Mind) and offer a concise synthesis statement (e.g., “Wise Mind is the balance of Emotion and Reasonable Mind”), and briefly name a DBT-consistent skill (urge-surfing or wise-mind practiced decision) to increase modality adherence.",
-        "flags": [
-          "missing_DBT_terms"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "The student response demonstrates strong clinical skills: warm validation, reflective listening, normalizing ambivalence, exploration of consequences, and practical behavioral suggestions (boundary-setting, urge delay, grounding). It avoids the forbidden phrases and does not moralize or rush to solutions. However, it fails to explicitly use the DBT-specific nomenclature required by the rubric: it maps emotion vs. reasoning using “heart” and “mind” but never names Emotion Mind, Reasonable/Reason Mind, Wise Mind, or explicitly states the synthesis (Wise Mind as the integration of Emotion and Reason). Because the rubric explicitly required those terms and a clear synthesis statement, modality adherence to DBT is reduced despite the clinically solid approach. Minor suggestions: explicitly introduce the DBT constructs (Emotion Mind, Reasonable Mind, Wise Mind) and offer a concise synthesis statement (e.g., “Wise Mind is the balance of Emotion and Reasonable Mind”), and briefly name a DBT-consistent skill (urge-surfing or wise-mind practiced decision) to increase modality adherence.",
+          "flags": [
+            "missing_DBT_terms"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

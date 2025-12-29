@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response demonstrates strong empathy, validation, and a hopeful tone, which promotes a safe and supportive environment for the patient. However, it falls short in incorporating DBT-specific strategies such as Opposite Action, where the therapeutic process would encourage the patient to engage in actions opposite to the urge to isolate, aiming to counteract the intense emotion of shame. The response does not actively guide the patient towards approach behaviors or address changing the emotion by changing the action, which are key components of DBT. Additionally, while the response avoids pushing the patient to analyze the shame, it doesn't actively discourage isolation, which is a crucial aspect of promoting effective coping strategies.",
-        "flags": [
-          "Lack of DBT-specific strategies",
-          "No encouragement of Opposite Action",
-          "No approach behavior"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates strong empathy, validation, and a hopeful tone, which promotes a safe and supportive environment for the patient. However, it falls short in incorporating DBT-specific strategies such as Opposite Action, where the therapeutic process would encourage the patient to engage in actions opposite to the urge to isolate, aiming to counteract the intense emotion of shame. The response does not actively guide the patient towards approach behaviors or address changing the emotion by changing the action, which are key components of DBT. Additionally, while the response avoids pushing the patient to analyze the shame, it doesn't actively discourage isolation, which is a crucial aspect of promoting effective coping strategies.",
+          "flags": [
+            "Lack of DBT-specific strategies",
+            "No encouragement of Opposite Action",
+            "No approach behavior"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

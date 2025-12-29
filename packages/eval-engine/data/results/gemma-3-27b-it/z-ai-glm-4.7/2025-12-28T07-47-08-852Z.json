@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student response is empathic, validating, normalizing, and uses open-ended questions and gentle exploration — all appropriate DBT-consistent therapist behaviors. The response reframes acceptance in a helpful way and avoids confrontation or minimization, and it does not include prohibited phrases or medical advice. Weaknesses relative to the rubric: the response fails to explicitly teach or name core DBT concepts required by the prompt. It does not explicitly introduce or label 'Radical Acceptance', it does not teach or prompt the skill of 'Turning the Mind' (how to intentionally shift toward acceptance), it does not explicate the DBT distinction of 'Willfulness vs. Willingness' or coach toward willingness, and it does not clearly differentiate 'Pain vs. Suffering' as a DBT teaching point. Because the rubric required inclusion of those specific elements, the response misses key skill-instruction components and is therefore rated moderate overall despite strong empathic stance. Suggested improvements: explicitly name and briefly define Radical Acceptance; offer a brief Turning the Mind prompt or practice; contrast willfulness (fighting reality) with willingness (working with reality) and encourage experiments in willingness; and clarify pain vs. suffering (pain = unavoidable facts; suffering = added by resisting), with a short, concrete example or behavioral suggestion.",
-        "flags": [
-          "missing_radical_acceptance",
-          "missing_turning_the_mind",
-          "missing_willfulness_vs_willingness",
-          "missing_pain_vs_suffering"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student response is empathic, validating, normalizing, and uses open-ended questions and gentle exploration — all appropriate DBT-consistent therapist behaviors. The response reframes acceptance in a helpful way and avoids confrontation or minimization, and it does not include prohibited phrases or medical advice. Weaknesses relative to the rubric: the response fails to explicitly teach or name core DBT concepts required by the prompt. It does not explicitly introduce or label 'Radical Acceptance', it does not teach or prompt the skill of 'Turning the Mind' (how to intentionally shift toward acceptance), it does not explicate the DBT distinction of 'Willfulness vs. Willingness' or coach toward willingness, and it does not clearly differentiate 'Pain vs. Suffering' as a DBT teaching point. Because the rubric required inclusion of those specific elements, the response misses key skill-instruction components and is therefore rated moderate overall despite strong empathic stance. Suggested improvements: explicitly name and briefly define Radical Acceptance; offer a brief Turning the Mind prompt or practice; contrast willfulness (fighting reality) with willingness (working with reality) and encourage experiments in willingness; and clarify pain vs. suffering (pain = unavoidable facts; suffering = added by resisting), with a short, concrete example or behavioral suggestion.",
+          "flags": [
+            "missing_radical_acceptance",
+            "missing_turning_the_mind",
+            "missing_willfulness_vs_willingness",
+            "missing_pain_vs_suffering"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 78,

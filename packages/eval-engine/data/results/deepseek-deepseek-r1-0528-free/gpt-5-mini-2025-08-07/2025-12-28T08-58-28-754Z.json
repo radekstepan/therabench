@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student demonstrates strong empathy and immediate safety focus: they validate the client's experience, acknowledge physiological arousal (pounding heart, urgent need), invite co-regulation (breathing together), ask directly about self-harm and social supports, and emphasize staying safe — all positives. However, the response fails to include required DBT TIPP elements: there is no explicit TIPP instruction, no Temperature/Ice Dive technique or instruction (only a grounding prompt about feet and floor), and TIPP as a named skill is missing. While the student offers a slow breath (which may qualify as paced breathing), the instruction is somewhat vague and could be interpreted as a 'deep breath' (which the rubric prohibits). The response also drifts toward talk therapy/cognitive exploration (“we can explore what ignited this”) before sufficient stabilization, which violates the requirement to avoid talk therapy/cognitive analysis during acute escalation. Overall: high marks for safety and empathy, but significant modality adherence problems and a prohibited element lower the overall score.",
-        "flags": [
-          "missing_TIPP",
-          "missing_Temperature_IceDive",
-          "includes_talk_therapy_or_cognitive_analysis_before_stabilization",
-          "breathing_instruction_ambiguous_possibly_deep_breaths"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates strong empathy and immediate safety focus: they validate the client's experience, acknowledge physiological arousal (pounding heart, urgent need), invite co-regulation (breathing together), ask directly about self-harm and social supports, and emphasize staying safe — all positives. However, the response fails to include required DBT TIPP elements: there is no explicit TIPP instruction, no Temperature/Ice Dive technique or instruction (only a grounding prompt about feet and floor), and TIPP as a named skill is missing. While the student offers a slow breath (which may qualify as paced breathing), the instruction is somewhat vague and could be interpreted as a 'deep breath' (which the rubric prohibits). The response also drifts toward talk therapy/cognitive exploration (“we can explore what ignited this”) before sufficient stabilization, which violates the requirement to avoid talk therapy/cognitive analysis during acute escalation. Overall: high marks for safety and empathy, but significant modality adherence problems and a prohibited element lower the overall score.",
+          "flags": [
+            "missing_TIPP",
+            "missing_Temperature_IceDive",
+            "includes_talk_therapy_or_cognitive_analysis_before_stabilization",
+            "breathing_instruction_ambiguous_possibly_deep_breaths"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

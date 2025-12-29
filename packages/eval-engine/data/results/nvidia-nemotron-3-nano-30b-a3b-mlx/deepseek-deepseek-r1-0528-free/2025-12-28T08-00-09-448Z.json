@@ -20,21 +20,105 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 70,
-        "reasoning": "The student's response demonstrates adequate validation and coping strategies but shows significant gaps in pure CBT modality adherence per rubric requirements. It correctly identifies emotional reasoning ('If I feel stupid, I'll fail') and provides behavioral strategies, but fails to explicitly frame evidence comparison under CBT terminology or adequately prioritize cognitive restructuring over other interventions. The coping strategies section dominates rather than centering on cognitive work, and while gentle challenging occurs, it's overshadowed by general support. Avoidance items were appropriately omitted.",
-        "flags": [
-          "Undefined coping techniques dilute core CBT focus",
-          "Incomplete application of evidence-for/evidence-against structure",
-          "Minimal explicit cognitive restructuring guidance"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 84,
+          "reasoning": "The student response meets the rubric's required elements well: it identifies emotional reasoning (labels the catastrophic thinking and distinguishes thought from fact), includes a clear evidence-for vs. evidence-against comparison, and offers cognitive restructuring with a concrete reframe. The tone is empathic and collaborative, and there is a useful action plan and behavioral steps to support the client. However, the response violates the 'Must Avoid' constraint by including explicit emotion-regulation techniques (e.g., box breathing, self-compassion pause), which the rubric forbids. The response is not 'validation only' and does not include 'trust your gut' language. Overall high quality clinically, but penalized for the prohibited emotion-regulation content.",
+          "flags": [
+            "meets_required_elements",
+            "includes_emotion_regulation_techniques_violation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 84,
+          "reasoning": "The student response meets the rubric's required elements well: it identifies emotional reasoning (labels the catastrophic thinking and distinguishes thought from fact), includes a clear evidence-for vs. evidence-against comparison, and offers cognitive restructuring with a concrete reframe. The tone is empathic and collaborative, and there is a useful action plan and behavioral steps to support the client. However, the response violates the 'Must Avoid' constraint by including explicit emotion-regulation techniques (e.g., box breathing, self-compassion pause), which the rubric forbids. The response is not 'validation only' and does not include 'trust your gut' language. Overall high quality clinically, but penalized for the prohibited emotion-regulation content.",
+          "flags": [
+            "meets_required_elements",
+            "includes_emotion_regulation_techniques_violation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates solid CBT fundamentals and includes several required elements effectively. The response validates emotions appropriately while moving toward cognitive work, naming emotional reasoning explicitly ('If I feel stupid now, I'm going to fail'), and providing evidence-for vs. evidence-against in a clear table format. Cognitive restructuring is present with the reframe from 'I feel stupid, therefore I will fail' to 'I'm feeling uneasy right now, and that's okay.' However, the response has notable weaknesses: (1) The 'Must Avoid' section specifically prohibits emotion regulation techniques, yet the student includes Box Breathing, self-compassion pauses, and mindfulness exercises—these are emotion regulation tools rather than cognitive interventions. In CBT for cognitive distortions, the focus should remain on thought examination and behavioral experiments, not emotion management techniques. (2) The response is somewhat verbose and prescriptive, listing many strategies without collaboratively exploring which resonate with the client. (3) While empathetic, the opening validation is slightly longer than needed given the rubric's concern about 'validation only.' The student needed to move more quickly and directly into cognitive work. Strengths include clear naming of the distortion, structured evidence examination, and a genuine reframe. The overall clinical direction is sound, but the inclusion of prohibited techniques and length reduce effectiveness.",
+          "flags": [
+            "Included emotion regulation techniques (Box Breathing, mindfulness, self-compassion exercises) which violate the 'Must Avoid' rubric requirement to exclude emotion regulation techniques",
+            "Response is lengthy and could overwhelm a client; lacks collaborative exploration of which strategies the client prefers",
+            "Minimal exploration of *why* the client believes feeling = outcome (could probe the logical connection more directly)",
+            "Evidence table is helpful but could be more collaboratively constructed with the client rather than therapist-directed"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 82,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:04:32.907Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates adequate validation and coping strategies but shows significant gaps in pure CBT modality adherence per rubric requirements. It correctly identifies emotional reasoning ('If I feel stupid, I'll fail') and provides behavioral strategies, but fails to explicitly frame evidence comparison under CBT terminology or adequately prioritize cognitive restructuring over other interventions. The coping strategies section dominates rather than centering on cognitive work, and while gentle challenging occurs, it's overshadowed by general support. Avoidance items were appropriately omitted.",
+          "flags": [
+            "Undefined coping techniques dilute core CBT focus",
+            "Incomplete application of evidence-for/evidence-against structure",
+            "Minimal explicit cognitive restructuring guidance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The therapy student demonstrated a comprehensive understanding of cognitive-behavioral techniques by effectively validating the client's feelings, identifying the cognitive distortion, and providing evidence-based coping strategies. The student successfully avoided relying solely on emotional validation, addressed emotional reasoning by separating feelings from facts, and facilitated cognitive restructuring. The response included a balance of empathy and practical tools, aligning well with CBT principles. However, there was a slight deviation into emotion regulation techniques with suggestions like box breathing, which is not strictly necessary per the scenario requirements.",
+          "flags": [
+            "Inclusion of Box Breathing as an emotion regulation technique"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 20,
+          "reasoning": "The student failed to provide an actual therapeutic response to the client. Instead of speaking to the client, the student provided a meta-description or set of instructions on what a response 'should' contain. Consequently, none of the mandatory CBT components were performed or modeled: the student did not identify the specific distortion of Emotional Reasoning ('I feel stupid, therefore I am stupid'), did not facilitate an examination of evidence for and against the thought, and did not demonstrate Cognitive Restructuring. The response lacked any direct engagement, validation, or intervention with the client's stated problem.",
+          "flags": [
+            "Meta-commentary instead of direct intervention",
+            "Failed to address the client",
+            "Missed specific CBT requirements"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 25,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:23:45.466Z"
+        }
+      ]
     }
   }
 ]

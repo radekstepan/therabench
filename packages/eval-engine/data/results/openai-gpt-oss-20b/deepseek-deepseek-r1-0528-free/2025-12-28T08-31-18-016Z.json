@@ -24,20 +24,113 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 88,
-        "reasoning": "The student's response effectively addresses the core CBT principles required by the rubric. They explicitly identify and challenge the client's 'should statements' ('I should be over the breakup by now'), address 'self-judgment' ('I'm pathetic'), and indirectly critique imperatives implied in the concepts of 'normal people don't cry' and self-imposed timelines. The student articulates how these cognitions create pressure and hinder progress. They utilize gentle Socratic questioning (Qs 1 & 2) to explore expectations, clarify meanings, and validate emotions, focusing on cognition restructuring. The examples ('crying is part of healing') counteract the self-judgment. Crucially, they avoid forbidden elements like grief counseling language focusing solely on stages/timelines and DBT's Radical Acceptance, staying firmly within a CBT framework. Minor points off for Modality Adherence occur because Q3/Q4 shift towards coping strategies/social support rather than deeper core belief restructuring, slightly diluting pure CBT focus.",
-        "flags": [
-          "Possible minor modality drift in Q3/Q4 (suggestion of general coping strategies over direct cognitive work)",
-          "Considerable empathy shown ('deeply personal', 'makes you human')"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, explicitly echoes the client's 'should' thought, and addresses the self-judgment ('pathetic'). It uses gentle Socratic-style questions that fit CBT's collaborative inquiry and offers concrete coping suggestions and social support—appropriate therapeutic moves. \n\nLimitations (why score reduced): The response includes grief-counseling language (e.g., 'grief isn’t a straight line,' 'grief is deeply personal') and normalizing psychoeducation about grief, which violates the rubric's Must Avoid items. The imperatives required by the rubric are present only in a softened/suggestive form ('It might help to pause and ask yourself...') rather than as clearer directive CBT prompts or behavioral experiments. The reply also leans toward general supportive/acceptance phrasing rather than explicit, structured CBT techniques (e.g., guided cognitive restructuring steps, evidence-for/evidence-against, behavioral activation homework, or specific thought records). There is also some acceptance-oriented language that approaches DBT-style acceptance, which the rubric asked to avoid. Overall the reply is warm and helpful clinically, but it does not fully conform to the rubric constraints (avoid grief counseling and DBT radical acceptance) and could be more CBT-specific and directive.",
+          "flags": [
+            "includes_should_statement",
+            "includes_self-judgment_addressed",
+            "imperatives_present_but_softened",
+            "violates_must_avoid_grief_counseling",
+            "contains_acceptance_language_similar_to_radical_acceptance",
+            "insufficient_explicit_cbt_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, explicitly echoes the client's 'should' thought, and addresses the self-judgment ('pathetic'). It uses gentle Socratic-style questions that fit CBT's collaborative inquiry and offers concrete coping suggestions and social support—appropriate therapeutic moves. \n\nLimitations (why score reduced): The response includes grief-counseling language (e.g., 'grief isn’t a straight line,' 'grief is deeply personal') and normalizing psychoeducation about grief, which violates the rubric's Must Avoid items. The imperatives required by the rubric are present only in a softened/suggestive form ('It might help to pause and ask yourself...') rather than as clearer directive CBT prompts or behavioral experiments. The reply also leans toward general supportive/acceptance phrasing rather than explicit, structured CBT techniques (e.g., guided cognitive restructuring steps, evidence-for/evidence-against, behavioral activation homework, or specific thought records). There is also some acceptance-oriented language that approaches DBT-style acceptance, which the rubric asked to avoid. Overall the reply is warm and helpful clinically, but it does not fully conform to the rubric constraints (avoid grief counseling and DBT radical acceptance) and could be more CBT-specific and directive.",
+          "flags": [
+            "includes_should_statement",
+            "includes_self-judgment_addressed",
+            "imperatives_present_but_softened",
+            "violates_must_avoid_grief_counseling",
+            "contains_acceptance_language_similar_to_radical_acceptance",
+            "insufficient_explicit_cbt_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathic attunement and validates the client's experience effectively. However, there are significant concerns regarding CBT fidelity and adherence to the rubric requirements. The response fails to adequately address the core cognitive distortions specified in the rubric: (1) 'Should statements' are acknowledged but not actively challenged or restructured using CBT techniques; (2) 'Imperatives' are not explicitly identified or reframed; (3) 'Self-judgment' (calling oneself 'pathetic') receives empathic validation but lacks cognitive disputation or evidence-based thought challenging. Instead, the student relies heavily on normalization and validation approaches that, while compassionate, are more consistent with grief counseling and person-centered therapy than with CBT's collaborative empiricism model. The questions posed are reflective and open-ended rather than Socratic—CBT would typically involve more direct cognitive work identifying the rigid rule ('should be over it'), examining evidence for/against this belief, and developing more flexible alternatives. The response also ventures into grief counseling territory by extensively normalizing the grief process, which falls outside CBT's scope. The final suggestion to 'talk with a therapist' somewhat undermines the current therapeutic work. The emoji use, while warm, is somewhat informal for a clinical context.",
+          "flags": [
+            "Insufficient cognitive disputation of should statements and self-judgment—validation used instead of thought challenging",
+            "Lacks Socratic questioning; questions are reflective rather than evidentiary",
+            "Approaches grief counseling territory; excessive normalization of grief process rather than CBT restructuring",
+            "Does not directly address or reframe the 'imperative' thinking pattern",
+            "Suggests external referral rather than advancing the current CBT work",
+            "Missing behavioral activation or concrete thought record assignments typical of CBT"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:14:44.546Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The student's response effectively addresses the core CBT principles required by the rubric. They explicitly identify and challenge the client's 'should statements' ('I should be over the breakup by now'), address 'self-judgment' ('I'm pathetic'), and indirectly critique imperatives implied in the concepts of 'normal people don't cry' and self-imposed timelines. The student articulates how these cognitions create pressure and hinder progress. They utilize gentle Socratic questioning (Qs 1 & 2) to explore expectations, clarify meanings, and validate emotions, focusing on cognition restructuring. The examples ('crying is part of healing') counteract the self-judgment. Crucially, they avoid forbidden elements like grief counseling language focusing solely on stages/timelines and DBT's Radical Acceptance, staying firmly within a CBT framework. Minor points off for Modality Adherence occur because Q3/Q4 shift towards coping strategies/social support rather than deeper core belief restructuring, slightly diluting pure CBT focus.",
+          "flags": [
+            "Possible minor modality drift in Q3/Q4 (suggestion of general coping strategies over direct cognitive work)",
+            "Considerable empathy shown ('deeply personal', 'makes you human')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response effectively addresses the client's should statements and self-judgment by normalizing the emotional experience and challenging the client's negative self-assessment. The student introduces gentle questions to facilitate self-reflection and self-compassion, which aligns with CBT techniques. The response avoids delving into grief counseling and does not explicitly entail radical acceptance, although it touches on accepting the current emotional state without judgment. The student maintains a supportive and empathetic tone throughout the response, which is important for building rapport and trust.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student provided a compassionate and empathetic response, which is a strength. They validated the client's feelings and attempted to normalize the grief process. However, the response falls short in strictly adhering to the CBT modality and the specific rubric requirements. While the student acknowledged the client's 'should' statements, they missed a key opportunity to identify and challenge the underlying cognitive distortions (like 'all-or-nothing thinking' regarding 'normal people') in a structured CBT manner. Instead, the response leaned heavily towards supportive counseling rather than cognitive restructuring. Crucially, the response failed to include any explicit 'Imperatives' or direct self-judgment analysis as required by the rubric. The suggestion to consider talking to a therapist when the client is already in a session is also a slight misstep. The response effectively avoided the forbidden topics (Grief counseling specific modalities and Radical Acceptance).",
+          "flags": [
+            "Missing Imperatives (direct commands or instructions as part of CBT homework/intervention)",
+            "Weak Self-judgment analysis (acknowledged the label but did not actively guide the client to restructure it)",
+            "Drifted towards general supportive counseling rather than strict CBT techniques",
+            "Potential confusion: Suggested client 'talk with a therapist' while in a therapy session"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:44:59.783Z"
+        }
+      ]
     }
   }
 ]

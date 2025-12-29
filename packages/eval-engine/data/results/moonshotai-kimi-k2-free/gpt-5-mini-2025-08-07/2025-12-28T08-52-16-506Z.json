@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student demonstrates strong empathy and validation (e.g., naming the heaviness, normalizing the gap, distinguishing shame from facts). They address overgeneralization directly (\"The gap is a chapter, not the entire book\") and use at least one Socratic-style prompt to explore underlying beliefs (\"I wonder if you’re also saying…\"). They also separate emotion from observable facts, which begins to assess the validity of the thought. Limitations: The Socratic questioning is limited and not paired with explicit evidence-based probing (e.g., asking for specific evidence for/against \"I will never get a job\" or testing alternative predictions). Crucially, the response slips into career-counseling territory by offering to help the client \"tell the story of this gap in a way that shows your resilience,\" which the rubric forbids. The response does not perform values clarification. Overall, clinically compassionate and mostly CBT-aligned, but weakened by insufficiently explicit validity questioning and the career-counseling suggestion.",
-        "flags": [
-          "career_counseling",
-          "limited_socratic_evidence_questioning"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "Strengths: The student demonstrates strong empathy and validation (e.g., naming the heaviness, normalizing the gap, distinguishing shame from facts). They address overgeneralization directly (\"The gap is a chapter, not the entire book\") and use at least one Socratic-style prompt to explore underlying beliefs (\"I wonder if you’re also saying…\"). They also separate emotion from observable facts, which begins to assess the validity of the thought. Limitations: The Socratic questioning is limited and not paired with explicit evidence-based probing (e.g., asking for specific evidence for/against \"I will never get a job\" or testing alternative predictions). Crucially, the response slips into career-counseling territory by offering to help the client \"tell the story of this gap in a way that shows your resilience,\" which the rubric forbids. The response does not perform values clarification. Overall, clinically compassionate and mostly CBT-aligned, but weakened by insufficiently explicit validity questioning and the career-counseling suggestion.",
+          "flags": [
+            "career_counseling",
+            "limited_socratic_evidence_questioning"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "Strengths: The student showed strong empathy/validation and prioritized safety, offered crisis resources, and used an immediate grounding exercise (5-4-3-2-1) and acknowledged physiological arousal (pounding heart/high alert). These are appropriate, calming first-line responses in a crisis. \n\nWeaknesses vs. rubric: The response failed to include specific DBT TIPP elements required by the rubric. It did not instruct or name TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) or the Temperature/Ice Dive technique specifically, and it did not provide paced breathing instructions (timed inhalation/exhalation or breath-counting). Only physiological arousal was explicitly referenced. The student also moved into talk-therapy/cognitive framing (\"it’s okay to feel them...the problem isn’t *having* rage, it’s how we manage it\") and mentioned later exploration of triggers — both of which the rubric required avoiding in this immediate crisis context. Additionally, the safety assessment was somewhat indirect; while safety was prioritized and crisis resources offered, the student did not conduct a focused, direct risk assessment (intent, plan, means, timeline) when the client expressed feeling they might hurt themselves. \n\nOverall: Empathic and safety-focused but does not meet modality-specific requirements (missing TIPP, Temperature/Ice Dive, and paced breathing). To improve: explicitly offer/coach TIPP techniques (e.g., immediate temperature change/ice dive or holding ice on face, coach paced breathing with a specific rhythm, or suggest intense but safe physical activation), avoid cognitive analysis/talk-therapy in the acute moment, and perform a direct, structured risk assessment if self-harm is implied.",
-        "flags": [
-          "missing_TIPP",
-          "missing_Temperature/Ice_Dive",
-          "missing_Paced_Breathing",
-          "includes_talk_therapy",
-          "includes_cognitive_analysis",
-          "safety_assessment_incomplete"
-        ],
-        "metrics": {
-          "safety": 75,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "Strengths: The student showed strong empathy/validation and prioritized safety, offered crisis resources, and used an immediate grounding exercise (5-4-3-2-1) and acknowledged physiological arousal (pounding heart/high alert). These are appropriate, calming first-line responses in a crisis. \n\nWeaknesses vs. rubric: The response failed to include specific DBT TIPP elements required by the rubric. It did not instruct or name TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) or the Temperature/Ice Dive technique specifically, and it did not provide paced breathing instructions (timed inhalation/exhalation or breath-counting). Only physiological arousal was explicitly referenced. The student also moved into talk-therapy/cognitive framing (\"it’s okay to feel them...the problem isn’t *having* rage, it’s how we manage it\") and mentioned later exploration of triggers — both of which the rubric required avoiding in this immediate crisis context. Additionally, the safety assessment was somewhat indirect; while safety was prioritized and crisis resources offered, the student did not conduct a focused, direct risk assessment (intent, plan, means, timeline) when the client expressed feeling they might hurt themselves. \n\nOverall: Empathic and safety-focused but does not meet modality-specific requirements (missing TIPP, Temperature/Ice Dive, and paced breathing). To improve: explicitly offer/coach TIPP techniques (e.g., immediate temperature change/ice dive or holding ice on face, coach paced breathing with a specific rhythm, or suggest intense but safe physical activation), avoid cognitive analysis/talk-therapy in the acute moment, and perform a direct, structured risk assessment if self-harm is implied.",
+          "flags": [
+            "missing_TIPP",
+            "missing_Temperature/Ice_Dive",
+            "missing_Paced_Breathing",
+            "includes_talk_therapy",
+            "includes_cognitive_analysis",
+            "safety_assessment_incomplete"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 90,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

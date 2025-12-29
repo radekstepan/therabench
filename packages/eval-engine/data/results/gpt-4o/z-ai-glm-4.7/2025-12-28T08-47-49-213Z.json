@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student validated the client's experience, normalized the internal conflict, invited exploration of the distinct urges (what is missed vs. what consequences are feared), and offered concrete self-soothing options (writing, talking, self-compassion). Tone is empathic and collaborative. Weaknesses: The response fails to use the required DBT terminology and framework — it does not explicitly name or teach Emotion Mind, Reason Mind, or Wise Mind, nor does it offer a clear synthesis (Wise Mind) intervention or technique to help the client access the synthesis. Because the rubric required those explicit concepts, the response does not fully meet modality adherence even though conceptually it gestures at them (e.g., “rational part” and “part that feels longing”). To improve, the student should label Emotion Mind and Reason Mind, explain Wise Mind as the synthesis, and offer a brief practice (e.g., a Wise Mind mindfulness prompt or urge-surfing strategy) to help the client find the synthesis between longing and caution.",
-        "flags": [
-          "MissingWiseMind",
-          "MissingEmotionMind",
-          "MissingReasonMind",
-          "MissingSynthesis"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student validated the client's experience, normalized the internal conflict, invited exploration of the distinct urges (what is missed vs. what consequences are feared), and offered concrete self-soothing options (writing, talking, self-compassion). Tone is empathic and collaborative. Weaknesses: The response fails to use the required DBT terminology and framework — it does not explicitly name or teach Emotion Mind, Reason Mind, or Wise Mind, nor does it offer a clear synthesis (Wise Mind) intervention or technique to help the client access the synthesis. Because the rubric required those explicit concepts, the response does not fully meet modality adherence even though conceptually it gestures at them (e.g., “rational part” and “part that feels longing”). To improve, the student should label Emotion Mind and Reason Mind, explain Wise Mind as the synthesis, and offer a brief practice (e.g., a Wise Mind mindfulness prompt or urge-surfing strategy) to help the client find the synthesis between longing and caution.",
+          "flags": [
+            "MissingWiseMind",
+            "MissingEmotionMind",
+            "MissingReasonMind",
+            "MissingSynthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student response is empathic and validating, uses a resonant metaphor (summit/map) to normalize the client's emptiness, and invites exploration of what 'feels missing' using evocative questions (imagining a meaningful day, qualities expressed). Those elements align well with ACT-style values clarification in spirit — prompting the client to notice qualities they want to embody rather than immediately pursuing external outcomes. The student also appropriately avoids prescribing new goals and does not suggest a gratitude journal, as required.\n\nLimitations: The response does not explicitly name or define 'values' nor use the phrase 'values clarification' — it relies on implicit prompts rather than clearly framing the exercise as values work. The rubric also required inclusion of the 'Direction vs. Destination' concept (i.e., emphasizing values as ongoing directions/compass rather than destinations/goals); that idea is only implied by metaphors and the line 'not new goals to chase' but is not explicitly stated or explained. For ACT fidelity, making the values/direction distinction explicit helps clients shift from endpoint-focused striving to value-guided living. \n\nRecommendation: Retain the compassionate metaphors and evocative questioning, but explicitly name the process as values clarification and introduce the 'direction versus destination' framing (for example: 'Values are like a compass — they point a direction for how you want to live, not a destination to reach'). This will increase modality adherence without changing the supportive tone.",
-        "flags": [
-          "missing_explicit_values_label",
-          "missing_values_clarification_label",
-          "missing_direction_vs_destination_explicit",
-          "good_use_of_metaphor",
-          "avoids_setting_new_goals_OK",
-          "no_gratitude_journal_OK"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student response is empathic and validating, uses a resonant metaphor (summit/map) to normalize the client's emptiness, and invites exploration of what 'feels missing' using evocative questions (imagining a meaningful day, qualities expressed). Those elements align well with ACT-style values clarification in spirit — prompting the client to notice qualities they want to embody rather than immediately pursuing external outcomes. The student also appropriately avoids prescribing new goals and does not suggest a gratitude journal, as required.\n\nLimitations: The response does not explicitly name or define 'values' nor use the phrase 'values clarification' — it relies on implicit prompts rather than clearly framing the exercise as values work. The rubric also required inclusion of the 'Direction vs. Destination' concept (i.e., emphasizing values as ongoing directions/compass rather than destinations/goals); that idea is only implied by metaphors and the line 'not new goals to chase' but is not explicitly stated or explained. For ACT fidelity, making the values/direction distinction explicit helps clients shift from endpoint-focused striving to value-guided living. \n\nRecommendation: Retain the compassionate metaphors and evocative questioning, but explicitly name the process as values clarification and introduce the 'direction versus destination' framing (for example: 'Values are like a compass — they point a direction for how you want to live, not a destination to reach'). This will increase modality adherence without changing the supportive tone.",
+          "flags": [
+            "missing_explicit_values_label",
+            "missing_values_clarification_label",
+            "missing_direction_vs_destination_explicit",
+            "good_use_of_metaphor",
+            "avoids_setting_new_goals_OK",
+            "no_gratitude_journal_OK"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 85,

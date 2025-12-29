@@ -22,21 +22,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student demonstrates empathy and understanding of the client's exhaustion from trying different techniques to manage anxiety. Several suggestions are compassionate and practical, promoting self-care and reflection, such as taking micro-breaks and considering anxiety as a state rather than a problem to solve. However, the response lacks explicit integration of key ACT concepts, such as Creative Hopelessness, recognizing 'The Control is the Problem,' and the metaphor of 'Dropping the rope.' Instead, the suggestions can easily be interpreted as encouraging the client to try new techniques or not giving up, which could reinforce the cycle of unproductive control strategies. Emphasizing acceptance and the futility of control efforts explicitly within the ACT framework would have improved adherence to ACT principles.",
-        "flags": [
-          "Needs clear mention of Creative Hopelessness",
-          "Lacks emphasis on 'The Control is the Problem'",
-          "Suggestions risk sounding like new techniques"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrates empathy and understanding of the client's exhaustion from trying different techniques to manage anxiety. Several suggestions are compassionate and practical, promoting self-care and reflection, such as taking micro-breaks and considering anxiety as a state rather than a problem to solve. However, the response lacks explicit integration of key ACT concepts, such as Creative Hopelessness, recognizing 'The Control is the Problem,' and the metaphor of 'Dropping the rope.' Instead, the suggestions can easily be interpreted as encouraging the client to try new techniques or not giving up, which could reinforce the cycle of unproductive control strategies. Emphasizing acceptance and the futility of control efforts explicitly within the ACT framework would have improved adherence to ACT principles.",
+          "flags": [
+            "Needs clear mention of Creative Hopelessness",
+            "Lacks emphasis on 'The Control is the Problem'",
+            "Suggestions risk sounding like new techniques"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

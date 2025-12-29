@@ -21,19 +21,105 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 70,
-        "reasoning": "The response demonstrates strong clinical skills in validation, exploration of thoughts, and strategy-building aligned with ACT principles. It effectively avoids forbidden approaches (arguing/kicking out doubts) and promotes driving despite discomfort. However, it critically fails to explicitly incorporate the required ACT metaphors 'Passengers on the Bus' and 'Demons on the Boat'—substituting them with generic terms like 'inner voice of doubt' and 'alarm system.' While the core concept of 'driving despite the noise' is present, the omission of specified metaphors reduces modality fidelity.",
-        "flags": [
-          "Missing explicit ACT metaphors: 'Passengers on the Bus' and 'Demons on the Boat'"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 65
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "The student's response demonstrates strong clinical skills: empathic tone, validation, clear psychoeducation, useful CBT/ACT-consistent strategies, concrete exercises, and appropriate recommendations for further therapeutic work. However, it fails to meet the explicit rubric requirements. The response does not include the required metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", or the phrase \"Driving despite the noise\" (or equivalent explicit mentions). Because those items were mandated, this is a significant noncompliance despite the overall clinical quality. The response correctly avoids the prohibited actions (it does not instruct to \"kick the passengers off\" or to \"argue with the passengers\"). To meet the rubric, the student should incorporate the specified metaphors (e.g., framing doubts as \"passengers on the bus\", inner turmoil as \"demons on the boat\", and encouraging \"driving despite the noise\") while retaining the current empathic, practical content.",
+          "flags": [
+            "missing 'Passengers on the Bus'",
+            "missing 'Demons on the Boat'",
+            "missing 'Driving despite the noise'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 45,
+          "reasoning": "The student's response demonstrates strong clinical skills: empathic tone, validation, clear psychoeducation, useful CBT/ACT-consistent strategies, concrete exercises, and appropriate recommendations for further therapeutic work. However, it fails to meet the explicit rubric requirements. The response does not include the required metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", or the phrase \"Driving despite the noise\" (or equivalent explicit mentions). Because those items were mandated, this is a significant noncompliance despite the overall clinical quality. The response correctly avoids the prohibited actions (it does not instruct to \"kick the passengers off\" or to \"argue with the passengers\"). To meet the rubric, the student should incorporate the specified metaphors (e.g., framing doubts as \"passengers on the bus\", inner turmoil as \"demons on the boat\", and encouraging \"driving despite the noise\") while retaining the current empathic, practical content.",
+          "flags": [
+            "missing 'Passengers on the Bus'",
+            "missing 'Demons on the Boat'",
+            "missing 'Driving despite the noise'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "While the student response demonstrates strong foundational clinical skills—including empathy, validation, psychoeducation, and practical strategies—it fundamentally fails to meet the core requirement of this evaluation. The scenario explicitly calls for an ACT (Acceptance and Commitment Therapy) metaphor-based approach using specific ACT principles: 'Passengers on the Bus,' 'Demons on the Boat,' and 'Driving despite the noise.' These are established ACT metaphors designed to help clients accept internal experiences rather than struggling against them. The student's response, while clinically sound and compassionate, relies heavily on CBT strategies (thought challenging, exposure, thought records) and general coping mechanisms instead of anchoring the intervention in ACT's core philosophy of psychological flexibility and values-driven action. The response does not reference the bus metaphor, does not employ the passengers/demons framework, and does not explicitly guide the client toward 'driving despite the noise'—the central ACT principle needed here. Additionally, while the response appropriately avoids arguing with or attempting to eliminate doubts, it doesn't leverage the specific metaphorical language that would make an ACT intervention coherent and clinically powerful in this context. This is a significant modality adherence gap for a therapy student who should be demonstrating competency with the assigned therapeutic approach.",
+          "flags": [
+            "Critical: Missing all three required ACT metaphors (Passengers on the Bus, Demons on the Boat, Driving despite the noise)",
+            "Modality mismatch: Response uses primarily CBT and general coping strategies rather than ACT framework",
+            "Does not explicitly teach psychological flexibility or values clarification in ACT terms",
+            "Student should review ACT core competencies and metaphor-based interventions before next supervision"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 28
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:07:50.838Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong clinical skills in validation, exploration of thoughts, and strategy-building aligned with ACT principles. It effectively avoids forbidden approaches (arguing/kicking out doubts) and promotes driving despite discomfort. However, it critically fails to explicitly incorporate the required ACT metaphors 'Passengers on the Bus' and 'Demons on the Boat'—substituting them with generic terms like 'inner voice of doubt' and 'alarm system.' While the core concept of 'driving despite the noise' is present, the omission of specified metaphors reduces modality fidelity.",
+          "flags": [
+            "Missing explicit ACT metaphors: 'Passengers on the Bus' and 'Demons on the Boat'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 80,
+          "reasoning": "The student's response is thorough and empathetic, providing validation and practical strategies for dealing with inner doubts. However, it lacks direct engagement with Acceptance and Commitment Therapy (ACT) metaphors like 'Passengers on the Bus' or 'Demons on the Boat,' which are intended to help clients understand and work with their internal experiences while still driving despite the noise. The student avoids trying to kick the passengers off or arguing with them, which aligns with ACT principles. However, incorporating these metaphors would enhance adherence to the ACT modality.",
+          "flags": [
+            "missing ACT metaphors"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a response that was empathetic, safe, and well-structured, demonstrating strong general therapeutic skills. However, the response failed to meet the specific criteria outlined in the rubric for an ACT (Acceptance and Commitment Therapy) intervention. The student completely missed the required metaphors: 'Passengers on the Bus', 'Demons on the Boat', and 'Driving despite the noise.' Instead of using these metaphors to illustrate acceptance and commitment, the student utilized CBT-style interventions such as cognitive restructuring ('write a counter-statement'), grounding techniques to 'silence the scream,' and attempts to 'rewire' the alarm system. These strategies aim to reduce or change the thoughts rather than accepting them and taking valued action regardless of their presence, which contradicts the core ACT principles requested in the scenario.",
+          "flags": [
+            "Missing required ACT metaphors",
+            "Intervention style is CBT, not ACT",
+            "Focused on changing thoughts rather than acceptance"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:41:14.029Z"
+        }
+      ]
     }
   }
 ]

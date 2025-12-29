@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, validating, and uses appropriate CBT-consistent elements (identifying 'should' statements, normalizing cognitive distortions, prompting cognitive questioning, encouraging self-compassion and small behavioral steps). It addresses the required elements: 'should' statements are explicitly discussed, imperatives (e.g., 'Acknowledge the feeling', 'Practice self‑compassion', 'Create small, soothing rituals') are present, and self‑judgment is directly explored ('I’m pathetic').\n\nConcerns / Failures vs. the rubric: The response includes grief-counseling content (normalizing grieving timeline, describing crying functions, recommending soothing rituals and grief-focused normalization), which the rubric explicitly required to avoid. Additionally, the line about \"giving yourself permission to feel exactly what you’re feeling, without judgment\" and the overall tone of acceptance approximates Radical Acceptance (DBT) language, which the rubric also required to avoid. Because those are explicit \"must avoid\" items, they substantially reduce adherence to the assignment despite the otherwise strong clinical stance. \n\nOverall: good clinical empathy and CBT elements, but non-adherence to the rubric's forbidden content (grief counseling and Radical Acceptance-like language) significantly lowers the evaluation.",
-        "flags": [
-          "includes_required_should_statements",
-          "includes_required_imperatives",
-          "includes_self_judgment_content",
-          "contains_grief_counseling (forbidden)",
-          "contains_radical_acceptance_language (forbidden/DBT)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student response is empathic, validating, and uses appropriate CBT-consistent elements (identifying 'should' statements, normalizing cognitive distortions, prompting cognitive questioning, encouraging self-compassion and small behavioral steps). It addresses the required elements: 'should' statements are explicitly discussed, imperatives (e.g., 'Acknowledge the feeling', 'Practice self‑compassion', 'Create small, soothing rituals') are present, and self‑judgment is directly explored ('I’m pathetic').\n\nConcerns / Failures vs. the rubric: The response includes grief-counseling content (normalizing grieving timeline, describing crying functions, recommending soothing rituals and grief-focused normalization), which the rubric explicitly required to avoid. Additionally, the line about \"giving yourself permission to feel exactly what you’re feeling, without judgment\" and the overall tone of acceptance approximates Radical Acceptance (DBT) language, which the rubric also required to avoid. Because those are explicit \"must avoid\" items, they substantially reduce adherence to the assignment despite the otherwise strong clinical stance. \n\nOverall: good clinical empathy and CBT elements, but non-adherence to the rubric's forbidden content (grief counseling and Radical Acceptance-like language) significantly lowers the evaluation.",
+          "flags": [
+            "includes_required_should_statements",
+            "includes_required_imperatives",
+            "includes_self_judgment_content",
+            "contains_grief_counseling (forbidden)",
+            "contains_radical_acceptance_language (forbidden/DBT)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 30,

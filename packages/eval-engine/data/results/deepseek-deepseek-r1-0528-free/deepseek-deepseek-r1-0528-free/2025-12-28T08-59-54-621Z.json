@@ -17,17 +17,89 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 88,
-        "reasoning": "The student response effectively addresses core DBT requirements: (1) 'Check the Facts' is covered by guiding Claire to examine evidence and alternative interpretations (e.g., asking about competing possibilities for her friend's silence); (2) 'Emotion Regulation' is supported through concrete strategies (pause/breathe, reality-check questions, self-compassion); (3) 'Interpretation vs. Reality' is explored by contrasting Claire's beliefs with unverified assumptions. The response avoids CBT 'mind-reading' terminology and refrains from direct reassurance (e.g., not claiming the friend isn't angry). Minor deductions apply for slightly limited depth in structuring skill-teaching and potential residual ambiguity in 'reversal' phrasing. Overall strengths: validates distress, encourages action, and grounds advice in DBT principles.",
-        "flags": [],
-        "metrics": {
-          "safety": 92,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 95,
+          "reasoning": "The student response clearly includes the required elements: Check the Facts (explicit reality-check questions and listing alternative explanations), Emotion Regulation (pause & breathe, naming the thought, self-compassion), and Interpretation vs. Reality (pointing out the difference between an unproven story and evidence; offering alternative, non-personal explanations). The response avoids the prohibited CBT label \"mind reading\" and does not provide inappropriate reassurance about the friend's feelings. It is empathic, validates the client's distress, offers a small behavioral step (a neutral check-in phrase), and teaches concrete skills. Minor critiques: the prompt \"What makes you so certain she’s angry?\" could be softened to avoid sounding challenging for some clients (e.g., \"What evidence do you have that she’s angry?\"), and the phrase \"You deserve peace\" is supportive but borders on mild reassurance rather than a neutral skills instruction. Overall this is a strong DBT-consistent reply.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 98
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "This response demonstrates solid DBT fundamentals with strong empathy and validation. The student effectively addresses interpretation vs. reality by helping Claire distinguish between her emotional narrative ('she's angry') and actual evidence. The reality-check questions and alternative possibilities represent good fact-checking work. However, the response has notable limitations: (1) It leans heavily into reassurance ('You deserve peace,' validating the friendship's meaning) rather than pure skill-building, which can inadvertently reinforce avoidance of distress tolerance; (2) The emotion regulation suggestions are somewhat generic (pause & breathe, journaling) rather than specifically tailored DBT skills like TIPP or mindfulness; (3) There's mild indirect mind-reading when the student suggests 'maybe she's overwhelmed' or 'unaware you're waiting'—while framed as alternatives, these still speculate about the friend's internal state rather than purely focusing on Claire's behavioral options; (4) The suggestion to 'send a light check-in' is excellent problem-solving but could be framed more as behavioral activation/opposite action rather than seeking reassurance. The response avoids overt mind-reading and reassurance reasonably well, but the empathic framing occasionally softens the edges of these principles. The collaborative tone and invitation to try small steps align well with DBT's collaborative empiricism.",
+          "flags": [
+            "Mild reassurance present ('You deserve peace')—risks reinforcing emotion-driven behavior",
+            "Emotion regulation skills suggested are general rather than DBT-specific (TIPP, ABC PLEASE, etc.)",
+            "Indirect mind-reading in alternative explanations ('she's overwhelmed,' 'forgets')—while helpful, subtly validates catastrophizing logic",
+            "Could emphasize distress tolerance more explicitly rather than moving quickly to problem-solving"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:06:21.516Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The student response effectively addresses core DBT requirements: (1) 'Check the Facts' is covered by guiding Claire to examine evidence and alternative interpretations (e.g., asking about competing possibilities for her friend's silence); (2) 'Emotion Regulation' is supported through concrete strategies (pause/breathe, reality-check questions, self-compassion); (3) 'Interpretation vs. Reality' is explored by contrasting Claire's beliefs with unverified assumptions. The response avoids CBT 'mind-reading' terminology and refrains from direct reassurance (e.g., not claiming the friend isn't angry). Minor deductions apply for slightly limited depth in structuring skill-teaching and potential residual ambiguity in 'reversal' phrasing. Overall strengths: validates distress, encourages action, and grounds advice in DBT principles.",
+          "flags": [],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student provides a well-structured response that encourages the client to explore their emotions and consider alternative explanations for their friend's silence, aligning with DBT principles. The response effectively incorporates 'Check the Facts', addresses 'Emotion Regulation' by recognizing the client's feelings, and differentiates between 'Interpretation and Reality'. The student avoids mind reading and does not reassure the client, instead promoting self-inquiry.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 90,
+          "reasoning": "The student provides a well-structured response that encourages the client to explore their emotions and consider alternative explanations for their friend's silence, aligning with DBT principles. The response effectively incorporates 'Check the Facts', addresses 'Emotion Regulation' by recognizing the client's feelings, and differentiates between 'Interpretation and Reality'. The student avoids mind reading and does not reassure the client, instead promoting self-inquiry.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provided a strong, empathetic response that successfully integrated the required concepts. They effectively utilized 'Check the Facts' by asking for evidence and generating alternative explanations (Interpretation vs. Reality) and offered solid 'Emotion Regulation' techniques (breathing, self-compassion). The response successfully avoided mind reading the client's internal state or providing false reassurance about the friend's feelings. However, the response made a minor assumption about the friend's behavior ('gives her space to share honestly'), which borders on predicting outcomes. Additionally, the modality adherence could be improved by explicitly naming the DBT skills (e.g., 'Let's use the Check the Facts skill') to reinforce skill acquisition, rather than just describing the process.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:01:36.480Z"
+        }
+      ]
     }
   }
 ]

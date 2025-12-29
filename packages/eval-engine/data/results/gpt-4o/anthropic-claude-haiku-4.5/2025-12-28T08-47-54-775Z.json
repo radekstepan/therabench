@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student validated the client's distress, explicitly invited examination of evidence, and queried alternative explanations — meeting the 'Check the Facts' and 'Interpretation vs. Reality' requirements. They also explored the emotional impact and suggested a behavioral step (reach out), which is helpful rapport-building.\n\nLimitations: The response did not teach or coach any specific DBT emotion-regulation skills (e.g., labeling the emotion, using opposite action, self-soothing, or distress-tolerance strategies), so the 'Emotion Regulation' requirement was not met. The reply also contains reassurance language ('understandable', 'it's okay to feel this way'), which the rubric required avoiding. While the student avoided the exact CBT term 'mind reading,' they used related phrasing ('jump to conclusions') that is acceptable but should be paired with skill-teaching rather than reassurance.\n\nRecommendations: Remove reassuring phrases and instead validate then prompt skill-use. Add explicit DBT emotion-regulation coaching (e.g., help name the emotion, check the facts, urge use of opposite action or self-soothing, and offer a brief distress-tolerance strategy).",
-        "flags": [
-          "reassurance",
-          "missing_emotion_regulation_skills",
-          "did_not_offer_specific_DBT_techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -54,6 +40,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:31:23.518Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student response demonstrates good empathy and validates the client's feelings, which is a strong start. However, it fails to strictly adhere to the DBT rubric requirements. The student suggests 'considering what evidence you have' and 'other possible reasons,' which touches on 'Interpretation vs. Reality,' but it is framed more as a CBT-style cognitive challenge rather than a formal DBT 'Check the Facts' exercise (e.g., explicitly asking for the event, interpretation, and outcomes). Crucially, the student uses the phrase 'fill in gaps with assumptions' which directly labels the client's experience as 'mind reading' (a CBT term), which the rubric explicitly forbids. Additionally, while the student suggests asking the friend, the response does not provide specific Emotion Regulation skills (like Opposite Action or PLEASE) as required by the rubric.",
+          "flags": [
+            "Uses CBT term 'mind reading' (indirectly via 'assumptions')",
+            "Missing specific DBT Emotion Regulation skill",
+            "Check the Facts is present but not structurally explicit"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:37:30.441Z"
         }
       ]
     }

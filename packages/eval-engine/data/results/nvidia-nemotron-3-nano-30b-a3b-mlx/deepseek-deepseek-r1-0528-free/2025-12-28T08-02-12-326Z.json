@@ -24,19 +24,110 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response demonstrates strong clinical skills including empathy, validation, and collaborative language. It effectively incorporates core CBT principles: 1) Behavioral activation is addressed through encouraging small actions; 2) The principle that action precedes motivation is explicitly stated; 3) Graded task assignment appears in the micro-goals strategy. However, the response misses explicit activity scheduling (structuring tasks temporally), which is a syllabus requirement. Integration of motivational interviewing and self-compassion is appropriate but slightly dilutes pure CBT modality. The response successfully avoids contraindicated strategies like resting or waiting for mood improvement.",
-        "flags": [
-          "Activity scheduling not explicitly included"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 90,
+          "reasoning": "The student response demonstrates strong CBT-consistent strategies: clear behavioral activation suggestions (timer, tiny steps), explicit encouragement of action preceding motivation (lighting a match metaphor; start with five minutes), and graded task assignment (micro-goals: outline three bullets, write one paragraph). The response is empathetic, collaborative, and invites exploration. However, it does not explicitly mention activity scheduling (e.g., planning specific times/days or using a calendar to schedule tasks) — the closest element is the suggestion to set a timer, which is useful but not a full activity-scheduling intervention. There is also minor extraneous meta-text at the top (supervisory/instructional phrasing and a stray </think>), but this does not undermine the clinical content. The response appropriately avoids advising rest/waiting for mood to improve.",
+          "flags": [
+            "missing_activity_scheduling",
+            "contains_meta_text",
+            "meets_behavioral_activation",
+            "meets_graded_task_assignment",
+            "addresses_action_precedes_motivation",
+            "avoids_wait_for_mood_advice"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 90,
+          "reasoning": "The student response demonstrates strong CBT-consistent strategies: clear behavioral activation suggestions (timer, tiny steps), explicit encouragement of action preceding motivation (lighting a match metaphor; start with five minutes), and graded task assignment (micro-goals: outline three bullets, write one paragraph). The response is empathetic, collaborative, and invites exploration. However, it does not explicitly mention activity scheduling (e.g., planning specific times/days or using a calendar to schedule tasks) — the closest element is the suggestion to set a timer, which is useful but not a full activity-scheduling intervention. There is also minor extraneous meta-text at the top (supervisory/instructional phrasing and a stray </think>), but this does not undermine the clinical content. The response appropriately avoids advising rest/waiting for mood to improve.",
+          "flags": [
+            "missing_activity_scheduling",
+            "contains_meta_text",
+            "meets_behavioral_activation",
+            "meets_graded_task_assignment",
+            "addresses_action_precedes_motivation",
+            "avoids_wait_for_mood_advice"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates strong empathy, validation, and a supportive tone that aligns well with motivational interviewing principles. The response effectively normalizes the client's experience and avoids the trap of dismissing their feelings. However, there are significant gaps in CBT-specific intervention application. While the response mentions 'building tiny momentum' and 'micro-goals,' it lacks explicit framing of behavioral activation as a core CBT principle—namely, that action *precedes* motivation rather than follows it. The response touches on activity scheduling concepts but doesn't clearly structure this as a formal graded task assignment with concrete, sequenced steps. The exploration of underlying feelings is appropriate but could more directly connect to the behavioral activation rationale. The response also includes some general self-compassion language that, while supportive, dilutes focus from the CBT behavioral intervention. Importantly, the response avoids the pitfalls of suggesting rest or waiting for mood improvement, which is appropriate. The student would benefit from more direct, explicit framing of the behavioral activation model and clearer activity scheduling/graded task assignment structure.",
+          "flags": [
+            "Lacks explicit framing of 'action precedes motivation' as a core CBT principle",
+            "Activity scheduling and graded task assignment concepts are mentioned but not formally structured or concrete",
+            "Response is somewhat lengthy and may diffuse the primary behavioral intervention message",
+            "Self-compassion language, while supportive, is not a primary CBT intervention for this presenting issue"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:05:20.793Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical skills including empathy, validation, and collaborative language. It effectively incorporates core CBT principles: 1) Behavioral activation is addressed through encouraging small actions; 2) The principle that action precedes motivation is explicitly stated; 3) Graded task assignment appears in the micro-goals strategy. However, the response misses explicit activity scheduling (structuring tasks temporally), which is a syllabus requirement. Integration of motivational interviewing and self-compassion is appropriate but slightly dilutes pure CBT modality. The response successfully avoids contraindicated strategies like resting or waiting for mood improvement.",
+          "flags": [
+            "Activity scheduling not explicitly included"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is largely effective, demonstrating empathy, encouragement, and validation of the client's feelings. It aligns with motivational interviewing and effectively challenges the client's belief that they must wait for motivation to act. The suggestions to build tiny momentum, set micro-goals, and reconnect with personal values are consistent with Behavioral Activation principles. Action-preceding motivation is highlighted, and the response avoids advising the client to rest and wait for mood improvement. However, the response could be strengthened by explicitly incorporating Activity Scheduling and Graded Task Assignment as structured steps to aid in overcoming motivational barriers.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student provided a detailed and empathetic response, but it functioned more as a list of generic advice rather than a concrete CBT intervention plan. While the response mentions 'shifting focus' and 'micro-goals' (which align with Graded Task Assignment), it fails to explicitly utilize the core CBT techniques required by the rubric. Specifically, it misses 'Behavioral Activation' (linking activity to mood improvement), the explicit concept that 'Action precedes motivation', and 'Activity Scheduling' (putting a specific time on the calendar). Instead, it relies heavily on emotional exploration and reconnection with values ('why'), which borders on supportive counseling or MI rather than specific CBT structure. The advice to 'wait for energy' is challenged, which is good, but the replacement strategies are verbal/cognitive rather than behavioral/scheduling.",
+          "flags": [
+            "Missing explicit Behavioral Activation framework",
+            "Missing Activity Scheduling component",
+            "Advice is somewhat abstract rather than concrete behavioral tasks",
+            "Over-reliance on cognitive exploration (values/underlying feelings) vs. behavioral intervention"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:28:20.084Z"
+        }
+      ]
     }
   }
 ]

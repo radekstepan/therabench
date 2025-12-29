@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "The student demonstrates good empathy, validation, and normalizing of anxiety and begins to challenge the catastrophic chain by exploring likelihoods and alternative outcomes. However, the response fails to include the three required CBT elements explicitly: the Downward Arrow Technique is not used or named (no iterative questioning to uncover deeper meanings such as 'If that happened, what would that mean about you?'), core beliefs are not identified or linked to the chain, and underlying assumptions are only implied rather than explicitly elicited and examined. Additionally, the student asks about supports/resources to ensure accuracy of the report, which edges into problem-solving the report itself (the rubric required avoiding solving the report issue). There is no mention of employment law, which is correct. Overall, clinically sound in tone and collaborative stance but missing key technique components required by the rubric.",
-        "flags": [
-          "Missing Downward Arrow Technique",
-          "Does not explicitly identify or work with Core Beliefs",
-          "Does not explicitly elicit Underlying Assumptions",
-          "Potentially begins problem-solving the report (minor rubric violation)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrates good empathy, validation, and normalizing of anxiety and begins to challenge the catastrophic chain by exploring likelihoods and alternative outcomes. However, the response fails to include the three required CBT elements explicitly: the Downward Arrow Technique is not used or named (no iterative questioning to uncover deeper meanings such as 'If that happened, what would that mean about you?'), core beliefs are not identified or linked to the chain, and underlying assumptions are only implied rather than explicitly elicited and examined. Additionally, the student asks about supports/resources to ensure accuracy of the report, which edges into problem-solving the report itself (the rubric required avoiding solving the report issue). There is no mention of employment law, which is correct. Overall, clinically sound in tone and collaborative stance but missing key technique components required by the rubric.",
+          "flags": [
+            "Missing Downward Arrow Technique",
+            "Does not explicitly identify or work with Core Beliefs",
+            "Does not explicitly elicit Underlying Assumptions",
+            "Potentially begins problem-solving the report (minor rubric violation)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

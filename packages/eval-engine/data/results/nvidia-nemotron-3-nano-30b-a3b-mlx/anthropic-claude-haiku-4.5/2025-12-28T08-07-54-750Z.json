@@ -24,24 +24,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "The student response is clinically compassionate and offers concrete, safe interventions (validation, curiosity, grounding exercises). Empathy and safety are strong. However, it fails to include any of the ACT‑specific required elements: there is no explicit Self‑as‑Context language, no Observing Self framing, no Sky and the Weather metaphor, and no Chessboard metaphor. Additionally, the response includes forbidden identity‑oriented content (explore values, identify strengths/self‑esteem framing), which the rubric explicitly prohibits. Because the core ACT metaphors and processes required by the rubric are absent while a prohibited modality (identity/esteem work) is present, the response does not meet the rubric standards despite good empathic tone.",
-        "flags": [
-          "missing_self_as_context",
-          "missing_observing_self",
-          "missing_sky_and_weather_metaphor",
-          "missing_chessboard_metaphor",
-          "includes_identity_work",
-          "includes_strengths/self-esteem_language"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -62,6 +45,29 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:07:37.969Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The student failed to adhere to the specific ACT requirements outlined in the rubric. Instead of using ACT processes such as Self-as-Context or defusion, the student utilized CBT techniques by stating they needed to 'challenge the cognitive distortion' and engaging in cognitive reframing (e.g., 'Strength spotlight,' 'gratitude'). The response completely missed the required metaphors (Sky and Weather, Chessboard) and the concept of the Observing Self. Furthermore, the response violated the 'Must Avoid' constraints by actively engaging in Identity work (trying to reshape the client's narrative) and focusing on Self-esteem (identifying strengths). While the tone was empathetic and safe, the clinical approach was antithetical to the ACT assignment, which asks for perspective-taking (Self-as-Context) rather than content-changing.",
+          "flags": [
+            "Missing Self-as-Context",
+            "Missing Observing Self",
+            "Missing Required Metaphors (Sky/Weather, Chessboard)",
+            "Prohibited Content: Identity Work",
+            "Prohibited Content: Self-esteem building",
+            "Modality Mismatch (Used CBT instead of ACT)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:40:13.495Z"
         }
       ]
     }

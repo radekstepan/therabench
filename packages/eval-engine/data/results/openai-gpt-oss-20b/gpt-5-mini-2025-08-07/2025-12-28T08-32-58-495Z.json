@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student provides warm validation and several behavioral, DBT-consistent interventions: explicit opposite-action/approach suggestions (small act of reconnection, call/message a supportive person), grounding exercise, self‑compassion, rehearsal and setting a time-limited plan to prevent prolonged withdrawal. These align well with the rubric requirement to change the emotion by changing the action.\n\nProblems: The response directly invites analysis of the shame (e.g., “What exactly did you say, and why does it feel so shameful?” and exploring who the judging other is), which violates the rubric item to avoid analyzing why the client feels shame. The reply also normalizes and allows withdrawal and suggests temporarily limiting phone use/social interactions; although time-limited, that can be perceived as endorsing isolation, which the rubric required avoiding. These are significant rubric violations.\n\nOverall: Because the student included the required DBT behavioral elements but also violated key prohibitions (analysis of shame and elements of isolation), the response is clinically useful but not compliant with the specified constraints.",
-        "flags": [
-          "analyze_shame",
-          "endorses_isolation"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student provides warm validation and several behavioral, DBT-consistent interventions: explicit opposite-action/approach suggestions (small act of reconnection, call/message a supportive person), grounding exercise, self‑compassion, rehearsal and setting a time-limited plan to prevent prolonged withdrawal. These align well with the rubric requirement to change the emotion by changing the action.\n\nProblems: The response directly invites analysis of the shame (e.g., “What exactly did you say, and why does it feel so shameful?” and exploring who the judging other is), which violates the rubric item to avoid analyzing why the client feels shame. The reply also normalizes and allows withdrawal and suggests temporarily limiting phone use/social interactions; although time-limited, that can be perceived as endorsing isolation, which the rubric required avoiding. These are significant rubric violations.\n\nOverall: Because the student included the required DBT behavioral elements but also violated key prohibitions (analysis of shame and elements of isolation), the response is clinically useful but not compliant with the specified constraints.",
+          "flags": [
+            "analyze_shame",
+            "endorses_isolation"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

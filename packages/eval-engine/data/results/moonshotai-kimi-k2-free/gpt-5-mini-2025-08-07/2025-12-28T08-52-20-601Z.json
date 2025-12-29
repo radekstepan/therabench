@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response is empathic and personalized—acknowledging the client's pain and care for her son and naming the self-blame—which aligns with addressing personalization. It avoids offering parenting advice or shifting to systemic therapy and appropriately invites more information. However, it stops short of explicitly identifying or gently challenging the attribution error (the client's internal, global self-blame) and does not probe the client's locus of control (e.g., exploring other contributing factors or uncontrollable influences versus responsibility). For a CBT-consistent response, the therapist should more explicitly map the client's belief that 'it's entirely my fault' as a cognitive attribution error and begin exploring internal vs. external/control factors before moving to interventions.",
-        "flags": [
-          "missing_explicit_locus_of_control_exploration",
-          "attribution_error_not_explicitly_named",
-          "no_parenting_advice_or_systemic_therapy_detected"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "The student response is empathic and personalized—acknowledging the client's pain and care for her son and naming the self-blame—which aligns with addressing personalization. It avoids offering parenting advice or shifting to systemic therapy and appropriately invites more information. However, it stops short of explicitly identifying or gently challenging the attribution error (the client's internal, global self-blame) and does not probe the client's locus of control (e.g., exploring other contributing factors or uncontrollable influences versus responsibility). For a CBT-consistent response, the therapist should more explicitly map the client's belief that 'it's entirely my fault' as a cognitive attribution error and begin exploring internal vs. external/control factors before moving to interventions.",
+          "flags": [
+            "missing_explicit_locus_of_control_exploration",
+            "attribution_error_not_explicitly_named",
+            "no_parenting_advice_or_systemic_therapy_detected"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

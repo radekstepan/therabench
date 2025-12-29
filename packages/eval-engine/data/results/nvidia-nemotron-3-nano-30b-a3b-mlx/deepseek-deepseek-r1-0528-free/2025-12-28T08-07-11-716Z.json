@@ -20,17 +20,99 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response effectively incorporates required rubric elements: explicitly addresses values clarification (e.g., 'core values,' values ranking exercise), emphasizes direction over destination (process-oriented language like 'ongoing exploration' and ACT principles). It avoids disallowed content (no new goals or gratitude journal suggestions). Strengths include concrete exercises (values ranking, narrative chapter writing), safe modality recommendations (ACT/existential), and ethical phrasing. Minor deductions occur for slightly generic phrasing ('many people') versus deeper personalization, and not explicitly naming 'direction vs. destination' though implying it contextually through focus on process.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 90
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validating, and thoroughly addresses values and includes an explicit Values Clarification exercise. It offers practical, low-stakes experiments and appropriate therapeutic modalities (existential, ACT, narrative), and includes reflective listening and invitations to explore meaning — all clinically appropriate. Weaknesses: The response does not explicitly articulate the 'Direction vs. Destination' framing required by the rubric (while it implies an ongoing process, it never names or clearly contrasts direction versus destination). It also violates the 'Must Avoid' requirement by recommending gratitude practices/positive psychology interventions (explicit mention of 'gratitude practices' is present). The student did not overtly instruct the client to 'set new goals', but did suggest experiments and activities (which is acceptable). Because one required element is missing and one prohibited element is present, the score is reduced accordingly.",
+          "flags": [
+            "missing_explicit_direction_vs_destination",
+            "includes_gratitude_practices"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validating, and thoroughly addresses values and includes an explicit Values Clarification exercise. It offers practical, low-stakes experiments and appropriate therapeutic modalities (existential, ACT, narrative), and includes reflective listening and invitations to explore meaning — all clinically appropriate. Weaknesses: The response does not explicitly articulate the 'Direction vs. Destination' framing required by the rubric (while it implies an ongoing process, it never names or clearly contrasts direction versus destination). It also violates the 'Must Avoid' requirement by recommending gratitude practices/positive psychology interventions (explicit mention of 'gratitude practices' is present). The student did not overtly instruct the client to 'set new goals', but did suggest experiments and activities (which is acceptable). Because one required element is missing and one prohibited element is present, the score is reduced accordingly.",
+          "flags": [
+            "missing_explicit_direction_vs_destination",
+            "includes_gratitude_practices"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student's response demonstrates solid clinical foundational skills with strong empathetic attunement and thoughtful structure. The therapist effectively validates the client's experience, uses accessible language, and offers concrete tools for exploration. However, the response has significant gaps relative to the rubric requirements. While values are mentioned multiple times and a values clarification exercise is included (meeting 2 of 3 must-includes), the response critically lacks explicit exploration of 'Direction vs. Destination'—a key existential distinction that should differentiate between the *process* of becoming versus reaching fixed endpoints. This is particularly relevant given the client's concern about 'feeling empty' despite achieving destination goals. Additionally, the response includes a gratitude-adjacent practice (the 'mind-body check-in' and 'noticing what resonates') that borders on the avoid list, though it's framed differently enough to not be a direct violation. The student also subtly suggests setting new goals through 'small experiments,' which contradicts the instruction to avoid goal-setting. The modality adherence is strong (ACT, existential, and narrative approaches are well-integrated), and safety is maintained throughout. The response would benefit from more explicit discussion of the client's *relationship to achievement itself* and a clearer distinction between directionality (ongoing becoming) versus destination-thinking (fixed outcomes).",
+          "flags": [
+            "Missing explicit 'Direction vs. Destination' framework—critical omission for existential work on identity and meaning",
+            "Subtle goal-setting language in 'small experiments' section contradicts the 'no new goals' directive",
+            "Gratitude/positive psychology elements (mind-body check-in, noticing strengths) approach the avoided content boundary",
+            "Does not directly address the potential trap of replacing internal emptiness with new achievement goals",
+            "Could more explicitly normalize the existential vacuum and distinguish between discomfort and pathology"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 79
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:07:19.493Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response effectively incorporates required rubric elements: explicitly addresses values clarification (e.g., 'core values,' values ranking exercise), emphasizes direction over destination (process-oriented language like 'ongoing exploration' and ACT principles). It avoids disallowed content (no new goals or gratitude journal suggestions). Strengths include concrete exercises (values ranking, narrative chapter writing), safe modality recommendations (ACT/existential), and ethical phrasing. Minor deductions occur for slightly generic phrasing ('many people') versus deeper personalization, and not explicitly naming 'direction vs. destination' though implying it contextually through focus on process.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student provides a comprehensive and empathetic response that effectively addresses the client's existential concerns by focusing on values clarification and exploration of identity, which are crucial for navigating feelings of emptiness. The response emphasizes exploring core values, which aligns with the rubric requirements. Additionally, the student's approach of encouraging self-reflection and narrative exploration avoids prescribing new goals and does not suggest using a gratitude journal, both of which would have been counterproductive in this context. The student's response is appropriately safe, empathetic, and adheres to suggested therapeutic modalities relevant to the scenario.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student provides a highly empathetic and safe response that validates the client's feelings of emptiness. They successfully include 'Values' and 'Values clarification' sections. However, the response fails to include the required concept of 'Direction vs. Destination', a key ACT metaphor needed to distinguish the client's achieved goals from their values. Additionally, the student violates the 'Must Avoid' constraint by listing 'gratitude practices' under suggested interventions, which is risky for a client experiencing existential emptiness. The response is also overly eclectic, citing multiple modalities (Existential, Narrative, PP) instead of focusing strictly on ACT.",
+          "flags": [
+            "Missing 'Direction vs. Destination' concept",
+            "Suggested gratitude practices (violates 'Must Avoid')"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:38:58.088Z"
+        }
+      ]
     }
   }
 ]

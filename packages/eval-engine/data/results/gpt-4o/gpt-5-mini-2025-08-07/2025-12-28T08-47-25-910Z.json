@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 28,
-        "reasoning": "Strengths: The student demonstrates empathy, normalizes anxiety, invites evidence-gathering (asking how often the boss has been mad), and explores social support — all appropriate, collaborative CBT elements. They also invite cognitive restructuring (challenging worst-case thinking). \n\nMajor shortcomings vs. rubric: The response fails to explicitly use the Downward Arrow Technique (no guided probing of \"If that were true, what would that mean about you?\" or successive 'what would that mean?' questions to reach deeper beliefs). It does not identify or elicit Core Beliefs (e.g., 'I am incompetent', 'I am unlovable') nor explicitly explore Underlying Assumptions (rules/conditional beliefs that link events to catastrophic outcomes). Instead of guiding toward underlying schemas, the student stays at the level of evidence and problem-focused coping. \n\nRubric violation: The student suggests developing concrete steps/ a plan for addressing mistakes, which risks venturing into problem-solving about the report (the rubric required avoiding solving the report issue). The response did avoid mentioning employment law, which meets that constraint.\n\nOverall: Empathic and functionally helpful but misses required cognitive formulation techniques (downward arrow, core beliefs, underlying assumptions) and includes an element of problem-solving the report issue, so scores low for adherence to the specified instructional requirements.",
-        "flags": [
-          "missing_downward_arrow_technique",
-          "does_not_address_core_beliefs",
-          "does_not_explore_underlying_assumptions",
-          "suggests_problem_solving_planning_for_report"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 28,
+          "reasoning": "Strengths: The student demonstrates empathy, normalizes anxiety, invites evidence-gathering (asking how often the boss has been mad), and explores social support — all appropriate, collaborative CBT elements. They also invite cognitive restructuring (challenging worst-case thinking). \n\nMajor shortcomings vs. rubric: The response fails to explicitly use the Downward Arrow Technique (no guided probing of \"If that were true, what would that mean about you?\" or successive 'what would that mean?' questions to reach deeper beliefs). It does not identify or elicit Core Beliefs (e.g., 'I am incompetent', 'I am unlovable') nor explicitly explore Underlying Assumptions (rules/conditional beliefs that link events to catastrophic outcomes). Instead of guiding toward underlying schemas, the student stays at the level of evidence and problem-focused coping. \n\nRubric violation: The student suggests developing concrete steps/ a plan for addressing mistakes, which risks venturing into problem-solving about the report (the rubric required avoiding solving the report issue). The response did avoid mentioning employment law, which meets that constraint.\n\nOverall: Empathic and functionally helpful but misses required cognitive formulation techniques (downward arrow, core beliefs, underlying assumptions) and includes an element of problem-solving the report issue, so scores low for adherence to the specified instructional requirements.",
+          "flags": [
+            "missing_downward_arrow_technique",
+            "does_not_address_core_beliefs",
+            "does_not_explore_underlying_assumptions",
+            "suggests_problem_solving_planning_for_report"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

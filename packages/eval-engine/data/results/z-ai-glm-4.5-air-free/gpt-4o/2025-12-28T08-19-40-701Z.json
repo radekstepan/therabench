@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response is quite empathetic and acknowledges the client's feelings, which is important for building rapport. However, while the student introduces valuable grounding techniques, there's a slight deviation from Dialectical Behavior Therapy (DBT) protocol by emphasizing deep breathing too prominently. Instead, the specific application of DBT skills like TIPP (Temperature, Intense Exercise, Paced Breathing, and Progressive Relaxation) should be more explicit. The student did correctly suggest using cold water, which aligns with the Temperature component and helps in physiological arousal modulation. Nevertheless, the student could improve their response by avoiding the use of deep breaths and providing a more explicit TIPP framework.",
-        "flags": [
-          "emphasis_on_deep_breaths",
-          "incomplete_explicit_use_of_TIPP"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is quite empathetic and acknowledges the client's feelings, which is important for building rapport. However, while the student introduces valuable grounding techniques, there's a slight deviation from Dialectical Behavior Therapy (DBT) protocol by emphasizing deep breathing too prominently. Instead, the specific application of DBT skills like TIPP (Temperature, Intense Exercise, Paced Breathing, and Progressive Relaxation) should be more explicit. The student did correctly suggest using cold water, which aligns with the Temperature component and helps in physiological arousal modulation. Nevertheless, the student could improve their response by avoiding the use of deep breaths and providing a more explicit TIPP framework.",
+          "flags": [
+            "emphasis_on_deep_breaths",
+            "incomplete_explicit_use_of_TIPP"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

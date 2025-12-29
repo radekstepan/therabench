@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response demonstrates strong empathy, validation, reflective listening, and explicitly discourages attempts to control or suppress the thoughts (i.e., avoids the 'build a dam' approach). The reply also encourages observing and 'being with' thoughts without judgment, which maps well to 'observing without engaging' and 'letting thoughts pass.' Concerns relative to the rubric: The response does NOT explicitly include the 'Leaves on a Stream' metaphor/technique, which the rubric required. Additionally, the request for examples of the negative words (even though framed as 'without needing to analyze them right now') risks moving toward content analysis; the rubric specifically instructs to avoid 'analyze the water.' Because one required element is missing and another is borderline, the score is reduced to reflect partial adherence to the ACT-specific rubric while acknowledging good clinical skills and safety.",
-        "flags": [
-          "missing_leaves_on_a_stream",
-          "elicited_examples_may_prompt_analysis_of_thoughts"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, reflective listening, and explicitly discourages attempts to control or suppress the thoughts (i.e., avoids the 'build a dam' approach). The reply also encourages observing and 'being with' thoughts without judgment, which maps well to 'observing without engaging' and 'letting thoughts pass.' Concerns relative to the rubric: The response does NOT explicitly include the 'Leaves on a Stream' metaphor/technique, which the rubric required. Additionally, the request for examples of the negative words (even though framed as 'without needing to analyze them right now') risks moving toward content analysis; the rubric specifically instructs to avoid 'analyze the water.' Because one required element is missing and another is borderline, the score is reduced to reflect partial adherence to the ACT-specific rubric while acknowledging good clinical skills and safety.",
+          "flags": [
+            "missing_leaves_on_a_stream",
+            "elicited_examples_may_prompt_analysis_of_thoughts"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

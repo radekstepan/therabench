@@ -21,19 +21,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response is well-structured and addresses important areas such as validation, understanding dynamics, and re-establishing personal boundaries. However, it misses incorporating the FAST skill set—an integral part of DBT that guides the person to maintain self-respect, say no comfortably, and be truthful in communication. While self-respect effectiveness is indirectly touched upon, it could be more explicitly integrated to strengthen the response. The engagement strategy avoids using DEAR MAN, which is appropriate as it doesn't align with the session's objectives. The response successfully avoids compromise and instead focuses on personal boundaries. Overall, the approach is safe and empathetic with good adherence to therapy modality.",
-        "flags": [
-          "missing_FAST_technique"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is well-structured and addresses important areas such as validation, understanding dynamics, and re-establishing personal boundaries. However, it misses incorporating the FAST skill set—an integral part of DBT that guides the person to maintain self-respect, say no comfortably, and be truthful in communication. While self-respect effectiveness is indirectly touched upon, it could be more explicitly integrated to strengthen the response. The engagement strategy avoids using DEAR MAN, which is appropriate as it doesn't align with the session's objectives. The response successfully avoids compromise and instead focuses on personal boundaries. Overall, the approach is safe and empathetic with good adherence to therapy modality.",
+          "flags": [
+            "missing_FAST_technique"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

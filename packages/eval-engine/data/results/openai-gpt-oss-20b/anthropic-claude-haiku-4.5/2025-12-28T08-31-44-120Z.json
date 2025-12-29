@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student response is empathic and personalized (references the client's guilt and uses the client's quote). It explicitly addresses the attribution error (challenging the belief that the parent is entirely to blame) and discusses locus of control by separating what the parent can influence from what is beyond their control. The language includes CBT‑consistent techniques (attention to the function of self‑blame, cognitive reframing, and a brief self‑compassion intervention).\n\nConcerns: The response gives concrete parenting and systemic suggestions (recommendations about home routines, praise, contacting the teacher/counselor, partnering with the school, and suggesting counseling/extracurriculars). Per the rubric, these are items to avoid; they move the interaction toward parenting advice and systemic intervention rather than staying within a focused CBT exploration of the client's cognitions and emotions. Because those must‑avoid elements are present, the overall rating is reduced despite the clear inclusion of required therapeutic elements.\n\nSuggestions for improvement: Keep the empathic and cognitive work (exploration of attributions, locus of control, Socratic questioning of \"If I were better...\"), but avoid offering specific parenting or systems-level interventions in this moment. Instead, elicit the client's thoughts about possible actions and collaboratively generate behavioral experiments only if that fits the session goals and the rubric constraints.",
-        "flags": [
-          "ContainsParentingAdvice",
-          "SuggestsSystemicIntervention",
-          "IncludesPersonalization",
-          "AddressesAttributionError",
-          "AddressesLocusOfControl"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -57,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:14:56.212Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student response demonstrates strong empathy and validates the client's feelings, performing well on the 'Personalization' aspect by acknowledging the 'terrible mother' label. However, the response fails significantly regarding 'Attribution error' and 'Locus of control' by inadvertently reinforcing the client's belief that she has control over the situation. Crucially, the student provides specific 'Parenting advice' (e.g., suggesting routines, bedtime, shared meals, praise), which is strictly prohibited by the instructions. While the student attempts to shift the locus of control, the delivery shifts into instructive counseling rather than cognitive restructuring, and the inclusion of specific behavioral strategies borders on advice-giving.",
+          "flags": [
+            "Provided parenting advice",
+            "Reinforced attribution error by listing factors to control",
+            "Deviated from pure CBT technique into behavioral coaching"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:45:14.893Z"
         }
       ]
     }

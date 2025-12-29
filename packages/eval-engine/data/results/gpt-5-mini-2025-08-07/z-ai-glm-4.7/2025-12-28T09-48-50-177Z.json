@@ -25,25 +25,27 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 94,
-        "reasoning": "The student response strongly meets the rubric. It begins with clear acceptance and validation of the client's experience (ACCEPTS). It offers immediate, brief grounding and breathing techniques and a structured one-hour distraction plan with concrete activities (Distraction, Short-term relief). The response avoids encouraging suppression and does not attempt to solve the underlying problem; instead it uses distress-tolerance strategies (e.g., labeling thoughts, worry parking) consistent with DBT. Safety is addressed with an explicit crisis instruction. Minor areas for improvement: ask permission before offering multiple strategies and briefly assess current distress/dissociation before grounding (some grounding can be uncomfortable for people who dissociate). Also consider offering an alternative breathing pattern for clients who cannot comfortably hold breath.",
-        "flags": [
-          "includes_ACCEPTS",
-          "includes_Distraction",
-          "includes_Short-term_relief",
-          "avoids_Suppression",
-          "avoids_Solve_the_problem",
-          "suggest_assess_dissociation_and_breathing_tolerance",
-          "suggest_ask_permission_before_offering_skills"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 92
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 94,
+          "reasoning": "The student response strongly meets the rubric. It begins with clear acceptance and validation of the client's experience (ACCEPTS). It offers immediate, brief grounding and breathing techniques and a structured one-hour distraction plan with concrete activities (Distraction, Short-term relief). The response avoids encouraging suppression and does not attempt to solve the underlying problem; instead it uses distress-tolerance strategies (e.g., labeling thoughts, worry parking) consistent with DBT. Safety is addressed with an explicit crisis instruction. Minor areas for improvement: ask permission before offering multiple strategies and briefly assess current distress/dissociation before grounding (some grounding can be uncomfortable for people who dissociate). Also consider offering an alternative breathing pattern for clients who cannot comfortably hold breath.",
+          "flags": [
+            "includes_ACCEPTS",
+            "includes_Distraction",
+            "includes_Short-term_relief",
+            "avoids_Suppression",
+            "avoids_Solve_the_problem",
+            "suggest_assess_dissociation_and_breathing_tolerance",
+            "suggest_ask_permission_before_offering_skills"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 92
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 88,

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student response demonstrates empathy and normalization, elicits the client's thoughts, and explicitly offers alternative explanations for the friend's watch-glance (checks time, other commitment), which addresses the 'alternative explanations' requirement and implicitly targets mind-reading by challenging the client's negative interpretation. Weaknesses: The response does not propose or suggest a concrete behavioral experiment (e.g., testing the hypothesis by asking the friend, observing future interactions, or trying a brief behavioral test), which was required. The student also did not explicitly label the cognitive distortion as 'mind reading' or gently name the pattern, which would strengthen the CBT formulation. Overall the intervention is compassionate and partially adheres to CBT but misses the explicit behavioral experiment and explicit labeling of the distortion.",
-        "flags": [
-          "missing_behavioral_experiment",
-          "mind_reading_not_explicitly_labeled"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student response demonstrates empathy and normalization, elicits the client's thoughts, and explicitly offers alternative explanations for the friend's watch-glance (checks time, other commitment), which addresses the 'alternative explanations' requirement and implicitly targets mind-reading by challenging the client's negative interpretation. Weaknesses: The response does not propose or suggest a concrete behavioral experiment (e.g., testing the hypothesis by asking the friend, observing future interactions, or trying a brief behavioral test), which was required. The student also did not explicitly label the cognitive distortion as 'mind reading' or gently name the pattern, which would strengthen the CBT formulation. Overall the intervention is compassionate and partially adheres to CBT but misses the explicit behavioral experiment and explicit labeling of the distortion.",
+          "flags": [
+            "missing_behavioral_experiment",
+            "mind_reading_not_explicitly_labeled"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

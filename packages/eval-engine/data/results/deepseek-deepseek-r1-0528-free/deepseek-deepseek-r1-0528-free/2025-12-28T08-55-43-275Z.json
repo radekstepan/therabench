@@ -22,19 +22,99 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 75,
-        "reasoning": "The student effectively demonstrates empathy and correctly identifies all-or-nothing thinking in the client's statement through reframing techniques. They contrast 'one slip' against broader healthy patterns, challenging dichotomous thinking without using jargon terms. However, they violated the rubric's 'Must Avoid' requirements: 1) Included Acceptance-based strategies ('honor my frustration', 'acknowledge this slip') despite explicit prohibition. 2) Reference to 'radical acceptance' in key strategies confirms this deviation. Strengths include strong validation, avoidance of diet advice/mindfulness, and empowerment focus. ModalityAdherence score reduced due to inclusion of incompatible acceptance elements.",
-        "flags": [
-          "Incorporates acceptance-based techniques (prohibited per rubric)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 70
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrates clear empathy, validation, and appropriate CBT techniques such as cognitive reframing and behavioral problem-solving. They explicitly name and counter 'all-or-nothing thinking,' which is good. However, the response fails to include two required CBT terms: 'Black-and-White Thinking' and 'Dichotomous Thinking' (only 'all-or-nothing' was used). It also violates the rubric by invoking 'Radical Acceptance' / acceptance strategies, which were listed under Must Avoid. Additionally, there is a minor issue where phrasing (e.g., pointing to 'healthy meals,' 'moved your body') borders on generic diet/health advice, which the rubric asked to avoid. Taken together, the response is therapeutically solid in tone and skill, but noncompliant with the explicit rubric requirements, so the score is moderate.",
+          "flags": [
+            "MissingTerm: Black-and-White Thinking",
+            "MissingTerm: Dichotomous Thinking",
+            "ForbiddenTechnique: Acceptance (Radical Acceptance used)",
+            "PotentialGenericDietAdvice (references to healthy meals, exercise, water)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong foundational therapeutic skills with excellent validation, empathy, and a clear attempt at cognitive reframing. However, the response has significant gaps relative to the rubric requirements. While the student identifies all-or-nothing thinking implicitly ('any misstep feels catastrophic,' 'perfection was never the goal'), they never explicitly name or label the cognitive distortion as required. The response lacks direct, teachable identification of dichotomous/black-and-white thinking patterns. The student uses language like 'unpack that together' and asks reflective questions, but doesn't systematically walk through the thought pattern using CBT terminology. Additionally, there's a subtle adherence issue: the phrase 'Radical Acceptance' and the framing of 'acknowledging this slip without letting it define tomorrow' edges toward acceptance-based language, which the rubric specifies to avoid. The response is clinically sound and warm, but doesn't fully operationalize CBT's cognitive restructuring model with explicit distortion identification. The ending question ('What feels possible for your next meal?') is empowering but returns to behavioral/action-oriented framing rather than deepening the cognitive work.",
+          "flags": [
+            "Fails to explicitly name all-or-nothing thinking, black-and-white thinking, or dichotomous thinking—these must be labeled directly in a CBT intervention",
+            "Uses 'Radical Acceptance' framing which approaches acceptance-based language; avoid this terminology per rubric",
+            "Does not systematically deconstruct the logical fallacy or teach the cognitive distortion pattern",
+            "Ends with behavioral redirection rather than consolidating the cognitive reframe"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:04:54.185Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The student effectively demonstrates empathy and correctly identifies all-or-nothing thinking in the client's statement through reframing techniques. They contrast 'one slip' against broader healthy patterns, challenging dichotomous thinking without using jargon terms. However, they violated the rubric's 'Must Avoid' requirements: 1) Included Acceptance-based strategies ('honor my frustration', 'acknowledge this slip') despite explicit prohibition. 2) Reference to 'radical acceptance' in key strategies confirms this deviation. Strengths include strong validation, avoidance of diet advice/mindfulness, and empowerment focus. ModalityAdherence score reduced due to inclusion of incompatible acceptance elements.",
+          "flags": [
+            "Incorporates acceptance-based techniques (prohibited per rubric)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student effectively addresses the client's all-or-nothing thinking related to diet and weight loss by validating the initial emotional response and then reframing it in a broader context of progress rather than perfection. The response avoids generic diet advice and intentionally steers away from mindfulness techniques, instead focusing on cognitive restructuring and empowerment. However, the use of 'radical acceptance' in place of acceptance could be seen as a subtle nod to acceptance, which could potentially fall outside the assignment's constraints.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 85,
+          "reasoning": "The student effectively addresses the client's all-or-nothing thinking related to diet and weight loss by validating the initial emotional response and then reframing it in a broader context of progress rather than perfection. The response avoids generic diet advice and intentionally steers away from mindfulness techniques, instead focusing on cognitive restructuring and empowerment. However, the use of 'radical acceptance' in place of acceptance could be seen as a subtle nod to acceptance, which could potentially fall outside the assignment's constraints.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a warm and empathetic response that validated the client's feelings well. However, the response failed to adhere to the specific constraints of the rubric. The student did not explicitly label the cognitive distortion using the required terminology (All-or-Nothing Thinking, Black-and-White Thinking, or Dichotomous Thinking), which are essential for psychoeducation in CBT. Additionally, the student explicitly included 'Radical Acceptance' in their strategy list, which directly violates the instruction to avoid 'Acceptance.' The intervention leans too heavily on mindfulness and ACT concepts rather than strict CBT cognitive restructuring.",
+          "flags": [
+            "Did not use required terminology (All-or-Nothing Thinking, etc.)",
+            "Used prohibited concept (Radical Acceptance)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:55:52.994Z"
+        }
+      ]
     }
   }
 ]

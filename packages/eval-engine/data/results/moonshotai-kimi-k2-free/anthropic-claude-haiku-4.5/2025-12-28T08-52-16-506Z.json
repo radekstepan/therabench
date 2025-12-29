@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student demonstrates strong empathy and validation (e.g., naming the heaviness, normalizing the gap, distinguishing shame from facts). They address overgeneralization directly (\"The gap is a chapter, not the entire book\") and use at least one Socratic-style prompt to explore underlying beliefs (\"I wonder if you’re also saying…\"). They also separate emotion from observable facts, which begins to assess the validity of the thought. Limitations: The Socratic questioning is limited and not paired with explicit evidence-based probing (e.g., asking for specific evidence for/against \"I will never get a job\" or testing alternative predictions). Crucially, the response slips into career-counseling territory by offering to help the client \"tell the story of this gap in a way that shows your resilience,\" which the rubric forbids. The response does not perform values clarification. Overall, clinically compassionate and mostly CBT-aligned, but weakened by insufficiently explicit validity questioning and the career-counseling suggestion.",
-        "flags": [
-          "career_counseling",
-          "limited_socratic_evidence_questioning"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -51,6 +38,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:55:00.350Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates high levels of empathy and creates a strong therapeutic alliance, which is a positive foundation. However, the response misses several key CBT techniques required by the rubric. Specifically, it fails to use Socratic Questioning to examine the validity of the client's thought; instead, the student provides a persuasive rebuttal and reassurance. While the student addresses the theme of Overgeneralization ('never get a job', 'entire book'), they do not explicitly challenge the validity of the thought using evidence or cognitive restructuring techniques. The response leans towards a narrative or humanistic approach rather than a strict CBT structure. Additionally, the student borders on 'career counseling' by offering to tell the story of the gap in a specific way, though it stays within the realm of therapeutic coping.",
+          "flags": [
+            "Missed Socratic Questioning",
+            "Missed Validity Testing",
+            "Potential drift towards Career Counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:13:21.744Z"
         }
       ]
     }

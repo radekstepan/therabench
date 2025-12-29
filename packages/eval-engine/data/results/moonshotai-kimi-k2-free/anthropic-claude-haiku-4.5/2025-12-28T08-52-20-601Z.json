@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response is empathic and personalized—acknowledging the client's pain and care for her son and naming the self-blame—which aligns with addressing personalization. It avoids offering parenting advice or shifting to systemic therapy and appropriately invites more information. However, it stops short of explicitly identifying or gently challenging the attribution error (the client's internal, global self-blame) and does not probe the client's locus of control (e.g., exploring other contributing factors or uncontrollable influences versus responsibility). For a CBT-consistent response, the therapist should more explicitly map the client's belief that 'it's entirely my fault' as a cognitive attribution error and begin exploring internal vs. external/control factors before moving to interventions.",
-        "flags": [
-          "missing_explicit_locus_of_control_exploration",
-          "attribution_error_not_explicitly_named",
-          "no_parenting_advice_or_systemic_therapy_detected"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:55:05.223Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a safe and empathetic response that successfully validated the client's emotions and avoided giving parenting advice or using systemic therapy techniques. However, the response lacks the technical precision required for CBT. While the student acknowledged 'self-blame,' they failed to explicitly identify or address the specific cognitive distortions mentioned in the scenario—Personalization and Attribution Error (Locus of Control). The response relies heavily on reflection rather than moving toward cognitive restructuring or challenging the internal validity of the client's 'terrible mother' schema.",
+          "flags": [
+            "Missed identification of specific cognitive distortions",
+            "Lacked cognitive restructuring techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:13:49.767Z"
         }
       ]
     }

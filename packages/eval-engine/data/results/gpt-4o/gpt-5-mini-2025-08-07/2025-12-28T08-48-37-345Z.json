@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 25,
-        "reasoning": "The student demonstrates empathic attunement and offers collaborative next steps, which is clinically useful. However, the response fails to include the required ACT-specific elements: there is no Self-as-Context language or explicit Observing Self invitation (e.g., noticing thoughts/feelings from a perspective that is not the content), no Sky-and-Weather metaphor (thoughts/feelings as weather passing in the sky), and no Chessboard metaphor (self as the board with thoughts as pieces). Instead, the student explicitly frames the problem as identity-related—'such a significant part of your identity'—which is directly contraindicated by the rubric's instruction to avoid identity work/self-esteem framing. Because the required ACT metaphors and perspective language are absent and a forbidden identity-focus is present, the response does not meet the rubric despite being empathic and collaborative.",
-        "flags": [
-          "missing_self_as_context",
-          "missing_observing_self",
-          "missing_sky_and_weather_metaphor",
-          "missing_chessboard_metaphor",
-          "contains_identity_work"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 25,
+          "reasoning": "The student demonstrates empathic attunement and offers collaborative next steps, which is clinically useful. However, the response fails to include the required ACT-specific elements: there is no Self-as-Context language or explicit Observing Self invitation (e.g., noticing thoughts/feelings from a perspective that is not the content), no Sky-and-Weather metaphor (thoughts/feelings as weather passing in the sky), and no Chessboard metaphor (self as the board with thoughts as pieces). Instead, the student explicitly frames the problem as identity-related—'such a significant part of your identity'—which is directly contraindicated by the rubric's instruction to avoid identity work/self-esteem framing. Because the required ACT metaphors and perspective language are absent and a forbidden identity-focus is present, the response does not meet the rubric despite being empathic and collaborative.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "contains_identity_work"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

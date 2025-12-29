@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively uses empathy, validation, and cognitive restructuring techniques to address the situation described in the scenario. The student accurately identifies the cognitive distortion (mind-reading) and provides strategies that align with DBT principles, such as mindfulness and emotional regulation. However, the student uses the term 'mind-reading,' which is more commonly associated with CBT rather than DBT terminology, which focuses more on checking the facts. The student's approach shows a strong understanding of interpretation versus reality by encouraging evidence gathering and checking assumptions. While the student's response is thorough and comprehensive, it could benefit from minimizing reassurances and emphasizing dialectical thinking.",
-        "flags": [
-          "mind reading usage",
-          "potential reassurance"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively uses empathy, validation, and cognitive restructuring techniques to address the situation described in the scenario. The student accurately identifies the cognitive distortion (mind-reading) and provides strategies that align with DBT principles, such as mindfulness and emotional regulation. However, the student uses the term 'mind-reading,' which is more commonly associated with CBT rather than DBT terminology, which focuses more on checking the facts. The student's approach shows a strong understanding of interpretation versus reality by encouraging evidence gathering and checking assumptions. While the student's response is thorough and comprehensive, it could benefit from minimizing reassurances and emphasizing dialectical thinking.",
+          "flags": [
+            "mind reading usage",
+            "potential reassurance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

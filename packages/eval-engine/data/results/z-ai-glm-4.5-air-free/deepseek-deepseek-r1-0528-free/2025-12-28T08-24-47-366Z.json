@@ -21,19 +21,105 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 80,
-        "reasoning": "The response demonstrates strong empathy and validation, effectively addressing creative hopelessness by acknowledging failed attempts ('tried everything') and shifting focus from elimination to understanding anxiety. It aligns with 'dropping the rope' through the suggestion to 'pause and regroup' and explore anxiety's function. However, it fails to explicitly convey 'the control is the problem'—the core ACT principle that anxiety persistence stems from the client's control efforts. The language avoids prohibited elements (no new techniques/unhealthy persistence). Empathy is excellent, but modality adherence is compromised by the missing control concept.",
-        "flags": [
-          "Critical omission: Never states that control efforts *are* the problem"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student response is empathic, validating, and normalizing. It accurately reflects the client's exhaustion and validates repeated efforts. It gently invites exploration of the experience of anxiety rather than immediate symptom elimination, and suggests pausing and regrouping — all of which are consistent with ACT spirit.\n\nWeaknesses: The response fails to explicitly implement core ACT processes required by the rubric. It does not evoke creative hopelessness (i.e., guiding the client to experientially see the futility of prior control attempts and the costs of continued struggle). It does not clearly state or illustrate that the core problem is attempts to control anxiety (\"the control is the problem\"). It also misses a clear \"dropping the rope\" intervention/metaphor or invitation to stop the struggle with anxiety and make room for contact with values-directed action. Because those three elements were required by the rubric, modality adherence is substantially compromised despite good empathy and safety.\n\nRecommendations: The student should explicitly invite creative hopelessness (e.g., reflect on how previous strategies have or haven’t worked and the cost of continuing to struggle), name that trying to control anxiety can itself maintain suffering, and offer a 'dropping the rope' experiential invitation (e.g., an exercise or metaphor about letting go of the struggle). Avoid giving the client encouragement framed as simply \"keep trying\" or proposing another technique as the next step.",
+          "flags": [
+            "missing_creative_hopelessness",
+            "missing_control_is_the_problem",
+            "missing_dropping_the_rope"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student response is empathic, validating, and normalizing. It accurately reflects the client's exhaustion and validates repeated efforts. It gently invites exploration of the experience of anxiety rather than immediate symptom elimination, and suggests pausing and regrouping — all of which are consistent with ACT spirit.\n\nWeaknesses: The response fails to explicitly implement core ACT processes required by the rubric. It does not evoke creative hopelessness (i.e., guiding the client to experientially see the futility of prior control attempts and the costs of continued struggle). It does not clearly state or illustrate that the core problem is attempts to control anxiety (\"the control is the problem\"). It also misses a clear \"dropping the rope\" intervention/metaphor or invitation to stop the struggle with anxiety and make room for contact with values-directed action. Because those three elements were required by the rubric, modality adherence is substantially compromised despite good empathy and safety.\n\nRecommendations: The student should explicitly invite creative hopelessness (e.g., reflect on how previous strategies have or haven’t worked and the cost of continuing to struggle), name that trying to control anxiety can itself maintain suffering, and offer a 'dropping the rope' experiential invitation (e.g., an exercise or metaphor about letting go of the struggle). Avoid giving the client encouragement framed as simply \"keep trying\" or proposing another technique as the next step.",
+          "flags": [
+            "missing_creative_hopelessness",
+            "missing_control_is_the_problem",
+            "missing_dropping_the_rope"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student response demonstrates strong empathy and validation, which are foundational therapeutic skills. However, it significantly misaligns with the ACT (Acceptance and Commitment Therapy) framework required by the rubric. The response fails to address the three mandatory ACT concepts: Creative Hopelessness, The Control is the Problem, and Dropping the Rope. Instead, the student pivots toward exploration and reframing, which, while therapeutically sound in other modalities, misses the core ACT intervention needed here. The client has presented a textbook scenario for creative hopelessness (exhaustion from control attempts) and the control agenda paradox. The student should have named the struggle with control itself as the problem, rather than suggesting 'personalized approaches' or encouraging further exploration. The response also subtly contradicts ACT by implying that finding the 'right' approach will work, rather than helping the client accept anxiety while pursuing valued action. The mention of 'healing' and linear progress, while compassionate, doesn't align with ACT's focus on psychological flexibility over symptom elimination.",
+          "flags": [
+            "Does not explicitly address Creative Hopelessness concept",
+            "Does not identify the control struggle as the primary problem",
+            "Does not introduce or practice 'Dropping the Rope' metaphor or technique",
+            "Subtly reinforces the control agenda ('personalized approach,' 'finding relief') rather than challenging it",
+            "Response leans toward CBT/exploratory approach rather than pure ACT intervention",
+            "Misses opportunity to normalize the ineffectiveness of control strategies as expected in ACT"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:24:11.796Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 80,
+          "reasoning": "The response demonstrates strong empathy and validation, effectively addressing creative hopelessness by acknowledging failed attempts ('tried everything') and shifting focus from elimination to understanding anxiety. It aligns with 'dropping the rope' through the suggestion to 'pause and regroup' and explore anxiety's function. However, it fails to explicitly convey 'the control is the problem'—the core ACT principle that anxiety persistence stems from the client's control efforts. The language avoids prohibited elements (no new techniques/unhealthy persistence). Empathy is excellent, but modality adherence is compromised by the missing control concept.",
+          "flags": [
+            "Critical omission: Never states that control efforts *are* the problem"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively recognizes the client's exhaustion and validates their experience with empathy. The response subtly introduces creative hopelessness by acknowledging that trying to exert control over anxiety hasn't provided relief. The suggestion to explore what the anxiety is communicating rather than attempting further direct control aligns with the 'control is the problem' concept and encourages 'dropping the rope' through acceptance. However, there's a missed opportunity to explicitly frame the client's struggle in terms of creative hopelessness, which could have strengthened the adherence to the Acceptance and Commitment Therapy (ACT) model. Additionally, although the student avoids suggesting new techniques directly, there's a slight implication towards persisting with other strategies due to the omission of a clear statement about letting go of control.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a safe and empathetic response that establishes good rapport, but it significantly missed the core ACT requirements outlined in the rubric. The response failed to utilize 'Creative Hopelessness' because, instead of validating the futility of the client's struggle to control anxiety, the student suggested that 'effective anxiety management often requires a personalized approach,' implying there is still a 'right' way to fix it. This violates the ACT principle that 'The Control is the Problem.' By framing the issue as finding the correct personalized strategy, the student implicitly violated the rule to avoid 'Try a new technique.' Additionally, by validating the client's 'commitment to finding relief,' the student reinforced the agenda of elimination rather than 'Dropping the rope.' While empathetic, the response functions more like a supportive counseling intervention than an ACT intervention at this stage of treatment.",
+          "flags": [
+            "Missed Creative Hopelessness",
+            "Missed The Control is the Problem",
+            "Implicitly suggested trying a new technique (personalized approach)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:08:44.269Z"
+        }
+      ]
     }
   }
 ]

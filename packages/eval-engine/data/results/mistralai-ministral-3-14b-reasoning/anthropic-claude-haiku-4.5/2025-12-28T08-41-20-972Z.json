@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student demonstrates clear empathy, validation, and a safety-oriented mindset (includes a plan to assess suicidal ideation). They suggest concrete approach behaviors (e.g., 'reaching out to someone you trust', 'reconnect') and small actionable steps, which aligns partially with DBT's behavioral change emphasis ('change the emotion by changing the action'). Weaknesses: The response fails to explicitly teach or use the DBT Opposite Action skill (no instruction to identify the action urge and intentionally do the opposite). Instead, it asks the client to analyze the trigger ('What specifically triggered this shame?'), which violates the rubric's 'Must Avoid' directive to not analyze why the client feels shame. The reply also references isolation ('shame can make us feel isolated'), which the rubric said to avoid (and the client statement already expressed a desire to withdraw). Overall, the student scored lower because a required DBT skill (Opposite Action) is missing and the response encourages analysis of the shame trigger. Useful elements are present (empathy, some approach suggestions, safety consideration), but modality adherence to DBT skills is insufficient.",
-        "flags": [
-          "missing_opposite_action",
-          "encourages_analysis_of_shame",
-          "references_isolation",
-          "partial_approach_behavior_present",
-          "good_empathy_and_safety_prompt"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 35
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -58,6 +42,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:48:16.385Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The student demonstrates strong empathy and provides a supportive, validating environment, including a necessary safety check. However, the response fails to adhere to the specific DBT rubric requirements. First, the student violates the 'Must Avoid' constraint by explicitly asking, 'What specifically triggered this shame?' and suggesting 'understanding the context,' which encourages analyzing the emotion rather than acting opposite to it. Second, the student fails to include the required interventions. While 'reconnecting' is hinted at, the response does not explicitly utilize or name 'Opposite Action' or 'Approach behavior.' The student also misses the opportunity to explain the core DBT concept of 'changing the emotion by changing the action.' Instead, the response remains exploratory and psychoanalytic, rather than directive and behavioral as required by the scenario.",
+          "flags": [
+            "Violated 'Must Avoid' rule (Analyze why you feel shame)",
+            "Missing required skill: Opposite Action",
+            "Missing required skill: Approach behavior",
+            "Missing required concept: Change the emotion by changing the action"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:02:58.751Z"
         }
       ]
     }

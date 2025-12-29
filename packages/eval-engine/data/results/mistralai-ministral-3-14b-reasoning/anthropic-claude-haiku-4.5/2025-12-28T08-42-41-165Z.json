@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 95,
-        "reasoning": "The student response effectively uses DBT-consistent dialectical framing and both/and thinking: they acknowledge the opposing views (parents as 'monsters' vs. feeling 'ungrateful') and explicitly normalize holding both truths (\"you don’t have to choose... maybe there’s space for both\"). Validation is strong (\"sounds like you're carrying a lot... That's a heavy burden... You're not being ungrateful...\"). The reply avoids taking sides and does not use the prohibited CBT term \"black-and-white thinking.\" It also offers actionable next steps (explore bodily experience, boundaries, how the dynamic appears elsewhere), which aligns with Walking the Middle Path by validating and moving toward change. Minor improvement: the response could more explicitly name the dialectical principle (e.g., acceptance and change) or briefly coach a specific DBT skill (e.g., wise mind or boundary-setting language) to strengthen modality-specific teaching, but this is a small enhancement rather than a deficit.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 96,
-          "modalityAdherence": 96
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 88,
@@ -44,6 +34,24 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:48:49.865Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provides a warm, empathetic, and highly validating response. They correctly identify the dialectical dilemma presented by the client (the tension between viewing parents as monsters vs. self as ungrateful). The student effectively avoids taking sides and successfully introduces 'Both/And' thinking at the end to help the client find the Middle Path. The somatic inquiry ('what does that feel like in your body') is a strong grounding technique. However, the response loses slight points in modality adherence when the student interprets the 'monster' label as a 'defense to protect yourself.' While this interpretation may be clinically valid in other modalities, DBT typically focuses on the function of behavior and finding the synthesis (the dialectic) rather than interpreting underlying psychological defenses, which can sometimes invalidate the client's current reality. Sticking strictly to the dialectic of 'they can be loving AND harmful' would have been more consistent with pure DBT.",
+          "flags": [
+            "Interpretation of 'defense' mechanism slightly conflicts with strict DBT focus on behavior/change"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:07:01.193Z"
         }
       ]
     }

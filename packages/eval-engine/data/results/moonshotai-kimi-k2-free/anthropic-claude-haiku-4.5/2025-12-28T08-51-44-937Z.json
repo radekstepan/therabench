@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 62,
-        "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
-        "flags": [
-          "Missing: Evidence for vs. Evidence against",
-          "Insufficient: Cognitive restructuring not explicit or complete",
-          "Potential emotion-regulation suggestion ('slow the moment down')"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -54,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:54:36.347Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrated good empathy and accurately reflected the client's struggle between logic and emotion. However, the response failed to adhere to the specific CBT requirements outlined in the rubric. The student did not explicitly label the cognitive distortion as 'Emotional Reasoning,' nor did they initiate the critical CBT interventions of examining 'Evidence for vs. Evidence against' or attempting 'Cognitive Restructuring.' Instead, the response shifted to 'slowing the moment down,' which aligns more with mindfulness or emotion regulation techniques—methods explicitly listed as 'Must Avoid' in this strict CBT scenario.",
+          "flags": [
+            "Missed identification of Emotional Reasoning",
+            "Missed Evidence for/against intervention",
+            "Missed Cognitive Restructuring",
+            "Utilized emotion regulation technique (slowing down)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:11:49.976Z"
         }
       ]
     }

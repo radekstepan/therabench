@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "Strengths: The student begins with an empathic tone and includes several ACT‑consistent techniques (naming the thought as separate, noticing/pause, grounding, cultivating self‑compassion and values/resilience). This shows a generally helpful, client‑centered response. Weaknesses relative to the rubric: the response does not include the explicit defusion exercises required—there is no explicit phrasing of the ACT defusion line “I’m having the thought that …,” and it omits the specific defusion techniques of singing the thought and repeating the word. More importantly, the student uses classic CBT cognitive challenging (\"Check the evidence\", \"Reframe gently\"), which the rubric explicitly forbids. That undermines modality adherence. There is no instruction in thought stopping, which is correct. To meet the rubric, the student should remove the evidence‑checking/reframing steps, add explicit ACT defusion language (e.g., “I’m having the thought that I am broken”), and include brief exercises such as singing the thought and repeating the word to demonstrate cognitive defusion while keeping the empathic stance.",
-        "flags": [
-          "missing: explicit phrase 'I'm having the thought that...'",
-          "missing: singing the thought exercise",
-          "missing: repeating the word exercise",
-          "includes forbidden technique: cognitive challenging (CBT) via 'Check the evidence' and 'Reframe gently'"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "Strengths: The student begins with an empathic tone and includes several ACT‑consistent techniques (naming the thought as separate, noticing/pause, grounding, cultivating self‑compassion and values/resilience). This shows a generally helpful, client‑centered response. Weaknesses relative to the rubric: the response does not include the explicit defusion exercises required—there is no explicit phrasing of the ACT defusion line “I’m having the thought that …,” and it omits the specific defusion techniques of singing the thought and repeating the word. More importantly, the student uses classic CBT cognitive challenging (\"Check the evidence\", \"Reframe gently\"), which the rubric explicitly forbids. That undermines modality adherence. There is no instruction in thought stopping, which is correct. To meet the rubric, the student should remove the evidence‑checking/reframing steps, add explicit ACT defusion language (e.g., “I’m having the thought that I am broken”), and include brief exercises such as singing the thought and repeating the word to demonstrate cognitive defusion while keeping the empathic stance.",
+          "flags": [
+            "missing: explicit phrase 'I'm having the thought that...'",
+            "missing: singing the thought exercise",
+            "missing: repeating the word exercise",
+            "includes forbidden technique: cognitive challenging (CBT) via 'Check the evidence' and 'Reframe gently'"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student shows strong empathy and validation, correctly identifies cognitive distortions (mind‑reading, catastrophizing), offers helpful Socratic questions to test predictions, and gives immediate anxiety coping strategies. These are appropriate CBT elements and supportive in-session techniques. Weaknesses relative to the rubric: The response does not include the Downward Arrow Technique (no systematic probing from the automatic thought toward a deeper \"if that were true, what would it mean about you?\" sequence). The response also fails to elicit or name core beliefs and underlying assumptions explicitly (no direct exploration of \"What would that mean about you?\" or statements like \"I am unworthy/unsafe/etc.\"). Additionally, the student provides concrete problem‑solving steps for completing the report (checklist, colleague proofreading, communication phrasing) which violates the rubric instruction to avoid solving the report issue. The response does not mention employment law (correct). Overall, good empathic CBT skills but missing the required deeper cognitive work and breaching the restriction against operationally solving the report task.",
-        "flags": [
-          "missing_downward_arrow_technique",
-          "missing_core_beliefs",
-          "missing_underlying_assumptions",
-          "violates_no_solving_report_issue"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -56,6 +41,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:39:46.051Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrated strong empathy and rapport-building, correctly validating the client's distress. They also effectively identified surface-level cognitive distortions such as catastrophizing and fortune-telling. However, the response failed to meet the specific requirements of the rubric. The student did not use the Downward Arrow Technique to deepen the cognition; instead, they immediately moved to challenging the thoughts. Because the chain was not deepened, Core Beliefs (e.g., 'I am incompetent' or 'I am unlovable') and Underlying Assumptions were not identified. Additionally, the response drifted into 'solving the report issue' by giving specific professional advice on proofreading and task management (checklists, fresh eyes), which moves away from the cognitive therapy focus and into coaching.",
+          "flags": [
+            "Missing Core Beliefs identification",
+            "Missing Underlying Assumptions identification",
+            "Did not use Downward Arrow Technique to deepen cognition",
+            "Solving the report issue (gave task management advice)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:47:59.728Z"
         }
       ]
     }

@@ -23,17 +23,19 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student response demonstrated empathy and provided some useful grounding techniques, which can help the client manage intense emotions. However, the response lacks adherence to the DBT TIPP skills which are crucial for managing acute emotional distress. Specifically, the student should have included techniques related to Temperature (such as an ice dive), Intense exercise, Paced breathing, and Progressive muscle relaxation to manage physiological arousal instead of general grounding or breathwork suggestions. Additionally, the student veered slightly into talk therapy and cognitive analysis by asking about the root causes of anger, which should be avoided in this scenario.",
-        "flags": [],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrated empathy and provided some useful grounding techniques, which can help the client manage intense emotions. However, the response lacks adherence to the DBT TIPP skills which are crucial for managing acute emotional distress. Specifically, the student should have included techniques related to Temperature (such as an ice dive), Intense exercise, Paced breathing, and Progressive muscle relaxation to manage physiological arousal instead of general grounding or breathwork suggestions. Additionally, the student veered slightly into talk therapy and cognitive analysis by asking about the root causes of anger, which should be avoided in this scenario.",
+          "flags": [],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

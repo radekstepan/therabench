@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student provided strong empathic validation, normalized the client's emotions, offered grounding and behavioral steps (calling emergency services, asking a neighbor/friend to check, crisis line), and prioritized safety. They also gently pointed out the client's tendency to \"imagine the worst,\" which taps into the catastrophizing/fortune-telling aspect of the thought. \n\nWeaknesses relative to the rubric: The response did not include an explicit decatastrophizing cognitive intervention (e.g., guided evaluation of alternative outcomes, evidence for/against the worst-case) nor did it ask the client to estimate the probability of the feared outcome or use a probability estimation exercise. Those two elements are required. The response also skirts the boundary of reassurance-seeking by encouraging the client to contact others for updates (this may be reasonable problem-solving in context, but the rubric disallows reassurance-seeking). The student avoided the DBT phrasing \"check the facts,\" which meets the avoid criterion. \n\nRecommendation: Add brief cognitive restructuring steps — ask for evidence for/against the thought, generate alternative explanations, and ask the client to rate how likely the catastrophic outcome is (e.g., 0–100%). That would satisfy decatastrophizing and probability estimation while keeping the helpful empathy and safety planning already present.",
-        "flags": [
-          "missing_decatastrophizing",
-          "missing_probability_estimation",
-          "potential_reassurance_seeking"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student provided strong empathic validation, normalized the client's emotions, offered grounding and behavioral steps (calling emergency services, asking a neighbor/friend to check, crisis line), and prioritized safety. They also gently pointed out the client's tendency to \"imagine the worst,\" which taps into the catastrophizing/fortune-telling aspect of the thought. \n\nWeaknesses relative to the rubric: The response did not include an explicit decatastrophizing cognitive intervention (e.g., guided evaluation of alternative outcomes, evidence for/against the worst-case) nor did it ask the client to estimate the probability of the feared outcome or use a probability estimation exercise. Those two elements are required. The response also skirts the boundary of reassurance-seeking by encouraging the client to contact others for updates (this may be reasonable problem-solving in context, but the rubric disallows reassurance-seeking). The student avoided the DBT phrasing \"check the facts,\" which meets the avoid criterion. \n\nRecommendation: Add brief cognitive restructuring steps — ask for evidence for/against the thought, generate alternative explanations, and ask the client to rate how likely the catastrophic outcome is (e.g., 0–100%). That would satisfy decatastrophizing and probability estimation while keeping the helpful empathy and safety planning already present.",
+          "flags": [
+            "missing_decatastrophizing",
+            "missing_probability_estimation",
+            "potential_reassurance_seeking"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

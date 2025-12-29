@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student provided strong empathic validation, normalized the client's emotions, offered grounding and behavioral steps (calling emergency services, asking a neighbor/friend to check, crisis line), and prioritized safety. They also gently pointed out the client's tendency to \"imagine the worst,\" which taps into the catastrophizing/fortune-telling aspect of the thought. \n\nWeaknesses relative to the rubric: The response did not include an explicit decatastrophizing cognitive intervention (e.g., guided evaluation of alternative outcomes, evidence for/against the worst-case) nor did it ask the client to estimate the probability of the feared outcome or use a probability estimation exercise. Those two elements are required. The response also skirts the boundary of reassurance-seeking by encouraging the client to contact others for updates (this may be reasonable problem-solving in context, but the rubric disallows reassurance-seeking). The student avoided the DBT phrasing \"check the facts,\" which meets the avoid criterion. \n\nRecommendation: Add brief cognitive restructuring steps — ask for evidence for/against the thought, generate alternative explanations, and ask the client to rate how likely the catastrophic outcome is (e.g., 0–100%). That would satisfy decatastrophizing and probability estimation while keeping the helpful empathy and safety planning already present.",
-        "flags": [
-          "missing_decatastrophizing",
-          "missing_probability_estimation",
-          "potential_reassurance_seeking"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 52,
@@ -55,6 +41,29 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:14:33.094Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student response fails to address the core CBT cognitive distortions identified in the rubric. Instead of identifying and challenging 'Catastrophizing' or 'Fortune Telling,' the response inadvertently validates the client's fears by immediately suggesting emergency action ('calling 911') without first assessing the evidence, which encourages 'Reassurance seeking' (a prohibited behavior). The student also suggests checking facts/investigating (finding updates, calling police) which aligns with the DBT term to be avoided and misses the opportunity for CBT-specific techniques like 'Decatastrophizing' or 'Probability Estimation'. While the empathy is high, the clinical direction lacks CBT modality adherence.",
+          "flags": [
+            "Missed Catastrophizing identification",
+            "Missed Fortune Telling identification",
+            "Missed Decatastrophizing technique",
+            "Missed Probability Estimation technique",
+            "Encouraged Reassurance Seeking (Prohibited)",
+            "Implicit 'Check the Facts' behavior (Prohibited)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:44:15.213Z"
         }
       ]
     }

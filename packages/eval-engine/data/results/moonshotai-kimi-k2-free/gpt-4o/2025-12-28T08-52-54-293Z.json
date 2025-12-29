@@ -23,21 +23,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 55,
-        "reasoning": "The student's response demonstrates empathy and acknowledges the client's intense feelings of shame. However, it lacks specific guidance on how to practice 'Opposite Action' by encouraging the client to engage in an approach behavior, such as reaching out to a friend or another social activity, to challenge their impulse to isolate. Additionally, the student missed the opportunity to suggest changing the emotion by changing the action, as required in Dialectical Behavior Therapy (DBT). Fortunately, the student avoided focusing on analyzing why the client feels ashamed, which is not recommended in this scenario.",
-        "flags": [
-          "Missing Opposite Action",
-          "Missing Approach Behavior",
-          "Missing Change Emotion by Action"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 55,
+          "reasoning": "The student's response demonstrates empathy and acknowledges the client's intense feelings of shame. However, it lacks specific guidance on how to practice 'Opposite Action' by encouraging the client to engage in an approach behavior, such as reaching out to a friend or another social activity, to challenge their impulse to isolate. Additionally, the student missed the opportunity to suggest changing the emotion by changing the action, as required in Dialectical Behavior Therapy (DBT). Fortunately, the student avoided focusing on analyzing why the client feels ashamed, which is not recommended in this scenario.",
+          "flags": [
+            "Missing Opposite Action",
+            "Missing Approach Behavior",
+            "Missing Change Emotion by Action"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

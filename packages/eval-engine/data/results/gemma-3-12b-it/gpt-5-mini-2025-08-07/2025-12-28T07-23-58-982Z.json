@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is highly validating, empathetic, and normalizes the client's internal conflict. It explores the client's experience (asking what they miss and what drama they expect), invites reflection on needs and past coping, and avoids the prohibited phrasing (does not tell the client to 'follow your heart' or to use 'strict logic only'). It also gently encourages pausing rather than impulsive action, which is clinically appropriate.\n\nLimitations relative to the rubric: The response does not explicitly name or teach the DBT concepts requested — Wise Mind, Emotion Mind, Reason Mind — nor does it explicitly provide a synthesis statement using the Wise Mind framework (for example: ‘‘Wise Mind integrates Emotion Mind and Reason Mind’’ and guiding the client into their Wise Mind). The student uses metaphors (“heart and head”) and describes the conflict between emotion and logic, which approximates the constructs, but the rubric required explicit inclusion of those terms and an explicit synthesis. Because the DBT-specific terminology and instruction are missing, the response falls short of full modality adherence despite otherwise strong clinical skills.",
-        "flags": [
-          "missing_wise_mind_label",
-          "missing_emotion_mind_label",
-          "missing_reason_mind_label",
-          "missing_explicit_synthesis"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is highly validating, empathetic, and normalizes the client's internal conflict. It explores the client's experience (asking what they miss and what drama they expect), invites reflection on needs and past coping, and avoids the prohibited phrasing (does not tell the client to 'follow your heart' or to use 'strict logic only'). It also gently encourages pausing rather than impulsive action, which is clinically appropriate.\n\nLimitations relative to the rubric: The response does not explicitly name or teach the DBT concepts requested — Wise Mind, Emotion Mind, Reason Mind — nor does it explicitly provide a synthesis statement using the Wise Mind framework (for example: ‘‘Wise Mind integrates Emotion Mind and Reason Mind’’ and guiding the client into their Wise Mind). The student uses metaphors (“heart and head”) and describes the conflict between emotion and logic, which approximates the constructs, but the rubric required explicit inclusion of those terms and an explicit synthesis. Because the DBT-specific terminology and instruction are missing, the response falls short of full modality adherence despite otherwise strong clinical skills.",
+          "flags": [
+            "missing_wise_mind_label",
+            "missing_emotion_mind_label",
+            "missing_reason_mind_label",
+            "missing_explicit_synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 92,
-        "reasoning": "The student response meets the rubric requirements well. Emotional reasoning is identified and challenged (\"equating how you feel with how you'll perform\"; \"Feelings... are not always accurate\"). Evidence-for vs. evidence-against is explicitly invited (\"could we consider what evidence you have...\" and pointing to the fact they \"studied hard\"). Cognitive restructuring is used via gentle Socratic questioning and reframing (asking what they'd say to a friend, noting common experiences of nervousness despite good preparation). The reply also shows appropriate empathy at the start rather than only validating, and it avoids the prohibited items: it does not rely on \"trust your gut\" language or introduce emotion-regulation techniques. Minor refinements that would make this exemplary: label the distortion explicitly as \"emotional reasoning\" for psychoeducation; offer a brief, structured way to weigh evidence (e.g., a quick pros/cons or probability estimate) or suggest a concrete behavioral experiment to test the prediction. Overall this is a strong CBT-consistent response.",
-        "flags": [],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 95
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -44,6 +34,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:22:22.601Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student provided an excellent CBT response. They successfully identified the cognitive distortion of 'Emotional Reasoning' by noting the client is equating feelings with reality. They fulfilled the requirement for 'Evidence for vs. Evidence against' by explicitly asking for evidence suggesting the client might do well. They effectively utilized 'Cognitive Restructuring' by challenging the validity of the feelings and using the double-standard technique ('What would you say to a friend?'). The response offered initial validation but did not stop there, and it avoided all prohibited topics such as emotion regulation techniques.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:57:27.366Z"
         }
       ]
     }

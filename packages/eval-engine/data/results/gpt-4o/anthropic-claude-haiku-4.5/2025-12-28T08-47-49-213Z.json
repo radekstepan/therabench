@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student validated the client's experience, normalized the internal conflict, invited exploration of the distinct urges (what is missed vs. what consequences are feared), and offered concrete self-soothing options (writing, talking, self-compassion). Tone is empathic and collaborative. Weaknesses: The response fails to use the required DBT terminology and framework — it does not explicitly name or teach Emotion Mind, Reason Mind, or Wise Mind, nor does it offer a clear synthesis (Wise Mind) intervention or technique to help the client access the synthesis. Because the rubric required those explicit concepts, the response does not fully meet modality adherence even though conceptually it gestures at them (e.g., “rational part” and “part that feels longing”). To improve, the student should label Emotion Mind and Reason Mind, explain Wise Mind as the synthesis, and offer a brief practice (e.g., a Wise Mind mindfulness prompt or urge-surfing strategy) to help the client find the synthesis between longing and caution.",
-        "flags": [
-          "MissingWiseMind",
-          "MissingEmotionMind",
-          "MissingReasonMind",
-          "MissingSynthesis"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -55,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:31:17.281Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a supportive and empathetic response that validates the client's feelings of conflict. However, the response fails to adhere to the specific DBT rubric requirements. The student describes the conflict using general terms like 'part of you that feels a deep sense of longing' and 'rational part,' but does not use the specific DBT terminology 'Emotion Mind,' 'Reason Mind,' or 'Wise Mind.' Additionally, while they mention strategies, they miss the opportunity to guide the client toward the 'Synthesis' of these states (Wise Mind). As a result, the modality adherence is significantly lower than the empathy or safety scores.",
+          "flags": [
+            "Missing specific DBT terminology (Emotion Mind, Reason Mind, Wise Mind)",
+            "Missing concept of Synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:37:24.156Z"
         }
       ]
     }

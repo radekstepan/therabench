@@ -17,17 +17,88 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student effectively focuses on 'Contact with the Present Moment' by directly naming the client's experience of being pulled away from the present ('present moment'). The prompt encourages 'Mindfulness' by inviting awareness of current experiences ('what do you think you're missing most?'). Emphasis on 'Here and Now' is clear through repeated references to happening 'right now.' The response strategically avoids 'Planning' by not discussing future-meeting preparation and sidesteps 'Distraction' by staying anchored to the core issue. One limitation is the absence of an explicit mindfulness technique to deepen present-moment contact.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 80,
-          "modalityAdherence": 90
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 92,
+          "reasoning": "The student response effectively names the dynamical process (being pulled into past/future) and explicitly references the 'present moment' and 'happening right now,' which meets the rubric requirements for Contact with the Present Moment, Mindfulness, and Here-and-Now language. The reflection is empathic and invites the client to bring attention to current experience by asking what they are missing in the present. The response avoids distracting content or planning/solution-focused directives. Minor improvement: the reply could be stronger by offering a brief, experiential mindfulness invitation (e.g., grounding, a noticing/breath exercise or a concrete here-and-now sensory prompt) or by using the explicit term 'mindfulness' or 'here-and-now' phrasing to more directly facilitate contact with present experience. Because it is otherwise on-target, the score is high but not perfect.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 92,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 92,
+          "reasoning": "The student response effectively names the dynamical process (being pulled into past/future) and explicitly references the 'present moment' and 'happening right now,' which meets the rubric requirements for Contact with the Present Moment, Mindfulness, and Here-and-Now language. The reflection is empathic and invites the client to bring attention to current experience by asking what they are missing in the present. The response avoids distracting content or planning/solution-focused directives. Minor improvement: the reply could be stronger by offering a brief, experiential mindfulness invitation (e.g., grounding, a noticing/breath exercise or a concrete here-and-now sensory prompt) or by using the explicit term 'mindfulness' or 'here-and-now' phrasing to more directly facilitate contact with present experience. Because it is otherwise on-target, the score is high but not perfect.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 92,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates good foundational skills by validating the client's experience and using accurate ACT language ('caught in a loop'). The response effectively names the problem of temporal displacement. However, the response falls short of the rubric requirements in several ways: (1) While the student mentions 'present moment' once, they don't sufficiently emphasize contact with the present or mindfulness practices, (2) The follow-up question, though compassionate, directs attention toward what's being missed rather than building present-moment awareness or suggesting experiential exercises, (3) The response lacks concrete ACT interventions like mindfulness anchoring, values clarification, or defusion techniques that would help the client practice being here-and-now. A stronger response would include an invitation to notice something in the immediate sensory environment or guide the client toward present-moment awareness while exploring their values.",
+          "flags": [
+            "Response leans more toward exploration than intervention—missing opportunity to actively build present-moment contact",
+            "No mindfulness or grounding technique offered despite ACT framework calling for experiential work",
+            "Question risks deepening rumination about what's being missed rather than redirecting to present moment"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:56:41.272Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student effectively focuses on 'Contact with the Present Moment' by directly naming the client's experience of being pulled away from the present ('present moment'). The prompt encourages 'Mindfulness' by inviting awareness of current experiences ('what do you think you're missing most?'). Emphasis on 'Here and Now' is clear through repeated references to happening 'right now.' The response strategically avoids 'Planning' by not discussing future-meeting preparation and sidesteps 'Distraction' by staying anchored to the core issue. One limitation is the absence of an explicit mindfulness technique to deepen present-moment contact.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 80,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response effectively acknowledges the client's struggle with being pulled away from the present moment by past and future concerns, aligning well with the principle of mindfulness and contact with the present moment. The question posed encourages the client to reflect on what they miss, promoting awareness of the here and now. However, the response could be strengthened by explicitly incorporating the language of mindfulness or specifically guiding the client towards an exercise that grounds them in the present moment.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provided a strong response that accurately mirrors the client's experience of being caught between past regrets and future worries. The response successfully adheres to the rubric by directing attention back to the 'here and now' and addressing 'Contact with the Present Moment.' It avoids distractions and planning. The score reflects that while the response is empathetic and safe, it relies on cognitive inquiry ('what do you think') rather than a direct experiential or mindfulness exercise to ground the client in the immediate present. A more advanced ACT intervention might have invited the client to notice current sensations or emotions directly in the room.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:21:32.165Z"
+        }
+      ]
     }
   }
 ]

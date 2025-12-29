@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student demonstrates strong empathy and rapport (validates emotion, normalizes vulnerability, uses supportive language). They explicitly identify and challenge the client's 'should' statement and the self-judgment ('pathetic'), and they use directives/questions (e.g., 'Let's unpack...', 'Can you tell me more...'), meeting the rubric's required elements. They also include an appropriate safety note about severe distress/suicidal thoughts.\n\nWeaknesses: The response drifts into grief counseling/normalization (e.g., 'there's no timeline for healing', 'Everyone experiences loss differently') and uses acceptance-oriented language ('feeling sad...is valid. You're not pathetic; you're grieving.') that resembles DBT Radical Acceptance. Those elements conflict with the instruction to avoid grief counseling and radical acceptance and thus reduce fidelity to a focused CBT approach. To better adhere to CBT, the student should maintain more Socratic questioning, cognitive restructuring, and behavioural/skill-focused interventions rather than normalization and acceptance statements.",
-        "flags": [
-          "Includes_Should_Statement_addressed",
-          "Includes_Imperatives/directives",
-          "Includes_Self-judgment_addressed",
-          "Contains_Grief_Counseling_normalization",
-          "Contains_Radical_Acceptance_style_language"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student demonstrates strong empathy and rapport (validates emotion, normalizes vulnerability, uses supportive language). They explicitly identify and challenge the client's 'should' statement and the self-judgment ('pathetic'), and they use directives/questions (e.g., 'Let's unpack...', 'Can you tell me more...'), meeting the rubric's required elements. They also include an appropriate safety note about severe distress/suicidal thoughts.\n\nWeaknesses: The response drifts into grief counseling/normalization (e.g., 'there's no timeline for healing', 'Everyone experiences loss differently') and uses acceptance-oriented language ('feeling sad...is valid. You're not pathetic; you're grieving.') that resembles DBT Radical Acceptance. Those elements conflict with the instruction to avoid grief counseling and radical acceptance and thus reduce fidelity to a focused CBT approach. To better adhere to CBT, the student should maintain more Socratic questioning, cognitive restructuring, and behavioural/skill-focused interventions rather than normalization and acceptance statements.",
+          "flags": [
+            "Includes_Should_Statement_addressed",
+            "Includes_Imperatives/directives",
+            "Includes_Self-judgment_addressed",
+            "Contains_Grief_Counseling_normalization",
+            "Contains_Radical_Acceptance_style_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 88,

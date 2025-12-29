@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student reply demonstrates strong empathy and validation, normalizes the client's feelings, emphasizes boundaries and consent, offers concrete coping strategies and rehearsal suggestions, and gives safe referrals/resources. These mirror DBT-consistent approaches for supporting a client feeling pressured sexually. \n\nLimitations: The response fails to explicitly include the required DBT FAST skillset or to label the advice as 'self-respect effectiveness' (FAST = Fair, no Apologies, Stick to values, Truthful), which the rubric required. Additionally, the response uses wording like \"aiming for a collaborative solution\" which may imply compromise of boundaries; the rubric explicitly required avoiding compromise. Because the FAST framework and an explicit self-respect effectiveness framing were not presented, and because there is language that could be read as encouraging compromise, the submission only partially meets the rubric.",
-        "flags": [
-          "missing_FAST",
-          "no_explicit_self-respect_effectiveness_label",
-          "language_implies_compromise"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -55,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:06:33.936Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student provided a supportive, empathetic, and structured response that validates the client's feelings and explores the dynamics of the relationship. However, the response fails to meet the specific requirements of the DBT rubric. It completely omitted the required skills: FAST (Fair, Apologies, Stick to values, Truthful) and Self-respect effectiveness. While DEAR MAN was correctly avoided, the suggestion to find a 'collaborative solution' in the context of sexual coercion is problematic and borders on the prohibited 'Compromise,' as one generally should not compromise on bodily autonomy and safety. The response reads like general supportive counseling rather than a targeted DBT intervention focused on building self-respect.",
+          "flags": [
+            "Missing Required Skill: FAST",
+            "Missing Required Skill: Self-respect effectiveness",
+            "Potential Safety Risk: Suggesting compromise/collaboration regarding consent"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:34:25.552Z"
         }
       ]
     }

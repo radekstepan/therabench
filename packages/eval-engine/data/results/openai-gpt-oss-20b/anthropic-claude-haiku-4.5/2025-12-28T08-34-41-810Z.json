@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "The student response is empathic, validating, and offers several concrete impulse-control strategies (breathing, grounding cue, tactile object, internal voice check, brief pause) and encouragement to track episodes and set small goals. These map onto the DBT goals of increasing mindfulness and impulse control and include a clear 'step back' suggestion (pause for one breath) and alternatives to immediate escalation. However, the response fails to explicitly teach or label the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) as required by the rubric. While many elements of STOP are implicitly present, the absence of the explicit skill name and structured walkthrough is a notable omission. Additionally, the reply drifts at times into broader, generic anger-management/self-care suggestions (sleep, exercise, seeking support) that the rubric asked to avoid. The response does not suggest 'time out for kids,' so that prohibition was respected. Overall it is clinically sound and empathic but misses the explicit DBT framing (STOP) and includes some non-DBT-generic advice.",
-        "flags": [
-          "missing_STOP_skill",
-          "contains_generic_anger_management_advice"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -53,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:16:14.362Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong empathy and validation, which are important therapeutic skills. It successfully avoids suggesting time-outs for children. However, it fails to incorporate key DBT components specified in the rubric. The STOP skill, which is crucial for the type of impulse control issue described, is completely missing. While the response offers some strategies that could help with impulse control (breathing, grounding), they aren't framed within DBT theory or explicitly labeled as impulse control techniques. The 'step back' concept is also absent, despite some pause-related suggestions that could have been connected to this DBT element. Additionally, much of the advice leans toward generic anger management (tracking episodes, seeking support, self-care) rather than DBT-specific interventions like Opposite Action, TIP skills, or behavior chain analysis. The response would benefit from more explicit DBT content and techniques.",
+          "flags": [
+            "Missing STOP skill",
+            "Missing explicit impulse control strategies",
+            "Missing step-back concept",
+            "Includes generic anger management advice rather than DBT-specific interventions"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:52:14.966Z"
         }
       ]
     }

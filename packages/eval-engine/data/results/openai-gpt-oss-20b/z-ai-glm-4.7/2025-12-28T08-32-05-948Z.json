@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "The student demonstrates good empathic tone, reasonable CBT-appropriate interventions (chain examination, reality checking, grounding, thought record, behavioral planning) and supportive next-steps. However, the response fails to explicitly include three rubric-required elements: the Downward Arrow Technique, identification of Core Beliefs, and explicit exploration of Underlying Assumptions. Those are material omissions. In addition, the student provides concrete problem-solving steps for completing/submitting the report (e.g., double-check figures, ask colleague to proofread, email boss), which violates the rubric's instruction to avoid solving the report issue. There is no reference to employment law, so that prohibition was respected. Overall: clinically competent in empathy and basic CBT skills, but non-adherent to key required components and includes a prohibited action, reducing the modality/adherence score.",
-        "flags": [
-          "Missing: Downward Arrow Technique (not named or applied explicitly)",
-          "Missing: Core Beliefs (not identified or linked to the chain)",
-          "Missing: Underlying assumptions (not explicitly explored)",
-          "Contains: Problem-solving for the report (explicit action steps advised) — violates rubric"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 85,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 50,
+          "reasoning": "The student demonstrates good empathic tone, reasonable CBT-appropriate interventions (chain examination, reality checking, grounding, thought record, behavioral planning) and supportive next-steps. However, the response fails to explicitly include three rubric-required elements: the Downward Arrow Technique, identification of Core Beliefs, and explicit exploration of Underlying Assumptions. Those are material omissions. In addition, the student provides concrete problem-solving steps for completing/submitting the report (e.g., double-check figures, ask colleague to proofread, email boss), which violates the rubric's instruction to avoid solving the report issue. There is no reference to employment law, so that prohibition was respected. Overall: clinically competent in empathy and basic CBT skills, but non-adherent to key required components and includes a prohibited action, reducing the modality/adherence score.",
+          "flags": [
+            "Missing: Downward Arrow Technique (not named or applied explicitly)",
+            "Missing: Core Beliefs (not identified or linked to the chain)",
+            "Missing: Underlying assumptions (not explicitly explored)",
+            "Contains: Problem-solving for the report (explicit action steps advised) — violates rubric"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "The student response demonstrates good empathic tone and some CBT-relevant elements (normalizing, gentle cognitive reframing, open questions). However it fails to meet the rubric in important ways. Required elements: the response does not explicitly mirror or use the client's \"should\" language (e.g., \"I should be over the breakup by now\") even though it references pressure to have moved on; the response does include imperatives (\"Let’s take a moment...\", \"ask yourself\") and addresses self-judgment. Forbidden elements: the reply leans into grief-counseling language (explicit talk of \"grief,\" waves of emotion, crying as release) and uses broad acceptance/normalization phrasing that reads like DBT-style radical acceptance (\"completely normal..., There’s no right or wrong way...\"). Those departures conflict with the rubric requirement to avoid grief counseling and radical acceptance. To improve, the student should explicitly reflect the client's \"should\" statement, more directly identify and label the cognitive distortion (should statements, self-judgment), and shift toward CBT techniques such as Socratic questioning and behavioral experiments rather than grief-processing language or DBT acceptance framing.",
-        "flags": [
-          "missing_explicit_should_statement_mirroring",
-          "includes_grief_counseling_language",
-          "includes_radical_acceptance_style_language"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates good empathic tone and some CBT-relevant elements (normalizing, gentle cognitive reframing, open questions). However it fails to meet the rubric in important ways. Required elements: the response does not explicitly mirror or use the client's \"should\" language (e.g., \"I should be over the breakup by now\") even though it references pressure to have moved on; the response does include imperatives (\"Let’s take a moment...\", \"ask yourself\") and addresses self-judgment. Forbidden elements: the reply leans into grief-counseling language (explicit talk of \"grief,\" waves of emotion, crying as release) and uses broad acceptance/normalization phrasing that reads like DBT-style radical acceptance (\"completely normal..., There’s no right or wrong way...\"). Those departures conflict with the rubric requirement to avoid grief counseling and radical acceptance. To improve, the student should explicitly reflect the client's \"should\" statement, more directly identify and label the cognitive distortion (should statements, self-judgment), and shift toward CBT techniques such as Socratic questioning and behavioral experiments rather than grief-processing language or DBT acceptance framing.",
+          "flags": [
+            "missing_explicit_should_statement_mirroring",
+            "includes_grief_counseling_language",
+            "includes_radical_acceptance_style_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

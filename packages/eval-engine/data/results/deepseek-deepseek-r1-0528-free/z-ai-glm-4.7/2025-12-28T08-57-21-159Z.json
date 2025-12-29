@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student successfully uses Socratic questioning to encourage the client to reconsider their absolute thinking regarding unemployability due to a resume gap. The student identifies and challenges the overgeneralization by suggesting a more nuanced perspective. While the response is largely adherent to CBT principles, it slightly borders on career counseling by suggesting how to frame the gap positively, though it avoids dictating specific actions or entering a full career counseling domain. Values clarification is not present in the response.",
-        "flags": [
-          "borderline career counseling"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      },
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student successfully uses Socratic questioning to encourage the client to reconsider their absolute thinking regarding unemployability due to a resume gap. The student identifies and challenges the overgeneralization by suggesting a more nuanced perspective. While the response is largely adherent to CBT principles, it slightly borders on career counseling by suggesting how to frame the gap positively, though it avoids dictating specific actions or entering a full career counseling domain. Values clarification is not present in the response.",
+          "flags": [
+            "borderline career counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 85,

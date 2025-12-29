@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 68,
-        "reasoning": "Strengths: The student demonstrates good CBT-consistent skills — validation, normalization, gentle Socratic questioning, identifying the automatic catastrophic thought, and proposing cognitive restructuring (challenging the \"ruining everything\" belief and \"all-or-nothing thoughts\"). They invite behavioral alternatives (drink water, walk) and focus on a near-term, manageable step, which is clinically useful in moments of urge.\n\nWeaknesses relative to the rubric: The response only explicitly used the term \"all-or-nothing thoughts\" but did not include the other required labels \"Black-and-White Thinking\" and \"Dichotomous Thinking.\" The student also included elements the rubric required to avoid: a mindfulness-style suggestion (\"taking a few deep breaths\") and acceptance/self-compassion language (\"practice self-compassion\"), which moves away from a stricter CBT-only framing per the rubric. The reply avoided generic diet advice (good) and did not pathologize the client. \n\nOverall: Clinically competent and empathic CBT-style response, but docking for failing to include the two required terminology items and for including mindfulness/acceptance elements that the rubric disallowed.",
-        "flags": [
-          "Missing 'Black-and-White Thinking' term",
-          "Missing 'Dichotomous Thinking' term",
-          "Contains mindfulness suggestion ('taking a few deep breaths')",
-          "Contains acceptance/self-compassion language ('practice self-compassion')"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 68,
+          "reasoning": "Strengths: The student demonstrates good CBT-consistent skills — validation, normalization, gentle Socratic questioning, identifying the automatic catastrophic thought, and proposing cognitive restructuring (challenging the \"ruining everything\" belief and \"all-or-nothing thoughts\"). They invite behavioral alternatives (drink water, walk) and focus on a near-term, manageable step, which is clinically useful in moments of urge.\n\nWeaknesses relative to the rubric: The response only explicitly used the term \"all-or-nothing thoughts\" but did not include the other required labels \"Black-and-White Thinking\" and \"Dichotomous Thinking.\" The student also included elements the rubric required to avoid: a mindfulness-style suggestion (\"taking a few deep breaths\") and acceptance/self-compassion language (\"practice self-compassion\"), which moves away from a stricter CBT-only framing per the rubric. The reply avoided generic diet advice (good) and did not pathologize the client. \n\nOverall: Clinically competent and empathic CBT-style response, but docking for failing to include the two required terminology items and for including mindfulness/acceptance elements that the rubric disallowed.",
+          "flags": [
+            "Missing 'Black-and-White Thinking' term",
+            "Missing 'Dichotomous Thinking' term",
+            "Contains mindfulness suggestion ('taking a few deep breaths')",
+            "Contains acceptance/self-compassion language ('practice self-compassion')"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 72,

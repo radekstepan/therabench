@@ -22,19 +22,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student's response effectively incorporates elements of Acceptance and Commitment Therapy (ACT) by helping the client to gain awareness of bodily sensations and cognitive processes that accompany moments of doubt. The student uses a thoughtful and empathetic approach to guide the client in identifying thoughts and feelings that coincide with the metaphor of 'driving' and 'paralysis.' However, the response could benefit from being more closely aligned with ACT metaphors, such as 'Passengers on the Bus,' 'Demons on the Boat,' or 'Driving despite the noise.' These metaphors could help reinforce the idea of accepting the presence of doubts (passengers on the bus) rather than attempting to eliminate or argue with them.",
-        "flags": [
-          "missedACTMetaphor"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response effectively incorporates elements of Acceptance and Commitment Therapy (ACT) by helping the client to gain awareness of bodily sensations and cognitive processes that accompany moments of doubt. The student uses a thoughtful and empathetic approach to guide the client in identifying thoughts and feelings that coincide with the metaphor of 'driving' and 'paralysis.' However, the response could benefit from being more closely aligned with ACT metaphors, such as 'Passengers on the Bus,' 'Demons on the Boat,' or 'Driving despite the noise.' These metaphors could help reinforce the idea of accepting the presence of doubts (passengers on the bus) rather than attempting to eliminate or argue with them.",
+          "flags": [
+            "missedACTMetaphor"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

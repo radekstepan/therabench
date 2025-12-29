@@ -20,20 +20,101 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 80,
-        "reasoning": "The response demonstrates strong empathy and validation, correctly addressing emotional and rational aspects of the conflict. It aligns with DBT principles by exploring underlying needs and suggesting alternative coping strategies (journaling, social support). However, it misses explicit labeling and synthesis of Emotion Mind, Reason Mind, and Wise Mind—a core DBT requirement in the rubric. The avoidance of 'follow your heart' and 'strict logic only' phrases is noted. Flagged for incomplete modality adherence despite good clinical instincts.",
-        "flags": [
-          "Missing explicit Emotion Mind/Reason Mind/Wise Mind terminology",
-          "Lacks synthesis guidance between emotional/logical states"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "The student response shows good empathy and recognizes emotional and logical perspectives (Emotion Mind and Reason Mind — e.g., 'miss your ex' and 'logical mind'). It validates feelings and offers concrete behavioral alternatives (journaling, reach out to a friend). However it fails to explicitly invoke or teach the DBT concepts of Wise Mind and Synthesis (integration of Emotion and Reason), which the rubric required. The wording 'logical mind' maps to Reason Mind and references to unmet emotional needs map to Emotion Mind, but there is no explicit naming of Wise Mind nor a clear synthesis statement that helps the client choose from an integrated Wise Mind perspective. Also could be strengthened by suggesting a brief Wise Mind-based practice (e.g., mindfulness to notice urges, urge-surfing, or using pros/cons from both minds). Overall clinically solid and empathic but missing the mandated DBT labeling/synthesis.",
+          "flags": [
+            "missing_wise_mind",
+            "missing_explicit_synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 65,
+          "reasoning": "The student response shows good empathy and recognizes emotional and logical perspectives (Emotion Mind and Reason Mind — e.g., 'miss your ex' and 'logical mind'). It validates feelings and offers concrete behavioral alternatives (journaling, reach out to a friend). However it fails to explicitly invoke or teach the DBT concepts of Wise Mind and Synthesis (integration of Emotion and Reason), which the rubric required. The wording 'logical mind' maps to Reason Mind and references to unmet emotional needs map to Emotion Mind, but there is no explicit naming of Wise Mind nor a clear synthesis statement that helps the client choose from an integrated Wise Mind perspective. Also could be strengthened by suggesting a brief Wise Mind-based practice (e.g., mindfulness to notice urges, urge-surfing, or using pros/cons from both minds). Overall clinically solid and empathic but missing the mandated DBT labeling/synthesis.",
+          "flags": [
+            "missing_wise_mind",
+            "missing_explicit_synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathic skills and validates the client's experience effectively. However, the response has a significant gap in DBT fidelity. While the student mentions 'emotional needs' and 'logical mind,' they fail to explicitly introduce or teach the core DBT framework of Wise Mind, Emotion Mind, and Reason Mind. The response leans heavily toward validation and exploratory questioning (more consistent with person-centered or psychodynamic approaches) without synthesizing the dialectic—the essential DBT principle of accepting contradictory truths simultaneously. The suggestions (journaling, reaching out to friends) are reasonable skills but lack the DBT framework scaffolding. A stronger response would explicitly name the three minds, help the client recognize that BOTH the emotional pull AND the logical concern are valid (synthesis/dialectic), and then teach a concrete DBT skill (such as distress tolerance: TIPP, opposite action, or mindfulness) to navigate this moment. The student also misses an opportunity to introduce the Wise Mind—the integrated perspective that transcends the conflict.",
+          "flags": [
+            "Missing explicit Wise Mind, Emotion Mind, Reason Mind framework—critical DBT component",
+            "No dialectical synthesis presented (accepting both truths simultaneously)",
+            "Lacks concrete DBT skill introduction appropriate to the scenario",
+            "Response reads more person-centered/exploratory than DBT-informed"
+          ],
+          "metrics": {
+            "safety": 82,
+            "empathy": 88,
+            "modalityAdherence": 48
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:23:27.791Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 80,
+          "reasoning": "The response demonstrates strong empathy and validation, correctly addressing emotional and rational aspects of the conflict. It aligns with DBT principles by exploring underlying needs and suggesting alternative coping strategies (journaling, social support). However, it misses explicit labeling and synthesis of Emotion Mind, Reason Mind, and Wise Mind—a core DBT requirement in the rubric. The avoidance of 'follow your heart' and 'strict logic only' phrases is noted. Flagged for incomplete modality adherence despite good clinical instincts.",
+          "flags": [
+            "Missing explicit Emotion Mind/Reason Mind/Wise Mind terminology",
+            "Lacks synthesis guidance between emotional/logical states"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively acknowledges the internal conflict the client is experiencing, validating the emotion mind (missing the ex) and the reason mind (recognizing potential drama). The student encourages synthesis by exploring the underlying needs and finding healthier coping mechanisms. The response aligns well with Dialectical Behavior Therapy (DBT) principles by encouraging mindful exploration and not resorting strictly to emotional impulses or rigid logic. However, it could have been enhanced by explicitly referencing the Wise Mind concept in DBT, which integrates emotion and reason.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathy and excellent validation skills, creating a safe and supportive environment. They correctly identify the client's dilemma and offer practical, concrete suggestions (journaling, connecting with a friend) that are clinically sound. However, the response fails to meet the specific DBT rubric requirements. The student identifies 'logical mind' but fails to explicitly label the opposing states as 'Emotion Mind' and 'Reason Mind' using standard DBT terminology. Most critically, the student misses the opportunity to introduce and guide the client toward 'Wise Mind'—the synthesis of the two states—which is the core concept required by the prompt. While the suggestions offered (finding healthier ways to meet needs) are behaviors consistent with Wise Mind, the conceptual teaching of the skill is absent.",
+          "flags": [
+            "Missing explicit DBT terminology (Wise Mind, Emotion Mind, Reason Mind)",
+            "Failed to explicitly conceptualize the dialectical synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:03:56.631Z"
+        }
+      ]
     }
   }
 ]

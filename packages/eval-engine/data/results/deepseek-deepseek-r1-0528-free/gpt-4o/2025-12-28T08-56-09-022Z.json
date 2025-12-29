@@ -17,19 +17,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student effectively engages the client using the CBT framework by acknowledging the client's cognitive dissonance and encouraging them to explore the evidence supporting their achievements. The response avoids simplistic self-esteem affirmations and instead focuses on helping the client challenge their automatic negative thoughts and disqualifying the positive. The inquiry about how a colleague might react creates cognitive distance and promotes perspective-taking, which are effective techniques in CBT. However, while the response is comprehensive, it could further benefit from a more structured examination of minimization as a cognitive distortion.",
-        "flags": [
-          "minimization"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student effectively engages the client using the CBT framework by acknowledging the client's cognitive dissonance and encouraging them to explore the evidence supporting their achievements. The response avoids simplistic self-esteem affirmations and instead focuses on helping the client challenge their automatic negative thoughts and disqualifying the positive. The inquiry about how a colleague might react creates cognitive distance and promotes perspective-taking, which are effective techniques in CBT. However, while the response is comprehensive, it could further benefit from a more structured examination of minimization as a cognitive distortion.",
+          "flags": [
+            "minimization"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

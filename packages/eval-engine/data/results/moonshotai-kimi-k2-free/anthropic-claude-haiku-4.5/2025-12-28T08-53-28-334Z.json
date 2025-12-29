@@ -24,24 +24,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 58,
-        "reasoning": "The student's response demonstrates strong empathy and validates the client's feelings, and it clearly affirms boundaries and the client's right to refuse—meeting the 'Boundaries' and 'Self-respect effectiveness' intentions in spirit. However, it fails to explicitly include or teach the DBT-specific 'FAST' framework (Fair, Apologies (don’t over-apologize), Stick to values, Truthful), which the rubric required. The reply also omits any basic safety assessment or safety planning for sexual coercion/possible abuse, which is important in this scenario. The response correctly avoids DEAR MAN and any suggestion of compromise. To meet the rubric, the student should explicitly introduce FAST and pair it with concrete, DBT-consistent coaching (e.g., short scripts, role-plays, practicing 'no' using FAST principles), and should also ask about immediate safety and options/resources if coercion continues.",
-        "flags": [
-          "missing_FAST",
-          "addresses_boundaries",
-          "includes_self-respect_language",
-          "no_DEAR_MAN",
-          "no_compromise",
-          "no_safety_assessment_or_plan"
-        ],
-        "metrics": {
-          "safety": 45,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -60,6 +43,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:55:51.329Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a clinically sound and empathetic response that prioritized the client's safety and validated their feelings. They correctly avoided suggesting compromise and did not use DEAR MAN. However, the rubric explicitly required the inclusion of the specific DBT skill acronym 'FAST' (Fair, Apologies, Stick to values, Truthful) and the term 'Self-Respect Effectiveness.' While the student alluded to the concepts of self-respect and boundaries, they failed to explicitly name or teach the required FAST skill framework, which is necessary for technical modality adherence in this context.",
+          "flags": [
+            "Missing specific acronym: FAST",
+            "Missing terminology: Self-Respect Effectiveness"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:16:59.898Z"
         }
       ]
     }

@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, normalizing, and uses good open-ended questions to increase awareness of antecedent sensations and thoughts. The suggestion of exploring a brief pause to choose differently is conceptually aligned with ACT processes (mindful noticing and increasing behavioral flexibility). The response avoids forbidden content (no addiction counseling or nicotine replacement recommendations).\n\nLimitations (why score is moderate to low): The reply does not explicitly use or teach core ACT framing required by the rubric. It never introduces The Choice Point terminology or structure, does not distinguish 'hooked' versus 'unhooked' responses, and does not operationalize or elicit 'towards' versus 'away' moves (values-directed versus avoidance-motivated actions). Because the rubric required those explicit elements, the response fails to meet modality-specific expectations despite being clinically appropriate in a general sense. Also the student missed an opportunity to link noticing to values-based action and to provide a brief experiential prompt consistent with ACT (labeling urges as urges, identifying what matters, and choosing a small committed step).",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "no_prohibited_content"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 80,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student response is empathic, normalizing, and uses good open-ended questions to increase awareness of antecedent sensations and thoughts. The suggestion of exploring a brief pause to choose differently is conceptually aligned with ACT processes (mindful noticing and increasing behavioral flexibility). The response avoids forbidden content (no addiction counseling or nicotine replacement recommendations).\n\nLimitations (why score is moderate to low): The reply does not explicitly use or teach core ACT framing required by the rubric. It never introduces The Choice Point terminology or structure, does not distinguish 'hooked' versus 'unhooked' responses, and does not operationalize or elicit 'towards' versus 'away' moves (values-directed versus avoidance-motivated actions). Because the rubric required those explicit elements, the response fails to meet modality-specific expectations despite being clinically appropriate in a general sense. Also the student missed an opportunity to link noticing to values-based action and to provide a brief experiential prompt consistent with ACT (labeling urges as urges, identifying what matters, and choosing a small committed step).",
+          "flags": [
+            "missing_choice_point",
+            "missing_hooked_vs_unhooked",
+            "missing_towards_vs_away",
+            "no_prohibited_content"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 80,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

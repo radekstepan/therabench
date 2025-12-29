@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 60,
-        "reasoning": "The student's response demonstrates empathy by acknowledging the client's intense emotions and the fear of losing control. However, the response lacks adherence to the DBT crisis survival strategy of TIPP (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation), which is necessary for managing physiological arousal effectively. The student asks the client to slow things down and provide a cognitive recount of events preceding the emotional surge, which veers towards cognitive analysis instead of employing immediate crisis management techniques. Including techniques such as Temperature/Ice Dive or Paced Breathing would better align with the requirements for addressing the immediate physiological arousal.",
-        "flags": [
-          "omission of TIPP strategies",
-          "cognitive analysis"
-        ],
-        "metrics": {
-          "safety": 70,
-          "empathy": 80,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student's response demonstrates empathy by acknowledging the client's intense emotions and the fear of losing control. However, the response lacks adherence to the DBT crisis survival strategy of TIPP (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation), which is necessary for managing physiological arousal effectively. The student asks the client to slow things down and provide a cognitive recount of events preceding the emotional surge, which veers towards cognitive analysis instead of employing immediate crisis management techniques. Including techniques such as Temperature/Ice Dive or Paced Breathing would better align with the requirements for addressing the immediate physiological arousal.",
+          "flags": [
+            "omission of TIPP strategies",
+            "cognitive analysis"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 80,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

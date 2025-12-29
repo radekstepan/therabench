@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "The student's response is empathic, validating, and offers useful behavioral suggestions (recognizing physical signs, pausing, deep breathing, self-compassion). It avoids the prohibited interventions (does not suggest a 'time out' for kids and does not rely on generic 'anger management' platitudes). However, it fails to explicitly include the required DBT elements from the rubric: the STOP skill is not named or described (the response only refers to a generic 'pause button'), 'impulse control' is implied but not explicitly addressed as a skill or strategy, and the directive to 'step back' is not clearly presented using DBT language or concrete steps (e.g., take a step back physically/mentally as in DBT). Because the rubric required explicit inclusion of STOP, impulse control, and step back, the response does not meet those mandatory criteria.",
-        "flags": [
-          "missing_STOP_skill",
-          "missing_explicit_impulse_control",
-          "missing_explicit_step_back"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 92,
-          "modalityAdherence": 38
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -55,6 +41,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:15:27.609Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student response demonstrates strong empathy and validation, creating a safe and non-judgmental space for the client. The normalization of the parent's experience and the focus on 'survival mode' are clinically sound. However, the response fails to adhere to the specific DBT requirements outlined in the rubric. The prompt explicitly requested the inclusion of the STOP skill and concepts of 'impulse control' and 'stepping back' within a DBT framework. The student suggests generic 'pause' techniques and 'deep breathing' but fails to explicitly introduce or utilize the STOP skill (Stop, Take a step back, Observe, Proceed mindfully), which is the core DBT intervention for this scenario. The response leans more towards generic supportive counseling than strict DBT skills coaching, resulting in a lower modality adherence score.",
+          "flags": [
+            "Modality Adherence: Missing explicit instruction on the STOP skill",
+            "Specific Content: Failed to explicitly include 'Step back' terminology as requested"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:17:39.021Z"
         }
       ]
     }

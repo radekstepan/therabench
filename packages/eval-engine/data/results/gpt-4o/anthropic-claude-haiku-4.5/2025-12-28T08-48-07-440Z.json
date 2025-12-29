@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 84,
-        "reasoning": "Strengths: The student provided clear validation (“feeling really conflicted…that’s completely understandable”), invited exploration with open questions, and avoided taking sides. The response points toward balance by acknowledging both parental love and the student's experience of control, which aligns with dialectical thinking. \n\nWeaknesses: The response did not explicitly use a clear dialectical/Both-and statement that reconciles the opposing truths (for example, “You can both feel controlled AND know they care about you”), nor did it explicitly invoke or model the ‘walking the middle path’ language/technique. Because the rubric required explicit inclusion of dialectics, Both/And thinking, and Walking the Middle Path, the omission of clear, concrete dialectical phrasing and an explicit middle-path framing reduces modality adherence. Also the student could strengthen the response by offering a sample dialectical validation or a concrete middle-path suggestion to model the skill for the client.",
-        "flags": [
-          "missing_explicit_both_and_statement",
-          "missing_explicit_walking_the_middle_path_language",
-          "did_not_provide_a_concrete_dialectical_example"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -53,6 +39,24 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:31:38.532Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 82,
+          "reasoning": "The student provides a safe, empathetic, and neutral response that avoids taking sides. They effectively validate the client's internal conflict and use a dialectical structure ('on one hand... yet'). However, the response only partially meets the specific DBT rubric requirements. While the student touches on dialectics, they miss the opportunity to explicitly apply 'Walking the Middle Path' to synthesize the client's extreme thinking (monsters vs. ungrateful brat). Instead of helping the client hold the truth of both perspectives simultaneously (Both/And), the student shifts focus to defining 'healthy love,' which is less aligned with the dialectical synthesis required by the prompt.",
+          "flags": [
+            "Missed explicit synthesis of the dialectic"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:38:58.054Z"
         }
       ]
     }

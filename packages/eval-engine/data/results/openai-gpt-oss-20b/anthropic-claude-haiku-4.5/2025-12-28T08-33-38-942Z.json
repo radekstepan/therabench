@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 85,
-        "reasoning": "The student response includes all three required elements: a clear 'Check the facts' section (facts vs assumptions), emotion regulation strategies (naming emotions, SUDS scale question, grounding/breathing exercise), and attention to interpretation vs. reality (alternative explanations, reflect after outcome). It avoids the CBT label 'mind reading.' However, the response contains several reassuring statements (e.g., 'Your worth isn't tied to one text,' 'You’re not alone in this,' 'This doesn’t mean you’re “just making it up”') that the rubric required avoiding. The intervention leans somewhat toward CBT-style cognitive restructuring ('check the evidence') rather than explicitly DBT-consistent dialectical validation and behavioral chain analysis, so modality adherence is good but not perfect. Overall clinically solid and empathic, but deducting points for reassurance and some modality drift.",
-        "flags": [
-          "reassurance_statements",
-          "minor_modality_drift_to_CBT"
-        ],
-        "metrics": {
-          "safety": 98,
-          "empathy": 92,
-          "modalityAdherence": 78
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -52,6 +39,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:15:47.487Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student response is excellent and adheres strictly to the rubric. It effectively implements the DBT skill 'Check the Facts' by clearly distinguishing between the event (no text) and the interpretation (she is angry). The response includes Emotion Regulation strategies (grounding, identifying intensity) and addresses Interpretation vs. Reality by listing alternative explanations. Crucially, the student avoids Mind Reading by challenging the client's assumption rather than validating it, and avoids Reassurance by focusing on the client's coping mechanisms and worth rather than guaranteeing the friend's reaction. The response is empathetic, structured, and safe.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:49:44.166Z"
         }
       ]
     }

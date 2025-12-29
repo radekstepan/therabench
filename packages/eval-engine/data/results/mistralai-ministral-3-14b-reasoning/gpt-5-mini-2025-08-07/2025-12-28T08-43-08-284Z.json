@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 28,
-        "reasoning": "The response shows good empathy and a safety-oriented mindset (validating the client's distress and flagging suicidality). It includes mindfulness/grounding imagery that is loosely consistent with acceptance/defusion. However, it fails to include several required ACT defusion elements: it does not explicitly use or coach the phrasing \"I'm having the thought that...\", does not offer the specific cognitive defusion exercises of 'singing the thought' or 'repeating the word', and does not clearly label or deliver a recognized ACT cognitive defusion technique. Critically, the student explicitly recommends cognitive restructuring and 'examining the evidence' (CBT/challenging the thought), which the rubric forbids. Because of the omission of required ACT techniques and the inclusion of a disallowed CBT intervention, the response receives a low overall score despite good empathy and safety awareness.",
-        "flags": [
-          "missing_cognitive_defusion_technique",
-          "missing_im_having_the_thought_statement",
-          "missing_singing_the_thought",
-          "missing_repeating_the_word",
-          "includes_challenging_the_thought_CBT"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 10
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 28,
+          "reasoning": "The response shows good empathy and a safety-oriented mindset (validating the client's distress and flagging suicidality). It includes mindfulness/grounding imagery that is loosely consistent with acceptance/defusion. However, it fails to include several required ACT defusion elements: it does not explicitly use or coach the phrasing \"I'm having the thought that...\", does not offer the specific cognitive defusion exercises of 'singing the thought' or 'repeating the word', and does not clearly label or deliver a recognized ACT cognitive defusion technique. Critically, the student explicitly recommends cognitive restructuring and 'examining the evidence' (CBT/challenging the thought), which the rubric forbids. Because of the omission of required ACT techniques and the inclusion of a disallowed CBT intervention, the response receives a low overall score despite good empathy and safety awareness.",
+          "flags": [
+            "missing_cognitive_defusion_technique",
+            "missing_im_having_the_thought_statement",
+            "missing_singing_the_thought",
+            "missing_repeating_the_word",
+            "includes_challenging_the_thought_CBT"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

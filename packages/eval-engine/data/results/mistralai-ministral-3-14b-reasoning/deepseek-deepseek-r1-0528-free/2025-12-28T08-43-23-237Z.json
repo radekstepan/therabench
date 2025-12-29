@@ -23,19 +23,113 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response effectively targets key ACT components: It identifies experiential avoidance ('setting a very high standard... until anxiety-free'), challenges the control agenda ('the key isn't necessarily to eliminate anxiety'), and promotes willingness ('move forward despite it'). The suggestions align with ACT by emphasizing values-based action and tolerance of discomfort. However, it violates rubric restrictions by referencing 'gradual exposure'—a CBT/exposure therapy technique—which slightly lowers the modality adherence score. Empathy and validation are well executed.",
-        "flags": [
-          "Use of 'gradual exposure' violates rubric prohibition against exposure therapy/CBT framing"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "Strengths: The student response is empathic, normalizing, collaborative, and offers small, manageable steps. It encourages tolerating anxiety rather than eliminating it, which aligns with acceptance-based work.\n\nMajor problems vs. rubric: The response fails to include the three required ACT constructs explicitly: \"Experiential Avoidance\", \"Control Agenda\", and \"Willingness.\" Instead it uses CBT/exposure language—specifically the phrase \"Gradual exposure\"—which the rubric forbids. Because of that CBT framing, modality adherence to ACT is poor. The response also did not explicitly avoid suggestions that could be interpreted as confidence-building strategies (the student restates the client’s desire for \"completely confident\" and offers ‘‘reframing expectations,’’ which can drift toward confidence-focused goals). \n\nClinical suggestions: Replace CBT/exposure phrasing with ACT-consistent language (e.g., name experiential avoidance and a control agenda, invite willingness to contact anxiety in service of valued actions, and suggest committed, values-guided steps rather than \"exposure\"). Keep the empathic tone and small-step approach, but reframe steps as experiments in willingness/committed action rather than exposure exercises. \n\nOverall: Empathic and useful in many ways, but it does not meet the rubric requirements for ACT-specific terminology and (worse) includes prohibited CBT/exposure framing, so modality adherence is low.",
+          "flags": [
+            "Missing required ACT terms: Experiential Avoidance",
+            "Missing required ACT terms: Control Agenda",
+            "Missing required ACT terms: Willingness",
+            "Includes prohibited CBT/exposure framing: \"Gradual exposure\"",
+            "Potential drift toward confidence-building framing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 30,
+          "reasoning": "Strengths: The student response is empathic, normalizing, collaborative, and offers small, manageable steps. It encourages tolerating anxiety rather than eliminating it, which aligns with acceptance-based work.\n\nMajor problems vs. rubric: The response fails to include the three required ACT constructs explicitly: \"Experiential Avoidance\", \"Control Agenda\", and \"Willingness.\" Instead it uses CBT/exposure language—specifically the phrase \"Gradual exposure\"—which the rubric forbids. Because of that CBT framing, modality adherence to ACT is poor. The response also did not explicitly avoid suggestions that could be interpreted as confidence-building strategies (the student restates the client’s desire for \"completely confident\" and offers ‘‘reframing expectations,’’ which can drift toward confidence-focused goals). \n\nClinical suggestions: Replace CBT/exposure phrasing with ACT-consistent language (e.g., name experiential avoidance and a control agenda, invite willingness to contact anxiety in service of valued actions, and suggest committed, values-guided steps rather than \"exposure\"). Keep the empathic tone and small-step approach, but reframe steps as experiments in willingness/committed action rather than exposure exercises. \n\nOverall: Empathic and useful in many ways, but it does not meet the rubric requirements for ACT-specific terminology and (worse) includes prohibited CBT/exposure framing, so modality adherence is low.",
+          "flags": [
+            "Missing required ACT terms: Experiential Avoidance",
+            "Missing required ACT terms: Control Agenda",
+            "Missing required ACT terms: Willingness",
+            "Includes prohibited CBT/exposure framing: \"Gradual exposure\"",
+            "Potential drift toward confidence-building framing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student's response demonstrates solid empathy and validates the client's experience, but it significantly misaligns with ACT principles and the stated rubric requirements. While the response mentions 'moving forward despite anxiety' and 'tolerating it,' it frames this primarily through a CBT/exposure therapy lens rather than an ACT framework. The response lacks explicit identification and naming of experiential avoidance as the core issue, doesn't adequately address the control agenda ('completely confident and anxiety-free'), and fails to introduce willingness as a central therapeutic construct. The suggestions for 'gradual exposure' and 'small, manageable steps' are classic CBT language and contradict the rubric's directive to avoid exposure therapy framing. Additionally, the phrase 'confidence building' implications appear in the reframing section. The response would benefit from stronger ACT language around values (why attend?), acceptance of anxiety as workable, and commitment to valued action regardless of internal state. The empathy and validation are genuine strengths, but the modality adherence is weak.",
+          "flags": [
+            "Uses exposure therapy framing ('gradual exposure,' 'small manageable steps') - explicitly contraindicated in rubric",
+            "Does not adequately name experiential avoidance as the presenting problem",
+            "Control agenda not sufficiently addressed or challenged",
+            "Willingness is mentioned implicitly but not developed as a key therapeutic concept",
+            "Missing explicit values clarification work (typical ACT intervention)",
+            "Frames anxiety reduction as the goal rather than committed action despite anxiety"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 82,
+            "modalityAdherence": 48
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:49:05.752Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response effectively targets key ACT components: It identifies experiential avoidance ('setting a very high standard... until anxiety-free'), challenges the control agenda ('the key isn't necessarily to eliminate anxiety'), and promotes willingness ('move forward despite it'). The suggestions align with ACT by emphasizing values-based action and tolerance of discomfort. However, it violates rubric restrictions by referencing 'gradual exposure'—a CBT/exposure therapy technique—which slightly lowers the modality adherence score. Empathy and validation are well executed.",
+          "flags": [
+            "Use of 'gradual exposure' violates rubric prohibition against exposure therapy/CBT framing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and a general understanding of ACT principles, particularly in emphasizing the importance of moving forward despite anxiety. However, it includes elements that could be misinterpreted as exposure therapy (e.g., gradual exposure) and confidence building (e.g., reframing expectations to just show up), which are more aligned with CBT rather than ACT principles. Although the student addresses experiential avoidance and encourages willingness to experience anxiety, the response could have better avoided framing anxiety as something to be overcome through confidence or exposure strategies.",
+          "flags": [
+            "ExposureTherapyFraming",
+            "ConfidenceBuilding"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates strong empathy and rapport building, effectively validating the client's struggle. However, it fails significantly in modality adherence to ACT (Acceptance and Commitment Therapy). The response relies heavily on CBT techniques: 'Gradual exposure' is explicitly suggested, and the focus on 'Reframing expectations' and 'Grounding techniques' aligns with CBT symptom management rather than ACT's psychological flexibility framework. Crucially, the response misses the required ACT concepts of Experiential Avoidance and the Control Agenda. While it implicitly touches on the idea of moving forward despite anxiety (hinting at Willingness), it frames it as 'tolerating' discomfort to achieve a goal, which still supports a control agenda rather than accepting the presence of anxiety as a valid experience. The prompt specifically warned against Exposure therapy (CBT framing), which the student utilized.",
+          "flags": [
+            "Used CBT Gradual Exposure framing",
+            "Missed Experiential Avoidance",
+            "Missed Control Agenda",
+            "Missed explicit ACT Willingness framework"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:07:45.156Z"
+        }
+      ]
     }
   }
 ]

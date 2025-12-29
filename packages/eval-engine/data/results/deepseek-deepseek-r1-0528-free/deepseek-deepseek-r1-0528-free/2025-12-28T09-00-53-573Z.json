@@ -20,19 +20,89 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 90,
-        "reasoning": "The student demonstrates strong DBT adherence through multiple key elements: 1) Explicitly challenges black-and-white thinking ('reality likely somewhere in between'), embodying dialectics and Both/And thinking. 2) Validates extensively ('feelings make complete sense', 'shows deep care', 'emotional maturity') while naming the emotional tension. 3) Focuses on both intentions (parents' love) and impacts (client's feeling controlled), Walking the Middle Path. 4) Questions scaffold dialectical exploration (#1 specifics, #2 ideals vs reality, #3 mutual honoring of needs). 5) Successfully avoids CBT terminology and maintains neutral stance ('not about blaming anyone'). Minor deduction: Could explicitly name 'dialectical tension' and slightly stronger emphasis on synthesizing opposites.",
-        "flags": [
-          "Minor opportunity: Explicitly name 'dialectical tension'"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 93
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 92,
+          "reasoning": "The student response demonstrates strong DBT-consistent practice: it begins with clear validation, avoids taking sides, and frames the client's experience dialectically by acknowledging opposing truths (parents' stated intent vs. the impact on the client). The reply uses both/and language (honoring autonomy and care) and invites exploration of concrete examples and values — consistent with Walking the Middle Path. It does not use CBT jargon like 'black-and-white thinking' and explicitly rejects blame. Minor improvements: the response could more explicitly label the dialectical stance or name DBT-relevant skills (e.g., mindfulness, DEAR MAN for interpersonal effectiveness, or validation levels) and could offer a brief in-session skill coaching step to move from understanding to action. Overall, this is a strong, empathic, and clinically appropriate DBT-style response.",
+          "flags": [
+            "no_explicit_labeling_of_dialectics_or_DB T_skills",
+            "no_brief_skill_coaching_or_action_step_provided"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This is a strong DBT-informed response that demonstrates sophisticated understanding of dialectics and validation. The student excellently identifies the client's black-and-white thinking ('monsters' vs. 'ungrateful brat') and explicitly names this as a dialectical tension to be explored rather than resolved. The response validates the client's emotional experience while simultaneously introducing both/and thinking—acknowledging that parents can have loving intentions AND create controlling impact. The reframe ('reality is likely somewhere in between') is a clear application of the middle path. The three exploratory questions are concrete, non-judgmental, and move toward acceptance and change simultaneously (core DBT principles). The closing statement is particularly strong, normalizing the client's conflict as emotional maturity rather than pathology. The tone throughout avoids taking sides while maintaining genuine empathy. Minor areas for enhancement: could have been slightly more explicit about using dialectical language itself, and could have mentioned specific DBT skills (e.g., DEAR MAN for communication with parents), though this may be appropriately timed for later in therapy.",
+          "flags": [],
+          "metrics": {
+            "safety": 92,
+            "empathy": 89,
+            "modalityAdherence": 86
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:06:36.925Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 90,
+          "reasoning": "The student demonstrates strong DBT adherence through multiple key elements: 1) Explicitly challenges black-and-white thinking ('reality likely somewhere in between'), embodying dialectics and Both/And thinking. 2) Validates extensively ('feelings make complete sense', 'shows deep care', 'emotional maturity') while naming the emotional tension. 3) Focuses on both intentions (parents' love) and impacts (client's feeling controlled), Walking the Middle Path. 4) Questions scaffold dialectical exploration (#1 specifics, #2 ideals vs reality, #3 mutual honoring of needs). 5) Successfully avoids CBT terminology and maintains neutral stance ('not about blaming anyone'). Minor deduction: Could explicitly name 'dialectical tension' and slightly stronger emphasis on synthesizing opposites.",
+          "flags": [
+            "Minor opportunity: Explicitly name 'dialectical tension'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 93
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively utilizes the core principles of Dialectical Behavior Therapy (DBT), including dialectics and 'both/and' thinking. The student acknowledges the client's experience of being caught between two extremes and suggests that the truth might be a middle path, demonstrating an appreciation for dialectical thinking. The response also validates the client's feelings by recognizing the emotional pain of their situation and refrains from taking sides or engaging in black-and-white thinking. The student explores potential solutions through open-ended questions rather than making assumptions, encouraging collaborative problem-solving and understanding. The only reason for not awarding a perfect score is a slight opportunity to more explicitly name 'walking the middle path' to align with DBT language.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively utilizes the core principles of Dialectical Behavior Therapy (DBT), including dialectics and 'both/and' thinking. The student acknowledges the client's experience of being caught between two extremes and suggests that the truth might be a middle path, demonstrating an appreciation for dialectical thinking. The response also validates the client's feelings by recognizing the emotional pain of their situation and refrains from taking sides or engaging in black-and-white thinking. The student explores potential solutions through open-ended questions rather than making assumptions, encouraging collaborative problem-solving and understanding. The only reason for not awarding a perfect score is a slight opportunity to more explicitly name 'walking the middle path' to align with DBT language.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 90,
+          "reasoning": "The student response is excellent and adheres strongly to DBT principles. The student effectively validates the client's emotional experience ('Your feelings make complete sense') while immediately identifying the dialectical dilemma (seeing parents as monsters vs. self as ungrateful). The response successfully avoids the CBT trap of labeling the client's thoughts as 'black-and-white distortions' and instead frames them as 'painful extremes' to find the synthesis (Walking the Middle Path). The student also masterfully highlights the dialectic of intention vs. impact and proposes an exploration that honors both the client's autonomy and the parents' care (Both/And thinking).",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:03:19.852Z"
+        }
+      ]
     }
   }
 ]

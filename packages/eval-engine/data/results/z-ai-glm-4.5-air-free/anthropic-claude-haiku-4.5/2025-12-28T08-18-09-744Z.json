@@ -24,24 +24,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student explicitly acknowledges the client's 'should' thought (\"The idea that you 'should be over it'...\"), addresses self-judgment directly (\"there is nothing pathetic about what you're experiencing\"), and uses an imperative (“Be gentle with yourself”). Those elements satisfy the rubric's required inclusions. The response is empathic and validating, which is appropriate for building rapport.\n\nWeaknesses (why score is reduced): The reply leans toward normalization and consolation (e.g., \"Crying is a natural emotional response to loss\", \"Healing isn't about reaching a finish line\") rather than using CBT-consistent interventions such as Socratic questioning, cognitive restructuring, behavioral experiments, or explicit reattribution of the maladaptive 'should' belief. That makes the reply read more like grief counseling/comforting and contains acceptance-oriented language that borders on DBT Radical Acceptance (e.g., \"there is nothing pathetic...\", \"Be gentle with yourself\", \"Healing isn't about reaching a finish line\"). Because the rubric required avoiding grief counseling and Radical Acceptance, the student response partially violates the avoidance requirement. Overall: good empathy and identification of key cognitive content, but insufficient CBT technique and contains disallowed elements.",
-        "flags": [
-          "Includes 'should' statement (identified): \"The idea that you 'should be over it'...\"",
-          "Uses an imperative: \"Be gentle with yourself.\"",
-          "Addresses self-judgment: \"there is nothing pathetic about what you're experiencing.\"",
-          "Contains grief-normalizing language (approaches grief counseling): \"Crying is a natural emotional response to loss.\"",
-          "Includes acceptance-style language bordering on DBT Radical Acceptance: \"Healing isn't about reaching a finish line; it's about gradually finding ways to integrate this experience and move forward at your own pace.\"",
-          "Lacks CBT-specific techniques (Socratic questions, cognitive restructuring, behavioral experiments)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -60,6 +43,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:22:41.627Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 78,
+          "reasoning": "The student provides a supportive and empathetic response that directly addresses the client's self-judgment ('pathetic') and 'should statements.' The validation creates a strong therapeutic alliance. However, the response violates the rubric constraint to avoid Grief Counseling. The student focuses on the 'healing process,' 'integration of experience,' and normalizing the timeline, which are hallmarks of grief therapy rather than CBT. A strict CBT response would prioritize cognitive restructuring via Socratic questioning to challenge the evidence behind the thought 'normal people don't cry,' rather than offering reassurance or counseling on the nature of healing.",
+          "flags": [
+            "Modality Mismatch: Utilizes Grief Counseling techniques (normalization, integration, healing narrative)",
+            "Lacks Socratic Questioning/Cognitive Restructuring"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:59:26.698Z"
         }
       ]
     }

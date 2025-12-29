@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization of vulnerability, and open curiosity—appropriate for ACT-informed work. It acknowledges the client's values (wanting to be a supportive partner) and offers a collaborative path forward. The response avoids the prohibited items: it does not tell the client to wait for fear to subside, nor does it provide concrete communication-skills coaching.\n\nLimitations vs. rubric: The response falls short on explicitly prompting committed action and values-congruent behavior. While the student notes the client's intention and says \"we can work on building your confidence\" and \"finding ways to connect that feel manageable,\" they do not explicitly invite or encourage action in the presence of fear (e.g., committing to ask despite being afraid, or small values-driven experiments). There is no clear behavioral activation or framing of taking a valued action while accepting fear. Because the rubric required explicit inclusion of committed action, values-congruent behavior, and taking action with fear, this response only partially meets those criteria.\n\nOverall: clinically empathic and safe, but missing explicit ACT-consistent prompts to take values-guided committed action in the presence of fear.",
-        "flags": [
-          "missing_committed_action",
-          "missing_explicit_values-congruent_instruction",
-          "does_not_encourage_action_despite_fear"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization of vulnerability, and open curiosity—appropriate for ACT-informed work. It acknowledges the client's values (wanting to be a supportive partner) and offers a collaborative path forward. The response avoids the prohibited items: it does not tell the client to wait for fear to subside, nor does it provide concrete communication-skills coaching.\n\nLimitations vs. rubric: The response falls short on explicitly prompting committed action and values-congruent behavior. While the student notes the client's intention and says \"we can work on building your confidence\" and \"finding ways to connect that feel manageable,\" they do not explicitly invite or encourage action in the presence of fear (e.g., committing to ask despite being afraid, or small values-driven experiments). There is no clear behavioral activation or framing of taking a valued action while accepting fear. Because the rubric required explicit inclusion of committed action, values-congruent behavior, and taking action with fear, this response only partially meets those criteria.\n\nOverall: clinically empathic and safe, but missing explicit ACT-consistent prompts to take values-guided committed action in the presence of fear.",
+          "flags": [
+            "missing_committed_action",
+            "missing_explicit_values-congruent_instruction",
+            "does_not_encourage_action_despite_fear"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

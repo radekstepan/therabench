@@ -23,20 +23,109 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response excellently addresses ACT core concepts: It explicitly identifies experiential avoidance ('Your desire to avoid discomfort'), challenges the control agenda ('waiting for confidence to appear magically'), and cultivates willingness ('practiced building it through manageable exposure... developing tools to be with the discomfort'). However, it violates two 'Must Avoid' criteria: 1) It uses the CBT term 'exposure' explicitly and implies exposure therapy structure (graduated steps), 2) It focuses on 'confidence building' as the mechanism of change. Despite these flaws, the response demonstrates strong empathy, safety considerations, and effective framing of willingness over experiential control.",
-        "flags": [
-          "Used forbidden term: 'exposure'",
-          "Engaged in confidence building framing (contradicts rubric)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 22,
+          "reasoning": "The student response is empathic and validates the client's experience, normalizes anxiety, and suggests distress-tolerance strategies (grounding, mindful breathing). However it fails to include the three required ACT-specific constructs: it does not use or explicitly address 'experiential avoidance' (only the more general term 'avoidance' is used), it does not mention or frame a 'control agenda', and it does not introduce or name 'willingness'. Instead, the student frames the plan in CBT exposure terms (e.g., \"practiced building it through manageable exposure\", \"start by... texting a friend... brief video call... before working toward gatherings\"), which violates the instruction to avoid exposure therapy/CBT framing. The student also repeatedly references 'building confidence' and 'aiming to eliminate anxiety' or 'feel completely confident', which runs counter to the rubric requirement to avoid 'confidence building' framing. In sum: strong empathy and practical suggestions, but poor modality adherence to the ACT rubric — missing required ACT constructs and including forbidden CBT/exposure and confidence-building language.",
+          "flags": [
+            "missing_experiential_avoidance",
+            "missing_control_agenda",
+            "missing_willingness",
+            "used_exposure_therapy_framing",
+            "used_confidence_building"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 90,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathy and validates the client's experience effectively, which creates safety and rapport. However, there are significant departures from ACT principles that undermine the response's theoretical integrity. While the student mentions 'being with discomfort,' the overall framing leans toward exposure therapy and confidence-building rather than ACT's core focus on values-based action and willingness. The response adequately identifies experiential avoidance (the refusal to attend until anxiety-free) but doesn't fully operationalize the control agenda—the client's demand for certainty and comfort before action. The student frames the intervention around 'building confidence through manageable exposure' and 'developing tools to manage discomfort,' which are CBT/exposure-based constructs. ACT would more directly address the control agenda itself, explore the client's values around social connection, and invite willingness to act despite anxiety—not as stepping stones toward reduced anxiety, but as inherently meaningful. The phrase 'courage to cope, even when imperfect' gestures toward acceptance but doesn't clearly distinguish between ACT's values-based commitment and traditional confidence-building. The intervention would benefit from clearer separation of the anxiety from the capacity to act, and explicit exploration of what relationships or social connection mean to the client's life direction.",
+          "flags": [
+            "Exposure therapy framing ('manageable exposure,' 'graduated steps') contradicts ACT approach",
+            "Confidence-building language present ('building it through exposure,' 'develop tools') rather than values-based action",
+            "Control agenda identified implicitly but not explicitly explored or challenged",
+            "Willingness mentioned but not clearly distinguished from traditional coping/anxiety management",
+            "Missing explicit connection to client's values and what social engagement means to their life"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:06:52.251Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response excellently addresses ACT core concepts: It explicitly identifies experiential avoidance ('Your desire to avoid discomfort'), challenges the control agenda ('waiting for confidence to appear magically'), and cultivates willingness ('practiced building it through manageable exposure... developing tools to be with the discomfort'). However, it violates two 'Must Avoid' criteria: 1) It uses the CBT term 'exposure' explicitly and implies exposure therapy structure (graduated steps), 2) It focuses on 'confidence building' as the mechanism of change. Despite these flaws, the response demonstrates strong empathy, safety considerations, and effective framing of willingness over experiential control.",
+          "flags": [
+            "Used forbidden term: 'exposure'",
+            "Engaged in confidence building framing (contradicts rubric)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 85,
+          "reasoning": "The response excellently addresses ACT core concepts: It explicitly identifies experiential avoidance ('Your desire to avoid discomfort'), challenges the control agenda ('waiting for confidence to appear magically'), and cultivates willingness ('practiced building it through manageable exposure... developing tools to be with the discomfort'). However, it violates two 'Must Avoid' criteria: 1) It uses the CBT term 'exposure' explicitly and implies exposure therapy structure (graduated steps), 2) It focuses on 'confidence building' as the mechanism of change. Despite these flaws, the response demonstrates strong empathy, safety considerations, and effective framing of willingness over experiential control.",
+          "flags": [
+            "Used forbidden term: 'exposure'",
+            "Engaged in confidence building framing (contradicts rubric)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student does well in acknowledging the client's feelings and normalizes their experience of anxiety, which is empathetic. However, the response leans too closely toward a cognitive-behavioral approach, particularly exposure therapy and confidence building, rather than focusing on experiential avoidance and willingness. The student's suggestion to 'practice building confidence through manageable exposure' and starting with small steps are CBT strategies rather than fostering willingness to experience anxiety. The language focusing on grounding techniques is closer to ACT principles, but the emphasis on confidence and functioning indicates a partial misunderstanding of the ACT focus.",
+          "flags": [
+            "confidenceBuilding",
+            "exposureTherapy"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student response demonstrates high empathy and establishes a strong therapeutic alliance. It correctly identifies the client's 'Control Agenda' (the need to be anxiety-free first). However, the response fails to adhere to the ACT rubric by violating the 'Must Avoid' constraints. The suggestion to start with 'texting a friend' and move to 'video calls' is a classic CBT 'In Vivo Exposure' hierarchy, not an ACT values-based intervention. Additionally, the explicit goal of 'building confidence' contradicts the ACT principle of taking action without waiting for internal states to change. While the student touches on 'Willingness' ('tools to be with discomfort'), the overall strategy reinforces the idea that the task must be made 'manageable' or 'less intimidating' to be done, which feeds the experiential avoidance rather than dismantling it.",
+          "flags": [
+            "CBT Framing Detected: Graded exposure hierarchy suggested",
+            "Confidence Building Goal: Explicit focus on building confidence rather than values-based action",
+            "Modality Drift: Interventions lean more towards symptom reduction (CBT) than acceptance (ACT)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:52:49.891Z"
+        }
+      ]
     }
   }
 ]

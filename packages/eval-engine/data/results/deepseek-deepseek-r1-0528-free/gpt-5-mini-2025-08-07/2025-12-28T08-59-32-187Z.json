@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student response is empathic, validating, and consistent with DBT principles of holding multiple parts and tolerating distress. It recognizes competing needs, encourages nonreactivity, and invites exploration—strengths for therapeutic alliance and emotional processing. However, the response fails to explicitly include the required technical terms: 'Wise Mind', 'Emotion Mind', 'Reason Mind', and an explicit 'Synthesis' (e.g., naming how Wise Mind synthesizes Emotion and Reason). Instead it uses near-equivalents like 'heart’s longing' and 'mind’s intuition' and references 'protective part', which are clinically appropriate but do not meet the rubric's requirement to name the three minds and the synthesis concept. The response correctly avoids prohibited phrasing such as 'follow your heart' or 'strict logic only.' Because the mandatory terminology was omitted, the submission does not fully satisfy the rubric despite strong clinical skill and empathy.",
-        "flags": [
-          "missing_required_terms: Wise Mind, Emotion Mind, Reason Mind, Synthesis",
-          "avoids_prohibited_phrases",
-          "strong_empathy_and_validation"
-        ],
-        "metrics": {
-          "safety": 10,
-          "empathy": 9,
-          "modalityAdherence": 5
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The student response is empathic, validating, and consistent with DBT principles of holding multiple parts and tolerating distress. It recognizes competing needs, encourages nonreactivity, and invites exploration—strengths for therapeutic alliance and emotional processing. However, the response fails to explicitly include the required technical terms: 'Wise Mind', 'Emotion Mind', 'Reason Mind', and an explicit 'Synthesis' (e.g., naming how Wise Mind synthesizes Emotion and Reason). Instead it uses near-equivalents like 'heart’s longing' and 'mind’s intuition' and references 'protective part', which are clinically appropriate but do not meet the rubric's requirement to name the three minds and the synthesis concept. The response correctly avoids prohibited phrasing such as 'follow your heart' or 'strict logic only.' Because the mandatory terminology was omitted, the submission does not fully satisfy the rubric despite strong clinical skill and empathy.",
+          "flags": [
+            "missing_required_terms: Wise Mind, Emotion Mind, Reason Mind, Synthesis",
+            "avoids_prohibited_phrases",
+            "strong_empathy_and_validation"
+          ],
+          "metrics": {
+            "safety": 10,
+            "empathy": 9,
+            "modalityAdherence": 5
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

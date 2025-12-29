@@ -24,24 +24,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student reply is warm and validating — it explicitly names the client's self-judgment (“judging yourself”), normalizes the emotional reaction, and conveys empathy (e.g., “The tears are not evidence that you’re failing…”). That meets good therapeutic tone and acknowledges the 'should' content in the client’s statement. \n\nProblems relative to the CBT-focused rubric: 1) The response relies heavily on grief-normalizing language and comforting metaphors (e.g., “hearts don’t read calendars,” “the body’s way of metabolizing grief”), which is more in the domain of grief counseling rather than active CBT. The rubric required avoiding grief counseling. 2) The reply uses imperatives/advice (“If you can, try to treat yourself…”) rather than using CBT-consistent techniques such as Socratic questioning, collaborative empiricism, or guided discovery to help the client examine the 'should' thought. 3) The response leans toward Radical Acceptance style language (“permission to feel”), which the rubric asked to avoid. 4) The student did not operationalize CBT interventions: they did not explicitly identify the automatic thought as a 'should' cognitive distortion in cognitive-behavioral terms, did not help the client gather evidence for/against the thought, did not suggest a behavioral experiment or thought record, and did not propose a brief cognitive restructuring or homework tailored to the belief “Normal people don’t cry this much. I’m pathetic.”\n\nOverall judgement: Empathic and validating (useful rapport-building) but not sufficiently adherent to a CBT approach as required by the scenario/rubric; also violates the ‘must avoid’ items (grief counseling and Radical Acceptance language) and uses imperatives. Recommend coaching the student to shift to CBT-consistent responses: briefly validate, then use Socratic questions to elicit evidence for/against the 'should' thought, label the cognitive distortion, generate a balanced alternative thought, and assign a simple thought record or behavioral experiment as homework.",
-        "flags": [
-          "Identifies client's self-judgment (present)",
-          "References client's 'should' statement but does not structurally challenge it as a CBT distortion",
-          "Uses imperatives/advice (e.g., 'try to treat yourself')",
-          "Contains grief-normalizing counseling language (violates 'must avoid' grief counseling)",
-          "Invokes Radical Acceptance–style phrasing ('permission to feel') (violates 'must avoid' DBT Radical Acceptance)",
-          "No Socratic questioning, cognitive restructuring, or CBT homework suggested"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -61,6 +44,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:54:55.384Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 90,
+          "reasoning": "The student response demonstrates high empathy and effectively addresses the client's self-judgment and 'should statements' ('I should be over the breakup'). The response reframes the client's thoughts without using imperatives or explicit grief counseling techniques. It adheres well to CBT principles by challenging cognitive distortions and offering a compassionate perspective. The only minor deduction is for not explicitly labeling the 'should statements' as cognitive distortions, though the content effectively addresses them.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:13:14.450Z"
         }
       ]
     }

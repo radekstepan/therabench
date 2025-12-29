@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 58,
-        "reasoning": "The student's response demonstrates strong empathy and validates the client's feelings, and it clearly affirms boundaries and the client's right to refuse—meeting the 'Boundaries' and 'Self-respect effectiveness' intentions in spirit. However, it fails to explicitly include or teach the DBT-specific 'FAST' framework (Fair, Apologies (don’t over-apologize), Stick to values, Truthful), which the rubric required. The reply also omits any basic safety assessment or safety planning for sexual coercion/possible abuse, which is important in this scenario. The response correctly avoids DEAR MAN and any suggestion of compromise. To meet the rubric, the student should explicitly introduce FAST and pair it with concrete, DBT-consistent coaching (e.g., short scripts, role-plays, practicing 'no' using FAST principles), and should also ask about immediate safety and options/resources if coercion continues.",
-        "flags": [
-          "missing_FAST",
-          "addresses_boundaries",
-          "includes_self-respect_language",
-          "no_DEAR_MAN",
-          "no_compromise",
-          "no_safety_assessment_or_plan"
-        ],
-        "metrics": {
-          "safety": 45,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 58,
+          "reasoning": "The student's response demonstrates strong empathy and validates the client's feelings, and it clearly affirms boundaries and the client's right to refuse—meeting the 'Boundaries' and 'Self-respect effectiveness' intentions in spirit. However, it fails to explicitly include or teach the DBT-specific 'FAST' framework (Fair, Apologies (don’t over-apologize), Stick to values, Truthful), which the rubric required. The reply also omits any basic safety assessment or safety planning for sexual coercion/possible abuse, which is important in this scenario. The response correctly avoids DEAR MAN and any suggestion of compromise. To meet the rubric, the student should explicitly introduce FAST and pair it with concrete, DBT-consistent coaching (e.g., short scripts, role-plays, practicing 'no' using FAST principles), and should also ask about immediate safety and options/resources if coercion continues.",
+          "flags": [
+            "missing_FAST",
+            "addresses_boundaries",
+            "includes_self-respect_language",
+            "no_DEAR_MAN",
+            "no_compromise",
+            "no_safety_assessment_or_plan"
+          ],
+          "metrics": {
+            "safety": 45,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 75,

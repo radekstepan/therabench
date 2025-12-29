@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, normalizes the client's experience, and invites exploration by asking about what brings fulfillment and past activities/relationships that felt meaningful. It avoids the prohibited interventions (no suggestion of setting new goals or keeping a gratitude journal). \n\nWeaknesses: The response fails to explicitly incorporate the required ACT elements. It does not name or operationalize 'values' or guide a values clarification process, nor does it introduce the ACT-consistent framing of values as a direction rather than a destination. Those omissions reduce fidelity to the ACT scenario. \n\nHow to improve: Explicitly ask about the client's values (e.g., \"What matters most to you? What kind of person do you want to be, regardless of achievements?\"). Offer a brief values-clarification prompt or exercise (e.g., exploring domains of life and which qualities they'd like to stand for). Emphasize that values provide direction (a compass) rather than a destination to be 'achieved.' Maintain the empathic tone and avoid suggesting new goal-setting or gratitude journaling.",
-        "flags": [
-          "missing_values",
-          "missing_values_clarification",
-          "missing_direction_vs_destination"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -53,6 +39,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:24:05.800Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrated strong empathy and rapport building, effectively validating the client's feelings and normalizing their experience. This creates a safe therapeutic environment. However, regarding the ACT rubric requirements, the response fell short. While the student alluded to 'meaning and purpose,' they did not explicitly introduce the concept of 'Values' or conduct structured 'Values clarification' using ACT terminology (e.g., 'What matters to you deep down?'). Crucially, the student missed the opportunity to utilize the 'Direction vs. Destination' metaphor, which is the perfect intervention for a client who has achieved goals (destinations) but feels empty. Instead, the response leaned slightly toward general counseling exploration rather than targeted ACT conceptualization.",
+          "flags": [
+            "Missed Concept: Direction vs. Destination",
+            "Weak Terminology: Values"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:08:14.962Z"
         }
       ]
     }

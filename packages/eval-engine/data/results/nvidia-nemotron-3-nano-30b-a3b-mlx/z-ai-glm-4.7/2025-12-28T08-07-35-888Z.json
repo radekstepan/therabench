@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "The student response demonstrates strong empathy, validation, client-centered tone, and useful practical suggestions (micro-grounding, toolbox, psychoeducation about alcohol and medication). However it fails to include the three required ACT components from the rubric: Creative Hopelessness (explicitly helping the client see that previous control strategies have not worked and to intentionally give them up), The Control Is the Problem (a clear framing that struggling to control internal experience maintains suffering), and Dropping the Rope (an invitation to stop battling/experiential avoidance and to let go of control attempts). The response gestures toward a reframing (“pressure to ‘solve’ anxiety can amplify it”) that resembles \"control is the problem,\" but it does not name or operationalize these ACT processes or use the specific experiential moves (e.g., guiding the client through an exercise to test whether control strategies have worked and then intentionally relinquishing them). The answer also includes directive language to \"try\" specific techniques (e.g., \"Try a 2‑minute box breathing exercise right now\") which conflicts with the rubric's prohibition on recommending new techniques phrased as \"Try a new technique\" (and more generally encourages solution/technique chasing rather than the ACT emphasis on acceptance/values-based action after dropping control efforts). The response avoided the literal phrase \"Don't give up,\" but several sentences encourage continued persistence (\"keep exploring together,\" \"persistence tells me you have a strong inner drive\"), which runs counter to the spirit of message the rubric required (dropping the rope rather than persevering in trying to fix anxiety). Overall, clinically useful and empathetic but nonadherent to required ACT concepts and some prohibited phrasing, so scoring is low for modality adherence.",
-        "flags": [
-          "missing_creative_hopelessness",
-          "missing_control_is_the_problem",
-          "missing_dropping_the_rope",
-          "uses_directive_try_language",
-          "encourages_persistence_in_finding_solution"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "The student response demonstrates strong empathy, validation, client-centered tone, and useful practical suggestions (micro-grounding, toolbox, psychoeducation about alcohol and medication). However it fails to include the three required ACT components from the rubric: Creative Hopelessness (explicitly helping the client see that previous control strategies have not worked and to intentionally give them up), The Control Is the Problem (a clear framing that struggling to control internal experience maintains suffering), and Dropping the Rope (an invitation to stop battling/experiential avoidance and to let go of control attempts). The response gestures toward a reframing (“pressure to ‘solve’ anxiety can amplify it”) that resembles \"control is the problem,\" but it does not name or operationalize these ACT processes or use the specific experiential moves (e.g., guiding the client through an exercise to test whether control strategies have worked and then intentionally relinquishing them). The answer also includes directive language to \"try\" specific techniques (e.g., \"Try a 2‑minute box breathing exercise right now\") which conflicts with the rubric's prohibition on recommending new techniques phrased as \"Try a new technique\" (and more generally encourages solution/technique chasing rather than the ACT emphasis on acceptance/values-based action after dropping control efforts). The response avoided the literal phrase \"Don't give up,\" but several sentences encourage continued persistence (\"keep exploring together,\" \"persistence tells me you have a strong inner drive\"), which runs counter to the spirit of message the rubric required (dropping the rope rather than persevering in trying to fix anxiety). Overall, clinically useful and empathetic but nonadherent to required ACT concepts and some prohibited phrasing, so scoring is low for modality adherence.",
+          "flags": [
+            "missing_creative_hopelessness",
+            "missing_control_is_the_problem",
+            "missing_dropping_the_rope",
+            "uses_directive_try_language",
+            "encourages_persistence_in_finding_solution"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 25,

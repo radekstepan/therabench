@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 90,
-        "reasoning": "The student response demonstrates strong empathic attunement and appropriately orients the client toward internal exploration rather than external achievement. It explicitly names and invites exploration of 'values, passions, and beliefs' and suggests self-reflection exercises, satisfying the 'Values' and 'Values clarification' requirements. The response avoids the prohibited actions (there is no instruction to 'set new goals' or to keep a 'gratitude journal'). The response also emphasizes a shift from 'doing' to 'being' and frames the situation as a 'new journey' which aligns with the spirit of 'direction vs. destination', but it does not explicitly articulate the direction-versus-destination concept or offer ACT-consistent language about committed action/values-as-direction (e.g., values as guiding direction rather than specific end-state). To be fully compliant with the rubric and stronger as an ACT response, the student should have explicitly named or illustrated the 'direction vs. destination' distinction and offered a concrete values-clarification technique or brief exercise. Otherwise the response is safe, empathic, and clinically appropriate.",
-        "flags": [
-          "includes_values",
-          "includes_values_clarification",
-          "missing_explicit_direction_vs_destination",
-          "avoids_prohibited_items"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -55,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:15:45.370Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 80,
+          "reasoning": "The student provided an empathetic and validating response that successfully built rapport and normalized the client's experience. They effectively avoided the prohibited interventions (setting new goals, gratitude journaling) and included explicit mentions of exploring values and values clarification. However, the student missed the specific requirement to articulate the ACT concept of 'Direction vs. Destination.' While the student alluded to a 'new journey' of self-discovery, they failed to explicitly contrast the client's focus on the 'destination' (achievements) with the ACT perspective of life as a 'direction' (living by one's values). This distinction is crucial for this specific client presentation, and its omission makes the intervention feel more like general counseling than strict ACT.",
+          "flags": [
+            "Missed explicit 'Direction vs. Destination' distinction",
+            "Intervention leaned toward content exploration rather than functional ACT analysis"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:19:17.037Z"
         }
       ]
     }

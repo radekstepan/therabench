@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student demonstrated strong validation, empathy, normalization, and collaborative stance. The response used the driving metaphor effectively, asked useful open-ended questions, identified a cycle, and offered a reasonable next-step focus on understanding and responding to doubts rather than eliminating them.\n\nPrimary problems relative to the rubric: The response failed to include the three required ACT metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", and \"Driving despite the noise.\" Because those specific metaphors were mandated, their absence is a major omission. The student did, however, avoid the prohibited strategies (they did not instruct the client to \"kick the passengers off\" or to \"argue with the passengers\").\n\nClinical guidance: To align with the rubric and strengthen ACT-consistent language, the student should explicitly introduce the named metaphors (e.g., invite the client to see doubts as “passengers on the bus” or “demons on the boat,” and emphasize the idea of driving despite the noise), while continuing the validating, collaborative stance and avoiding language that suggests trying to expel or argue with those internal experiences. Incorporating brief experiential invitations (e.g., noticing the passengers without trying to silence them, making a small committed step toward a value) would make the intervention more ACT-congruent.",
-        "flags": [
-          "missing_required_metaphors",
-          "avoided_forbidden_strategies",
-          "good_empathy_and_validation"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 35
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "Strengths: The student demonstrated strong validation, empathy, normalization, and collaborative stance. The response used the driving metaphor effectively, asked useful open-ended questions, identified a cycle, and offered a reasonable next-step focus on understanding and responding to doubts rather than eliminating them.\n\nPrimary problems relative to the rubric: The response failed to include the three required ACT metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", and \"Driving despite the noise.\" Because those specific metaphors were mandated, their absence is a major omission. The student did, however, avoid the prohibited strategies (they did not instruct the client to \"kick the passengers off\" or to \"argue with the passengers\").\n\nClinical guidance: To align with the rubric and strengthen ACT-consistent language, the student should explicitly introduce the named metaphors (e.g., invite the client to see doubts as “passengers on the bus” or “demons on the boat,” and emphasize the idea of driving despite the noise), while continuing the validating, collaborative stance and avoiding language that suggests trying to expel or argue with those internal experiences. Incorporating brief experiential invitations (e.g., noticing the passengers without trying to silence them, making a small committed step toward a value) would make the intervention more ACT-congruent.",
+          "flags": [
+            "missing_required_metaphors",
+            "avoided_forbidden_strategies",
+            "good_empathy_and_validation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

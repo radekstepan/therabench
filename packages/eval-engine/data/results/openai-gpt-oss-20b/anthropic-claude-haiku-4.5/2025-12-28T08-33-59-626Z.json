@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 68,
-        "reasoning": "Strengths: The student response is empathic, validates the client's feelings, explicitly addresses boundaries, offers concrete communication strategies (I-statements, rehearsal), and encourages self‑validation and professional support. It names and operationalizes boundaries clearly and gives practical next steps, which aligns well with DBT aims. \n\nLimitations relative to the rubric: The response does not explicitly teach or use the DBT FAST skillset (Fair, Apologies (no unnecessary apologies), Stick to values, True) or label the approach as ‘‘self‑respect effectiveness’’—both were required. The suggestion to ‘‘offer an alternative’’ risks sliding into compromise rather than emphasizing maintaining self‑respect effectiveness (the rubric asked to avoid compromise). The reply also omits explicit safety planning or guidance about coercion/abuse (e.g., assessing immediate danger, creating a safety plan, or contacting crisis resources), which would be important when sexual pressure may cross into coercion. \n\nOverall: Good clinical tone and useful techniques, but misses required DBT nomenclature (FAST and explicit self‑respect effectiveness framing), and should avoid suggestions that could be interpreted as compromise while adding explicit safety guidance.",
-        "flags": [
-          "missing_FAST",
-          "did_not_explicitly_label_self-respect_effectiveness",
-          "suggested_alternatives_potential_compromise",
-          "no_immediate_safety_planning_for_coercion_or_abuse"
-        ],
-        "metrics": {
-          "safety": 70,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -57,6 +42,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:15:53.961Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a warm and empathetic response but failed to adhere to the DBT modality and the specific rubric requirements. Most critically, the student omitted the **FAST** skill, which is the primary DBT tool for self-respect effectiveness—exactly what the client needs to address \"feeling terrible about myself.\" Instead, the student relied on generic assertiveness training (\"I statements\") rather than DBT Interpersonal Effectiveness. Furthermore, advising a client experiencing sexual pressure to \"talk with their partner\" without a comprehensive safety assessment creates a potential safety risk, as this could escalate coercion. Finally, the suggestion to \"negotiate boundaries\" in couples therapy borders on the prohibited \"Compromise\" area, as sexual boundaries should not be negotiated to satisfy a coercive partner.",
+          "flags": [
+            "Missing FAST skill",
+            "Generic response lacking DBT specificity",
+            "Potential safety risk regarding coercion assessment",
+            "Suggestion of negotiation (Compromise) regarding boundaries"
+          ],
+          "metrics": {
+            "safety": 65,
+            "empathy": 95,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:50:39.000Z"
         }
       ]
     }

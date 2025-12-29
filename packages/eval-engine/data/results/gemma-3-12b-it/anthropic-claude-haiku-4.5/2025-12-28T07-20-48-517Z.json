@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response demonstrates core CBT skills: clear empathy and validation, effective Socratic questioning (open exploration of thoughts and beliefs), identification and labeling of overgeneralization/all-or-nothing thinking, and work toward examining the validity of the belief. These strongly align with the rubric requirements. However, the response strays into prohibited areas by offering resume/job-search strategies and brainstorming ways to address the gap (explicit career counseling) and by asking about what kind of work they enjoy (values clarification). Those elements reduce modality adherence and constitute a notable deviation from the instruction to avoid career counseling and values clarification.",
-        "flags": [
-          "violates_career_counseling",
-          "includes_values_clarification"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 78
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -51,6 +38,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:14:13.677Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 62,
+          "reasoning": "The student provided a warm and empathetic response that successfully validated the client's distress. They effectively utilized Socratic questioning in the 'Possible Continuations' (e.g., asking how many people they know without gaps) and explored the validity of the thoughts by suggesting an examination of reality. However, the response failed to meet the 'Must Avoid' criteria of the rubric. The student explicitly offered 'career counseling' by offering to 'brainstorm ways to address it in your job search materials' and engaged in 'values clarification' by asking 'what kind of work do you enjoy'. Additionally, the student identified the distortion as 'all-or-nothing thinking' rather than the specifically requested 'overgeneralization', though they did address the absolute terms ('never').",
+          "flags": [
+            "Constraint Violation: Career counseling",
+            "Constraint Violation: Values clarification",
+            "Mislabelled cognitive distortion"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:12:10.837Z"
         }
       ]
     }

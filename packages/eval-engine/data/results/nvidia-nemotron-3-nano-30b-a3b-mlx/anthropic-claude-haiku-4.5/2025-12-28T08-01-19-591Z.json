@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, validating, and uses appropriate CBT-consistent elements (identifying 'should' statements, normalizing cognitive distortions, prompting cognitive questioning, encouraging self-compassion and small behavioral steps). It addresses the required elements: 'should' statements are explicitly discussed, imperatives (e.g., 'Acknowledge the feeling', 'Practice self‑compassion', 'Create small, soothing rituals') are present, and self‑judgment is directly explored ('I’m pathetic').\n\nConcerns / Failures vs. the rubric: The response includes grief-counseling content (normalizing grieving timeline, describing crying functions, recommending soothing rituals and grief-focused normalization), which the rubric explicitly required to avoid. Additionally, the line about \"giving yourself permission to feel exactly what you’re feeling, without judgment\" and the overall tone of acceptance approximates Radical Acceptance (DBT) language, which the rubric also required to avoid. Because those are explicit \"must avoid\" items, they substantially reduce adherence to the assignment despite the otherwise strong clinical stance. \n\nOverall: good clinical empathy and CBT elements, but non-adherence to the rubric's forbidden content (grief counseling and Radical Acceptance-like language) significantly lowers the evaluation.",
-        "flags": [
-          "includes_required_should_statements",
-          "includes_required_imperatives",
-          "includes_self_judgment_content",
-          "contains_grief_counseling (forbidden)",
-          "contains_radical_acceptance_language (forbidden/DBT)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -59,6 +43,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:04:59.937Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 30,
+          "reasoning": "The student failed to provide the actual simulated therapist response to the client, instead providing a meta-discussion on *how* to respond. The response provided in the evaluation text (which seems to be a hallucinated or example response rather than the student's input) significantly violates the CBT modality restrictions specified in the rubric. The content relies heavily on grief counseling concepts (validating the grief timeline as 'common', discussing the meaning of the breakup) and approaches radical acceptance (accepting feelings without judgment, normalizing crying as a release) rather than using CBT techniques such as identifying and restructuring cognitive distortions like 'should statements'. The rubric specifically required identifying 'Should Statements, Imperatives, Self-judgment', which were missed in favor of general supportive counseling.",
+          "flags": [
+            "Failed to simulate therapist dialogue",
+            "Violated modality constraint (Grief Counseling)",
+            "Violated modality constraint (Radical Acceptance/DBT)",
+            "Missed required CBT concepts (Should Statements)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:25:57.572Z"
         }
       ]
     }

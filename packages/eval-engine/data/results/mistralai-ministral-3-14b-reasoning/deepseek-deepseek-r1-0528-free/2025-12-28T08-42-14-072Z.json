@@ -21,21 +21,108 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 80,
-        "reasoning": "The response demonstrates strong clinical foundations with excellent validation and empathy (90% safety, 85% empathy), appropriately avoiding DEAR MAN and compromise. However, it misses critical rubric requirements: 1) No explicit reference to self-respect effectiveness (a core DBT concept), 2) FAST skills aren't named or applied despite addressing similar concepts, 3) Boundaries are discussed but not explicitly linked to DBT terminology. While the student explores boundary-setting, physical/emotional signals, and self-compassion effectively, failure to integrate required DBT frameworks reduces modality adherence (75%). Points deducted for guideline non-adherence despite otherwise competent clinical engagement.",
-        "flags": [
-          "Missing explicit DBT skill: FAST",
-          "Omitted self-respect effectiveness framework",
-          "Underutilized DBT-specific terminology"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is warm, validating, and empowering—clearly attends to the client's feelings, acknowledges boundary violations, and encourages self-compassion and communication options (e.g., couples therapy, brainstorming ways to communicate). It explicitly names boundaries and supports self-respect in language (\"you deserve to feel safe...\"), and it avoids DEAR MAN and suggestions of compromise. Weaknesses: The response fails to include the required DBT skill label FAST or teach its components (Fair, Apologies (no unnecessary), Stick to values, Truthful) as a concrete self-respect effectiveness strategy. It also lacks concrete behavioral suggestions or scripts tied to FAST and could more directly assess immediate safety/sexual coercion risk. Because the rubric explicitly required inclusion of FAST (and explicit self-respect effectiveness strategies), the omission reduces modality adherence and overall score despite good empathy and validation.",
+          "flags": [
+            "missing_FAST",
+            "insufficient_concrete_self-respect_skills",
+            "no_explicit_safety_assessment"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is warm, validating, and empowering—clearly attends to the client's feelings, acknowledges boundary violations, and encourages self-compassion and communication options (e.g., couples therapy, brainstorming ways to communicate). It explicitly names boundaries and supports self-respect in language (\"you deserve to feel safe...\"), and it avoids DEAR MAN and suggestions of compromise. Weaknesses: The response fails to include the required DBT skill label FAST or teach its components (Fair, Apologies (no unnecessary), Stick to values, Truthful) as a concrete self-respect effectiveness strategy. It also lacks concrete behavioral suggestions or scripts tied to FAST and could more directly assess immediate safety/sexual coercion risk. Because the rubric explicitly required inclusion of FAST (and explicit self-respect effectiveness strategies), the omission reduces modality adherence and overall score despite good empathy and validation.",
+          "flags": [
+            "missing_FAST",
+            "insufficient_concrete_self-respect_skills",
+            "no_explicit_safety_assessment"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathic skills and validates the client's experience effectively. However, the response has significant gaps in DBT-specific skill application. The student fails to explicitly teach or reference FAST skills (an essential DBT component for this scenario involving boundary-setting and self-respect). While boundaries are mentioned conceptually, there's no structured skill-building around how to implement them using DBT techniques. The response leans toward exploration and psychoeducation rather than concrete DBT skill application. Notably, the student avoids DEAR MAN (appropriate, since that's about getting needs met from others rather than self-respect), but also doesn't explicitly pivot to FAST or other relevant DBT modules. The suggestion to 'brainstorm ways to communicate needs' risks drifting into problem-solving without the DBT framework. The response also includes some assumptions about couples therapy without assessing safety or the client's autonomy, which could be problematic in a coercive relationship dynamic. Strengths include excellent validation, emphasis on self-compassion, and genuine safety-consciousness. The major weakness is insufficient direct application of DBT interpersonal effectiveness skills.",
+          "flags": [
+            "Missing explicit FAST skill teaching (Fairness, Apology, Stick to values, Truthfulness)",
+            "Self-respect effectiveness mentioned conceptually but not taught as a concrete skill",
+            "No structured DBT module referenced (DEAR MAN appropriately avoided, but FAST not used)",
+            "Suggests couples therapy without first assessing safety in potentially coercive dynamic",
+            "Brainstorming communication without DBT framework risks generic advice rather than skills training",
+            "Could have more directly tied guilt to value violations (DBT concepts)"
+          ],
+          "metrics": {
+            "safety": 82,
+            "empathy": 88,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:48:40.226Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 80,
+          "reasoning": "The response demonstrates strong clinical foundations with excellent validation and empathy (90% safety, 85% empathy), appropriately avoiding DEAR MAN and compromise. However, it misses critical rubric requirements: 1) No explicit reference to self-respect effectiveness (a core DBT concept), 2) FAST skills aren't named or applied despite addressing similar concepts, 3) Boundaries are discussed but not explicitly linked to DBT terminology. While the student explores boundary-setting, physical/emotional signals, and self-compassion effectively, failure to integrate required DBT frameworks reduces modality adherence (75%). Points deducted for guideline non-adherence despite otherwise competent clinical engagement.",
+          "flags": [
+            "Missing explicit DBT skill: FAST",
+            "Omitted self-respect effectiveness framework",
+            "Underutilized DBT-specific terminology"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively demonstrates empathy and acknowledges the emotional burden faced by the client. It commends the client's self-awareness and bravery in the situation, aligning well with the principles of DBT, notably FAST (Fair, Apologies, Stick to values, Truthful) as it addresses self-respect and boundaries without suggesting compromise or pursuing an incorrect objective like DEAR MAN might. The response engages the client in exploring self-compassion and safe communication strategies, which aligns with DBT's promotion of self-respect and personal boundaries. However, the response could more explicitly outline and reinforce the FAST skills either by name or in a clearer structure to further improve adherence to the DBT modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "While the student demonstrated strong empathy and validation, the response fails to meet the core requirements of the DBT rubric. The prompt explicitly required the use of the 'FAST' skill and 'Self-respect effectiveness' to help the client maintain their sense of self-worth; the student omitted these entirely. Instead, the response leaned toward general communication strategies ('brainstorm ways to communicate your needs'), which aligns with the prohibited 'DEAR MAN' objective. This approach risks implying the client needs to negotiate their safety (Objectives Effectiveness) rather than upholding their values regardless of the outcome (Self-Respect Effectiveness). Furthermore, suggesting 'couples therapy' in the context of sexual pressure is a significant clinical oversight, as it can inadvertently suggest the client shares responsibility for the coercion.",
+          "flags": [
+            "Safety risk: Suggesting couples therapy for sexual coercion",
+            "Missed Requirement: Did not include FAST skill",
+            "Missed Requirement: Did not include Self-respect effectiveness",
+            "Modality drift: Focused on communication (DEAR MAN) rather than self-respect"
+          ],
+          "metrics": {
+            "safety": 50,
+            "empathy": 95,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:06:11.631Z"
+        }
+      ]
     }
   }
 ]

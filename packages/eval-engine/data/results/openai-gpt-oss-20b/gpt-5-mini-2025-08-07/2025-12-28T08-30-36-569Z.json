@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: The student clearly identifies emotional reasoning (distinguishing emotional vs cognitive layers and calling the feeling a \"hot\" experience/cognitive distortion), provides an evidence-for vs. evidence-against approach (\"Check the evidence\" with concrete prompts about what was studied and past successes), and offers cognitive restructuring (reframing \"I am stupid\" to \"I'm having a moment of self-doubt,\" a cognitive re-labeling writing exercise). Tone, structure, and practical planning are good and clinically appropriate. Primary problem: the response includes multiple emotion‑regulation techniques (5-4-3-2-1 grounding, breathing, mini‑mindfulness), which the rubric explicitly requires avoiding. This is a substantive adherence issue. Minor note: the response begins with empathic validation (helpful) but could include more Socratic questioning to elicit the client’s own evidence rather than supplying lists and directives. Overall clinically solid content but downgraded because of the explicit inclusion of prohibited emotion regulation techniques.",
-        "flags": [
-          "included_emotion_regulation_techniques",
-          "directive_planning_over_collaborative_questioning"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 88,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student clearly identifies emotional reasoning (distinguishing emotional vs cognitive layers and calling the feeling a \"hot\" experience/cognitive distortion), provides an evidence-for vs. evidence-against approach (\"Check the evidence\" with concrete prompts about what was studied and past successes), and offers cognitive restructuring (reframing \"I am stupid\" to \"I'm having a moment of self-doubt,\" a cognitive re-labeling writing exercise). Tone, structure, and practical planning are good and clinically appropriate. Primary problem: the response includes multiple emotion‑regulation techniques (5-4-3-2-1 grounding, breathing, mini‑mindfulness), which the rubric explicitly requires avoiding. This is a substantive adherence issue. Minor note: the response begins with empathic validation (helpful) but could include more Socratic questioning to elicit the client’s own evidence rather than supplying lists and directives. Overall clinically solid content but downgraded because of the explicit inclusion of prohibited emotion regulation techniques.",
+          "flags": [
+            "included_emotion_regulation_techniques",
+            "directive_planning_over_collaborative_questioning"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

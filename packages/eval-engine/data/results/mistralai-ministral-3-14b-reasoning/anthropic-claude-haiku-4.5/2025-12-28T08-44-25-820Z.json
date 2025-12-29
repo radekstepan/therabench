@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student shows strong empathy, accurate reflection, and links the client’s struggle to values (wanting to be a supportive partner, need to connect/feel valued). They normalize the fear of rejection and invite exploration of worst/best outcomes and contexts where the client feels safe — all useful therapeutic moves. The response avoids the prohibited items (does not tell the client to wait for fear to subside and does not provide direct communication-skills training). \n\nLimitations (why score is moderate rather than high): The response does not explicitly include ACT-consistent committed action or a clear invitation to take values-congruent behavior despite fear. While the student asks exploratory questions that could lead to action, they stop short of a concrete encouragement or behavioral plan (e.g., defining a small, specific step the client can take, committing to act even with anxiety present, or framing an experiment/behavioral activation). The rubric required explicit elements: committed action, values-congruent behavior, and taking action with fear — these are only implicitly touched on, not explicitly enacted. \n\nRecommendation: Add an explicit, brief committed-action prompt (e.g., a small values-based step the client can try this week and an acceptance statement about doing it despite fear), and reinforce that action can occur in the presence of fear rather than waiting for fear to go away.",
-        "flags": [
-          "missing_committed_action",
-          "missing_explicit_values-congruent_action",
-          "missing_explicit_take_action_with_fear"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:49:26.603Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong empathy and effectively identifies the client's values of being a supportive partner. However, it significantly misses the core ACT intervention required by the rubric. Instead of encouraging the client to take action *with* the fear present (Committed Action), the student asks the client to access a 'confident version' of themselves and reframes the thought ('Rejection isn't always about you'). This approach implies that the client needs to change their emotional state or mindset before acting, which violates the 'Must Avoid' instruction of waiting for fear to subside. The student focuses on cognitive exploration rather than behavioral activation in the presence of difficult internal experiences.",
+          "flags": [
+            "Missed Committed Action",
+            "Implicitly suggested waiting for confidence (fear reduction) before acting",
+            "Used cognitive restructuring (arguing with thoughts) rather than acceptance/defusion"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:09:20.138Z"
         }
       ]
     }

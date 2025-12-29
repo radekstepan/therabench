@@ -24,19 +24,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response effectively uses empathy and offers practical strategies for shifting perspective, which are key components in dealing with cognitive distortions. However, it lacks explicit reference to some core Acceptance and Commitment Therapy (ACT) concepts such as 'Self-as-Context,' 'Observing Self,' 'The Sky and the Weather,' and 'Chessboard Metaphor,' which are essential in helping clients see themselves as more than their depression. While the response approaches the idea of expanding one's self-view, these metaphors explicitly help in distinguishing the self from experiences and emotions, which the rubric requires.",
-        "flags": [
-          "Missing Core Metaphors"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively uses empathy and offers practical strategies for shifting perspective, which are key components in dealing with cognitive distortions. However, it lacks explicit reference to some core Acceptance and Commitment Therapy (ACT) concepts such as 'Self-as-Context,' 'Observing Self,' 'The Sky and the Weather,' and 'Chessboard Metaphor,' which are essential in helping clients see themselves as more than their depression. While the response approaches the idea of expanding one's self-view, these metaphors explicitly help in distinguishing the self from experiences and emotions, which the rubric requires.",
+          "flags": [
+            "Missing Core Metaphors"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

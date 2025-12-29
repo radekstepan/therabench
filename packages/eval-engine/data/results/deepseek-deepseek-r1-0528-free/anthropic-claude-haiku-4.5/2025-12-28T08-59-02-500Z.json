@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "Strengths: The student shows strong validation, dignity-protecting language, containment (pausing, leaning), and a clear sense of the client's need to be witnessed rather than corrected. They also gently note the link between shame and isolation, which can be useful. Weaknesses re rubric: The response does not explicitly provide or prompt Opposite Action or concrete Approach behaviors (e.g., specific actions the client could take that are opposite to withdrawing). It also does not explicitly state the DBT principle 'change the emotion by changing the action' nor guide the client through an action plan to alter the emotion. Additionally, the response includes interpretive language about why the shame arose (\"when our actions miss our own values\" and planned exploration of intention/impact and safety histories), which violates the rubric requirement to avoid analyzing why the client feels shame in the immediate moment. To improve, the student should validate as they did and then offer a brief, concrete opposite action suggestion (e.g., a small approach behavior the client can tolerate right now) and explicitly link how taking that action can change the emotional experience, while postponing etiologic analysis to later sessions.",
-        "flags": [
-          "Missing_Opposite_Action",
-          "Missing_Approach_Behavior",
-          "Does_Analyze_Cause_of_Shame"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 88,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 52,
@@ -55,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:06:04.200Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates strong empathy and validation, which helps build the therapeutic relationship. However, the response fails to adhere to the specific DBT requirements outlined in the rubric. The response validates the client's wish to hide and avoids asking 'what happened' to prevent judgment, but this inadvertently supports 'Isolation' (which must be avoided) rather than encouraging 'Approach behavior'. The student identifies the shame but does not use this moment to prompt 'Opposite Action' or explain the mechanism of 'Change the emotion by changing the action'. By validating the desire to hide without immediately pivoting to action-oriented DBT skills, the response risks reinforcing the avoidance cycle characteristic of shame.",
+          "flags": [
+            "Missing Opposite Action intervention",
+            "Reinforces isolation instead of encouraging approach behavior",
+            "Missing instruction to change emotion by changing action"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:59:57.360Z"
         }
       ]
     }

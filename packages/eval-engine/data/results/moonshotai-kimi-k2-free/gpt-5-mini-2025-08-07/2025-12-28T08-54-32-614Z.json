@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student validates the client's experience, reflects the client's value (wanting to be a supportive partner), and elicits more information about the feared outcome — demonstrating good empathy and active listening. It does not provide disallowed communication-skills coaching or suggest waiting for fear to pass. Weaknesses: The response does not move toward ACT-specific processes of committed action or explicitly encourage taking values-congruent action despite fear. It stops at exploration of the fear rather than inviting a concrete, values-driven step or framing action in the presence of fear (e.g., small experiments, committed steps). Because two required ACT elements (Committed Action; Taking action with fear) are missing, the response only partially meets the rubric.",
-        "flags": [
-          "Missing: Committed Action (no invitation to take a concrete values-consistent step)",
-          "Missing: Taking action with fear (does not normalize acting despite fear or suggest acceptance/behavioral experiments)"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 88,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student validates the client's experience, reflects the client's value (wanting to be a supportive partner), and elicits more information about the feared outcome — demonstrating good empathy and active listening. It does not provide disallowed communication-skills coaching or suggest waiting for fear to pass. Weaknesses: The response does not move toward ACT-specific processes of committed action or explicitly encourage taking values-congruent action despite fear. It stops at exploration of the fear rather than inviting a concrete, values-driven step or framing action in the presence of fear (e.g., small experiments, committed steps). Because two required ACT elements (Committed Action; Taking action with fear) are missing, the response only partially meets the rubric.",
+          "flags": [
+            "Missing: Committed Action (no invitation to take a concrete values-consistent step)",
+            "Missing: Taking action with fear (does not normalize acting despite fear or suggest acceptance/behavioral experiments)"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 88,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

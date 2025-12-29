@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student demonstrates good empathy and an ACT-consistent stance (encouraging observation, distance from the thought, and self-compassion) and explicitly uses a defusion-style prompt (“I'm noticing the thought that I am broken”), which approximates the required 'I'm having the thought that...' phrasing. They avoided challenging the thought (CBT-style) and did not use thought stopping, which aligns with the rubric. However, the response fails to include two specific required defusion exercises: singing the thought and repeating the word. Also, the rubric required the explicit phrase 'I'm having the thought that...' — the student used 'I'm noticing...' which is close but not the exact required wording. Because key mandated techniques are missing, modality adherence is limited.",
-        "flags": [
-          "missing_singing_the_thought",
-          "missing_repeating_the_word",
-          "phrase_used_is_'I'm_noticing'_-_not_exact_'I'm_having_the_thought'"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates good empathy and an ACT-consistent stance (encouraging observation, distance from the thought, and self-compassion) and explicitly uses a defusion-style prompt (“I'm noticing the thought that I am broken”), which approximates the required 'I'm having the thought that...' phrasing. They avoided challenging the thought (CBT-style) and did not use thought stopping, which aligns with the rubric. However, the response fails to include two specific required defusion exercises: singing the thought and repeating the word. Also, the rubric required the explicit phrase 'I'm having the thought that...' — the student used 'I'm noticing...' which is close but not the exact required wording. Because key mandated techniques are missing, modality adherence is limited.",
+          "flags": [
+            "missing_singing_the_thought",
+            "missing_repeating_the_word",
+            "phrase_used_is_'I'm_noticing'_-_not_exact_'I'm_having_the_thought'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

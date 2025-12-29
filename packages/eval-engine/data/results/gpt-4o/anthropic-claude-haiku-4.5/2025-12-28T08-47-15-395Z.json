@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The response is empathic and validating (“sounds like you're really concerned... that's understandable”), and it includes a question inviting the client to explore their experience, which is a form of Socratic prompting. It also gently challenges the absolutist belief by saying the resume gap \"doesn't necessarily mean...\" and suggesting alternative ways to frame the experience.\n\nLimitations: The reply crosses into career counseling/advice (“Let's explore what skills and strengths you have that can be highlighted...”), which the rubric explicitly forbids. The Socratic questioning is present but limited — it asks about discussing learned/accomplished items rather than using targeted Socratic prompts that examine evidence for/against the belief, look for exceptions, or explore alternative predictions. The cognitive distortion of overgeneralization is impliedly challenged but not named or explicitly examined; the response should more directly identify and explore the overgeneralization (e.g., asking for evidence that one gap makes someone \"completely unemployable,\" asking for counterexamples, or testing the prediction). Values clarification was avoided, which is appropriate.\n\nOverall: Empathic and well-intentioned but deviates from CBT technique by offering career-focused solutions and failing to explicitly and systematically use Socratic methods to examine the overgeneralized belief.",
-        "flags": [
-          "career_counseling",
-          "insufficient_socratic_questioning",
-          "overgeneralization_not_explicitly_addressed"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -54,6 +40,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:30:40.103Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The student demonstrated high empathy and strong rapport-building skills by validating the client's feelings. However, the response failed to meet specific CBT rubric requirements. The student did not identify or challenge the client's cognitive distortion of **Overgeneralization** ('never get a job', 'completely unemployable'). While there was a question, it lacked true **Socratic Questioning** to examine the evidence or validity of the negative thought; instead, it transitioned into problem-solving. Most significantly, the response violated the 'Must Avoid' constraint by engaging in **Career Counseling** (suggesting highlighting skills, framing narratives for employers) rather than addressing the underlying cognitive structure.",
+          "flags": [
+            "Career counseling",
+            "Missed Overgeneralization",
+            "Insufficient Socratic Questioning"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:35:32.563Z"
         }
       ]
     }

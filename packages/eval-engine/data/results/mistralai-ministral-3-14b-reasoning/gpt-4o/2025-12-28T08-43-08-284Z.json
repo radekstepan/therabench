@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 60,
-        "reasoning": "The student's response is empathetic and acknowledges the client's distress, which is important for building a therapeutic alliance. It provides a clear understanding of the client's experience and offers a supportive stance. However, the response relies heavily on cognitive restructuring, which involves challenging the thought, and does not fully utilize the principles of ACT (Acceptance and Commitment Therapy) that focus on cognitive defusion. Cognitive defusion involves changing the way one relates to negative thoughts, without trying to alter the content of the thought itself. The response missed the opportunity to help the client practice cognitive defusion strategies such as saying 'I'm having the thought that...' or repeating the thought in a different tone or form. These techniques would help the client see the thought as just a thought, rather than an absolute truth.",
-        "flags": [
-          "Includes cognitive restructuring rather than cognitive defusion",
-          "Focuses on thought challenging"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student's response is empathetic and acknowledges the client's distress, which is important for building a therapeutic alliance. It provides a clear understanding of the client's experience and offers a supportive stance. However, the response relies heavily on cognitive restructuring, which involves challenging the thought, and does not fully utilize the principles of ACT (Acceptance and Commitment Therapy) that focus on cognitive defusion. Cognitive defusion involves changing the way one relates to negative thoughts, without trying to alter the content of the thought itself. The response missed the opportunity to help the client practice cognitive defusion strategies such as saying 'I'm having the thought that...' or repeating the thought in a different tone or form. These techniques would help the client see the thought as just a thought, rather than an absolute truth.",
+          "flags": [
+            "Includes cognitive restructuring rather than cognitive defusion",
+            "Focuses on thought challenging"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

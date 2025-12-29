@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student response is empathic, validating, and consistent with DBT principles of holding multiple parts and tolerating distress. It recognizes competing needs, encourages nonreactivity, and invites exploration—strengths for therapeutic alliance and emotional processing. However, the response fails to explicitly include the required technical terms: 'Wise Mind', 'Emotion Mind', 'Reason Mind', and an explicit 'Synthesis' (e.g., naming how Wise Mind synthesizes Emotion and Reason). Instead it uses near-equivalents like 'heart’s longing' and 'mind’s intuition' and references 'protective part', which are clinically appropriate but do not meet the rubric's requirement to name the three minds and the synthesis concept. The response correctly avoids prohibited phrasing such as 'follow your heart' or 'strict logic only.' Because the mandatory terminology was omitted, the submission does not fully satisfy the rubric despite strong clinical skill and empathy.",
-        "flags": [
-          "missing_required_terms: Wise Mind, Emotion Mind, Reason Mind, Synthesis",
-          "avoids_prohibited_phrases",
-          "strong_empathy_and_validation"
-        ],
-        "metrics": {
-          "safety": 10,
-          "empathy": 9,
-          "modalityAdherence": 5
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -53,6 +39,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:06:15.262Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student provided a warm, empathetic, and validating response that correctly identifies the client's internal conflict. However, the evaluation focuses specifically on adherence to the provided DBT rubric, which the student failed to meet. The student described the *concepts* of Emotion Mind ('missing him') and Reason Mind ('anticipating drama'), but did not use the explicit terminology or labels required. Furthermore, the response missed the crucial component of 'Wise Mind' and the 'Synthesis' of the two states; instead of guiding the client toward that integration, the student focused on exploration and 'resonance.' The approach is more psychodynamic/existential than DBT, as it lacks the necessary psychoeducation and directive synthesis of the dialectic.",
+          "flags": [
+            "Missing explicit DBT terminology (Emotion Mind, Reason Mind, Wise Mind)",
+            "Lacks explicit discussion of Synthesis",
+            "Modality drift: Response leans exploratory rather than skills-based/psychoeducational"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:00:34.172Z"
         }
       ]
     }

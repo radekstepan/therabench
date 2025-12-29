@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 62,
-        "reasoning": "Strengths: The student response demonstrates strong empathy and validation, normalizes anxiety, gently challenges catastrophic thinking, uses collaborative language, and shifts focus toward present-focused coping and controllable actions. The response also makes an initial attempt to identify a core fear (loss of control / inability to care for self) and invites the client to confirm it, which is good clinical practice.\n\nWeaknesses relative to the rubric: The response does not explicitly use the Downward Arrow Technique in a systematic way (only one surface-level probe was offered rather than iterative ‘‘If that were true, what would that mean about you?’’ steps). While a core belief was tentatively named, the exploration of core beliefs was not developed or deepened. Underlying assumptions were addressed indirectly (challenging the likelihood of each step) but not explicitly elicited and articulated as discrete assumptions (e.g., \"If I make one mistake, that means I'm incompetent\" or \"My worth equals my job status\").\n\nMajor rubric violation: The student moves into problem-solving about how to minimize mistakes and how to address the boss (\"What steps could you take to minimize the chance of a mistake...\"), which counts as solving the report issue. The rubric explicitly required avoiding solving the report issue; that reduces the score substantially. The response did not mention employment law, so no violation there.\n\nOverall: Good empathic and collaborative CBT-style work, but misses required technical elements (explicit Downward Arrow technique, fuller core-belief elicitation, explicit listing of underlying assumptions) and breaches the instruction to avoid solving the report issue.",
-        "flags": [
-          "Missing_Downward_Arrow_Technique",
-          "Insufficient_Exploration_of_Core_Beliefs",
-          "Underlying_Assumptions_Not_Explicitly_Articulated",
-          "Problem-Solving_the_Report_Issue_(Violates_Must_Avoid)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 62,
+          "reasoning": "Strengths: The student response demonstrates strong empathy and validation, normalizes anxiety, gently challenges catastrophic thinking, uses collaborative language, and shifts focus toward present-focused coping and controllable actions. The response also makes an initial attempt to identify a core fear (loss of control / inability to care for self) and invites the client to confirm it, which is good clinical practice.\n\nWeaknesses relative to the rubric: The response does not explicitly use the Downward Arrow Technique in a systematic way (only one surface-level probe was offered rather than iterative ‘‘If that were true, what would that mean about you?’’ steps). While a core belief was tentatively named, the exploration of core beliefs was not developed or deepened. Underlying assumptions were addressed indirectly (challenging the likelihood of each step) but not explicitly elicited and articulated as discrete assumptions (e.g., \"If I make one mistake, that means I'm incompetent\" or \"My worth equals my job status\").\n\nMajor rubric violation: The student moves into problem-solving about how to minimize mistakes and how to address the boss (\"What steps could you take to minimize the chance of a mistake...\"), which counts as solving the report issue. The rubric explicitly required avoiding solving the report issue; that reduces the score substantially. The response did not mention employment law, so no violation there.\n\nOverall: Good empathic and collaborative CBT-style work, but misses required technical elements (explicit Downward Arrow technique, fuller core-belief elicitation, explicit listing of underlying assumptions) and breaches the instruction to avoid solving the report issue.",
+          "flags": [
+            "Missing_Downward_Arrow_Technique",
+            "Insufficient_Exploration_of_Core_Beliefs",
+            "Underlying_Assumptions_Not_Explicitly_Articulated",
+            "Problem-Solving_the_Report_Issue_(Violates_Must_Avoid)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

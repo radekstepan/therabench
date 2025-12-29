@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student response is empathic and validating, uses experiential language (e.g., noticing, separating act of noticing from content), and offers practical strategies consistent with ACT such as observing without engaging and letting thoughts pass (e.g., labeling briefly, imagining the thought as a cloud passing by). These map well onto the intention of “observing without engaging” and “letting thoughts pass.”\n\nLimitations: The response explicitly recommends exploring whether the negative words are linked to specific memories or unmet needs, which encourages analyzing the content of thoughts (i.e., “analyze the water”) rather than practicing defusion/acceptance. It also suggests a “thought‑stopping” cue and replacing negative words with neutral/comforting phrases, which functions as a cognitive control/avoidance strategy (i.e., “build a dam”) and runs counter to ACT’s emphasis on defusion and acceptance. Additionally, the instructor-specified technique “Leaves on a Stream” was not named explicitly (though a similar cloud metaphor was used). These departures reduce modality adherence.\n\nOverall: Clinically warm and useful, but mixes ACT-appropriate defusion/grounding with control/analysis strategies that conflict with ACT principles; would benefit from removing the recommendation to analyze origins of thoughts and the thought‑stopping/replacement technique, and explicitly framing or naming an ACT defusion exercise such as Leaves on a Stream.",
-        "flags": [
-          "Analyze the water",
-          "Build a dam",
-          "Leaves on a Stream not explicitly named"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student response is empathic and validating, uses experiential language (e.g., noticing, separating act of noticing from content), and offers practical strategies consistent with ACT such as observing without engaging and letting thoughts pass (e.g., labeling briefly, imagining the thought as a cloud passing by). These map well onto the intention of “observing without engaging” and “letting thoughts pass.”\n\nLimitations: The response explicitly recommends exploring whether the negative words are linked to specific memories or unmet needs, which encourages analyzing the content of thoughts (i.e., “analyze the water”) rather than practicing defusion/acceptance. It also suggests a “thought‑stopping” cue and replacing negative words with neutral/comforting phrases, which functions as a cognitive control/avoidance strategy (i.e., “build a dam”) and runs counter to ACT’s emphasis on defusion and acceptance. Additionally, the instructor-specified technique “Leaves on a Stream” was not named explicitly (though a similar cloud metaphor was used). These departures reduce modality adherence.\n\nOverall: Clinically warm and useful, but mixes ACT-appropriate defusion/grounding with control/analysis strategies that conflict with ACT principles; would benefit from removing the recommendation to analyze origins of thoughts and the thought‑stopping/replacement technique, and explicitly framing or naming an ACT defusion exercise such as Leaves on a Stream.",
+          "flags": [
+            "Analyze the water",
+            "Build a dam",
+            "Leaves on a Stream not explicitly named"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

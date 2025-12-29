@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student response is empathic, validating, and explores both sides of the client's internal conflict. It normalizes the experience, asks helpful clarifying questions (what is missed, what drama is feared), avoids the prohibited phrasing, and invites collaboration and coping exploration. Weaknesses: The response fails to explicitly name key DBT concepts required by the rubric—Emotion Mind, Reason Mind, Wise Mind—and does not explicitly present a Synthesis/Wise Mind formulation or guide the client toward Wise Mind. The student uses analogous language (\"logical side\", \"emotional need\", \"both sides\"), but the rubric required the specific DBT terminology and an explicit synthesis. To improve, the therapist should explicitly label the emotion-driven urge (Emotion Mind), the protective logical considerations (Reason Mind), then offer a Wise Mind synthesis (e.g., \"both are valid and Wise Mind can hold them together\") and propose a brief DBT-consistent coping skill (urge surfing, distraction, or a concrete plan for a time-limited contact delay).",
-        "flags": [
-          "missing_Wise_Mind_label",
-          "missing_Emotion_Mind_label",
-          "missing_Reason_Mind_label",
-          "missing_Synthesis_explicit"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -56,6 +41,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:23:20.835Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrated strong empathy, validation, and active listening, creating a safe and supportive environment for the client. However, the response failed to meet the specific requirements of the DBT modality and the provided rubric. The prompt explicitly required the inclusion of 'Wise Mind,' 'Emotion Mind,' 'Reason Mind,' and 'Synthesis.' The student described the concepts of emotion ('emotional need') and reason ('logical side') in general terms but failed to label them using the required DBT terminology. Crucially, the student did not identify or facilitate access to 'Wise Mind' as a synthesis of the conflict, instead offering a generic exploration of the client's thoughts. The response functions as generic supportive therapy rather than DBT skills coaching.",
+          "flags": [
+            "Missing DBT Terminology",
+            "Missed Wise Mind Integration"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:27:44.177Z"
         }
       ]
     }

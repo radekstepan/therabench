@@ -20,17 +20,97 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 90,
-        "reasoning": "The student effectively demonstrates core DBT principles: 1) Strong validation of the client's emotional struggle ('incredibly difficult and confusing,' 'makes perfect sense'). 2) Clear application of Both/And thinking by maintaining that parental intentions (love) and controlling impact can coexist. 3) Actively avoids black-and-white framing by rejecting the 'monsters' vs. 'ungrateful brat' dichotomy and explicitly naming this as 'all or nothing' thinking. 4) Employs Walking the Middle Path by refusing to take sides, noting both parental intentions and the client's need for autonomy. Areas for improvement: Could strengthen dialectical language (e.g., using the term 'dialectic' more explicitly) and deepen the exploration of 'both valid' perspectives.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 88
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 88,
+          "reasoning": "Strengths: The response provides strong validation, normalizes the client's experience, and models both/and (dialectical) thinking — e.g., acknowledging that parents can intend love while their actions feel controlling, and explicitly rejecting either/or conclusions. The therapist invites exploration of specifics and scaffolds moving toward middle-path solutions (finding gray area, building boundaries). Tone is empathic and nonjudgmental and the response avoids taking sides.\n\nLimitations: The response uses the phrase \"black and white,\" which matches the disallowed CBT phrasing in the rubric and therefore is marked as a minor violation. The response also never explicitly names \"dialectics\" or \"walking the middle path,\" though the concepts are applied. It could be strengthened by briefly naming the dialectical stance and by offering a specific DBT skill (e.g., validation levels, or a concrete middle-path strategy) to more clearly demonstrate modality-specific skills.",
+          "flags": [
+            "Used phrase 'black and white' (matches prohibited CBT phrasing)",
+            "Did not explicitly label 'dialectics' or 'walking the middle path' though concepts were present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 88,
+          "reasoning": "Strengths: The response provides strong validation, normalizes the client's experience, and models both/and (dialectical) thinking — e.g., acknowledging that parents can intend love while their actions feel controlling, and explicitly rejecting either/or conclusions. The therapist invites exploration of specifics and scaffolds moving toward middle-path solutions (finding gray area, building boundaries). Tone is empathic and nonjudgmental and the response avoids taking sides.\n\nLimitations: The response uses the phrase \"black and white,\" which matches the disallowed CBT phrasing in the rubric and therefore is marked as a minor violation. The response also never explicitly names \"dialectics\" or \"walking the middle path,\" though the concepts are applied. It could be strengthened by briefly naming the dialectical stance and by offering a specific DBT skill (e.g., validation levels, or a concrete middle-path strategy) to more clearly demonstrate modality-specific skills.",
+          "flags": [
+            "Used phrase 'black and white' (matches prohibited CBT phrasing)",
+            "Did not explicitly label 'dialectics' or 'walking the middle path' though concepts were present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates solid clinical skills with strong validation and empathy, effectively normalizing the client's experience and reducing shame. The response appropriately avoids taking sides and acknowledges the complexity of the situation. However, the response falls short of full DBT dialectical mastery. While the student mentions that 'those two things can absolutely coexist' and references grey area, the language remains somewhat abstract and lacks the concrete, experiential quality that characterizes true dialectical work. The student uses CBT language ('all or nothing' thinking) rather than framing this through DBT's both/and dialectic framework. A stronger DBT response would more explicitly name the dialectic at play (e.g., 'Your parents can genuinely love you AND their controlling behavior can be harmful to you'; 'You can feel angry about their control AND recognize their good intentions'), use more direct both/and statements, and potentially introduce acceptance-based strategies alongside change work. The response also lacks specific DBT interventions like values clarification or distress tolerance skills that could address the internal conflict. The student's suggestion to explore examples and work on boundaries is appropriate, but could be more explicitly framed within a dialectical context. The response is clinically sound and won't cause harm, but misses the opportunity to model DBT's distinctive philosophical approach.",
+          "flags": [
+            "Uses CBT terminology ('all or nothing' thinking) rather than DBT dialectical language",
+            "Both/and framing is implicit rather than explicit—could be more concrete",
+            "Lacks specific DBT interventions or skills introduction (distress tolerance, values work, etc.)",
+            "Dialectical stance present but not prominently featured as core to the intervention"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:23:41.879Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 90,
+          "reasoning": "The student effectively demonstrates core DBT principles: 1) Strong validation of the client's emotional struggle ('incredibly difficult and confusing,' 'makes perfect sense'). 2) Clear application of Both/And thinking by maintaining that parental intentions (love) and controlling impact can coexist. 3) Actively avoids black-and-white framing by rejecting the 'monsters' vs. 'ungrateful brat' dichotomy and explicitly naming this as 'all or nothing' thinking. 4) Employs Walking the Middle Path by refusing to take sides, noting both parental intentions and the client's need for autonomy. Areas for improvement: Could strengthen dialectical language (e.g., using the term 'dialectic' more explicitly) and deepen the exploration of 'both valid' perspectives.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student demonstrated a strong understanding of DBT principles, especially in addressing the client's concerns using dialectical thinking and encouraging 'both/and' perspectives. They avoided falling into the trap of black-and-white thinking by acknowledging the complexity in the parents' motivations and the client's feelings. The response was empathetic, validated the client's emotions, and encouraged exploration of specific instances that felt controlling, which adheres well to DBT modality. Additionally, the student maintained neutrality, not taking sides, and instead focused on understanding and navigating the interaction dynamics.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 83,
+          "reasoning": "The student demonstrates a strong understanding of the client's dilemma and provides good validation throughout the response. They effectively introduce dialectical thinking by acknowledging how the parents' intentions (love) and actions (controlling) can coexist. The response encourages moving away from extremes and toward the 'grey area,' which aligns with Walking the Middle Path. However, there's a modality issue in the use of CBT terminology ('black and white thinking,' 'all or nothing thoughts') instead of DBT-specific language like 'extreme thinking' or 'dialectical dilemmas.' The response successfully avoids taking sides between the client and their parents. The student provides a balanced perspective and invites further exploration through specific examples.",
+          "flags": [
+            "Uses CBT terminology ('black and white thinking', 'all or nothing thoughts') in a DBT context"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:28:30.446Z"
+        }
+      ]
     }
   }
 ]

@@ -19,20 +19,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively guides the client through key DBT strategies: checking facts, emotion regulation, and distinguishing between interpretation and reality. The student names the emotional experience and offers practical steps for managing the spiraling thoughts, such as verifying assumptions, grounding techniques, and exploring underlying cognitive patterns. However, the mention of 'mind-reading' could be considered as deviating from pure DBT terminology, which typically focuses on non-judgmental observations. Additionally, the response subtly verges on giving reassurance by offering alternative interpretations, which is more aligned with CBT than DBT. Overall, the response demonstrates strong empathy, safety, and adherence to DBT modalities.",
-        "flags": [
-          "Mind reading",
-          "Reassurance"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively guides the client through key DBT strategies: checking facts, emotion regulation, and distinguishing between interpretation and reality. The student names the emotional experience and offers practical steps for managing the spiraling thoughts, such as verifying assumptions, grounding techniques, and exploring underlying cognitive patterns. However, the mention of 'mind-reading' could be considered as deviating from pure DBT terminology, which typically focuses on non-judgmental observations. Additionally, the response subtly verges on giving reassurance by offering alternative interpretations, which is more aligned with CBT than DBT. Overall, the response demonstrates strong empathy, safety, and adherence to DBT modalities.",
+          "flags": [
+            "Mind reading",
+            "Reassurance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

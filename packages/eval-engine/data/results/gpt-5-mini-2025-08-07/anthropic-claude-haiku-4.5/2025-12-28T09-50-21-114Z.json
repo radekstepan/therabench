@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 85,
-        "reasoning": "Strengths: The student response is empathic, normalizes the client's distress, and offers concrete, appropriate interventions aligned with ACT (explicitly names values work and a values-clarification exercise). The reply includes practical, low-risk behavioral experiments, journaling prompts, a values card sort, and an appropriate safety/mood check. It avoids instructing the client to set new goals and does not suggest a gratitude journal, satisfying the 'Must Avoid' items. Weakness: The response did not explicitly include the required phrase or concept 'Direction vs. Destination' (the rubric required this term/explicit framing), which is a notable omission given its relevance to helping the client distinguish ongoing directionality from fixed achievements. Overall clinical skill is strong, but deduction is made for that missing required element.",
-        "flags": [
-          "missing_direction_vs_destination"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 88,
@@ -48,6 +36,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:41:00.183Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 78,
+          "reasoning": "The student response demonstrates strong clinical skills with excellent empathy and validation. They effectively incorporate values and values clarification throughout the response. The safety check is well-executed. However, they miss the key ACT concept of 'direction vs. destination' that was required in the rubric. This distinction is crucial in ACT - explaining that values provide ongoing direction rather than endpoints to achieve, which would be particularly relevant for this client who has achieved external goals but still feels empty. Additionally, some of the suggestions like 'Best possible self' exercise and creating a 'simple plan' could inadvertently reinforce a goal-oriented mindset rather than a values-as-direction approach. The response would benefit from explicitly clarifying that values provide an ongoing compass for living rather than another checklist to complete.",
+          "flags": [
+            "Missing key ACT concept: direction vs. destination",
+            "Some suggestions may inadvertently reinforce goal-oriented mindset rather than values-as-direction"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:54:55.113Z"
         }
       ]
     }

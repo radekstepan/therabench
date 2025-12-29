@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is highly validating, empathetic, and normalizes the client's internal conflict. It explores the client's experience (asking what they miss and what drama they expect), invites reflection on needs and past coping, and avoids the prohibited phrasing (does not tell the client to 'follow your heart' or to use 'strict logic only'). It also gently encourages pausing rather than impulsive action, which is clinically appropriate.\n\nLimitations relative to the rubric: The response does not explicitly name or teach the DBT concepts requested — Wise Mind, Emotion Mind, Reason Mind — nor does it explicitly provide a synthesis statement using the Wise Mind framework (for example: ‘‘Wise Mind integrates Emotion Mind and Reason Mind’’ and guiding the client into their Wise Mind). The student uses metaphors (“heart and head”) and describes the conflict between emotion and logic, which approximates the constructs, but the rubric required explicit inclusion of those terms and an explicit synthesis. Because the DBT-specific terminology and instruction are missing, the response falls short of full modality adherence despite otherwise strong clinical skills.",
-        "flags": [
-          "missing_wise_mind_label",
-          "missing_emotion_mind_label",
-          "missing_reason_mind_label",
-          "missing_explicit_synthesis"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -56,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:15:00.370Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrates strong general counseling skills, providing high levels of empathy, validation, and safety. They correctly identify the dialectical dilemma the client is facing. However, the response fails to meet the specific criteria of the DBT rubric. The student uses layperson terminology ('heart' vs. 'head') instead of the required clinical terminology ('Emotion Mind' vs. 'Reason Mind'). While the student attempts to find a middle ground ('finding a way to navigate them'), they fail to explicitly name or guide the client toward 'Wise Mind' or describe the synthesis process. Without these specific terms, the intervention does not effectively teach the core DBT Mindfulness skill required by the scenario.",
+          "flags": [
+            "Missing DBT Terminology: 'Emotion Mind' and 'Reason Mind' not explicitly used",
+            "Missing DBT Concept: 'Wise Mind' was not introduced or defined",
+            "Modality Drift: Used generic counseling language instead of specific DBT skills language"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:15:25.686Z"
         }
       ]
     }

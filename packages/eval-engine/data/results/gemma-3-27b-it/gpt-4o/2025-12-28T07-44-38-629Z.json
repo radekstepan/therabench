@@ -24,20 +24,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response does well in validating the client's emotions and emphasizing safety, which reflects good empathy and safety protocols. The suggested grounding exercise and breath focus are appropriate for immediate regulation of physiological arousal. However, the response lacks direct mention of specific DBT techniques like Temperature/Ice Dive (TIPP), Paced Breathing, which are crucial for adhering to the specified rubric. The response also borders on cognitive analysis by mentioning future exploration of rage triggers and strategies, which is not recommended in this immediate intervention scenario.",
-        "flags": [
-          "Missing TIPP techniques",
-          "Potential cognitive analysis"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response does well in validating the client's emotions and emphasizing safety, which reflects good empathy and safety protocols. The suggested grounding exercise and breath focus are appropriate for immediate regulation of physiological arousal. However, the response lacks direct mention of specific DBT techniques like Temperature/Ice Dive (TIPP), Paced Breathing, which are crucial for adhering to the specified rubric. The response also borders on cognitive analysis by mentioning future exploration of rage triggers and strategies, which is not recommended in this immediate intervention scenario.",
+          "flags": [
+            "Missing TIPP techniques",
+            "Potential cognitive analysis"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

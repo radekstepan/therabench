@@ -24,24 +24,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "The student demonstrates strong empathic skills: they validate the client's feelings, reflect content, normalize the experience, and invite exploration with open questions. Tone and supportive language are appropriate. However, the response fails to include any of the four required ACT metaphors/concepts: there is no explicit Self-as-Context language or guidance toward the Observing Self; the Sky and the Weather metaphor is absent; and the Chessboard metaphor is not used. Instead, the student uses a broken-leg/illness analogy and directly challenges the client's self-identification with depression (\"it doesn't define who you fundamentally are\" and \"I want to gently challenge that thought\"), which constitutes identity-focused/ self-esteem-style work and a cognitive-challenging stance. That approach conflicts with ACT principles that prioritize acceptance, defusion, and cultivating the Observing Self rather than arguing about truth of depressive self-statements. The piece would be improved by: using defusion language (e.g., noticing the thought as a thought), evoking Self-as-Context/Observing Self (e.g., \"there is a you that notices this happening\"), employing the Sky-and-Weather metaphor (mood as weather passing through the sky of you), and introducing the Chessboard metaphor (thoughts/feelings as pieces on a board you can notice) rather than telling the client they are \"not\" their depression. Also add a brief safety check if risk is a concern. Given strong empathy but poor modality adherence and active identity-challenging, the overall score is low.",
-        "flags": [
-          "missing_self_as_context",
-          "missing_observing_self",
-          "missing_sky_and_weather_metaphor",
-          "missing_chessboard_metaphor",
-          "includes_identity_work_or_self_esteem_focus",
-          "direct_challenging_of_client_belief_contrary_to_ACT_defusion"
-        ],
-        "metrics": {
-          "safety": 60,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -61,6 +44,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:15:56.487Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates strong empathy and rapport building, effectively validating the client's heavy emotional experience. However, the response fails to adhere to the specific ACT constraints provided in the rubric. Instead of using ACT metaphors like Self-as-Context, The Sky and the Weather, or the Chessboard, the student relies on Cognitive Behavioral Therapy (CBT) techniques such as cognitive restructuring ('gently challenge that thought') and content-based refutation. The student engages in prohibited 'Identity work' by arguing that the depression is 'not who you fundamentally are' and listing the client's strengths and history. This approach validates the content of the self rather than helping the client observe the process of self from a transcendent perspective. The inclusion of the LLM disclaimer is also inappropriate for a role-play evaluation of a student response.",
+          "flags": [
+            "Missed ACT Metaphors (Sky/Weather, Chessboard)",
+            "Engaged in Identity Work (Prohibited)",
+            "Used CBT restructuring instead of ACT Acceptance/Defusion",
+            "Included LLM disclaimer in role-play response"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:20:16.689Z"
         }
       ]
     }

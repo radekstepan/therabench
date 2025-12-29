@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The response is empathic and validating, opens with a reflective statement, and offers practical, brief interventions. It explicitly uses the 'leaves on a stream' image and other metaphors for letting thoughts pass (clouds passing the sky), encourages observing without engaging (defusion via naming thoughts), and includes appropriate safety guidance about self-harm/crisis. Weakness: it contains a clear directive to analyze thoughts via a writing exercise ('Evidence for' / 'Evidence against' / 'What I’d say to a friend'), which directly conflicts with the rubric item to avoid 'Analyze the water' and represents a CBT-style cognitive restructuring approach rather than an ACT defusion/acceptance approach. This mixing of modalities reduces adherence to ACT principles and is the primary reason the score is not higher. The response does not suggest 'building a dam,' so that prohibition is respected.",
-        "flags": [
-          "includes_prohibited_analysis",
-          "mixes_ACT_with_CBT",
-          "includes_required_elements"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -52,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:41:34.767Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrated strong empathy and excellent safety planning, including a crisis protocol which is vital. They successfully incorporated the required 'Leaves on a Stream' technique and concepts of observing without engaging and letting thoughts pass (Points 2, 4, and 5). However, the score was significantly impacted by Point 3. The client explicitly stated that trying to 'analyze' thoughts causes them to drown, yet the student suggested a writing exercise involving 'Evidence for' and 'Evidence against.' This is a CBT cognitive restructuring technique that requires analyzing the content of the thoughts (the 'water'), which directly violates the ACT principle of defusion and the rubric instruction to avoid analyzing the water. This reinforces the client's unhelpful coping strategy rather than shifting them toward acceptance.",
+          "flags": [
+            "Technique mismatch: Suggested cognitive analysis (CBT) in an ACT scenario",
+            "Reinforced client's stated struggle with analyzing thoughts"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:57:20.889Z"
         }
       ]
     }

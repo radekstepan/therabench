@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student demonstrates an understanding of the client's internal conflict and applies ACT principles, particularly regarding the exploration and reframing of doubts. However, the student's response lacks explicit references to key ACT metaphors like 'Passengers on the Bus,' 'Demons on the Boat,' or the concept of 'Driving despite the noise.' These are crucial for modality adherence in this context. The student avoids arguing with the doubts (passengers) or attempting to eliminate them, aligning with best practices. However, the absence of ACT-specific metaphors results in a moderate score reflecting general understanding but limited in direct ACT application.",
-        "flags": [
-          "missing_act_metaphors"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates an understanding of the client's internal conflict and applies ACT principles, particularly regarding the exploration and reframing of doubts. However, the student's response lacks explicit references to key ACT metaphors like 'Passengers on the Bus,' 'Demons on the Boat,' or the concept of 'Driving despite the noise.' These are crucial for modality adherence in this context. The student avoids arguing with the doubts (passengers) or attempting to eliminate them, aligning with best practices. However, the absence of ACT-specific metaphors results in a moderate score reflecting general understanding but limited in direct ACT application.",
+          "flags": [
+            "missing_act_metaphors"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

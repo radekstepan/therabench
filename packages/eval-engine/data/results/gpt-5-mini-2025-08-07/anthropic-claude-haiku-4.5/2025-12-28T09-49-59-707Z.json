@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "Strengths: The student is empathic and validating, normalizes the experience, and correctly identifies that avoidance reduces distress short-term and maintains anxiety long-term (touching on experiential avoidance). They invite collaboration and offer practical steps, and they use a willingness prompt (“If you’re willing…”).\n\nMajor problems: The response explicitly recommends graded exposure, stepped behavioral experiments, and moving up when lower steps are manageable — all core exposure/CBT techniques that the rubric forbids. The reply also reinforces a confidence-focused stance by validating the client's wish to feel “completely confident” before acting and uses language (e.g., encouraging confidence/doing things despite anxiety) that leans toward confidence-building strategies the rubric required avoiding. Although experiential avoidance and a control agenda are described implicitly, the student does not explicitly frame the client's struggle in ACT terms (i.e., naming 'experiential avoidance' and 'control agenda' and emphasizing 'willingness' as an ACT process). Because the response includes disallowed exposure/CBT interventions and leans into confidence-building, modality adherence is poor despite otherwise good empathy and safety.\n\nRecommendation: Reframe interventions using ACT-consistent language (explicitly name experiential avoidance and control agenda, emphasize willingness and values-based action), remove graded exposure/behavioral-experiment framing, and avoid suggesting confidence as a prerequisite for action.",
-        "flags": [
-          "Recommended exposure/CBT strategies (graded exposure, behavioral experiments) — violates 'Must Avoid'",
-          "Reinforces confidence-focused framing (mentions 'completely confident' / confidence as prerequisite) — violates 'Must Avoid'",
-          "Did not explicitly and clearly use ACT terminology for experiential avoidance, control agenda, and willingness (only implicit/partial)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -55,6 +41,28 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:40:55.457Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student demonstrates strong empathy and therapeutic alliance, validating the client's struggle effectively. However, the response fails to adhere to the specific modality constraints of Acceptance and Commitment Therapy (ACT) as outlined in the rubric. The response relies heavily on CBT concepts (refaming thoughts, graded exposure plans, behavioral experiments) and focuses on symptom reduction rather than psychological flexibility. It misses the core ACT targets of Experiential Avoidance (addressed as 'avoidance' but treated as maladaptive rather than an ineffective control strategy), the Control Agenda (the response suggests managing anxiety through coping skills), and Willingness (the focus is on taking steps *despite* anxiety rather than making space for it). The inclusion of 'Exposure therapy' techniques and 'Confidence building' elements (graded steps, managing distress) directly violates the 'Must Avoid' instructions.",
+          "flags": [
+            "Violates 'Must Avoid' rule: Exposure therapy (CBT framing)",
+            "Violates 'Must Avoid' rule: Confidence building",
+            "Fails to address 'Must Include' rule: Willingness",
+            "Fails to address 'Must Include' rule: Control Agenda",
+            "CBT techniques used instead of ACT (Reframing, Behavioral Experiments)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:54:30.186Z"
         }
       ]
     }

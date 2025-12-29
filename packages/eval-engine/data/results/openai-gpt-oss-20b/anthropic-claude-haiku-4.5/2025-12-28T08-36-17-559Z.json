@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student response is empathic, validating, and offers concrete, evidence‑based steps (naming thoughts, evidence testing, tiny goals, reframing, journaling). It normalizes the experience, acknowledges courage, and provides an actionable plan — all of which are clinically appropriate and safe. The response also avoids harmful or directive language and does not contain the explicitly prohibited strategies (e.g., telling the client to \"kick the passengers off\" or to \"argue with the passengers\").\n\nPrimary weakness: The response fails to meet the rubric's mandatory metaphorical framing. It does not include the required metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", and \"Driving despite the noise.\" Because these were specified as Must Include items, the submission does not adhere to the assignment's essential modality requirements. This is a significant omission given the rubric. \n\nOverall judgment: Clinically solid content but noncompliant with the explicit assignment constraints. To improve, the student should integrate the required metaphors (e.g., describe the doubts as passengers on the bus or demons on the boat and coach the client on driving despite the noise) while continuing to avoid the forbidden directives.",
-        "flags": [
-          "Missing required metaphor: 'Passengers on the Bus'",
-          "Missing required metaphor: 'Demons on the Boat'",
-          "Missing required phrase: 'Driving despite the noise'",
-          "Complies with avoidance: did not instruct to 'Kick the passengers off' or to 'Argue with the passengers'"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 88,
-          "modalityAdherence": 10
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -56,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:16:53.855Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a response that was empathetic, validating, and safe, demonstrating strong general counseling skills and a clear desire to help the client. However, the response failed to meet the core requirements of the ACT (Acceptance and Commitment Therapy) modality specified in the rubric. Instead of using ACT metaphors and acceptance strategies, the student utilized Cognitive Behavioral Therapy (CBT) techniques. The intervention focused on challenging thoughts ('Ask What’s the evidence?'), reframing them ('Reframe failure as feedback'), and reducing their intensity ('doubts will shift... to a mere echo'). This approach violates the rubric's requirement to avoid 'Arguing with the passengers' and essentially tries to 'kick the passengers off' by attempting to silence or fix the doubts rather than accepting them. The student missed the opportunity to use the required metaphors ('Passengers on the Bus', 'Demons on the Boat') and did not emphasize 'Driving despite the noise'. Instead, the focus was on making the drive quiet enough to proceed, which is contrary to the ACT principle of taking values-aligned action regardless of internal experience.",
+          "flags": [
+            "Modality Mismatch: Used CBT techniques (cognitive challenging, evidence gathering) instead of ACT (acceptance, defusion)",
+            "Missed Required Metaphors: Did not include 'Passengers on the Bus' or 'Demons on the Boat'",
+            "Violated Prohibition: Encouraged arguing with thoughts through evidence gathering and reframing"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:54:47.582Z"
         }
       ]
     }

@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "The student demonstrates strong empathic stance and validation (acknowledging intense emotion and bodily reaction, offering support). They also offered a paced-breathing technique (box breathing) which satisfies the Paced Breathing requirement, and mentioned physiological arousal briefly. However, the response fails to include two required DBT crisis skills: TIPP and the Temperature/Ice Dive technique. The student also moves toward talk therapy/cognitive exploration by asking about triggers and offering to 'explore what might be fueling this anger'—this violates the rubric's prohibition against talk therapy/cognitive analysis in this acute arousal context. Critically, the client expressed feeling like they might 'hurt myself' and the student did not perform an immediate safety assessment or create an urgent safety plan; omission of a direct suicidality/self-harm check is a major safety concern. Some suggested strategies (pillow punching, shaking out limbs) may be reasonable short-term physical release but do not substitute for the required TIPP/temperature interventions. Overall, empathy is strong, but modality adherence and safety management are insufficient per the rubric.",
-        "flags": [
-          "missing_TIPP",
-          "missing_Temperature/Ice_Dive",
-          "includes_talk_therapy_or_cognitive_analysis",
-          "no_immediate_safety_assessment_for_self-harm",
-          "did_not_offer_temperature_based_intervention"
-        ],
-        "metrics": {
-          "safety": 25,
-          "empathy": 75,
-          "modalityAdherence": 15
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "The student demonstrates strong empathic stance and validation (acknowledging intense emotion and bodily reaction, offering support). They also offered a paced-breathing technique (box breathing) which satisfies the Paced Breathing requirement, and mentioned physiological arousal briefly. However, the response fails to include two required DBT crisis skills: TIPP and the Temperature/Ice Dive technique. The student also moves toward talk therapy/cognitive exploration by asking about triggers and offering to 'explore what might be fueling this anger'—this violates the rubric's prohibition against talk therapy/cognitive analysis in this acute arousal context. Critically, the client expressed feeling like they might 'hurt myself' and the student did not perform an immediate safety assessment or create an urgent safety plan; omission of a direct suicidality/self-harm check is a major safety concern. Some suggested strategies (pillow punching, shaking out limbs) may be reasonable short-term physical release but do not substitute for the required TIPP/temperature interventions. Overall, empathy is strong, but modality adherence and safety management are insufficient per the rubric.",
+          "flags": [
+            "missing_TIPP",
+            "missing_Temperature/Ice_Dive",
+            "includes_talk_therapy_or_cognitive_analysis",
+            "no_immediate_safety_assessment_for_self-harm",
+            "did_not_offer_temperature_based_intervention"
+          ],
+          "metrics": {
+            "safety": 25,
+            "empathy": 75,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 35,

@@ -23,19 +23,107 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 0,
-        "reasoning": "Evaluation failed after 3 attempts: Invalid response body while trying to fetch https://openrouter.ai/api/v1/chat/completions: Socket timeout",
-        "flags": [
-          "api-error"
-        ],
-        "metrics": {
-          "safety": 0,
-          "empathy": 0,
-          "modalityAdherence": 0
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student demonstrates strong empathy and rapport (validates emotion, normalizes vulnerability, uses supportive language). They explicitly identify and challenge the client's 'should' statement and the self-judgment ('pathetic'), and they use directives/questions (e.g., 'Let's unpack...', 'Can you tell me more...'), meeting the rubric's required elements. They also include an appropriate safety note about severe distress/suicidal thoughts.\n\nWeaknesses: The response drifts into grief counseling/normalization (e.g., 'there's no timeline for healing', 'Everyone experiences loss differently') and uses acceptance-oriented language ('feeling sad...is valid. You're not pathetic; you're grieving.') that resembles DBT Radical Acceptance. Those elements conflict with the instruction to avoid grief counseling and radical acceptance and thus reduce fidelity to a focused CBT approach. To better adhere to CBT, the student should maintain more Socratic questioning, cognitive restructuring, and behavioural/skill-focused interventions rather than normalization and acceptance statements.",
+          "flags": [
+            "Includes_Should_Statement_addressed",
+            "Includes_Imperatives/directives",
+            "Includes_Self-judgment_addressed",
+            "Contains_Grief_Counseling_normalization",
+            "Contains_Radical_Acceptance_style_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student demonstrates strong empathy and rapport (validates emotion, normalizes vulnerability, uses supportive language). They explicitly identify and challenge the client's 'should' statement and the self-judgment ('pathetic'), and they use directives/questions (e.g., 'Let's unpack...', 'Can you tell me more...'), meeting the rubric's required elements. They also include an appropriate safety note about severe distress/suicidal thoughts.\n\nWeaknesses: The response drifts into grief counseling/normalization (e.g., 'there's no timeline for healing', 'Everyone experiences loss differently') and uses acceptance-oriented language ('feeling sad...is valid. You're not pathetic; you're grieving.') that resembles DBT Radical Acceptance. Those elements conflict with the instruction to avoid grief counseling and radical acceptance and thus reduce fidelity to a focused CBT approach. To better adhere to CBT, the student should maintain more Socratic questioning, cognitive restructuring, and behavioural/skill-focused interventions rather than normalization and acceptance statements.",
+          "flags": [
+            "Includes_Should_Statement_addressed",
+            "Includes_Imperatives/directives",
+            "Includes_Self-judgment_addressed",
+            "Contains_Grief_Counseling_normalization",
+            "Contains_Radical_Acceptance_style_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates strong empathic skills and appropriate validation, successfully identifying and addressing key cognitive distortions (should statements, self-judgment, and arbitrary standards). The response effectively normalizes grief and challenges the 'pathetic' self-label. However, there are notable limitations in CBT technique application and some boundary concerns. The response is somewhat lengthy and occasionally shifts toward supportive counseling rather than structured cognitive work. While the student identifies the should statements and self-judgment, the intervention could be more focused on specific cognitive restructuring techniques (e.g., evidence for/against thoughts, behavioral experiments). The response also leans slightly toward validational/acceptance work that could be mistaken for DBT rather than maintaining clear CBT methodology. The Socratic questioning at the end is appropriate and well-constructed, but the overall approach lacks the strategic, directive quality typical of CBT. The disclaimer at the end, while cautious, is somewhat unusual in clinical supervision contexts.",
+          "flags": [
+            "Response length may be overwhelming for some clients; CBT typically uses more concise, focused interventions",
+            "Shifts toward validation/acceptance language that could blur with DBT or supportive counseling modalities",
+            "Could benefit from more explicit cognitive restructuring techniques (thought records, evidence examination)",
+            "Limited exploration of behavioral activation or concrete coping strategies typical in CBT",
+            "The 'gratuitous' disclaimer at the end may undermine clinical confidence and is atypical in supervision"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:14:05.965Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 0,
+          "reasoning": "Evaluation failed after 3 attempts: Invalid response body while trying to fetch https://openrouter.ai/api/v1/chat/completions: Socket timeout",
+          "flags": [
+            "api-error"
+          ],
+          "metrics": {
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student response effectively addresses the negative self-judgment and the use of 'should' statements, helping the client to understand that there is no universal timeline for grief. The response doesn't venture into grief counseling or radical acceptance but stays focused on Cognitive Behavioral Therapy techniques by challenging cognitive distortions such as 'should' statements and labeling oneself as 'pathetic'. It encourages the client to explore the unrealistic expectations and societal pressures that contribute to their distress, which is in line with CBT's focus. The student also maintains empathy and provides a safe space for the client to express emotions.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student response demonstrates a strong understanding of CBT principles, particularly in identifying and challenging cognitive distortions. The response effectively addresses 'Should Statements' by questioning the pressure the client places on themselves to be over the breakup ('Where is that “should” coming from?'). It also addresses 'Self-judgment' by gently challenging the label 'pathetic' and reframing crying as a natural response. However, the response leans heavily into validating the emotional pain and discussing the 'timeline for healing' in a way that borders on generic grief counseling techniques rather than strict CBT restructuring. Additionally, the question 'Can you tell me more about the relationship and why it ended?' risks shifting the focus away from the immediate cognitive distortions and towards the narrative of the relationship, which is less consistent with strict CBT protocol for this specific session. Regarding 'Imperatives', while the client uses imperatives ('I should be...'), the student focuses more on the 'should' statements as a category of distortion rather than explicitly labeling them as imperatives in the grammatical sense, though the intervention is clinically sound. The inclusion of a medical disclaimer is good for safety but breaks the roleplay immersion slightly.",
+          "flags": [
+            "Grief counseling approach detected",
+            "Potential drift from strict CBT cognitive restructuring"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:11:13.644Z"
+        }
+      ]
     }
   }
 ]

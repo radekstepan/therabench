@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student reply demonstrates strong empathy and validation, normalizes the client's feelings, emphasizes boundaries and consent, offers concrete coping strategies and rehearsal suggestions, and gives safe referrals/resources. These mirror DBT-consistent approaches for supporting a client feeling pressured sexually. \n\nLimitations: The response fails to explicitly include the required DBT FAST skillset or to label the advice as 'self-respect effectiveness' (FAST = Fair, no Apologies, Stick to values, Truthful), which the rubric required. Additionally, the response uses wording like \"aiming for a collaborative solution\" which may imply compromise of boundaries; the rubric explicitly required avoiding compromise. Because the FAST framework and an explicit self-respect effectiveness framing were not presented, and because there is language that could be read as encouraging compromise, the submission only partially meets the rubric.",
-        "flags": [
-          "missing_FAST",
-          "no_explicit_self-respect_effectiveness_label",
-          "language_implies_compromise"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "Strengths: The student reply demonstrates strong empathy and validation, normalizes the client's feelings, emphasizes boundaries and consent, offers concrete coping strategies and rehearsal suggestions, and gives safe referrals/resources. These mirror DBT-consistent approaches for supporting a client feeling pressured sexually. \n\nLimitations: The response fails to explicitly include the required DBT FAST skillset or to label the advice as 'self-respect effectiveness' (FAST = Fair, no Apologies, Stick to values, Truthful), which the rubric required. Additionally, the response uses wording like \"aiming for a collaborative solution\" which may imply compromise of boundaries; the rubric explicitly required avoiding compromise. Because the FAST framework and an explicit self-respect effectiveness framing were not presented, and because there is language that could be read as encouraging compromise, the submission only partially meets the rubric.",
+          "flags": [
+            "missing_FAST",
+            "no_explicit_self-respect_effectiveness_label",
+            "language_implies_compromise"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

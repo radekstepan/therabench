@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response strongly meets the 'contact with the present moment', 'mindfulness', and 'here-and-now' requirements: it invites noticing current mental content, uses grounding exercises (sensory noticing, breath), and normalizes experience with empathic language. Those are well-aligned with ACT processes (present moment contact, acceptance). However, the response includes elements that conflict with the rubric's 'Must Avoid' constraints: recommending a scheduled 5–10 minute 'thought-catching' window is essentially planning/structuring worry time, and suggesting counting backward from 100 in threes could be interpreted as a distracting technique rather than pure mindful contact. These aspects reduce fidelity to the directive to avoid planning/distraction. Overall the reply is empathic, clinically appropriate, and useful, but deducts points for the planning recommendation and potential use of distraction instead of purely present-moment mindfulness.",
-        "flags": [
-          "Includes_Planning",
-          "Potential_Distraction"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -51,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:16:59.447Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student provides a compassionate and safe response, demonstrating high empathy and a genuine desire to help. They successfully address 'Contact with the Present Moment' by suggesting grounding techniques like noticing feet on the floor or using the 5-4-3-2-1 method. However, the response significantly violates the 'Must Avoid' criteria of the ACT rubric. The suggestion of a 'thought-catching' window (worry scheduling) is a classic control/avoidance strategy often found in CBT, which contradicts the ACT principle of Acceptance. By asking the client to redirect attention specifically to 'interrupt' the replay, the student is encouraging Distraction rather than Defusion or Acceptance. The goal in ACT is to make room for thoughts while engaging in the present, not to schedule them or use grounding solely to escape them.",
+          "flags": [
+            "Use of control strategies (worry scheduling)",
+            "Encouragement of distraction vs. acceptance"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:55:12.272Z"
         }
       ]
     }

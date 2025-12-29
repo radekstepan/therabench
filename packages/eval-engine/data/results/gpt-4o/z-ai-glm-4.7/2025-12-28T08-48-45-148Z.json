@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "The student response demonstrates good empathy, validation, and useful exploratory questions (asks about the content and patterns of doubts, normalizes paralysis, suggests small steps and social support). However it fails to follow the rubric's mandatory metaphorical framing: it does not include the required images 'Passengers on the Bus', 'Demons on the Boat', or the directive 'Driving despite the noise'. Because those elements were stated as Must Include, this is a significant modality non-adherence. The student also correctly avoided the prohibited approaches ('Kick the passengers off' and 'Argue with the passengers'). To meet the brief, the response should retain its empathic tone while explicitly using the passenger/boat/driving metaphors and encouraging driving despite the noise rather than trying to remove or argue with the internal voices.",
-        "flags": [
-          "missing_required_metaphors: Passengers on the Bus",
-          "missing_required_metaphors: Demons on the Boat",
-          "missing_required_metaphors: Driving despite the noise",
-          "avoided_prohibited_phrases: kick the passengers off",
-          "avoided_prohibited_phrases: argue with the passengers"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 10
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "The student response demonstrates good empathy, validation, and useful exploratory questions (asks about the content and patterns of doubts, normalizes paralysis, suggests small steps and social support). However it fails to follow the rubric's mandatory metaphorical framing: it does not include the required images 'Passengers on the Bus', 'Demons on the Boat', or the directive 'Driving despite the noise'. Because those elements were stated as Must Include, this is a significant modality non-adherence. The student also correctly avoided the prohibited approaches ('Kick the passengers off' and 'Argue with the passengers'). To meet the brief, the response should retain its empathic tone while explicitly using the passenger/boat/driving metaphors and encouraging driving despite the noise rather than trying to remove or argue with the internal voices.",
+          "flags": [
+            "missing_required_metaphors: Passengers on the Bus",
+            "missing_required_metaphors: Demons on the Boat",
+            "missing_required_metaphors: Driving despite the noise",
+            "avoided_prohibited_phrases: kick the passengers off",
+            "avoided_prohibited_phrases: argue with the passengers"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

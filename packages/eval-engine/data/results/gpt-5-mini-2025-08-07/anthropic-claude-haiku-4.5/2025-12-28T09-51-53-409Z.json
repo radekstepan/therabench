@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 82,
-        "reasoning": "Strengths: The student response is empathic and warm, opens with validation, and offers several clear mindfulness-based strategies that promote contact with the present moment (labeling thought, breathing, 5-4-3-2-1 grounding, invitation to do an in-the-moment exercise). Those elements align well with ACT emphasis on here-and-now awareness and mindfulness. The invitation to try exercises together and to report back supports experiential practice and collaborative tone. Concerns: the response includes a recommendation to schedule a 10–20 minute \"worry time,\" which is a planning/strategic technique more typical of CBT and runs counter to the rubric requirement to avoid planning. \"Check the evidence\" also moves toward cognitive restructuring/problem-solving rather than pure experiential contact with present-moment experience and could encourage analytic avoidance rather than acceptance. These departures reduce modality adherence. Overall: high marks for empathy and present-moment tools, moderate deduction for inclusion of planning and cognitive strategies that conflict with the specified constraints.",
-        "flags": [
-          "planning_suggested",
-          "cognitive_restructuring_included"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 92,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -53,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:41:29.856Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrated good empathy and validation, creating a safe space for the client. However, the response significantly deviates from the ACT framework and violates specific rubric constraints. The student employed CBT techniques (e.g., 'Check the evidence,' scheduling 'worry time'), which directly violates the 'Must Avoid: Planning' rule. Furthermore, the student provided a list of instructions for the client to do 'next time,' rather than facilitating an immediate, experiential mindfulness exercise in the session. This failure to engage the client in the 'Here and Now' resulted in a conversation *about* contact with the present moment rather than an experience *of* it. The reliance on grounding techniques (5-4-3-2-1) also borders on 'Distraction' as a control strategy rather than acceptance.",
+          "flags": [
+            "Used CBT techniques (Worry Time, Evidence Checking)",
+            "Failed to facilitate experiential 'Here and Now' exercise",
+            "Violated 'Must Avoid: Planning' rubric item",
+            "Reliance on advice-giving rather than therapeutic process"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:56:36.754Z"
         }
       ]
     }

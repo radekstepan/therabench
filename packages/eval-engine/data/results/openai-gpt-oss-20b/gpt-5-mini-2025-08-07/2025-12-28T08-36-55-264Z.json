@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, normalizing, and collaborative. It accurately describes automaticity and asks useful exploratory questions about triggers, functions of smoking, momentary bodily sensations, prior alternatives, and aftereffects. The practical suggestions (pause-plan, stress-response map, grounding, behavioral alternatives) are concrete and likely helpful. The response avoids recommending addiction counseling or nicotine replacement, satisfying the avoidance requirement.\n\nWeaknesses relative to the rubric: The response fails to include required ACT-specific elements. It does not introduce or name the Choice Point, does not distinguish Hooked vs. Unhooked responses, and does not define or give examples of Towards vs. Away moves. Because those elements were explicitly required, the response is missing core ACT framing and language that guide experiential work and values-based action. Modality adherence is therefore low despite otherwise solid clinical content.\n\nSuggested fixes: Briefly reframe the client’s moment of urge as the Choice Point, label the automatic smoking response as a 'Hooked' move and mindful noticing/alternative actions as 'Unhooked' moves, and give concrete examples of Away moves (reaching for a cigarette to avoid discomfort) versus Towards moves (taking a breath, grounding, calling a friend, or acting on a value like health). Keep the present empathic tone and the practical pause-plan but add these ACT terms and examples so the response meets the rubric.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "no_prohibited_content_found"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student response is empathic, normalizing, and collaborative. It accurately describes automaticity and asks useful exploratory questions about triggers, functions of smoking, momentary bodily sensations, prior alternatives, and aftereffects. The practical suggestions (pause-plan, stress-response map, grounding, behavioral alternatives) are concrete and likely helpful. The response avoids recommending addiction counseling or nicotine replacement, satisfying the avoidance requirement.\n\nWeaknesses relative to the rubric: The response fails to include required ACT-specific elements. It does not introduce or name the Choice Point, does not distinguish Hooked vs. Unhooked responses, and does not define or give examples of Towards vs. Away moves. Because those elements were explicitly required, the response is missing core ACT framing and language that guide experiential work and values-based action. Modality adherence is therefore low despite otherwise solid clinical content.\n\nSuggested fixes: Briefly reframe the client’s moment of urge as the Choice Point, label the automatic smoking response as a 'Hooked' move and mindful noticing/alternative actions as 'Unhooked' moves, and give concrete examples of Away moves (reaching for a cigarette to avoid discomfort) versus Towards moves (taking a breath, grounding, calling a friend, or acting on a value like health). Keep the present empathic tone and the practical pause-plan but add these ACT terms and examples so the response meets the rubric.",
+          "flags": [
+            "missing_choice_point",
+            "missing_hooked_vs_unhooked",
+            "missing_towards_vs_away",
+            "no_prohibited_content_found"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

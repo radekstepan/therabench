@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "The student response shows strong empathy, validates feelings, asks helpful exploratory questions, and explicitly offers alternative explanations for the friend's behavior (addressing the client's probable mind-reading). The response avoids the forbidden focus on interpersonal effectiveness or social skills. However, it fails to propose a concrete behavioral experiment (a key CBT technique requested by the rubric). Also, while the therapist counters the mind-reading by suggesting other explanations, they do not explicitly label the cognitive distortion or offer a specific experiment to test the belief (e.g., a planned in vivo or behavioural test such as checking facts, asking the friend, or deliberately tolerating ambiguity and noting outcomes). Strengths: empathy, exploration, alternative explanations. Main improvement: add a specific behavioral experiment to test the thought \"she clearly thinks I'm boring.\"",
-        "flags": [
-          "missing_behavioral_experiment",
-          "includes_alternative_explanations",
-          "addresses_mind_reading",
-          "avoids_interpersonal_effectiveness_and_social_skills"
-        ],
-        "metrics": {
-          "safety": 10,
-          "empathy": 9,
-          "modalityAdherence": 7
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -56,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:47:32.444Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong empathy and successfully provides 'Alternative Explanations' by suggesting the friend might be late or time-conscious. However, the response fails to meet two of the three specific 'Must Include' criteria. The student does not explicitly label the client's thought process as 'Mind Reading,' nor do they propose a 'Behavioral Experiment' to test the validity of the thought. Instead, the response leans heavily on supportive exploration of feelings and history, which limits its effectiveness as a strict CBT intervention in this context. The student successfully avoided the forbidden topics (Interpersonal Effectiveness and social skills).",
+          "flags": [
+            "Missing component: Explicit labeling of Mind Reading",
+            "Missing component: Behavioral Experiment",
+            "Response leans towards supportive counseling rather than structured CBT techniques"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:00:03.612Z"
         }
       ]
     }

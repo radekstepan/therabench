@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 90,
-        "reasoning": "Strengths: The student shows strong empathy and validation, explicitly normalizes exhaustion, and uses language that communicates the ACT concepts required by the rubric: they acknowledge past efforts haven't worked (creative hopelessness concept), point out that trying to control anxiety can worsen it (the control-is-the-problem), and invite a shift from \"fixing\" to \"making space\" which operationalizes \"dropping the rope.\" They also address immediate safety (alcohol use, suicidal ideation) and offer a brief grounding exercise. Avoided the forbidden phrases literally. Areas for improvement: the response could be slightly more ACT-pure by explicitly naming the creative hopelessness framing and the \"dropping the rope\" metaphor for clarity, and by more clearly linking to values/committed action (next-step ACT work) rather than listing CBT/exposure as an equally prominent option, which dilutes modality adherence. Also, when proposing experiments, be cautious to frame them as collaborative, value-consistent steps rather than an implicit directive to keep \"trying\" new techniques.",
-        "flags": [
-          "modality-mix: suggested CBT/exposure and medication review which may dilute a purely ACT-focused intervention",
-          "explicit-labels-not-used: did not explicitly label 'creative hopelessness' or 'dropping the rope' though concepts are present"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 90,
+          "reasoning": "Strengths: The student shows strong empathy and validation, explicitly normalizes exhaustion, and uses language that communicates the ACT concepts required by the rubric: they acknowledge past efforts haven't worked (creative hopelessness concept), point out that trying to control anxiety can worsen it (the control-is-the-problem), and invite a shift from \"fixing\" to \"making space\" which operationalizes \"dropping the rope.\" They also address immediate safety (alcohol use, suicidal ideation) and offer a brief grounding exercise. Avoided the forbidden phrases literally. Areas for improvement: the response could be slightly more ACT-pure by explicitly naming the creative hopelessness framing and the \"dropping the rope\" metaphor for clarity, and by more clearly linking to values/committed action (next-step ACT work) rather than listing CBT/exposure as an equally prominent option, which dilutes modality adherence. Also, when proposing experiments, be cautious to frame them as collaborative, value-consistent steps rather than an implicit directive to keep \"trying\" new techniques.",
+          "flags": [
+            "modality-mix: suggested CBT/exposure and medication review which may dilute a purely ACT-focused intervention",
+            "explicit-labels-not-used: did not explicitly label 'creative hopelessness' or 'dropping the rope' though concepts are present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

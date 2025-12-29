@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "The student response demonstrates strong empathic listening and validation and appropriately explores the client's fear. It notes the health risk and invites collaborative exploration, which supports safety and rapport. However, it fails to include the required DBT interpersonal effectiveness element DEAR MAN (no guidance on how to structure the request), does not offer concrete guidance on objective effectiveness (no discussion of goals, desired outcome, or problem-solving to achieve the objective), and does not coach assertiveness (no example scripts, role-play suggestion, or behavioral rehearsal). The response stays supportive but is limited to exploration rather than skill-teaching or actionable steps the client can use to make the request. It also avoids the forbidden items (no passive-aggressiveness, no advice to 'just move out', and no labeling of cognitive distortions). To improve: explicitly teach DEAR MAN, help define the objective (what outcome the client wants), and provide/coach assertive language and practice opportunities.",
-        "flags": [
-          "missing_DEAR_MAN",
-          "missing_objective_effectiveness",
-          "missing_assertiveness"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 35
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates strong empathic listening and validation and appropriately explores the client's fear. It notes the health risk and invites collaborative exploration, which supports safety and rapport. However, it fails to include the required DBT interpersonal effectiveness element DEAR MAN (no guidance on how to structure the request), does not offer concrete guidance on objective effectiveness (no discussion of goals, desired outcome, or problem-solving to achieve the objective), and does not coach assertiveness (no example scripts, role-play suggestion, or behavioral rehearsal). The response stays supportive but is limited to exploration rather than skill-teaching or actionable steps the client can use to make the request. It also avoids the forbidden items (no passive-aggressiveness, no advice to 'just move out', and no labeling of cognitive distortions). To improve: explicitly teach DEAR MAN, help define the objective (what outcome the client wants), and provide/coach assertive language and practice opportunities.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "missing_objective_effectiveness",
+            "missing_assertiveness"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

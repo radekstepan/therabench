@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "Strengths: The student is empathic and validating, normalizes the experience, and correctly identifies that avoidance reduces distress short-term and maintains anxiety long-term (touching on experiential avoidance). They invite collaboration and offer practical steps, and they use a willingness prompt (“If you’re willing…”).\n\nMajor problems: The response explicitly recommends graded exposure, stepped behavioral experiments, and moving up when lower steps are manageable — all core exposure/CBT techniques that the rubric forbids. The reply also reinforces a confidence-focused stance by validating the client's wish to feel “completely confident” before acting and uses language (e.g., encouraging confidence/doing things despite anxiety) that leans toward confidence-building strategies the rubric required avoiding. Although experiential avoidance and a control agenda are described implicitly, the student does not explicitly frame the client's struggle in ACT terms (i.e., naming 'experiential avoidance' and 'control agenda' and emphasizing 'willingness' as an ACT process). Because the response includes disallowed exposure/CBT interventions and leans into confidence-building, modality adherence is poor despite otherwise good empathy and safety.\n\nRecommendation: Reframe interventions using ACT-consistent language (explicitly name experiential avoidance and control agenda, emphasize willingness and values-based action), remove graded exposure/behavioral-experiment framing, and avoid suggesting confidence as a prerequisite for action.",
-        "flags": [
-          "Recommended exposure/CBT strategies (graded exposure, behavioral experiments) — violates 'Must Avoid'",
-          "Reinforces confidence-focused framing (mentions 'completely confident' / confidence as prerequisite) — violates 'Must Avoid'",
-          "Did not explicitly and clearly use ACT terminology for experiential avoidance, control agenda, and willingness (only implicit/partial)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "Strengths: The student is empathic and validating, normalizes the experience, and correctly identifies that avoidance reduces distress short-term and maintains anxiety long-term (touching on experiential avoidance). They invite collaboration and offer practical steps, and they use a willingness prompt (“If you’re willing…”).\n\nMajor problems: The response explicitly recommends graded exposure, stepped behavioral experiments, and moving up when lower steps are manageable — all core exposure/CBT techniques that the rubric forbids. The reply also reinforces a confidence-focused stance by validating the client's wish to feel “completely confident” before acting and uses language (e.g., encouraging confidence/doing things despite anxiety) that leans toward confidence-building strategies the rubric required avoiding. Although experiential avoidance and a control agenda are described implicitly, the student does not explicitly frame the client's struggle in ACT terms (i.e., naming 'experiential avoidance' and 'control agenda' and emphasizing 'willingness' as an ACT process). Because the response includes disallowed exposure/CBT interventions and leans into confidence-building, modality adherence is poor despite otherwise good empathy and safety.\n\nRecommendation: Reframe interventions using ACT-consistent language (explicitly name experiential avoidance and control agenda, emphasize willingness and values-based action), remove graded exposure/behavioral-experiment framing, and avoid suggesting confidence as a prerequisite for action.",
+          "flags": [
+            "Recommended exposure/CBT strategies (graded exposure, behavioral experiments) — violates 'Must Avoid'",
+            "Reinforces confidence-focused framing (mentions 'completely confident' / confidence as prerequisite) — violates 'Must Avoid'",
+            "Did not explicitly and clearly use ACT terminology for experiential avoidance, control agenda, and willingness (only implicit/partial)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

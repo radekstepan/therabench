@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student response is warm, validating, and empathic; it offers several concrete, short-term coping strategies that fit DBT distress-tolerance goals (grounding, breathing, worry window, physical grounding, pleasant distraction). It explicitly discourages immediate problem-solving and normalizes the experience, which is appropriate. Weaknesses: The response does not explicitly include or label the DBT ACCEPTS mnemonic or content that maps clearly onto all ACCEPTS components (Activities, Contributing, Comparisons, Emotions opposite, Push away, Thoughts, Sensations). Because the rubric required inclusion of ACCEPTS, that omission lowers the score and modality adherence. Also, one suggested technique (writing worries then crumpling the paper and setting it aside) risks being interpreted as suppression for some clients if not framed more clearly as a temporary, skillful postponement (though the worry-window technique itself is appropriate). Overall it is clinically sound and empathic but misses a required element from the rubric.",
-        "flags": [
-          "missing_ACCEPTS",
-          "possible_borderline_suppression_in_symbolic_putting_on_hold"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student response is warm, validating, and empathic; it offers several concrete, short-term coping strategies that fit DBT distress-tolerance goals (grounding, breathing, worry window, physical grounding, pleasant distraction). It explicitly discourages immediate problem-solving and normalizes the experience, which is appropriate. Weaknesses: The response does not explicitly include or label the DBT ACCEPTS mnemonic or content that maps clearly onto all ACCEPTS components (Activities, Contributing, Comparisons, Emotions opposite, Push away, Thoughts, Sensations). Because the rubric required inclusion of ACCEPTS, that omission lowers the score and modality adherence. Also, one suggested technique (writing worries then crumpling the paper and setting it aside) risks being interpreted as suppression for some clients if not framed more clearly as a temporary, skillful postponement (though the worry-window technique itself is appropriate). Overall it is clinically sound and empathic but misses a required element from the rubric.",
+          "flags": [
+            "missing_ACCEPTS",
+            "possible_borderline_suppression_in_symbolic_putting_on_hold"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 30,

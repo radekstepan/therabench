@@ -23,19 +23,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student's response excels in validating the client's experience and encouraging values-congruent action (e.g., reframing the goal as 'extending an invitation' linked to being a supportive partner). It strongly emphasizes taking action WITH fear present through step-by-step behavioral experiments (e.g., small gestures, reframed questions) rather than waiting for fear to subside. However, it subtly crosses into communication skills training by suggesting specific phrasings ('Anything interesting happen today?'), which the rubric explicitly prohibits. Despite this, the core ACT tenets of Committed Action, Values alignment, and willingness to act despite fear are robustly addressed.",
-        "flags": [
-          "Minor communication skills training in Step 3 (specific phrasing suggestions)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student's response excels in validating the client's experience and encouraging values-congruent action (e.g., reframing the goal as 'extending an invitation' linked to being a supportive partner). It strongly emphasizes taking action WITH fear present through step-by-step behavioral experiments (e.g., small gestures, reframed questions) rather than waiting for fear to subside. However, it subtly crosses into communication skills training by suggesting specific phrasings ('Anything interesting happen today?'), which the rubric explicitly prohibits. Despite this, the core ACT tenets of Committed Action, Values alignment, and willingness to act despite fear are robustly addressed.",
+          "flags": [
+            "Minor communication skills training in Step 3 (specific phrasing suggestions)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 75,

@@ -24,24 +24,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 85,
-        "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly uses core CBT/behavioral activation strategies: they state that action often precedes motivation, encourage taking a tiny step, and suggest breaking the task into very small components (graded task assignment). They also check for contributing factors by asking about physical versus emotional fatigue, which can inform activity planning. Weaknesses: The response does not explicitly include activity scheduling (e.g., setting a specific time or brief planned session to do the small step) or formalizing an activity schedule/monitoring plan, which is an important component of behavioral activation to promote follow-through. The response otherwise avoids recommending resting or waiting for mood to improve, as required. To fully meet the rubric, the student should add a concrete scheduling element (e.g., agree on a 10-minute time block today or schedule the next step) and a plan to review progress.",
-        "flags": [
-          "includes_behavioral_activation",
-          "includes_action_precedes_motivation",
-          "includes_graded_task_assignment",
-          "missing_activity_scheduling",
-          "avoids_wait_for_mood",
-          "empathic_language"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 88,
@@ -54,6 +37,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:22:43.533Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student provided an excellent response that adheres closely to CBT principles. They validated the client's feelings while effectively challenging the cognitive distortion that motivation must precede action. The response successfully incorporated 'Behavioral Activation' by suggesting action creates motivation, and 'Graded Task Assignment' by asking for the smallest possible step (e.g., opening a file or writing one sentence). The student avoided all prohibited content (telling the client to rest or wait) and pivoted the focus to behavioral intervention. The only minor area for improvement would be to formalize the scheduling aspect explicitly to fully cover 'Activity Scheduling' as a specific homework assignment, though the groundwork was laid.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:24:59.864Z"
         }
       ]
     }

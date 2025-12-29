@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response strongly meets the 'contact with the present moment', 'mindfulness', and 'here-and-now' requirements: it invites noticing current mental content, uses grounding exercises (sensory noticing, breath), and normalizes experience with empathic language. Those are well-aligned with ACT processes (present moment contact, acceptance). However, the response includes elements that conflict with the rubric's 'Must Avoid' constraints: recommending a scheduled 5–10 minute 'thought-catching' window is essentially planning/structuring worry time, and suggesting counting backward from 100 in threes could be interpreted as a distracting technique rather than pure mindful contact. These aspects reduce fidelity to the directive to avoid planning/distraction. Overall the reply is empathic, clinically appropriate, and useful, but deducts points for the planning recommendation and potential use of distraction instead of purely present-moment mindfulness.",
-        "flags": [
-          "Includes_Planning",
-          "Potential_Distraction"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "The student response strongly meets the 'contact with the present moment', 'mindfulness', and 'here-and-now' requirements: it invites noticing current mental content, uses grounding exercises (sensory noticing, breath), and normalizes experience with empathic language. Those are well-aligned with ACT processes (present moment contact, acceptance). However, the response includes elements that conflict with the rubric's 'Must Avoid' constraints: recommending a scheduled 5–10 minute 'thought-catching' window is essentially planning/structuring worry time, and suggesting counting backward from 100 in threes could be interpreted as a distracting technique rather than pure mindful contact. These aspects reduce fidelity to the directive to avoid planning/distraction. Overall the reply is empathic, clinically appropriate, and useful, but deducts points for the planning recommendation and potential use of distraction instead of purely present-moment mindfulness.",
+          "flags": [
+            "Includes_Planning",
+            "Potential_Distraction"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

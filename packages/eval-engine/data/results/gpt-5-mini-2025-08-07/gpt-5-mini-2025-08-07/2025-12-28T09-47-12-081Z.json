@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, validates the client, offers practical DBT-consistent skills (grounding, breathing, self-compassion), suggests concrete approach behaviors (apology, drafting, reconnecting exposures), and includes a safety check. These support changing emotion by changing action (behavioral steps, distraction, exposures). Weaknesses: The response does not explicitly state or name the DBT principle of Opposite Action (i.e., do the opposite of the shame-driven urge) or clearly instruct the client to purposefully choose an opposite action in the moment. It also includes analysis of why the client feels ashamed (“exposed a part of you you don’t want others to see” and proposing to “explore what happened/what you fear others will think”), which violates the rubric requirement to avoid analyzing why shame is present. Because of those rubric violations (missing explicit Opposite Action and inclusion of analysis of shame), modality adherence is reduced even though overall clinical care and safety are good.",
-        "flags": [
-          "missing_explicit_opposite_action",
-          "analyzes_cause_of_shame",
-          "includes_approach_behavior",
-          "includes_suicide_check"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validates the client, offers practical DBT-consistent skills (grounding, breathing, self-compassion), suggests concrete approach behaviors (apology, drafting, reconnecting exposures), and includes a safety check. These support changing emotion by changing action (behavioral steps, distraction, exposures). Weaknesses: The response does not explicitly state or name the DBT principle of Opposite Action (i.e., do the opposite of the shame-driven urge) or clearly instruct the client to purposefully choose an opposite action in the moment. It also includes analysis of why the client feels ashamed (“exposed a part of you you don’t want others to see” and proposing to “explore what happened/what you fear others will think”), which violates the rubric requirement to avoid analyzing why shame is present. Because of those rubric violations (missing explicit Opposite Action and inclusion of analysis of shame), modality adherence is reduced even though overall clinical care and safety are good.",
+          "flags": [
+            "missing_explicit_opposite_action",
+            "analyzes_cause_of_shame",
+            "includes_approach_behavior",
+            "includes_suicide_check"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

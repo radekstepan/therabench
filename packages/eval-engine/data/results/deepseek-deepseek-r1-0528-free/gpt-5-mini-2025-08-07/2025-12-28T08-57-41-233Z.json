@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 82,
-        "reasoning": "Strengths: The student demonstrates strong empathic engagement and personalization (e.g., naming the client's pain and linking her worry to love for her son). They include an attributional challenge by gently reframing the causal belief (pointing out multiple factors that shape child behavior) and shift toward collaborative, problem-focused work — all consistent with CBT style and avoiding direct parenting instruction. The response avoids giving concrete parenting advice and does not enact a systemic therapy intervention.\n\nLimitations: The response does not explicitly address locus of control — it misses a clear, CBT-consistent distinction between what the mother is responsible for versus what is within or outside her control (e.g., internalizing adaptive actions she can take vs external factors she cannot change). While attribution error is challenged, the student could more explicitly use behavioral/cognitive techniques (e.g., Socratic questions or evidence-gathering) to test the self-blaming belief. Also, mentioning school environment and peers skirts system-level factors; although used to reduce self-blame, this could be interpreted as invoking systemic explanations rather than staying strictly within individual CBT framing. These gaps reduce full adherence to the rubric.",
-        "flags": [
-          "missing_explicit_locus_of_control",
-          "systemic_elements_mentioned_but_should_be_minimized"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 82,
+          "reasoning": "Strengths: The student demonstrates strong empathic engagement and personalization (e.g., naming the client's pain and linking her worry to love for her son). They include an attributional challenge by gently reframing the causal belief (pointing out multiple factors that shape child behavior) and shift toward collaborative, problem-focused work — all consistent with CBT style and avoiding direct parenting instruction. The response avoids giving concrete parenting advice and does not enact a systemic therapy intervention.\n\nLimitations: The response does not explicitly address locus of control — it misses a clear, CBT-consistent distinction between what the mother is responsible for versus what is within or outside her control (e.g., internalizing adaptive actions she can take vs external factors she cannot change). While attribution error is challenged, the student could more explicitly use behavioral/cognitive techniques (e.g., Socratic questions or evidence-gathering) to test the self-blaming belief. Also, mentioning school environment and peers skirts system-level factors; although used to reduce self-blame, this could be interpreted as invoking systemic explanations rather than staying strictly within individual CBT framing. These gaps reduce full adherence to the rubric.",
+          "flags": [
+            "missing_explicit_locus_of_control",
+            "systemic_elements_mentioned_but_should_be_minimized"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

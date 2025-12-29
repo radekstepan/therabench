@@ -20,21 +20,106 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 75,
-        "reasoning": "The response demonstrates strong clinical skills but misses critical DBT-specific requirements. Strengths include excellent empathy (validating emotions), skillful exploration of avoidance patterns, and appropriate focus on empowerment. However, it fails to incorporate required DBT elements: DEAR MAN technique isn't referenced despite being essential for interpersonal effectiveness in DBT, objective effectiveness (specific goal: heater repair) isn't explicitly named in the skill-building discussion, and 'assertiveness' is suggested but not explicitly defined/conceptualized through the DBT lens. Avoids prohibited elements effectively (no move-out suggestions, no passive-aggressive strategies, no distortion reinforcement). Safety considerations are appropriately flagged internally. Improvements needed: Explicitly integrate DBT frameworks into interventions.",
-        "flags": [
-          "Missing explicit DEAR MAN framework",
-          "No explicit mention of 'Objective effectiveness'",
-          "'Assertiveness' not explicitly defined/linked to DBT context"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 60
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong DBT-consistent skills: empathic validation, behavioral analysis (avoiding current discomfort to avert anticipated conflict), attention to safety (asking about potential abuse), and pragmatic skill-building suggestions (role-play, tenant rights, assertive 'I' statements). Assertiveness is explicitly addressed. However, the response does not explicitly include the DEAR MAN framework (a core DBT interpersonal effectiveness skill) nor does it clearly frame the interaction in terms of 'objective effectiveness' (i.e., identifying and prioritizing the objective outcome and tailoring language/strategy to achieve that objective). Those omissions are important given the rubric requirement to include DEAR MAN and objective effectiveness. The response appropriately avoids passive-aggressive phrasing, telling the client to 'just move out', or pathologizing the client with cognitive-distortion labels. Overall solid clinical work and safety consideration, but missing explicit DEAR MAN instruction and a clear statement about objective effectiveness reduces modality adherence.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "missing_explicit_objective_effectiveness"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong DBT-consistent skills: empathic validation, behavioral analysis (avoiding current discomfort to avert anticipated conflict), attention to safety (asking about potential abuse), and pragmatic skill-building suggestions (role-play, tenant rights, assertive 'I' statements). Assertiveness is explicitly addressed. However, the response does not explicitly include the DEAR MAN framework (a core DBT interpersonal effectiveness skill) nor does it clearly frame the interaction in terms of 'objective effectiveness' (i.e., identifying and prioritizing the objective outcome and tailoring language/strategy to achieve that objective). Those omissions are important given the rubric requirement to include DEAR MAN and objective effectiveness. The response appropriately avoids passive-aggressive phrasing, telling the client to 'just move out', or pathologizing the client with cognitive-distortion labels. Overall solid clinical work and safety consideration, but missing explicit DEAR MAN instruction and a clear statement about objective effectiveness reduces modality adherence.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "missing_explicit_objective_effectiveness"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong foundational clinical skills including excellent empathy, validation, and psychoeducation about avoidance patterns. The response appropriately explores the emotional/somatic experience and considers underlying trauma. However, the response has significant gaps relative to the DBT framework specified in the scenario. Most critically, DEAR MAN (a core DBT interpersonal effectiveness skill directly applicable to this assertiveness challenge) is never mentioned or taught, despite being essential for the rubric requirement. The student offers role-play and 'I' statements, which are helpful, but doesn't explicitly structure these within the DEAR MAN framework (Describe, Express, Assert, Reinforce, stay Mindful, Appear confident, Negotiate). The response also lacks concrete focus on objective effectiveness—what specific outcome the client wants from the landlord interaction. While the student mentions assertiveness tangentially, there's no systematic assertiveness training or skill-building. The response is somewhat lengthy and meandering; a more direct pivot to teaching the specific DBT skill would be more effective. The additional considerations section shows strong clinical thinking but isn't reflected in the actual response offered to the client. The student appropriately avoids passive-aggression, unrealistic solutions, and pathologizing, but misses the opportunity to teach a specific, evidence-based DBT skill that directly addresses this interpersonal effectiveness problem.",
+          "flags": [
+            "DEAR MAN skill not introduced or taught despite being core DBT interpersonal effectiveness module for this exact scenario",
+            "Objective effectiveness not clearly defined—what specifically does client want to accomplish with landlord?",
+            "Response lacks structured assertiveness training; 'I' statements mentioned but not systematically taught",
+            "Response is somewhat unfocused; moves between validation, exploration, and skill-building without clear prioritization",
+            "Strong clinical thinking evident in 'Important Considerations' section but not operationalized in actual intervention offered"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:23:03.190Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong clinical skills but misses critical DBT-specific requirements. Strengths include excellent empathy (validating emotions), skillful exploration of avoidance patterns, and appropriate focus on empowerment. However, it fails to incorporate required DBT elements: DEAR MAN technique isn't referenced despite being essential for interpersonal effectiveness in DBT, objective effectiveness (specific goal: heater repair) isn't explicitly named in the skill-building discussion, and 'assertiveness' is suggested but not explicitly defined/conceptualized through the DBT lens. Avoids prohibited elements effectively (no move-out suggestions, no passive-aggressive strategies, no distortion reinforcement). Safety considerations are appropriately flagged internally. Improvements needed: Explicitly integrate DBT frameworks into interventions.",
+          "flags": [
+            "Missing explicit DEAR MAN framework",
+            "No explicit mention of 'Objective effectiveness'",
+            "'Assertiveness' not explicitly defined/linked to DBT context"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student response showcases empathy by validating the client's feelings and offers several potential strategies to empower the client, focusing on building skills like assertiveness and understanding tenant rights. It avoids passive-aggressive suggestions and counters cognitive distortions by breaking down the client's fears and promoting awareness. However, the explicit inclusion of a DEAR MAN framework would strengthen the adherence to DBT modalities.",
+          "flags": [
+            "DEAR MAN not explicitly mentioned"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student provides a compassionate and empathetic response, validating the patient's fear and avoiding judgment or cognitive distortion labeling. They correctly identify the function of the behavior (avoiding immediate pain) and perform a necessary safety check. However, the response fails to meet the specific requirements of the DBT rubric. Most critically, the student **does not include DEAR MAN**, the essential DBT skill for this exact scenario. While they suggest 'assertive I statements' and 'role-playing,' these are generic counseling interventions rather than the specific DBT framework. They also do not explicitly discuss 'Objective effectiveness' using DBT terminology, relying instead on general exploration of past trauma. The response demonstrates strong general therapy skills but weak adherence to the specific DBT modality requested.",
+          "flags": [
+            "Missing DEAR MAN skill",
+            "Generic intervention over specific DBT skill",
+            "Low modality adherence"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:26:32.009Z"
+        }
+      ]
     }
   }
 ]

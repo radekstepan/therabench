@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 62,
-        "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
-        "flags": [
-          "Missing: Evidence for vs. Evidence against",
-          "Insufficient: Cognitive restructuring not explicit or complete",
-          "Potential emotion-regulation suggestion ('slow the moment down')"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 62,
+          "reasoning": "Strengths: The student accurately labels the process as emotion-driven (emotional reasoning) and responds empathically, inviting the client to pause rather than catastrophize — a useful opening for cognitive work. Weaknesses: The response does not explicitly prompt an evidence-for vs. evidence-against examination of the belief \"I'm going to fail the exam,\" nor does it guide the client to generate a specific alternative/balanced thought or use Socratic questions to restructure the thought. The phrase \"slow the moment down\" borders on an emotion-regulation/grounding instruction rather than a clear cognitive-restructuring intervention. To meet the rubric, the therapist should explicitly elicit evidence for and against the thought and lead the client through cognitive reappraisal (e.g., asking for examples of preparation, objective indicators of likely success, and crafting a balanced alternative thought).",
+          "flags": [
+            "Missing: Evidence for vs. Evidence against",
+            "Insufficient: Cognitive restructuring not explicit or complete",
+            "Potential emotion-regulation suggestion ('slow the moment down')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

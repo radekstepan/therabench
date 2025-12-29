@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response does well in empathizing with the client's concern and reframing the client's thought process towards focusing on skills and strengths. However, the response does not adequately engage in Socratic questioning or address the overgeneralization inherent in the client's statement ('I am completely unemployable'). The validity of the client’s belief could also be challenged more directly through questions or reflections on the evidence for and against that belief. The student avoids explicit career counseling, which aligns with the rubric, but the lack of targeted questioning misses an opportunity for deeper cognitive restructuring.",
-        "flags": [
-          "Insufficient Socratic Questioning",
-          "Overgeneralization Not Addressed"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response does well in empathizing with the client's concern and reframing the client's thought process towards focusing on skills and strengths. However, the response does not adequately engage in Socratic questioning or address the overgeneralization inherent in the client's statement ('I am completely unemployable'). The validity of the client’s belief could also be challenged more directly through questions or reflections on the evidence for and against that belief. The student avoids explicit career counseling, which aligns with the rubric, but the lack of targeted questioning misses an opportunity for deeper cognitive restructuring.",
+          "flags": [
+            "Insufficient Socratic Questioning",
+            "Overgeneralization Not Addressed"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

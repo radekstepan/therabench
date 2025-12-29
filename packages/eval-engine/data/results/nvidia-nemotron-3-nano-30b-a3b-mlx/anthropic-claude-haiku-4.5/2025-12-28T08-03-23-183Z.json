@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 62,
-        "reasoning": "Strengths: The student response demonstrates strong empathy, validation, and several evidence‑based, practically useful strategies (exposure hierarchy, in‑the‑moment grounding/breathing, scripting, documentation, alternative routes). Assertiveness is addressed with concrete wording suggestions and boundary language, and the plan is behaviorally focused and objectively effective for reducing avoidance. \n\nPrimary problems relative to the rubric: the response fails to include the DBT interpersonal skill DEAR MAN (an explicit omission given the scenario and rubric requirement). It also uses the phrase “Break the ‘All‑Or‑Nothing’ Lens,” which explicitly names a cognitive‑distortion concept — the rubric required avoiding references to cognitive distortions. These two issues are critical because DEAR MAN is a core DBT interpersonal technique that should have been taught or practiced here, and explicit labeling of cognitive distortions runs counter to the rubric instruction. \n\nOverall: clinically solid and empathic, but missing the required DBT DEAR MAN component and inadvertently violating the instruction to avoid cognitive‑distortion framing. To improve: add a clear DEAR MAN script and practice role‑play of it; remove or reframe cognitive‑distortion language (focus on specific thoughts without diagnostic labels).",
-        "flags": [
-          "missing_DEAR_MAN",
-          "uses_cognitive_distortion_label_all_or_nothing"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -52,6 +39,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:05:47.672Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student provided a supportive and empathetic response, but fundamentally failed to adhere to the specific DBT requirements outlined in the scenario and rubric. While the response demonstrates strong general counseling skills—validation and exploration of anxiety—it relies entirely on CBT interventions (cognitive restructuring, identifying automatic thoughts, evidence gathering) rather than the required DBT skills. The rubric explicitly mandated the inclusion of 'DEAR MAN' and 'Objective effectiveness,' neither of which appear in the response. The student suggested an exposure hierarchy and general coping skills but missed the core DBT intervention for interpersonal effectiveness, which is the primary tool for this type of problem.",
+          "flags": [
+            "Missing DEAR MAN skill",
+            "Missed DBT modality requirements",
+            "CBT techniques used instead of DBT",
+            "Missing Objective effectiveness framework"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:30:05.366Z"
         }
       ]
     }

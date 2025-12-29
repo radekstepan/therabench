@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "The student response demonstrates several strengths: it identifies emotional reasoning (noting that feelings of inadequacy can cloud judgment), invites an evidence-for vs. evidence-against exploration (asks to examine evidence of hard work and past successes), and gestures toward cognitive restructuring by proposing examination of the gap between knowledge and feeling. The tone is empathetic and not validation-only. However, there are shortcomings: the cognitive restructuring is somewhat vague and not sufficiently directive (no concrete Socratic questions, alternative balanced thought, or explicit restructuring steps were offered). Critically, the response recommends grounding techniques and relaxation exercises — these are emotion-regulation techniques specifically listed as forbidden in the rubric. Because of that explicit violation the overall score is reduced despite the presence of required CBT elements. The response otherwise avoids forbidden phrases like “trust your gut.”",
-        "flags": [
-          "Includes forbidden emotion-regulation techniques (grounding/relaxation suggested)",
-          "Cognitive restructuring present but under-specified (no concrete Socratic questioning or formulation of alternative thoughts)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates several strengths: it identifies emotional reasoning (noting that feelings of inadequacy can cloud judgment), invites an evidence-for vs. evidence-against exploration (asks to examine evidence of hard work and past successes), and gestures toward cognitive restructuring by proposing examination of the gap between knowledge and feeling. The tone is empathetic and not validation-only. However, there are shortcomings: the cognitive restructuring is somewhat vague and not sufficiently directive (no concrete Socratic questions, alternative balanced thought, or explicit restructuring steps were offered). Critically, the response recommends grounding techniques and relaxation exercises — these are emotion-regulation techniques specifically listed as forbidden in the rubric. Because of that explicit violation the overall score is reduced despite the presence of required CBT elements. The response otherwise avoids forbidden phrases like “trust your gut.”",
+          "flags": [
+            "Includes forbidden emotion-regulation techniques (grounding/relaxation suggested)",
+            "Cognitive restructuring present but under-specified (no concrete Socratic questioning or formulation of alternative thoughts)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

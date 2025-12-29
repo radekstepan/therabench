@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student demonstrates good empathy and an ACT-consistent stance (encouraging observation, distance from the thought, and self-compassion) and explicitly uses a defusion-style prompt (“I'm noticing the thought that I am broken”), which approximates the required 'I'm having the thought that...' phrasing. They avoided challenging the thought (CBT-style) and did not use thought stopping, which aligns with the rubric. However, the response fails to include two specific required defusion exercises: singing the thought and repeating the word. Also, the rubric required the explicit phrase 'I'm having the thought that...' — the student used 'I'm noticing...' which is close but not the exact required wording. Because key mandated techniques are missing, modality adherence is limited.",
-        "flags": [
-          "missing_singing_the_thought",
-          "missing_repeating_the_word",
-          "phrase_used_is_'I'm_noticing'_-_not_exact_'I'm_having_the_thought'"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:31:47.811Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a clinically sound and empathetic response that correctly identified the process of cognitive fusion and avoided the prohibited CBT techniques (challenging/stopping). They successfully introduced the concept of noticing thoughts, utilizing a variation of the 'I'm having the thought that...' technique ('I'm noticing the thought that...'). However, the student failed to include the other specific defusion techniques mandated by the rubric: 'Singing the thought' and 'Repeating the word.' While the response was good ACT therapy in a general sense, it did not meet the specific technical requirements of the rubric which likely aimed to see a broader range of creative defusion strategies.",
+          "flags": [
+            "Missing specific technique: Singing the thought",
+            "Missing specific technique: Repeating the word"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:39:57.441Z"
         }
       ]
     }

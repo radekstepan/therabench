@@ -6,19 +6,21 @@
     "timestamp": "2025-12-28T19:23:58.401Z",
     "response": "# Therapeutic Response\n\nI hear that arguing with the thought is actually making it more persistent—that's a really important observation. What you're describing is actually really common, and there's something important to understand about how our minds work.\n\n**Here's what's likely happening:** When we fight a thought directly—especially a painful one—we're giving it energy and attention. It's a bit like being told \"don't think about a pink elephant.\" The thought strengthens.\n\n**Let me offer a different approach:**\n\nInstead of battling the thought, what if we changed our relationship to it? The thought \"I am broken\" is just words your mind is producing—like a radio playing in the background. You don't have to believe it, argue with it, or make it go away.\n\n**Some things we might explore:**\n\n- **Noticing without wrestling**: Can you observe the thought as it appears, almost like watching a cloud pass by?\n- **Getting curious**: When this thought shows up, what's usually happening? What triggered it?\n- **The bigger picture**: The thought says you're broken, but is that actually true based on evidence from your life? (Not arguing with it, just observing.)\n\nThe goal isn't to eliminate the thought—it's to stop letting it run your life.\n\n**What feels most relevant to explore right now?** And how long have you been noticing this particular thought?",
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 60,
-        "reasoning": "The student demonstrates foundational ACT principles by introducing cognitive defusion and avoiding explicit thought challenging/stopping. They effectively reframe the struggle with thoughts and offer relevant alternative approaches (noticing, curiosity). However, the response critically misses all rubric-required defusion techniques ('I'm having the thought that...', singing the thought, repeating the word), which are explicitly mandated. This omission significantly impacts modality adherence. Positives include good normalization of the client's experience and avoidance of prohibited CBT techniques.",
-        "flags": [
-          "MISSING_REQUIRED_TECHNIQUES: No use of 'I'm having the thought that...', singing, or word repetition"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates foundational ACT principles by introducing cognitive defusion and avoiding explicit thought challenging/stopping. They effectively reframe the struggle with thoughts and offer relevant alternative approaches (noticing, curiosity). However, the response critically misses all rubric-required defusion techniques ('I'm having the thought that...', singing the thought, repeating the word), which are explicitly mandated. This omission significantly impacts modality adherence. Positives include good normalization of the client's experience and avoidance of prohibited CBT techniques.",
+          "flags": [
+            "MISSING_REQUIRED_TECHNIQUES: No use of 'I'm having the thought that...', singing, or word repetition"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

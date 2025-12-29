@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response effectively incorporates elements of empathy, grounding techniques, and cognitive defusion by labeling thoughts, which are all suitable approaches for ACT (Acceptance and Commitment Therapy). The response clearly validates the patient's experience and provides multiple strategies for managing distressing thoughts. However, the inclusion of strategies like 'Gather Evidence' and 'Re-frame' closely aligns with cognitive restructuring techniques used in CBT, which in this context may be seen as challenging the thought, something to be avoided according to the rubric provided. Additionally, the response lacks references to specific techniques like 'singing the thought' or 'repeating the word' which are classic defusion exercises in ACT.",
-        "flags": [
-          "minor usage of cognitive restructuring",
-          "missing defusion techniques like singing/repeating"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively incorporates elements of empathy, grounding techniques, and cognitive defusion by labeling thoughts, which are all suitable approaches for ACT (Acceptance and Commitment Therapy). The response clearly validates the patient's experience and provides multiple strategies for managing distressing thoughts. However, the inclusion of strategies like 'Gather Evidence' and 'Re-frame' closely aligns with cognitive restructuring techniques used in CBT, which in this context may be seen as challenging the thought, something to be avoided according to the rubric provided. Additionally, the response lacks references to specific techniques like 'singing the thought' or 'repeating the word' which are classic defusion exercises in ACT.",
+          "flags": [
+            "minor usage of cognitive restructuring",
+            "missing defusion techniques like singing/repeating"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

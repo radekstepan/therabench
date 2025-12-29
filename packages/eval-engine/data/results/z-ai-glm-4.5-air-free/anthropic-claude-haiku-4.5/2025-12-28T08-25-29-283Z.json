@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, validates the client's conflict, links the issue to the client's value (being a caring partner), and gently encourages action despite fear (e.g., noting small gestures can build connection). The reply avoids the prohibited behaviors — it does not tell the client to wait for fear to subside nor does it provide concrete communication-skills scripting. Areas for improvement: The response does not include a clear, ACT-consistent committed action invitation (a specific, values-based behavioral commitment despite discomfort). It leans toward exploration of origins of fear (which can be useful) but does not explicitly elicit or set a concrete, short-term behavioral step the client will commit to while acknowledging the fear. To better adhere to ACT, the student should include explicit acceptance language (notice the fear and still act) and elicit a specific committed action (e.g., a concrete experiment or small, time-bound step) tied to the value.",
-        "flags": [
-          "missing_committed_action"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -50,6 +38,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:24:21.517Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong empathy and accurately reflects the client's dilemma between values and fear. However, it struggles with specific ACT (Acceptance and Commitment Therapy) interventions required by the rubric. While the student identifies the desire to be a 'caring partner' (Values), the intervention drifts into cognitive exploration by asking about the specific content of worries ('what specifically are you worried might happen') and the origin of the fear ('where this fear comes from'). This is more aligned with CBT or psychodynamic exploration than ACT. The student misses the core ACT concept of 'Taking action with fear' by ending with reassurance ('fear is often not what actually happens') rather than encouraging the client to make room for the fear and take the action anyway. Committed Action is mentioned but is framed as advice/reassurance rather than a behavioral experiment or a clear commitment to behavior despite internal barriers.",
+          "flags": [
+            "Excessive focus on fear content and origin",
+            "Reassurance utilized instead of acceptance/willingness",
+            "Missed opportunity for behavioral activation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:09:54.177Z"
         }
       ]
     }

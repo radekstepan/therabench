@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "The student response shows good empathy and recognizes emotional and logical perspectives (Emotion Mind and Reason Mind — e.g., 'miss your ex' and 'logical mind'). It validates feelings and offers concrete behavioral alternatives (journaling, reach out to a friend). However it fails to explicitly invoke or teach the DBT concepts of Wise Mind and Synthesis (integration of Emotion and Reason), which the rubric required. The wording 'logical mind' maps to Reason Mind and references to unmet emotional needs map to Emotion Mind, but there is no explicit naming of Wise Mind nor a clear synthesis statement that helps the client choose from an integrated Wise Mind perspective. Also could be strengthened by suggesting a brief Wise Mind-based practice (e.g., mindfulness to notice urges, urge-surfing, or using pros/cons from both minds). Overall clinically solid and empathic but missing the mandated DBT labeling/synthesis.",
-        "flags": [
-          "missing_wise_mind",
-          "missing_explicit_synthesis"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "The student response shows good empathy and recognizes emotional and logical perspectives (Emotion Mind and Reason Mind — e.g., 'miss your ex' and 'logical mind'). It validates feelings and offers concrete behavioral alternatives (journaling, reach out to a friend). However it fails to explicitly invoke or teach the DBT concepts of Wise Mind and Synthesis (integration of Emotion and Reason), which the rubric required. The wording 'logical mind' maps to Reason Mind and references to unmet emotional needs map to Emotion Mind, but there is no explicit naming of Wise Mind nor a clear synthesis statement that helps the client choose from an integrated Wise Mind perspective. Also could be strengthened by suggesting a brief Wise Mind-based practice (e.g., mindfulness to notice urges, urge-surfing, or using pros/cons from both minds). Overall clinically solid and empathic but missing the mandated DBT labeling/synthesis.",
+          "flags": [
+            "missing_wise_mind",
+            "missing_explicit_synthesis"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

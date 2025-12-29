@@ -214,15 +214,59 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 }
 
 /**
- * Deduplicate results by runId and questionId (keep the last occurrence)
+ * Deduplicate results by runId and questionId, merging all aiAssessments
+ * Handles both old format (object) and new format (array) for aiAssessments
  */
 function deduplicateResults(results: ModelRun[]): ModelRun[] {
   const seen = new Map<string, ModelRun>();
   
   for (const run of results) {
     const key = `${run.runId}|${run.questionId}`;
-    // Keep the last occurrence (which has the most assessments)
-    seen.set(key, run);
+    const existing = seen.get(key);
+    
+    if (existing) {
+      // Merge aiAssessments from all occurrences
+      const mergedAssessments = { ...existing.aiAssessments };
+      
+      if (run.aiAssessments) {
+        for (const [judgeModel, assessments] of Object.entries(run.aiAssessments)) {
+          if (!mergedAssessments[judgeModel]) {
+            // No existing assessment for this judge - just add it
+            mergedAssessments[judgeModel] = assessments;
+          } else {
+            // Both exist - need to merge
+            const existingValue = mergedAssessments[judgeModel];
+            
+            // Convert old object format to new array format
+            const existingArray: JudgeAssessment[] = Array.isArray(existingValue)
+              ? existingValue
+              : [existingValue as JudgeAssessment];
+            
+            const newArray: JudgeAssessment[] = Array.isArray(assessments)
+              ? assessments
+              : [assessments as JudgeAssessment];
+            
+            // Create a map of existing timestamps to avoid duplicates
+            const existingTimestamps = new Set(
+              existingArray.filter(a => a.timestamp).map(a => a.timestamp)
+            );
+            
+            // Add new assessments that don't have duplicate timestamps
+            for (const assessment of newArray) {
+              if (!assessment.timestamp || !existingTimestamps.has(assessment.timestamp)) {
+                existingArray.push(assessment);
+              }
+            }
+            
+            mergedAssessments[judgeModel] = existingArray;
+          }
+        }
+      }
+      
+      seen.set(key, { ...existing, aiAssessments: mergedAssessments });
+    } else {
+      seen.set(key, run);
+    }
   }
   
   return Array.from(seen.values());
@@ -342,13 +386,18 @@ async function main() {
       
       // Get the most recent score for comparison (reuse existingAssessments and judgeHistory from above)
       const judgeKey = assessment.evaluatorModel || judgeModel;
-      const currentJudgeHistory = existingAssessments[judgeKey] || [];
+      const existingValue = existingAssessments[judgeKey] || [];
+      
+      // Convert old object format to array if needed
+      const currentJudgeHistory: JudgeAssessment[] = Array.isArray(existingValue)
+        ? existingValue
+        : [existingValue as JudgeAssessment];
       
       // Get the most recent score for comparison
       const oldScore = currentJudgeHistory.length > 0 ? currentJudgeHistory[currentJudgeHistory.length - 1].score : 'N/A';
       console.log(`   -> New Score: ${assessment.score}/100 (Previous: ${oldScore})`);
 
-      // Append the new assessment to the history
+      // Append the new assessment to the history (always in array format)
       currentJudgeHistory.push(assessment);
       existingAssessments[judgeKey] = currentJudgeHistory;
 

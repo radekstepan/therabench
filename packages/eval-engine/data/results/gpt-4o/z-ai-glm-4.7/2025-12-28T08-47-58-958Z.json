@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, validates the client's feelings and boundaries, and invites collaboration to increase empowerment. It explicitly affirms boundaries and consent, which is appropriate in this context and avoids suggesting compromise or using DEAR MAN. Weaknesses: The response does not include or teach the DBT FAST interpersonal effectiveness skill nor does it explicitly address 'self-respect effectiveness' (specific strategies for maintaining self-respect when asserting boundaries). It also lacks concrete, skill-based coaching (e.g., sample FAST-consistent statements or role-play suggestion) and does not assess immediate safety/risk or offer support/resources for potential sexual coercion. To meet the rubric, the therapist should explicitly introduce FAST (Fair, no Apologies for asserting boundaries, Stick to values, Truthful), model or practice self-respect effectiveness language, and continue to explore boundaries while checking safety.",
-        "flags": [
-          "missing_FAST",
-          "missing_selfRespectEffectiveness"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, validates the client's feelings and boundaries, and invites collaboration to increase empowerment. It explicitly affirms boundaries and consent, which is appropriate in this context and avoids suggesting compromise or using DEAR MAN. Weaknesses: The response does not include or teach the DBT FAST interpersonal effectiveness skill nor does it explicitly address 'self-respect effectiveness' (specific strategies for maintaining self-respect when asserting boundaries). It also lacks concrete, skill-based coaching (e.g., sample FAST-consistent statements or role-play suggestion) and does not assess immediate safety/risk or offer support/resources for potential sexual coercion. To meet the rubric, the therapist should explicitly introduce FAST (Fair, no Apologies for asserting boundaries, Stick to values, Truthful), model or practice self-respect effectiveness language, and continue to explore boundaries while checking safety.",
+          "flags": [
+            "missing_FAST",
+            "missing_selfRespectEffectiveness"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 75,

@@ -23,19 +23,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 90,
-        "reasoning": "The student's response is thoughtful and aligns well with Cognitive Behavioral Therapy (CBT) principles, addressing the client's 'should statements,' self-judgment, and offers practical coping strategies. It effectively uses empathy and validation, and provides a structured way to approach the client's concerns. The student manages to avoid grief counseling and radical acceptance, focusing instead on cognitive restructuring and self-compassion. However, the response might slightly edge toward over-validating emotional experiences without enough direct reframing of cognitive distortions, which is key in CBT.",
-        "flags": [
-          "over-validation"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response is thoughtful and aligns well with Cognitive Behavioral Therapy (CBT) principles, addressing the client's 'should statements,' self-judgment, and offers practical coping strategies. It effectively uses empathy and validation, and provides a structured way to approach the client's concerns. The student manages to avoid grief counseling and radical acceptance, focusing instead on cognitive restructuring and self-compassion. However, the response might slightly edge toward over-validating emotional experiences without enough direct reframing of cognitive distortions, which is key in CBT.",
+          "flags": [
+            "over-validation"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

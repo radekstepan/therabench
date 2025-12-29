@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response includes the three required ACT elements: committed action (setting small, manageable goals and starting with one small question), values-congruent behavior (positioning the request as aligned with being a supportive partner), and taking action in the presence of fear (encouraging practice despite anxiety and self-compassion). The tone is empathetic and the suggestions to start small and notice effects are consistent with ACT. However, the response violates the rubric by providing communication-skills training (specific phrasing and a modeling suggestion: sharing your own day first and the example line). That explicit coaching detracts from modality adherence. Additionally, the suggestion to \"unpack where that fear is coming from\" leans toward cognitive/exploratory strategies rather than an exclusively experiential ACT stance (acceptance of private experiences and values-guided action). Overall effective and compassionate, but deduction for the forbidden communication-skills content and a slight drift away from pure ACT technique.",
-        "flags": [
-          "includes_communication_skills_training"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "The student response includes the three required ACT elements: committed action (setting small, manageable goals and starting with one small question), values-congruent behavior (positioning the request as aligned with being a supportive partner), and taking action in the presence of fear (encouraging practice despite anxiety and self-compassion). The tone is empathetic and the suggestions to start small and notice effects are consistent with ACT. However, the response violates the rubric by providing communication-skills training (specific phrasing and a modeling suggestion: sharing your own day first and the example line). That explicit coaching detracts from modality adherence. Additionally, the suggestion to \"unpack where that fear is coming from\" leans toward cognitive/exploratory strategies rather than an exclusively experiential ACT stance (acceptance of private experiences and values-guided action). Overall effective and compassionate, but deduction for the forbidden communication-skills content and a slight drift away from pure ACT technique.",
+          "flags": [
+            "includes_communication_skills_training"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 68,

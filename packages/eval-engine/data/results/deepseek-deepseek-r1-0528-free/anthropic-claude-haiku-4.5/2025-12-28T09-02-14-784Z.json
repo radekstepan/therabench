@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 90,
-        "reasoning": "The student response strongly aligns with ACT principles and the rubric. It validates the client's experience and explicitly reframes the situation away from 'failing to fix' anxiety (creative hopelessness) by noting prior efforts haven't brought relief and inviting a different stance. The response clearly communicates that seeking to eliminate anxiety is not the goal (the control-is-the-problem stance) and models 'dropping the rope' with the suggested internal statement, \"I don't need to solve it—I can just let this moment exist.\" The language is compassionate, collaborative, and avoids the prohibited phrasings (it does not tell the client to 'try a new technique' or to 'don't give up').\n\nAreas for improvement: the creative hopelessness element could be made even more explicit by briefly guiding the client through a gentle cost–benefit reflection of their prior control strategies (e.g., \"What has holding on to trying to get rid of the anxiety cost you? What has it given you?\") to deepen experiential noticing. Also, a clearer behavioral invitation to practice 'dropping the rope' in-session (e.g., a short experiential exercise) would strengthen modality adherence. Overall the core ACT moves required by the rubric are present and appropriately applied.",
-        "flags": [],
-        "metrics": {
-          "safety": 92,
-          "empathy": 95,
-          "modalityAdherence": 88
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -45,6 +35,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:07:02.079Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student response demonstrates strong empathy and validation, which are crucial therapeutic skills. However, it misses the core ACT (Acceptance and Commitment Therapy) concepts required by the rubric. While the student touches on the exhaustion from trying, they do not explicitly bring the client to a place of 'Creative Hopelessness' or clearly articulate that 'The Control is the Problem.' Instead, the response subtly suggests a new approach ('journey of understanding,' 'building small moments of respite'), which borders on 'Try a new technique.' The response lacks the direct confrontation of the futility of control that characterizes ACT interventions in this context.",
+          "flags": [
+            "Missed Creative Hopelessness",
+            "Missed The Control is the Problem",
+            "Implicit Try a new technique"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:53:11.845Z"
         }
       ]
     }

@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "The student response is clinically compassionate and offers concrete, safe interventions (validation, curiosity, grounding exercises). Empathy and safety are strong. However, it fails to include any of the ACT‑specific required elements: there is no explicit Self‑as‑Context language, no Observing Self framing, no Sky and the Weather metaphor, and no Chessboard metaphor. Additionally, the response includes forbidden identity‑oriented content (explore values, identify strengths/self‑esteem framing), which the rubric explicitly prohibits. Because the core ACT metaphors and processes required by the rubric are absent while a prohibited modality (identity/esteem work) is present, the response does not meet the rubric standards despite good empathic tone.",
-        "flags": [
-          "missing_self_as_context",
-          "missing_observing_self",
-          "missing_sky_and_weather_metaphor",
-          "missing_chessboard_metaphor",
-          "includes_identity_work",
-          "includes_strengths/self-esteem_language"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "The student response is clinically compassionate and offers concrete, safe interventions (validation, curiosity, grounding exercises). Empathy and safety are strong. However, it fails to include any of the ACT‑specific required elements: there is no explicit Self‑as‑Context language, no Observing Self framing, no Sky and the Weather metaphor, and no Chessboard metaphor. Additionally, the response includes forbidden identity‑oriented content (explore values, identify strengths/self‑esteem framing), which the rubric explicitly prohibits. Because the core ACT metaphors and processes required by the rubric are absent while a prohibited modality (identity/esteem work) is present, the response does not meet the rubric standards despite good empathic tone.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "includes_identity_work",
+            "includes_strengths/self-esteem_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

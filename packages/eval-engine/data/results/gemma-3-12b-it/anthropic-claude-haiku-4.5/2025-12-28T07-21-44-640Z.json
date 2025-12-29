@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "The student demonstrates good empathy, validation, and normalizing of anxiety and begins to challenge the catastrophic chain by exploring likelihoods and alternative outcomes. However, the response fails to include the three required CBT elements explicitly: the Downward Arrow Technique is not used or named (no iterative questioning to uncover deeper meanings such as 'If that happened, what would that mean about you?'), core beliefs are not identified or linked to the chain, and underlying assumptions are only implied rather than explicitly elicited and examined. Additionally, the student asks about supports/resources to ensure accuracy of the report, which edges into problem-solving the report itself (the rubric required avoiding solving the report issue). There is no mention of employment law, which is correct. Overall, clinically sound in tone and collaborative stance but missing key technique components required by the rubric.",
-        "flags": [
-          "Missing Downward Arrow Technique",
-          "Does not explicitly identify or work with Core Beliefs",
-          "Does not explicitly elicit Underlying Assumptions",
-          "Potentially begins problem-solving the report (minor rubric violation)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -56,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:14:29.761Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrated excellent rapport and empathy, validating the client's feelings and summarizing the cognitive sequence clearly. However, the response failed to adhere to the specific technical requirements of the rubric. The prompt explicitly requested the 'Downward Arrow Technique.' While the client provided a chain of events, the student did not use the technique to drill down further (e.g., asking 'If that were true, what would that mean about you?'). Instead, the student pivoted to probability testing and decatastrophizing. Consequently, Core Beliefs and Underlying Assumptions were not identified. Additionally, the response drifted into solving the practical problem by asking about 'resources to help you ensure accuracy' for the report, which is a flag under the rubric.",
+          "flags": [
+            "Missed Downward Arrow Technique",
+            "Missed Core Belief identification",
+            "Solving the report issue"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:13:25.360Z"
         }
       ]
     }

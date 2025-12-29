@@ -20,21 +20,103 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 78,
-        "reasoning": "The student demonstrates strong clinical skills in validation, safety prioritization (90), empathy (85), and practical problem-solving. However, rubric requirements aren't fully met: DEAR MAN components aren't explicitly taught (missing Negotiate in scripts), objective effectiveness lacks repair follow-up strategies beyond documentation, and 'using manufacturer safety guidelines' risks implying borderline unsafe space heater use. The modality adherence score (80) reflects inadequate explicit DBT skill linkage despite strong implicit application.",
-        "flags": [
-          "DEAR MAN not explicitly referenced",
-          "Insufficient focus on Objective Effectiveness follow-through",
-          "Indirect safety risk in space heater suggestion"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, validates the client, distinguishes practical vs emotional problems, offers concrete safety suggestions for cold exposure, provides clear, objective-focused scripts and assertive language (boundary statements, factual request, timeline), and offers graded exposure and documentation — all useful DBT-consistent strategies for interpersonal effectiveness. Weaknesses relative to the rubric: (1) The response does not explicitly present the DEAR MAN skill or label its components (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), which was a required inclusion. While elements of DEAR MAN (describe/assert/reinforce) are implied in the scripts, the explicit teaching/labeling of the DEAR MAN structure is missing. (2) The response includes explicit discussion of cognitive distortions (labels like \"mind reading\" and \"catastrophizing\"). The rubric specified avoiding cognitive distortions, so this is a violation; even if the intention was to help the client notice thought patterns, it contravenes the \"Must Avoid\" instruction. Because two rubric-required constraints were not met (one missing required element and one forbidden element included), the overall score is reduced despite good safety planning and empathic tone.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "mentions_cognitive_distortions"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, validates the client, distinguishes practical vs emotional problems, offers concrete safety suggestions for cold exposure, provides clear, objective-focused scripts and assertive language (boundary statements, factual request, timeline), and offers graded exposure and documentation — all useful DBT-consistent strategies for interpersonal effectiveness. Weaknesses relative to the rubric: (1) The response does not explicitly present the DEAR MAN skill or label its components (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), which was a required inclusion. While elements of DEAR MAN (describe/assert/reinforce) are implied in the scripts, the explicit teaching/labeling of the DEAR MAN structure is missing. (2) The response includes explicit discussion of cognitive distortions (labels like \"mind reading\" and \"catastrophizing\"). The rubric specified avoiding cognitive distortions, so this is a violation; even if the intention was to help the client notice thought patterns, it contravenes the \"Must Avoid\" instruction. Because two rubric-required constraints were not met (one missing required element and one forbidden element included), the overall score is reduced despite good safety planning and empathic tone.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "mentions_cognitive_distortions"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "This is a thoughtful, comprehensive response that demonstrates strong clinical skills in validation, psychoeducation, and practical harm reduction. The student effectively normalizes the client's anxiety, explains the avoidance cycle, and provides concrete, tiered coping strategies. However, the response has notable gaps relative to the DBT rubric requirements. While the student implicitly addresses assertiveness through scripts and boundary-setting language, there is no explicit teaching or application of DEAR MAN (a core DBT interpersonal effectiveness skill). The response also lacks structured guidance on objective effectiveness—the primary goal of interpersonal effectiveness in DBT is to accomplish the objective (get the heater fixed) while maintaining the relationship and self-respect. The student provides good tactical advice but doesn't frame it within DBT's strategic hierarchy. Additionally, the response is quite lengthy and could overwhelm a anxious client; a more streamlined approach with clearer DBT structure would be stronger. The student does avoid passive-aggressiveness, unrealistic solutions, and overtly reinforcing cognitive distortions, which is positive. The exposure hierarchy and documentation suggestions are excellent. The response would benefit from explicitly naming and teaching the DEAR MAN acronym and framing the interaction as 'objective effectiveness' practice.",
+          "flags": [
+            "Missing explicit DEAR MAN skill teaching—the rubric requires this core DBT interpersonal effectiveness module",
+            "Objective effectiveness not framed as a primary goal; response is more problem-solving than DBT-aligned",
+            "Response length may overwhelm an anxious client; could prioritize and sequence more clearly",
+            "No acknowledgment of DBT stages or client readiness (pre-contemplation, contemplation, etc.)",
+            "Doesn't explicitly link back to DBT values or commitment to behavior change"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:39:57.410Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates strong clinical skills in validation, safety prioritization (90), empathy (85), and practical problem-solving. However, rubric requirements aren't fully met: DEAR MAN components aren't explicitly taught (missing Negotiate in scripts), objective effectiveness lacks repair follow-up strategies beyond documentation, and 'using manufacturer safety guidelines' risks implying borderline unsafe space heater use. The modality adherence score (80) reflects inadequate explicit DBT skill linkage despite strong implicit application.",
+          "flags": [
+            "DEAR MAN not explicitly referenced",
+            "Insufficient focus on Objective Effectiveness follow-through",
+            "Indirect safety risk in space heater suggestion"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response effectively addresses the scenario by providing a comprehensive and empathetic approach to the client's issue. The student validates the client's emotions, normalizes their anxiety, and offers a clear breakdown of both practical safety tips and emotional coping strategies. Furthermore, the response outlines specific, actionable steps the client can take to address both the heater repair and their fear of interacting with the landlord. The student avoids passive-aggressiveness, cognitive distortions, and gives no unreasonable advice like 'just move out.' Although the response does not explicitly mention DEAR MAN, it inherently covers the components such as describing the situation, expressing feelings, and being assertive. The response is empathetic, practical, and adheres to Dialectical Behavior Therapy (DBT) principles.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student provided a safe, empathetic, and practically useful response that validates the client's distress well. However, the response failed to meet the specific 'Must Include' requirement for DEAR MAN. While the scripts provided are assertive, the student did not explicitly teach or structure the interaction using the DEAR MAN acronym (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate). Furthermore, the intervention relies heavily on CBT techniques (cognitive challenging of 'mind reading' and 'catastrophizing', graded exposure) rather than standard DBT skills (e.g., Opposite Action, Check the Facts). This represents a significant modality drift for a scenario labeled as DBT.",
+          "flags": [
+            "Missing explicit DEAR MAN framework",
+            "Modality drift (Used CBT concepts instead of DBT skills)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:48:55.905Z"
+        }
+      ]
     }
   }
 ]

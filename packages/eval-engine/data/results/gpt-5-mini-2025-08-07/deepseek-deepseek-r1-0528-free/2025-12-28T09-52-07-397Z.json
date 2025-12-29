@@ -21,19 +21,101 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student demonstrates strong clinical fundamentals: validating the client's experience ('That sounds really hard'), offering practical ACT-aligned coping strategies with clear rationale, integrating self-compassion (#5), and including crucial safety protocols. The response notably fulfills inclusion requirements: Technique #4 ('leaves or words floating down a stream') explicitly implements 'leaves on a stream' imagery emphasizing non-engagement ('notice them moving on') and letting thoughts pass. Technique #2 ('defusion') reinforces observing without engaging through labeling. However, Technique #3 ('Evidence for/against') subtly encourages analyzing thoughts ('analyze the water'), contravening the 'Must Avoid' rubric by focusing on cognitive disputation rather than detached observation. While other techniques excellently embody ACT principles (e.g., grounding, defusion, letting-go imagery), this inconsistency prevents a higher score.",
-        "flags": [
-          "Technique #3 (writing exercise) violates rubric by inviting analysis ('Evidence for/against') despite overall ACT-consistent approach; conflicts with 'Must Avoid: Analyze the water' directive."
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "Strengths: The response is empathic and validating, opens with a reflective statement, and offers practical, brief interventions. It explicitly uses the 'leaves on a stream' image and other metaphors for letting thoughts pass (clouds passing the sky), encourages observing without engaging (defusion via naming thoughts), and includes appropriate safety guidance about self-harm/crisis. Weakness: it contains a clear directive to analyze thoughts via a writing exercise ('Evidence for' / 'Evidence against' / 'What I’d say to a friend'), which directly conflicts with the rubric item to avoid 'Analyze the water' and represents a CBT-style cognitive restructuring approach rather than an ACT defusion/acceptance approach. This mixing of modalities reduces adherence to ACT principles and is the primary reason the score is not higher. The response does not suggest 'building a dam,' so that prohibition is respected.",
+          "flags": [
+            "includes_prohibited_analysis",
+            "mixes_ACT_with_CBT",
+            "includes_required_elements"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 72,
+          "reasoning": "Strengths: The response is empathic and validating, opens with a reflective statement, and offers practical, brief interventions. It explicitly uses the 'leaves on a stream' image and other metaphors for letting thoughts pass (clouds passing the sky), encourages observing without engaging (defusion via naming thoughts), and includes appropriate safety guidance about self-harm/crisis. Weakness: it contains a clear directive to analyze thoughts via a writing exercise ('Evidence for' / 'Evidence against' / 'What I’d say to a friend'), which directly conflicts with the rubric item to avoid 'Analyze the water' and represents a CBT-style cognitive restructuring approach rather than an ACT defusion/acceptance approach. This mixing of modalities reduces adherence to ACT principles and is the primary reason the score is not higher. The response does not suggest 'building a dam,' so that prohibition is respected.",
+          "flags": [
+            "includes_prohibited_analysis",
+            "mixes_ACT_with_CBT",
+            "includes_required_elements"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "The student demonstrates strong clinical skills with excellent empathy, validation, and safety awareness. The response includes the required 'leaves on a stream' metaphor (item 4) and explicitly addresses observing thoughts without engaging through the defusion technique and mindfulness approach. The student successfully avoids the pitfalls of analyzing the waterfall or building a dam (fighting thoughts directly). However, the response could be more focused and streamlined—five techniques may overwhelm a client in acute distress. The inclusion of grounding, defusion, self-compassion, and observing-without-engaging aligns well with ACT principles. The student appropriately offers choice, checks in about triggers, and includes a safety assessment. The main limitation is that the response prioritizes breadth over depth; a more concentrated focus on one or two core techniques with deeper exploration might be more therapeutically effective in this moment.",
+          "flags": [
+            "Response length and complexity may overwhelm a distressed client—consider prioritizing 1-2 techniques",
+            "Could deepen the metaphor work by exploring the 'waterfall' image more before introducing multiple interventions",
+            "Writing exercise (item 3) involves analysis, which risks contradicting the defusion/acceptance message"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:41:34.767Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student demonstrates strong clinical fundamentals: validating the client's experience ('That sounds really hard'), offering practical ACT-aligned coping strategies with clear rationale, integrating self-compassion (#5), and including crucial safety protocols. The response notably fulfills inclusion requirements: Technique #4 ('leaves or words floating down a stream') explicitly implements 'leaves on a stream' imagery emphasizing non-engagement ('notice them moving on') and letting thoughts pass. Technique #2 ('defusion') reinforces observing without engaging through labeling. However, Technique #3 ('Evidence for/against') subtly encourages analyzing thoughts ('analyze the water'), contravening the 'Must Avoid' rubric by focusing on cognitive disputation rather than detached observation. While other techniques excellently embody ACT principles (e.g., grounding, defusion, letting-go imagery), this inconsistency prevents a higher score.",
+          "flags": [
+            "Technique #3 (writing exercise) violates rubric by inviting analysis ('Evidence for/against') despite overall ACT-consistent approach; conflicts with 'Must Avoid: Analyze the water' directive."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student response effectively incorporates elements required by the rubric, such as 'Leaves on a Stream' and 'Letting thoughts pass' through the use of visualization techniques. Further, the student avoids suggesting analysis or control of thoughts, consistent with ACT principles that emphasize acceptance and defusion rather than directly battling the thoughts. The response demonstrates strong empathy by acknowledging the difficulty expressed by the client, and it provides practical strategies for distancing from overwhelming thoughts. Additionally, it appropriately addresses safety concerns by advising the client to reach out if feeling unsafe.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrated strong empathy and excellent safety planning, including a crisis protocol which is vital. They successfully incorporated the required 'Leaves on a Stream' technique and concepts of observing without engaging and letting thoughts pass (Points 2, 4, and 5). However, the score was significantly impacted by Point 3. The client explicitly stated that trying to 'analyze' thoughts causes them to drown, yet the student suggested a writing exercise involving 'Evidence for' and 'Evidence against.' This is a CBT cognitive restructuring technique that requires analyzing the content of the thoughts (the 'water'), which directly violates the ACT principle of defusion and the rubric instruction to avoid analyzing the water. This reinforces the client's unhelpful coping strategy rather than shifting them toward acceptance.",
+          "flags": [
+            "Technique mismatch: Suggested cognitive analysis (CBT) in an ACT scenario",
+            "Reinforced client's stated struggle with analyzing thoughts"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:57:20.889Z"
+        }
+      ]
     }
   }
 ]

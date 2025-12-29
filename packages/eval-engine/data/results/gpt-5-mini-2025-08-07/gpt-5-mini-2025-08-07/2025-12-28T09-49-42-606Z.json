@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "The student response demonstrates strong empathy, safety awareness, and includes core ACT defusion techniques required by the rubric: it labels the skill as cognitive defusion, uses the exact phrasing “I’m having the thought that I am broken,” and explicitly suggests singing/repeating the thought/phrase to make it feel like a noise. Those elements are all present and clearly explained. Strengths include a warm empathic opening, an in-the-moment offer to practice, and a clear safety prompt about self-harm.\n\nHowever, the response also includes CBT-style cognitive challenging (Socratic evidence questioning: “What evidence do I have that I’m broken? What evidence suggests I’m not?” and the friend-perspective question). That directly conflicts with the rubric item to avoid challenging the thought and is inconsistent with pure ACT defusion/acceptance stance. Additionally, the advice to “pick one small action that contradicts ‘I am broken’” uses language and a behavioral experiment framing that lean toward refutation rather than values-based action—another departure from ACT-consistent wording. The student does recommend repeating/singing the phrase (the phrase rather than a single word), which meets the intent of the “repeating the word” requirement, though they did not explicitly instruct repeating the single word “broken.”\n\nScore rationale: start high for meeting required defusion elements and strong empathy/safety, then substantial deduction for inclusion of thought-challenging/CBS-style strategies (major rubric violation) and minor deductions for CBT-leaning behavioral phrasing and small wording mismatch about repeating a single word.",
-        "flags": [
-          "Includes CBT-style cognitive challenging (Socratic/evidence questioning) — violates 'Must Avoid: Challenging the thought (CBT)'",
-          "Uses 'contradict' behavioral experiment framing (calls to action framed to refute thought) — leans away from ACT values/acceptance approach",
-          "Repeating/singing advised for the phrase rather than explicitly instructing repeating the single word 'broken' (meets intent but not exact wording)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong empathy, safety awareness, and includes core ACT defusion techniques required by the rubric: it labels the skill as cognitive defusion, uses the exact phrasing “I’m having the thought that I am broken,” and explicitly suggests singing/repeating the thought/phrase to make it feel like a noise. Those elements are all present and clearly explained. Strengths include a warm empathic opening, an in-the-moment offer to practice, and a clear safety prompt about self-harm.\n\nHowever, the response also includes CBT-style cognitive challenging (Socratic evidence questioning: “What evidence do I have that I’m broken? What evidence suggests I’m not?” and the friend-perspective question). That directly conflicts with the rubric item to avoid challenging the thought and is inconsistent with pure ACT defusion/acceptance stance. Additionally, the advice to “pick one small action that contradicts ‘I am broken’” uses language and a behavioral experiment framing that lean toward refutation rather than values-based action—another departure from ACT-consistent wording. The student does recommend repeating/singing the phrase (the phrase rather than a single word), which meets the intent of the “repeating the word” requirement, though they did not explicitly instruct repeating the single word “broken.”\n\nScore rationale: start high for meeting required defusion elements and strong empathy/safety, then substantial deduction for inclusion of thought-challenging/CBS-style strategies (major rubric violation) and minor deductions for CBT-leaning behavioral phrasing and small wording mismatch about repeating a single word.",
+          "flags": [
+            "Includes CBT-style cognitive challenging (Socratic/evidence questioning) — violates 'Must Avoid: Challenging the thought (CBT)'",
+            "Uses 'contradict' behavioral experiment framing (calls to action framed to refute thought) — leans away from ACT values/acceptance approach",
+            "Repeating/singing advised for the phrase rather than explicitly instructing repeating the single word 'broken' (meets intent but not exact wording)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

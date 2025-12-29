@@ -21,19 +21,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response demonstrates a strong understanding of core principles in Acceptance and Commitment Therapy (ACT). The student effectively validates the client's feelings and uses open-ended questions to explore the client's doubts, promoting an empathetic and supportive environment. However, the response lacks explicit mention of key ACT metaphors such as 'Passengers on the Bus,' 'Demons on the Boat,' or driving despite the noise. These metaphors could further help the client understand that their doubts can be taken along for the ride without letting them take control. The student avoids suggesting that the doubts should be eliminated or argued with, which aligns with ACT principles. Thus, the response shows a good but not entirely comprehensive adherence to ACT modality.",
-        "flags": [
-          "Missing ACT Metaphors"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response demonstrates a strong understanding of core principles in Acceptance and Commitment Therapy (ACT). The student effectively validates the client's feelings and uses open-ended questions to explore the client's doubts, promoting an empathetic and supportive environment. However, the response lacks explicit mention of key ACT metaphors such as 'Passengers on the Bus,' 'Demons on the Boat,' or driving despite the noise. These metaphors could further help the client understand that their doubts can be taken along for the ride without letting them take control. The student avoids suggesting that the doubts should be eliminated or argued with, which aligns with ACT principles. Thus, the response shows a good but not entirely comprehensive adherence to ACT modality.",
+          "flags": [
+            "Missing ACT Metaphors"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

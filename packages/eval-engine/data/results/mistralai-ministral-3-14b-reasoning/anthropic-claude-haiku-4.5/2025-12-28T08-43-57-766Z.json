@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 64,
-        "reasoning": "Strengths: The response is empathic, validating, normalizing, and collaborative; it gestures toward the idea that repeated attempts haven't worked (a seed of creative hopelessness) and invites shifting from 'fixing' toward exploration and present-moment experience. It avoids the prohibited phrases 'try a new technique' and 'don't give up.' Weaknesses relative to the rubric: the required ACT elements are not fully or explicitly present. Creative hopelessness is only implicit — the therapist notes that 'nothing feels like the solution' but doesn't guide the client experientially to notice the futility of control efforts. 'The control is the problem' is not clearly stated or framed; the response stops short of articulating that attempts to control internal experience often maintain suffering. 'Dropping the rope' (an explicit invitation/ metaphor to stop struggling with anxiety and allow experience) is missing. Because two of three required ACT elements are absent or insufficiently explicit, modality adherence is limited despite good clinical stance.",
-        "flags": [
-          "missing_explicit_control_is_the_problem",
-          "missing_dropping_the_rope",
-          "creative_hopelessness_only_implicit"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -54,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:49:16.516Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates high empathy and strong therapeutic alliance skills, effectively validating the client's exhaustion and frustration. However, the response fails to adhere to the specific ACT rubric requirements. It misses the core intervention of **Creative Hopelessness**; instead of helping the client realize that the *struggle to get rid of anxiety* is the problem (Control is the Problem), the student pivots to exploring the 'complexity' of anxiety and the body. By suggesting they find a 'more sustainable' way or 'understand what anxiety is trying to tell you,' the student inadvertently encourages the client to continue finding a new solution (violating 'Avoid: Try a new technique') rather than helping them drop the rope and accept that the control agenda has failed.",
+          "flags": [
+            "Missed Creative Hopelessness",
+            "Missed 'Control is the Problem' concept",
+            "Premature introduction of somatic inquiry (new technique)",
+            "Reinforced solution-seeking mindset rather than dropping the rope"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:08:18.911Z"
         }
       ]
     }

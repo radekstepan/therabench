@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 80,
-        "reasoning": "Strengths: The student response shows clear personalization (references care for son, being a mother), expresses empathy, and appropriately challenges the cognitive distortion (overgeneralized self-blame/attribution error). It also addresses locus of control by both questioning the belief that everything is the client's responsibility and by shifting toward what the client can do (promoting agency). Concerns: The response introduces systemic explanations (e.g., \"school environment,\" \"temperament,\" \"developmental stages\"), which moves into a systemic framing that the rubric required avoiding. The final line about focusing on \"what you can do to support him\" is reasonably collaborative but runs the risk of sliding into parenting advice; it stays fairly general but could be tightened to avoid actionable parenting guidance. Overall this is a competent CBT-consistent reply with good empathy, but deductions were made for inclusion of systemic elements and the borderline parenting-advice phrasing.",
-        "flags": [
-          "systemic_therapy_present",
-          "parenting_advice_borderline"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -51,6 +38,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:47:50.322Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student provided a strong CBT response that effectively validated the client's emotions while directly challenging the cognitive distortion of personalization. By using Socratic questioning to ask if it is 'entirely' her fault and suggesting other factors like temperament and environment, the student effectively addressed the attribution error and helped to shift the client's locus of control from an unhealthy internal blame to a more balanced perspective. The response adhered strictly to the rubric by avoiding parenting advice and staying within the individual cognitive framework rather than drifting into systemic therapy.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:01:02.447Z"
         }
       ]
     }

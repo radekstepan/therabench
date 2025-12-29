@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, validates the client's distress, explicitly echoes the client's 'should' thought, and addresses the self-judgment ('pathetic'). It uses gentle Socratic-style questions that fit CBT's collaborative inquiry and offers concrete coping suggestions and social support—appropriate therapeutic moves. \n\nLimitations (why score reduced): The response includes grief-counseling language (e.g., 'grief isn’t a straight line,' 'grief is deeply personal') and normalizing psychoeducation about grief, which violates the rubric's Must Avoid items. The imperatives required by the rubric are present only in a softened/suggestive form ('It might help to pause and ask yourself...') rather than as clearer directive CBT prompts or behavioral experiments. The reply also leans toward general supportive/acceptance phrasing rather than explicit, structured CBT techniques (e.g., guided cognitive restructuring steps, evidence-for/evidence-against, behavioral activation homework, or specific thought records). There is also some acceptance-oriented language that approaches DBT-style acceptance, which the rubric asked to avoid. Overall the reply is warm and helpful clinically, but it does not fully conform to the rubric constraints (avoid grief counseling and DBT radical acceptance) and could be more CBT-specific and directive.",
-        "flags": [
-          "includes_should_statement",
-          "includes_self-judgment_addressed",
-          "imperatives_present_but_softened",
-          "violates_must_avoid_grief_counseling",
-          "contains_acceptance_language_similar_to_radical_acceptance",
-          "insufficient_explicit_cbt_techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, explicitly echoes the client's 'should' thought, and addresses the self-judgment ('pathetic'). It uses gentle Socratic-style questions that fit CBT's collaborative inquiry and offers concrete coping suggestions and social support—appropriate therapeutic moves. \n\nLimitations (why score reduced): The response includes grief-counseling language (e.g., 'grief isn’t a straight line,' 'grief is deeply personal') and normalizing psychoeducation about grief, which violates the rubric's Must Avoid items. The imperatives required by the rubric are present only in a softened/suggestive form ('It might help to pause and ask yourself...') rather than as clearer directive CBT prompts or behavioral experiments. The reply also leans toward general supportive/acceptance phrasing rather than explicit, structured CBT techniques (e.g., guided cognitive restructuring steps, evidence-for/evidence-against, behavioral activation homework, or specific thought records). There is also some acceptance-oriented language that approaches DBT-style acceptance, which the rubric asked to avoid. Overall the reply is warm and helpful clinically, but it does not fully conform to the rubric constraints (avoid grief counseling and DBT radical acceptance) and could be more CBT-specific and directive.",
+          "flags": [
+            "includes_should_statement",
+            "includes_self-judgment_addressed",
+            "imperatives_present_but_softened",
+            "violates_must_avoid_grief_counseling",
+            "contains_acceptance_language_similar_to_radical_acceptance",
+            "insufficient_explicit_cbt_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

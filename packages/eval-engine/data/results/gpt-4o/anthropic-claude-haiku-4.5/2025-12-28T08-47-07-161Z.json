@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, validates the client's feelings, and explicitly invites alternative explanations (asks whether there might be other reasons she looked at her watch and how different interpretations affect feelings). Weaknesses: The response does not explicitly identify or label the cognitive distortion 'mind reading' (it paraphrases the client's inference but stops short of noting it as a thinking pattern), and it fails to propose a concrete behavioral experiment to test the belief (e.g., checking the friend's intent, arranging a follow-up conversation, or observing future interactions). The response appropriately avoids focusing on social skills/interpersonal effectiveness. Overall it meets the alternative explanations requirement, partially addresses mind reading (implicitly), but misses the required behavioral experiment element.",
-        "flags": [
-          "missing_behavioral_experiment",
-          "did_not_explicitly_label_mind_reading"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 88,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -51,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:30:29.834Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 80,
+          "reasoning": "The student provided a empathetic and validating response that adhered to the constraints regarding what to avoid (no focus on social skills or interpersonal effectiveness). They successfully prompted for 'Alternative Explanations' by asking the client to consider other reasons for the friend's behavior. However, the response missed two key 'Must Include' criteria. First, while the student addressed the client's interpretation, they did not explicitly identify the cognitive distortion as 'Mind Reading.' Second, the student failed to suggest a 'Behavioral Experiment' to test the validity of the client's thoughts, stopping at cognitive restructuring rather than moving to behavioral activation or testing.",
+          "flags": [
+            "Missed Behavioral Experiment requirement",
+            "Did not explicitly identify 'Mind Reading' distortion"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:34:19.012Z"
         }
       ]
     }

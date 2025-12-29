@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student response shows strong validation, empathic reflection, normalization of grief, and collaborative stance (asking what brings agency, offering to explore). It avoids prohibited content (no medical advice, no 'fight harder' or 'Don't give up hope'). Concerns: It fails to include the four required DBT concepts specified in the rubric—there is no explicit teaching or naming of radical acceptance, Turning the Mind, the distinction of willfulness vs. willingness, or the differentiation between pain vs. suffering. Because the rubric required those explicit inclusions, the response scores substantially lower on modality adherence despite good empathy and safety. Recommended fixes: explicitly introduce and briefly define Radical Acceptance, coach a simple Turning the Mind phrase/practice, contrast willfulness vs willingness and invite a willingness experiment, and clarify the DBT distinction between unavoidable pain and avoidable suffering (and offer a concrete skill to reduce suffering).",
-        "flags": [
-          "missing_radical_acceptance",
-          "missing_turning_the_mind",
-          "missing_willfulness_vs_willingness",
-          "missing_pain_vs_suffering"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student response shows strong validation, empathic reflection, normalization of grief, and collaborative stance (asking what brings agency, offering to explore). It avoids prohibited content (no medical advice, no 'fight harder' or 'Don't give up hope'). Concerns: It fails to include the four required DBT concepts specified in the rubric—there is no explicit teaching or naming of radical acceptance, Turning the Mind, the distinction of willfulness vs. willingness, or the differentiation between pain vs. suffering. Because the rubric required those explicit inclusions, the response scores substantially lower on modality adherence despite good empathy and safety. Recommended fixes: explicitly introduce and briefly define Radical Acceptance, coach a simple Turning the Mind phrase/practice, contrast willfulness vs willingness and invite a willingness experiment, and clarify the DBT distinction between unavoidable pain and avoidable suffering (and offer a concrete skill to reduce suffering).",
+          "flags": [
+            "missing_radical_acceptance",
+            "missing_turning_the_mind",
+            "missing_willfulness_vs_willingness",
+            "missing_pain_vs_suffering"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

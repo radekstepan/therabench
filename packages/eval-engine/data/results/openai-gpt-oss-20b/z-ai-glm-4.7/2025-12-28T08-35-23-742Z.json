@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The response is empathic, validating, and explicitly addresses values (asks about values, offers a 'values list') and includes values clarification exercises (ranking values, letter to future self). It offers useful reflective prompts consistent with ACT. Weaknesses: The response did not explicitly address the concept of 'Direction vs. Destination' (i.e., focusing on ongoing direction/values-guided living rather than new fixed endpoints). More importantly, it recommends 'Set small, experiment-like goals,' which violates the rubric item to avoid suggesting setting new goals. It also did not include any prohibited 'gratitude journal' content. Overall, the student met key elements around values but failed to explicitly discuss direction vs. destination and introduced goal-setting advice contrary to requirements.",
-        "flags": [
-          "set_new_goals_recommended",
-          "missing_direction_vs_destination"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The response is empathic, validating, and explicitly addresses values (asks about values, offers a 'values list') and includes values clarification exercises (ranking values, letter to future self). It offers useful reflective prompts consistent with ACT. Weaknesses: The response did not explicitly address the concept of 'Direction vs. Destination' (i.e., focusing on ongoing direction/values-guided living rather than new fixed endpoints). More importantly, it recommends 'Set small, experiment-like goals,' which violates the rubric item to avoid suggesting setting new goals. It also did not include any prohibited 'gratitude journal' content. Overall, the student met key elements around values but failed to explicitly discuss direction vs. destination and introduced goal-setting advice contrary to requirements.",
+          "flags": [
+            "set_new_goals_recommended",
+            "missing_direction_vs_destination"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 75,

@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "The student response demonstrates strong empathy, normalization, and functional curiosity (asking about bodily sensations, antecedents, and consequences). It avoids giving medical advice or recommending nicotine replacement, which meets the 'must avoid' requirement. However, it fails to include the required ACT-specific elements from the rubric: there is no explicit use of The Choice Point framework, no labeling or discussion of 'Hooked' versus 'Unhooked' responses, and no identification of 'Towards' versus 'Away' moves or examples of each. Because these are explicit rubric requirements, modality adherence is low despite generally good clinical skills and supportive tone.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away_moves"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "The student response demonstrates strong empathy, normalization, and functional curiosity (asking about bodily sensations, antecedents, and consequences). It avoids giving medical advice or recommending nicotine replacement, which meets the 'must avoid' requirement. However, it fails to include the required ACT-specific elements from the rubric: there is no explicit use of The Choice Point framework, no labeling or discussion of 'Hooked' versus 'Unhooked' responses, and no identification of 'Towards' versus 'Away' moves or examples of each. Because these are explicit rubric requirements, modality adherence is low despite generally good clinical skills and supportive tone.",
+          "flags": [
+            "missing_choice_point",
+            "missing_hooked_vs_unhooked",
+            "missing_towards_vs_away_moves"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

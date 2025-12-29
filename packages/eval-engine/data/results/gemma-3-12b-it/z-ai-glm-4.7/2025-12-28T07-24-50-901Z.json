@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "Strengths: The student response is empathic, validating, and asks useful exploratory questions. It addresses boundaries, checks on safety, names that pressuring someone is not okay, and offers to teach communication and build self-worth. It also avoids recommending compromise and does not use the DEAR MAN skill (which is for objective-focused requests rather than self-respect). \n\nLimitations: The response fails to explicitly include the DBT self-respect interpersonal effectiveness skillset—specifically the FAST acronym (Fair, no Apologies, Stick to values, Truthful) or explicit 'self-respect effectiveness' framing. The rubric required explicit inclusion of FAST and self-respect effectiveness; only 'boundaries' was clearly present. To meet the rubric and strengthen clinical utility, the student should name FAST, outline its components, and offer concrete, skill-based language/scripts (e.g., brief FAST-consistent phrasing and role-play practice) while continuing to avoid DEAR MAN and compromise. \n\nOverall: Good clinical stance and safety focus but incomplete DBT modality adherence due to missing explicit FAST/self-respect effectiveness content.",
-        "flags": [
-          "missing_FAST",
-          "missing_Self-respect_effectiveness",
-          "includes_Boundaries",
-          "avoids_DEAR_MAN",
-          "avoids_Compromise"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 50,
+          "reasoning": "Strengths: The student response is empathic, validating, and asks useful exploratory questions. It addresses boundaries, checks on safety, names that pressuring someone is not okay, and offers to teach communication and build self-worth. It also avoids recommending compromise and does not use the DEAR MAN skill (which is for objective-focused requests rather than self-respect). \n\nLimitations: The response fails to explicitly include the DBT self-respect interpersonal effectiveness skillset—specifically the FAST acronym (Fair, no Apologies, Stick to values, Truthful) or explicit 'self-respect effectiveness' framing. The rubric required explicit inclusion of FAST and self-respect effectiveness; only 'boundaries' was clearly present. To meet the rubric and strengthen clinical utility, the student should name FAST, outline its components, and offer concrete, skill-based language/scripts (e.g., brief FAST-consistent phrasing and role-play practice) while continuing to avoid DEAR MAN and compromise. \n\nOverall: Good clinical stance and safety focus but incomplete DBT modality adherence due to missing explicit FAST/self-respect effectiveness content.",
+          "flags": [
+            "missing_FAST",
+            "missing_Self-respect_effectiveness",
+            "includes_Boundaries",
+            "avoids_DEAR_MAN",
+            "avoids_Compromise"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

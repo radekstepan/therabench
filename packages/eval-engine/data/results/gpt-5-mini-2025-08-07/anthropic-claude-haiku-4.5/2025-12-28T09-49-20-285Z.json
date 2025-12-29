@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic and normalizes the automatic stress reaction; it offers concrete, brief in-the-moment skills (naming the emotion, grounding/breathing, a pre-planned one-line response) and longer-term behavior and self-compassion suggestions, which align well with DBT principles and impulse-control work. It also explicitly advises stepping back from the situation. Problems relative to the rubric: the response does not explicitly name or teach the DBT STOP skill (the rubric required the explicit inclusion of STOP). Instead it describes pausing/stepping back without labeling or outlining STOP's steps (Stop, Take a step back, Observe, Proceed mindfully). The response also recommends asking the kids to “play quietly for a minute” as part of stepping away; that can be read as recommending a time-out-for-kids strategy, which the rubric specified must be avoided. Because two required constraints were not met (missing explicit STOP instruction and inclusion of a time-out-like recommendation), the score is reduced despite generally good clinical content.",
-        "flags": [
-          "missing_STOP_skill",
-          "recommended_time_out_for_kids"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 95,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -52,6 +39,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:40:44.766Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student provided a highly empathetic and safe response, validating the client's experience effectively. They successfully covered the concepts of 'impulse control' and 'step back' through practical suggestions like pausing and leaving the room. However, the response failed the specific 'Must Include' criteria by not explicitly teaching the **STOP skill** (Stop, Take a step back, Observe, Proceed mindfully) by name or acronym, which is a specific requirement for this DBT scenario. Additionally, the response violated the 'Must Avoid' criteria by offering generic anger management and parenting advice (e.g., 'routines,' 'praise,' 'parenting programs,' generic breathing) rather than utilizing specific DBT skills such as Opposite Action, Check the Facts, or TIP skills.",
+          "flags": [
+            "Missing explicit STOP skill instruction",
+            "Included generic parenting/anger management advice"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:54:02.488Z"
         }
       ]
     }

@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 42,
-        "reasoning": "Strengths: The student response is warm, validating, and empathic. The therapist acknowledges pain, normalizes the pervasiveness of depression, invites gentle exploration, and includes a brief safety check regarding suicidal thoughts — all clinically appropriate and supportive. The language also loosely aligns with ACT's intent to separate the person from the depressive experience (e.g., calling depression an \"experience, a state\").\n\nMajor weaknesses relative to the rubric: The response fails to include the four required ACT constructs/metaphors explicitly: Self-as-Context, Observing Self, The Sky and the Weather, and the Chessboard Metaphor. While there is some implicit self-as-context language (saying depression is an experience), the response does not explicitly operationalize or evoke the Observing Self (e.g., invitations to notice thoughts as events in awareness) nor does it use the Sky-and-Weather or Chessboard metaphors that were mandated. Additionally, the response engages with identity-language (\"defines me,\" \"who I am,\" \"label for who you are\"), which crosses into identity-focused framing that the rubric explicitly forbids (avoid self-esteem/identity work). \n\nBecause the response is clinically safe and empathic but does not meet the modality-adherence requirements and includes forbidden identity-framing, it receives a moderate score. To improve: explicitly evoke the Observing Self and Self-as-Context (e.g., invite the client to notice thoughts and feelings from a perspective that notices them), use the Sky-and-Weather and Chessboard metaphors to illustrate thoughts/feelings as transient events or pieces on a board, and remove or avoid identity-focused interventions or claims about who the person \"is.\"",
-        "flags": [
-          "missing_self-as-context_explicit",
-          "missing_observing_self",
-          "missing_sky_and_weather_metaphor",
-          "missing_chessboard_metaphor",
-          "uses_identity_framing_forbidden"
-        ],
-        "metrics": {
-          "safety": 88,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 42,
+          "reasoning": "Strengths: The student response is warm, validating, and empathic. The therapist acknowledges pain, normalizes the pervasiveness of depression, invites gentle exploration, and includes a brief safety check regarding suicidal thoughts — all clinically appropriate and supportive. The language also loosely aligns with ACT's intent to separate the person from the depressive experience (e.g., calling depression an \"experience, a state\").\n\nMajor weaknesses relative to the rubric: The response fails to include the four required ACT constructs/metaphors explicitly: Self-as-Context, Observing Self, The Sky and the Weather, and the Chessboard Metaphor. While there is some implicit self-as-context language (saying depression is an experience), the response does not explicitly operationalize or evoke the Observing Self (e.g., invitations to notice thoughts as events in awareness) nor does it use the Sky-and-Weather or Chessboard metaphors that were mandated. Additionally, the response engages with identity-language (\"defines me,\" \"who I am,\" \"label for who you are\"), which crosses into identity-focused framing that the rubric explicitly forbids (avoid self-esteem/identity work). \n\nBecause the response is clinically safe and empathic but does not meet the modality-adherence requirements and includes forbidden identity-framing, it receives a moderate score. To improve: explicitly evoke the Observing Self and Self-as-Context (e.g., invite the client to notice thoughts and feelings from a perspective that notices them), use the Sky-and-Weather and Chessboard metaphors to illustrate thoughts/feelings as transient events or pieces on a board, and remove or avoid identity-focused interventions or claims about who the person \"is.\"",
+          "flags": [
+            "missing_self-as-context_explicit",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "uses_identity_framing_forbidden"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

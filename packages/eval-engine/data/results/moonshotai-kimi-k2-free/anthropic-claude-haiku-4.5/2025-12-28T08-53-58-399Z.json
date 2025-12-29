@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student uses ACT- consistent language (cognitive defusion) and offers a clear, compassionate script that approximates the 'I'm having the thought...' stance (they say, “I’m noticing that my mind is having the thought ‘I am broken.’”). They avoid prohibited approaches: no cognitive challenging/CBT disputation and no thought-stopping instructions. The tone is empathic and the suggested practice (notice, pause, attend to the body) fits ACT acceptance/defusion principles.\n\nLimitations: The response omits two rubric-required defusion techniques: 'singing the thought' and 'repeating the word' (explicit instructions to sing the thought or to repeat the word until it loses meaning are not present). Because those specific techniques were mandated by the rubric, the student’s response is only partially compliant. Also the phrasing is slightly more clinician-heavy (offers interpretation/metaphor) rather than brief in-session scripts for in vivo practice, though that is a minor issue.\n\nRecommendation: Keep the compassionate framing and the 'I’m having the thought...' wording, and explicitly add concrete exercises: e.g., instruct the client to sing the phrase in a silly melody or repeat the single word 'broken' slowly and quickly until it loses its meaning.",
-        "flags": [
-          "missing_singing_the_thought",
-          "missing_repeating_the_word"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -50,6 +37,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:56:09.326Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 95,
+          "reasoning": "The student response demonstrates excellent adherence to Acceptance and Commitment Therapy (ACT) principles. The response effectively validates the client's experience without trying to change the content of the thought, which avoids the common pitfall of cognitive challenging. The student correctly identifies that arguing with the thought 'gives it more energy.' Crucially, the suggested intervention directly incorporates the required technique 'I'm having the thought that...' ('I’m noticing that my mind is having the thought ‘I am broken.’') to promote cognitive defusion. The response is empathetic, clear, and offers a concrete experiment that aligns perfectly with the rubric requirements.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 100
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:17:29.550Z"
         }
       ]
     }

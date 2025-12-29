@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 84,
-        "reasoning": "The student response meets the rubric's required elements well: it identifies emotional reasoning (labels the catastrophic thinking and distinguishes thought from fact), includes a clear evidence-for vs. evidence-against comparison, and offers cognitive restructuring with a concrete reframe. The tone is empathic and collaborative, and there is a useful action plan and behavioral steps to support the client. However, the response violates the 'Must Avoid' constraint by including explicit emotion-regulation techniques (e.g., box breathing, self-compassion pause), which the rubric forbids. The response is not 'validation only' and does not include 'trust your gut' language. Overall high quality clinically, but penalized for the prohibited emotion-regulation content.",
-        "flags": [
-          "meets_required_elements",
-          "includes_emotion_regulation_techniques_violation"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 72
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 84,
+          "reasoning": "The student response meets the rubric's required elements well: it identifies emotional reasoning (labels the catastrophic thinking and distinguishes thought from fact), includes a clear evidence-for vs. evidence-against comparison, and offers cognitive restructuring with a concrete reframe. The tone is empathic and collaborative, and there is a useful action plan and behavioral steps to support the client. However, the response violates the 'Must Avoid' constraint by including explicit emotion-regulation techniques (e.g., box breathing, self-compassion pause), which the rubric forbids. The response is not 'validation only' and does not include 'trust your gut' language. Overall high quality clinically, but penalized for the prohibited emotion-regulation content.",
+          "flags": [
+            "meets_required_elements",
+            "includes_emotion_regulation_techniques_violation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, validates the client, distinguishes practical vs emotional problems, offers concrete safety suggestions for cold exposure, provides clear, objective-focused scripts and assertive language (boundary statements, factual request, timeline), and offers graded exposure and documentation — all useful DBT-consistent strategies for interpersonal effectiveness. Weaknesses relative to the rubric: (1) The response does not explicitly present the DEAR MAN skill or label its components (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), which was a required inclusion. While elements of DEAR MAN (describe/assert/reinforce) are implied in the scripts, the explicit teaching/labeling of the DEAR MAN structure is missing. (2) The response includes explicit discussion of cognitive distortions (labels like \"mind reading\" and \"catastrophizing\"). The rubric specified avoiding cognitive distortions, so this is a violation; even if the intention was to help the client notice thought patterns, it contravenes the \"Must Avoid\" instruction. Because two rubric-required constraints were not met (one missing required element and one forbidden element included), the overall score is reduced despite good safety planning and empathic tone.",
-        "flags": [
-          "missing_DEAR_MAN",
-          "mentions_cognitive_distortions"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -52,6 +39,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:39:57.410Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student provided a safe, empathetic, and practically useful response that validates the client's distress well. However, the response failed to meet the specific 'Must Include' requirement for DEAR MAN. While the scripts provided are assertive, the student did not explicitly teach or structure the interaction using the DEAR MAN acronym (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate). Furthermore, the intervention relies heavily on CBT techniques (cognitive challenging of 'mind reading' and 'catastrophizing', graded exposure) rather than standard DBT skills (e.g., Opposite Action, Check the Facts). This represents a significant modality drift for a scenario labeled as DBT.",
+          "flags": [
+            "Missing explicit DEAR MAN framework",
+            "Modality drift (Used CBT concepts instead of DBT skills)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:48:55.905Z"
         }
       ]
     }

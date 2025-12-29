@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 93,
-        "reasoning": "The student response strongly emphasizes contact with the present moment and uses explicit mindfulness/here-and-now language (“being present,” “bring your focus back to the present moment,” “mindfulness exercises,” “grounding techniques”). It validates and empathizes effectively and refrains from diving into immediate problem-solving; the therapist invites exploration of feelings in the moment. The one minor divergence from the rubric is the brief mention of developing “tools and strategies,” which could be interpreted as a mild future-oriented plan. However, the student immediately qualified that they don’t need to solve anything now and framed any work as collaborative and at the client’s pace, so this only slightly reduces modality adherence.",
-        "flags": [
-          "planning_mentioned"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 90
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -50,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:24:31.249Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates high levels of empathy and validation, effectively normalizing the client's experience. However, the response struggles to adhere to the specific ACT constraints provided in the rubric. The student violates the 'Must Avoid: Planning' rule by explicitly discussing future interventions ('developing some tools and strategies', 'mindfulness exercises'). Additionally, while the student acknowledges the concept of the 'present moment,' they fail to facilitate immediate 'Contact with the Present Moment.' Instead, the student asks questions about the content of the client's thoughts (the argument, the meeting), which pulls the client further into the 'there and then' rather than grounding them in the 'here and now.' A more ACT-consistent response would focus on noticing the process of thinking in the immediate moment rather than analyzing the content of the thoughts or planning future solutions.",
+          "flags": [
+            "Future Planning",
+            "Content Focus Over Process"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:31:07.051Z"
         }
       ]
     }

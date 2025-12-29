@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, validating, and thoroughly addresses values and includes an explicit Values Clarification exercise. It offers practical, low-stakes experiments and appropriate therapeutic modalities (existential, ACT, narrative), and includes reflective listening and invitations to explore meaning — all clinically appropriate. Weaknesses: The response does not explicitly articulate the 'Direction vs. Destination' framing required by the rubric (while it implies an ongoing process, it never names or clearly contrasts direction versus destination). It also violates the 'Must Avoid' requirement by recommending gratitude practices/positive psychology interventions (explicit mention of 'gratitude practices' is present). The student did not overtly instruct the client to 'set new goals', but did suggest experiments and activities (which is acceptable). Because one required element is missing and one prohibited element is present, the score is reduced accordingly.",
-        "flags": [
-          "missing_explicit_direction_vs_destination",
-          "includes_gratitude_practices"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validating, and thoroughly addresses values and includes an explicit Values Clarification exercise. It offers practical, low-stakes experiments and appropriate therapeutic modalities (existential, ACT, narrative), and includes reflective listening and invitations to explore meaning — all clinically appropriate. Weaknesses: The response does not explicitly articulate the 'Direction vs. Destination' framing required by the rubric (while it implies an ongoing process, it never names or clearly contrasts direction versus destination). It also violates the 'Must Avoid' requirement by recommending gratitude practices/positive psychology interventions (explicit mention of 'gratitude practices' is present). The student did not overtly instruct the client to 'set new goals', but did suggest experiments and activities (which is acceptable). Because one required element is missing and one prohibited element is present, the score is reduced accordingly.",
+          "flags": [
+            "missing_explicit_direction_vs_destination",
+            "includes_gratitude_practices"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

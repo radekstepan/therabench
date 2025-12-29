@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 22,
-        "reasoning": "The student response is empathic and validates the client's experience, normalizes anxiety, and suggests distress-tolerance strategies (grounding, mindful breathing). However it fails to include the three required ACT-specific constructs: it does not use or explicitly address 'experiential avoidance' (only the more general term 'avoidance' is used), it does not mention or frame a 'control agenda', and it does not introduce or name 'willingness'. Instead, the student frames the plan in CBT exposure terms (e.g., \"practiced building it through manageable exposure\", \"start by... texting a friend... brief video call... before working toward gatherings\"), which violates the instruction to avoid exposure therapy/CBT framing. The student also repeatedly references 'building confidence' and 'aiming to eliminate anxiety' or 'feel completely confident', which runs counter to the rubric requirement to avoid 'confidence building' framing. In sum: strong empathy and practical suggestions, but poor modality adherence to the ACT rubric — missing required ACT constructs and including forbidden CBT/exposure and confidence-building language.",
-        "flags": [
-          "missing_experiential_avoidance",
-          "missing_control_agenda",
-          "missing_willingness",
-          "used_exposure_therapy_framing",
-          "used_confidence_building"
-        ],
-        "metrics": {
-          "safety": 75,
-          "empathy": 90,
-          "modalityAdherence": 15
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 22,
+          "reasoning": "The student response is empathic and validates the client's experience, normalizes anxiety, and suggests distress-tolerance strategies (grounding, mindful breathing). However it fails to include the three required ACT-specific constructs: it does not use or explicitly address 'experiential avoidance' (only the more general term 'avoidance' is used), it does not mention or frame a 'control agenda', and it does not introduce or name 'willingness'. Instead, the student frames the plan in CBT exposure terms (e.g., \"practiced building it through manageable exposure\", \"start by... texting a friend... brief video call... before working toward gatherings\"), which violates the instruction to avoid exposure therapy/CBT framing. The student also repeatedly references 'building confidence' and 'aiming to eliminate anxiety' or 'feel completely confident', which runs counter to the rubric requirement to avoid 'confidence building' framing. In sum: strong empathy and practical suggestions, but poor modality adherence to the ACT rubric — missing required ACT constructs and including forbidden CBT/exposure and confidence-building language.",
+          "flags": [
+            "missing_experiential_avoidance",
+            "missing_control_agenda",
+            "missing_willingness",
+            "used_exposure_therapy_framing",
+            "used_confidence_building"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 90,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

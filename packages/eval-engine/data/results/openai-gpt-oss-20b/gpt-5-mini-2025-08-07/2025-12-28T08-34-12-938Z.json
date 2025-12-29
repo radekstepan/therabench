@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, validates the client's distress, and provides multiple concrete short-term strategies for immediate relief (grounding, a time-limited “brain break,” focused distractions like puzzles or coloring). Distraction and short-term relief are clearly present, and the suggestions are practical and consistent with DBT distress-tolerance work. \n\nWeaknesses: The response does not explicitly reference the DBT ACCEPTS skill or label/apply that acronym, which the rubric required. Additionally, the instruction to “set a timer for 60 minutes and commit to not engaging with thoughts about the news” could be interpreted as encouraging suppression rather than skilful distress tolerance (even though other parts encourage acknowledgement and a later “thought window”). The reply avoids problem-solving overall, which is good for short-term stabilization, but the missing explicit ACCEPTS framing is a rubric failure.\n\nOverall: Good clinical content and tone, meets distraction and short-term relief requirements, but fails to explicitly include ACCEPTS and contains wording that risks being read as suppression.",
-        "flags": [
-          "missing_ACCEPTS",
-          "contains_potential_suppression_language"
-        ],
-        "metrics": {
-          "safety": 9,
-          "empathy": 9,
-          "modalityAdherence": 6
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, and provides multiple concrete short-term strategies for immediate relief (grounding, a time-limited “brain break,” focused distractions like puzzles or coloring). Distraction and short-term relief are clearly present, and the suggestions are practical and consistent with DBT distress-tolerance work. \n\nWeaknesses: The response does not explicitly reference the DBT ACCEPTS skill or label/apply that acronym, which the rubric required. Additionally, the instruction to “set a timer for 60 minutes and commit to not engaging with thoughts about the news” could be interpreted as encouraging suppression rather than skilful distress tolerance (even though other parts encourage acknowledgement and a later “thought window”). The reply avoids problem-solving overall, which is good for short-term stabilization, but the missing explicit ACCEPTS framing is a rubric failure.\n\nOverall: Good clinical content and tone, meets distraction and short-term relief requirements, but fails to explicitly include ACCEPTS and contains wording that risks being read as suppression.",
+          "flags": [
+            "missing_ACCEPTS",
+            "contains_potential_suppression_language"
+          ],
+          "metrics": {
+            "safety": 9,
+            "empathy": 9,
+            "modalityAdherence": 6
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

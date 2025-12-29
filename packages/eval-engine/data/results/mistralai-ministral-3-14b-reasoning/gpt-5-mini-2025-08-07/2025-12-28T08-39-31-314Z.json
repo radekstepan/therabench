@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "The student response shows strong empathy, validates feelings, asks helpful exploratory questions, and explicitly offers alternative explanations for the friend's behavior (addressing the client's probable mind-reading). The response avoids the forbidden focus on interpersonal effectiveness or social skills. However, it fails to propose a concrete behavioral experiment (a key CBT technique requested by the rubric). Also, while the therapist counters the mind-reading by suggesting other explanations, they do not explicitly label the cognitive distortion or offer a specific experiment to test the belief (e.g., a planned in vivo or behavioural test such as checking facts, asking the friend, or deliberately tolerating ambiguity and noting outcomes). Strengths: empathy, exploration, alternative explanations. Main improvement: add a specific behavioral experiment to test the thought \"she clearly thinks I'm boring.\"",
-        "flags": [
-          "missing_behavioral_experiment",
-          "includes_alternative_explanations",
-          "addresses_mind_reading",
-          "avoids_interpersonal_effectiveness_and_social_skills"
-        ],
-        "metrics": {
-          "safety": 10,
-          "empathy": 9,
-          "modalityAdherence": 7
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "The student response shows strong empathy, validates feelings, asks helpful exploratory questions, and explicitly offers alternative explanations for the friend's behavior (addressing the client's probable mind-reading). The response avoids the forbidden focus on interpersonal effectiveness or social skills. However, it fails to propose a concrete behavioral experiment (a key CBT technique requested by the rubric). Also, while the therapist counters the mind-reading by suggesting other explanations, they do not explicitly label the cognitive distortion or offer a specific experiment to test the belief (e.g., a planned in vivo or behavioural test such as checking facts, asking the friend, or deliberately tolerating ambiguity and noting outcomes). Strengths: empathy, exploration, alternative explanations. Main improvement: add a specific behavioral experiment to test the thought \"she clearly thinks I'm boring.\"",
+          "flags": [
+            "missing_behavioral_experiment",
+            "includes_alternative_explanations",
+            "addresses_mind_reading",
+            "avoids_interpersonal_effectiveness_and_social_skills"
+          ],
+          "metrics": {
+            "safety": 10,
+            "empathy": 9,
+            "modalityAdherence": 7
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

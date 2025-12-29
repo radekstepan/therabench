@@ -19,21 +19,100 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 75,
-        "reasoning": "The student demonstrates strong validation, collaborative exploration of fears, and excellent empathy. However, they failed to incorporate required DBT elements: DEAR MAN skill for structured assertiveness was completely omitted, objective effectiveness (getting needs met) wasn't explicitly addressed, and while assertiveness was encouraged generally, it lacked the DBT framework. Prohibited elements were correctly avoided. Points deducted for missed rubric requirements despite good clinical foundations.",
-        "flags": [
-          "Missing DEAR MAN framework",
-          "Objective effectiveness not addressed",
-          "Assertiveness not grounded in DBT protocol"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student provides strong validation, collaborative stance, and practical next steps (examining assumptions, scripting/role-play, planning coping strategies) which reflect concern for objective effectiveness and encourage assertiveness and self-advocacy. The tone is empathic and avoids passive-aggressiveness or advice to 'just move out.' Weaknesses: The response fails to include or teach the DBT DEAR MAN skill explicitly (the rubric requirement). While assertiveness is encouraged, an explicit behavioral skill instruction or stepwise DEAR MAN script would strengthen modality adherence. A minor issue: the response briefly names possible core beliefs (e.g., 'My needs burden others') — this is reasonable exploration but should be handled carefully to avoid premature labeling of cognitive distortions. Overall, clinically appropriate but missing the required explicit DEAR MAN skill and a clearer, brief practice script demonstrating assertive wording.",
+          "flags": [
+            "missing_DEAR_MAN"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong foundational therapeutic skills—excellent validation, empathy, and collaborative positioning. The response appropriately avoids passive-aggression, unrealistic solutions, and reinforces avoidance patterns. However, it falls significantly short of DBT competency standards for this specific scenario. The response lacks concrete DBT skills instruction, particularly DEAR MAN (a core DBT interpersonal effectiveness tool explicitly required for assertiveness situations). The student explores the underlying fear thoughtfully but doesn't translate insight into actionable DBT skills. The phrase 'when you're ready, we'll find small, safe ways' risks enabling continued avoidance rather than building distress tolerance and commitment to change. For a DBT intervention with a client in avoidance, the student should explicitly teach and rehearse DEAR MAN (Describe, Express, Assert, Reinforce) and address Objective Effectiveness (the heater must be fixed; this is non-negotiable). The response reads more like person-centered or psychodynamic therapy than DBT. While the therapeutic alliance-building is excellent, DBT requires stronger skills coaching and behavioral commitment in the here-and-now.",
+          "flags": [
+            "CRITICAL: No DEAR MAN skill instruction or rehearsal despite assertiveness scenario",
+            "Missing Objective Effectiveness framing—heater repair is the goal, not just emotional processing",
+            "Insufficient Assertiveness skills teaching; focus remains on emotional exploration",
+            "Risk of enabling avoidance with 'when you're ready' language—DBT emphasizes behavioral commitment",
+            "No mention of opposite action (acting against the urge to avoid)",
+            "No homework or concrete behavioral assignment"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 42
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:05:57.641Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong validation, collaborative exploration of fears, and excellent empathy. However, they failed to incorporate required DBT elements: DEAR MAN skill for structured assertiveness was completely omitted, objective effectiveness (getting needs met) wasn't explicitly addressed, and while assertiveness was encouraged generally, it lacked the DBT framework. Prohibited elements were correctly avoided. Points deducted for missed rubric requirements despite good clinical foundations.",
+          "flags": [
+            "Missing DEAR MAN framework",
+            "Objective effectiveness not addressed",
+            "Assertiveness not grounded in DBT protocol"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is empathetic and validates the client's feelings, which is crucial in building trust and understanding. The approach creates a partnership dynamic and promotes examining the fear source, which can lead to personal insight and growth. However, the response lacks explicit mention of the DEAR MAN technique, which is crucial in DBT for assertiveness and achieving objectives. Additionally, while objective effectiveness is implied, it could be made more explicit by discussing rights to proper living conditions or consequences of non-compliance on the landlord’s part.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 85,
+          "reasoning": "The student's response is empathetic and validates the client's feelings, which is crucial in building trust and understanding. The approach creates a partnership dynamic and promotes examining the fear source, which can lead to personal insight and growth. However, the response lacks explicit mention of the DEAR MAN technique, which is crucial in DBT for assertiveness and achieving objectives. Additionally, while objective effectiveness is implied, it could be made more explicit by discussing rights to proper living conditions or consequences of non-compliance on the landlord’s part.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student provided a warm, empathetic, and clinically safe response. They successfully validated the client's distress and highlighted the cost of avoidance, which is consistent with general good therapy practices. However, the response failed to meet the specific 'Must Include' rubric requirement for the DBT skill DEAR MAN. While the student suggested role-playing and scripting, they did not explicitly teach or apply the DEAR MAN acronym (Describe, Express, Assert, Reinforce, Mindful, Appear Confident, Negotiate). Additionally, while 'Objective effectiveness' and 'Assertiveness' were alluded to in the 'Next Steps,' they were not grounded in the specific DBT framework of Interpersonal Effectiveness. The response acted more as a supportive exploration than a skills-based intervention.",
+          "flags": [
+            "Missing DEAR MAN skill application",
+            "Generic intervention rather than modality-specific DBT"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:59:52.343Z"
+        }
+      ]
     }
   }
 ]

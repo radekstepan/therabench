@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student response is empathic and validating, uses experiential language (e.g., noticing, separating act of noticing from content), and offers practical strategies consistent with ACT such as observing without engaging and letting thoughts pass (e.g., labeling briefly, imagining the thought as a cloud passing by). These map well onto the intention of “observing without engaging” and “letting thoughts pass.”\n\nLimitations: The response explicitly recommends exploring whether the negative words are linked to specific memories or unmet needs, which encourages analyzing the content of thoughts (i.e., “analyze the water”) rather than practicing defusion/acceptance. It also suggests a “thought‑stopping” cue and replacing negative words with neutral/comforting phrases, which functions as a cognitive control/avoidance strategy (i.e., “build a dam”) and runs counter to ACT’s emphasis on defusion and acceptance. Additionally, the instructor-specified technique “Leaves on a Stream” was not named explicitly (though a similar cloud metaphor was used). These departures reduce modality adherence.\n\nOverall: Clinically warm and useful, but mixes ACT-appropriate defusion/grounding with control/analysis strategies that conflict with ACT principles; would benefit from removing the recommendation to analyze origins of thoughts and the thought‑stopping/replacement technique, and explicitly framing or naming an ACT defusion exercise such as Leaves on a Stream.",
-        "flags": [
-          "Analyze the water",
-          "Build a dam",
-          "Leaves on a Stream not explicitly named"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -53,6 +39,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:17:05.422Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student demonstrated strong empathy and validated the client's distress effectively. However, the response failed significantly in adhering to the specific ACT (Acceptance and Commitment Therapy) rubric provided. The student did not use the required 'Leaves on a Stream' exercise, opting instead for a cloud metaphor. More critically, the student violated the 'Must Avoid' constraints by suggesting 'thought-stopping' and looking for patterns/triggers (analyzing the water). ACT focuses on acceptance and defusion rather than controlling, suppressing, or analyzing the content of thoughts. Suggesting 'thought-stopping' is akin to 'building a dam,' which contradicts the goal of psychological flexibility. Additionally, the response shifts toward CBT or psychodynamic analysis (exploring memories/unmet needs) rather than staying within the ACT framework of observing and letting thoughts pass.",
+          "flags": [
+            "Missing Required Metaphor: Leaves on a Stream",
+            "Violated Constraint: Suggested 'thought-stopping' (Building a dam)",
+            "Violated Constraint: Encouraged analysis of triggers/memories (Analyzing the water)",
+            "Modality Mismatch: Used CBT/Control strategies instead of ACT Defusion"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:55:34.515Z"
         }
       ]
     }

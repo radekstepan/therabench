@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "The student response demonstrates good CBT-consistent elements: it identifies a \"mind reading\" cognitive tendency (e.g., \"Before we jump to conclusions about what your friend was thinking\"; noting interpretations that confirm existing beliefs) and explicitly offers alternative explanations for the friend's watch glance (e.g., waiting for a call, checks watch frequently). Tone is empathic and validating. However, the response fails to propose a concrete behavioral experiment (e.g., an in-session or between-session test such as checking the friend's behavior across contexts, asking a neutral question to test the assumption, or deliberately observing/recording instances), which was required by the rubric. The reply also appropriately avoided the forbidden focus on interpersonal effectiveness or social skills. Overall, strong empathy and cognitive restructuring content but missing the behavioral experiment component, so score is reduced accordingly.",
-        "flags": [
-          "missing_behavioral_experiment"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "The student response demonstrates good CBT-consistent elements: it identifies a \"mind reading\" cognitive tendency (e.g., \"Before we jump to conclusions about what your friend was thinking\"; noting interpretations that confirm existing beliefs) and explicitly offers alternative explanations for the friend's watch glance (e.g., waiting for a call, checks watch frequently). Tone is empathic and validating. However, the response fails to propose a concrete behavioral experiment (e.g., an in-session or between-session test such as checking the friend's behavior across contexts, asking a neutral question to test the assumption, or deliberately observing/recording instances), which was required by the rubric. The reply also appropriately avoided the forbidden focus on interpersonal effectiveness or social skills. Overall, strong empathy and cognitive restructuring content but missing the behavioral experiment component, so score is reduced accordingly.",
+          "flags": [
+            "missing_behavioral_experiment"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

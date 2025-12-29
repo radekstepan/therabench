@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "The student's response is empathic, validating, and offers useful behavioral suggestions (recognizing physical signs, pausing, deep breathing, self-compassion). It avoids the prohibited interventions (does not suggest a 'time out' for kids and does not rely on generic 'anger management' platitudes). However, it fails to explicitly include the required DBT elements from the rubric: the STOP skill is not named or described (the response only refers to a generic 'pause button'), 'impulse control' is implied but not explicitly addressed as a skill or strategy, and the directive to 'step back' is not clearly presented using DBT language or concrete steps (e.g., take a step back physically/mentally as in DBT). Because the rubric required explicit inclusion of STOP, impulse control, and step back, the response does not meet those mandatory criteria.",
-        "flags": [
-          "missing_STOP_skill",
-          "missing_explicit_impulse_control",
-          "missing_explicit_step_back"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 92,
-          "modalityAdherence": 38
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "The student's response is empathic, validating, and offers useful behavioral suggestions (recognizing physical signs, pausing, deep breathing, self-compassion). It avoids the prohibited interventions (does not suggest a 'time out' for kids and does not rely on generic 'anger management' platitudes). However, it fails to explicitly include the required DBT elements from the rubric: the STOP skill is not named or described (the response only refers to a generic 'pause button'), 'impulse control' is implied but not explicitly addressed as a skill or strategy, and the directive to 'step back' is not clearly presented using DBT language or concrete steps (e.g., take a step back physically/mentally as in DBT). Because the rubric required explicit inclusion of STOP, impulse control, and step back, the response does not meet those mandatory criteria.",
+          "flags": [
+            "missing_STOP_skill",
+            "missing_explicit_impulse_control",
+            "missing_explicit_step_back"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 92,
+            "modalityAdherence": 38
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

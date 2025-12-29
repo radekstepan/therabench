@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 80,
-        "reasoning": "Strengths: The student response demonstrates strong empathic validation, reflective listening, practical DBT-consistent skills (grounding breath, body scan, thought labeling), a clear presentation of Radical Acceptance, and an explicit distinction between pain and the extra suffering caused by resistance. The response includes a safety check and collaborative planning, which are appropriate. Weaknesses: The response does not explicitly name or teach the DBT concept 'Turning the Mind,' and it fails to explicitly state the contrast 'Willfulness vs. Willingness' as a labeled DBT principle (although the concept of willingness is implied). There is a minor risk of straying into medical territory by listing examples like \"taking extra medication\" and \"researching new treatments\" as typical fighting behaviors without careful framing; that could be interpreted as medical-related content. The student also briefly references ACT, which is a useful adjunct but not strictly DBT and should be clearly integrated or signposted in a DBT session. Overall, this is a strong, compassionate DBT-style reply but would be improved by explicitly naming and teaching 'Turning the Mind' and 'Willfulness vs. Willingness,' and by avoiding wording that could be construed as medical advice.",
-        "flags": [
-          "missing_turning_the_mind",
-          "willfulness_vs_willingness_not_explicitly_labeled",
-          "potential_medical_advice_example"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response demonstrates strong empathic validation, reflective listening, practical DBT-consistent skills (grounding breath, body scan, thought labeling), a clear presentation of Radical Acceptance, and an explicit distinction between pain and the extra suffering caused by resistance. The response includes a safety check and collaborative planning, which are appropriate. Weaknesses: The response does not explicitly name or teach the DBT concept 'Turning the Mind,' and it fails to explicitly state the contrast 'Willfulness vs. Willingness' as a labeled DBT principle (although the concept of willingness is implied). There is a minor risk of straying into medical territory by listing examples like \"taking extra medication\" and \"researching new treatments\" as typical fighting behaviors without careful framing; that could be interpreted as medical-related content. The student also briefly references ACT, which is a useful adjunct but not strictly DBT and should be clearly integrated or signposted in a DBT session. Overall, this is a strong, compassionate DBT-style reply but would be improved by explicitly naming and teaching 'Turning the Mind' and 'Willfulness vs. Willingness,' and by avoiding wording that could be construed as medical advice.",
+          "flags": [
+            "missing_turning_the_mind",
+            "willfulness_vs_willingness_not_explicitly_labeled",
+            "potential_medical_advice_example"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 70,

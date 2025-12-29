@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, normalizes a common reaction, uses reasonable CBT-style reframing (slip vs. failure), and invites collaborative problem-solving (self-compassion, planning). It avoids giving generic diet instructions and does not rely on mindfulness or explicit acceptance language. Weaknesses: The response fails to label the core cognitive distortion(s) present in the client's statement. The rubric required explicit identification of All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking, none of which are named. In CBT it is important to help clients identify the specific distortion so they can challenge it; the student's reply misses this step. Overall the tone and approach are good, but omission of the required cognitive-labeling reduces modality adherence and lowers the score.",
-        "flags": [
-          "Missing_All-or-Nothing Thinking",
-          "Missing_Black-and-White Thinking",
-          "Missing_Dichotomous Thinking"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:30:09.949Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided an empathetic and supportive response that validated the client's feelings and attempted a reframe. However, the response failed to meet the specific 'Must Include' requirements of the rubric. The student described the client's thought process as 'viewing eating one cookie as a failure' but did not explicitly label the cognitive distortion using the required terminology (All-or-Nothing Thinking, Black-and-White Thinking, or Dichotomous Thinking). In CBT, identifying and labeling the specific distortion is a core component of psychoeducation and cognitive restructuring. The student successfully avoided giving generic diet advice and stayed clear of explicit Mindfulness or Acceptance terminology, though the suggestion of 'self-compassion' leans toward an ACT/DBT approach rather than strict traditional CBT.",
+          "flags": [
+            "Missing required cognitive distortion terminology",
+            "Insufficient psychoeducation on specific distortions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:32:25.853Z"
         }
       ]
     }

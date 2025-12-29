@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "The student response demonstrates strong empathy, normalization, and functional curiosity (asking about bodily sensations, antecedents, and consequences). It avoids giving medical advice or recommending nicotine replacement, which meets the 'must avoid' requirement. However, it fails to include the required ACT-specific elements from the rubric: there is no explicit use of The Choice Point framework, no labeling or discussion of 'Hooked' versus 'Unhooked' responses, and no identification of 'Towards' versus 'Away' moves or examples of each. Because these are explicit rubric requirements, modality adherence is low despite generally good clinical skills and supportive tone.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away_moves"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:16:25.815Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a highly empathetic and validating response, successfully normalizing the client's experience and avoiding prohibited topics such as addiction counseling protocols or nicotine replacement. The student effectively gathered information about triggers and physical sensations. However, the response failed to meet the specific requirements of the ACT rubric. The student utilized a more CBT-based explanation (conditioned reflex, brain associations) and completely omitted the required ACT models: The Choice Point, Hooked vs. Unhooked, and Towards vs. Away moves. By framing the issue as a 'conditioned reflex' rather than an avoidance move (Away move) and failing to introduce the concept of being 'hooked' by thoughts/urges, the student missed the core opportunity to build psychological flexibility.",
+          "flags": [
+            "Missing ACT Concept: The Choice Point",
+            "Missing ACT Concept: Hooked vs. Unhooked",
+            "Missing ACT Concept: Towards vs. Away moves",
+            "Modality Mismatch: Used psychoeducation/conditioning model instead of ACT framework"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:22:31.950Z"
         }
       ]
     }

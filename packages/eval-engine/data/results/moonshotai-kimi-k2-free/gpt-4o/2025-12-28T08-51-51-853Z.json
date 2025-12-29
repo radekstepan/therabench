@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response accurately reflects an empathetic understanding of the client's feelings but lacks technical precision. It identifies the client's concern about their boss's praise, which could be related to cognitive distortions like 'Disqualifying the Positive' and 'Minimization,' though these terms are not explicitly mentioned. The student invites the client to explore their current feelings about their work but misses the direct opportunity to 'examine the evidence' of the boss's feedback, which would align more closely with CBT techniques.",
-        "flags": [
-          "Lacks focus on examining evidence",
-          "Concepts like 'Disqualifying the Positive' could be better highlighted"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response accurately reflects an empathetic understanding of the client's feelings but lacks technical precision. It identifies the client's concern about their boss's praise, which could be related to cognitive distortions like 'Disqualifying the Positive' and 'Minimization,' though these terms are not explicitly mentioned. The student invites the client to explore their current feelings about their work but misses the direct opportunity to 'examine the evidence' of the boss's feedback, which would align more closely with CBT techniques.",
+          "flags": [
+            "Lacks focus on examining evidence",
+            "Concepts like 'Disqualifying the Positive' could be better highlighted"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

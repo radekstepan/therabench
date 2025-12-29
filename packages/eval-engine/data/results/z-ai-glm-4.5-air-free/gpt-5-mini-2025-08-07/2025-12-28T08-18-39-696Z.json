@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 85,
-        "reasoning": "The student response demonstrates strong empathy and personalization (e.g., validating feelings, noting the parent's care) and appropriately challenges the client's overattribution by normalizing multiple influences on child behavior. That addresses two rubric requirements: Personalization and Attribution error. The response also gestures toward locus of control by inviting exploration of contributors and supports, but it stops short of explicitly distinguishing what is within the parent's control versus what is not or offering a CBT-oriented probe (e.g., evidence for/against the belief, alternative attributions, actionable steps). The reply correctly avoids giving direct parenting advice or invoking systemic-therapy framing. To reach full marks the clinician should explicitly name the locus-of-control issue (which elements are controllable vs uncontrollable), and incorporate a brief CBT technique (Socratic question, behavioral experiment, or cognitive restructuring) to operationalize change.",
-        "flags": [
-          "locus_of_control_not_explicit",
-          "no_explicit_CBT_technique_or_actionable_step"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 78
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "The student response demonstrates strong empathy and personalization (e.g., validating feelings, noting the parent's care) and appropriately challenges the client's overattribution by normalizing multiple influences on child behavior. That addresses two rubric requirements: Personalization and Attribution error. The response also gestures toward locus of control by inviting exploration of contributors and supports, but it stops short of explicitly distinguishing what is within the parent's control versus what is not or offering a CBT-oriented probe (e.g., evidence for/against the belief, alternative attributions, actionable steps). The reply correctly avoids giving direct parenting advice or invoking systemic-therapy framing. To reach full marks the clinician should explicitly name the locus-of-control issue (which elements are controllable vs uncontrollable), and incorporate a brief CBT technique (Socratic question, behavioral experiment, or cognitive restructuring) to operationalize change.",
+          "flags": [
+            "locus_of_control_not_explicit",
+            "no_explicit_CBT_technique_or_actionable_step"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

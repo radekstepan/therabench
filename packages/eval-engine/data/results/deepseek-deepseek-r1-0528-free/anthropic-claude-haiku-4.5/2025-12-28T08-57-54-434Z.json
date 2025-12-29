@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 88,
-        "reasoning": "The student's response captures key CBT elements: Behavioral Activation is present through concrete, approach-oriented suggestions (open the document, 2-minute timer, visualize starting). The principle that action often precedes motivation is stated explicitly. Graded Task Assignment is used well with very small, achievable steps. The response avoids the prohibited messages to 'rest and recover' or 'wait for mood to improve' and uses a compassionate tone. One required element is weak/absent: Activity Scheduling is not explicitly included (there's no plan to schedule when the small steps will occur or to set a specific time/date or a repeatable plan). Overall the response is clinically appropriate, empathic, and aligns well with CBT practice; adding an explicit scheduling element and a brief plan for follow-up would make it fully compliant with the rubric.",
-        "flags": [
-          "missing_activity_scheduling"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 88,
@@ -44,6 +32,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:05:36.544Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 90,
+          "reasoning": "The student's response is strong and effectively addresses the scenario using CBT principles. It explicitly challenges the common cognitive distortion that motivation must precede action (a key requirement), correctly identifying that action leads to motivation. The response employs Behavioral Activation by suggesting behavioral shifts rather than waiting for internal states to change. It effectively utilizes Graded Task Assignment by suggesting 'tiny steps' (e.g., writing one sentence, setting a timer for 2 minutes) to lower the barrier to entry. The response also touches on Activity Scheduling by proposing specific, small tasks. The student avoids prohibited pitfalls like advising to rest and recover or simply wait for mood improvement. The empathy is high, validating the client's feelings before introducing the cognitive challenge. The only reason for a slightly less than perfect score is that while Activity Scheduling is implied through the suggestions, it could be made more explicit as a formal technique, but this is a minor critique.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:58:35.033Z"
         }
       ]
     }

@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, normalizes a common reaction, uses reasonable CBT-style reframing (slip vs. failure), and invites collaborative problem-solving (self-compassion, planning). It avoids giving generic diet instructions and does not rely on mindfulness or explicit acceptance language. Weaknesses: The response fails to label the core cognitive distortion(s) present in the client's statement. The rubric required explicit identification of All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking, none of which are named. In CBT it is important to help clients identify the specific distortion so they can challenge it; the student's reply misses this step. Overall the tone and approach are good, but omission of the required cognitive-labeling reduces modality adherence and lowers the score.",
-        "flags": [
-          "Missing_All-or-Nothing Thinking",
-          "Missing_Black-and-White Thinking",
-          "Missing_Dichotomous Thinking"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, normalizes a common reaction, uses reasonable CBT-style reframing (slip vs. failure), and invites collaborative problem-solving (self-compassion, planning). It avoids giving generic diet instructions and does not rely on mindfulness or explicit acceptance language. Weaknesses: The response fails to label the core cognitive distortion(s) present in the client's statement. The rubric required explicit identification of All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking, none of which are named. In CBT it is important to help clients identify the specific distortion so they can challenge it; the student's reply misses this step. Overall the tone and approach are good, but omission of the required cognitive-labeling reduces modality adherence and lowers the score.",
+          "flags": [
+            "Missing_All-or-Nothing Thinking",
+            "Missing_Black-and-White Thinking",
+            "Missing_Dichotomous Thinking"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

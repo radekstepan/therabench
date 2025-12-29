@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response is empathetic, grounded in acceptance/mindfulness approaches, and clearly includes observing without engaging (e.g., 'let the negative thoughts surface without trying to change them' and the 60‑second 'catch‑and‑release' practice) and letting thoughts pass ('observe as they appear and fade'). It also avoids recommending suppression or 'building a dam' and does not encourage in‑session analytic efforts to control thoughts. However, the response fails to explicitly include the required Leaves on a Stream technique/label from ACT. There is a brief historical reference to the client’s attempt to 'catch and analyze' thoughts (from the scenario), but the therapist guidance itself discourages analysis rather than promoting it. Overall clinically solid and empathic, but deduct points for missing the explicit Leaves on a Stream inclusion required by the rubric.",
-        "flags": [
-          "missing_leaves_on_stream"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -50,6 +38,28 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:08:02.033Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The student response fails to meet the specific requirements of the ACT scenario and rubric. Critically, the response completely omits the mandatory 'Leaves on a Stream' exercise. It also violates the 'Must Avoid' constraints by suggesting 'Worry Time,' which functions as a 'dam' to contain thoughts rather than accepting them, and by encouraging the client to 'explore why' thoughts feel salient in the 'Thought Jar' section, which constitutes 'analyzing the water.' The response reads as a generic list of CBT coping strategies and psychoeducation rather than an experiential ACT intervention that utilizes the client's metaphor of the waterfall. The tone is overly instructive and didactic.",
+          "flags": [
+            "Missing required exercise: Leaves on a Stream",
+            "Violated constraint: Suggested 'Worry Time' (Building a dam)",
+            "Violated constraint: Suggested analyzing thoughts (Analyze the water)",
+            "Didactic/Instructive format (List of strategies vs. therapeutic dialogue)",
+            "Low adherence to ACT model"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 70,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:42:13.819Z"
         }
       ]
     }

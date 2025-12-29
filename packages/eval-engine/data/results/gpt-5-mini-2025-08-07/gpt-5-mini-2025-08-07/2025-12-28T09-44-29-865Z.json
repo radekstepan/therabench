@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "The student response demonstrates many strengths: a clear empathic opening, use of decatastrophizing (listing alternative, non‑catastrophic explanations), and an explicit probability estimation technique (rating belief 0–100). The response also targets catastrophizing by naming the ‘‘worst‑place’’ thinking and inviting the client to notice the thought. However, it does not explicitly label or name the cognitive distortion of \"fortune telling\" (predicting a catastrophic future) — the thought itself is an instance of fortune‑telling but the student never names that distortion or frames it as a type to be challenged. Additionally, the response includes interventions that match the DBT phrase \"check the facts\" (asking for evidence, checking location services) and it encourages immediate contact/verification (call him again, call others, check location, offer to stay while they call) which can function as reassurance seeking rather than purely CBT behavioral experiments. Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of an explicit reference to fortune telling is a partial omission. Because the rubric also required avoiding \"check the facts (DBT term)\" and reassurance‑seeking, the inclusion of evidence‑checking and encouragement of contacting others counts as violations. Overall this is a competent, empathic CBT‑oriented response but it falls short on rubric precision and avoidance of the specified DBT/reassurance elements.",
-        "flags": [
-          "missing_explicit_fortune_telling_label",
-          "includes_check_the_facts_style_intervention",
-          "encourages_reassurance_seeking"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates many strengths: a clear empathic opening, use of decatastrophizing (listing alternative, non‑catastrophic explanations), and an explicit probability estimation technique (rating belief 0–100). The response also targets catastrophizing by naming the ‘‘worst‑place’’ thinking and inviting the client to notice the thought. However, it does not explicitly label or name the cognitive distortion of \"fortune telling\" (predicting a catastrophic future) — the thought itself is an instance of fortune‑telling but the student never names that distortion or frames it as a type to be challenged. Additionally, the response includes interventions that match the DBT phrase \"check the facts\" (asking for evidence, checking location services) and it encourages immediate contact/verification (call him again, call others, check location, offer to stay while they call) which can function as reassurance seeking rather than purely CBT behavioral experiments. Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of an explicit reference to fortune telling is a partial omission. Because the rubric also required avoiding \"check the facts (DBT term)\" and reassurance‑seeking, the inclusion of evidence‑checking and encouragement of contacting others counts as violations. Overall this is a competent, empathic CBT‑oriented response but it falls short on rubric precision and avoidance of the specified DBT/reassurance elements.",
+          "flags": [
+            "missing_explicit_fortune_telling_label",
+            "includes_check_the_facts_style_intervention",
+            "encourages_reassurance_seeking"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

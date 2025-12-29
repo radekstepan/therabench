@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student effectively demonstrates empathy by acknowledging the parent's emotions and care for their son. They correctly identify the client's expression of guilt and self-blame, which opens the door for further exploration. However, the response does not explicitly address the attribution error or the misattribution of blame to the self without considering external factors (e.g., other potential influences on the child's behavior). Additionally, the response should guide the client to explore different aspects of locus of control, distinguishing between personal responsibility and external circumstances. The student avoids giving parenting advice and does not shift to a systemic therapy approach, which is appropriate for a CBT context.",
-        "flags": [
-          "Attribution error not explicitly addressed",
-          "Locus of control not fully explored"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student effectively demonstrates empathy by acknowledging the parent's emotions and care for their son. They correctly identify the client's expression of guilt and self-blame, which opens the door for further exploration. However, the response does not explicitly address the attribution error or the misattribution of blame to the self without considering external factors (e.g., other potential influences on the child's behavior). Additionally, the response should guide the client to explore different aspects of locus of control, distinguishing between personal responsibility and external circumstances. The student avoids giving parenting advice and does not shift to a systemic therapy approach, which is appropriate for a CBT context.",
+          "flags": [
+            "Attribution error not explicitly addressed",
+            "Locus of control not fully explored"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

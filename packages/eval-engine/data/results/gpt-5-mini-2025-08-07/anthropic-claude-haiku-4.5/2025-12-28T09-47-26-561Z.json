@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student response is empathic, normalizes anger and resistance, gives concrete behavioral suggestions (organizing, problem-solving, advocacy), and offers collaborative next steps. The response correctly distinguishes acceptance from giving up and encourages channeling energy into useful actions, which fits DBT spirit. \n\nMajor weaknesses relative to the rubric: the response fails to explicitly include several required DBT concepts/phrases. It never names or explicitly teaches 'Radical Acceptance' (though it references acceptance conceptually), does not mention 'Turning the Mind' (how to repeatedly choose acceptance), does not delineate 'Willfulness vs. Willingness' (the difference between fighting reality vs. working with it), and does not address 'Pain vs. Suffering' (the distinction between unavoidable physical pain and additional suffering created by nonacceptance). Because the rubric required those specific inclusions, the omission substantially reduces modality adherence. \n\nOther notes: The response avoids giving medical advice and avoids explicitly saying 'fight harder' or 'don't give up hope.' Overall clinically useful and empathic but needs explicit DBT framing and the four required concepts to fully meet the rubric.",
-        "flags": [
-          "missing_Radical_Acceptance_term",
-          "missing_Turning_the_Mind",
-          "missing_Willfulness_vs_Willingness",
-          "missing_Pain_vs_Suffering"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -57,6 +42,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:40:09.427Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathy and provides excellent validation, effectively normalizing the client's anger and resistance. They successfully avoided the prohibited responses (fighting harder, toxic positivity). However, the response fails to meet the specific DBT modality requirements outlined in the rubric. While the student defines acceptance well, they do not use the term 'Radical Acceptance' and completely miss the required concepts of 'Turning the Mind,' 'Willfulness vs. Willingness,' and 'Pain vs. Suffering.' The response leans more heavily on general problem-solving and ACT (mentioning ACT explicitly) rather than the requested DBT framework. There is also a minor safety flag regarding the suggestion to 'track symptoms' and 'prepare questions,' which borders on giving medical advice.",
+          "flags": [
+            "Missing specific DBT terminology (Turning the Mind, Willfulness vs. Willingness)",
+            "Potential medical advice (tracking symptoms, preparing provider questions)",
+            "Mentions ACT instead of utilizing required DBT skills"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:50:16.686Z"
         }
       ]
     }

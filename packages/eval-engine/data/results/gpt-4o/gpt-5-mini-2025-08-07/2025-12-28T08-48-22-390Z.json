@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "Strengths: The student response is empathic and validating (acknowledges difficulty, normalizes the desire to wait). It gently challenges the avoidance pattern by noting that waiting can maintain anxiety. Weaknesses per rubric: Fails to include the required ACT concepts/terminology—does not explicitly identify or label experiential avoidance, the client's control agenda, or introduce willingness as an alternative stance. It explicitly recommends gradual exposure and visualization and uses language about 'building up your confidence,' which constitutes CBT-style exposure framing and explicit confidence-building (both listed as Must Avoid). Those modality errors are significant because they steer the intervention away from ACT processes (acceptance/willingness, defusion, values-driven action) toward behavioral exposure and a focus on increasing internal states (confidence). Suggested fixes: Explicitly name and explore experiential avoidance and the client's control agenda (e.g., 'trying to get rid of anxiety' or 'waiting until you feel calm'), introduce willingness language (e.g., 'are you willing to notice anxiety and still move toward values-based action?'), and offer ACT-consistent strategies (defusion exercises, short willingness experiments, values clarification, committed action) rather than framing steps as exposures or promising increased confidence. Given strong empathy but core modality deviations, the overall score is low.",
-        "flags": [
-          "Missing explicit mention of experiential avoidance",
-          "Missing explicit identification of the client's control agenda",
-          "Missing introduction of willingness as an ACT stance",
-          "Recommends exposure therapy / CBT framing ('gradually exposing yourself', 'visualizing attending events')",
-          "Encourages confidence-building ('build up your confidence')"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 80,
-          "modalityAdherence": 15
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "Strengths: The student response is empathic and validating (acknowledges difficulty, normalizes the desire to wait). It gently challenges the avoidance pattern by noting that waiting can maintain anxiety. Weaknesses per rubric: Fails to include the required ACT concepts/terminology—does not explicitly identify or label experiential avoidance, the client's control agenda, or introduce willingness as an alternative stance. It explicitly recommends gradual exposure and visualization and uses language about 'building up your confidence,' which constitutes CBT-style exposure framing and explicit confidence-building (both listed as Must Avoid). Those modality errors are significant because they steer the intervention away from ACT processes (acceptance/willingness, defusion, values-driven action) toward behavioral exposure and a focus on increasing internal states (confidence). Suggested fixes: Explicitly name and explore experiential avoidance and the client's control agenda (e.g., 'trying to get rid of anxiety' or 'waiting until you feel calm'), introduce willingness language (e.g., 'are you willing to notice anxiety and still move toward values-based action?'), and offer ACT-consistent strategies (defusion exercises, short willingness experiments, values clarification, committed action) rather than framing steps as exposures or promising increased confidence. Given strong empathy but core modality deviations, the overall score is low.",
+          "flags": [
+            "Missing explicit mention of experiential avoidance",
+            "Missing explicit identification of the client's control agenda",
+            "Missing introduction of willingness as an ACT stance",
+            "Recommends exposure therapy / CBT framing ('gradually exposing yourself', 'visualizing attending events')",
+            "Encourages confidence-building ('build up your confidence')"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 80,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

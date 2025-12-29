@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic and personalized to the client (acknowledging guilt, validating feelings). It uses CBT‑consistent elements (gentle reframes, behavior tracking, looking for patterns, focusing on observable behavior) and addresses locus of control by separating child behavior from parental blame and listing external contributing factors. \n\nWeaknesses: It fails to explicitly identify the attribution error/cognitive distortion (personalization) by name or directly link the client’s thought to the cognitive model (i.e., labeling the thought as a personalization/attribution error). It also violates the ‘Must Avoid’ criteria by offering parenting advice and practical parenting strategies (e.g., “think of yourself as a coach,” “tracking exercise,” “talking with his teacher,” “set up a regular check‑in”), and by involving school/teacher collaboration which moves toward systemic interventions. These avoidable elements reduce fidelity to the rubric despite overall clinical skill and empathy.",
-        "flags": [
-          "missing_attribution_error",
-          "includes_parenting_advice",
-          "includes_systemic_therapy_elements"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -56,6 +42,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:05:15.985Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a compassionate and well-structured response that effectively validates the client's feelings and successfully integrates the required CBT elements. Specifically, the response demonstrates high 'Personalization' by addressing the client directly, addresses 'Attribution Error' by reframing the client's internal blame ('I'm a terrible mother'), and explores 'Locus of Control' by providing a detailed table of external factors contributing to the child's behavior. However, the response significantly violated the 'Must Avoid' constraints. By suggesting the client talk to the teacher, set up check-ins, and use behavior tracking, the student drifted into providing 'Parenting advice' and utilizing 'Systemic therapy' interventions (involving the school system). In a strict individual CBT roleplay, the focus should remain on the client's cognitions rather than prescribing actions or systemic changes.",
+          "flags": [
+            "Provided parenting advice (check-ins, behavior tracking)",
+            "Utilized systemic interventions (talking to teacher)",
+            "Prescribed specific interventions rather than exploring cognitions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:28:10.151Z"
         }
       ]
     }

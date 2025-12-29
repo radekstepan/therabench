@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The response is empathic, validating, and explicitly addresses values (asks about values, offers a 'values list') and includes values clarification exercises (ranking values, letter to future self). It offers useful reflective prompts consistent with ACT. Weaknesses: The response did not explicitly address the concept of 'Direction vs. Destination' (i.e., focusing on ongoing direction/values-guided living rather than new fixed endpoints). More importantly, it recommends 'Set small, experiment-like goals,' which violates the rubric item to avoid suggesting setting new goals. It also did not include any prohibited 'gratitude journal' content. Overall, the student met key elements around values but failed to explicitly discuss direction vs. destination and introduced goal-setting advice contrary to requirements.",
-        "flags": [
-          "set_new_goals_recommended",
-          "missing_direction_vs_destination"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -52,6 +39,24 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:16:31.054Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student response demonstrates strong empathy and excellent active listening. The content covers 'Values' and 'Values clarification' thoroughly, asking the client to reflect on what matters to them and providing a values list exercise. However, the response violates the 'Must Avoid: Set new goals' rubric requirement. The section explicitly titled 'Next steps' instructs the client to 'Set small, experiment-like goals.' While the intent is experiential, directly assigning goals contradicts the ACT principle of focusing on the process (Direction) rather than outcomes. Additionally, while 'Direction vs. Destination' is touched upon by focusing on the kind of person one wants to be, the inclusion of goal-setting muddies the distinction between living a valued life and achieving specific targets.",
+          "flags": [
+            "Set new goals - Violates rubric constraint"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:52:55.735Z"
         }
       ]
     }

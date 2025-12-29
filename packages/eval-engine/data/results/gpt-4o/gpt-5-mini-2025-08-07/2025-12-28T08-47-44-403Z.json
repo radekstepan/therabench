@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "The student response demonstrates good validation and an empathic, collaborative stance and appropriately avoids prohibited content (no medical advice, no 'fight harder' or 'don't give up hope'). However it fails to include the required DBT constructs explicitly: there is no mention or teaching of Radical Acceptance, Turning the Mind, Willfulness vs. Willingness, or the distinction between Pain vs. Suffering. The reply stays at a general supportive/problem-solving level rather than naming or coaching DBT skills (e.g., how to practice radical acceptance or how to notice and shift willfulness to willingness). To meet the rubric the student should explicitly introduce and briefly coach on those DBT concepts while maintaining the validating tone already present.",
-        "flags": [
-          "missing Radical Acceptance",
-          "missing Turning the Mind",
-          "missing Willfulness vs. Willingness",
-          "missing Pain vs. Suffering",
-          "does not explicitly teach DBT skill techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 80,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates good validation and an empathic, collaborative stance and appropriately avoids prohibited content (no medical advice, no 'fight harder' or 'don't give up hope'). However it fails to include the required DBT constructs explicitly: there is no mention or teaching of Radical Acceptance, Turning the Mind, Willfulness vs. Willingness, or the distinction between Pain vs. Suffering. The reply stays at a general supportive/problem-solving level rather than naming or coaching DBT skills (e.g., how to practice radical acceptance or how to notice and shift willfulness to willingness). To meet the rubric the student should explicitly introduce and briefly coach on those DBT concepts while maintaining the validating tone already present.",
+          "flags": [
+            "missing Radical Acceptance",
+            "missing Turning the Mind",
+            "missing Willfulness vs. Willingness",
+            "missing Pain vs. Suffering",
+            "does not explicitly teach DBT skill techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 80,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

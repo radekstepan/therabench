@@ -21,21 +21,106 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 78,
-        "reasoning": "The response demonstrates strong empathy and validation, effectively normalizes vulnerability, and explores the client's internal experience—aligning well with ACT's focus on internal processes. It explicitly acknowledges the client's value ('wanting to be a supportive partner') but fails to guide toward **committed action** (e.g., planning to ask about the day *with* fear) or explicitly reframe **taking action with fear**. Instead, it emphasizes 'building confidence to feel safer,' indirectly implying fear must subside before action—contradicting ACT's willingness model. Avoidance of communication training is appropriate. The response excels clinically but misses key ACT behavioral elements required by the rubric.",
-        "flags": [
-          "Lacks explicit promotion of committed action (valued action despite fear)",
-          "Implies fear should be reduced before action ('feel safer')",
-          "Minimal focus on taking action with fear present"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 88,
-          "modalityAdherence": 66
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization of vulnerability, and open curiosity—appropriate for ACT-informed work. It acknowledges the client's values (wanting to be a supportive partner) and offers a collaborative path forward. The response avoids the prohibited items: it does not tell the client to wait for fear to subside, nor does it provide concrete communication-skills coaching.\n\nLimitations vs. rubric: The response falls short on explicitly prompting committed action and values-congruent behavior. While the student notes the client's intention and says \"we can work on building your confidence\" and \"finding ways to connect that feel manageable,\" they do not explicitly invite or encourage action in the presence of fear (e.g., committing to ask despite being afraid, or small values-driven experiments). There is no clear behavioral activation or framing of taking a valued action while accepting fear. Because the rubric required explicit inclusion of committed action, values-congruent behavior, and taking action with fear, this response only partially meets those criteria.\n\nOverall: clinically empathic and safe, but missing explicit ACT-consistent prompts to take values-guided committed action in the presence of fear.",
+          "flags": [
+            "missing_committed_action",
+            "missing_explicit_values-congruent_instruction",
+            "does_not_encourage_action_despite_fear"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization of vulnerability, and open curiosity—appropriate for ACT-informed work. It acknowledges the client's values (wanting to be a supportive partner) and offers a collaborative path forward. The response avoids the prohibited items: it does not tell the client to wait for fear to subside, nor does it provide concrete communication-skills coaching.\n\nLimitations vs. rubric: The response falls short on explicitly prompting committed action and values-congruent behavior. While the student notes the client's intention and says \"we can work on building your confidence\" and \"finding ways to connect that feel manageable,\" they do not explicitly invite or encourage action in the presence of fear (e.g., committing to ask despite being afraid, or small values-driven experiments). There is no clear behavioral activation or framing of taking a valued action while accepting fear. Because the rubric required explicit inclusion of committed action, values-congruent behavior, and taking action with fear, this response only partially meets those criteria.\n\nOverall: clinically empathic and safe, but missing explicit ACT-consistent prompts to take values-guided committed action in the presence of fear.",
+          "flags": [
+            "missing_committed_action",
+            "missing_explicit_values-congruent_instruction",
+            "does_not_encourage_action_despite_fear"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong foundational therapeutic skills including validation, curiosity, and normalization. However, this response has significant gaps relative to ACT (Acceptance and Commitment Therapy) framework requirements. While the student explores the fear and validates the client's experience well, the response lacks emphasis on committed action—the core ACT principle. The student asks exploratory questions about the fear's origins but doesn't sufficiently pivot toward VALUES-CONGRUENT ACTION despite the fear. The phrase 'We can work on building your confidence in navigating potential discomfort' subtly suggests the client should wait until feeling more confident/safe, which contradicts ACT's central tenet of taking action aligned with values while experiencing discomfort. The response also leans toward exploration-focused therapy rather than values clarification and behavioral commitment. There is no explicit discussion of taking the small behavioral step (asking about her day) as an act of commitment to his stated value of being a supportive partner. The response is therapeutically sound but not distinctly ACT-informed.",
+          "flags": [
+            "Insufficient emphasis on committed action despite stated values",
+            "Language suggests building confidence before action rather than acting despite fear",
+            "Missing explicit values-behavior alignment and behavioral commitment",
+            "Exploration-heavy approach may inadvertently reinforce avoidance rather than encouraging willingness",
+            "No clear behavioral homework or actionable next step tied to values"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:24:19.497Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates strong empathy and validation, effectively normalizes vulnerability, and explores the client's internal experience—aligning well with ACT's focus on internal processes. It explicitly acknowledges the client's value ('wanting to be a supportive partner') but fails to guide toward **committed action** (e.g., planning to ask about the day *with* fear) or explicitly reframe **taking action with fear**. Instead, it emphasizes 'building confidence to feel safer,' indirectly implying fear must subside before action—contradicting ACT's willingness model. Avoidance of communication training is appropriate. The response excels clinically but misses key ACT behavioral elements required by the rubric.",
+          "flags": [
+            "Lacks explicit promotion of committed action (valued action despite fear)",
+            "Implies fear should be reduced before action ('feel safer')",
+            "Minimal focus on taking action with fear present"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 66
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively validates and normalizes the client's feelings and intentions, fostering self-reflection through open-ended questions. It rightly emphasizes vulnerability and internal experiences, aligning well with Acceptance and Commitment Therapy (ACT) principles. However, the response lacks a direct focus on committed action and values-congruent behavior, key elements of ACT. While acknowledging the fear, the student should also encourage the client to take action despite the fear, aligning actions with values.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates excellent rapport, high empathy, and effectively validates the client's values (wanting to be a supportive partner). The tone is safe and non-judgmental. However, the response fails to meet critical ACT rubric requirements regarding action. The student misses the opportunity for 'Committed Action' and 'Taking action with fear.' Instead of encouraging the client to ask about the day *while* feeling scared, the student suggests 'building your confidence' and finding 'manageable' ways to connect. This approach risks reinforcing the avoidance of fear and aligns with the 'Must Avoid' criteria of waiting for fear to subside. The response drifts into historical analysis ('Have you had experiences in the past?') rather than focusing on present-moment psychological flexibility and behavioral activation.",
+          "flags": [
+            "Missed Committed Action",
+            "Suggests confidence building instead of acting with fear",
+            "Focuses on historical analysis rather than present-moment action"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:30:42.483Z"
+        }
+      ]
     }
   }
 ]

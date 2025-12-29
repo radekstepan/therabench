@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response appropriately acknowledges the client's perspective and makes an effort to explore the client's concerns, which demonstrates empathy. However, it inadvertently includes elements that align with a control agenda, particularly by suggesting a gradual goal-setting approach that resembles exposure therapy. While the student touches on the idea that anxiety might not prevent functioning, they do not explicitly delve into experiential avoidance or discuss the concept of willingness. Thus, the response does partially meet the criteria, but it lacks explicit references to key ACT principles.",
-        "flags": [
-          "Control Agenda",
-          "Implicit Exposure Techniques"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response appropriately acknowledges the client's perspective and makes an effort to explore the client's concerns, which demonstrates empathy. However, it inadvertently includes elements that align with a control agenda, particularly by suggesting a gradual goal-setting approach that resembles exposure therapy. While the student touches on the idea that anxiety might not prevent functioning, they do not explicitly delve into experiential avoidance or discuss the concept of willingness. Thus, the response does partially meet the criteria, but it lacks explicit references to key ACT principles.",
+          "flags": [
+            "Control Agenda",
+            "Implicit Exposure Techniques"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

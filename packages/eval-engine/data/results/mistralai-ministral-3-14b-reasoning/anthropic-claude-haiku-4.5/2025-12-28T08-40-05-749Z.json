@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The response demonstrates strong empathy and validation, uses Socratic-style questions to elicit information about the resume gap, and attempts to reframe the client's all-or-nothing belief (addressing the cognitive distortion implicitly). It also invites collaborative work and empowerment, which fit CBT style. Concerns: The reply moves into career counseling (asking about job types, offering to 'highlight your strengths' and 'frame your story'), and asks about skills/passions in a way that borders on values clarification — both are specified as must-avoid. The response does not explicitly label the distortion as 'overgeneralization' (it references 'all-or-nothing thinking' implicitly in technique labels but not clearly in the therapeutic wording). Because of these avoidable departures from the rubric, modality adherence is reduced despite good empathy and safety.",
-        "flags": [
-          "career_counseling",
-          "values_clarification",
-          "missing_explicit_overgeneralization_label"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -54,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:47:44.002Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrates good rapport and basic CBT skills like validation and reframing. They effectively used Socratic questioning to explore strengths during the gap. However, the response missed the mark on specific CBT requirements. While the student identified all-or-nothing thinking, they did not explicitly label the cognitive distortion as 'Overgeneralization' as required by the rubric. Furthermore, the response drifted into career counseling ('what kinds of jobs... are you interested in', 'highlight your strengths') which is explicitly prohibited. The 'Validity of the thought' was addressed through challenging but could have been more explicit regarding the evidence for and against the thought.",
+          "flags": [
+            "Career Counseling (Prohibited): Discussed job interests and framing stories for applications.",
+            "Missing Label: Did not identify the distortion as 'Overgeneralization'."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:00:44.868Z"
         }
       ]
     }

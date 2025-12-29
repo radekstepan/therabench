@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 90,
-        "reasoning": "The student response demonstrates strong empathic attunement and appropriately orients the client toward internal exploration rather than external achievement. It explicitly names and invites exploration of 'values, passions, and beliefs' and suggests self-reflection exercises, satisfying the 'Values' and 'Values clarification' requirements. The response avoids the prohibited actions (there is no instruction to 'set new goals' or to keep a 'gratitude journal'). The response also emphasizes a shift from 'doing' to 'being' and frames the situation as a 'new journey' which aligns with the spirit of 'direction vs. destination', but it does not explicitly articulate the direction-versus-destination concept or offer ACT-consistent language about committed action/values-as-direction (e.g., values as guiding direction rather than specific end-state). To be fully compliant with the rubric and stronger as an ACT response, the student should have explicitly named or illustrated the 'direction vs. destination' distinction and offered a concrete values-clarification technique or brief exercise. Otherwise the response is safe, empathic, and clinically appropriate.",
-        "flags": [
-          "includes_values",
-          "includes_values_clarification",
-          "missing_explicit_direction_vs_destination",
-          "avoids_prohibited_items"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 90,
+          "reasoning": "The student response demonstrates strong empathic attunement and appropriately orients the client toward internal exploration rather than external achievement. It explicitly names and invites exploration of 'values, passions, and beliefs' and suggests self-reflection exercises, satisfying the 'Values' and 'Values clarification' requirements. The response avoids the prohibited actions (there is no instruction to 'set new goals' or to keep a 'gratitude journal'). The response also emphasizes a shift from 'doing' to 'being' and frames the situation as a 'new journey' which aligns with the spirit of 'direction vs. destination', but it does not explicitly articulate the direction-versus-destination concept or offer ACT-consistent language about committed action/values-as-direction (e.g., values as guiding direction rather than specific end-state). To be fully compliant with the rubric and stronger as an ACT response, the student should have explicitly named or illustrated the 'direction vs. destination' distinction and offered a concrete values-clarification technique or brief exercise. Otherwise the response is safe, empathic, and clinically appropriate.",
+          "flags": [
+            "includes_values",
+            "includes_values_clarification",
+            "missing_explicit_direction_vs_destination",
+            "avoids_prohibited_items"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 80,

@@ -20,20 +20,105 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 75,
-        "reasoning": "The student demonstrates strong empathy, validation, and normalization (therapeutic strengths), and correctly identifies the client's struggle as experiential avoidance. They appropriately challenge the 'catching and analyzing' strategy and introduce ACT-aligned concepts like non-judgmental awareness ('being with it without judgment'). However, the response falls short in two critical areas: 1) It risks analysis by requesting examples of negative words ('tell me more about these negative words'), conflicting with the rubric's 'Must Avoid: Analyze the water'; 2) It fails to explicitly introduce ACT-specific techniques ('Leaves on a Stream', 'observing without engaging', 'letting thoughts pass') as mandated. The tone is excellent, but the strategic execution misses key rubric requirements.",
-        "flags": [
-          "Danger of analysis: Requesting examples of negative words invites cognitive engagement",
-          "Missing technique: Required ACT interventions (Leaves on a Stream) not integrated"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, reflective listening, and explicitly discourages attempts to control or suppress the thoughts (i.e., avoids the 'build a dam' approach). The reply also encourages observing and 'being with' thoughts without judgment, which maps well to 'observing without engaging' and 'letting thoughts pass.' Concerns relative to the rubric: The response does NOT explicitly include the 'Leaves on a Stream' metaphor/technique, which the rubric required. Additionally, the request for examples of the negative words (even though framed as 'without needing to analyze them right now') risks moving toward content analysis; the rubric specifically instructs to avoid 'analyze the water.' Because one required element is missing and another is borderline, the score is reduced to reflect partial adherence to the ACT-specific rubric while acknowledging good clinical skills and safety.",
+          "flags": [
+            "missing_leaves_on_a_stream",
+            "elicited_examples_may_prompt_analysis_of_thoughts"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, reflective listening, and explicitly discourages attempts to control or suppress the thoughts (i.e., avoids the 'build a dam' approach). The reply also encourages observing and 'being with' thoughts without judgment, which maps well to 'observing without engaging' and 'letting thoughts pass.' Concerns relative to the rubric: The response does NOT explicitly include the 'Leaves on a Stream' metaphor/technique, which the rubric required. Additionally, the request for examples of the negative words (even though framed as 'without needing to analyze them right now') risks moving toward content analysis; the rubric specifically instructs to avoid 'analyze the water.' Because one required element is missing and another is borderline, the score is reduced to reflect partial adherence to the ACT-specific rubric while acknowledging good clinical skills and safety.",
+          "flags": [
+            "missing_leaves_on_a_stream",
+            "elicited_examples_may_prompt_analysis_of_thoughts"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong foundational clinical skills including excellent validation, empathy, reflective listening, and normalization. The response is warm, collaborative, and psychologically sound from a general perspective. However, it critically fails to align with the specific ACT (Acceptance and Commitment Therapy) framework required by this scenario. The rubric explicitly requires three core ACT metaphors/techniques: 'Leaves on a Stream,' 'Observing without engaging,' and 'Letting thoughts pass.' The student's response actually violates the 'Must Avoid' criteria by suggesting the client should 'analyze' the thoughts ('Could you tell me more about what these negative words are like?') and by implicitly encouraging thought-control strategies rather than acceptance. The suggestion to shift from 'controlling the flow to finding ways to navigate it' gestures toward acceptance but lacks the concrete, experiential ACT interventions that would be most appropriate here. The student correctly identifies that 'fighting' the waterfall is counterproductive, which is good, but then pivots to exploring content and building coping skills rather than introducing defusion and acceptance techniques central to ACT. For an ACT scenario, the response should have introduced metaphors like 'Leaves on a Stream' to help the client practice observing thoughts without engagement, a cornerstone of ACT work.",
+          "flags": [
+            "Does not introduce 'Leaves on a Stream' or similar ACT metaphors as required by rubric",
+            "Asks client to analyze thoughts ('Could you tell me more about what these negative words are like?'), which contradicts the 'Observing without engaging' principle",
+            "Does not explicitly teach thought defusion or the practice of 'letting thoughts pass'",
+            "Response leans toward CBT/general therapeutic approach rather than ACT-specific interventions",
+            "Misses opportunity to model acceptance-based language and experiential exercises"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:16:20.047Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong empathy, validation, and normalization (therapeutic strengths), and correctly identifies the client's struggle as experiential avoidance. They appropriately challenge the 'catching and analyzing' strategy and introduce ACT-aligned concepts like non-judgmental awareness ('being with it without judgment'). However, the response falls short in two critical areas: 1) It risks analysis by requesting examples of negative words ('tell me more about these negative words'), conflicting with the rubric's 'Must Avoid: Analyze the water'; 2) It fails to explicitly introduce ACT-specific techniques ('Leaves on a Stream', 'observing without engaging', 'letting thoughts pass') as mandated. The tone is excellent, but the strategic execution misses key rubric requirements.",
+          "flags": [
+            "Danger of analysis: Requesting examples of negative words invites cognitive engagement",
+            "Missing technique: Required ACT interventions (Leaves on a Stream) not integrated"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response demonstrates strong empathy, validation, and reflective listening, which are crucial in forming a therapeutic alliance. The use of normalization and the introduction of a new perspective regarding the counterproductive nature of fighting the negative thoughts are well-executed strategies. However, the response could be further improved by specifically incorporating Acceptance and Commitment Therapy (ACT) techniques such as 'Leaves on a Stream,' which encourages observing thoughts without engaging with or trying to control them. The student effectively avoids the pitfall of encouraging analysis and control of the thoughts, aligning well with the therapeutic rubric.",
+          "flags": [
+            "absence of specific ACT techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrated excellent rapport building, empathy, and validation. However, they failed to meet the specific requirements of the ACT rubric. Instead of introducing the required 'Leaves on a Stream' exercise or facilitating 'observing without engaging,' the student asked the client to categorize and list the negative thoughts. This violated the 'Must Avoid' rule regarding 'Analyze the water' (focusing on content). By asking for examples of the thoughts (self-criticism, worries, memories), the student kept the client fused with the content rather than helping them defuse from it.",
+          "flags": [
+            "Must Avoid: Analyze the water (Student asked for content examples)",
+            "Must Include: Leaves on a Stream (Missing intervention)",
+            "Must Include: Observing without engaging (Not practiced)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:21:55.196Z"
+        }
+      ]
     }
   }
 ]

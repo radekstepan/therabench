@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "Strengths: The student shows strong empathy and safety orientation — they validate the client's distress, acknowledge physiological arousal (heart pounding), explicitly prioritize safety, ask directly about suicidal/homicidal thoughts, and plan for follow-up/documentation. They also included paced breathing instructions (counted inhale/hold/exhale) which aligns with DBT paced breathing. Weaknesses relative to the rubric: the response fails to include the TIPP skill and the required Temperature/Ice Dive intervention; those are explicit must-haves. The student explicitly labels and instructs “Deep Breathing,” which the rubric forbids (and although they used a paced count, the presence of the deep-breathing framing violates the constraint). The response also includes talk/imaginal interventions (grounding/visualization) and some elements of talk therapy/cognitive approaches, which the rubric required avoiding in favor of crisis-focused behavioral distress tolerance techniques. Because two required crisis techniques are missing (TIPP and Temperature/Ice Dive) and at least one forbidden technique is present (deep breaths/talky cognitive material), modality adherence is low despite good safety and empathy work.",
-        "flags": [
-          "Missing TIPP (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation) instruction",
-          "Missing Temperature/Ice Dive (cold-water/ice-face or similar) intervention",
-          "Used/explicitly labeled 'Deep Breathing' (forbidden by rubric)",
-          "Included talk/imaginal approaches (grounding/visualization) rather than strictly behavioral distress-tolerance techniques",
-          "Did not include explicit intense exercise or paired muscle relaxation components of TIPP"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "Strengths: The student shows strong empathy and safety orientation — they validate the client's distress, acknowledge physiological arousal (heart pounding), explicitly prioritize safety, ask directly about suicidal/homicidal thoughts, and plan for follow-up/documentation. They also included paced breathing instructions (counted inhale/hold/exhale) which aligns with DBT paced breathing. Weaknesses relative to the rubric: the response fails to include the TIPP skill and the required Temperature/Ice Dive intervention; those are explicit must-haves. The student explicitly labels and instructs “Deep Breathing,” which the rubric forbids (and although they used a paced count, the presence of the deep-breathing framing violates the constraint). The response also includes talk/imaginal interventions (grounding/visualization) and some elements of talk therapy/cognitive approaches, which the rubric required avoiding in favor of crisis-focused behavioral distress tolerance techniques. Because two required crisis techniques are missing (TIPP and Temperature/Ice Dive) and at least one forbidden technique is present (deep breaths/talky cognitive material), modality adherence is low despite good safety and empathy work.",
+          "flags": [
+            "Missing TIPP (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation) instruction",
+            "Missing Temperature/Ice Dive (cold-water/ice-face or similar) intervention",
+            "Used/explicitly labeled 'Deep Breathing' (forbidden by rubric)",
+            "Included talk/imaginal approaches (grounding/visualization) rather than strictly behavioral distress-tolerance techniques",
+            "Did not include explicit intense exercise or paired muscle relaxation components of TIPP"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

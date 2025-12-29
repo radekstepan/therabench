@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic and personalized to the client (acknowledging guilt, validating feelings). It uses CBT‑consistent elements (gentle reframes, behavior tracking, looking for patterns, focusing on observable behavior) and addresses locus of control by separating child behavior from parental blame and listing external contributing factors. \n\nWeaknesses: It fails to explicitly identify the attribution error/cognitive distortion (personalization) by name or directly link the client’s thought to the cognitive model (i.e., labeling the thought as a personalization/attribution error). It also violates the ‘Must Avoid’ criteria by offering parenting advice and practical parenting strategies (e.g., “think of yourself as a coach,” “tracking exercise,” “talking with his teacher,” “set up a regular check‑in”), and by involving school/teacher collaboration which moves toward systemic interventions. These avoidable elements reduce fidelity to the rubric despite overall clinical skill and empathy.",
-        "flags": [
-          "missing_attribution_error",
-          "includes_parenting_advice",
-          "includes_systemic_therapy_elements"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic and personalized to the client (acknowledging guilt, validating feelings). It uses CBT‑consistent elements (gentle reframes, behavior tracking, looking for patterns, focusing on observable behavior) and addresses locus of control by separating child behavior from parental blame and listing external contributing factors. \n\nWeaknesses: It fails to explicitly identify the attribution error/cognitive distortion (personalization) by name or directly link the client’s thought to the cognitive model (i.e., labeling the thought as a personalization/attribution error). It also violates the ‘Must Avoid’ criteria by offering parenting advice and practical parenting strategies (e.g., “think of yourself as a coach,” “tracking exercise,” “talking with his teacher,” “set up a regular check‑in”), and by involving school/teacher collaboration which moves toward systemic interventions. These avoidable elements reduce fidelity to the rubric despite overall clinical skill and empathy.",
+          "flags": [
+            "missing_attribution_error",
+            "includes_parenting_advice",
+            "includes_systemic_therapy_elements"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

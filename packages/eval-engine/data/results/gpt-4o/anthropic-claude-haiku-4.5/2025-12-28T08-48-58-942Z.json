@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student used reflective language, validated the client's experience, normalized the automaticity of the behavior, and asked open, exploratory questions about triggers and internal events. These moves are empathic and consistent with an intent to collaboratively investigate patterns and build alternative coping strategies.\n\nShortcomings vs. rubric: The response fails to include the required ACT-specific elements. It does not introduce or use The Choice Point framework, does not label the urge/behavior as Hooked versus Unhooked, and does not invite Toward versus Away moves or values-guided choices. These omissions are central to the rubric and substantially reduce fidelity to the expected ACT modality. The response does not contain prohibited content (it did not engage in addiction counseling or recommend nicotine replacement), which is appropriate.\n\nSuggestions: Keep the empathic exploration, but explicitly frame the moment as a Choice Point (notice the trigger, the urge/hook, and the move), name the cigarette response as a 'hooked' move and explore what an 'unhooked' or 'toward' move would look like in that moment, and elicit values-based 'towards' actions the client might choose despite the urge.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "no_prohibited_content"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -56,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:32:35.170Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a safe and empathetic response that successfully avoided addiction counseling and nicotine replacement. However, the response failed to meet the specific ACT rubric requirements. The student did not introduce the 'Choice Point' concept to help the client visualize the moment of decision. They also failed to address the client's experience using the 'Hooked vs. Unhooked' terminology or framework. Finally, they did not help the client categorize their behaviors or potential strategies as 'Towards vs. Away moves.' The response focused more on identifying triggers (CBT approach) rather than fostering psychological flexibility (ACT approach).",
+          "flags": [
+            "Missing 'Choice Point' concept",
+            "Missing 'Hooked vs. Unhooked' concept",
+            "Missing 'Towards vs. Away moves' concept"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:43:31.316Z"
         }
       ]
     }

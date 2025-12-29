@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively empathizes with the client's feelings of guilt and addresses the attribution error by highlighting that children's behavior is influenced by diverse factors, not just parenting. The student gently shifts the client's focus from self-blame to exploring specific situations and their parental strengths, promoting a more balanced locus of control. However, the response could be misinterpreted as giving indirect parenting advice by emphasizing the client's strengths, slightly straying from pure CBT modality. Although systemic therapy is not directly mentioned, suggestions like exploring strengths could be seen as bordering on systemic perspectives.",
-        "flags": [
-          "Indirect Parenting Advice"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively empathizes with the client's feelings of guilt and addresses the attribution error by highlighting that children's behavior is influenced by diverse factors, not just parenting. The student gently shifts the client's focus from self-blame to exploring specific situations and their parental strengths, promoting a more balanced locus of control. However, the response could be misinterpreted as giving indirect parenting advice by emphasizing the client's strengths, slightly straying from pure CBT modality. Although systemic therapy is not directly mentioned, suggestions like exploring strengths could be seen as bordering on systemic perspectives.",
+          "flags": [
+            "Indirect Parenting Advice"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, validating, normalizes the parent's experience, explores triggers and thoughts, and asks helpful clarifying questions. It avoids suggesting a time-out for the children (which the rubric required to avoid). \n\nWeaknesses relative to the rubric: The reply does not explicitly include the DBT STOP skill (or spell out its steps), does not clearly instruct the client to 'step back' (e.g., Take a step back / physically or mentally pause), and does not explicitly name or teach concrete impulse-control strategies (the response references 'practicing some calming techniques' but this is generic rather than a named DBT impulse-control skill). Because the rubric required inclusion of STOP, impulse control, and step back, the response fails to meet those required elements. It also leans on vague “calming techniques” language which can come across as generic anger-management advice rather than specific DBT skills. \n\nRecommendations: To meet the rubric, the student should explicitly teach or coach the STOP skill (Stop, Take a step back, Observe, Proceed mindfully), explicitly instruct/coach a 'step back' (briefly leave the room or take a physical/mental pause), and name/practice specific impulse-control strategies (e.g., urge surfing, paced breathing, or a brief behavioral pause tied to STOP). Keep the current empathic tone and exploration of triggers.",
-        "flags": [
-          "missing_STOP_skill",
-          "missing_step_back",
-          "did_not_explicitly_address_impulse_control",
-          "offers_generic_calming_suggestions",
-          "avoids_time_out_for_kids"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -57,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:23:46.919Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student response demonstrates strong clinical intuition regarding rapport, validation, and assessment. The normalization of the parent's experience and the initiation of a Chain Analysis (asking about what happened before and how they felt after) are excellent DBT-consistent moves. The psychoeducation regarding the nervous system is helpful. However, the response fails to meet the critical 'Must Include' criteria of the rubric. The student promised to explore strategies later but did not introduce the specific **STOP skill**, nor did they explicitly instruct the client to **'Step back'** in the moment of impulse. While the student identified 'impulse control' as the issue, they did not provide the specific DBT tool (STOP) to address it in this session.",
+          "flags": [
+            "Missed required intervention: STOP skill not introduced",
+            "Missed required intervention: 'Step back' concept not explicitly utilized",
+            "Delayed skills training: strategies discussed for future rather than taught in the moment"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:28:50.108Z"
         }
       ]
     }

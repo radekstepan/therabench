@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The response is empathic, collaborative, and includes clear emotion‑regulation strategies (grounding, breathing, activity), a practical check‑the‑facts exercise (evidence for/against table and behavioral experiment), and a concrete communication plan — so it meets the rubric's required elements (Check the Facts, Emotion Regulation, Interpretation vs. Reality). It also offers useful, DBT‑consistent techniques (mindfulness, distress tolerance, behavioral activation) and an appropriate validating tone. Weaknesses: It explicitly uses the CBT label \"mind‑reading\"/\"mind‑reading\" as a cognitive distortion, which the rubric forbids, and it contains mild reassurance (e.g., \"You’re not alone\" and \"there’s no right or wrong answer...\"), which the rubric also requires avoiding. These are notable departures from the constraints and reduce modality adherence. Suggested fixes: remove the CBT jargon and instead describe the error as “making an assumption” or “jumping to conclusions/inferring emotions without evidence”; remove or rephrase reassuring statements so validation remains but without conveying certainty or minimization (e.g., validate feelings and invite evidence‑gathering rather than saying the client is not alone).",
-        "flags": [
-          "used_mind_reading_term",
-          "provided_reassurance"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -53,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:06:23.260Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates a good conceptualization of the case, planning for validation, emotion regulation, and evidence gathering (which aligns with 'Check the Facts' and 'Interpretation vs. Reality'). They correctly plan to avoid reassurance by focusing on exploration and communication. However, the response is formatted as a set of internal notes rather than a direct interaction with the client, which limits the evaluation of the actual delivery. Critically, the student explicitly used the CBT term 'mind reading' in their plan, which directly violates the rubric's instruction to avoid this terminology. In DBT, we focus on whether a thought fits the facts rather than labeling it as a distortion.",
+          "flags": [
+            "Use of forbidden CBT term 'mind reading'",
+            "Response formatted as internal notes/outline rather than direct dialogue"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:33:51.047Z"
         }
       ]
     }

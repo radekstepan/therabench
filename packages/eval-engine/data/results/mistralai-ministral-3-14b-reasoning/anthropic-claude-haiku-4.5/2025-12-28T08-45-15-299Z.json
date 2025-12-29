@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student response is compassionate, validates the client's experience, normalizes the impulse to analyze, offers a brief grounding/body-awareness experiment, and invites collaboration. These are good therapeutic skills and empathic reflections. Weaknesses vs. rubric: The response explicitly references analyzing the negative words (\"want to analyze these negative words\"), which violates the rubric item to avoid \"Analyze the water.\" The reply also fails to include the specific ACT technique imagery \"Leaves on a Stream\" and does not explicitly instruct the client to observe thoughts without engaging or to let thoughts pass (it suggests creating space and \"riding\" the waterfall, but that is not the required Leaves-on-a-Stream framing nor an explicit instruction to allow thoughts to pass). Because the rubric required inclusion of \"Leaves on a Stream,\" explicit \"observing without engaging,\" and \"letting thoughts pass,\" and prohibited analyzing the water, this response does not meet modality adherence. Suggested fixes: remove language that encourages analyzing the content of thoughts; explicitly introduce a Leaves-on-a-Stream exercise (invite the client to visualize leaves/thoughts floating by and notice them without grabbing); give clear instructions to observe thoughts without engaging and let them pass; retain the empathic tone and the brief body-grounding experiment. Overall, empathic execution is solid but key ACT elements required by the rubric are missing and a prohibited element is present, so the score reflects strong empathy but poor modality adherence.",
-        "flags": [
-          "contains_analysis_prompt",
-          "missing_leaves_on_stream",
-          "missing_explicit_observe_without_engaging",
-          "missing_explicit_letting_thoughts_pass"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -55,6 +40,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:49:42.035Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a response that was high in empathy and validation, successfully creating a safe therapeutic space. However, the response failed to meet the specific technical requirements of the ACT rubric. The prompt explicitly required the use of 'Leaves on a Stream,' 'Observing without engaging,' and 'Letting thoughts pass,' none of which were present in the student's response. Instead, the student suggested a somatic grounding exercise (body scan), which, while useful, was not the requested intervention. Critically, the rubric stated 'Must Avoid: Analyze the water,' yet the student suggested 'naming those patterns' and looking for 'themes' in the waterfall. This directly contradicts the instruction to avoid analysis, as the client explicitly stated they are already trying to analyze the thoughts and are drowning because of it. The student inadvertently encouraged the fusion strategy the client was struggling with.",
+          "flags": [
+            "Missed required intervention: Leaves on a Stream",
+            "Violated constraint: Suggested analyzing thought content/themes (analyzing the water)",
+            "Missed instruction on letting thoughts pass"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:10:41.868Z"
         }
       ]
     }

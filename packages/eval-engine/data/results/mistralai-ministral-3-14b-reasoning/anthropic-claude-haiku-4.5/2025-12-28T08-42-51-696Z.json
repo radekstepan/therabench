@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: the student response is empathic, validates the client's experience, elicits sensory details, and offers DBT-consistent strategies (grounding, pausing, stepping back) without giving prohibited advice (no 'time out for kids' or generic anger management). Shortcomings: the response does not explicitly teach or name the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) as required, and it does not explicitly label or coach 'impulse control' as a skill to use in the moment. To improve, the student should explicitly introduce the STOP acronym, briefly coach how to use it in the moment, and offer a concrete, behavioral way to 'step back' (e.g., physical steps or brief mindful breaths) so the client has a clear tool to practice.",
-        "flags": [
-          "missing_STOP_skill",
-          "impulse_control_not_explicit"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -53,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:48:54.751Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student response demonstrates strong empathy and active listening, which builds a good therapeutic alliance. The student also effectively targets the client's physical experience of emotion, which is relevant to DBT. However, the response fails to meet the specific requirements of the rubric for this DBT scenario. Crucially, the student omitted the 'STOP skill,' which was explicitly required. While the student suggested 'stepping back' generally, they did not use the specific DBT terminology or structure required for 'Step back' and 'Impulse control.' The suggestion of grounding techniques, while helpful, borders on generic advice rather than the specific prescribed DBT intervention.",
+          "flags": [
+            "Missing STOP skill",
+            "Generic intervention suggested instead of specific modality skill"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:07:05.765Z"
         }
       ]
     }

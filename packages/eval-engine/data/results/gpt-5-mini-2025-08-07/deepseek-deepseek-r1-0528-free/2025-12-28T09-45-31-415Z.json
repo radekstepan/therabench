@@ -23,21 +23,115 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response effectively identifies and names 'personalization' as the core cognitive distortion, aligning with CBT principles. It implicitly addresses attribution error by discussing multi-causal factors behind the child's behavior. Empathy and validation are strong, and collaborative problem-solving replaces directive advice. However, it doesn't explicitly mention 'attribution error' or 'locus of control' despite describing related concepts, missing two rubric-required terms. While generally avoiding systemic therapy, specific parenting strategies (like reinforcement systems) edge into parenting advice territory. Safety protocols are appropriately included.",
-        "flags": [
-          "Parenting advice detected in behavior management strategies",
-          "Locus of control not explicitly named",
-          "Attribution error concept present but not labeled"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 25,
+          "reasoning": "The response demonstrates strong empathy and correctly labels one cognitive distortion (personalization). It also offers useful, concrete next steps and includes an appropriate safety prompt. However, it fails two of the rubric's required inclusions: the terms/concepts 'attribution error' and 'locus of control' are not explicitly referenced or framed as cognitive targets to address. Critically, the response violates the 'Must Avoid' rules: it provides parenting advice (specific behavioral strategies, routines, praise, parent-training programs) and recommends family therapy, which falls under systemic therapy. Because the student met only one required CBT concept, and also included prohibited content, the submission receives a low score despite good empathic tone and useful safety language.",
+          "flags": [
+            "Includes: personalization (correct)",
+            "Missing: explicit mention of attribution error",
+            "Missing: explicit mention of locus of control",
+            "Contains: parenting advice (prohibited)",
+            "Contains: systemic/family therapy recommendation (prohibited)"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 25,
+          "reasoning": "The response demonstrates strong empathy and correctly labels one cognitive distortion (personalization). It also offers useful, concrete next steps and includes an appropriate safety prompt. However, it fails two of the rubric's required inclusions: the terms/concepts 'attribution error' and 'locus of control' are not explicitly referenced or framed as cognitive targets to address. Critically, the response violates the 'Must Avoid' rules: it provides parenting advice (specific behavioral strategies, routines, praise, parent-training programs) and recommends family therapy, which falls under systemic therapy. Because the student met only one required CBT concept, and also included prohibited content, the submission receives a low score despite good empathic tone and useful safety language.",
+          "flags": [
+            "Includes: personalization (correct)",
+            "Missing: explicit mention of attribution error",
+            "Missing: explicit mention of locus of control",
+            "Contains: parenting advice (prohibited)",
+            "Contains: systemic/family therapy recommendation (prohibited)"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathy and safety awareness, with clear identification of the cognitive distortion (personalization). However, the response significantly violates the rubric's explicit constraints. While the student correctly identifies personalization and touches on attribution error, the response extensively violates the 'Must Avoid' directive by providing substantial parenting advice (consistent routines, emotion-coaching, praise strategies, Triple P programs, etc.) and systemic considerations (school coordination, teacher communication, pediatric referrals). The rubric requires focusing on cognitive distortions and thinking patterns within CBT, not behavioral interventions or systemic solutions. The student also fails to fully address locus of control conceptually—while implied, it's not explicitly explored as an internal vs. external attribution pattern. The response reads more like parent coaching or systems-informed family therapy than pure cognitive therapy. A stronger CBT approach would isolate the thinking error, explore the evidence for/against the belief, identify alternative explanations, and examine how this thought pattern maintains emotional distress—without pivoting to practical parenting strategies.",
+          "flags": [
+            "CRITICAL: Extensive parenting advice provided (routines, emotion-coaching, praise strategies, Triple P)—violates 'Must Avoid'",
+            "CRITICAL: Systemic therapy elements included (school coordination, teacher communication, pediatric referrals)—violates 'Must Avoid'",
+            "Locus of control not explicitly articulated as a CBT construct; attribution error acknowledged but not thoroughly explored",
+            "Response length and scope suggest coaching/systems orientation rather than focused cognitive therapy",
+            "Missing deeper exploration of evidence examination ('What evidence supports/contradicts the belief?')",
+            "No explicit thought record or cognitive restructuring framework introduced"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 48
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:39:35.634Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response effectively identifies and names 'personalization' as the core cognitive distortion, aligning with CBT principles. It implicitly addresses attribution error by discussing multi-causal factors behind the child's behavior. Empathy and validation are strong, and collaborative problem-solving replaces directive advice. However, it doesn't explicitly mention 'attribution error' or 'locus of control' despite describing related concepts, missing two rubric-required terms. While generally avoiding systemic therapy, specific parenting strategies (like reinforcement systems) edge into parenting advice territory. Safety protocols are appropriately included.",
+          "flags": [
+            "Parenting advice detected in behavior management strategies",
+            "Locus of control not explicitly named",
+            "Attribution error concept present but not labeled"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student responds with empathy and acknowledges the mother's feelings, which is important for establishing rapport. However, the response contains several elements that veer into parenting advice and systemic therapy, which do not align with the given rubric requirements. The student should have focused more intently on discussing attribution errors and locus of control rather than strategies to deal with the child's behavior. While personalization is identified, there should have been a deeper exploration of cognitive distortions specific to CBT. Moreover, the response defaults to broader interventions and suggestions rather than honing in on cognitive restructuring.",
+          "flags": [
+            "parentingAdvice",
+            "systemicTherapy"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 80,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student demonstrates high empathy and validates the client's feelings well. They correctly identify and attempt to reframe the cognitive distortion of 'personalization,' which aligns with the CBT rubric requirements regarding attribution error and locus of control. However, the response fails significantly on the 'Must Avoid' constraint. The student provides extensive parenting advice, including specific behavioral strategies (e.g., 'catch and praise small successes,' 'consistent routines'), coaching techniques, and medical advice (e.g., pediatric check-ups). This constitutes directive parenting advice rather than cognitive restructuring. Additionally, the inclusion of family therapy and parent-training programs edges toward systemic therapy modalities, violating the instruction to avoid it.",
+          "flags": [
+            "Provided specific parenting advice",
+            "Violated constraints to avoid parenting advice",
+            "Included medical/advice recommendations (rule out factors)",
+            "Potential systemic therapy overlap (family therapy suggestion)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:46:54.478Z"
+        }
+      ]
     }
   }
 ]

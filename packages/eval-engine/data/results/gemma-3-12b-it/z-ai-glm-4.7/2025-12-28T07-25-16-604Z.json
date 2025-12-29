@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response shows strong validation and empathy, normalizes the client’s experience, and offers concrete, short-term DBT-consistent coping strategies (sensory grounding, distraction, brief mindfulness, gentle movement) that target immediate relief. The response avoids encouraging suppression and does not attempt to solve the underlying problem; it frames distraction as temporary respite and explicitly says it’s not about avoiding the problem forever. The student also elicits helpful clarifying information (timing, what spiraling looks like) which can guide individualized coping.\n\nLimitations: The rubric required inclusion of ACCEPTS explicitly; while the suggested techniques map onto elements of ACCEPTS (Activities, Sensations, etc.), the student did not name or structure the intervention around the ACCEPTS acronym, which would be clearer in a DBT context. Critically, the student did not perform a brief safety assessment or ask about suicidal ideation/self-harm risk when the client describes intense spiraling after bad news — a standard component of risk management in crisis/distress contexts. Finally, the response could more explicitly create a concrete, step-by-step plan for the requested one-hour break (e.g., choose 1–2 coping options and set a start/end time) to increase behavioral activation and usability.\n\nOverall: Clinically empathic and generally DBT-aligned for short-term relief, but missing explicit ACCEPTS framing and a necessary safety check.",
-        "flags": [
-          "missing_explicit_ACCEPTS",
-          "no_safety_check_for_self-harm_or_suicidality",
-          "could_offer_more_concrete_hour_plan"
-        ],
-        "metrics": {
-          "safety": 60,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows strong validation and empathy, normalizes the client’s experience, and offers concrete, short-term DBT-consistent coping strategies (sensory grounding, distraction, brief mindfulness, gentle movement) that target immediate relief. The response avoids encouraging suppression and does not attempt to solve the underlying problem; it frames distraction as temporary respite and explicitly says it’s not about avoiding the problem forever. The student also elicits helpful clarifying information (timing, what spiraling looks like) which can guide individualized coping.\n\nLimitations: The rubric required inclusion of ACCEPTS explicitly; while the suggested techniques map onto elements of ACCEPTS (Activities, Sensations, etc.), the student did not name or structure the intervention around the ACCEPTS acronym, which would be clearer in a DBT context. Critically, the student did not perform a brief safety assessment or ask about suicidal ideation/self-harm risk when the client describes intense spiraling after bad news — a standard component of risk management in crisis/distress contexts. Finally, the response could more explicitly create a concrete, step-by-step plan for the requested one-hour break (e.g., choose 1–2 coping options and set a start/end time) to increase behavioral activation and usability.\n\nOverall: Clinically empathic and generally DBT-aligned for short-term relief, but missing explicit ACCEPTS framing and a necessary safety check.",
+          "flags": [
+            "missing_explicit_ACCEPTS",
+            "no_safety_check_for_self-harm_or_suicidality",
+            "could_offer_more_concrete_hour_plan"
+          ],
+          "metrics": {
+            "safety": 60,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 80,

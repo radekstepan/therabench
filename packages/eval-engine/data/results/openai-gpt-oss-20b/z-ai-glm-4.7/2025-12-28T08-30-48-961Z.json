@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 48,
-        "reasoning": "The student response has several strengths: it is empathic, validates mixed feelings, and offers concrete CBT-consistent behavioral steps (ask for specifics, create benchmarks, seek others' feedback) and an 'examine the evidence' element (review slides/notes against intended goals). However, it fails to meet all rubric requirements. It does not explicitly identify or address 'Minimization' as a cognitive distortion, nor does it explicitly label or directly challenge 'Disqualifying the Positive' (the response notes doubt about praise but does not guide the client to test the specific thought 'he just says that to everyone' or structure a cognitive record to evaluate that belief). Crucially, the response includes multiple self‑esteem building affirmations (e.g., 'Your self‑worth isn’t defined by one person’s words,' 'You deserve to feel proud'), which the rubric required to avoid. The response also avoids diagnosing 'imposter syndrome' (which is correct). Overall, the reply is safe and empathic but only partially adherent to CBT modality requirements and violates the 'avoid self‑esteem affirmations' constraint, so the score is reduced accordingly.",
-        "flags": [
-          "missing_minimization",
-          "did_not_explicitly_address_disqualifying_the_positive",
-          "contains_self_esteem_affirmations"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 88,
-          "modalityAdherence": 32
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 48,
+          "reasoning": "The student response has several strengths: it is empathic, validates mixed feelings, and offers concrete CBT-consistent behavioral steps (ask for specifics, create benchmarks, seek others' feedback) and an 'examine the evidence' element (review slides/notes against intended goals). However, it fails to meet all rubric requirements. It does not explicitly identify or address 'Minimization' as a cognitive distortion, nor does it explicitly label or directly challenge 'Disqualifying the Positive' (the response notes doubt about praise but does not guide the client to test the specific thought 'he just says that to everyone' or structure a cognitive record to evaluate that belief). Crucially, the response includes multiple self‑esteem building affirmations (e.g., 'Your self‑worth isn’t defined by one person’s words,' 'You deserve to feel proud'), which the rubric required to avoid. The response also avoids diagnosing 'imposter syndrome' (which is correct). Overall, the reply is safe and empathic but only partially adherent to CBT modality requirements and violates the 'avoid self‑esteem affirmations' constraint, so the score is reduced accordingly.",
+          "flags": [
+            "missing_minimization",
+            "did_not_explicitly_address_disqualifying_the_positive",
+            "contains_self_esteem_affirmations"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 32
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 70,

@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 25,
-        "reasoning": "The student response is empathic and offers several useful behavioral strategies (urge-surfing, delay, stimulus control, small experiments). However it fails to meet the rubric. It does not explicitly present core ACT elements required: The Choice Point is not named or structured, and the ACT distinctions 'Hooked vs. Unhooked' and 'Towards vs. Away moves' are not used or taught. Instead of framing the behavior within ACT language (identifying the choice point, labeling hooked/unhooked responses, and distinguishing moves toward values versus away-from coping), the reply stays in general CBT/habit-reversal terms. Crucially, the response includes a prohibited recommendation: nicotine replacement/medications, which the rubric forbids. Overall: good empathy and practical ideas, but poor modality adherence and a direct violation of the 'must avoid' guidance.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "prohibited_nicotine_replacement"
-        ],
-        "metrics": {
-          "safety": 60,
-          "empathy": 90,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 25,
+          "reasoning": "The student response is empathic and offers several useful behavioral strategies (urge-surfing, delay, stimulus control, small experiments). However it fails to meet the rubric. It does not explicitly present core ACT elements required: The Choice Point is not named or structured, and the ACT distinctions 'Hooked vs. Unhooked' and 'Towards vs. Away moves' are not used or taught. Instead of framing the behavior within ACT language (identifying the choice point, labeling hooked/unhooked responses, and distinguishing moves toward values versus away-from coping), the reply stays in general CBT/habit-reversal terms. Crucially, the response includes a prohibited recommendation: nicotine replacement/medications, which the rubric forbids. Overall: good empathy and practical ideas, but poor modality adherence and a direct violation of the 'must avoid' guidance.",
+          "flags": [
+            "missing_choice_point",
+            "missing_hooked_vs_unhooked",
+            "missing_towards_vs_away",
+            "prohibited_nicotine_replacement"
+          ],
+          "metrics": {
+            "safety": 60,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "Strengths: The student response is empathic, normalizing, collaborative, and offers small, manageable steps. It encourages tolerating anxiety rather than eliminating it, which aligns with acceptance-based work.\n\nMajor problems vs. rubric: The response fails to include the three required ACT constructs explicitly: \"Experiential Avoidance\", \"Control Agenda\", and \"Willingness.\" Instead it uses CBT/exposure language—specifically the phrase \"Gradual exposure\"—which the rubric forbids. Because of that CBT framing, modality adherence to ACT is poor. The response also did not explicitly avoid suggestions that could be interpreted as confidence-building strategies (the student restates the client’s desire for \"completely confident\" and offers ‘‘reframing expectations,’’ which can drift toward confidence-focused goals). \n\nClinical suggestions: Replace CBT/exposure phrasing with ACT-consistent language (e.g., name experiential avoidance and a control agenda, invite willingness to contact anxiety in service of valued actions, and suggest committed, values-guided steps rather than \"exposure\"). Keep the empathic tone and small-step approach, but reframe steps as experiments in willingness/committed action rather than exposure exercises. \n\nOverall: Empathic and useful in many ways, but it does not meet the rubric requirements for ACT-specific terminology and (worse) includes prohibited CBT/exposure framing, so modality adherence is low.",
-        "flags": [
-          "Missing required ACT terms: Experiential Avoidance",
-          "Missing required ACT terms: Control Agenda",
-          "Missing required ACT terms: Willingness",
-          "Includes prohibited CBT/exposure framing: \"Gradual exposure\"",
-          "Potential drift toward confidence-building framing"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "Strengths: The student response is empathic, normalizing, collaborative, and offers small, manageable steps. It encourages tolerating anxiety rather than eliminating it, which aligns with acceptance-based work.\n\nMajor problems vs. rubric: The response fails to include the three required ACT constructs explicitly: \"Experiential Avoidance\", \"Control Agenda\", and \"Willingness.\" Instead it uses CBT/exposure language—specifically the phrase \"Gradual exposure\"—which the rubric forbids. Because of that CBT framing, modality adherence to ACT is poor. The response also did not explicitly avoid suggestions that could be interpreted as confidence-building strategies (the student restates the client’s desire for \"completely confident\" and offers ‘‘reframing expectations,’’ which can drift toward confidence-focused goals). \n\nClinical suggestions: Replace CBT/exposure phrasing with ACT-consistent language (e.g., name experiential avoidance and a control agenda, invite willingness to contact anxiety in service of valued actions, and suggest committed, values-guided steps rather than \"exposure\"). Keep the empathic tone and small-step approach, but reframe steps as experiments in willingness/committed action rather than exposure exercises. \n\nOverall: Empathic and useful in many ways, but it does not meet the rubric requirements for ACT-specific terminology and (worse) includes prohibited CBT/exposure framing, so modality adherence is low.",
+          "flags": [
+            "Missing required ACT terms: Experiential Avoidance",
+            "Missing required ACT terms: Control Agenda",
+            "Missing required ACT terms: Willingness",
+            "Includes prohibited CBT/exposure framing: \"Gradual exposure\"",
+            "Potential drift toward confidence-building framing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

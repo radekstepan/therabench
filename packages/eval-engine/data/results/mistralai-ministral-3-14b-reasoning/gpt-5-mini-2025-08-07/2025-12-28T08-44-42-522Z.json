@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "The student’s response demonstrates solid empathic stance and useful exploratory questions (normalizing the experience, asking about the content of doubts, costs of stopping, small steps, reframing, and support). These are appropriate ACT-consistent interventions. However the response fails the rubric requirement to include the specific metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", and \"Driving despite the noise.\" Because those three required metaphors are absent, the submission does not meet the explicit task instructions. The student correctly avoided the forbidden approaches (they did not say to \"kick the passengers off\" or to \"argue with the passengers\"). To meet the rubric, the student should weave in the three named metaphors (e.g., introduce the idea of unwanted thoughts as passengers on the bus or demons on the boat and emphasize continuing to drive despite the noise) while maintaining the empathic, exploratory tone already present.",
-        "flags": [
-          "missing_required_metaphors",
-          "forbidden_phrases_avoided"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "The student’s response demonstrates solid empathic stance and useful exploratory questions (normalizing the experience, asking about the content of doubts, costs of stopping, small steps, reframing, and support). These are appropriate ACT-consistent interventions. However the response fails the rubric requirement to include the specific metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", and \"Driving despite the noise.\" Because those three required metaphors are absent, the submission does not meet the explicit task instructions. The student correctly avoided the forbidden approaches (they did not say to \"kick the passengers off\" or to \"argue with the passengers\"). To meet the rubric, the student should weave in the three named metaphors (e.g., introduce the idea of unwanted thoughts as passengers on the bus or demons on the boat and emphasize continuing to drive despite the noise) while maintaining the empathic, exploratory tone already present.",
+          "flags": [
+            "missing_required_metaphors",
+            "forbidden_phrases_avoided"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

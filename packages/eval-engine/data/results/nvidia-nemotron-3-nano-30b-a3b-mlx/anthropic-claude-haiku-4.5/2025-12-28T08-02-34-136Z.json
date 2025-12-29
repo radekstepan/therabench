@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student response demonstrates strong empathic tone and validation, correctly identifies cognitive distortions (catastrophizing, overgeneralization, all‑or‑nothing thinking), and offers useful emotion‑regulation and resilience strategies (breathing, self‑compassion, social support). The response also explores underlying assumptions and tests evidence for the chain of thoughts, and invites exploration of early experiences that could relate to deeper beliefs. \n\nMajor issues relative to the rubric: (1) The response does not explicitly include or walk through the Downward Arrow Technique — no stepwise probing from automatic thought to deeper meaning/core belief (e.g., “If that were true, what would it mean about you?”) and no demonstration of the technique. (2) The response fails to explicitly identify or name Core Beliefs (e.g., “I am unworthy,” “I am incompetent,” “I am unlovable”) or link the chain to specific core beliefs — it only alludes to early experiences. (3) The response includes problem‑solving oriented steps directly aimed at fixing the report (e.g., “review the report, correct any errors, and submit a revised version by X”), which violates the rubric’s Must Avoid instruction to not solve the report issue. (4) The response references employment supports (“employment standards, unemployment benefits”) which risks crossing into employment law/system guidance the rubric required to avoid. \n\nOverall: clinically competent in empathic CBT framing and practical coping but non‑adherent to key rubric requirements (missing required techniques and including forbidden content). To improve, explicitly apply the Downward Arrow (with sample probes), name probable core beliefs, and remove/replace any concrete problem‑solving steps about the report or references to employment law/resources.",
-        "flags": [
-          "MissingDownwardArrowTechnique",
-          "MissingExplicitCoreBeliefsIdentification",
-          "ContainsProblemSolvingForReport (violates Must Avoid)",
-          "ReferencesEmploymentStandardsOrUnemploymentBenefits (potential employment law content)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 92,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -57,6 +42,28 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:05:29.229Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 35,
+          "reasoning": "The student provided an empathetic and well-structured response, but they failed to adhere to the specific clinical requirements of the rubric. The most significant failure is the omission of the Downward Arrow Technique; the student merely listed the catastrophic chain the client already provided rather than using the technique to probe deeper (e.g., 'And what would that mean about you if you were homeless?'). Consequently, the response failed to identify specific Core Beliefs (e.g., 'I am incompetent') or Underlying Assumptions. Additionally, the response violated the 'Must Avoid' constraints by offering practical advice on how to handle the report (solving the report issue) and citing external employment policies and benefits (employment law/standards), which shifts the focus away from the client's internal cognitive processing.",
+          "flags": [
+            "Missing Downward Arrow Technique",
+            "Missing Core Beliefs",
+            "Missing Underlying Assumptions",
+            "Solving the report issue (giving work advice)",
+            "Referencing employment law/HR policies"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:28:51.995Z"
         }
       ]
     }

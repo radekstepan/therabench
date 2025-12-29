@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student demonstrates strong therapeutic skill—clear empathic tone, validation, a safety check, and multiple Socratic questions (e.g., \"Has there ever been a time when I overcame a similar challenge?\", \"What strengths, experiences, and values still remain?\"). The response explicitly addresses overgeneralization by naming absolute language (\"never,\" \"completely\") and includes an evidence‑examining exercise that tests the validity of the thought. These elements satisfy the required CBT components (Socratic questioning, overgeneralization, and assessing validity).\n\nConcerns: The response also includes concrete career counseling (resume edits, networking, industry research, setting job‑search hours) and an explicit values‑clarification invitation. Both items are listed in the rubric as Must Avoid. Offering actionable job‑search strategies and prompting values clarification moves beyond a CBT therapeutic stance into career counseling and vocational guidance, which is a direct violation of the constraint. Because those breaches are substantive, the overall score is reduced despite the strong CBT work and empathic tone.",
-        "flags": [
-          "career_counseling",
-          "values_clarification"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student demonstrates strong therapeutic skill—clear empathic tone, validation, a safety check, and multiple Socratic questions (e.g., \"Has there ever been a time when I overcame a similar challenge?\", \"What strengths, experiences, and values still remain?\"). The response explicitly addresses overgeneralization by naming absolute language (\"never,\" \"completely\") and includes an evidence‑examining exercise that tests the validity of the thought. These elements satisfy the required CBT components (Socratic questioning, overgeneralization, and assessing validity).\n\nConcerns: The response also includes concrete career counseling (resume edits, networking, industry research, setting job‑search hours) and an explicit values‑clarification invitation. Both items are listed in the rubric as Must Avoid. Offering actionable job‑search strategies and prompting values clarification moves beyond a CBT therapeutic stance into career counseling and vocational guidance, which is a direct violation of the constraint. Because those breaches are substantive, the overall score is reduced despite the strong CBT work and empathic tone.",
+          "flags": [
+            "career_counseling",
+            "values_clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 72,

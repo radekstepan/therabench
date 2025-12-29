@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The response is empathic, validates the client's feelings, uses a clear CBT conceptualization by naming and explaining the cognitive distortion (all-or-nothing thinking), invites functional analysis of triggers, and suggests concrete small next steps — all appropriate CBT moves. \n\nWeaknesses (why score is reduced): The rubric required explicit use of three labels: All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking. The student used only 'all-or-nothing thinking' and did not explicitly include the terms 'Black-and-White Thinking' or 'Dichotomous Thinking.' The response also contains elements the rubric forbids: a mindfulness-style instruction (“just breathe”), acceptance-language (“It’s okay to feel disappointed,” “You’re human”), and a comment that borders on generic diet advice (“restricting yourself completely can sometimes make these urges even stronger”). These violations reduce modality adherence to a CBT-focused rubric that specifically asked to avoid mindfulness/acceptance and generic diet guidance.",
-        "flags": [
-          "Includes_Mention_of_All-or-Nothing_Thinking (meets one required term)",
-          "Missing_Term: Black-and-White Thinking",
-          "Missing_Term: Dichotomous Thinking",
-          "Contains_Mindfulness_Instruction ('just breathe')",
-          "Contains_Acceptance_Language ('It’s okay to feel', 'You’re human')",
-          "Potential_Generic_Diet_Comment ('restricting yourself completely can sometimes make these urges even stronger')"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The response is empathic, validates the client's feelings, uses a clear CBT conceptualization by naming and explaining the cognitive distortion (all-or-nothing thinking), invites functional analysis of triggers, and suggests concrete small next steps — all appropriate CBT moves. \n\nWeaknesses (why score is reduced): The rubric required explicit use of three labels: All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking. The student used only 'all-or-nothing thinking' and did not explicitly include the terms 'Black-and-White Thinking' or 'Dichotomous Thinking.' The response also contains elements the rubric forbids: a mindfulness-style instruction (“just breathe”), acceptance-language (“It’s okay to feel disappointed,” “You’re human”), and a comment that borders on generic diet advice (“restricting yourself completely can sometimes make these urges even stronger”). These violations reduce modality adherence to a CBT-focused rubric that specifically asked to avoid mindfulness/acceptance and generic diet guidance.",
+          "flags": [
+            "Includes_Mention_of_All-or-Nothing_Thinking (meets one required term)",
+            "Missing_Term: Black-and-White Thinking",
+            "Missing_Term: Dichotomous Thinking",
+            "Contains_Mindfulness_Instruction ('just breathe')",
+            "Contains_Acceptance_Language ('It’s okay to feel', 'You’re human')",
+            "Potential_Generic_Diet_Comment ('restricting yourself completely can sometimes make these urges even stronger')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 72,

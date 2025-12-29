@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "The student's response demonstrates strong clinical skills: empathic tone, validation, clear psychoeducation, useful CBT/ACT-consistent strategies, concrete exercises, and appropriate recommendations for further therapeutic work. However, it fails to meet the explicit rubric requirements. The response does not include the required metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", or the phrase \"Driving despite the noise\" (or equivalent explicit mentions). Because those items were mandated, this is a significant noncompliance despite the overall clinical quality. The response correctly avoids the prohibited actions (it does not instruct to \"kick the passengers off\" or to \"argue with the passengers\"). To meet the rubric, the student should incorporate the specified metaphors (e.g., framing doubts as \"passengers on the bus\", inner turmoil as \"demons on the boat\", and encouraging \"driving despite the noise\") while retaining the current empathic, practical content.",
-        "flags": [
-          "missing 'Passengers on the Bus'",
-          "missing 'Demons on the Boat'",
-          "missing 'Driving despite the noise'"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "The student's response demonstrates strong clinical skills: empathic tone, validation, clear psychoeducation, useful CBT/ACT-consistent strategies, concrete exercises, and appropriate recommendations for further therapeutic work. However, it fails to meet the explicit rubric requirements. The response does not include the required metaphors/phrases: \"Passengers on the Bus\", \"Demons on the Boat\", or the phrase \"Driving despite the noise\" (or equivalent explicit mentions). Because those items were mandated, this is a significant noncompliance despite the overall clinical quality. The response correctly avoids the prohibited actions (it does not instruct to \"kick the passengers off\" or to \"argue with the passengers\"). To meet the rubric, the student should incorporate the specified metaphors (e.g., framing doubts as \"passengers on the bus\", inner turmoil as \"demons on the boat\", and encouraging \"driving despite the noise\") while retaining the current empathic, practical content.",
+          "flags": [
+            "missing 'Passengers on the Bus'",
+            "missing 'Demons on the Boat'",
+            "missing 'Driving despite the noise'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "The student response shows solid empathic listening and validation — it accurately reflects the client's concern and invites exploration. However, it fails to include the CBT-specific elements required by the rubric. It does not identify the cognitive distortion present (disqualifying the positive) nor explicitly frame the statement as minimization. It also does not prompt an evidence examination (e.g., asking what evidence supports or contradicts the belief that the boss says that to everyone). The response avoids the prohibited items (it does not label the client with imposter syndrome nor does it offer self-esteem platitudes), which is appropriate. To meet the rubric, the therapist should explicitly name and gently challenge the distortion (e.g., \"That sounds like discounting a compliment — in CBT we call this disqualifying the positive\"), and invite a brief evidence-based test (e.g., \"What makes you think he says that to everyone? What evidence do you have for and against that?\").",
-        "flags": [
-          "missing_disqualifying_the_positive",
-          "missing_minimization",
-          "missing_examine_evidence"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 75,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -54,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:54:41.563Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student provided a strong empathetic response and accurately reflected the client's feelings, which is excellent for building rapport. However, the response failed to adhere to the specific CBT requirements outlined in the rubric. The student did not identify or label the cognitive distortions of 'Disqualifying the Positive' or 'Minimization.' Furthermore, the student missed the critical intervention of 'Examine the Evidence' to challenge the client's assumption that the boss's praise is generic. While the response was supportive, it lacked the necessary cognitive restructuring focus.",
+          "flags": [
+            "Missed CBT intervention (Examine the Evidence)",
+            "Failed to identify cognitive distortions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:12:15.817Z"
         }
       ]
     }

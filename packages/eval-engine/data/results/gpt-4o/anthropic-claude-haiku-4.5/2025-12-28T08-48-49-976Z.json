@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 95,
-        "reasoning": "The student response directly addresses present-moment contact and uses explicit mindfulness language (\"anchor yourself more in the present moment,\" \"Mindfulness techniques,\" \"here and now\"). It validates the client's experience and offers appropriate, non-distracting interventions (deep breathing, grounding) and an open question to engage the client. The response avoids planning or distracting strategies and is consistent with ACT emphasis on present-moment awareness. A minor improvement would be to more explicitly include ACT-consistent language about acceptance or cognitive defusion or to offer an immediate brief in-session grounding exercise, but these are not required by the rubric.",
-        "flags": [],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 92
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -45,6 +35,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:32:25.547Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provided a strong, empathetic response that clearly addressed the client's struggle with rumination and worry. They successfully incorporated the required elements: 'Contact with the Present Moment' (anchoring in the here and now), 'Mindfulness' (explicitly mentioning techniques and practices), and 'Here and Now' (bringing attention back to the current moment). The response avoided 'Distraction' by validating the client's feelings rather than sidestepping them, and avoided 'Planning' regarding the client's personal future concerns. However, the response moved quickly to suggesting specific interventions ('deep breathing,' 'grounding') which slightly reduces the focus on experiential contact in the immediate moment. Additionally, the phrasing 'ease that grip' implies a slight control agenda rather than pure acceptance, though this is a minor deviation.",
+          "flags": [
+            "Rapid movement to technique suggestion",
+            "Slight emphasis on control ('easing that grip') rather than acceptance"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:42:47.671Z"
         }
       ]
     }

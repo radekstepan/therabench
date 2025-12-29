@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student does well in acknowledging the client's feelings and normalizes their experience of anxiety, which is empathetic. However, the response leans too closely toward a cognitive-behavioral approach, particularly exposure therapy and confidence building, rather than focusing on experiential avoidance and willingness. The student's suggestion to 'practice building confidence through manageable exposure' and starting with small steps are CBT strategies rather than fostering willingness to experience anxiety. The language focusing on grounding techniques is closer to ACT principles, but the emphasis on confidence and functioning indicates a partial misunderstanding of the ACT focus.",
-        "flags": [
-          "confidenceBuilding",
-          "exposureTherapy"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student does well in acknowledging the client's feelings and normalizes their experience of anxiety, which is empathetic. However, the response leans too closely toward a cognitive-behavioral approach, particularly exposure therapy and confidence building, rather than focusing on experiential avoidance and willingness. The student's suggestion to 'practice building confidence through manageable exposure' and starting with small steps are CBT strategies rather than fostering willingness to experience anxiety. The language focusing on grounding techniques is closer to ACT principles, but the emphasis on confidence and functioning indicates a partial misunderstanding of the ACT focus.",
+          "flags": [
+            "confidenceBuilding",
+            "exposureTherapy"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

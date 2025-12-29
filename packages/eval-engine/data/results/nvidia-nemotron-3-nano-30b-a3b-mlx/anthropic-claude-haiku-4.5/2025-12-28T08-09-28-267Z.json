@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, reflective, and offers concrete behavioral and mindfulness techniques (notice cues, delay, replace ritual, brief breathing, body awareness). It validates the client's experience and invites curiosity, which fits general therapeutic skill. It also avoids recommending nicotine replacement and does not provide explicit addiction-medical advice, satisfying the 'must avoid' constraints. Weaknesses: The response fails to include required ACT-specific elements. It does not name or use the Choice Point model, does not frame the urge in terms of Hooked vs. Unhooked responses, and does not explicitly present examples of Towards vs. Away moves. Because those items were mandatory in the rubric, the response does not meet modality adherence. Suggestions: Recast the content briefly using ACT language — situate the urge at the Choice Point, label 'hooked' (smoking to avoid distress) vs 'unhooked' (noticing the urge and choosing a values-based action), and give clear examples of Towards moves (e.g., a short values-based action like calling a supportive person, taking a mindful breath to stay connected to values) vs Away moves (smoking to avoid feeling stressed). Keep the empathy and practical strategies already present while adding these explicit ACT frames.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "no_prohibited_advice_detected"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -57,6 +42,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:08:10.630Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 35,
+          "reasoning": "The student provided a response that was empathetic and safe, but it failed to adhere to the ACT modality requirements specified in the rubric. The response heavily utilized Cognitive Behavioral Therapy (CBT) techniques such as identifying habit loops, cognitive restructuring ('What does smoking give you?'), and behavioral replacement ('Replace the ritual'). It completely missed the mandatory ACT concepts: the Choice Point, Hooked vs. Unhooked, and Towards vs. Away moves. Instead of exploring values or psychological flexibility, the response focused on habit elimination and coping strategies, which is not the primary goal of this ACT exercise.",
+          "flags": [
+            "Modality Mismatch: Used CBT techniques instead of ACT",
+            "Missing Mandatory Concept: Choice Point",
+            "Missing Mandatory Concept: Hooked vs. Unhooked",
+            "Missing Mandatory Concept: Towards vs. Away moves"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:42:42.176Z"
         }
       ]
     }

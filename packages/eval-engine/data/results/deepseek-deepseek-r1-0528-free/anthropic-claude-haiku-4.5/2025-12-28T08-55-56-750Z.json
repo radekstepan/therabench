@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 94,
-        "reasoning": "The student response explicitly names emotional reasoning and gently psychoeducates the client about it, elicits evidence for the client's competence (asking for moments they understood/solved problems), and offers cognitive restructuring by proposing a reframed thought ('I'm feeling anxious right now, but my effort still exists') and a brief behavioral experiment (imagining how you'd reassure a friend). The response goes beyond validation (it does not stop at empathy) and avoids prohibited items like 'trust your gut' or emotion-regulation techniques. Minor deductions reflect that the evidence-for-vs-against technique is used in a conversational/socratic way rather than as a more structured 'weigh the evidence' exercise or explicit guided worksheet; similarly, the cognitive restructuring could be a bit more directive (e.g., generating alternative, evidence-based thoughts together).",
-        "flags": [],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 92
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 88,
@@ -40,6 +30,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:04:58.793Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong empathy and communication skills. It correctly identifies and explains the concept of emotional reasoning, satisfying one of the 'Must Include' rubric items. However, the response fails to fully adhere to the CBT structure required by the rubric. Specifically, it does not explicitly conduct 'Evidence for vs. Evidence against' (Socratic questioning to examine the facts), nor does it perform a formal 'Cognitive Restructuring' (generating a new alternative thought based on evidence). Instead, the student focuses heavily on validation ('Must Avoid' Validation only) and suggests imagery techniques ('Imagine how you'd reassure a friend') which border on emotion regulation techniques rather than cognitive restructuring. The narrative tweak provided at the end is a helpful reframe, but it lacks the evidence-based foundation typically required in CBT exercises.",
+          "flags": [
+            "Missing Evidence for vs. Evidence against exercise",
+            "Missing formal Cognitive Restructuring",
+            "Risk of 'Validation only' approach",
+            "Potential 'Emotion regulation technique' usage (imagery)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:55:59.373Z"
         }
       ]
     }

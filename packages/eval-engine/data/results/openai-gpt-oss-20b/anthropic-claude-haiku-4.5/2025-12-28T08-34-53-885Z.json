@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "Strengths: The student begins with an empathic tone and includes several ACT‑consistent techniques (naming the thought as separate, noticing/pause, grounding, cultivating self‑compassion and values/resilience). This shows a generally helpful, client‑centered response. Weaknesses relative to the rubric: the response does not include the explicit defusion exercises required—there is no explicit phrasing of the ACT defusion line “I’m having the thought that …,” and it omits the specific defusion techniques of singing the thought and repeating the word. More importantly, the student uses classic CBT cognitive challenging (\"Check the evidence\", \"Reframe gently\"), which the rubric explicitly forbids. That undermines modality adherence. There is no instruction in thought stopping, which is correct. To meet the rubric, the student should remove the evidence‑checking/reframing steps, add explicit ACT defusion language (e.g., “I’m having the thought that I am broken”), and include brief exercises such as singing the thought and repeating the word to demonstrate cognitive defusion while keeping the empathic stance.",
-        "flags": [
-          "missing: explicit phrase 'I'm having the thought that...'",
-          "missing: singing the thought exercise",
-          "missing: repeating the word exercise",
-          "includes forbidden technique: cognitive challenging (CBT) via 'Check the evidence' and 'Reframe gently'"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -59,6 +44,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:16:20.302Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provides a warm and empathetic response, but fails to adhere to the ACT modality and specific scenario constraints. Critically, the client reported that arguing with the thought makes it louder, yet the student instructs the client to 'Check the evidence' and 'Reframe' (Steps 3 & 4). These are CBT techniques that challenge the thought's validity, which falls under the 'Must Avoid' category. Additionally, the response missed the required ACT exercises 'Singing the thought' and 'Repeating the word.' While Step 2 touches on 'I'm noticing,' the overall approach relies on content change rather than context change (defusion), making it clinically unsuitable for the client's stated struggle.",
+          "flags": [
+            "Used CBT Restructuring (Checking Evidence/Reframing)",
+            "Missed required techniques (Singing the thought, Repeating the word)",
+            "Failed to address client's feedback regarding arguing with thoughts"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:52:42.451Z"
         }
       ]
     }

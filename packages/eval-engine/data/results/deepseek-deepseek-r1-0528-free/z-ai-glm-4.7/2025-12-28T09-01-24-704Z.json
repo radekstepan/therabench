@@ -21,19 +21,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 78,
-        "reasoning": "The response demonstrates strong ACT-aligned elements including validation, shifting relationship to thoughts, mindfulness, and avoiding thought-challenging. However, it fails to incorporate the specific cognitive defusion techniques required in the rubric ('I'm having the thought that...', singing the thought, repeating the word). The student effectively avoids CBT strategies and thought stopping, and shows excellent empathy/safety awareness. Body awareness exploration is appropriate but doesn't substitute rubric requirements.",
-        "flags": [
-          "MISSING REQUIRED DEFUSION TECHNIQUES"
-        ],
-        "metrics": {
-          "safety": 93,
-          "empathy": 88,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates strong ACT-aligned elements including validation, shifting relationship to thoughts, mindfulness, and avoiding thought-challenging. However, it fails to incorporate the specific cognitive defusion techniques required in the rubric ('I'm having the thought that...', singing the thought, repeating the word). The student effectively avoids CBT strategies and thought stopping, and shows excellent empathy/safety awareness. Body awareness exploration is appropriate but doesn't substitute rubric requirements.",
+          "flags": [
+            "MISSING REQUIRED DEFUSION TECHNIQUES"
+          ],
+          "metrics": {
+            "safety": 93,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

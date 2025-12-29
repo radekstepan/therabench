@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 92,
-        "reasoning": "Strengths: The student response demonstrates strong validation and acceptance of the client's experience (empathic statements, normalizing the brain's reaction), offers immediate short-term relief strategies (an hour, specific grounding and movement ideas), and provides distraction techniques (sensory grounding, engaging activities, calling a friend with a boundary). The student explicitly advises against trying to completely stop thoughts and instead offers skillful guidance to create space around them, so they avoid suppression and do not attempt to solve the underlying problem. \n\nMinor limitation: The rubric asked for 'ACCEPTS' (the DBT acronym). While the response clearly uses acceptance-based language and suggests behaviors that map onto several ACCEPTS elements (Activities, Sensations, and possibly Contributing/Thoughts), the student did not explicitly label or briefly outline the ACCEPTS acronym, which could have increased clarity and DBT fidelity.",
-        "flags": [
-          "ACCEPTS not explicitly labeled (DBT acronym not named)"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 92
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 88,
@@ -48,6 +36,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:23:36.269Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student response demonstrates a high level of empathy and validates the client's experience effectively. The response correctly focuses on short-term relief and avoids trying to 'fix' the underlying problem or the bad news itself. It successfully adheres to the instruction to avoid suppression by explicitly stating that stopping thoughts completely is unrealistic and suggesting creating space around them instead. The response also incorporates Distraction strategies (specifically under 'distraction with intention') which aligns with the ACCEPTS module in DBT. While the concept of ACCEPTS is present through the discussion of sensory grounding and distraction, explicitly labeling these strategies as ACCEPTS or offering a wider variety of ACCEPTS skills (like contributing or comparing) would have strengthened the modality adherence. Overall, it is a strong, safe, and clinically sound response.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:28:21.310Z"
         }
       ]
     }

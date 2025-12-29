@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student responded with strong empathy, validated physiological arousal (heart racing, rage), provided immediate safety steps (call emergency services, get someone with you) and gave concrete grounding and paced-breathing instructions (4-2-6 counts). Weaknesses: The response fails to include the required TIPP skill set and an explicit Temperature/Ice Dive intervention. It also contains the phrase “Take a deep breath,” which the rubric forbids, and invites cognitive/talk-therapy processing by proposing to explore triggers and patterns in the same message (also prohibited during high arousal). Because required DBT crisis elements (TIPP, temperature/ice) are missing and prohibited elements are present, modality adherence is low despite good safety and empathy.",
-        "flags": [
-          "Missing: TIPP skill (Temperature, Intense exercise, Paced breathing, Progressive relaxation)",
-          "Missing: explicit Temperature/Ice Dive intervention",
-          "Prohibited: includes phrasing 'Take a deep breath' (deep breaths discouraged by rubric)",
-          "Prohibited: invites talk therapy/cognitive analysis ('explore what’s triggering this intensity', 'patterns')"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -57,6 +42,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:15:12.871Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student response demonstrates high empathy and prioritizes immediate safety, which are strong points. However, the response fails to adhere to the specific requirements of the DBT rubric for crisis management. The student used standard grounding exercises and deep breathing (inhale/hold/exhale), which is explicitly listed as a 'Must Avoid' item under the rubric. Critically, the student missed the required TIPP skills (Temperature/Ice Dive) which are essential for rapidly reducing physiological arousal in crisis situations. The response also included future-oriented talk therapy elements ('explore what’s triggering this intensity'), which falls under 'Cognitive analysis' and is discouraged during the immediate crisis phase.",
+          "flags": [
+            "Missed Required Skill: TIPP/Temperature",
+            "Used Prohibited Method: Deep Breaths",
+            "Used Prohibited Method: Cognitive Analysis/Talk Therapy"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:47:28.078Z"
         }
       ]
     }

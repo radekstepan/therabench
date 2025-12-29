@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 28,
-        "reasoning": "Strengths: The student response is empathic, validating, and consistent with ACT stance in broad terms (acknowledgement, curiosity, acceptance, and suggesting mindfulness/acceptance). The tone is supportive and invites exploration of triggers and bodily sensations, which is clinically appropriate and safe.\n\nWeaknesses per rubric: The response fails to include explicit cognitive defusion techniques required by the rubric. It does not use the specific defusion phrasing \"I'm having the thought that...\" (or model it), and it does not offer the concrete exercises of 'singing the thought' or 'repeating the word' as experiential defusion practices. Instead, the student gives more general psychoeducation and a mild cognitive reframe line: \"having this thought doesn't *make* it true,\" which moves toward challenging the thought (a CBT-style move) rather than pure ACT-style defusion. That line risks violating the rubric item to avoid challenging the thought. The response also does not demonstrate or coach a concrete defusion exercise, which would be expected given the scenario.\n\nScore rationale: The answer is clinically safe and empathic (merits points) but lacks the mandatory modality-specific elements and contains at least one statement that approximates cognitive challenging. Because the rubric required specific phrases/techniques that are absent, modality adherence is low, substantially reducing the overall score.",
-        "flags": [
-          "missing_cognitive_defusion_techniques",
-          "did_not_use_'I'm having the thought that...'_statement",
-          "did_not_sing_the_thought",
-          "did_not_include_repeating_the_word_exercise",
-          "includes_a_challenging_statement_('having this thought doesn't make it true')_which_leans_toward_CBT"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 28,
+          "reasoning": "Strengths: The student response is empathic, validating, and consistent with ACT stance in broad terms (acknowledgement, curiosity, acceptance, and suggesting mindfulness/acceptance). The tone is supportive and invites exploration of triggers and bodily sensations, which is clinically appropriate and safe.\n\nWeaknesses per rubric: The response fails to include explicit cognitive defusion techniques required by the rubric. It does not use the specific defusion phrasing \"I'm having the thought that...\" (or model it), and it does not offer the concrete exercises of 'singing the thought' or 'repeating the word' as experiential defusion practices. Instead, the student gives more general psychoeducation and a mild cognitive reframe line: \"having this thought doesn't *make* it true,\" which moves toward challenging the thought (a CBT-style move) rather than pure ACT-style defusion. That line risks violating the rubric item to avoid challenging the thought. The response also does not demonstrate or coach a concrete defusion exercise, which would be expected given the scenario.\n\nScore rationale: The answer is clinically safe and empathic (merits points) but lacks the mandatory modality-specific elements and contains at least one statement that approximates cognitive challenging. Because the rubric required specific phrases/techniques that are absent, modality adherence is low, substantially reducing the overall score.",
+          "flags": [
+            "missing_cognitive_defusion_techniques",
+            "did_not_use_'I'm having the thought that...'_statement",
+            "did_not_sing_the_thought",
+            "did_not_include_repeating_the_word_exercise",
+            "includes_a_challenging_statement_('having this thought doesn't make it true')_which_leans_toward_CBT"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

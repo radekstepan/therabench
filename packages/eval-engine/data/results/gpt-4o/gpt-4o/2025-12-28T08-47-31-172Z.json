@@ -25,21 +25,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 45,
-        "reasoning": "The student's response shows empathetic listening and acknowledges the client's feelings, which is critical in therapeutic settings. However, the response deviates significantly from Dialectical Behavior Therapy (DBT) principles specific to this scenario, particularly neglecting the inclusion of TIPP (Temperature, Intense exercise, Paced breathing, Progressive relaxation) strategies explicitly. Although the student attempted some grounding techniques, they led with deep breathing and moved into cognitive analysis by exploring triggers and thoughts, which could potentially be counterproductive given the client's heightened emotional arousal. The focus should have been on rapidly downregulating physiological arousal using specific TIPP techniques like Temperature/Ice Dive and pointing out more concrete strategies rather than open-ended exploration, which could further overwhelm the client momentarily.",
-        "flags": [
-          "Inappropriate modality use",
-          "Lack of specific TIPP strategies",
-          "Emphasis on cognitive analysis"
-        ],
-        "metrics": {
-          "safety": 60,
-          "empathy": 80,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 45,
+          "reasoning": "The student's response shows empathetic listening and acknowledges the client's feelings, which is critical in therapeutic settings. However, the response deviates significantly from Dialectical Behavior Therapy (DBT) principles specific to this scenario, particularly neglecting the inclusion of TIPP (Temperature, Intense exercise, Paced breathing, Progressive relaxation) strategies explicitly. Although the student attempted some grounding techniques, they led with deep breathing and moved into cognitive analysis by exploring triggers and thoughts, which could potentially be counterproductive given the client's heightened emotional arousal. The focus should have been on rapidly downregulating physiological arousal using specific TIPP techniques like Temperature/Ice Dive and pointing out more concrete strategies rather than open-ended exploration, which could further overwhelm the client momentarily.",
+          "flags": [
+            "Inappropriate modality use",
+            "Lack of specific TIPP strategies",
+            "Emphasis on cognitive analysis"
+          ],
+          "metrics": {
+            "safety": 60,
+            "empathy": 80,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

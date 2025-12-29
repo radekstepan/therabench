@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response effectively addresses the client's distress using a compassionate and empathic approach. The response introduces valuable ACT techniques like observing thoughts without judgment and naming the thought to create distance from it. However, it does incorporate elements that border on thought challenging and evidence checking, which are more aligned with CBT practices and not typically utilized in ACT. The response lacks specific cognitive defusion techniques such as 'I'm having the thought that...', singing the thought, or repeating the word, which are crucial in ACT to promote detachment from thoughts. While the student's approach encourages self-compassion and grounding, which is beneficial, it misses some essential elements required by the provided rubric. Improving adherence to ACT techniques would elevate the student's score.",
-        "flags": [
-          "Incorporates CBT techniques",
-          "Lacks specified cognitive defusion techniques"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response effectively addresses the client's distress using a compassionate and empathic approach. The response introduces valuable ACT techniques like observing thoughts without judgment and naming the thought to create distance from it. However, it does incorporate elements that border on thought challenging and evidence checking, which are more aligned with CBT practices and not typically utilized in ACT. The response lacks specific cognitive defusion techniques such as 'I'm having the thought that...', singing the thought, or repeating the word, which are crucial in ACT to promote detachment from thoughts. While the student's approach encourages self-compassion and grounding, which is beneficial, it misses some essential elements required by the provided rubric. Improving adherence to ACT techniques would elevate the student's score.",
+          "flags": [
+            "Incorporates CBT techniques",
+            "Lacks specified cognitive defusion techniques"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

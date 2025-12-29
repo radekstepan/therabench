@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student demonstrates clear empathy, normalizes vulnerability, and invites exploration of thoughts and values by asking what it might mean for the relationship if the client expressed support. This aligns partially with ACT by eliciting values (supportive partner) and exploring consequences. Weaknesses: The response does not include an explicit committed action or invitation to take a concrete, values-congruent behavioral step. It also fails to encourage taking action in the presence of fear (e.g., willingness language or planning to act despite fear). The prompts remain reflective rather than steering toward a specific, achievable action the client can commit to. The reply avoided the prohibited items (did not suggest waiting for fear to subside and did not provide communication skills training). To better align with the rubric, the student should elicit a specific value-driven behavior and coach a small committed step to try while acknowledging fear (for example, asking the client what small action they could commit to this week and how they might do it even if afraid).",
-        "flags": [
-          "missing_committed_action",
-          "missing_explicit_values-congruent_behavior",
-          "missing_action_with_fear"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student demonstrates clear empathy, normalizes vulnerability, and invites exploration of thoughts and values by asking what it might mean for the relationship if the client expressed support. This aligns partially with ACT by eliciting values (supportive partner) and exploring consequences. Weaknesses: The response does not include an explicit committed action or invitation to take a concrete, values-congruent behavioral step. It also fails to encourage taking action in the presence of fear (e.g., willingness language or planning to act despite fear). The prompts remain reflective rather than steering toward a specific, achievable action the client can commit to. The reply avoided the prohibited items (did not suggest waiting for fear to subside and did not provide communication skills training). To better align with the rubric, the student should elicit a specific value-driven behavior and coach a small committed step to try while acknowledging fear (for example, asking the client what small action they could commit to this week and how they might do it even if afraid).",
+          "flags": [
+            "missing_committed_action",
+            "missing_explicit_values-congruent_behavior",
+            "missing_action_with_fear"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

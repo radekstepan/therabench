@@ -21,21 +21,111 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 70,
-        "reasoning": "The student demonstrates strong empathy and validation ('feeling dismissed or unimportant'), creating a safe therapeutic environment. They appropriately avoid Interpersonal Effectiveness/Focus on social skills by not discussing communication techniques or social skill development. However, the response critically misses **all three mandatory CBT techniques**. 1) **Mind Reading**: The student does not identify or challenge the cognitive distortion of mind reading inherent in the client's assumption ('She clearly thinks I'm boring'). 2) **Behavioral Experiment**: No suggestion is made for testing the cognitions or assumptions through behavioral action or data collection. 3) **Alternative Explanations**: The student does not explore other possible reasons for the friend glancing at her watch (e.g., running late, checking the time for another reason). While the relational aspect is good, the failure to apply core, required CBT interventions significantly lowers the score.",
-        "flags": [
-          "Major: Missing Mind Reading technique (identify & challenge distortion)",
-          "Major: Missing Behavioral Experiment proposal",
-          "Major: Missing Exploration of Alternative Explanations"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 25,
+          "reasoning": "The student response shows good empathic reflection and a helpful check for whether this is a pattern (\"ever felt that way with other people too\"), but it fails to include the three required CBT elements. It does not identify or label the cognitive distortion of mind‑reading (no gentle pointing out that the client is concluding the friend's thoughts without evidence), it does not propose or set up a behavioral experiment to test the belief (e.g., asking the client to check in with the friend or observe similar situations), and it does not offer or explore alternative explanations for the friend's glance (e.g., the friend was checking the time, distracted, or preoccupied). It avoided the forbidden items (no coaching in social skills or interpersonal effectiveness). To meet the rubric the therapist should keep the empathic tone but add a brief cognitive formulation naming mind‑reading, suggest a small behavioral experiment to test the belief, and offer or elicit alternative explanations.",
+          "flags": [
+            "Missing Mind Reading",
+            "Missing Behavioral Experiment",
+            "Missing Alternative Explanations"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 80,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 25,
+          "reasoning": "The student response shows good empathic reflection and a helpful check for whether this is a pattern (\"ever felt that way with other people too\"), but it fails to include the three required CBT elements. It does not identify or label the cognitive distortion of mind‑reading (no gentle pointing out that the client is concluding the friend's thoughts without evidence), it does not propose or set up a behavioral experiment to test the belief (e.g., asking the client to check in with the friend or observe similar situations), and it does not offer or explore alternative explanations for the friend's glance (e.g., the friend was checking the time, distracted, or preoccupied). It avoided the forbidden items (no coaching in social skills or interpersonal effectiveness). To meet the rubric the therapist should keep the empathic tone but add a brief cognitive formulation naming mind‑reading, suggest a small behavioral experiment to test the belief, and offer or elicit alternative explanations.",
+          "flags": [
+            "Missing Mind Reading",
+            "Missing Behavioral Experiment",
+            "Missing Alternative Explanations"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 80,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 52,
+          "reasoning": "The student demonstrates good empathic attunement by validating the client's emotional experience of feeling dismissed and unimportant. However, the response significantly misses core CBT interventions required for this thought record scenario. The student fails to directly address the automatic thought (mind reading: 'She thinks I'm boring'), does not propose a behavioral experiment to test the validity of this interpretation, and does not generate alternative explanations for the friend's watch-checking behavior. Instead, the response pivots toward exploring historical patterns ('felt that way with other people'), which is more consistent with psychodynamic or exploratory therapy. While the empathic foundation is solid, the response lacks the structured cognitive work essential to CBT for challenging distorted thinking patterns.",
+          "flags": [
+            "Critical Gap: No identification or labeling of the mind reading cognitive distortion",
+            "Critical Gap: No behavioral experiment proposed to test the thought",
+            "Critical Gap: No alternative explanations generated (friend checking time, appointment reminder, habit, etc.)",
+            "Concerning: Direction toward pattern exploration may reinforce rumination rather than challenge the thought",
+            "Concern: Response feels more exploratory/psychodynamic than CBT-structured"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 42
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:54:50.176Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The student demonstrates strong empathy and validation ('feeling dismissed or unimportant'), creating a safe therapeutic environment. They appropriately avoid Interpersonal Effectiveness/Focus on social skills by not discussing communication techniques or social skill development. However, the response critically misses **all three mandatory CBT techniques**. 1) **Mind Reading**: The student does not identify or challenge the cognitive distortion of mind reading inherent in the client's assumption ('She clearly thinks I'm boring'). 2) **Behavioral Experiment**: No suggestion is made for testing the cognitions or assumptions through behavioral action or data collection. 3) **Alternative Explanations**: The student does not explore other possible reasons for the friend glancing at her watch (e.g., running late, checking the time for another reason). While the relational aspect is good, the failure to apply core, required CBT interventions significantly lowers the score.",
+          "flags": [
+            "Major: Missing Mind Reading technique (identify & challenge distortion)",
+            "Major: Missing Behavioral Experiment proposal",
+            "Major: Missing Exploration of Alternative Explanations"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response effectively acknowledges the client's feelings of being dismissed and unimportant, demonstrating high empathy. However, it lacks several key elements of CBT such as addressing mind reading, suggesting behavioral experiments, or exploring alternative explanations for the friend's behavior. These elements are crucial for helping the client challenge their automatic thoughts. Instead, the student's response focuses more on exploring past interpersonal patterns, which diverts attention from immediate cognitive restructuring strategies.",
+          "flags": [
+            "mind reading",
+            "behavioral experiment",
+            "alternative explanations"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student provided a response that was empathetic and built rapport, effectively validating the client's emotions. However, the response failed to meet any of the specific 'Must Include' criteria for this CBT exercise. The student did not address the 'Mind Reading' cognitive distortion (that the friend 'clearly thinks I'm boring'), nor did they offer 'Alternative Explanations' for the friend's behavior (e.g., she might be late for an appointment). Additionally, the student missed the opportunity to suggest a 'Behavioral Experiment' to test the validity of the client's assumption. Instead, the response shifted focus to a historical pattern rather than restructuring the current maladaptive thought, resulting in low modality adherence for the specific scenario requirements.",
+          "flags": [
+            "Failed to identify Mind Reading distortion",
+            "Missed Alternative Explanations",
+            "Missed Behavioral Experiment",
+            "Low CBT technique specificity"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:13:11.089Z"
+        }
+      ]
     }
   }
 ]

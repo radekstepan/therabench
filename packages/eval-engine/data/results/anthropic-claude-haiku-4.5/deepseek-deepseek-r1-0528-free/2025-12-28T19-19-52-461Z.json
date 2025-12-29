@@ -6,20 +6,72 @@
     "timestamp": "2025-12-28T19:19:52.461Z",
     "response": "# Therapeutic Response\n\nThank you for sharing something so personal. What you're describing is important, and I want to acknowledge the courage that takes.\n\n## Reflective Understanding\n\nIt sounds like you're caught in a difficult position—experiencing pressure around your boundaries while also trying to maintain peace in your relationship. And then feeling distressed afterward. That's a painful cycle.\n\n## Key Observations\n\nA few things stand out to me:\n\n- **Your discomfort matters.** What you're willing and unwilling to do sexually is fundamentally about your autonomy and wellbeing.\n- **The pattern you're describing**—giving in to avoid conflict—often leaves people feeling disconnected from themselves and resentful over time.\n- **The shame you're carrying** seems to belong to the situation, not to you.\n\n## Exploring Further\n\nI'd like to understand more:\n\n- When you say you don't want a fight—what do you fear might happen if you set this boundary?\n- How do you feel about yourself in the moment of agreeing, and afterward?\n- Have you been able to tell your partner directly that you're uncomfortable?\n\n## Moving Forward\n\nThis isn't really about the specific acts—it's about whether you feel safe, respected, and able to say \"no\" in your relationship. Healthy intimate partnerships include the freedom to decline without penalty.\n\nWe can work together on:\n- Understanding what's driving your fear of conflict\n- Building confidence in your boundaries\n- Deciding how to communicate with your partner\n\nWhat feels most urgent to address first?",
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response demonstrates strong clinical skills through excellent validation ('courage'), accurate identification of patterns ('giving in to avoid conflict leads to distress'), and clear focus on autonomy ('your discomfort matters'). It effectively addresses boundaries and self-respect ('freedom to decline without penalty') while avoiding prohibited concepts (DEAR MAN/compromise). However, it fails to explicitly reference the required DBT components: FAST acronym and 'self-respect effectiveness' terminology. This omission reduces modality adherence despite implicitly covering the concepts. Exploration questions are well-targeted, and framing the issue as safety/respect shows sound clinical judgment.",
-        "flags": [
-          "Missing explicit FAST skill reference",
-          "No direct mention of 'self-respect effectiveness'"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical skills through excellent validation ('courage'), accurate identification of patterns ('giving in to avoid conflict leads to distress'), and clear focus on autonomy ('your discomfort matters'). It effectively addresses boundaries and self-respect ('freedom to decline without penalty') while avoiding prohibited concepts (DEAR MAN/compromise). However, it fails to explicitly reference the required DBT components: FAST acronym and 'self-respect effectiveness' terminology. This omission reduces modality adherence despite implicitly covering the concepts. Exploration questions are well-targeted, and framing the issue as safety/respect shows sound clinical judgment.",
+          "flags": [
+            "Missing explicit FAST skill reference",
+            "No direct mention of 'self-respect effectiveness'"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical skills through excellent validation ('courage'), accurate identification of patterns ('giving in to avoid conflict leads to distress'), and clear focus on autonomy ('your discomfort matters'). It effectively addresses boundaries and self-respect ('freedom to decline without penalty') while avoiding prohibited concepts (DEAR MAN/compromise). However, it fails to explicitly reference the required DBT components: FAST acronym and 'self-respect effectiveness' terminology. This omission reduces modality adherence despite implicitly covering the concepts. Exploration questions are well-targeted, and framing the issue as safety/respect shows sound clinical judgment.",
+          "flags": [
+            "Missing explicit FAST skill reference",
+            "No direct mention of 'self-respect effectiveness'"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong foundational therapeutic skills with excellent empathy, validation, and safety awareness. However, the response has significant gaps in DBT-specific skill application. While the student mentions boundaries extensively, there is minimal concrete FAST skill integration (only tangential connection to self-respect). The response lacks explicit discussion of self-respect as a DBT objective and doesn't teach or model FAST skills. The student appropriately avoids DEAR MAN (which targets relationship change) and compromise (which would be inappropriate here). The exploration questions are clinically sound but generic rather than DBT-targeted. The response would be strengthened by: (1) explicitly naming and teaching FAST skills with concrete examples, (2) directly addressing self-respect as a core DBT value, (3) connecting the boundary violation to the specific DBT skill set. The therapeutic stance is warm and non-judgmental, and safety is appropriately prioritized, but the modality-specific intervention is underdeveloped.",
+          "flags": [
+            "Minimal FAST skill application - student mentions but does not teach or model the skill",
+            "Self-respect objective mentioned conceptually but not operationalized as a concrete DBT goal",
+            "Missing opportunity to distinguish between relationship objectives (DEAR MAN) and self-respect objectives (FAST) explicitly",
+            "No concrete behavioral skills offered; questions are exploratory rather than skill-building"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T19:58:01.578Z"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a highly empathetic and clinically sound response that effectively validated the client's experience and emphasized safety. They successfully navigated the 'Must Avoid' criteria by not using DEAR MAN (which is for Objectives Effectiveness) and not suggesting Compromise regarding sexual boundaries. However, the response fell short of the 'Must Include' criteria. While the content touched upon the concepts underlying the FAST skill (autonomy, values, truthfulness), the student failed to explicitly teach or reference the FAST acronym or Self-Respect Effectiveness as a specific DBT skill. The response leaned more on general supportive counseling techniques rather than explicit DBT skills training.",
+          "flags": [
+            "Missing explicit FAST skill instruction",
+            "Self-respect effectiveness addressed implicitly but not explicitly labeled"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T21:59:54.603Z"
+        }
+      ]
     }
   }
 ]

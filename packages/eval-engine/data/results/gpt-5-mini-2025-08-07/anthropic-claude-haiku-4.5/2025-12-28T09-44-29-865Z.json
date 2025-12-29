@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "The student response demonstrates many strengths: a clear empathic opening, use of decatastrophizing (listing alternative, non‑catastrophic explanations), and an explicit probability estimation technique (rating belief 0–100). The response also targets catastrophizing by naming the ‘‘worst‑place’’ thinking and inviting the client to notice the thought. However, it does not explicitly label or name the cognitive distortion of \"fortune telling\" (predicting a catastrophic future) — the thought itself is an instance of fortune‑telling but the student never names that distortion or frames it as a type to be challenged. Additionally, the response includes interventions that match the DBT phrase \"check the facts\" (asking for evidence, checking location services) and it encourages immediate contact/verification (call him again, call others, check location, offer to stay while they call) which can function as reassurance seeking rather than purely CBT behavioral experiments. Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of an explicit reference to fortune telling is a partial omission. Because the rubric also required avoiding \"check the facts (DBT term)\" and reassurance‑seeking, the inclusion of evidence‑checking and encouragement of contacting others counts as violations. Overall this is a competent, empathic CBT‑oriented response but it falls short on rubric precision and avoidance of the specified DBT/reassurance elements.",
-        "flags": [
-          "missing_explicit_fortune_telling_label",
-          "includes_check_the_facts_style_intervention",
-          "encourages_reassurance_seeking"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -54,6 +40,28 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:39:09.807Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student provided a highly empathetic and safe response that prioritizes immediate crisis intervention and grounding, which is excellent for the therapeutic alliance. However, the response failed to meet the specific technical CBT requirements of the rubric. The student did not explicitly identify or label the client's cognitive distortions as 'Catastrophizing' or 'Fortune Telling.' The intervention asked the client to rate how strongly they believe the thought (0-100), but this is an intensity rating rather than the required 'Probability Estimation' (calculating the mathematical likelihood). The student missed the 'Decatastrophizing' technique entirely (e.g., asking 'what would you do if the worst actually happened?' to increase coping efficacy). Additionally, the student inadvertently encouraged 'Reassurance Seeking' by listing multiple ways to check the husband's status (call again, text, location services, friends) immediately, rather than delaying the check to help the client tolerate the anxiety or framing it strictly as a safety intervention. While the suggestion for a welfare check was safety-appropriate, the other checking behaviors aligned with compulsion rather than CBT restructuring.",
+          "flags": [
+            "Missed explicit labeling of Catastrophizing",
+            "Missed explicit labeling of Fortune Telling",
+            "Did not utilize Probability Estimation",
+            "Did not utilize Decatastrophizing",
+            "Encouraged reassurance seeking behaviors (checking compulsions)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:46:36.179Z"
         }
       ]
     }

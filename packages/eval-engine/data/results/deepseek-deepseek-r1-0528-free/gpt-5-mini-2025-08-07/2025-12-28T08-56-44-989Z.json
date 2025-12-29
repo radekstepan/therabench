@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student response demonstrates strong empathic validation, explicitly identifies the 'mind reading' cognitive distortion (e.g., interpreting the glance as proof the friend finds them boring), and explicitly invites alternative explanations (e.g., she might be late, checking time for unrelated reasons). The response is appropriately gentle and avoids teaching interpersonal effectiveness or social skills, as required. Weakness: It does not include a clear behavioral experiment — the suggested 'quick exercise' is an imaginal cognitive restructuring exercise (generating alternative stories) rather than a behavioral test of the hypothesis (e.g., asking the friend, observing future interactions, or experimenting with different behaviors to collect data). Because the rubric required inclusion of a behavioral experiment, the response is incomplete. To improve, the student should add an explicit, collaborative behavioral experiment to test the belief (for example: plan to ask the friend a nonconfrontational question about timing next visit, notice frequency of watch-checking across multiple conversations, or invite the friend to meet at a time when she isn't rushed and compare outcomes).",
-        "flags": [
-          "includes_mind_reading",
-          "includes_alternative_explanations",
-          "missing_behavioral_experiment",
-          "avoids_interpersonal_effectiveness"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student response demonstrates strong empathic validation, explicitly identifies the 'mind reading' cognitive distortion (e.g., interpreting the glance as proof the friend finds them boring), and explicitly invites alternative explanations (e.g., she might be late, checking time for unrelated reasons). The response is appropriately gentle and avoids teaching interpersonal effectiveness or social skills, as required. Weakness: It does not include a clear behavioral experiment — the suggested 'quick exercise' is an imaginal cognitive restructuring exercise (generating alternative stories) rather than a behavioral test of the hypothesis (e.g., asking the friend, observing future interactions, or experimenting with different behaviors to collect data). Because the rubric required inclusion of a behavioral experiment, the response is incomplete. To improve, the student should add an explicit, collaborative behavioral experiment to test the belief (for example: plan to ask the friend a nonconfrontational question about timing next visit, notice frequency of watch-checking across multiple conversations, or invite the friend to meet at a time when she isn't rushed and compare outcomes).",
+          "flags": [
+            "includes_mind_reading",
+            "includes_alternative_explanations",
+            "missing_behavioral_experiment",
+            "avoids_interpersonal_effectiveness"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

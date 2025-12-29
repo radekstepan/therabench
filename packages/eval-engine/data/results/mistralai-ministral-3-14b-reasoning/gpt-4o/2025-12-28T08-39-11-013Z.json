@@ -25,19 +25,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively addresses the cognitive distortion of disqualifying the positive by prompting the client to consider alternative perspectives and evidence of their performance. The student avoids jumping to a premature diagnosis of imposter syndrome, which could derail the focus from addressing the immediate thought pattern distortion. The questions about feedback and self-reflection are aligned with CBT principles, encouraging the examination of evidence and gently challenging the minimization of positive feedback. However, there's a slight inclination towards self-reflection that could border on discussions of self-esteem, which needs monitoring.",
-        "flags": [
-          "minimal inclination towards self-esteem discussions"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively addresses the cognitive distortion of disqualifying the positive by prompting the client to consider alternative perspectives and evidence of their performance. The student avoids jumping to a premature diagnosis of imposter syndrome, which could derail the focus from addressing the immediate thought pattern distortion. The questions about feedback and self-reflection are aligned with CBT principles, encouraging the examination of evidence and gently challenging the minimization of positive feedback. However, there's a slight inclination towards self-reflection that could border on discussions of self-esteem, which needs monitoring.",
+          "flags": [
+            "minimal inclination towards self-esteem discussions"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

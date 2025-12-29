@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student response is empathic and validating, normalizes the opposing impulses, and offers several concrete DBT-consistent strategies (urge-surfing, delay/no-contact rule, writing unsent message, pros/cons, crisis/backup plan). It invites collaboration and gives safe alternatives for contact, which supports client autonomy and safety. Weaknesses: The response never explicitly labels the DBT concepts required by the rubric (Emotion Mind, Reasonable/Logic Mind, Wise Mind) nor does it state a clear synthesis/wise-mind phrasing tying the two parts together into a Wise Mind decision. Because the rubric required explicit inclusion of Wise Mind, Emotion Mind, Reason Mind, and Synthesis, this omission is a critical conformity issue despite the content being conceptually aligned.",
-        "flags": [
-          "Missing explicit mention of 'Wise Mind', 'Emotion Mind', and 'Reason Mind' (required by rubric)",
-          "No explicit synthesis/wise-mind statement connecting emotion and reason into a balanced decision"
-        ],
-        "metrics": {
-          "safety": 88,
-          "empathy": 92,
-          "modalityAdherence": 38
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -50,6 +37,24 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:40:16.360Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provided a clinically sound and empathetic response. They effectively validated the client's internal conflict and offered concrete, practical DBT skills such as Urge Surfing, Pros/Cons, and distracting/soothing (PLEASE skills implied). The advice to write an unsent letter and delay action is excellent for distress tolerance. However, the response did not explicitly use the core DBT terminology required by the rubric. While the student described the conflict well (validating the emotional part and the logical part), they failed to label them as 'Emotion Mind' and 'Reason Mind,' nor did they explicitly guide the client toward 'Wise Mind' or the 'Synthesis' of these states. Using these specific terms is crucial in DBT to help the client structure their experience.",
+          "flags": [
+            "Missing explicit DBT terminology (Emotion Mind, Reason Mind, Wise Mind)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:50:47.165Z"
         }
       ]
     }

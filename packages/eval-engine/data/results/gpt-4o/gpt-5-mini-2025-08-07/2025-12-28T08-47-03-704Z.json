@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student demonstrated good empathy and validation (",
-        "": "They offered grounding and asked for alternative explanations and calming techniques, which aligns with CBT/behavioral strategies and supports distress tolerance.\n\nAreas for improvement: The response failed to explicitly identify or label the key cognitive distortions required by the rubric: catastrophizing and fortune telling. While the student invited 'other possibilities' (a form of decatastrophizing), they did not explicitly perform decatastrophizing steps (e.g., contrasting the catastrophic thought with more likely alternatives in a structured way) nor did they ask for a probability estimation (e.g., \"On a scale of 0–100, how likely do you think it is that he's been in a car wreck?\"). The response also omitted a direct safety check (e.g., assessing whether there is immediate danger or whether the client has actionable information), which is important in this scenario.\n\nOverall: Empathic and grounding, partially consistent with CBT, but missing explicit labeling of catastrophizing and fortune-telling, missing a structured decatastrophizing and probability-estimation step, and lacking a safety check. Those omissions reduce adherence to the rubric and clinical completeness.",
-        "flags": [
-          "missing_catastrophizing_label",
-          "missing_fortune_telling_label",
-          "missing_probability_estimation",
-          "no_explicit_safety_check",
-          "decatastrophizing_only_partial"
-        ],
-        "metrics": {
-          "safety": 60,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student demonstrated good empathy and validation (",
+          "": "They offered grounding and asked for alternative explanations and calming techniques, which aligns with CBT/behavioral strategies and supports distress tolerance.\n\nAreas for improvement: The response failed to explicitly identify or label the key cognitive distortions required by the rubric: catastrophizing and fortune telling. While the student invited 'other possibilities' (a form of decatastrophizing), they did not explicitly perform decatastrophizing steps (e.g., contrasting the catastrophic thought with more likely alternatives in a structured way) nor did they ask for a probability estimation (e.g., \"On a scale of 0–100, how likely do you think it is that he's been in a car wreck?\"). The response also omitted a direct safety check (e.g., assessing whether there is immediate danger or whether the client has actionable information), which is important in this scenario.\n\nOverall: Empathic and grounding, partially consistent with CBT, but missing explicit labeling of catastrophizing and fortune-telling, missing a structured decatastrophizing and probability-estimation step, and lacking a safety check. Those omissions reduce adherence to the rubric and clinical completeness.",
+          "flags": [
+            "missing_catastrophizing_label",
+            "missing_fortune_telling_label",
+            "missing_probability_estimation",
+            "no_explicit_safety_check",
+            "decatastrophizing_only_partial"
+          ],
+          "metrics": {
+            "safety": 60,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

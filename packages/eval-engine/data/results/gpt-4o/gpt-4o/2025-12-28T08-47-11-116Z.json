@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response effectively acknowledges the client's feelings and challenges their self-judgment by normalizing the experience of grief. However, the response slightly overlaps with grief counseling and introduces concepts that align with Radical Acceptance from DBT, which should be avoided in a CBT session. The focus on self-compassion could be seen as an aspect of Radical Acceptance, hence slightly diverging from strict CBT protocol.",
-        "flags": [
-          "Grief counseling",
-          "Radical Acceptance"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively acknowledges the client's feelings and challenges their self-judgment by normalizing the experience of grief. However, the response slightly overlaps with grief counseling and introduces concepts that align with Radical Acceptance from DBT, which should be avoided in a CBT session. The focus on self-compassion could be seen as an aspect of Radical Acceptance, hence slightly diverging from strict CBT protocol.",
+          "flags": [
+            "Grief counseling",
+            "Radical Acceptance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

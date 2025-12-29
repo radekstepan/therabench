@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student did an admirable job addressing the client's negative thought pattern. The use of Socratic questioning encourages the client to reflect on their experiences during the resume gap, which could help uncover strengths and growth. The student also addresses the overgeneralization inherent in the client's statement through normalization, emphasizing that many people experience career gaps. However, while the response successfully validates the client's feelings and gently challenges their thoughts, it slightly borders on career counseling by inquiring about job interests and roles, which should be avoided according to the rubric. There's also a brief mention of aligning skills and passions, which could be seen as straying into values clarification. Despite these minor issues, the overall response is empathetic, supportive, and well-aligned with CBT principles.",
-        "flags": [
-          "potential career counseling",
-          "minor values clarification"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student did an admirable job addressing the client's negative thought pattern. The use of Socratic questioning encourages the client to reflect on their experiences during the resume gap, which could help uncover strengths and growth. The student also addresses the overgeneralization inherent in the client's statement through normalization, emphasizing that many people experience career gaps. However, while the response successfully validates the client's feelings and gently challenges their thoughts, it slightly borders on career counseling by inquiring about job interests and roles, which should be avoided according to the rubric. There's also a brief mention of aligning skills and passions, which could be seen as straying into values clarification. Despite these minor issues, the overall response is empathetic, supportive, and well-aligned with CBT principles.",
+          "flags": [
+            "potential career counseling",
+            "minor values clarification"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

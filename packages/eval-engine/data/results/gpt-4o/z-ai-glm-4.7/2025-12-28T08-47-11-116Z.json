@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 48,
-        "reasoning": "Strengths: The student response is warm and empathic, normalizes the client's feelings, and explicitly counters the client's self-judgment (“You're not pathetic”), which is appropriate. Weaknesses relative to the rubric: the response fails to explicitly identify or label the client's 'should' statements (e.g., 'I should be over the breakup by now' / 'Normal people don't cry this much') and does not include clear CBT-style imperatives or behavioral/skill-focused directives (most suggestions are tentative questions or collaborative invitations rather than concrete CBT prompts). The reply also engages in grief-counseling language (normalizing grief, calling it 'grieving something significant') and uses a Radical Acceptance–style line ('give yourself permission to feel your emotions'), both of which the rubric required avoiding. The response partially addresses self-judgment by denying 'pathetic,' but it would be stronger to explicitly mirror the client's self-judging language and label the cognitive distortion (e.g., 'should' thinking) before challenging it. Overall: empathic but not sufficiently adherent to the required CBT elements and it includes disallowed grief/DBT wording.",
-        "flags": [
-          "missing_should_statement_labeling",
-          "insufficient_imperative_CBT_directive",
-          "contains_grief_counseling_language",
-          "contains_radical_acceptance_language"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 80,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 48,
+          "reasoning": "Strengths: The student response is warm and empathic, normalizes the client's feelings, and explicitly counters the client's self-judgment (“You're not pathetic”), which is appropriate. Weaknesses relative to the rubric: the response fails to explicitly identify or label the client's 'should' statements (e.g., 'I should be over the breakup by now' / 'Normal people don't cry this much') and does not include clear CBT-style imperatives or behavioral/skill-focused directives (most suggestions are tentative questions or collaborative invitations rather than concrete CBT prompts). The reply also engages in grief-counseling language (normalizing grief, calling it 'grieving something significant') and uses a Radical Acceptance–style line ('give yourself permission to feel your emotions'), both of which the rubric required avoiding. The response partially addresses self-judgment by denying 'pathetic,' but it would be stronger to explicitly mirror the client's self-judging language and label the cognitive distortion (e.g., 'should' thinking) before challenging it. Overall: empathic but not sufficiently adherent to the required CBT elements and it includes disallowed grief/DBT wording.",
+          "flags": [
+            "missing_should_statement_labeling",
+            "insufficient_imperative_CBT_directive",
+            "contains_grief_counseling_language",
+            "contains_radical_acceptance_language"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 80,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 86,
-        "reasoning": "The student response meets the core CBT requirements: it identifies the emotional reasoning (noting that feeling 'stupid' is driving a conclusion despite logical knowledge), elicits evidence by inviting recall of past instances where studying led to success (which functions as evidence against the negative belief), and offers cognitive restructuring prompts (separating emotion from logic and reminding the client of counterevidence). The response is empathic and normalizing while avoiding prohibited approaches (it is not only validation, does not tell the client to 'trust your gut,' and does not introduce emotion-regulation techniques). \n\nShortcomings that prevent a higher score: the evidence-for vs. evidence-against work is implied rather than explicitly structured (no direct worksheet-style or explicit pros/cons wording), and the cognitive restructuring is somewhat tentative and exploratory rather than providing a clear, concrete reframe or guided Socratic steps. With slightly more directive, structured questioning (e.g., asking for specific examples for and against the belief, guiding a behavioral experiment or specific reframe), the response would be stronger.",
-        "flags": [
-          "evidence-for-vs-evidence-against: present but not explicit/structured",
-          "cognitive-restructuring: supportive but could be more directive/explicit (e.g., concrete reframe or Socratic steps)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 86,
+          "reasoning": "The student response meets the core CBT requirements: it identifies the emotional reasoning (noting that feeling 'stupid' is driving a conclusion despite logical knowledge), elicits evidence by inviting recall of past instances where studying led to success (which functions as evidence against the negative belief), and offers cognitive restructuring prompts (separating emotion from logic and reminding the client of counterevidence). The response is empathic and normalizing while avoiding prohibited approaches (it is not only validation, does not tell the client to 'trust your gut,' and does not introduce emotion-regulation techniques). \n\nShortcomings that prevent a higher score: the evidence-for vs. evidence-against work is implied rather than explicitly structured (no direct worksheet-style or explicit pros/cons wording), and the cognitive restructuring is somewhat tentative and exploratory rather than providing a clear, concrete reframe or guided Socratic steps. With slightly more directive, structured questioning (e.g., asking for specific examples for and against the belief, guiding a behavioral experiment or specific reframe), the response would be stronger.",
+          "flags": [
+            "evidence-for-vs-evidence-against: present but not explicit/structured",
+            "cognitive-restructuring: supportive but could be more directive/explicit (e.g., concrete reframe or Socratic steps)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

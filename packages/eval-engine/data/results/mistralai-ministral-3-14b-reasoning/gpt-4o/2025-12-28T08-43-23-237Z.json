@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response demonstrates empathy and a general understanding of ACT principles, particularly in emphasizing the importance of moving forward despite anxiety. However, it includes elements that could be misinterpreted as exposure therapy (e.g., gradual exposure) and confidence building (e.g., reframing expectations to just show up), which are more aligned with CBT rather than ACT principles. Although the student addresses experiential avoidance and encourages willingness to experience anxiety, the response could have better avoided framing anxiety as something to be overcome through confidence or exposure strategies.",
-        "flags": [
-          "ExposureTherapyFraming",
-          "ConfidenceBuilding"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and a general understanding of ACT principles, particularly in emphasizing the importance of moving forward despite anxiety. However, it includes elements that could be misinterpreted as exposure therapy (e.g., gradual exposure) and confidence building (e.g., reframing expectations to just show up), which are more aligned with CBT rather than ACT principles. Although the student addresses experiential avoidance and encourages willingness to experience anxiety, the response could have better avoided framing anxiety as something to be overcome through confidence or exposure strategies.",
+          "flags": [
+            "ExposureTherapyFraming",
+            "ConfidenceBuilding"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

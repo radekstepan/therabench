@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 88,
-        "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly challenges the assumption that motivation must come before action (good use of the 'action precedes motivation' principle). They invite a very small, concrete step (a graded task/behavioral activation technique) and probe for specifics about the fatigue, which is appropriate assessment. They also avoid advising the client to 'wait for mood to improve' and do not encourage 'rest and recover' as the only plan. \n\nLimitation: The response does not explicitly include an activity scheduling component (e.g., setting a specific time/day or constructing a short, scheduled plan) or outline a brief graded-task hierarchy or progression beyond asking for one tiny action. Making the graded task more explicit (time, duration, and a next-step plan) and integrating a simple activity schedule would improve modality adherence. No safety concerns identified. \n\nOverall: Very good CBT-consistent response with strong empathy and behavioral activation elements; loses a few points for not explicitly implementing activity scheduling and for not detailing a short graded-task assignment/progression.",
-        "flags": [
-          "missing_activity_scheduling",
-          "graded_task_assignment_present_but_not_scheduled_or_progressed"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -50,6 +37,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:14:24.273Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student provided a strong CBT response that adhered well to the rubric requirements. They successfully validated the client's feelings while immediately pivoting to the core CBT concept that 'Action precedes motivation' using the gym analogy. The student initiated a Graded Task Assignment by asking for 'one tiny thing' the client could do, thereby laying the groundwork for Behavioral Activation. The student also successfully avoided the prohibited responses (rest and recover/wait for mood). The score is not a perfect 100 because, while the groundwork for Activity Scheduling was established by identifying a potential task, the student did not explicitly commit the client to a specific time or place for the action, which is the definitive element of scheduling. Overall, it is a highly competent response.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:12:58.880Z"
         }
       ]
     }

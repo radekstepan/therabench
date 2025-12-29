@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is warm, validating, and empowering—clearly attends to the client's feelings, acknowledges boundary violations, and encourages self-compassion and communication options (e.g., couples therapy, brainstorming ways to communicate). It explicitly names boundaries and supports self-respect in language (\"you deserve to feel safe...\"), and it avoids DEAR MAN and suggestions of compromise. Weaknesses: The response fails to include the required DBT skill label FAST or teach its components (Fair, Apologies (no unnecessary), Stick to values, Truthful) as a concrete self-respect effectiveness strategy. It also lacks concrete behavioral suggestions or scripts tied to FAST and could more directly assess immediate safety/sexual coercion risk. Because the rubric explicitly required inclusion of FAST (and explicit self-respect effectiveness strategies), the omission reduces modality adherence and overall score despite good empathy and validation.",
-        "flags": [
-          "missing_FAST",
-          "insufficient_concrete_self-respect_skills",
-          "no_explicit_safety_assessment"
-        ],
-        "metrics": {
-          "safety": 70,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is warm, validating, and empowering—clearly attends to the client's feelings, acknowledges boundary violations, and encourages self-compassion and communication options (e.g., couples therapy, brainstorming ways to communicate). It explicitly names boundaries and supports self-respect in language (\"you deserve to feel safe...\"), and it avoids DEAR MAN and suggestions of compromise. Weaknesses: The response fails to include the required DBT skill label FAST or teach its components (Fair, Apologies (no unnecessary), Stick to values, Truthful) as a concrete self-respect effectiveness strategy. It also lacks concrete behavioral suggestions or scripts tied to FAST and could more directly assess immediate safety/sexual coercion risk. Because the rubric explicitly required inclusion of FAST (and explicit self-respect effectiveness strategies), the omission reduces modality adherence and overall score despite good empathy and validation.",
+          "flags": [
+            "missing_FAST",
+            "insufficient_concrete_self-respect_skills",
+            "no_explicit_safety_assessment"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response demonstrates empathy and acknowledges the client's anxiety, which is beneficial in building rapport. However, certain aspects of the response, such as suggesting exposure to social situations and focusing on building confidence, align more closely with CBT rather than Acceptance and Commitment Therapy (ACT). In ACT, the focus should be on experiential avoidance, the control agenda, and cultivating willingness to experience anxiety while still pursuing valued actions. The student missed opportunities to explore these ACT elements more deeply. Additionally, the suggestion of cognitive strategies might be more aligned with a CBT approach instead of ACT, where cognitive defusion might be more appropriate.",
-        "flags": [
-          "Exposure therapy (CBT framing)",
-          "Confidence building"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and acknowledges the client's anxiety, which is beneficial in building rapport. However, certain aspects of the response, such as suggesting exposure to social situations and focusing on building confidence, align more closely with CBT rather than Acceptance and Commitment Therapy (ACT). In ACT, the focus should be on experiential avoidance, the control agenda, and cultivating willingness to experience anxiety while still pursuing valued actions. The student missed opportunities to explore these ACT elements more deeply. Additionally, the suggestion of cognitive strategies might be more aligned with a CBT approach instead of ACT, where cognitive defusion might be more appropriate.",
+          "flags": [
+            "Exposure therapy (CBT framing)",
+            "Confidence building"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

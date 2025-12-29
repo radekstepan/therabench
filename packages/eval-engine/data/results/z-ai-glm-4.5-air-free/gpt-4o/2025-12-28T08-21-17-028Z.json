@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively validates the client's distress and acknowledges the tendency to interpret situations negatively when feeling vulnerable. The student encourages checking the facts and considers alternative explanations for the friend's silence, which aligns well with DBT principles. Although there is a subtle suggestion of mind reading when discussing possible reasons for the friend's behavior, it does not dominate the response and is presented as a possibility rather than an assumption.",
-        "flags": [
-          "minor-mind-reading"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively validates the client's distress and acknowledges the tendency to interpret situations negatively when feeling vulnerable. The student encourages checking the facts and considers alternative explanations for the friend's silence, which aligns well with DBT principles. Although there is a subtle suggestion of mind reading when discussing possible reasons for the friend's behavior, it does not dominate the response and is presented as a possibility rather than an assumption.",
+          "flags": [
+            "minor-mind-reading"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student response shows empathy by acknowledging the client's challenge and validating the metaphor of driving one's life. The response encourages the client to explore their doubts further and recognizes the client's courage in identifying these patterns. However, it misses key elements from ACT, such as using metaphors like 'Passengers on the Bus' or 'Demons on the Boat' to normalize the experience of having doubts without engaging in battles with them. Additionally, the response doesn't explicitly guide the client to 'drive despite the noise.' Therefore, adherence to ACT modality could be improved.",
-        "flags": [
-          "missing metaphors",
-          "lack of explicit guidance"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student response shows empathy by acknowledging the client's challenge and validating the metaphor of driving one's life. The response encourages the client to explore their doubts further and recognizes the client's courage in identifying these patterns. However, it misses key elements from ACT, such as using metaphors like 'Passengers on the Bus' or 'Demons on the Boat' to normalize the experience of having doubts without engaging in battles with them. Additionally, the response doesn't explicitly guide the client to 'drive despite the noise.' Therefore, adherence to ACT modality could be improved.",
+          "flags": [
+            "missing metaphors",
+            "lack of explicit guidance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -23,19 +23,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 60,
-        "reasoning": "The student's response successfully employs empathy and validation, acknowledging the client's struggle and expressing supportiveness. It avoids challenging the thought directly, which aligns with a non-CBT approach. However, the response lacks explicit cognitive defusion techniques which are important in ACT (Acceptance and Commitment Therapy). The student's exploration questions help to understand thought triggers and meanings, but they don't introduce defusion methods such as 'I'm having the thought that...', singing the thought, or repeating the word, which could help the client separate the thought from reality.",
-        "flags": [
-          "MissingCognitiveDefusion"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student's response successfully employs empathy and validation, acknowledging the client's struggle and expressing supportiveness. It avoids challenging the thought directly, which aligns with a non-CBT approach. However, the response lacks explicit cognitive defusion techniques which are important in ACT (Acceptance and Commitment Therapy). The student's exploration questions help to understand thought triggers and meanings, but they don't introduce defusion methods such as 'I'm having the thought that...', singing the thought, or repeating the word, which could help the client separate the thought from reality.",
+          "flags": [
+            "MissingCognitiveDefusion"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

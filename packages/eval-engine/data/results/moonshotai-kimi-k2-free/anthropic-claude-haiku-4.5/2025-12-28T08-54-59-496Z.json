@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, validates the client's experience, and clearly invites mindfulness of the moment of action—this aligns well with the Choice Point concept by encouraging pausing and noticing bodily sensations before the automatic behavior. It avoids prohibited content (no addiction counseling or nicotine replacement) and offers a practical, brief intervention consistent with ACT processes (urge awareness, creating space for choice).\n\nAreas for improvement: The response does not explicitly name or operationalize the ACT constructs 'hooked vs. unhooked' or the 'towards vs. away' moves. While the idea of creating a small space for a new choice is present (implicit Choice Point), the student should explicitly help the client label the felt urge as a 'hook' and delineate what an 'unhooked' response looks like. They should also elicit or suggest concrete 'towards' moves (aligned with values) versus 'away' moves (short-term avoidance of discomfort) so the client can practice selecting a valued action in that small space. Making those labels and examples explicit would better demonstrate adherence to the ACT Choice Point model.",
-        "flags": [
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away_moves"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -51,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:56:51.536Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong clinical empathy, validation, and safety. The suggestion to slow down and notice body sensations is a useful mindfulness intervention. However, the response fails to meet the specific 'Must Include' requirements of the rubric. The student did not explicitly introduce or frame the intervention around the 'Choice Point,' nor did they use the specific ACT terminology of 'Hooked vs. Unhooked' or 'Towards vs. Away moves.' The student provided a generic mindfulness response rather than a targeted ACT intervention based on the strict rubric provided.",
+          "flags": [
+            "Missing ACT terminology (Choice Point, Hooked/Unhooked, Towards/Away)",
+            "Low modality adherence"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:22:27.481Z"
         }
       ]
     }

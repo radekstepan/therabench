@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The response demonstrates strong empathy and validation (acknowledging distress, normalizing panic), explicitly labels the client's thinking as 'catastrophic thoughts,' uses decatastrophizing by offering alternative, less catastrophic explanations, and provides grounding and practical steps. It also includes an appropriate safety reminder about contacting emergency services. Weaknesses relative to the rubric: the reply does not explicitly identify or label the cognitive distortion 'fortune telling' (predicting the future with certainty), and it fails to elicit or use a probability estimation (e.g., asking the client to estimate how likely the catastrophic outcome is). Crucially, the student encourages checking external facts (calling again/contacting others), which maps to the DBT term 'check the facts' that the rubric required to avoid, and this also risks prompting reassurance-seeking. These omissions and the forbidden element reduce adherence to the specified CBT-focused requirements, so the score is moderate rather than high.",
-        "flags": [
-          "Check_the_facts_included",
-          "Did_not_label_Fortune_Telling",
-          "Missing_Probability_Estimation",
-          "Potential_Reassurance_Seeking"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation (acknowledging distress, normalizing panic), explicitly labels the client's thinking as 'catastrophic thoughts,' uses decatastrophizing by offering alternative, less catastrophic explanations, and provides grounding and practical steps. It also includes an appropriate safety reminder about contacting emergency services. Weaknesses relative to the rubric: the reply does not explicitly identify or label the cognitive distortion 'fortune telling' (predicting the future with certainty), and it fails to elicit or use a probability estimation (e.g., asking the client to estimate how likely the catastrophic outcome is). Crucially, the student encourages checking external facts (calling again/contacting others), which maps to the DBT term 'check the facts' that the rubric required to avoid, and this also risks prompting reassurance-seeking. These omissions and the forbidden element reduce adherence to the specified CBT-focused requirements, so the score is moderate rather than high.",
+          "flags": [
+            "Check_the_facts_included",
+            "Did_not_label_Fortune_Telling",
+            "Missing_Probability_Estimation",
+            "Potential_Reassurance_Seeking"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

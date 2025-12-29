@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 92,
-        "reasoning": "Strengths: The student response demonstrates strong CBT-consistent skills — clear validation/empathy, explicit decatastrophizing (offering less catastrophic alternatives), and an invitation to estimate probability (“What's the *actual* likelihood he's safe?”). The response also addresses the catastrophic/fortune-telling content by naming the process (\"mind instantly going to the worst possible scenario,\" \"jumping ahead 10 steps\") and offers grounding and collaborative problem-solving. These elements meet the rubric requirements for catastrophizing, decatastrophizing, fortune-telling content, and probability estimation. Concerns (minor): the student did not explicitly use the label “fortune telling” (they did counter the behavior effectively but did not name that specific distortion), and the suggested practical steps (call again, check location, contact workplace) could, if not framed carefully, facilitate reassurance-seeking behaviors. The student avoided using the DBT term “check the facts” and did not give direct reassurance, which aligns with the rubric. Overall this is a very good therapeutic response with only small refinements needed.",
-        "flags": [
-          "fortune_telling_not_explicitly_labeled",
-          "suggested_actions_may_encourage_reassurance_seeking"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 90
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -53,6 +40,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:05:11.011Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a compassionate, well-structured response that effectively used validation and grounding. However, the response failed to strictly adhere to the CBT-specific requirements outlined in the rubric. While the student implicitly used 'Probability Estimation' by asking about likelihood and 'Decatastrophizing' by suggesting alternatives, they did not explicitly label the cognitive distortions of 'Catastrophizing' or 'Fortune Telling' as required. Additionally, the suggestions to 'Check location if shared' or 'Contact his workplace' border on encouraging 'Reassurance seeking', which the rubric explicitly stated to avoid. The phrase 'Check the facts' was not used, avoiding that specific DBT terminology error, but the intervention leaned more on general support than strict CBT cognitive restructuring.",
+          "flags": [
+            "Missing explicit terms: Catastrophizing, Fortune Telling",
+            "Potential encouragement of reassurance seeking behaviors",
+            "Modality Adherence: Mixed CBT/General Support"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:56:36.219Z"
         }
       ]
     }

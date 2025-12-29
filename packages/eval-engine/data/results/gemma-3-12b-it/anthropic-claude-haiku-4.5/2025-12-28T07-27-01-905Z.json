@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student demonstrates empathic responding and useful exploratory questions (validation, asking about what 'functioning while anxious' means, and collaboratively inviting next steps). These are clinically appropriate and supportive. \n\nKey failures relative to the rubric: The response does not explicitly incorporate core ACT concepts required by the rubric. It fails to name or frame the problem as experiential avoidance (the reply refers to 'protecting yourself from feeling anxious' but does not use or explicitly explore the construct of experiential avoidance). It does not identify or discuss a 'control agenda' (the student's insistence on being 'completely confident and anxiety-free' could be characterized as a control agenda, but the reply challenges realism rather than naming and exploring the agenda). It also does not introduce or promote 'willingness' as an alternative stance (no invitation to open up to internal experience or to practice willingness/acceptance). Because the rubric required inclusion of Experiential Avoidance, Control Agenda, and Willingness, their absence is a significant omission.\n\nAdditionally, the student crosses the 'must avoid' boundaries. They hint at and advocate for \"managing anxiety while participating\" and frame stepping into the situation as an option, which maps onto exposure/CBT behavioral activation framing; the response even notes 'managing anxiety while participating' and 'gradual exposure' in the commentary—this is the exposure/CBT conceptualization the rubric forbids. The student also challenges the client's need for \"complete confidence\" in a way that leans toward confidence-building (calling the bar unrealistic and urging the client to move despite not having confidence) rather than using ACT-consistent language (acceptance/willingness, values-directed action, defusion). \n\nOverall: clinically competent in general counseling skills and empathy, but not adherent to ACT-specific requirements — missing explicit experiential avoidance/control agenda/willingness framing, and contains prohibited exposure/CBT and confidence-building elements.",
-        "flags": [
-          "missing_experiential_avoidance",
-          "missing_control_agenda",
-          "missing_willingness",
-          "uses_exposure_therapy_framing",
-          "engages_confidence_building"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -59,6 +43,28 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:15:40.082Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates strong general therapeutic skills, including empathy, validation, and a collaborative stance. However, it fails to adhere to the specific requirements of the ACT rubric provided. The response heavily utilizes CBT framings rather than ACT processes. The student explicitly frames the intervention around 'managing anxiety' (Control Agenda) and suggests participating 'while' dealing with symptoms, which aligns with Exposure Therapy concepts rather than ACT's focus on Acceptance and Willingness. While the student challenges the unrealistic standard of 'complete confidence' (which aligns somewhat with Creative Hopelessness regarding the Control Agenda), they miss the crucial opportunity to discuss 'Experiential Avoidance' directly. Instead of encouraging 'Willingness' to have the anxiety and do what matters, the student frames the goal as managing anxiety to participate, which reinforces the agenda to control or reduce symptoms. The response avoids 'Confidence building' as requested, but the overall modality adherence is low due to the reliance on CBT language (strategies, managing, rigid expectations).",
+          "flags": [
+            "Missed Modality (ACT/CBT Confusion)",
+            "CBT Framing ('managing anxiety', 'strategies')",
+            "Did not explicitly address Experiential Avoidance",
+            "Did not explicitly address Willingness",
+            "Reinforced Control Agenda via symptom management language"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:18:34.158Z"
         }
       ]
     }

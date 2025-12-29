@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student response is empathic, validates the client's anxiety, invites exploration of history and meaning, and suggests cognitive reframing (asking about likelihood and coping). It also gently elicits underlying content by asking what’s behind the fears. These are appropriate CBT-consistent elements and demonstrate good rapport and client-centered stance. \n\nWeaknesses (rule violations / omissions): The response fails to explicitly use or label the Downward Arrow Technique (no structured downward-arrow questioning such as successive 'If that happened, what would it mean about you?' or explicit steps to uncover deeper consequences). The response does not explicitly identify or target Core Beliefs (no direct inquiry or formulation about stable global beliefs such as 'I am worthless/unsafe') and does not explicitly name or operationalize Underlying Assumptions (although it asks broadly what’s behind the fears, it does not probe specific conditional rules/assumptions). Critically, the student offers practical problem-solving (double-checking work; seeking colleague/boss support; small control steps) which violates the rubric item to avoid solving the report issue (the response moves into concrete behavioral problem-solving rather than focusing on cognitive assessment/intervention). The response did not mention or rely on employment law, so that constraint was respected. \n\nOverall: competent empathic engagement but misses required CBT technique labeling/structure and breaches the instruction to avoid addressing the practical report problem, so moderate score.",
-        "flags": [
-          "Missing explicit Downward Arrow Technique",
-          "Did not explicitly elicit or formulate Core Beliefs",
-          "Did not explicitly identify Underlying Assumptions",
-          "Provides practical problem-solving for the report (violates 'Must Avoid solving the report issue')"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -56,6 +41,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:48:00.219Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates good empathy and rapport building, but it fails to adhere to the specific CBT requirements outlined in the rubric. The prompt asks for the 'Downward Arrow Technique' to identify 'Core Beliefs' and 'Underlying assumptions,' but the student instead uses general problem-solving and coping strategies (e.g., double-checking work). The student also pivots to solving the practical report issue rather than using the cognitive technique to dig deeper into the client's automatic thought chain.",
+          "flags": [
+            "Missing Downward Arrow Technique",
+            "Did not identify Core Beliefs",
+            "Did not identify Underlying assumptions",
+            "Focuses on solving the practical problem (report) instead of cognitive restructuring"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:01:31.955Z"
         }
       ]
     }

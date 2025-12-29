@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: The student response is empathetic, validating, and provides concrete, moment-to-moment DBT-consistent strategies (labeling emotions, grounding, breathing, pause cues, self-compassion). It explicitly uses the phrase \"step back\" and gives clear impulse-control tools and an in-the-moment script, and it avoids advising a \"time out for kids\" or generic, non-specific anger-management platitudes. Weakness: It fails to explicitly include the DBT STOP skill (the acronym and its steps: Stop, Take a step back, Observe, Proceed mindfully). The rubric required explicit inclusion of the STOP skill; although the response describes similar elements (pause, step back, observe feelings), the lack of explicit naming and framing of STOP is a notable omission for modality adherence. Recommend revising to explicitly teach the STOP acronym and briefly model it in the in-the-moment script.",
-        "flags": [
-          "missing_STOP_skill_explicitly"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -50,6 +38,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:06:57.146Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The student provided a warm, empathetic, and safe response that builds rapport effectively. However, the response fails to meet the specific clinical and rubric requirements. The scenario was explicitly labeled as DBT, and the rubric required the 'STOP' skill, 'Impulse control,' and 'Step back.' The student ignored the DBT modality, mentioning CBT in their planning instead, and provided a generic list of coping strategies (labeling, grounding, scripts) rather than teaching the specific STOP skill. In a clinical supervision context, missing the specified modality and required skill constitutes a significant error, despite good general therapeutic tone.",
+          "flags": [
+            "Missing required STOP skill",
+            "Lack of DBT modality specificity",
+            "Generic advice over specific skill application",
+            "Missed 'Step back' requirement"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:35:35.069Z"
         }
       ]
     }

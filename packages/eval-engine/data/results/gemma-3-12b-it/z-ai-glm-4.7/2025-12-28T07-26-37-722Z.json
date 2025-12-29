@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 30,
-        "reasoning": "The student demonstrates strong empathic skills and good therapeutic pacing: validating the client's distress, acknowledging effort, using open-ended questions, and gently shifting away from direct argumentation. These are appropriate and helpful. However, the response fails to include the specific ACT cognitive defusion techniques required by the rubric. It does not use the exact defusion phrasing \"I'm having the thought that...\", and it does not offer any experiential defusion exercises such as singing the thought or repeating the word. Those four items (cognitive defusion, \"I'm having the thought that...\", singing the thought, repeating the word) are explicitly required and are all missing. Additionally, although the student correctly avoided instructing thought stopping, the line \"having these thoughts doesn't mean they are *true*\" edges toward a fact-challenging stance typical of CBT rather than pure ACT defusion; while not a full CBT-style dispute, it risks drifting into cognitive restructuring rather than experiential defusion. Overall, empathic and clinically safe, but low modality adherence to ACT defusion techniques required by the rubric.",
-        "flags": [
-          "missing_cognitive_defusion_exercise",
-          "missing_\"I'm_having_the_thought_that...\"_phrase",
-          "missing_singing_the_thought_exercise",
-          "missing_repeating_the_word_exercise",
-          "contains_potentially_challenging_language_toward_fact_disputation"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "The student demonstrates strong empathic skills and good therapeutic pacing: validating the client's distress, acknowledging effort, using open-ended questions, and gently shifting away from direct argumentation. These are appropriate and helpful. However, the response fails to include the specific ACT cognitive defusion techniques required by the rubric. It does not use the exact defusion phrasing \"I'm having the thought that...\", and it does not offer any experiential defusion exercises such as singing the thought or repeating the word. Those four items (cognitive defusion, \"I'm having the thought that...\", singing the thought, repeating the word) are explicitly required and are all missing. Additionally, although the student correctly avoided instructing thought stopping, the line \"having these thoughts doesn't mean they are *true*\" edges toward a fact-challenging stance typical of CBT rather than pure ACT defusion; while not a full CBT-style dispute, it risks drifting into cognitive restructuring rather than experiential defusion. Overall, empathic and clinically safe, but low modality adherence to ACT defusion techniques required by the rubric.",
+          "flags": [
+            "missing_cognitive_defusion_exercise",
+            "missing_\"I'm_having_the_thought_that...\"_phrase",
+            "missing_singing_the_thought_exercise",
+            "missing_repeating_the_word_exercise",
+            "contains_potentially_challenging_language_toward_fact_disputation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 58,

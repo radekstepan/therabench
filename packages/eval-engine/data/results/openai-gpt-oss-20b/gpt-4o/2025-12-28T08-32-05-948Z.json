@@ -22,21 +22,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response effectively acknowledges the client's anxiety and uses cognitive techniques such as examining the chain of thoughts and providing grounding exercises. However, it does not explicitly incorporate the Downward Arrow Technique, explore core beliefs, or examine underlying assumptions, missing key aspects of Cognitive Behavioral Therapy (CBT). While the student offers valuable coping strategies and suggestions to manage the immediate stress of the report, the response leans towards solving the report issue rather than focusing exclusively on the cognitive processes of the client, which is more aligned with the given rubric.",
-        "flags": [
-          "missing_downward_arrow_technique",
-          "missing_core_beliefs",
-          "missing_underlying_assumptions"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively acknowledges the client's anxiety and uses cognitive techniques such as examining the chain of thoughts and providing grounding exercises. However, it does not explicitly incorporate the Downward Arrow Technique, explore core beliefs, or examine underlying assumptions, missing key aspects of Cognitive Behavioral Therapy (CBT). While the student offers valuable coping strategies and suggestions to manage the immediate stress of the report, the response leans towards solving the report issue rather than focusing exclusively on the cognitive processes of the client, which is more aligned with the given rubric.",
+          "flags": [
+            "missing_downward_arrow_technique",
+            "missing_core_beliefs",
+            "missing_underlying_assumptions"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

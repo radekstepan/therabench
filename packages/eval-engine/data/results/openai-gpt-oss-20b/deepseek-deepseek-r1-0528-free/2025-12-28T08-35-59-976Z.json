@@ -19,19 +19,101 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 90,
-        "reasoning": "The student's response excellently incorporates ACT fundamentals while avoiding rubric pitfalls: 1) Strong emphasis on Committed Action through small behavioral goals ('ask once a week') and practical invitations ('What do you think about starting with one small question next time?'); 2) Clear Values-congruence by linking actions to the client's stated desire to 'be a supportive partner'; 3) Explicitly addresses Taking Action With Fear by framing steps manageable despite anxiety ('try practicing self-compassion... set small manageable goals'). Crucially, avoids suggesting waiting for fear to subside and doesn't focus purely on communication skills (reframing suggestions serve psychological flexibility, not skills training). Minor deduction for borderline communication framing ('share something small... then invite') but successfully contextualizes it within ACT principles.",
-        "flags": [
-          "Caution: Reframing technique ('share something small...') marginally resembles communication training but remains sufficiently embedded in ACT framework."
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "The student response includes the three required ACT elements: committed action (setting small, manageable goals and starting with one small question), values-congruent behavior (positioning the request as aligned with being a supportive partner), and taking action in the presence of fear (encouraging practice despite anxiety and self-compassion). The tone is empathetic and the suggestions to start small and notice effects are consistent with ACT. However, the response violates the rubric by providing communication-skills training (specific phrasing and a modeling suggestion: sharing your own day first and the example line). That explicit coaching detracts from modality adherence. Additionally, the suggestion to \"unpack where that fear is coming from\" leans toward cognitive/exploratory strategies rather than an exclusively experiential ACT stance (acceptance of private experiences and values-guided action). Overall effective and compassionate, but deduction for the forbidden communication-skills content and a slight drift away from pure ACT technique.",
+          "flags": [
+            "includes_communication_skills_training"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 78,
+          "reasoning": "The student response includes the three required ACT elements: committed action (setting small, manageable goals and starting with one small question), values-congruent behavior (positioning the request as aligned with being a supportive partner), and taking action in the presence of fear (encouraging practice despite anxiety and self-compassion). The tone is empathetic and the suggestions to start small and notice effects are consistent with ACT. However, the response violates the rubric by providing communication-skills training (specific phrasing and a modeling suggestion: sharing your own day first and the example line). That explicit coaching detracts from modality adherence. Additionally, the suggestion to \"unpack where that fear is coming from\" leans toward cognitive/exploratory strategies rather than an exclusively experiential ACT stance (acceptance of private experiences and values-guided action). Overall effective and compassionate, but deduction for the forbidden communication-skills content and a slight drift away from pure ACT technique.",
+          "flags": [
+            "includes_communication_skills_training"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathy and validation skills, effectively normalizing the client's fear and creating psychological safety. However, the response has significant gaps in ACT fidelity. While the student touches on values (being a 'supportive partner'), the intervention drifts away from committed action toward the fear itself. The response leans heavily into cognitive work (unpacking origins, examining beliefs, reframing thoughts) rather than emphasizing willingness to act despite fear. The suggestion to 'set small, manageable goals' and 'practice self-compassion' risks inadvertently suggesting the client should wait for anxiety to reduce before acting. The framing of 'over time, you may find that the anxiety lessens' subtly implies fear reduction is the goal, rather than values-congruent action. Additionally, phrases like 'perhaps by sharing something small about your own day first' veer into communication skills coaching, which should be avoided. The response would be strengthened by more directly addressing: (1) the distinction between the goal (asking how her day was, as values-congruent behavior) and the obstacle (fear), (2) explicit encouragement to take action while the fear is present, and (3) curiosity about what the client is willing to do despite discomfort, rather than strategies to reduce it first.",
+          "flags": [
+            "Subtly suggests fear reduction as prerequisite ('anxiety lessens as you build a pattern') rather than emphasizing action with fear present",
+            "Includes communication skills coaching elements ('frame it in a way that feels less threatening'), which is outside ACT scope",
+            "Heavy emphasis on cognitive exploration and belief-work may obscure the core ACT message: choose valued action despite fear",
+            "Missing explicit committed action framing (e.g., 'What would it look like to ask her about her day this week, even though fear shows up?')"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 48
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:16:48.920Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 90,
+          "reasoning": "The student's response excellently incorporates ACT fundamentals while avoiding rubric pitfalls: 1) Strong emphasis on Committed Action through small behavioral goals ('ask once a week') and practical invitations ('What do you think about starting with one small question next time?'); 2) Clear Values-congruence by linking actions to the client's stated desire to 'be a supportive partner'; 3) Explicitly addresses Taking Action With Fear by framing steps manageable despite anxiety ('try practicing self-compassion... set small manageable goals'). Crucially, avoids suggesting waiting for fear to subside and doesn't focus purely on communication skills (reframing suggestions serve psychological flexibility, not skills training). Minor deduction for borderline communication framing ('share something small... then invite') but successfully contextualizes it within ACT principles.",
+          "flags": [
+            "Caution: Reframing technique ('share something small...') marginally resembles communication training but remains sufficiently embedded in ACT framework."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively acknowledges the client's fear and provides a compassionate exploration of its origins without suggesting waiting for the fear to subside. The student encourages taking action with fear by suggesting small, manageable steps that align with the client's values of being a supportive partner. The response also shows empathy and understanding, validating the client's feelings and proposing practical strategies, such as sharing a part of their own day first. However, there is a slight emphasis on communication skills through the suggestion of reframing questions, which slightly deviates from ACT principles.",
+          "flags": [
+            "Slight focus on communication skills"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 68,
+          "reasoning": "The student's response shows empathy and creates a safe therapeutic space, but doesn't fully align with ACT principles. While they acknowledge the client's value of being a supportive partner and encourage taking small actions, they focus primarily on reducing fear (exploring sources, working through beliefs) and providing communication techniques rather than encouraging the client to accept fear and take values-based action anyway. The student suggests framing questions in 'less threatening' ways and working through beliefs before acting, which implies waiting for fear to subside rather than taking committed action despite fear. The advice to share about your own day first is specific communication skills training, which ACT would avoid as it focuses on external solutions rather than internal psychological flexibility.",
+          "flags": [
+            "Communication skills training present",
+            "May suggest waiting for fear to subside",
+            "Limited ACT-consistent interventions"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:54:23.560Z"
+        }
+      ]
     }
   }
 ]

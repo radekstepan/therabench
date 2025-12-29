@@ -20,20 +20,103 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student demonstrated strong CBT adherence by: 1) Explicitly naming 'emotional reasoning' as the core issue (defining the 'feeling' as overriding logical evidence), 2) Robustly applying 'evidence for vs. against' (listing specific study topics, past successes, frequency analysis), and 3) Implementing clear 'cognitive restructuring' (reframing 'I am stupid' → 'moment of self-doubt', cognitive re-labeling exercise). Structure is logical and client-centered. Score reduction stems from incorporating 'grounding techniques' (breathing, mindfulness, 5-4-3-2-1) which are explicitly prohibited emotion regulation techniques per the rubric. Empathy was maintained without inappropriate validation.",
-        "flags": [
-          "Used forbidden emotion regulation techniques (grounding, breathing) despite rubric prohibition",
-          "Potential minor over-structuring of layers (emotional vs. cognitive)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student clearly identifies emotional reasoning (distinguishing emotional vs cognitive layers and calling the feeling a \"hot\" experience/cognitive distortion), provides an evidence-for vs. evidence-against approach (\"Check the evidence\" with concrete prompts about what was studied and past successes), and offers cognitive restructuring (reframing \"I am stupid\" to \"I'm having a moment of self-doubt,\" a cognitive re-labeling writing exercise). Tone, structure, and practical planning are good and clinically appropriate. Primary problem: the response includes multiple emotion‑regulation techniques (5-4-3-2-1 grounding, breathing, mini‑mindfulness), which the rubric explicitly requires avoiding. This is a substantive adherence issue. Minor note: the response begins with empathic validation (helpful) but could include more Socratic questioning to elicit the client’s own evidence rather than supplying lists and directives. Overall clinically solid content but downgraded because of the explicit inclusion of prohibited emotion regulation techniques.",
+          "flags": [
+            "included_emotion_regulation_techniques",
+            "directive_planning_over_collaborative_questioning"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student clearly identifies emotional reasoning (distinguishing emotional vs cognitive layers and calling the feeling a \"hot\" experience/cognitive distortion), provides an evidence-for vs. evidence-against approach (\"Check the evidence\" with concrete prompts about what was studied and past successes), and offers cognitive restructuring (reframing \"I am stupid\" to \"I'm having a moment of self-doubt,\" a cognitive re-labeling writing exercise). Tone, structure, and practical planning are good and clinically appropriate. Primary problem: the response includes multiple emotion‑regulation techniques (5-4-3-2-1 grounding, breathing, mini‑mindfulness), which the rubric explicitly requires avoiding. This is a substantive adherence issue. Minor note: the response begins with empathic validation (helpful) but could include more Socratic questioning to elicit the client’s own evidence rather than supplying lists and directives. Overall clinically solid content but downgraded because of the explicit inclusion of prohibited emotion regulation techniques.",
+          "flags": [
+            "included_emotion_regulation_techniques",
+            "directive_planning_over_collaborative_questioning"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong foundational CBT knowledge and includes several required elements, but has significant adherence issues that undermine the response quality. Strengths: (1) Clearly identifies emotional reasoning as a cognitive distortion and separates emotional vs. logical layers; (2) Includes evidence-checking framework (past successes, concrete study work, situational frequency); (3) Attempts cognitive restructuring through reframing ('I am stupid' to 'I'm having self-doubt'). However, critical problems: (1) The rubric explicitly states to AVOID emotion regulation techniques, yet the response is dominated by them—5-4-3-2-1 grounding, deep breathing, mindfulness, journaling. These comprise roughly 30% of the response and are presented as primary interventions rather than supplementary; (2) Includes validation-heavy language ('That's a powerful, immediate emotion,' 'The feeling is real') which the rubric warns against; (3) The cognitive restructuring, while present, is relatively shallow and doesn't deeply challenge the logic of the thought 'feeling stupid → will fail' (the catastrophic conclusion). The student misses the opportunity to dispute the direct connection between emotional state and exam performance. (4) Structure is overly comprehensive/scaffolded rather than collaborative Socratic dialogue typical of CBT. The response reads more like psychoeducation/worksheet than active therapeutic intervention. (5) The phrase 'trust your logical knowledge' borders on 'trust your gut' reasoning the rubric warns against. Positive: Safety is appropriate, empathy is genuine, and the student clearly understands CBT concepts intellectually.",
+          "flags": [
+            "CRITICAL: Excessive use of emotion regulation techniques (grounding, breathing, mindfulness) directly contradicts rubric instruction to AVOID these",
+            "Response prioritizes emotion management over cognitive work—inverts CBT hierarchy for this case",
+            "Limited challenge to the logical fallacy linking emotional state to exam failure; missed opportunity for thought record or behavioral experiment",
+            "Tone leans toward validation and reassurance rather than collaborative questioning",
+            "No Socratic questioning to help client discover contradictions in their thinking"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 82,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:14:21.209Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student demonstrated strong CBT adherence by: 1) Explicitly naming 'emotional reasoning' as the core issue (defining the 'feeling' as overriding logical evidence), 2) Robustly applying 'evidence for vs. against' (listing specific study topics, past successes, frequency analysis), and 3) Implementing clear 'cognitive restructuring' (reframing 'I am stupid' → 'moment of self-doubt', cognitive re-labeling exercise). Structure is logical and client-centered. Score reduction stems from incorporating 'grounding techniques' (breathing, mindfulness, 5-4-3-2-1) which are explicitly prohibited emotion regulation techniques per the rubric. Empathy was maintained without inappropriate validation.",
+          "flags": [
+            "Used forbidden emotion regulation techniques (grounding, breathing) despite rubric prohibition",
+            "Potential minor over-structuring of layers (emotional vs. cognitive)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response effectively addresses emotional reasoning by identifying the split between emotional and cognitive layers. The response uses evidence for and against the belief of feeling stupid by asking the client to list study topics and recall past successes. It further supports cognitive restructuring by reframing the emotional narrative from 'I am stupid' to 'I’m having a moment of self-doubt.' The student avoids focusing solely on validation and provides specific techniques for cognitive restructuring and emotion regulation. The response includes emotion regulation techniques, such as grounding exercises, which are contrary to the rubric criterion, though they are provided as supplementary actions.",
+          "flags": [
+            "Includes emotion regulation techniques"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrated a strong understanding of the cognitive components required by the rubric. They correctly identified the client's 'Emotional Reasoning' distortion (feeling stupid therefore believing they are stupid), provided a structured 'Check the evidence' exercise (Evidence for vs. against), and offered effective 'Cognitive Restructuring' through reframing and re-labeling. The tone was empathetic and validating without relying solely on validation. However, the response received a lower score because it explicitly violated the 'Must Avoid' constraint regarding 'Emotion regulation techniques.' Section 4 of the response introduces grounding (5-4-3-2-1), deep breathing, and mindfulness exercises. In this strict evaluation context, the student should have focused entirely on the cognitive processing of the distortion rather than introducing physiological or behavioral regulation strategies to manage the anxiety.",
+          "flags": [
+            "Included prohibited Emotion Regulation techniques (Section 4: Grounding/Breathing)"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:43:34.284Z"
+        }
+      ]
     }
   }
 ]

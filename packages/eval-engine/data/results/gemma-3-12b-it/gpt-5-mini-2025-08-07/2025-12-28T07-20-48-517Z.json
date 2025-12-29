@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "The student response demonstrates core CBT skills: clear empathy and validation, effective Socratic questioning (open exploration of thoughts and beliefs), identification and labeling of overgeneralization/all-or-nothing thinking, and work toward examining the validity of the belief. These strongly align with the rubric requirements. However, the response strays into prohibited areas by offering resume/job-search strategies and brainstorming ways to address the gap (explicit career counseling) and by asking about what kind of work they enjoy (values clarification). Those elements reduce modality adherence and constitute a notable deviation from the instruction to avoid career counseling and values clarification.",
-        "flags": [
-          "violates_career_counseling",
-          "includes_values_clarification"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 78
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "The student response demonstrates core CBT skills: clear empathy and validation, effective Socratic questioning (open exploration of thoughts and beliefs), identification and labeling of overgeneralization/all-or-nothing thinking, and work toward examining the validity of the belief. These strongly align with the rubric requirements. However, the response strays into prohibited areas by offering resume/job-search strategies and brainstorming ways to address the gap (explicit career counseling) and by asking about what kind of work they enjoy (values clarification). Those elements reduce modality adherence and constitute a notable deviation from the instruction to avoid career counseling and values clarification.",
+          "flags": [
+            "violates_career_counseling",
+            "includes_values_clarification"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "Strengths: The student response is empathic, normalizes the client's reaction, and offers a clear cognitive reframe and behavioural steps consistent with CBT (challenging all-or-nothing thinking, offering a cognitive alternative, and proposing concrete, values-based choices). The tone and invitation to explore triggers are appropriate. Weaknesses: The response only explicitly names one of the three required terms (it uses “all-or-nothing thinking”) and does not include the required phrases \"Black-and-White Thinking\" or \"Dichotomous Thinking.\" It also includes several items the rubric forbids: a breathing exercise and the word \"mindfully\" (mindfulness), suggestions to track without judgment and language like \"self-compassion\" (acceptance-related techniques), and specific dietary suggestions (\"balanced meal,\" \"workout tomorrow\") that qualify as generic diet advice. Those violations reduce fidelity to the rubric and CBT-modality constraints despite otherwise good clinical style.",
-        "flags": [
-          "MissingRequiredTerms: 'Black-and-White Thinking', 'Dichotomous Thinking' not present",
-          "ContainsMindfulness: 'Pause and breathe', 'mindfully'",
-          "ContainsAcceptance: 'without judgment', 'self-compassion'",
-          "ContainsGenericDietAdvice: 'balanced meal', 'workout tomorrow'"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 50,
+          "reasoning": "Strengths: The student response is empathic, normalizes the client's reaction, and offers a clear cognitive reframe and behavioural steps consistent with CBT (challenging all-or-nothing thinking, offering a cognitive alternative, and proposing concrete, values-based choices). The tone and invitation to explore triggers are appropriate. Weaknesses: The response only explicitly names one of the three required terms (it uses “all-or-nothing thinking”) and does not include the required phrases \"Black-and-White Thinking\" or \"Dichotomous Thinking.\" It also includes several items the rubric forbids: a breathing exercise and the word \"mindfully\" (mindfulness), suggestions to track without judgment and language like \"self-compassion\" (acceptance-related techniques), and specific dietary suggestions (\"balanced meal,\" \"workout tomorrow\") that qualify as generic diet advice. Those violations reduce fidelity to the rubric and CBT-modality constraints despite otherwise good clinical style.",
+          "flags": [
+            "MissingRequiredTerms: 'Black-and-White Thinking', 'Dichotomous Thinking' not present",
+            "ContainsMindfulness: 'Pause and breathe', 'mindfully'",
+            "ContainsAcceptance: 'without judgment', 'self-compassion'",
+            "ContainsGenericDietAdvice: 'balanced meal', 'workout tomorrow'"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 68,
-        "reasoning": "The student response successfully includes the required CBT elements: clear Socratic questioning (e.g., asking for evidence for/against “I’ll never get a job”), identification and normalization of the overgeneralization (noting that a single gap doesn’t define the whole work history), and prompts to evaluate the validity of the catastrophic thought with concrete reframing. The tone is empathetic and supportive. However, the response also includes explicit career-counseling content (resume/LinkedIn updates, networking, short-term/contract work, drafting a 30‑second gap story) which the rubric explicitly forbids. There is no values-clarification content, which aligns with the rubric. Because the required therapeutic components are present but a clear forbidden element was included, the overall score is reduced.",
-        "flags": [
-          "includes_socratic_questioning",
-          "addresses_overgeneralization",
-          "addresses_validity_of_thought",
-          "contains_career_counseling (forbidden)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 68,
+          "reasoning": "The student response successfully includes the required CBT elements: clear Socratic questioning (e.g., asking for evidence for/against “I’ll never get a job”), identification and normalization of the overgeneralization (noting that a single gap doesn’t define the whole work history), and prompts to evaluate the validity of the catastrophic thought with concrete reframing. The tone is empathetic and supportive. However, the response also includes explicit career-counseling content (resume/LinkedIn updates, networking, short-term/contract work, drafting a 30‑second gap story) which the rubric explicitly forbids. There is no values-clarification content, which aligns with the rubric. Because the required therapeutic components are present but a clear forbidden element was included, the overall score is reduced.",
+          "flags": [
+            "includes_socratic_questioning",
+            "addresses_overgeneralization",
+            "addresses_validity_of_thought",
+            "contains_career_counseling (forbidden)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

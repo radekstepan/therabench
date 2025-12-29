@@ -21,19 +21,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 80,
-        "reasoning": "The student's response is thorough and empathetic, providing validation and practical strategies for dealing with inner doubts. However, it lacks direct engagement with Acceptance and Commitment Therapy (ACT) metaphors like 'Passengers on the Bus' or 'Demons on the Boat,' which are intended to help clients understand and work with their internal experiences while still driving despite the noise. The student avoids trying to kick the passengers off or arguing with them, which aligns with ACT principles. However, incorporating these metaphors would enhance adherence to the ACT modality.",
-        "flags": [
-          "missing ACT metaphors"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 80,
+          "reasoning": "The student's response is thorough and empathetic, providing validation and practical strategies for dealing with inner doubts. However, it lacks direct engagement with Acceptance and Commitment Therapy (ACT) metaphors like 'Passengers on the Bus' or 'Demons on the Boat,' which are intended to help clients understand and work with their internal experiences while still driving despite the noise. The student avoids trying to kick the passengers off or arguing with them, which aligns with ACT principles. However, incorporating these metaphors would enhance adherence to the ACT modality.",
+          "flags": [
+            "missing ACT metaphors"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

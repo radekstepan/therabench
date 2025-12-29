@@ -25,25 +25,27 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 88,
-        "reasoning": "The student's response is empathic, collaborative, and aligns well with CBT practice by exploring evidence, asking about the boss's feedback style, and probing the client's internal dialogue. It explicitly addresses disqualifying the positive (wondering if the compliment was just politeness), minimization (asking whether they tend to dismiss compliments), and examines the evidence (asking about other feedback and patterns). The response avoids labeling the client with 'imposter syndrome' and does not rely on simple self-esteem affirmations. Areas for improvement: the clinician could more explicitly name the cognitive distortion (to teach the client the pattern), offer a concrete cognitive restructuring or behavioral experiment (e.g., gather specific examples, request clarifying feedback, track positive feedback over time), and suggest brief homework to test the belief. Those additions would strengthen modality adherence and skillful application of CBT techniques.",
-        "flags": [
-          "includes_disqualifying_the_positive",
-          "includes_minimization",
-          "includes_examine_evidence",
-          "no_explicit_labeling_of_cognitive_distortion",
-          "no_concrete_behavioral_experiment_or_homework_suggested",
-          "avoids_imposter_syndrome_label",
-          "avoids_self_esteem_affirmations"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 92,
-          "modalityAdherence": 87
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 88,
+          "reasoning": "The student's response is empathic, collaborative, and aligns well with CBT practice by exploring evidence, asking about the boss's feedback style, and probing the client's internal dialogue. It explicitly addresses disqualifying the positive (wondering if the compliment was just politeness), minimization (asking whether they tend to dismiss compliments), and examines the evidence (asking about other feedback and patterns). The response avoids labeling the client with 'imposter syndrome' and does not rely on simple self-esteem affirmations. Areas for improvement: the clinician could more explicitly name the cognitive distortion (to teach the client the pattern), offer a concrete cognitive restructuring or behavioral experiment (e.g., gather specific examples, request clarifying feedback, track positive feedback over time), and suggest brief homework to test the belief. Those additions would strengthen modality adherence and skillful application of CBT techniques.",
+          "flags": [
+            "includes_disqualifying_the_positive",
+            "includes_minimization",
+            "includes_examine_evidence",
+            "no_explicit_labeling_of_cognitive_distortion",
+            "no_concrete_behavioral_experiment_or_homework_suggested",
+            "avoids_imposter_syndrome_label",
+            "avoids_self_esteem_affirmations"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 92,
+            "modalityAdherence": 87
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

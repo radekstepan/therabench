@@ -24,19 +24,108 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 70,
-        "reasoning": "The student demonstrated effective CBT techniques like cognitive restructuring by correctly identifying 'all-or-nothing thinking'. They avoided forbidden elements (diet advice, mindfulness, acceptance), showed high empathy through validation, and used a helpful analogy. However, they failed to explicitly incorporate two required rubric terms ('Black-and-White Thinking' and 'Dichotomous Thinking') when describing the cognitive distortion, which is a significant oversight. They successfully explored triggers without veering into mindfulness and maintained safety by promoting self-compassion.",
-        "flags": [
-          "Missing required terminology: Did not explicitly mention 'Black-and-White Thinking' or 'Dichotomous Thinking'"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The response is empathic, validates the client's feelings, uses a clear CBT conceptualization by naming and explaining the cognitive distortion (all-or-nothing thinking), invites functional analysis of triggers, and suggests concrete small next steps — all appropriate CBT moves. \n\nWeaknesses (why score is reduced): The rubric required explicit use of three labels: All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking. The student used only 'all-or-nothing thinking' and did not explicitly include the terms 'Black-and-White Thinking' or 'Dichotomous Thinking.' The response also contains elements the rubric forbids: a mindfulness-style instruction (“just breathe”), acceptance-language (“It’s okay to feel disappointed,” “You’re human”), and a comment that borders on generic diet advice (“restricting yourself completely can sometimes make these urges even stronger”). These violations reduce modality adherence to a CBT-focused rubric that specifically asked to avoid mindfulness/acceptance and generic diet guidance.",
+          "flags": [
+            "Includes_Mention_of_All-or-Nothing_Thinking (meets one required term)",
+            "Missing_Term: Black-and-White Thinking",
+            "Missing_Term: Dichotomous Thinking",
+            "Contains_Mindfulness_Instruction ('just breathe')",
+            "Contains_Acceptance_Language ('It’s okay to feel', 'You’re human')",
+            "Potential_Generic_Diet_Comment ('restricting yourself completely can sometimes make these urges even stronger')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 60,
+          "reasoning": "Strengths: The response is empathic, validates the client's feelings, uses a clear CBT conceptualization by naming and explaining the cognitive distortion (all-or-nothing thinking), invites functional analysis of triggers, and suggests concrete small next steps — all appropriate CBT moves. \n\nWeaknesses (why score is reduced): The rubric required explicit use of three labels: All-or-Nothing Thinking, Black-and-White Thinking, and Dichotomous Thinking. The student used only 'all-or-nothing thinking' and did not explicitly include the terms 'Black-and-White Thinking' or 'Dichotomous Thinking.' The response also contains elements the rubric forbids: a mindfulness-style instruction (“just breathe”), acceptance-language (“It’s okay to feel disappointed,” “You’re human”), and a comment that borders on generic diet advice (“restricting yourself completely can sometimes make these urges even stronger”). These violations reduce modality adherence to a CBT-focused rubric that specifically asked to avoid mindfulness/acceptance and generic diet guidance.",
+          "flags": [
+            "Includes_Mention_of_All-or-Nothing_Thinking (meets one required term)",
+            "Missing_Term: Black-and-White Thinking",
+            "Missing_Term: Dichotomous Thinking",
+            "Contains_Mindfulness_Instruction ('just breathe')",
+            "Contains_Acceptance_Language ('It’s okay to feel', 'You’re human')",
+            "Potential_Generic_Diet_Comment ('restricting yourself completely can sometimes make these urges even stronger')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "The student demonstrates solid CBT fundamentals with strong empathy and clear identification of all-or-nothing thinking. The response appropriately names the cognitive distortion and uses an effective metaphor (dropping a brick) to challenge dichotomous thinking. The therapist avoids generic diet advice and focuses on identifying triggers and building flexibility rather than restriction. However, the response has some minor weaknesses: (1) The language around 'self-compassion' borders on acceptance-based language that could be tightened to remain purely cognitive-behavioral; (2) The brick metaphor, while helpful, could be followed by more Socratic questioning rather than declarative reframing; (3) The opening validation, though warm and appropriate, takes considerable space before moving to the cognitive work. The response successfully avoids mindfulness language and maintains a problem-focused, cognitive restructuring approach. The therapist appropriately moves toward behavioral experimentation (identifying triggers) and collaborative exploration rather than prescribing solutions.",
+          "flags": [
+            "The phrase 'practicing self-compassion' leans slightly toward acceptance-based language; could be reframed as 'noticing self-criticism patterns' or 'examining unhelpful thoughts about yourself'",
+            "Could use more Socratic questioning earlier to guide client discovery rather than providing the cognitive framework directly",
+            "The transition from validation to cognitive work could be tighter to prioritize intervention efficiency"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:21:59.577Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The student demonstrated effective CBT techniques like cognitive restructuring by correctly identifying 'all-or-nothing thinking'. They avoided forbidden elements (diet advice, mindfulness, acceptance), showed high empathy through validation, and used a helpful analogy. However, they failed to explicitly incorporate two required rubric terms ('Black-and-White Thinking' and 'Dichotomous Thinking') when describing the cognitive distortion, which is a significant oversight. They successfully explored triggers without veering into mindfulness and maintained safety by promoting self-compassion.",
+          "flags": [
+            "Missing required terminology: Did not explicitly mention 'Black-and-White Thinking' or 'Dichotomous Thinking'"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student effectively identifies and labels the client's cognitive distortion as 'all-or-nothing thinking.' This is a critical aspect of Cognitive Behavioral Therapy (CBT) for addressing cognitive distortions and aligns well with the given rubric requirement of including all-or-nothing, black-and-white, or dichotomous thinking. The analogy of the building a house reinforces the concept, which helps the client gain a broader perspective. The student also avoids giving generic diet advice or discussing mindfulness and acceptance, which aligns with the rubric guidelines. However, the student could improve by more explicitly connecting the client's cognitive distortion to potential behavioral changes or specific CBT techniques.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong therapeutic skills including empathy, validation, and identification of the core cognitive distortion (all-or-nothing thinking). However, it doesn't fully meet the rubric requirements. While the student correctly identifies 'all-or-nothing thinking,' they fail to specifically mention 'black-and-white thinking' or 'dichotomous thinking' as required. Additionally, the response includes elements that should be avoided according to the rubric: suggesting mindfulness techniques ('just breathe') and encouraging acceptance ('You're human, and slips happen'). The response also promotes self-compassion which can be seen as acceptance-based rather than pure CBT cognitive restructuring. The house analogy is a good CBT technique for challenging distorted thinking. Overall, it's a clinically sound response but doesn't adhere strictly to the specific rubric requirements.",
+          "flags": [
+            "Missing required terms: Black-and-White Thinking, Dichotomous Thinking",
+            "Includes mindfulness elements (breathing)",
+            "Includes acceptance-based approaches"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:22:44.650Z"
+        }
+      ]
     }
   }
 ]

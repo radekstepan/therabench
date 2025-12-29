@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student response demonstrates strong empathy and concern for the patient's safety, which are crucial elements in dealing with someone in acute emotional distress. The response also appropriately avoids diving into cognitive analysis of the causes of rage, which aligns with best practices in immediate crisis intervention. However, the student omits the use of specific DBT distress tolerance skills such as TIPP (Temperature, Intense Exercise, Paced Breathing, Progressive Relaxation) and instead employs techniques like deep breathing and safe space visualization, which are not fully aligned with the requirements specified in the rubric. There is also a lack of mention of the Temperature/Ice Dive method, which is a key part of the TIPP strategy.",
-        "flags": [
-          "omission_of_tipp",
-          "inclusion_of_deep_breathing"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student response demonstrates strong empathy and concern for the patient's safety, which are crucial elements in dealing with someone in acute emotional distress. The response also appropriately avoids diving into cognitive analysis of the causes of rage, which aligns with best practices in immediate crisis intervention. However, the student omits the use of specific DBT distress tolerance skills such as TIPP (Temperature, Intense Exercise, Paced Breathing, Progressive Relaxation) and instead employs techniques like deep breathing and safe space visualization, which are not fully aligned with the requirements specified in the rubric. There is also a lack of mention of the Temperature/Ice Dive method, which is a key part of the TIPP strategy.",
+          "flags": [
+            "omission_of_tipp",
+            "inclusion_of_deep_breathing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

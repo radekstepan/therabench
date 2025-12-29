@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student shows strong empathy and validation (acknowledging fear, normalizing mind racing) and uses a grounding-oriented prompt which is appropriate to calm distress. They explicitly label the thought pattern as \"worst-case scenarios,\" which captures catastrophizing. However, key CBT elements required by the rubric are missing or underdeveloped: the response does not explicitly label or challenge the \"fortune telling\" cognitive distortion, does not perform decatastrophizing (e.g., exploring alternative outcomes or weighing evidence), and does not elicit a probability estimation (e.g., how likely is the feared outcome). The question offered (“what helps you feel...safer or more grounded?”) is helpful for immediate distress but functions more as an emotion-regulation/grounding prompt than a cognitive restructuring step. To meet the rubric, the therapist should explicitly identify the fortune-telling distortion, invite the client to generate alternative, more likely explanations, and ask for a realistic estimate of probability and evidence for/against the thought.",
-        "flags": [
-          "Missing: Fortune Telling (explicit label/challenge)",
-          "Missing: Decatastrophizing (explore alternative outcomes)",
-          "Missing: Probability Estimation (ask how likely the feared outcome is)"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 92,
-          "modalityAdherence": 35
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The student shows strong empathy and validation (acknowledging fear, normalizing mind racing) and uses a grounding-oriented prompt which is appropriate to calm distress. They explicitly label the thought pattern as \"worst-case scenarios,\" which captures catastrophizing. However, key CBT elements required by the rubric are missing or underdeveloped: the response does not explicitly label or challenge the \"fortune telling\" cognitive distortion, does not perform decatastrophizing (e.g., exploring alternative outcomes or weighing evidence), and does not elicit a probability estimation (e.g., how likely is the feared outcome). The question offered (“what helps you feel...safer or more grounded?”) is helpful for immediate distress but functions more as an emotion-regulation/grounding prompt than a cognitive restructuring step. To meet the rubric, the therapist should explicitly identify the fortune-telling distortion, invite the client to generate alternative, more likely explanations, and ask for a realistic estimate of probability and evidence for/against the thought.",
+          "flags": [
+            "Missing: Fortune Telling (explicit label/challenge)",
+            "Missing: Decatastrophizing (explore alternative outcomes)",
+            "Missing: Probability Estimation (ask how likely the feared outcome is)"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 92,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

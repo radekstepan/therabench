@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 92,
-        "reasoning": "Strengths: The student response correctly identifies a cognitive distortion (discounting the positive/disqualifying the positive) and names another distortion (mind‑reading). They validate the client's feelings, use a collaborative tone, and offer concrete CBT‑consistent experiments (examining the evidence, asking for specificity, behavioral 'wins' list) which directly address the presenting thought. These meet the rubric requirements of identifying disqualifying the positive/minimization and examining the evidence. Weakness: the suggestion to \"practice a self‑compassion statement\" edges into recommending an in‑the‑moment affirmation/compassion technique, which the rubric specified should be avoided as a primary intervention. This is a minor deviation from the stated constraint but does not undermine the CBT approach overall. No mention of \"imposter syndrome\" as a primary diagnosis (which is correct).",
-        "flags": [
-          "suggested_self_compassion_statement_may_be_interpreted_as_self-esteem_affirmation"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 94,
-          "modalityAdherence": 88
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -48,6 +36,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:39:03.428Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 90,
+          "reasoning": "The student provided an excellent CBT response that effectively adhered to the rubric. They accurately identified and labeled the cognitive distortion 'disqualifying the positive' (which conceptually covers the rubric's requirement for 'minimization' in this context) and 'mind-reading'. The intervention 'check the evidence' was explicitly utilized as a Socratic questioning technique. The student successfully avoided diagnosing 'Imposter Syndrome' and focused on concrete behavioral experiments and data collection (wins list) rather than generic self-esteem affirmations. The response demonstrated high empathy and strong structural adherence to CBT protocols.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:45:39.536Z"
         }
       ]
     }

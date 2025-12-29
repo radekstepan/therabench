@@ -21,17 +21,19 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student's response effectively demonstrates empathy and prioritizes the client's safety by addressing immediate risk and providing crisis resources. The response includes guided practices for physiological regulation such as paced breathing and grounding, in line with DBT strategies, though it misses specific TIPP techniques like ice dive or temperature control. The student avoids deep cognitive analysis, appropriate for the immediate need. While it provides several options for physiological intervention, it lacks explicit mention of TIPP and Temperature/Ice Dive which are critical components in DBT for managing high distress.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response effectively demonstrates empathy and prioritizes the client's safety by addressing immediate risk and providing crisis resources. The response includes guided practices for physiological regulation such as paced breathing and grounding, in line with DBT strategies, though it misses specific TIPP techniques like ice dive or temperature control. The student avoids deep cognitive analysis, appropriate for the immediate need. While it provides several options for physiological intervention, it lacks explicit mention of TIPP and Temperature/Ice Dive which are critical components in DBT for managing high distress.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

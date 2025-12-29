@@ -25,20 +25,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response effectively acknowledges the client's emotional state and offers empathetic support, which is crucial in building rapport. However, the response lacks clear elements of decatastrophizing and explicit probability estimation techniques which are central to CBT in handling catastrophic thinking and fortune telling. The student touches on the idea of seeking alternatives to the catastrophic thought but does not explicitly guide the client through reevaluating the likelihood of their catastrophic conclusions. The response effectively avoids reassurance seeking, correctly focuses on anxiety management techniques, and provides options for grounding, but fails to clearly lead the client through the essential CBT steps of restructuring catastrophic thoughts through evidence-based reassessment.",
-        "flags": [
-          "missing_decatastrophizing",
-          "missing_probability_estimation"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively acknowledges the client's emotional state and offers empathetic support, which is crucial in building rapport. However, the response lacks clear elements of decatastrophizing and explicit probability estimation techniques which are central to CBT in handling catastrophic thinking and fortune telling. The student touches on the idea of seeking alternatives to the catastrophic thought but does not explicitly guide the client through reevaluating the likelihood of their catastrophic conclusions. The response effectively avoids reassurance seeking, correctly focuses on anxiety management techniques, and provides options for grounding, but fails to clearly lead the client through the essential CBT steps of restructuring catastrophic thoughts through evidence-based reassessment.",
+          "flags": [
+            "missing_decatastrophizing",
+            "missing_probability_estimation"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

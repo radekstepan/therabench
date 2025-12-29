@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student response effectively addresses the client's emotional distress and challenges the overgeneralization present in the client's statement. The student uses empathetic language and reframes the gap in the resume as part of a larger story rather than the whole. However, the response could benefit from more explicit Socratic questioning to further explore and challenge the client's belief about being unemployable. Additionally, while it primarily focuses on correcting cognitive distortions and validating the client's feelings, there is a slight drift into potential career counseling by mentioning how to narrate the gap, which should be avoided.",
-        "flags": [
-          "Potential career counseling"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student response effectively addresses the client's emotional distress and challenges the overgeneralization present in the client's statement. The student uses empathetic language and reframes the gap in the resume as part of a larger story rather than the whole. However, the response could benefit from more explicit Socratic questioning to further explore and challenge the client's belief about being unemployable. Additionally, while it primarily focuses on correcting cognitive distortions and validating the client's feelings, there is a slight drift into potential career counseling by mentioning how to narrate the gap, which should be avoided.",
+          "flags": [
+            "Potential career counseling"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

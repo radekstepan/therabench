@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response clearly includes ACT-congruent elements: it identifies the client's values (wanting to be a supportive partner), encourages values-congruent behavior, and promotes committed action by suggesting small, doable steps to take despite fear (visualization, low-stakes practice, try one small gesture this week). The response explicitly normalizes acting with fear rather than waiting for it to subside and uses empathic validation throughout, which is appropriate.\n\nPrimary concern: The response includes specific communication-skills scripting (e.g., suggested phrasings: \"Anything interesting happen today?\" and \"I’d love to hear about your day when you feel like sharing.\"), which violates the rubric requirement to avoid communication skills training. This is a notable deviation because the rubric listed that as a must-avoid. No other major contraindicated content was identified. \n\nOverall: strong ACT-consistent work and empathic tone, but the presence of explicit phrasing/communication training reduces adherence to the rubric and therefore the score.",
-        "flags": [
-          "meets_committed_action",
-          "meets_values_congruent_behavior",
-          "meets_taking_action_with_fear",
-          "does_not_wait_for_fear_to_subside",
-          "includes_communication_skills_training"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -59,6 +43,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:07:14.611Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates high empathy and creates a strong, safe therapeutic alliance. They effectively identify the client's values (supportive partner) and the pain of the struggle. However, the response failed to adhere to the specific ACT rubric constraints. The student explicitly provided **Communication Skills Training** in Step 3 ('Shift the phrasing'), which was a 'Must Avoid' item. In ACT, the goal is to take the original difficult action (asking 'how was your day') because it matters, not to modify the action to make it easier. Additionally, the suggestion that 'fear shrinks when we challenge it gradually' implies that the goal is fear reduction (waiting for fear to subside) rather than taking action *with* the fear present. The response relies heavily on cognitive restructuring (reframing silence) rather than core ACT processes like acceptance, defusion, or contacting the present moment.",
+          "flags": [
+            "Rubric Violation: Included Communication Skills Training (Step 3)",
+            "Rubric Violation: Suggested waiting for fear to shrink (exposure/habituation focus)",
+            "Modality Drift: Used CBT reframing techniques instead of ACT acceptance/defusion"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:54:16.891Z"
         }
       ]
     }

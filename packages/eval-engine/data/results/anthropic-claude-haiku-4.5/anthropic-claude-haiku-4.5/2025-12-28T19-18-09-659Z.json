@@ -6,20 +6,7 @@
     "timestamp": "2025-12-28T19:18:09.659Z",
     "response": "# Therapeutic Response\n\nI hear that you're feeling really ashamed right now, and that's genuinely painful. Before we go further, I want to gently pause on the impulse to isolate completely—that instinct makes sense when we're hurting, but it often intensifies shame rather than relieves it.\n\n**Let me ask you a few things:**\n\n- What specifically happened at the party that's weighing on you?\n- When you imagine never speaking to anyone again, what fear is underneath that—rejection, judgment, or something else?\n- Has shame made you withdraw like this before? What happened then?\n\n**Here's what I've observed:** Shame actually *thrives* in isolation and silence. It tells us we're fundamentally flawed and that we need to hide. But shame tends to lose its power when it's brought into connection with others—not broadcast to everyone, but shared with people who care about us.\n\n**What might help:**\n- We can unpack exactly what happened and examine whether it's as catastrophic as shame is telling you it is\n- You might consider reaching out to *one* trusted person—not everyone—to reality-check your interpretation\n- Taking a break is okay, but complete avoidance usually extends the suffering\n\nYou made a mistake or said something awkward—that's human. It doesn't define you. What matters now is what you do with it.\n\n**What feels most pressing to talk through first?**",
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 80,
-        "reasoning": "The response demonstrates strong validation and effectively promotes approach behaviors instead of isolation. It aligns well with DBT principles by discouraging avoidance ('complete avoidance usually extends the suffering') and suggesting connection ('reaching out to one trusted person'). The emphasis on shame weakening through connection implicitly addresses Opposite Action. However, it violates a key rubric requirement by asking 'what specifically happened at the party,' which encourages analyzing the shame trigger—directly contravening the 'Must Avoid: Analyze why you feel shame' rule. The 'examine whether it's catastrophic' suggestion could also drift toward shame analysis. Strengths include robust empathy, safety focus, and actionable behavioral alternatives.",
-        "flags": [
-          "Risk of shame analysis: Asking for event specifics may lead to analyzing shame causes",
-          "Partial adherence: Fails to explicitly name 'Opposite Action' as a DBT skill"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -38,6 +25,23 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T19:57:40.916Z"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong empathy and validates the client's pain effectively. They successfully identify the client's urge to isolate and provide psychoeducation about how shame thrives in secrecy, which aligns with the goal of changing the emotion by changing the action. The student correctly encourages Opposite Action by suggesting the client reach out to one trusted person. However, there are areas for improvement regarding strict DBT adherence and the specific rubric. The student asks questions like 'What specifically happened?' and 'What fear is underneath that?', which borders on analyzing the 'why' of the emotion rather than focusing strictly on the behavior. More critically, the student states, 'You made a mistake or said something awkward,' which violates the DBT principle of 'Checking the Facts' before validating the accuracy of a thought. By agreeing that a mistake occurred, the student risks reinforcing the shame. The response should focus on *acting* opposite to the emotion regardless of whether the mistake actually happened.",
+          "flags": [
+            "Assumes facts before checking them",
+            "Prompts analysis of emotion/origin instead of immediate action"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T21:58:35.460Z"
         }
       ]
     }

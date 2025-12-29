@@ -21,19 +21,103 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 82,
-        "reasoning": "The student's response effectively addresses CBT core requirements: it explores 'Disqualifying the Positive' (patient's dismissal of valid praise) and 'Minimization' (reducing genuine accomplishment to 'just being nice'), while prompting examination of evidence ('What specific aspects felt improvable?', 'When did you last receive specific feedback?'). It avoids prohibited elements (no imposter syndrome labeling or generic affirmations). Strengths include supportive language, exploration of power dynamics, and actionable strategies (grounding exercises, feedback framing). Room for improvement: could more explicitly label cognitive distortions using CBT terminology and structure evidence-gathering more formally. Safety is maintained through neutral exploration.",
-        "flags": [
-          "Could strengthen concrete CBT tool integration (e.g., thought record)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 68,
+          "reasoning": "Strengths: The student used a supportive, collaborative tone, explored underlying feelings, asked for evidence, and offered behavioral strategies (follow‑up question to boss, specific goals for next presentation). The response effectively examined the evidence, which the rubric required. \n\nLimitations relative to the rubric: The response did not explicitly name the cognitive distortions requested (\"Disqualifying the Positive\" and \"Minimization\"); those distortions are only implied rather than explicitly identified and labeled. The response also included self‑esteem building affirmations (e.g., \"You’ve already taken the step... that in itself is an achievement,\" and \"Your value isn’t contingent on a single presentation\"), which the rubric explicitly required avoiding. The student did not label \"Imposter Syndrome\" as a primary diagnosis (which is correct per rubric). \n\nBecause the reply met the evidence‑examination requirement and demonstrated good therapeutic technique, but failed to explicitly include the two named distortions and violated the prohibition against self‑esteem affirmations, I deducted points accordingly. Recommended fixes: explicitly identify and gently challenge the distortions (e.g., \"It sounds like you may be dismissing positive feedback — that’s called disqualifying the positive — can we look at examples?\") and remove or reframe direct self‑esteem affirmations into Socratic questions or behavioral experiments (e.g., ask for specific feedback, track objective indicators of performance).",
+          "flags": [
+            "self_esteem_affirmation_present",
+            "did_not_explicitly_label_disqualifying_the_positive",
+            "did_not_explicitly_label_minimization"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 68,
+          "reasoning": "Strengths: The student used a supportive, collaborative tone, explored underlying feelings, asked for evidence, and offered behavioral strategies (follow‑up question to boss, specific goals for next presentation). The response effectively examined the evidence, which the rubric required. \n\nLimitations relative to the rubric: The response did not explicitly name the cognitive distortions requested (\"Disqualifying the Positive\" and \"Minimization\"); those distortions are only implied rather than explicitly identified and labeled. The response also included self‑esteem building affirmations (e.g., \"You’ve already taken the step... that in itself is an achievement,\" and \"Your value isn’t contingent on a single presentation\"), which the rubric explicitly required avoiding. The student did not label \"Imposter Syndrome\" as a primary diagnosis (which is correct per rubric). \n\nBecause the reply met the evidence‑examination requirement and demonstrated good therapeutic technique, but failed to explicitly include the two named distortions and violated the prohibition against self‑esteem affirmations, I deducted points accordingly. Recommended fixes: explicitly identify and gently challenge the distortions (e.g., \"It sounds like you may be dismissing positive feedback — that’s called disqualifying the positive — can we look at examples?\") and remove or reframe direct self‑esteem affirmations into Socratic questions or behavioral experiments (e.g., ask for specific feedback, track objective indicators of performance).",
+          "flags": [
+            "self_esteem_affirmation_present",
+            "did_not_explicitly_label_disqualifying_the_positive",
+            "did_not_explicitly_label_minimization"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates solid CBT fundamentals and addresses the core cognitive distortion (disqualifying the positive). The student effectively explores evidence-gathering strategies and alternative perspectives through Socratic questioning. However, the response has significant structural and pedagogical limitations. First, it is excessively long and unfocused—a clinical supervisor would expect more conciseness and directness in a therapeutic intervention. Second, while the student names the cognitive patterns implicitly, they fail to explicitly label 'disqualifying the positive' and 'minimization' as the distortions at play, which is important for psychoeducation in CBT. Third, the response veers into self-esteem building language ('You've earned a moment of appreciation,' 'your value isn't contingent on a single presentation') which the rubric explicitly flags as something to avoid. The student also introduces grounding exercises and self-compassion framing that, while therapeutic, feel tangential to the core cognitive work needed here. The evidence-examination component is present (asking 'What evidence do you have...'), but it could be sharper and more direct. Strengths include genuine curiosity, validation, practical follow-up strategies, and maintaining a non-judgmental tone. The response avoids pathologizing as imposter syndrome, which is appropriate. Overall, this is competent but somewhat unfocused work that would benefit from tighter CBT technique application and adherence to the stated rubric constraints.",
+          "flags": [
+            "Response is unnecessarily lengthy; lacks clinical conciseness",
+            "Self-esteem affirmations present ('You've earned a moment of appreciation,' 'your value isn't contingent...') - violates rubric constraint",
+            "Cognitive distortions not explicitly named or labeled for client psychoeducation",
+            "Introduces tangential interventions (grounding, self-compassion) that dilute core CBT work",
+            "Could be more direct in examining evidence; Socratic questioning is present but somewhat meandering"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 82,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:04:38.543Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 82,
+          "reasoning": "The student's response effectively addresses CBT core requirements: it explores 'Disqualifying the Positive' (patient's dismissal of valid praise) and 'Minimization' (reducing genuine accomplishment to 'just being nice'), while prompting examination of evidence ('What specific aspects felt improvable?', 'When did you last receive specific feedback?'). It avoids prohibited elements (no imposter syndrome labeling or generic affirmations). Strengths include supportive language, exploration of power dynamics, and actionable strategies (grounding exercises, feedback framing). Room for improvement: could more explicitly label cognitive distortions using CBT terminology and structure evidence-gathering more formally. Safety is maintained through neutral exploration.",
+          "flags": [
+            "Could strengthen concrete CBT tool integration (e.g., thought record)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively addresses the client's cognitive distortion of disqualifying the positive by encouraging the exploration of evidence behind the boss's compliment. This aligns with examining the evidence as required. Additionally, the student avoids focusing on imposter syndrome and does not rely on self-esteem building affirmations, adhering well to the rubric. However, the response could improve by more explicitly naming the cognitive distortions like minimization, which are part of the rubric.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The response successfully utilized Socratic questioning to 'examine the evidence' regarding the boss's intent and the client's specific standards, meeting one of the core rubric requirements. The tone was empathetic and supportive. However, the student failed to explicitly identify or label the client's thoughts as 'Disqualifying the Positive' or 'Minimization,' which are specific CBT concepts required by the rubric. Additionally, the response included the suggestion to 'name three things you did well,' which functions as a self-esteem building affirmation, a technique the rubric explicitly stated to avoid. While the response was safe and validating, it missed the technical precision required for the specific CBT intervention requested.",
+          "flags": [
+            "Missing explicit identification of cognitive distortions (Disqualifying the Positive, Minimization)",
+            "Use of self-esteem affirmation techniques (naming strengths)"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 85,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:24:50.395Z"
+        }
+      ]
     }
   }
 ]

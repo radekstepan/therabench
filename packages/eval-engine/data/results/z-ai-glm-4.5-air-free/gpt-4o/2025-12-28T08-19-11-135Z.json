@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response effectively identifies the client's anxiety and engages in cognitive restructuring by challenging the reasoning behind the catastrophic thoughts. However, the response falls short in fully applying the required CBT techniques. It does not utilize the Downward Arrow Technique explicitly to explore deeper underlying assumptions or core beliefs. Instead, it addresses only the immediate negative automatic thoughts and suggests considering resources, which could border on problem-solving related to the report when emphasizing 'resources.' Additionally, the student assumes the role of providing reassurance, which may not effectively guide the client in recognizing and understanding their cognitive patterns.",
-        "flags": [
-          "Lack of explicit Downward Arrow Technique",
-          "Missing exploration of core beliefs"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 80,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response effectively identifies the client's anxiety and engages in cognitive restructuring by challenging the reasoning behind the catastrophic thoughts. However, the response falls short in fully applying the required CBT techniques. It does not utilize the Downward Arrow Technique explicitly to explore deeper underlying assumptions or core beliefs. Instead, it addresses only the immediate negative automatic thoughts and suggests considering resources, which could border on problem-solving related to the report when emphasizing 'resources.' Additionally, the student assumes the role of providing reassurance, which may not effectively guide the client in recognizing and understanding their cognitive patterns.",
+          "flags": [
+            "Lack of explicit Downward Arrow Technique",
+            "Missing exploration of core beliefs"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 80,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

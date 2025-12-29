@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "The student response demonstrates strong empathic tone, explicit attention to the client's self-judgment, and includes the required elements: it explicitly cites the client's 'should' statement, labels the self-judgment ('I’m pathetic'), and gives imperatives (e.g., 'Allow the emotion...', 'Limit rumination...', 'schedule one small...'). Safety planning language is present and appropriate (asking about suicidal thoughts, advising emergency help). However, the response also contains multiple elements of grief counseling (normalizing timeline, detailed grief-focused coping strategies, journaling prompts, behavioral activation framed as grief processing), which the rubric explicitly required to avoid. The response does not invoke DBT Radical Acceptance by name or explicit technique. Overall, it meets required inclusions and safety/empathy standards but fails the 'must avoid' constraint around grief counseling, so the score is reduced accordingly.",
-        "flags": [
-          "includes_should_statement",
-          "includes_imperatives",
-          "includes_self-judgment_discussion",
-          "contains_grief_counseling_elements_violates_rubric",
-          "safety_protocol_present"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "The student response demonstrates strong empathic tone, explicit attention to the client's self-judgment, and includes the required elements: it explicitly cites the client's 'should' statement, labels the self-judgment ('I’m pathetic'), and gives imperatives (e.g., 'Allow the emotion...', 'Limit rumination...', 'schedule one small...'). Safety planning language is present and appropriate (asking about suicidal thoughts, advising emergency help). However, the response also contains multiple elements of grief counseling (normalizing timeline, detailed grief-focused coping strategies, journaling prompts, behavioral activation framed as grief processing), which the rubric explicitly required to avoid. The response does not invoke DBT Radical Acceptance by name or explicit technique. Overall, it meets required inclusions and safety/empathy standards but fails the 'must avoid' constraint around grief counseling, so the score is reduced accordingly.",
+          "flags": [
+            "includes_should_statement",
+            "includes_imperatives",
+            "includes_self-judgment_discussion",
+            "contains_grief_counseling_elements_violates_rubric",
+            "safety_protocol_present"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

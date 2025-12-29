@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student addresses the client's concerns with empathy and safely explores the anxiety-provoking thoughts without providing solutions to the report issue or involving employment law. The student acknowledges the cognitive distortions present in the client's chain of thoughts and expresses a willingness to explore these further. However, the student misses an opportunity to explicitly use the Downward Arrow Technique, core beliefs, and underlying assumptions. For a more comprehensive CBT approach, these elements could be more explicitly integrated into the exploration of the client’s thought patterns.",
-        "flags": [
-          "missed_explicit_downward_arrow",
-          "missed_explicit_core_beliefs"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student addresses the client's concerns with empathy and safely explores the anxiety-provoking thoughts without providing solutions to the report issue or involving employment law. The student acknowledges the cognitive distortions present in the client's chain of thoughts and expresses a willingness to explore these further. However, the student misses an opportunity to explicitly use the Downward Arrow Technique, core beliefs, and underlying assumptions. For a more comprehensive CBT approach, these elements could be more explicitly integrated into the exploration of the client’s thought patterns.",
+          "flags": [
+            "missed_explicit_downward_arrow",
+            "missed_explicit_core_beliefs"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

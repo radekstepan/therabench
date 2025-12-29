@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The therapy student's response effectively acknowledges the automatic nature of the client's smoking behavior and provides a comprehensive set of strategies for managing the urge to smoke. However, the response fails to clearly delineate the Choice Point, which is crucial in ACT to help the client identify Hooked vs. Unhooked moments. Moreover, while the response includes moves towards and away from the desired behavior change, it includes elements of addiction counseling and suggests nicotine replacement therapy, which were advised to be avoided. The emphasis on practical strategies is a positive aspect, but it lacks a strong ACT framework.",
-        "flags": [
-          "Includes elements of addiction counseling",
-          "Suggests nicotine replacement"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The therapy student's response effectively acknowledges the automatic nature of the client's smoking behavior and provides a comprehensive set of strategies for managing the urge to smoke. However, the response fails to clearly delineate the Choice Point, which is crucial in ACT to help the client identify Hooked vs. Unhooked moments. Moreover, while the response includes moves towards and away from the desired behavior change, it includes elements of addiction counseling and suggests nicotine replacement therapy, which were advised to be avoided. The emphasis on practical strategies is a positive aspect, but it lacks a strong ACT framework.",
+          "flags": [
+            "Includes elements of addiction counseling",
+            "Suggests nicotine replacement"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

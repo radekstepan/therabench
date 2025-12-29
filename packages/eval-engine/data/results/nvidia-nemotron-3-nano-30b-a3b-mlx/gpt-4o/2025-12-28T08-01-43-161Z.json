@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response demonstrates a good level of empathy and understanding of the client's distress about the gap in their resume. The response effectively uses various elements of Cognitive Behavioral Therapy (CBT), such as addressing cognitive distortions (overgeneralization) and engaging in a process of gently challenging the client's negative thoughts. However, it somewhat strays into areas that are not strictly part of the therapeutic setting, like specific career advice and values clarification, which are flagged to be avoided in this context. Additionally, while the response does incorporate elements of Socratic questioning and challenges the validity of the client's thought, it could have been more explicit in incorporating these elements to align fully with CBT techniques.",
-        "flags": [
-          "Career counseling",
-          "Values clarification"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates a good level of empathy and understanding of the client's distress about the gap in their resume. The response effectively uses various elements of Cognitive Behavioral Therapy (CBT), such as addressing cognitive distortions (overgeneralization) and engaging in a process of gently challenging the client's negative thoughts. However, it somewhat strays into areas that are not strictly part of the therapeutic setting, like specific career advice and values clarification, which are flagged to be avoided in this context. Additionally, while the response does incorporate elements of Socratic questioning and challenges the validity of the client's thought, it could have been more explicit in incorporating these elements to align fully with CBT techniques.",
+          "flags": [
+            "Career counseling",
+            "Values clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

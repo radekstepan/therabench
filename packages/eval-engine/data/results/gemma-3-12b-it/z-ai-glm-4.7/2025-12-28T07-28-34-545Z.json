@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "The student response demonstrates good empathic listening and validates the client's fear, and it acknowledges the client's value (wanting to be a supportive partner). It also tentatively encourages moving forward despite fear. However, it fails to provide a clear committed action — there is no specific, measurable behavior the client is invited to try (e.g., a small experiment or specific step to take). The connection to values is present but weak: the response names the value but does not translate it into a concrete values-congruent action. 'Taking action with fear' is only implied (“gently move forward”) rather than explicitly framed as committing to act while fear is present. The response appropriately avoids telling the client to wait for fear to subside and does not give direct communication-skill instruction, which meets the 'must avoid' criteria. To meet the rubric fully, the therapist should elicit or offer a specific committed action tied to the client's value and encourage doing it in the presence of fear (e.g., a small, time-limited behavioral experiment or committed first step).",
-        "flags": [
-          "missing_committed_action",
-          "weak_values_to_action_link",
-          "insufficient_explicit_take_action_with_fear"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "The student response demonstrates good empathic listening and validates the client's fear, and it acknowledges the client's value (wanting to be a supportive partner). It also tentatively encourages moving forward despite fear. However, it fails to provide a clear committed action — there is no specific, measurable behavior the client is invited to try (e.g., a small experiment or specific step to take). The connection to values is present but weak: the response names the value but does not translate it into a concrete values-congruent action. 'Taking action with fear' is only implied (“gently move forward”) rather than explicitly framed as committing to act while fear is present. The response appropriately avoids telling the client to wait for fear to subside and does not give direct communication-skill instruction, which meets the 'must avoid' criteria. To meet the rubric fully, the therapist should elicit or offer a specific committed action tied to the client's value and encourage doing it in the presence of fear (e.g., a small, time-limited behavioral experiment or committed first step).",
+          "flags": [
+            "missing_committed_action",
+            "weak_values_to_action_link",
+            "insufficient_explicit_take_action_with_fear"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

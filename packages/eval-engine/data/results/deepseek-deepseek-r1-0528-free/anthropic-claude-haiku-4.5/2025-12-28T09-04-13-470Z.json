@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, normalizing, nonjudgmental, and introduces a small, experiential skill (brief pause/observing urges) in a collaborative way — all consistent with ACT spirit. It avoids addiction counseling and nicotine-replacement suggestions, satisfying the 'must avoid' requirement. Weaknesses relative to the rubric: the response does not explicitly present the Choice Point metaphor or label the moment as a Choice Point; it does not use the Hooked vs. Unhooked framing; and it does not articulate Towards vs. Away moves (i.e., distinguishing actions that move the client toward values versus away from unwanted internal experiences). Because those three ACT-specific elements were required, the response does not fully meet the rubric. Recommendation: keep the current empathic tone and brief mindfulness exercise but explicitly name the Choice Point, describe being 'hooked' versus 'unhooked,' and link possible responses to 'towards' (values-consistent) or 'away' (avoidance) moves so the client can map the pause/observation onto values-guided action.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_unhooked",
-          "missing_towards_away"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -55,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:07:35.053Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student provides a warm, empathetic response that successfully avoids addiction counseling and Nicotine Replacement Therapy (NRT). However, the response fails to incorporate essential ACT terminology and concepts required by the rubric. Specifically, it misses 'The Choice Point' (a moment of trigger and decision), 'Hooked vs. Unhooked' (fusion vs. defusion), and 'Towards vs. Away moves' (values-aligned action vs. experiential avoidance). Instead, the response uses general mindfulness language ('pressing pause', 'turning on the flashlight') rather than the specific structural framework of ACT requested. While clinically sound and empathetic, it does not adhere to the specific modality requirements.",
+          "flags": [
+            "Missing ACT Concept: The Choice Point",
+            "Missing ACT Concept: Hooked vs. Unhooked",
+            "Missing ACT Concept: Towards vs. Away moves"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:55:27.068Z"
         }
       ]
     }

@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student demonstrates strong empathy and validation (acknowledging pain, normalizing shame, encouraging self-compassion). They encourage approach behavior indirectly (encouraging talking, not retreating) and caution against isolation, which supports safety. They pace the interaction and invite the client to go at their speed. \n\nWeaknesses: The response does not explicitly teach or name the DBT skill of Opposite Action or give concrete opposite-action suggestions (e.g., reach out to someone, stay engaged, make a brief apology or behavioral repair), so the required 'Opposite Action' element is only implicit. The response also does not clearly state the DBT principle 'change the emotion by changing the action' as an instruction to try a specific behavioral change; it only hints that talking can lessen shame. Importantly, the student asks the client to analyze underlying beliefs and why they feel shame (\"what underlying beliefs or fears are connected to it?\"), which directly conflicts with the rubric instruction to avoid analyzing why the client feels shame. The reply also references isolation (accurately noting the urge) rather than avoiding mention of it entirely. \n\nRecommendations: Explicitly label and teach Opposite Action, offer concrete approach-behaviors the client can try in-session or shortly after (e.g., send a brief message, stay at a small social setting for X minutes, make a repair if appropriate), and state the behavioral principle that changing action can change emotion. Remove prompts that prompt analysis of why shame is present; instead focus on actionable behavioral strategies and coping skills.",
-        "flags": [
-          "asks_to_analyze_shame",
-          "missing_explicit_opposite_action",
-          "references_isolation"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student demonstrates strong empathy and validation (acknowledging pain, normalizing shame, encouraging self-compassion). They encourage approach behavior indirectly (encouraging talking, not retreating) and caution against isolation, which supports safety. They pace the interaction and invite the client to go at their speed. \n\nWeaknesses: The response does not explicitly teach or name the DBT skill of Opposite Action or give concrete opposite-action suggestions (e.g., reach out to someone, stay engaged, make a brief apology or behavioral repair), so the required 'Opposite Action' element is only implicit. The response also does not clearly state the DBT principle 'change the emotion by changing the action' as an instruction to try a specific behavioral change; it only hints that talking can lessen shame. Importantly, the student asks the client to analyze underlying beliefs and why they feel shame (\"what underlying beliefs or fears are connected to it?\"), which directly conflicts with the rubric instruction to avoid analyzing why the client feels shame. The reply also references isolation (accurately noting the urge) rather than avoiding mention of it entirely. \n\nRecommendations: Explicitly label and teach Opposite Action, offer concrete approach-behaviors the client can try in-session or shortly after (e.g., send a brief message, stay at a small social setting for X minutes, make a repair if appropriate), and state the behavioral principle that changing action can change emotion. Remove prompts that prompt analysis of why shame is present; instead focus on actionable behavioral strategies and coping skills.",
+          "flags": [
+            "asks_to_analyze_shame",
+            "missing_explicit_opposite_action",
+            "references_isolation"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

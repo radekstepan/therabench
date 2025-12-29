@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is warm, validating, and trauma-informed — they normalize the client’s feelings, ask useful exploratory questions, affirm boundaries and agency, and include an appropriate safety/crisis disclaimer. The response avoids the forbidden elements (no DEAR MAN, no suggestion to compromise) and explicitly commits to working on boundaries. \n\nLimitations vs. the rubric: The response does not explicitly include or teach the DBT interpersonal effectiveness skill FAST (Fair, no Apologies/unnecessary Apologies, Stick to values, Truthful) nor does it explicitly frame an intervention as a self-respect effectiveness strategy or provide concrete self-respect/FAST-based language or steps the client can use in-session or between sessions. Because the rubric required inclusion of FAST and explicit self-respect effectiveness content, the omission reduces modality adherence and practical utility. Overall this is a strong empathic response but falls short on the required DBT skill inclusion and specific behavioral coaching.",
-        "flags": [
-          "missing_FAST",
-          "missing_explicit_self-respect_effectiveness",
-          "includes_boundaries_and_agency",
-          "avoids_DEAR_MAN_and_compromise",
-          "safety_disclaimer_present"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -59,6 +43,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:23:31.742Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student demonstrates high levels of empathy and validates the client's feelings effectively, creating a safe environment. They correctly identify the core issue of compromised boundaries due to conflict avoidance. However, the response fails to meet the specific DBT rubric requirements. While the concept of self-respect is alluded to ('reclaim your own agency'), the student did not explicitly teach or reference the 'FAST' skill for self-respect effectiveness, which is a mandatory inclusion. Additionally, the response tends toward generic trauma-informed counseling rather than specific DBT skills coaching. The prompt forbids using DEAR MAN (which is for Objectives Effectiveness) and Compromise; the student avoided these, so no penalty was applied there, but missing the required FAST skill significantly impacts the modality adherence score.",
+          "flags": [
+            "Missing mandatory skill: FAST",
+            "Low modality specificity"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:28:04.025Z"
         }
       ]
     }

@@ -17,19 +17,92 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 90,
-        "reasoning": "The student's response effectively demonstrates DBT core principles: (1) Dialectics are addressed by framing the tension between parental 'care' vs. 'control' without invalidating either perspective; (2) Explicit Both/And thinking appears via phrases like 'space for both' and refusing to categorize parents as monsters OR client as ungrateful; (3) Walking the Middle Path is achieved by avoiding blame (parents' harmful methods ≠ evil intent) while centering the client's experience; (4) Validation is strong ('heavy burden,' 'not ungrateful for having parents who care'). Critically avoids CBT black-and-white terms and doesn't take sides. Minor deduction due to underdeveloped exploration of how 'love/control' dialectic manifests behaviorally.",
-        "flags": [
-          "Body-sensation question ('feel in your body') slightly stretches traditional DBT boundaries"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 95,
+          "reasoning": "The student response effectively uses DBT-consistent dialectical framing and both/and thinking: they acknowledge the opposing views (parents as 'monsters' vs. feeling 'ungrateful') and explicitly normalize holding both truths (\"you don’t have to choose... maybe there’s space for both\"). Validation is strong (\"sounds like you're carrying a lot... That's a heavy burden... You're not being ungrateful...\"). The reply avoids taking sides and does not use the prohibited CBT term \"black-and-white thinking.\" It also offers actionable next steps (explore bodily experience, boundaries, how the dynamic appears elsewhere), which aligns with Walking the Middle Path by validating and moving toward change. Minor improvement: the response could more explicitly name the dialectical principle (e.g., acceptance and change) or briefly coach a specific DBT skill (e.g., wise mind or boundary-setting language) to strengthen modality-specific teaching, but this is a small enhancement rather than a deficit.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 96,
+            "modalityAdherence": 96
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 95,
+          "reasoning": "The student response effectively uses DBT-consistent dialectical framing and both/and thinking: they acknowledge the opposing views (parents as 'monsters' vs. feeling 'ungrateful') and explicitly normalize holding both truths (\"you don’t have to choose... maybe there’s space for both\"). Validation is strong (\"sounds like you're carrying a lot... That's a heavy burden... You're not being ungrateful...\"). The reply avoids taking sides and does not use the prohibited CBT term \"black-and-white thinking.\" It also offers actionable next steps (explore bodily experience, boundaries, how the dynamic appears elsewhere), which aligns with Walking the Middle Path by validating and moving toward change. Minor improvement: the response could more explicitly name the dialectical principle (e.g., acceptance and change) or briefly coach a specific DBT skill (e.g., wise mind or boundary-setting language) to strengthen modality-specific teaching, but this is a small enhancement rather than a deficit.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 96,
+            "modalityAdherence": 96
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This is a strong DBT-informed response that demonstrates sophisticated therapeutic skill. The student effectively employs dialectical thinking by helping the client move away from black-and-white categorization ('monsters' vs 'ungrateful brat') toward a both/and perspective. The response validates the client's emotional experience while gently challenging the polarized thinking pattern. The student skillfully uses somatic awareness ('what does that feel like in your body?') and explores the nuance between love and control—a core dialectical tension. The suggestion that 'there's space for both' directly embodies walking the middle path. The response avoids taking sides with either parent or client, instead focusing on the client's experience and agency. Minor areas for enhancement include: (1) could have been slightly more explicit in naming the dialectic being explored, (2) could have incorporated a validation statement earlier before pivoting to exploration, and (3) the response is somewhat lengthy, which could dilute focus in an actual session. Overall, this demonstrates advanced understanding of DBT principles and sensitive clinical reasoning.",
+          "flags": [
+            "Response length may be overwhelming in live session; consider breaking into smaller conversational turns",
+            "Could benefit from slightly more explicit naming of the dialectical framework being used",
+            "Minor: Defense mechanism interpretation ('defense to protect yourself') is clinically sound but could feel slightly interpretive for some clients early in treatment"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 89,
+            "modalityAdherence": 87
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:48:49.865Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 90,
+          "reasoning": "The student's response effectively demonstrates DBT core principles: (1) Dialectics are addressed by framing the tension between parental 'care' vs. 'control' without invalidating either perspective; (2) Explicit Both/And thinking appears via phrases like 'space for both' and refusing to categorize parents as monsters OR client as ungrateful; (3) Walking the Middle Path is achieved by avoiding blame (parents' harmful methods ≠ evil intent) while centering the client's experience; (4) Validation is strong ('heavy burden,' 'not ungrateful for having parents who care'). Critically avoids CBT black-and-white terms and doesn't take sides. Minor deduction due to underdeveloped exploration of how 'love/control' dialectic manifests behaviorally.",
+          "flags": [
+            "Body-sensation question ('feel in your body') slightly stretches traditional DBT boundaries"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response aligns well with the principles of Dialectical Behavior Therapy (DBT), specifically the ideas of dialectics and both/and thinking. The response acknowledges the complex nature of the client's feelings toward their parents without labeling them as simply good or bad, fitting the concept of 'walking the middle path.' The student validates the client's feelings, recognizing the emotional burden they carry and offering a perspective that neither demonizes the parents nor dismisses the client's experience. Instead of engaging in black-and-white thinking or taking sides, the student successfully explores the nuanced nature of the situation, allowing space for a complex understanding. Furthermore, the response invites the client to consider boundaries and how they wish their relationship dynamics to change, which can be empowering for them.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provides a warm, empathetic, and highly validating response. They correctly identify the dialectical dilemma presented by the client (the tension between viewing parents as monsters vs. self as ungrateful). The student effectively avoids taking sides and successfully introduces 'Both/And' thinking at the end to help the client find the Middle Path. The somatic inquiry ('what does that feel like in your body') is a strong grounding technique. However, the response loses slight points in modality adherence when the student interprets the 'monster' label as a 'defense to protect yourself.' While this interpretation may be clinically valid in other modalities, DBT typically focuses on the function of behavior and finding the synthesis (the dialectic) rather than interpreting underlying psychological defenses, which can sometimes invalidate the client's current reality. Sticking strictly to the dialectic of 'they can be loving AND harmful' would have been more consistent with pure DBT.",
+          "flags": [
+            "Interpretation of 'defense' mechanism slightly conflicts with strict DBT focus on behavior/change"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:07:01.193Z"
+        }
+      ]
     }
   }
 ]

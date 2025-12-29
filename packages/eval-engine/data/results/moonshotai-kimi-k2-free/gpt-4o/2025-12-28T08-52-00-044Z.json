@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response effectively acknowledges the client's feelings of being dismissed and unimportant, demonstrating high empathy. However, it lacks several key elements of CBT such as addressing mind reading, suggesting behavioral experiments, or exploring alternative explanations for the friend's behavior. These elements are crucial for helping the client challenge their automatic thoughts. Instead, the student's response focuses more on exploring past interpersonal patterns, which diverts attention from immediate cognitive restructuring strategies.",
-        "flags": [
-          "mind reading",
-          "behavioral experiment",
-          "alternative explanations"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response effectively acknowledges the client's feelings of being dismissed and unimportant, demonstrating high empathy. However, it lacks several key elements of CBT such as addressing mind reading, suggesting behavioral experiments, or exploring alternative explanations for the friend's behavior. These elements are crucial for helping the client challenge their automatic thoughts. Instead, the student's response focuses more on exploring past interpersonal patterns, which diverts attention from immediate cognitive restructuring strategies.",
+          "flags": [
+            "mind reading",
+            "behavioral experiment",
+            "alternative explanations"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "The student response demonstrates strong empathy, validation, client-centered tone, and useful practical suggestions (micro-grounding, toolbox, psychoeducation about alcohol and medication). However it fails to include the three required ACT components from the rubric: Creative Hopelessness (explicitly helping the client see that previous control strategies have not worked and to intentionally give them up), The Control Is the Problem (a clear framing that struggling to control internal experience maintains suffering), and Dropping the Rope (an invitation to stop battling/experiential avoidance and to let go of control attempts). The response gestures toward a reframing (“pressure to ‘solve’ anxiety can amplify it”) that resembles \"control is the problem,\" but it does not name or operationalize these ACT processes or use the specific experiential moves (e.g., guiding the client through an exercise to test whether control strategies have worked and then intentionally relinquishing them). The answer also includes directive language to \"try\" specific techniques (e.g., \"Try a 2‑minute box breathing exercise right now\") which conflicts with the rubric's prohibition on recommending new techniques phrased as \"Try a new technique\" (and more generally encourages solution/technique chasing rather than the ACT emphasis on acceptance/values-based action after dropping control efforts). The response avoided the literal phrase \"Don't give up,\" but several sentences encourage continued persistence (\"keep exploring together,\" \"persistence tells me you have a strong inner drive\"), which runs counter to the spirit of message the rubric required (dropping the rope rather than persevering in trying to fix anxiety). Overall, clinically useful and empathetic but nonadherent to required ACT concepts and some prohibited phrasing, so scoring is low for modality adherence.",
-        "flags": [
-          "missing_creative_hopelessness",
-          "missing_control_is_the_problem",
-          "missing_dropping_the_rope",
-          "uses_directive_try_language",
-          "encourages_persistence_in_finding_solution"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -59,6 +43,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:07:28.900Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The student demonstrated excellent empathy and rapport building, creating a very supportive and safe environment. However, the response fundamentally failed the ACT (Acceptance and Commitment Therapy) specific rubric requirements. \n\n1.  **Missed Creative Hopelessness:** The client expressed exhaustion from trying to fix anxiety (a prime setup for Creative Hopelessness). Instead of validating that the *strategy of control* is the problem and that 'nothing works' because control is impossible, the student immediately offered a 'Toolbox' of new strategies to try. This reinforces the client's belief that they just haven't found the 'right' trick yet, rather than helping them see that the game of control is rigged.\n\n2.  **Violated 'Must Avoid' Constraints:** The rubric explicitly stated 'Must Avoid: Try a new technique.' The student suggested multiple new techniques: 'Curiosity Check-In,' 'Micro-Grounding,' 'Box Breathing,' 'Thought-labeling,' etc. This is the exact opposite of the clinical direction required for this scenario.\n\n3.  **Missed 'Dropping the Rope' & 'Control is the Problem':** The student encouraged the client to 'keep exploring' and 'experiment with combinations.' This is 'pulling the rope' harder. A correct ACT response would aim to help the client drop the struggle with anxiety entirely, not find micro-ways to manage it.\n\nWhile the response is clinically sound from a general CBT or supportive counseling perspective, it failed to apply the specific ACT principles requested in the rubric.",
+          "flags": [
+            "Missed Creative Hopelessness",
+            "Violated Negative Constraint (Suggested new techniques)",
+            "Failed to Drop the Rope",
+            "Modality Mismatch (Used CBT/Psychoeducation instead of ACT)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:39:37.415Z"
         }
       ]
     }

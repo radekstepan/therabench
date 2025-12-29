@@ -23,19 +23,111 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 70,
-        "reasoning": "The response demonstrates strong clinical skills in validation, rapport-building, and avoidance of prohibited CBT techniques. However, it fails to incorporate required ACT-specific cognitive defusion techniques ('I'm having the thought that...' phrasing, singing the thought, word repetition). The shift from thought-challenging to exploration aligns with ACT philosophy, but explicit defusion methods weren't applied as mandated by the rubric. Exploratory questions about triggers/meaning are clinically sound but insufficient for rubric adherence.",
-        "flags": [
-          "MISSING_DEFUSION_TECHNIQUES: No use of singing, word repetition, or 'I'm having the thought that...' framework required by rubric"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 55
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "The student demonstrates strong empathic skills and good therapeutic pacing: validating the client's distress, acknowledging effort, using open-ended questions, and gently shifting away from direct argumentation. These are appropriate and helpful. However, the response fails to include the specific ACT cognitive defusion techniques required by the rubric. It does not use the exact defusion phrasing \"I'm having the thought that...\", and it does not offer any experiential defusion exercises such as singing the thought or repeating the word. Those four items (cognitive defusion, \"I'm having the thought that...\", singing the thought, repeating the word) are explicitly required and are all missing. Additionally, although the student correctly avoided instructing thought stopping, the line \"having these thoughts doesn't mean they are *true*\" edges toward a fact-challenging stance typical of CBT rather than pure ACT defusion; while not a full CBT-style dispute, it risks drifting into cognitive restructuring rather than experiential defusion. Overall, empathic and clinically safe, but low modality adherence to ACT defusion techniques required by the rubric.",
+          "flags": [
+            "missing_cognitive_defusion_exercise",
+            "missing_\"I'm_having_the_thought_that...\"_phrase",
+            "missing_singing_the_thought_exercise",
+            "missing_repeating_the_word_exercise",
+            "contains_potentially_challenging_language_toward_fact_disputation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 30,
+          "reasoning": "The student demonstrates strong empathic skills and good therapeutic pacing: validating the client's distress, acknowledging effort, using open-ended questions, and gently shifting away from direct argumentation. These are appropriate and helpful. However, the response fails to include the specific ACT cognitive defusion techniques required by the rubric. It does not use the exact defusion phrasing \"I'm having the thought that...\", and it does not offer any experiential defusion exercises such as singing the thought or repeating the word. Those four items (cognitive defusion, \"I'm having the thought that...\", singing the thought, repeating the word) are explicitly required and are all missing. Additionally, although the student correctly avoided instructing thought stopping, the line \"having these thoughts doesn't mean they are *true*\" edges toward a fact-challenging stance typical of CBT rather than pure ACT defusion; while not a full CBT-style dispute, it risks drifting into cognitive restructuring rather than experiential defusion. Overall, empathic and clinically safe, but low modality adherence to ACT defusion techniques required by the rubric.",
+          "flags": [
+            "missing_cognitive_defusion_exercise",
+            "missing_\"I'm_having_the_thought_that...\"_phrase",
+            "missing_singing_the_thought_exercise",
+            "missing_repeating_the_word_exercise",
+            "contains_potentially_challenging_language_toward_fact_disputation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "The student's response demonstrates strong foundational clinical skills including excellent validation, empathy, and rapport-building. The explanation of the paradoxical effect of thought-challenging is insightful and well-articulated. However, this response fundamentally fails to adhere to the ACT (Acceptance and Commitment Therapy) modality requirements. The scenario explicitly specifies ACT as the clinical approach, and the rubric mandates inclusion of core ACT techniques: cognitive defusion strategies (particularly 'I'm having the thought that...', singing the thought, and repeating the word), while avoiding CBT techniques like thought challenging. The student's response actually employs cognitive reframing ('thoughts aren't necessarily facts') and indirect thought challenging ('arguing with the thought isn't helping'), which are CBT interventions explicitly contraindicated in the rubric. The student correctly identifies that direct confrontation is unhelpful, but then proposes exploratory questioning rather than teaching defusion techniques. While exploration has merit, it does not constitute ACT-consistent intervention. The response misses the opportunity to introduce defusion exercises—such as having the client say or sing 'I am broken' repeatedly until it loses emotional charge, or practicing the 'I'm having the thought that I am broken' framing to create distance from the thought. For an ACT-focused clinical supervision context, this represents a significant modality misalignment despite otherwise clinically sound instincts.",
+          "flags": [
+            "CRITICAL: No cognitive defusion techniques introduced despite ACT modality requirement",
+            "CRITICAL: Missing all three mandatory defusion techniques ('I'm having the thought that...', singing, word repetition)",
+            "Uses CBT-style cognitive reframing ('thoughts aren't necessarily facts')",
+            "Employs indirect thought challenging, which contradicts ACT principles",
+            "Does not teach core ACT skill of psychological distance from thoughts",
+            "Response treats thought content as something to understand rather than create distance from",
+            "Misses opportunity for experiential defusion exercises"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 18
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:15:34.014Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong clinical skills in validation, rapport-building, and avoidance of prohibited CBT techniques. However, it fails to incorporate required ACT-specific cognitive defusion techniques ('I'm having the thought that...' phrasing, singing the thought, word repetition). The shift from thought-challenging to exploration aligns with ACT philosophy, but explicit defusion methods weren't applied as mandated by the rubric. Exploratory questions about triggers/meaning are clinically sound but insufficient for rubric adherence.",
+          "flags": [
+            "MISSING_DEFUSION_TECHNIQUES: No use of singing, word repetition, or 'I'm having the thought that...' framework required by rubric"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student's response successfully employs empathy and validation, acknowledging the client's struggle and expressing supportiveness. It avoids challenging the thought directly, which aligns with a non-CBT approach. However, the response lacks explicit cognitive defusion techniques which are important in ACT (Acceptance and Commitment Therapy). The student's exploration questions help to understand thought triggers and meanings, but they don't introduce defusion methods such as 'I'm having the thought that...', singing the thought, or repeating the word, which could help the client separate the thought from reality.",
+          "flags": [
+            "MissingCognitiveDefusion"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 58,
+          "reasoning": "The student provided a warm, empathetic, and safe response that successfully built rapport. They correctly identified that arguing with thoughts is counterproductive and avoided 'Challenging the thought' or 'Thought stopping' as prohibited by the rubric. However, the response failed significantly in Modality Adherence. The prompt explicitly required the use of specific Cognitive Defusion techniques ('I'm having the thought that...', Singing the thought, Repeating the word). The student did not utilize any of these experiential interventions. Instead, they drifted into a more exploratory/content-based style (asking about origins and meanings), which is less aligned with the immediate goal of ACT in this scenario, which is to change the individual's relationship to the thought through defusion rather than analyzing the thought's history.",
+          "flags": [
+            "Missing Required Interventions",
+            "Content Focus vs. Process Focus"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:18:27.356Z"
+        }
+      ]
     }
   }
 ]

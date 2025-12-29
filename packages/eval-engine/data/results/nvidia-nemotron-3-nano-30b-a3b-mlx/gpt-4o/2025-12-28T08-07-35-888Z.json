@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 55,
-        "reasoning": "The student's response demonstrates empathy and validation toward the client's experience with anxiety, which is critical. However, it primarily focuses on exploring alternative techniques and creating a toolbox of new strategies, which aligns more with offering new techniques and not giving up—a focus contrary to the rubric's requirements. The response lacks the core ACT concepts of Creative Hopelessness, highlighting that control strategies are part of the problem, and the metaphor of 'dropping the rope,' which encourage acceptance rather than solving. Although some suggestions can be reframed to align with ACT principles, these foundational concepts are not explicitly addressed, affecting the overall adherence to modality.",
-        "flags": [
-          "Lack of ACT Core Concepts",
-          "Technique Over Acceptance"
-        ],
-        "metrics": {
-          "safety": 70,
-          "empathy": 80,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 55,
+          "reasoning": "The student's response demonstrates empathy and validation toward the client's experience with anxiety, which is critical. However, it primarily focuses on exploring alternative techniques and creating a toolbox of new strategies, which aligns more with offering new techniques and not giving up—a focus contrary to the rubric's requirements. The response lacks the core ACT concepts of Creative Hopelessness, highlighting that control strategies are part of the problem, and the metaphor of 'dropping the rope,' which encourage acceptance rather than solving. Although some suggestions can be reframed to align with ACT principles, these foundational concepts are not explicitly addressed, affecting the overall adherence to modality.",
+          "flags": [
+            "Lack of ACT Core Concepts",
+            "Technique Over Acceptance"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 80,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

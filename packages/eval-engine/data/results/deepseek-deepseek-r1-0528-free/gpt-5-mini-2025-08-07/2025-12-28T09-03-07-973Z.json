@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response clearly includes ACT-congruent elements: it identifies the client's values (wanting to be a supportive partner), encourages values-congruent behavior, and promotes committed action by suggesting small, doable steps to take despite fear (visualization, low-stakes practice, try one small gesture this week). The response explicitly normalizes acting with fear rather than waiting for it to subside and uses empathic validation throughout, which is appropriate.\n\nPrimary concern: The response includes specific communication-skills scripting (e.g., suggested phrasings: \"Anything interesting happen today?\" and \"I’d love to hear about your day when you feel like sharing.\"), which violates the rubric requirement to avoid communication skills training. This is a notable deviation because the rubric listed that as a must-avoid. No other major contraindicated content was identified. \n\nOverall: strong ACT-consistent work and empathic tone, but the presence of explicit phrasing/communication training reduces adherence to the rubric and therefore the score.",
-        "flags": [
-          "meets_committed_action",
-          "meets_values_congruent_behavior",
-          "meets_taking_action_with_fear",
-          "does_not_wait_for_fear_to_subside",
-          "includes_communication_skills_training"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response clearly includes ACT-congruent elements: it identifies the client's values (wanting to be a supportive partner), encourages values-congruent behavior, and promotes committed action by suggesting small, doable steps to take despite fear (visualization, low-stakes practice, try one small gesture this week). The response explicitly normalizes acting with fear rather than waiting for it to subside and uses empathic validation throughout, which is appropriate.\n\nPrimary concern: The response includes specific communication-skills scripting (e.g., suggested phrasings: \"Anything interesting happen today?\" and \"I’d love to hear about your day when you feel like sharing.\"), which violates the rubric requirement to avoid communication skills training. This is a notable deviation because the rubric listed that as a must-avoid. No other major contraindicated content was identified. \n\nOverall: strong ACT-consistent work and empathic tone, but the presence of explicit phrasing/communication training reduces adherence to the rubric and therefore the score.",
+          "flags": [
+            "meets_committed_action",
+            "meets_values_congruent_behavior",
+            "meets_taking_action_with_fear",
+            "does_not_wait_for_fear_to_subside",
+            "includes_communication_skills_training"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

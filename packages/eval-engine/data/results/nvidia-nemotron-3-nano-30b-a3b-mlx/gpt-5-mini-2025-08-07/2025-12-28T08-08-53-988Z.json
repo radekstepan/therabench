@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The response demonstrates strong empathy and validation, uses clear present‑moment language (\"pulling your attention away from what’s happening in this moment\"), and offers multiple mindfulness and grounding techniques (sensory grounding, breath anchors, micro‑mindfulness breaks, self‑compassion, present‑focused activities) that promote contact with the here and now. These elements align well with the rubric requirements for Contact with the Present Moment, Mindfulness, and Here and Now. Concerns: The response also includes explicit planning suggestions (e.g., \"Plan a 'future‑talk'... allocate a specific time... to plan it out\") and scheduling (\"Set a timer for every hour\"), and a recommendation to \"write it out\" which could be interpreted as encouraging future‑oriented processing rather than pure present‑moment contact. Because the rubric explicitly requires avoiding planning and distraction, those elements reduce modality adherence. Overall this is a therapeutically sound and empathetic reply that mostly meets the rubric, but the inclusion of planning/scheduling recommendations is a notable deviation.",
-        "flags": [
-          "includes_planning_suggestion",
-          "includes_timer_scheduling"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation, uses clear present‑moment language (\"pulling your attention away from what’s happening in this moment\"), and offers multiple mindfulness and grounding techniques (sensory grounding, breath anchors, micro‑mindfulness breaks, self‑compassion, present‑focused activities) that promote contact with the here and now. These elements align well with the rubric requirements for Contact with the Present Moment, Mindfulness, and Here and Now. Concerns: The response also includes explicit planning suggestions (e.g., \"Plan a 'future‑talk'... allocate a specific time... to plan it out\") and scheduling (\"Set a timer for every hour\"), and a recommendation to \"write it out\" which could be interpreted as encouraging future‑oriented processing rather than pure present‑moment contact. Because the rubric explicitly requires avoiding planning and distraction, those elements reduce modality adherence. Overall this is a therapeutically sound and empathetic reply that mostly meets the rubric, but the inclusion of planning/scheduling recommendations is a notable deviation.",
+          "flags": [
+            "includes_planning_suggestion",
+            "includes_timer_scheduling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

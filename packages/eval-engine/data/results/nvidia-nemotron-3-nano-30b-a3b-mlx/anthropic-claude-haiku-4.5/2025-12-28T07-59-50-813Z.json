@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student response uses compassionate validation, normalizes the experience, and applies core CBT techniques (identifying evidence for/against the thought, cognitive restructuring, reframing, and concrete behavioral steps). It explicitly names and addresses \"all‑or‑nothing\" thinking and offers useful, concrete next steps and self‑compassionate language, which aligns well with CBT style and empathic responding.\n\nShortcomings relative to the rubric: The response fails to include the two required synonyms for the cognitive distortion — it does not explicitly use the phrases \"Black-and-White Thinking\" or \"Dichotomous Thinking.\" It also violates the \"must avoid\" rules in two ways: (1) it recommends a breathing exercise (\"Pause & Breathe – Take three deep breaths\"), which is a mindfulness technique the rubric forbids; and (2) it includes elements that read as generic diet-related guidance (e.g., \"plan the next balanced meal\", \"drink a glass of water\"), which the rubric also disallows. The response skirts acceptance language through self‑compassion statements (which are acceptable in CBT but the rubric explicitly forbids acceptance), so that is flagged as borderline. These issues reduce adherence to the specified rubric despite otherwise strong CBT-consistent content.\n\nRecommendations: To meet the rubric fully, explicitly label the distortion using all three required terms (\"All‑Or‑Nothing Thinking,\" \"Black‑and‑White Thinking,\" \"Dichotomous Thinking\"), remove mindfulness breathing instructions and avoid prescriptive diet suggestions; instead suggest CBT-consistent behavioral experiments or urge‑surfing phrased without mindfulness terminology, and keep self‑compassion framed as cognitive restructuring rather than acceptance-based language.",
-        "flags": [
-          "missing_term: Black-and-White Thinking",
-          "missing_term: Dichotomous Thinking",
-          "used_mindfulness_technique: breathing_exercise",
-          "included_generic_diet_advice",
-          "used_acceptance-like_language"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 92,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -58,6 +42,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:04:26.890Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The response demonstrated strong empathy and a supportive tone, which are excellent therapeutic qualities. It also correctly identified the core issue as 'all-or-nothing thinking' and utilized CBT techniques such as examining evidence and cognitive reframing. However, the response failed to meet specific rubric requirements. It omitted two of the three required terminology terms ('Black-and-White Thinking' and 'Dichotomous Thinking'). Additionally, the response violated the 'Must Avoid' constraints. It instructed the client to 'Take three deep breaths,' which constitutes Mindfulness, and focused heavily on 'Self-Compassion' and 'Acceptance' (e.g., 'it’s okay to enjoy a cookie'), rather than strictly adhering to cognitive restructuring. Finally, the behavioral suggestions (drink water, take a walk) bordered on generic lifestyle advice rather than clinical intervention.",
+          "flags": [
+            "Missing required terms: Black-and-White Thinking, Dichotomous Thinking",
+            "Used restricted technique: Mindfulness (deep breathing exercise)",
+            "Used restricted concept: Acceptance (Self-Compassion focus)",
+            "Generic advice present (drink water, take a walk)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:23:09.605Z"
         }
       ]
     }

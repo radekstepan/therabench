@@ -22,21 +22,111 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response demonstrates strong clinical fundamentals: effective validation ('It's completely understandable to feel frightened'), excellent safety protocols, practical grounding techniques, and appropriate reality-testing questions. It implicitly addresses catastrophizing and fortune telling through reality-testing questions about evidence and alternative explanations, and probability estimation via exploring 'evidence against the worry.' Strengths include its strong focus on safety planning, empathy, and actionable coping strategies. Points were deducted because: 1) CBT concepts (catastrophizing, fortune telling) weren't explicitly named/labeled, 2) Decatastrophizing lacked structured scaling questions (e.g., likelihood estimations), 3) Modality adherence suffers from incomplete application of core CBT techniques despite their implicit presence. It successfully avoids DBT's 'Check the Facts' and inappropriate reassurance.",
-        "flags": [
-          "Missing explicit labeling of CBT distortions (catastrophizing/fortune telling)",
-          "Underdeveloped decatastrophizing technique",
-          "Probability estimation not formalized with scaling"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validates the client's feelings, includes grounding skills, safety guidance (including when to call emergency services), reality‑testing/evidence for and against the worry, and cognitive restructuring (decatastrophizing via alternative explanations). These align well with CBT approaches and with attending to immediate safety. \n\nShortcomings relative to the rubric: The response does explicitly label or address 'fortune telling' as a cognitive distortion (the term is not used); it also fails to include an explicit probability estimation exercise (e.g., asking the client to estimate the likelihood of the feared outcome numerically or compare probabilities). Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of Fortune Telling and Probability Estimation reduces the score. \n\nAvoidances: The student did not use the DBT phrase 'check the facts' (so the forbidden DBT term was avoided) and did not provide therapist reassurance. However, the suggestion to contact others or services to locate the husband could be construed as encouraging reassurance‑seeking behavior in nonemergency situations; given the safety context this is reasonable, but it warrants caution. \n\nOverall: Good clinical work (empathic, safety‑oriented, CBT‑consistent) but missing explicit labeling of 'fortune telling' and an explicit probability estimation step required by the rubric.",
+          "flags": [
+            "missing_fortune_telling",
+            "missing_probability_estimation",
+            "possible_reassurance_seeking_encouragement",
+            "includes_empathy_and_safety_planning"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validates the client's feelings, includes grounding skills, safety guidance (including when to call emergency services), reality‑testing/evidence for and against the worry, and cognitive restructuring (decatastrophizing via alternative explanations). These align well with CBT approaches and with attending to immediate safety. \n\nShortcomings relative to the rubric: The response does explicitly label or address 'fortune telling' as a cognitive distortion (the term is not used); it also fails to include an explicit probability estimation exercise (e.g., asking the client to estimate the likelihood of the feared outcome numerically or compare probabilities). Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of Fortune Telling and Probability Estimation reduces the score. \n\nAvoidances: The student did not use the DBT phrase 'check the facts' (so the forbidden DBT term was avoided) and did not provide therapist reassurance. However, the suggestion to contact others or services to locate the husband could be construed as encouraging reassurance‑seeking behavior in nonemergency situations; given the safety context this is reasonable, but it warrants caution. \n\nOverall: Good clinical work (empathic, safety‑oriented, CBT‑consistent) but missing explicit labeling of 'fortune telling' and an explicit probability estimation step required by the rubric.",
+          "flags": [
+            "missing_fortune_telling",
+            "missing_probability_estimation",
+            "possible_reassurance_seeking_encouragement",
+            "includes_empathy_and_safety_planning"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathy, validation, and safety awareness, with excellent grounding techniques and multi-modal support. However, the response has significant CBT-specific deficiencies. The rubric requires explicit engagement with catastrophizing, fortune telling, decatastrophizing, and probability estimation. While the response touches on these concepts tangentially (e.g., 'alternative explanations,' 'evidence for/against'), it does not systematically name or work through these cognitive distortions as core CBT interventions. The 5-4-3-2-1 grounding and box breathing are DBT techniques, not pure CBT. Most critically, the response includes reassurance-seeking language ('It's completely understandable to feel frightened,' 'It's okay to feel scared'), which the rubric explicitly flags as something to avoid. The 'what-if' questions approach reality-testing, but lacks the structured decatastrophizing methodology (e.g., 'Even if X happened, could you cope? What would that look like?'). The response is therapeutically sound and humane but does not adequately deliver a CBT-focused intervention aligned with the assignment requirements.",
+          "flags": [
+            "Reassurance-seeking language used ('It's completely understandable,' 'It's okay to feel scared')—contradicts rubric avoidance criteria",
+            "Catastrophizing and fortune telling not explicitly named or labeled as cognitive distortions",
+            "Decatastrophizing not systematically applied (missing 'even if X happened, then what?' sequences)",
+            "Probability estimation not directly addressed; missing concrete likelihood exploration (e.g., 'What are actual odds of car wreck given one missed call?')",
+            "Incorporates DBT techniques (5-4-3-2-1, box breathing) rather than pure CBT methodology",
+            "Reality-testing used but not framed as structured thought record or CBT-specific technique",
+            "Safety response appropriate but overshadows CBT framework for this scenario"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:04:44.377Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical fundamentals: effective validation ('It's completely understandable to feel frightened'), excellent safety protocols, practical grounding techniques, and appropriate reality-testing questions. It implicitly addresses catastrophizing and fortune telling through reality-testing questions about evidence and alternative explanations, and probability estimation via exploring 'evidence against the worry.' Strengths include its strong focus on safety planning, empathy, and actionable coping strategies. Points were deducted because: 1) CBT concepts (catastrophizing, fortune telling) weren't explicitly named/labeled, 2) Decatastrophizing lacked structured scaling questions (e.g., likelihood estimations), 3) Modality adherence suffers from incomplete application of core CBT techniques despite their implicit presence. It successfully avoids DBT's 'Check the Facts' and inappropriate reassurance.",
+          "flags": [
+            "Missing explicit labeling of CBT distortions (catastrophizing/fortune telling)",
+            "Underdeveloped decatastrophizing technique",
+            "Probability estimation not formalized with scaling"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student therapist effectively addressed the client's catastrophic thinking by acknowledging the anxiety and providing grounding techniques. They avoided using DBT-specific language like 'check the facts' and appropriately focused on the principles of CBT. However, the response could be improved by explicitly discussing probability estimation and decatastrophizing in a more structured manner. The therapist did well to prioritize safety and avoid reassurance seeking, providing a supportive and empathetic approach throughout.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student's response, while supportive, fails to adhere to the specific CBT requirements outlined in the rubric. The response relies heavily on psychoeducation and general coping skills (grounding, breathing) rather than utilizing cognitive restructuring techniques specific to the client's distorted thoughts. It fails to explicitly label or address the 'Catastrophizing' and 'Fortune Telling' cognitive distortions. Furthermore, it does not use 'Decatastrophizing' techniques (e.g., 'What would you do if that actually happened?') to reduce the fear of the worst-case scenario, nor does it employ 'Probability Estimation' to challenge the likelihood of the event. Additionally, the response encourages reassurance-seeking behaviors (suggesting the client contact the husband, friends, or workplace repeatedly) and uses DBT terminology ('Check the facts' implicitly via 'Evidence for/against'), which were explicitly prohibited in the rubric.",
+          "flags": [
+            "Missed Rubric Requirements: Catastrophizing, Fortune Telling, Decatastrophizing, Probability Estimation",
+            "Prohibited Concept: Encouraged Reassurance Seeking",
+            "Prohibited Concept: Used DBT 'Check the Facts' style questioning (Evidence for/against)",
+            "Modality Drift: Focused on general anxiety management (grounding) instead of CBT cognitive restructuring"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:24:55.424Z"
+        }
+      ]
     }
   }
 ]

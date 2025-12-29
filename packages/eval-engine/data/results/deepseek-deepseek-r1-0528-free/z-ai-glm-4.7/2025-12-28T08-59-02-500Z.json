@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The therapy student's response effectively validates the client's feelings and protects their dignity by separating the feeling of shame from the client's identity. The student demonstrates empathy by acknowledging the connection between the client's actions and their values. However, the response lacks specific guidance on using DBT skills such as Opposite Action, which could help the client in addressing their urge to isolate. The student could have encouraged approach behaviors or offered strategies to 'change the emotion by changing the action,' which are key components of DBT. By not integrating these elements, the student missed an opportunity to help the client move towards emotion regulation.",
-        "flags": [
-          "Lack of DBT-specific interventions",
-          "No direction towards Opposite Action"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      },
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The therapy student's response effectively validates the client's feelings and protects their dignity by separating the feeling of shame from the client's identity. The student demonstrates empathy by acknowledging the connection between the client's actions and their values. However, the response lacks specific guidance on using DBT skills such as Opposite Action, which could help the client in addressing their urge to isolate. The student could have encouraged approach behaviors or offered strategies to 'change the emotion by changing the action,' which are key components of DBT. By not integrating these elements, the student missed an opportunity to help the client move towards emotion regulation.",
+          "flags": [
+            "Lack of DBT-specific interventions",
+            "No direction towards Opposite Action"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

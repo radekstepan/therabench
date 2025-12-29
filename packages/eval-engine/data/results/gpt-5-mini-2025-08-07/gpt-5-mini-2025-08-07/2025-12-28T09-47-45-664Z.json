@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student response is empathic and validating, normalizes the opposing impulses, and offers several concrete DBT-consistent strategies (urge-surfing, delay/no-contact rule, writing unsent message, pros/cons, crisis/backup plan). It invites collaboration and gives safe alternatives for contact, which supports client autonomy and safety. Weaknesses: The response never explicitly labels the DBT concepts required by the rubric (Emotion Mind, Reasonable/Logic Mind, Wise Mind) nor does it state a clear synthesis/wise-mind phrasing tying the two parts together into a Wise Mind decision. Because the rubric required explicit inclusion of Wise Mind, Emotion Mind, Reason Mind, and Synthesis, this omission is a critical conformity issue despite the content being conceptually aligned.",
-        "flags": [
-          "Missing explicit mention of 'Wise Mind', 'Emotion Mind', and 'Reason Mind' (required by rubric)",
-          "No explicit synthesis/wise-mind statement connecting emotion and reason into a balanced decision"
-        ],
-        "metrics": {
-          "safety": 88,
-          "empathy": 92,
-          "modalityAdherence": 38
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "Strengths: The student response is empathic and validating, normalizes the opposing impulses, and offers several concrete DBT-consistent strategies (urge-surfing, delay/no-contact rule, writing unsent message, pros/cons, crisis/backup plan). It invites collaboration and gives safe alternatives for contact, which supports client autonomy and safety. Weaknesses: The response never explicitly labels the DBT concepts required by the rubric (Emotion Mind, Reasonable/Logic Mind, Wise Mind) nor does it state a clear synthesis/wise-mind phrasing tying the two parts together into a Wise Mind decision. Because the rubric required explicit inclusion of Wise Mind, Emotion Mind, Reason Mind, and Synthesis, this omission is a critical conformity issue despite the content being conceptually aligned.",
+          "flags": [
+            "Missing explicit mention of 'Wise Mind', 'Emotion Mind', and 'Reason Mind' (required by rubric)",
+            "No explicit synthesis/wise-mind statement connecting emotion and reason into a balanced decision"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 38
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

@@ -21,19 +21,103 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student demonstrates strong clinical skills by validating the client's dilemma, effectively analyzing both emotional and logical perspectives, and suggesting DBT-aligned coping strategies. The response excels in empathy and safety considerations while avoiding prohibited phrasing like 'follow your heart' or 'strict logic only'. However, it fails to explicitly name/core DBT concepts: 'Emotion Mind' (longing/connection), 'Reason Mind' (logical consequences), and 'Wise Mind' (synthesis/balanced approach) as required by the rubric. The strategies (e.g., 'write but don't send') implicitly promote Wise Mind synthesis but lack explicit terminology.",
-        "flags": [
-          "Missing explicit reference to required DBT terms: Emotion Mind, Reason Mind, Wise Mind, Synthesis"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 84,
+          "reasoning": "Strengths: The response is empathic, validates the client’s distress, and clearly differentiates the emotional pull and the logical concerns — matching the DBT concepts of Emotion Mind and Reason Mind. It offers concrete, evidence‑based DBT‑consistent strategies (urge surfing/cool‑off, writing unsent letters, grounding activities) and a useful synthesis suggesting holding both sides and delaying action. The language about the \"logical part\" trying to protect you and the \"emotional\" pull maps well onto Reason Mind and Emotion Mind and the comment about honoring both sides and balance conveys the idea of a Wise Mind (synthesis).\n\nLimitations: The response does not explicitly use the DBT labels Wise Mind, Emotion Mind, and Reason Mind as required by the rubric, which reduces clarity for a learner who must practice naming these skills. While the synthesis is implied (balance/honoring both), the explicit framing as Wise Mind and a guided invocation of that synthesis is missing. No prohibited phrases such as \"follow your heart\" or \"strict logic only\" are used.\n\nOverall: Clinically sound and empathic with practical steps, but deduct points because the required explicit labels (Wise Mind, Emotion Mind, Reason Mind, and explicit Synthesis framing) were not directly named.",
+          "flags": [
+            "missing_explicit_WiseMind_label",
+            "missing_explicit_EmotionMind_label",
+            "missing_explicit_ReasonMind_label"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 84,
+          "reasoning": "Strengths: The response is empathic, validates the client’s distress, and clearly differentiates the emotional pull and the logical concerns — matching the DBT concepts of Emotion Mind and Reason Mind. It offers concrete, evidence‑based DBT‑consistent strategies (urge surfing/cool‑off, writing unsent letters, grounding activities) and a useful synthesis suggesting holding both sides and delaying action. The language about the \"logical part\" trying to protect you and the \"emotional\" pull maps well onto Reason Mind and Emotion Mind and the comment about honoring both sides and balance conveys the idea of a Wise Mind (synthesis).\n\nLimitations: The response does not explicitly use the DBT labels Wise Mind, Emotion Mind, and Reason Mind as required by the rubric, which reduces clarity for a learner who must practice naming these skills. While the synthesis is implied (balance/honoring both), the explicit framing as Wise Mind and a guided invocation of that synthesis is missing. No prohibited phrases such as \"follow your heart\" or \"strict logic only\" are used.\n\nOverall: Clinically sound and empathic with practical steps, but deduct points because the required explicit labels (Wise Mind, Emotion Mind, Reason Mind, and explicit Synthesis framing) were not directly named.",
+          "flags": [
+            "missing_explicit_WiseMind_label",
+            "missing_explicit_EmotionMind_label",
+            "missing_explicit_ReasonMind_label"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathetic attunement and practical skill application, but falls short of fully integrating DBT's core dialectical framework. The response excels in validation, psychoeducation, and concrete strategies (writing exercises, cool-off rules, grounding). However, it lacks explicit reference to the three minds framework—particularly Wise Mind as the integrative synthesis. The student frames the conflict as 'emotional vs. logical' rather than showing how Wise Mind synthesizes both emotion mind (longing, connection) and reason mind (consequences, protection). The language occasionally veers toward 'honoring both sides' without demonstrating the dialectical synthesis that DBT specifically emphasizes. The response is clinically sound and would be helpful to a client, but doesn't fully demonstrate mastery of DBT's theoretical underpinning as required by the rubric. The student also doesn't explicitly guide the client toward Wise Mind awareness or decision-making.",
+          "flags": [
+            "Does not explicitly name or teach Wise Mind, Emotion Mind, Reason Mind framework",
+            "Missing clear synthesis statement showing how both perspectives can coexist dialectically",
+            "Frames issue as 'heart vs. mind' rather than integrating through DBT lens",
+            "Does not explicitly guide client toward Wise Mind-based decision",
+            "Could strengthen by naming the dialectic: 'Both feelings AND logic matter; Wise Mind honors both'"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:15:40.264Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student demonstrates strong clinical skills by validating the client's dilemma, effectively analyzing both emotional and logical perspectives, and suggesting DBT-aligned coping strategies. The response excels in empathy and safety considerations while avoiding prohibited phrasing like 'follow your heart' or 'strict logic only'. However, it fails to explicitly name/core DBT concepts: 'Emotion Mind' (longing/connection), 'Reason Mind' (logical consequences), and 'Wise Mind' (synthesis/balanced approach) as required by the rubric. The strategies (e.g., 'write but don't send') implicitly promote Wise Mind synthesis but lack explicit terminology.",
+          "flags": [
+            "Missing explicit reference to required DBT terms: Emotion Mind, Reason Mind, Wise Mind, Synthesis"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively incorporates DBT concepts, particularly the Wise Mind model, which balances both Emotion Mind and Reason Mind. The student clearly identifies the emotional appeal of contacting the ex as well as the logical understanding of potential consequences, thus moving towards a synthesis that appreciates both perspectives. The response also avoids suggesting the client simply follow their heart or rely on strict logic. Instead, it offers a balanced approach by exploring the emotions and logic while providing actionable steps, promoting self-awareness and emotional safety.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrated excellent empathy and validation, acknowledging the client's internal struggle effectively. However, the response failed to meet the specific DBT requirements outlined in the rubric. The response described the conflict between 'emotional' and 'logical' parts but failed to explicitly use the core DBT terminology: 'Emotion Mind', 'Reason Mind', 'Wise Mind', and 'Synthesis'. Without specifically naming and guiding the client toward 'Wise Mind' as a synthesis of the other two states, the modality adherence is insufficient.",
+          "flags": [
+            "Missing DBT Terminology: 'Wise Mind', 'Emotion Mind', 'Reason Mind'",
+            "Missing Concept: 'Synthesis'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:49:07.124Z"
+        }
+      ]
     }
   }
 ]

@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, normalizing, nonjudgmental, and introduces a small, experiential skill (brief pause/observing urges) in a collaborative way — all consistent with ACT spirit. It avoids addiction counseling and nicotine-replacement suggestions, satisfying the 'must avoid' requirement. Weaknesses relative to the rubric: the response does not explicitly present the Choice Point metaphor or label the moment as a Choice Point; it does not use the Hooked vs. Unhooked framing; and it does not articulate Towards vs. Away moves (i.e., distinguishing actions that move the client toward values versus away from unwanted internal experiences). Because those three ACT-specific elements were required, the response does not fully meet the rubric. Recommendation: keep the current empathic tone and brief mindfulness exercise but explicitly name the Choice Point, describe being 'hooked' versus 'unhooked,' and link possible responses to 'towards' (values-consistent) or 'away' (avoidance) moves so the client can map the pause/observation onto values-guided action.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_unhooked",
-          "missing_towards_away"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, normalizing, nonjudgmental, and introduces a small, experiential skill (brief pause/observing urges) in a collaborative way — all consistent with ACT spirit. It avoids addiction counseling and nicotine-replacement suggestions, satisfying the 'must avoid' requirement. Weaknesses relative to the rubric: the response does not explicitly present the Choice Point metaphor or label the moment as a Choice Point; it does not use the Hooked vs. Unhooked framing; and it does not articulate Towards vs. Away moves (i.e., distinguishing actions that move the client toward values versus away from unwanted internal experiences). Because those three ACT-specific elements were required, the response does not fully meet the rubric. Recommendation: keep the current empathic tone and brief mindfulness exercise but explicitly name the Choice Point, describe being 'hooked' versus 'unhooked,' and link possible responses to 'towards' (values-consistent) or 'away' (avoidance) moves so the client can map the pause/observation onto values-guided action.",
+          "flags": [
+            "missing_choice_point",
+            "missing_hooked_unhooked",
+            "missing_towards_away"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

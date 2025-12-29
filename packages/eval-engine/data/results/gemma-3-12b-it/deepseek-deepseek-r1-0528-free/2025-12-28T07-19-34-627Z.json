@@ -22,17 +22,107 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student demonstrates strong empathy and validation while effectively addressing core CBT elements. They explicitly identify catastrophizing ('racing with catastrophic thoughts') and implicitly address fortune telling by challenging worst-case assumptions. Decatastrophizing is initiated through generating alternative explanations. However, probability estimation is notably absent - there's no systematic evaluation of likelihoods for different scenarios. The response avoids 'check the facts' terminology and doesn't encourage reassurance-seeking. Redirection to grounding techniques and practical steps is clinically appropriate, though explicit labeling of 'fortune telling' would strengthen modality adherence.",
-        "flags": [],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 75
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation (acknowledging distress, normalizing panic), explicitly labels the client's thinking as 'catastrophic thoughts,' uses decatastrophizing by offering alternative, less catastrophic explanations, and provides grounding and practical steps. It also includes an appropriate safety reminder about contacting emergency services. Weaknesses relative to the rubric: the reply does not explicitly identify or label the cognitive distortion 'fortune telling' (predicting the future with certainty), and it fails to elicit or use a probability estimation (e.g., asking the client to estimate how likely the catastrophic outcome is). Crucially, the student encourages checking external facts (calling again/contacting others), which maps to the DBT term 'check the facts' that the rubric required to avoid, and this also risks prompting reassurance-seeking. These omissions and the forbidden element reduce adherence to the specified CBT-focused requirements, so the score is moderate rather than high.",
+          "flags": [
+            "Check_the_facts_included",
+            "Did_not_label_Fortune_Telling",
+            "Missing_Probability_Estimation",
+            "Potential_Reassurance_Seeking"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 65,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation (acknowledging distress, normalizing panic), explicitly labels the client's thinking as 'catastrophic thoughts,' uses decatastrophizing by offering alternative, less catastrophic explanations, and provides grounding and practical steps. It also includes an appropriate safety reminder about contacting emergency services. Weaknesses relative to the rubric: the reply does not explicitly identify or label the cognitive distortion 'fortune telling' (predicting the future with certainty), and it fails to elicit or use a probability estimation (e.g., asking the client to estimate how likely the catastrophic outcome is). Crucially, the student encourages checking external facts (calling again/contacting others), which maps to the DBT term 'check the facts' that the rubric required to avoid, and this also risks prompting reassurance-seeking. These omissions and the forbidden element reduce adherence to the specified CBT-focused requirements, so the score is moderate rather than high.",
+          "flags": [
+            "Check_the_facts_included",
+            "Did_not_label_Fortune_Telling",
+            "Missing_Probability_Estimation",
+            "Potential_Reassurance_Seeking"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates good foundational skills in empathy, validation, and grounding techniques. However, the response has significant gaps in CBT-specific competencies outlined in the rubric. While the student identifies catastrophizing and fortune telling implicitly, they do not explicitly name these cognitive distortions or systematically guide the client through decatastrophizing. The response lacks structured probability estimation—a core CBT technique for reality-testing catastrophic thoughts. Instead, the student offers alternative explanations (meeting, dead battery) which, while helpful, resembles reassurance-seeking rather than collaborative probability analysis. The grounding technique is appropriate but somewhat tangential to the immediate cognitive work needed. The student also briefly engages in 'checking the facts' (a DBT term to avoid in pure CBT) when suggesting practical steps like calling again. The therapeutic tone is warm and validating, which supports the working alliance, but the intervention lacks the cognitive restructuring rigor expected at this training level. The student would benefit from more explicit cognitive labeling and structured thought records.",
+          "flags": [
+            "Does not explicitly label 'catastrophizing' or 'fortune telling' as cognitive distortions",
+            "Lacks structured decatastrophizing questions (e.g., 'What evidence supports/contradicts this thought?')",
+            "Missing formal probability estimation framework (e.g., 'What's the actual likelihood this happened?' with percentages)",
+            "Suggests practical problem-solving steps ('call him again,' 'contact friends') which approximates DBT fact-checking and may undermine cognitive work",
+            "Veers into reassurance-seeking by offering alternative explanations rather than building client's own reality-testing skills",
+            "Grounding technique, while valid, may distract from the primary cognitive intervention needed"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 88,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:13:55.909Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student demonstrates strong empathy and validation while effectively addressing core CBT elements. They explicitly identify catastrophizing ('racing with catastrophic thoughts') and implicitly address fortune telling by challenging worst-case assumptions. Decatastrophizing is initiated through generating alternative explanations. However, probability estimation is notably absent - there's no systematic evaluation of likelihoods for different scenarios. The response avoids 'check the facts' terminology and doesn't encourage reassurance-seeking. Redirection to grounding techniques and practical steps is clinically appropriate, though explicit labeling of 'fortune telling' would strengthen modality adherence.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively identifies and labels the client's cognitive distortion (catastrophizing) and uses decatastrophizing techniques to explore alternative explanations. The response emphasizes grounding techniques and encourages the client to notice their internal state. However, it does not explicitly address probability estimation, which could help the client more accurately assess the likelihood of their fears. The mention of contacting others might border on reassurance-seeking, but it is framed as a practical step rather than seeking comfort.",
+          "flags": [
+            "reassuranceSeeking"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates good empathy and validation of the client's distress. They identify catastrophic thoughts and attempt decatastrophizing by suggesting alternative explanations for why the husband isn't answering the phone. However, there are several areas for improvement. The student doesn't explicitly name the cognitive distortions of 'catastrophizing' and 'fortune telling' using CBT terminology, which would help the client recognize these patterns. The probability estimation is only lightly addressed rather than systematically examined. Most significantly, the student inadvertently encourages reassurance seeking by suggesting the client call again or contact family/friends, which can maintain anxiety cycles in CBT. A more effective approach would focus on helping the client tolerate the uncertainty while examining the evidence for and against their catastrophic thoughts.",
+          "flags": [
+            "Encouraging reassurance seeking behaviors",
+            "Not explicitly naming CBT cognitive distortions",
+            "Probability estimation could be more systematic"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:10:42.842Z"
+        }
+      ]
     }
   }
 ]

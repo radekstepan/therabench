@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 85,
-        "reasoning": "The student response aligns well with behavioral activation principles and the idea that action can precede and generate motivation. It validates the client's feeling (empathy), challenges the unhelpful rule of 'wait until motivated,' and invites a graded task by suggesting 'one tiny, concrete step' and specifying 'today.' However, the response does not explicitly include activity scheduling (e.g., setting a specific time/place or arranging a short planned session) — the word 'today' is implicit scheduling but not a clear activity schedule. It also could strengthen the graded task assignment by offering an example of a very small step or asking the client to choose a specific, measurable micro-step and a time. There is no endorsement of resting or waiting for mood to improve, so prohibited content was avoided.",
-        "flags": [
-          "activity_scheduling_not_explicit"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 92,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -48,6 +36,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:55:09.319Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student provided a strong, theoretically grounded response. They effectively validated the client's emotional state ('depleted') before introducing the CBT principle that action precedes motivation. This directly addressed the client's cognitive distortion regarding the need to wait for energy. By suggesting 'one tiny, concrete step,' the student successfully implemented a Graded Task Assignment, which is a core technique of Behavioral Activation. The response implicitly touches on Activity Scheduling by suggesting the action occur 'today,' though it could have been slightly stronger by explicitly negotiating a specific time or record-keeping method. The student successfully avoided the prohibited advice of resting or waiting for mood improvement.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:14:06.315Z"
         }
       ]
     }

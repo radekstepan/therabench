@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response demonstrates empathy and provides reassurance, which is beneficial in creating a supportive environment for the client. However, the response lacks specific ACT metaphors and concepts that could help the client recognize their 'self-as-context'. The student missed an opportunity to introduce 'the sky and the weather' or 'chessboard' metaphors to help separate the experience of depression from the client's identity. Although the intent was to help the client reconnect with other aspects of themselves, it inadvertently veered towards identity work, which should be avoided in ACT.",
-        "flags": [
-          "Lack of ACT metaphors",
-          "Potentially identity-focused"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and provides reassurance, which is beneficial in creating a supportive environment for the client. However, the response lacks specific ACT metaphors and concepts that could help the client recognize their 'self-as-context'. The student missed an opportunity to introduce 'the sky and the weather' or 'chessboard' metaphors to help separate the experience of depression from the client's identity. Although the intent was to help the client reconnect with other aspects of themselves, it inadvertently veered towards identity work, which should be avoided in ACT.",
+          "flags": [
+            "Lack of ACT metaphors",
+            "Potentially identity-focused"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 25,
-        "reasoning": "The student response is empathic and offers several useful behavioral strategies (urge-surfing, delay, stimulus control, small experiments). However it fails to meet the rubric. It does not explicitly present core ACT elements required: The Choice Point is not named or structured, and the ACT distinctions 'Hooked vs. Unhooked' and 'Towards vs. Away moves' are not used or taught. Instead of framing the behavior within ACT language (identifying the choice point, labeling hooked/unhooked responses, and distinguishing moves toward values versus away-from coping), the reply stays in general CBT/habit-reversal terms. Crucially, the response includes a prohibited recommendation: nicotine replacement/medications, which the rubric forbids. Overall: good empathy and practical ideas, but poor modality adherence and a direct violation of the 'must avoid' guidance.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "prohibited_nicotine_replacement"
-        ],
-        "metrics": {
-          "safety": 60,
-          "empathy": 90,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -57,6 +42,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:41:40.935Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student demonstrates good rapport and offers practical behavioral strategies that might be helpful in a general counseling context. However, the response fails to adhere to the specific requirements of the ACT Rubric. The student missed critical ACT concepts: there is no mention of the 'Choice Point', the distinction between 'Hooked vs. Unhooked', or 'Towards vs. Away' moves. Instead, the response relies on habit reversal and stimulus control techniques. Furthermore, the response explicitly violated the 'Must Avoid' constraint by suggesting nicotine replacement and medications, which falls under addiction counseling rather than the psychological flexibility focus required.",
+          "flags": [
+            "Missing ACT concepts (Choice Point, Hooked/Unhooked, Towards/Away)",
+            "Violated constraints (Suggested nicotine replacement/medication)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:57:24.720Z"
         }
       ]
     }

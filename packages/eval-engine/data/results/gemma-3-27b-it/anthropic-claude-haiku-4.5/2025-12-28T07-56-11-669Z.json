@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "The student response demonstrates strong empathic listening, validation, and useful open-ended questions — it normalizes the client's experience, reflects the driving imagery, and invites exploration of the content and origins of the doubts. That supports rapport and therapeutic engagement. However, the response fails to include the required ACT metaphors specified in the rubric: it does not reference 'Passengers on the Bus' or 'Demons on the Boat' and does not explicitly use the phrase/idea 'Driving despite the noise' (while it does say 'drive with them,' this is not the required phrasing). The reply also avoids the prohibited strategies (it does not tell the client to 'kick the passengers off' or 'argue with the passengers'), which is appropriate. Because the rubric required explicit inclusion of those ACT metaphors, the submission cannot score higher despite good clinical skills.",
-        "flags": [
-          "missing_Passengers_on_the_Bus",
-          "missing_Demons_on_the_Boat",
-          "missing_Driving_despite_the_noise",
-          "no_banned_phrases_detected"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 85,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -56,6 +41,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:24:25.140Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The student demonstrates strong empathy and rapport building, acknowledging the client's frustration and validating their experience. However, the response fails significantly regarding the ACT-specific rubric. The student uses generic exploration techniques (asking what the doubts are saying, where they come from, and trying to 'lessen their power') rather than utilizing the required ACT metaphors (Passengers on the Bus, Demons on the Boat). By suggesting they can 'turn down the volume' or 'lessen their power,' the student risks reinforcing control/change strategies rather than acceptance strategies, which borders on the prohibited action of arguing with or trying to kick the passengers off. The response does not address 'driving despite the noise' as a core concept, instead focusing on analyzing the content of the doubts.",
+          "flags": [
+            "Missing ACT Metaphors",
+            "Potential Change Agenda Conflict"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:30:47.876Z"
         }
       ]
     }

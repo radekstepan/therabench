@@ -19,19 +19,99 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student response effectively incorporates key ACT principles by explicitly addressing 'Contact with the Present Moment' and validating mindfulness as a needed skill. Strengths include: validating the client's exhaustion, prioritizing exploration of present emotions rather than past/future content, reinforcing client awareness of distraction patterns, and naming mindfulness/grounding as future tools. It adheres well to avoiding distraction by not delving into argument/meeting specifics. However, minor deduction occurs for early mention of future tools ('developing tools and strategies'), which slightly shifts toward planning despite the student prioritizing current exploration.",
-        "flags": [
-          "Minor forward-planning (tools/strategies mentioned)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 93,
+          "reasoning": "The student response strongly emphasizes contact with the present moment and uses explicit mindfulness/here-and-now language (“being present,” “bring your focus back to the present moment,” “mindfulness exercises,” “grounding techniques”). It validates and empathizes effectively and refrains from diving into immediate problem-solving; the therapist invites exploration of feelings in the moment. The one minor divergence from the rubric is the brief mention of developing “tools and strategies,” which could be interpreted as a mild future-oriented plan. However, the student immediately qualified that they don’t need to solve anything now and framed any work as collaborative and at the client’s pace, so this only slightly reduces modality adherence.",
+          "flags": [
+            "planning_mentioned"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 93,
+          "reasoning": "The student response strongly emphasizes contact with the present moment and uses explicit mindfulness/here-and-now language (“being present,” “bring your focus back to the present moment,” “mindfulness exercises,” “grounding techniques”). It validates and empathizes effectively and refrains from diving into immediate problem-solving; the therapist invites exploration of feelings in the moment. The one minor divergence from the rubric is the brief mention of developing “tools and strategies,” which could be interpreted as a mild future-oriented plan. However, the student immediately qualified that they don’t need to solve anything now and framed any work as collaborative and at the client’s pace, so this only slightly reduces modality adherence.",
+          "flags": [
+            "planning_mentioned"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This is a strong therapeutic response that demonstrates solid foundational skills in validation, empathy, and collaborative stance. The student effectively acknowledges the client's experience, normalizes the pattern, and recognizes their self-awareness. The response appropriately pivots toward exploring feelings rather than problem-solving prematurely, which shows good clinical judgment. However, there are notable gaps specific to ACT (Acceptance and Commitment Therapy) modality adherence. While the student mentions 'mindfulness exercises' and 'grounding techniques,' the response lacks authentic ACT language and interventions. True ACT would focus more on: (1) values clarification and how this rumination/worry pattern interferes with valued living, (2) acceptance of difficult thoughts/feelings rather than eliminating them, and (3) committed action toward what matters. The student's framing leans slightly toward a CBT-lite or general supportive approach. The phrase 'we can work on developing some tools and strategies to gently bring your focus back' suggests the goal is to *change* or *escape* the pattern, rather than develop a different relationship with it (core ACT work). Additionally, while 'being present' is mentioned, there's insufficient depth around psychological flexibility or the six core processes of ACT. The response would benefit from more explicit connection to values and the functional impact of experiential avoidance.",
+          "flags": [
+            "Insufficient ACT-specific language and interventions; response reads more eclectic/CBT-influenced",
+            "Does not adequately explore values or how avoidance patterns interfere with meaningful living (core ACT focus)",
+            "Frames therapeutic goal as 'bringing focus back to present' rather than developing acceptance and psychological flexibility",
+            "Limited engagement with the 'here and now' experientially; could invite more present-moment awareness in-session",
+            "Mentions future planning ('strategies to develop') which risks reinforcing forward-looking orientation rather than practicing presence"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:24:31.249Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student response effectively incorporates key ACT principles by explicitly addressing 'Contact with the Present Moment' and validating mindfulness as a needed skill. Strengths include: validating the client's exhaustion, prioritizing exploration of present emotions rather than past/future content, reinforcing client awareness of distraction patterns, and naming mindfulness/grounding as future tools. It adheres well to avoiding distraction by not delving into argument/meeting specifics. However, minor deduction occurs for early mention of future tools ('developing tools and strategies'), which slightly shifts toward planning despite the student prioritizing current exploration.",
+          "flags": [
+            "Minor forward-planning (tools/strategies mentioned)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student’s response is thoughtful and empathetic, effectively addressing the client's experience of being caught between past and future thoughts. The student validates the commonality of these feelings and it emphasizes the importance of being present. It provides a clear understanding that staying in the moment is crucial, all while avoiding a rush into problem-solving. The response successfully introduces mindfulness and grounding techniques as potential strategies to explore, which adheres to the ACT principle of 'Contact with the Present Moment'. However, the response could be improved by more explicitly guiding the client to practice these techniques during the session or by incorporating an immediate mindfulness exercise to enhance 'here and now' presence. It avoids planning and distraction, maintaining focus on the present moment.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates high levels of empathy and validation, effectively normalizing the client's experience. However, the response struggles to adhere to the specific ACT constraints provided in the rubric. The student violates the 'Must Avoid: Planning' rule by explicitly discussing future interventions ('developing some tools and strategies', 'mindfulness exercises'). Additionally, while the student acknowledges the concept of the 'present moment,' they fail to facilitate immediate 'Contact with the Present Moment.' Instead, the student asks questions about the content of the client's thoughts (the argument, the meeting), which pulls the client further into the 'there and then' rather than grounding them in the 'here and now.' A more ACT-consistent response would focus on noticing the process of thinking in the immediate moment rather than analyzing the content of the thoughts or planning future solutions.",
+          "flags": [
+            "Future Planning",
+            "Content Focus Over Process"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:31:07.051Z"
+        }
+      ]
     }
   }
 ]

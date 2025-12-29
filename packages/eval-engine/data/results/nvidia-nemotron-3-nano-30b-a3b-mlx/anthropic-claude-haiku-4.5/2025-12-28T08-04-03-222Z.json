@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 80,
-        "reasoning": "Strengths: The student response demonstrates strong empathic validation, reflective listening, practical DBT-consistent skills (grounding breath, body scan, thought labeling), a clear presentation of Radical Acceptance, and an explicit distinction between pain and the extra suffering caused by resistance. The response includes a safety check and collaborative planning, which are appropriate. Weaknesses: The response does not explicitly name or teach the DBT concept 'Turning the Mind,' and it fails to explicitly state the contrast 'Willfulness vs. Willingness' as a labeled DBT principle (although the concept of willingness is implied). There is a minor risk of straying into medical territory by listing examples like \"taking extra medication\" and \"researching new treatments\" as typical fighting behaviors without careful framing; that could be interpreted as medical-related content. The student also briefly references ACT, which is a useful adjunct but not strictly DBT and should be clearly integrated or signposted in a DBT session. Overall, this is a strong, compassionate DBT-style reply but would be improved by explicitly naming and teaching 'Turning the Mind' and 'Willfulness vs. Willingness,' and by avoiding wording that could be construed as medical advice.",
-        "flags": [
-          "missing_turning_the_mind",
-          "willfulness_vs_willingness_not_explicitly_labeled",
-          "potential_medical_advice_example"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -55,6 +41,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:06:04.951Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student provided a detailed, empathetic, and safe response that correctly identified the client's distress and the core dialectic of acceptance versus change. They successfully incorporated the concepts of Radical Acceptance and Pain vs. Suffering. However, the response demonstrated significant modality confusion. The student explicitly planned to use 'Acceptance Commitment Therapy' (ACT) and utilized ACT-specific language ('values-driven action') instead of DBT terminology (e.g., 'Building a Life Worth Living'). Crucially, the student failed to use the required DBT terms 'Turning the Mind' and 'Willfulness vs. Willingness,' which are essential for addressing the client's refusal to accept reality. The response was also structured as a mix of dialogue and clinical notes rather than a direct role-play.",
+          "flags": [
+            "Modality Confusion (ACT vs DBT)",
+            "Missing Key DBT Concepts (Turning the Mind, Willfulness)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:32:47.568Z"
         }
       ]
     }

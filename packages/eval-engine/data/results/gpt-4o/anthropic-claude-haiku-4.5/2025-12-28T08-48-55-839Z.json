@@ -17,17 +17,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 90,
-        "reasoning": "The student response meets the rubric requirements: it explicitly uses the 'leaves on a stream' imagery, endorses observing thoughts without engaging, and recommends letting thoughts pass. Tone is empathic and validating, invites collaboration, and offers a concrete next-step (observe first, then address persistent thoughts). The response avoids the forbidden phrases ('analyze the water' and 'build a dam'). One minor critique: the suggestion to 'challenge and reframe' leans more CBT than pure ACT (ACT typically emphasizes defusion and values-based action rather than cognitive restructuring). To increase fidelity to ACT, the student could add brief ACT-consistent techniques (e.g., specific defusion exercises, values clarification, committed action) and avoid language that implies disputation of thoughts. Overall, very good adherence with a small modality-mix caveat.",
-        "flags": [],
-        "metrics": {
-          "safety": 10,
-          "empathy": 9,
-          "modalityAdherence": 8
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 92,
@@ -40,6 +30,24 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:32:29.604Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 82,
+          "reasoning": "The student provided a strong empathetic opening that validated the client's experience of 'drowning.' They successfully integrated all required ACT elements: suggesting 'leaves on a stream,' observing without engaging, and letting thoughts pass. However, the response received a lower score due to a modality inconsistency. In an ACT scenario, the goal is defusion (changing one's relationship to thoughts), yet the student suggested 'challenging and reframing' thoughts, which is a CBT technique. This mixing of modalities confuses the clinical direction, as ACT emphasizes accepting thoughts rather than disputing their content.",
+          "flags": [
+            "Modality confusion: Suggested CBT 'reframing' in an ACT scenario"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:43:11.033Z"
         }
       ]
     }

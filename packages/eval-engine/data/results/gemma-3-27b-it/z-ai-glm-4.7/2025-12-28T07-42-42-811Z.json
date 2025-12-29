@@ -24,24 +24,26 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 85,
-        "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly uses core CBT/behavioral activation strategies: they state that action often precedes motivation, encourage taking a tiny step, and suggest breaking the task into very small components (graded task assignment). They also check for contributing factors by asking about physical versus emotional fatigue, which can inform activity planning. Weaknesses: The response does not explicitly include activity scheduling (e.g., setting a specific time or brief planned session to do the small step) or formalizing an activity schedule/monitoring plan, which is an important component of behavioral activation to promote follow-through. The response otherwise avoids recommending resting or waiting for mood to improve, as required. To fully meet the rubric, the student should add a concrete scheduling element (e.g., agree on a 10-minute time block today or schedule the next step) and a plan to review progress.",
-        "flags": [
-          "includes_behavioral_activation",
-          "includes_action_precedes_motivation",
-          "includes_graded_task_assignment",
-          "missing_activity_scheduling",
-          "avoids_wait_for_mood",
-          "empathic_language"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly uses core CBT/behavioral activation strategies: they state that action often precedes motivation, encourage taking a tiny step, and suggest breaking the task into very small components (graded task assignment). They also check for contributing factors by asking about physical versus emotional fatigue, which can inform activity planning. Weaknesses: The response does not explicitly include activity scheduling (e.g., setting a specific time or brief planned session to do the small step) or formalizing an activity schedule/monitoring plan, which is an important component of behavioral activation to promote follow-through. The response otherwise avoids recommending resting or waiting for mood to improve, as required. To fully meet the rubric, the student should add a concrete scheduling element (e.g., agree on a 10-minute time block today or schedule the next step) and a plan to review progress.",
+          "flags": [
+            "includes_behavioral_activation",
+            "includes_action_precedes_motivation",
+            "includes_graded_task_assignment",
+            "missing_activity_scheduling",
+            "avoids_wait_for_mood",
+            "empathic_language"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 92,

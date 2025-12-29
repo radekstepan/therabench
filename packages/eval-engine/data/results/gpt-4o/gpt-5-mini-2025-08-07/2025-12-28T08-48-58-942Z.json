@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 40,
-        "reasoning": "Strengths: The student used reflective language, validated the client's experience, normalized the automaticity of the behavior, and asked open, exploratory questions about triggers and internal events. These moves are empathic and consistent with an intent to collaboratively investigate patterns and build alternative coping strategies.\n\nShortcomings vs. rubric: The response fails to include the required ACT-specific elements. It does not introduce or use The Choice Point framework, does not label the urge/behavior as Hooked versus Unhooked, and does not invite Toward versus Away moves or values-guided choices. These omissions are central to the rubric and substantially reduce fidelity to the expected ACT modality. The response does not contain prohibited content (it did not engage in addiction counseling or recommend nicotine replacement), which is appropriate.\n\nSuggestions: Keep the empathic exploration, but explicitly frame the moment as a Choice Point (notice the trigger, the urge/hook, and the move), name the cigarette response as a 'hooked' move and explore what an 'unhooked' or 'toward' move would look like in that moment, and elicit values-based 'towards' actions the client might choose despite the urge.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "no_prohibited_content"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "Strengths: The student used reflective language, validated the client's experience, normalized the automaticity of the behavior, and asked open, exploratory questions about triggers and internal events. These moves are empathic and consistent with an intent to collaboratively investigate patterns and build alternative coping strategies.\n\nShortcomings vs. rubric: The response fails to include the required ACT-specific elements. It does not introduce or use The Choice Point framework, does not label the urge/behavior as Hooked versus Unhooked, and does not invite Toward versus Away moves or values-guided choices. These omissions are central to the rubric and substantially reduce fidelity to the expected ACT modality. The response does not contain prohibited content (it did not engage in addiction counseling or recommend nicotine replacement), which is appropriate.\n\nSuggestions: Keep the empathic exploration, but explicitly frame the moment as a Choice Point (notice the trigger, the urge/hook, and the move), name the cigarette response as a 'hooked' move and explore what an 'unhooked' or 'toward' move would look like in that moment, and elicit values-based 'towards' actions the client might choose despite the urge.",
+          "flags": [
+            "missing_choice_point",
+            "missing_hooked_vs_unhooked",
+            "missing_towards_vs_away",
+            "no_prohibited_content"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

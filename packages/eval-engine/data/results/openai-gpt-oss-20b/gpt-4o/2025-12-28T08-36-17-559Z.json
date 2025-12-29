@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response demonstrates a good understanding of empathy and provides a structured approach to address the client's issue of doubt. However, the response lacks explicit integration of the ACT metaphors such as 'Passengers on the Bus' and 'Demons on the Boat'. Also, while the strategies provided are practical and supportive, they don't fully align with the ACT principle of 'Driving despite the noise', as the emphasis is more on addressing and mitigating doubts rather than accepting them as part of the journey. The response is free from attempts to 'Kick the passengers off' or 'Argue with the passengers', which aligns with ACT principles.",
-        "flags": [
-          "lack of ACT metaphors",
-          "focus on mitigation rather than acceptance"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response demonstrates a good understanding of empathy and provides a structured approach to address the client's issue of doubt. However, the response lacks explicit integration of the ACT metaphors such as 'Passengers on the Bus' and 'Demons on the Boat'. Also, while the strategies provided are practical and supportive, they don't fully align with the ACT principle of 'Driving despite the noise', as the emphasis is more on addressing and mitigating doubts rather than accepting them as part of the journey. The response is free from attempts to 'Kick the passengers off' or 'Argue with the passengers', which aligns with ACT principles.",
+          "flags": [
+            "lack of ACT metaphors",
+            "focus on mitigation rather than acceptance"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

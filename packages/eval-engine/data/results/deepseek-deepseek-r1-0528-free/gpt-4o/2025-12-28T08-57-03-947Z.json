@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively addresses the client's self-critical perspective by validating their emotions and gently challenging unrealistic expectations about grief timelines. The response avoids providing solutions, instead focusing on fostering self-compassion and cognitive restructuring. However, the use of the phrase 'let's shift perspective' may unintentionally introduce a directive element, which could be perceived as steering toward a specific outcome rather than maintaining a purely client-centered focus. While it refers to the self-judgment and 'should' statements appropriately, the use of 'those tears aren't weakness' borders on re-framing that could be seen as a step toward grief counseling rather than purely sticking with CBT frameworks.",
-        "flags": [
-          "potentialDirective",
-          "unintentionalReframing"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively addresses the client's self-critical perspective by validating their emotions and gently challenging unrealistic expectations about grief timelines. The response avoids providing solutions, instead focusing on fostering self-compassion and cognitive restructuring. However, the use of the phrase 'let's shift perspective' may unintentionally introduce a directive element, which could be perceived as steering toward a specific outcome rather than maintaining a purely client-centered focus. While it refers to the self-judgment and 'should' statements appropriately, the use of 'those tears aren't weakness' borders on re-framing that could be seen as a step toward grief counseling rather than purely sticking with CBT frameworks.",
+          "flags": [
+            "potentialDirective",
+            "unintentionalReframing"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

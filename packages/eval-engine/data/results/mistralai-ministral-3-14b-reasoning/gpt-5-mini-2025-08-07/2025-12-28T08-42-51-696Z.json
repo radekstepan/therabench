@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: the student response is empathic, validates the client's experience, elicits sensory details, and offers DBT-consistent strategies (grounding, pausing, stepping back) without giving prohibited advice (no 'time out for kids' or generic anger management). Shortcomings: the response does not explicitly teach or name the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) as required, and it does not explicitly label or coach 'impulse control' as a skill to use in the moment. To improve, the student should explicitly introduce the STOP acronym, briefly coach how to use it in the moment, and offer a concrete, behavioral way to 'step back' (e.g., physical steps or brief mindful breaths) so the client has a clear tool to practice.",
-        "flags": [
-          "missing_STOP_skill",
-          "impulse_control_not_explicit"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "Strengths: the student response is empathic, validates the client's experience, elicits sensory details, and offers DBT-consistent strategies (grounding, pausing, stepping back) without giving prohibited advice (no 'time out for kids' or generic anger management). Shortcomings: the response does not explicitly teach or name the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) as required, and it does not explicitly label or coach 'impulse control' as a skill to use in the moment. To improve, the student should explicitly introduce the STOP acronym, briefly coach how to use it in the moment, and offer a concrete, behavioral way to 'step back' (e.g., physical steps or brief mindful breaths) so the client has a clear tool to practice.",
+          "flags": [
+            "missing_STOP_skill",
+            "impulse_control_not_explicit"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

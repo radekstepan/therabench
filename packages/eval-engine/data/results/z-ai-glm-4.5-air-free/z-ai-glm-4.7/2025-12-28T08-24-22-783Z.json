@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic, normalizes the client's experience, and invites exploration by asking about what brings fulfillment and past activities/relationships that felt meaningful. It avoids the prohibited interventions (no suggestion of setting new goals or keeping a gratitude journal). \n\nWeaknesses: The response fails to explicitly incorporate the required ACT elements. It does not name or operationalize 'values' or guide a values clarification process, nor does it introduce the ACT-consistent framing of values as a direction rather than a destination. Those omissions reduce fidelity to the ACT scenario. \n\nHow to improve: Explicitly ask about the client's values (e.g., \"What matters most to you? What kind of person do you want to be, regardless of achievements?\"). Offer a brief values-clarification prompt or exercise (e.g., exploring domains of life and which qualities they'd like to stand for). Emphasize that values provide direction (a compass) rather than a destination to be 'achieved.' Maintain the empathic tone and avoid suggesting new goal-setting or gratitude journaling.",
-        "flags": [
-          "missing_values",
-          "missing_values_clarification",
-          "missing_direction_vs_destination"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response is empathic, normalizes the client's experience, and invites exploration by asking about what brings fulfillment and past activities/relationships that felt meaningful. It avoids the prohibited interventions (no suggestion of setting new goals or keeping a gratitude journal). \n\nWeaknesses: The response fails to explicitly incorporate the required ACT elements. It does not name or operationalize 'values' or guide a values clarification process, nor does it introduce the ACT-consistent framing of values as a direction rather than a destination. Those omissions reduce fidelity to the ACT scenario. \n\nHow to improve: Explicitly ask about the client's values (e.g., \"What matters most to you? What kind of person do you want to be, regardless of achievements?\"). Offer a brief values-clarification prompt or exercise (e.g., exploring domains of life and which qualities they'd like to stand for). Emphasize that values provide direction (a compass) rather than a destination to be 'achieved.' Maintain the empathic tone and avoid suggesting new goal-setting or gratitude journaling.",
+          "flags": [
+            "missing_values",
+            "missing_values_clarification",
+            "missing_direction_vs_destination"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 85,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 75,

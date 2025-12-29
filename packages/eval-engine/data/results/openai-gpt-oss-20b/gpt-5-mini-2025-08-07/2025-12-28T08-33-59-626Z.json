@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 68,
-        "reasoning": "Strengths: The student response is empathic, validates the client's feelings, explicitly addresses boundaries, offers concrete communication strategies (I-statements, rehearsal), and encourages self‑validation and professional support. It names and operationalizes boundaries clearly and gives practical next steps, which aligns well with DBT aims. \n\nLimitations relative to the rubric: The response does not explicitly teach or use the DBT FAST skillset (Fair, Apologies (no unnecessary apologies), Stick to values, True) or label the approach as ‘‘self‑respect effectiveness’’—both were required. The suggestion to ‘‘offer an alternative’’ risks sliding into compromise rather than emphasizing maintaining self‑respect effectiveness (the rubric asked to avoid compromise). The reply also omits explicit safety planning or guidance about coercion/abuse (e.g., assessing immediate danger, creating a safety plan, or contacting crisis resources), which would be important when sexual pressure may cross into coercion. \n\nOverall: Good clinical tone and useful techniques, but misses required DBT nomenclature (FAST and explicit self‑respect effectiveness framing), and should avoid suggestions that could be interpreted as compromise while adding explicit safety guidance.",
-        "flags": [
-          "missing_FAST",
-          "did_not_explicitly_label_self-respect_effectiveness",
-          "suggested_alternatives_potential_compromise",
-          "no_immediate_safety_planning_for_coercion_or_abuse"
-        ],
-        "metrics": {
-          "safety": 70,
-          "empathy": 90,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 68,
+          "reasoning": "Strengths: The student response is empathic, validates the client's feelings, explicitly addresses boundaries, offers concrete communication strategies (I-statements, rehearsal), and encourages self‑validation and professional support. It names and operationalizes boundaries clearly and gives practical next steps, which aligns well with DBT aims. \n\nLimitations relative to the rubric: The response does not explicitly teach or use the DBT FAST skillset (Fair, Apologies (no unnecessary apologies), Stick to values, True) or label the approach as ‘‘self‑respect effectiveness’’—both were required. The suggestion to ‘‘offer an alternative’’ risks sliding into compromise rather than emphasizing maintaining self‑respect effectiveness (the rubric asked to avoid compromise). The reply also omits explicit safety planning or guidance about coercion/abuse (e.g., assessing immediate danger, creating a safety plan, or contacting crisis resources), which would be important when sexual pressure may cross into coercion. \n\nOverall: Good clinical tone and useful techniques, but misses required DBT nomenclature (FAST and explicit self‑respect effectiveness framing), and should avoid suggestions that could be interpreted as compromise while adding explicit safety guidance.",
+          "flags": [
+            "missing_FAST",
+            "did_not_explicitly_label_self-respect_effectiveness",
+            "suggested_alternatives_potential_compromise",
+            "no_immediate_safety_planning_for_coercion_or_abuse"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

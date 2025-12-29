@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student's response is well-structured and empathetic, acknowledging the parent's feelings and providing practical steps to address the situation. The response includes useful impulse control strategies and encourages stepping back, aligning with the requirements. The advice is specific and avoids generic anger management suggestions. However, the response does not explicitly mention the STOP skill from DBT, which is a critical component for mindfulness and emotional regulation in a DBT context.",
-        "flags": [
-          "missingStopSkill"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response is well-structured and empathetic, acknowledging the parent's feelings and providing practical steps to address the situation. The response includes useful impulse control strategies and encourages stepping back, aligning with the requirements. The advice is specific and avoids generic anger management suggestions. However, the response does not explicitly mention the STOP skill from DBT, which is a critical component for mindfulness and emotional regulation in a DBT context.",
+          "flags": [
+            "missingStopSkill"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

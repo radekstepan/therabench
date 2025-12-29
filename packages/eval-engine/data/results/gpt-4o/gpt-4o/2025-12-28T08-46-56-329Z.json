@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response correctly identifies the emotional reasoning component by acknowledging the client's feelings of anxiety and self-doubt. However, while the response suggests examining evidence of hard work and past successes, it does not explicitly guide the client through the evidence for vs. evidence against framework to challenge the assumption of future failure. Additionally, the suggestion to use grounding techniques and relaxation exercises shifts focus to emotion regulation instead of cognitive restructuring, which goes against the rubric's requirements.",
-        "flags": [
-          "Including emotion regulation techniques",
-          "Lack of explicit cognitive restructuring"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response correctly identifies the emotional reasoning component by acknowledging the client's feelings of anxiety and self-doubt. However, while the response suggests examining evidence of hard work and past successes, it does not explicitly guide the client through the evidence for vs. evidence against framework to challenge the assumption of future failure. Additionally, the suggestion to use grounding techniques and relaxation exercises shifts focus to emotion regulation instead of cognitive restructuring, which goes against the rubric's requirements.",
+          "flags": [
+            "Including emotion regulation techniques",
+            "Lack of explicit cognitive restructuring"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

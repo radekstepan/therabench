@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization, collaborative stance, and useful open questions about triggers and internal sensations. It appropriately avoids blame and does not recommend nicotine replacement or engage in addiction counseling. \n\nPrimary weakness: The response fails to include the required ACT-specific components: it does not introduce or use the Choice Point framework, does not label or distinguish Hooked vs. Unhooked responses, and does not help the client identify Towards vs. Away moves. Because the rubric required those elements, modality adherence is low despite good general clinical skill. \n\nRecommendation: Keep the empathic tone, but explicitly introduce the Choice Point (identify the trigger/urge and the choices available), label the smoking behavior as a 'hooked' move and brainstorm possible 'unhooked' moves, and help the client generate specific Towards moves tied to values (and Away moves only as things they tend to do to avoid discomfort). Use a brief experiential prompt (e.g., notice sensations, name the urge, take a valued step) to practice shifting from hooked to unhooked. This would bring the response into full alignment with the ACT-focused rubric.",
-        "flags": [
-          "Missing Choice Point",
-          "Missing Hooked vs. Unhooked distinction",
-          "Missing Towards vs. Away moves",
-          "Avoided nicotine replacement (as required)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 15
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization, collaborative stance, and useful open questions about triggers and internal sensations. It appropriately avoids blame and does not recommend nicotine replacement or engage in addiction counseling. \n\nPrimary weakness: The response fails to include the required ACT-specific components: it does not introduce or use the Choice Point framework, does not label or distinguish Hooked vs. Unhooked responses, and does not help the client identify Towards vs. Away moves. Because the rubric required those elements, modality adherence is low despite good general clinical skill. \n\nRecommendation: Keep the empathic tone, but explicitly introduce the Choice Point (identify the trigger/urge and the choices available), label the smoking behavior as a 'hooked' move and brainstorm possible 'unhooked' moves, and help the client generate specific Towards moves tied to values (and Away moves only as things they tend to do to avoid discomfort). Use a brief experiential prompt (e.g., notice sensations, name the urge, take a valued step) to practice shifting from hooked to unhooked. This would bring the response into full alignment with the ACT-focused rubric.",
+          "flags": [
+            "Missing Choice Point",
+            "Missing Hooked vs. Unhooked distinction",
+            "Missing Towards vs. Away moves",
+            "Avoided nicotine replacement (as required)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 50,

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The response is empathic, collaborative, and includes clear emotion‑regulation strategies (grounding, breathing, activity), a practical check‑the‑facts exercise (evidence for/against table and behavioral experiment), and a concrete communication plan — so it meets the rubric's required elements (Check the Facts, Emotion Regulation, Interpretation vs. Reality). It also offers useful, DBT‑consistent techniques (mindfulness, distress tolerance, behavioral activation) and an appropriate validating tone. Weaknesses: It explicitly uses the CBT label \"mind‑reading\"/\"mind‑reading\" as a cognitive distortion, which the rubric forbids, and it contains mild reassurance (e.g., \"You’re not alone\" and \"there’s no right or wrong answer...\"), which the rubric also requires avoiding. These are notable departures from the constraints and reduce modality adherence. Suggested fixes: remove the CBT jargon and instead describe the error as “making an assumption” or “jumping to conclusions/inferring emotions without evidence”; remove or rephrase reassuring statements so validation remains but without conveying certainty or minimization (e.g., validate feelings and invite evidence‑gathering rather than saying the client is not alone).",
-        "flags": [
-          "used_mind_reading_term",
-          "provided_reassurance"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The response is empathic, collaborative, and includes clear emotion‑regulation strategies (grounding, breathing, activity), a practical check‑the‑facts exercise (evidence for/against table and behavioral experiment), and a concrete communication plan — so it meets the rubric's required elements (Check the Facts, Emotion Regulation, Interpretation vs. Reality). It also offers useful, DBT‑consistent techniques (mindfulness, distress tolerance, behavioral activation) and an appropriate validating tone. Weaknesses: It explicitly uses the CBT label \"mind‑reading\"/\"mind‑reading\" as a cognitive distortion, which the rubric forbids, and it contains mild reassurance (e.g., \"You’re not alone\" and \"there’s no right or wrong answer...\"), which the rubric also requires avoiding. These are notable departures from the constraints and reduce modality adherence. Suggested fixes: remove the CBT jargon and instead describe the error as “making an assumption” or “jumping to conclusions/inferring emotions without evidence”; remove or rephrase reassuring statements so validation remains but without conveying certainty or minimization (e.g., validate feelings and invite evidence‑gathering rather than saying the client is not alone).",
+          "flags": [
+            "used_mind_reading_term",
+            "provided_reassurance"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 75,

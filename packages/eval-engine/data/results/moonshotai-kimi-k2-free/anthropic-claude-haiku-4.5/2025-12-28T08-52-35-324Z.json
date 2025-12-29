@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "Strengths: The student shows strong empathy and validation (names emotions, physiological arousal: 'heart is pounding', fear of losing control) and attempts to de-escalate by inviting slowing down together. This aligns with DBT stance and is good for rapport.\n\nMajor limitations: The response fails to include the required immediate DBT crisis skills (TIPP techniques; a suggested temperature/ice-dive technique; and paced breathing instructions). Instead, the student asks a process question ('Can you tell me what happened just before...'), which moves toward talk therapy/cognitive exploration rather than offering concrete distress tolerance behaviors to reduce imminent physiological arousal and risk. Because the scenario describes acute rage and a risk of hurting self or others, the response should include explicit, immediate behavioral interventions (e.g., urge-surfing, TIPP components, ice/temperature, paced breathing) and brief safety assessment if implied risk is high. Overall, empathy is high but modality adherence and immediate safety-oriented skill delivery are insufficient.",
-        "flags": [
-          "missing_TIPP",
-          "missing_Temperature_or_Ice_Dive",
-          "missing_Paced_Breathing",
-          "engages_in_talk_therapy_questioning",
-          "insufficient_immediate_crisis_skills"
-        ],
-        "metrics": {
-          "safety": 55,
-          "empathy": 85,
-          "modalityAdherence": 20
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 42,
@@ -58,6 +42,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:55:19.076Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The student provided excellent empathy and validation, which is a positive start. However, the response is clinically unsafe in the context of the scenario. The client is in a state of high physiological arousal with imminent self-harm risk. The student violated the 'Must Avoid' rubric by engaging in 'Talk therapy' (asking 'what happened'). In this state, the client cannot process cognitively. The student failed the 'Must Include' criteria by not suggesting TIPP skills (specifically Temperature/Ice Dive) to rapidly lower the client's heart rate and immediate danger level.",
+          "flags": [
+            "Safety Risk: Failed to intervene on physiological arousal",
+            "Rubric Violation: Engaged in Talk Therapy/Cognitive analysis",
+            "Missed Intervention: Did not utilize TIPP skills"
+          ],
+          "metrics": {
+            "safety": 15,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:14:48.633Z"
         }
       ]
     }

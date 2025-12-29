@@ -22,20 +22,107 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 70,
-        "reasoning": "The response demonstrates strong empathy and validation while effectively incorporating alternative explanations for the friend's behavior, meeting that requirement. It implicitly addresses mind reading by acknowledging the client's perception but doesn't explicitly label or challenge the cognitive distortion. The most significant issue is the complete absence of a behavioral experiment, a core CBT technique required by the rubric for testing beliefs. Prohibited elements (interpersonal effectiveness/social skills) were successfully avoided. Overall, the response is clinically safe but misses key modality-specific interventions.",
-        "flags": [
-          "Behavioral experiment not addressed",
-          "Mind reading not explicitly labeled/challenged"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "The student response shows strong empathy, validates feelings, asks helpful exploratory questions, and explicitly offers alternative explanations for the friend's behavior (addressing the client's probable mind-reading). The response avoids the forbidden focus on interpersonal effectiveness or social skills. However, it fails to propose a concrete behavioral experiment (a key CBT technique requested by the rubric). Also, while the therapist counters the mind-reading by suggesting other explanations, they do not explicitly label the cognitive distortion or offer a specific experiment to test the belief (e.g., a planned in vivo or behavioural test such as checking facts, asking the friend, or deliberately tolerating ambiguity and noting outcomes). Strengths: empathy, exploration, alternative explanations. Main improvement: add a specific behavioral experiment to test the thought \"she clearly thinks I'm boring.\"",
+          "flags": [
+            "missing_behavioral_experiment",
+            "includes_alternative_explanations",
+            "addresses_mind_reading",
+            "avoids_interpersonal_effectiveness_and_social_skills"
+          ],
+          "metrics": {
+            "safety": 10,
+            "empathy": 9,
+            "modalityAdherence": 7
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 75,
+          "reasoning": "The student response shows strong empathy, validates feelings, asks helpful exploratory questions, and explicitly offers alternative explanations for the friend's behavior (addressing the client's probable mind-reading). The response avoids the forbidden focus on interpersonal effectiveness or social skills. However, it fails to propose a concrete behavioral experiment (a key CBT technique requested by the rubric). Also, while the therapist counters the mind-reading by suggesting other explanations, they do not explicitly label the cognitive distortion or offer a specific experiment to test the belief (e.g., a planned in vivo or behavioural test such as checking facts, asking the friend, or deliberately tolerating ambiguity and noting outcomes). Strengths: empathy, exploration, alternative explanations. Main improvement: add a specific behavioral experiment to test the thought \"she clearly thinks I'm boring.\"",
+          "flags": [
+            "missing_behavioral_experiment",
+            "includes_alternative_explanations",
+            "addresses_mind_reading",
+            "avoids_interpersonal_effectiveness_and_social_skills"
+          ],
+          "metrics": {
+            "safety": 10,
+            "empathy": 9,
+            "modalityAdherence": 7
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates solid foundational skills in validation and empathy, creating psychological safety for the client. However, the response has significant gaps in CBT technique application. While the student mentions that 'people can misread signals' (touching on alternative explanations), this is underdeveloped and not positioned as a core cognitive intervention. The response critically lacks explicit focus on mind reading as a cognitive distortion—the core issue here. The student identifies the problematic thought ('She clearly thinks I'm boring') but doesn't label it as mind reading or systematically challenge it. There is no behavioral experiment proposed, which is essential in CBT for testing the validity of automatic thoughts. The response leans toward exploratory questioning and validation rather than collaborative hypothesis-testing. Additionally, the mention of 'problem-solve ways to handle similar situations' risks drifting toward interpersonal effectiveness/social skills coaching, which should be avoided. The student would benefit from more direct cognitive work: identifying the mind reading distortion explicitly, developing a behavioral experiment to test the thought (e.g., 'What could we do to gather evidence about what your friend actually thinks?'), and exploring alternative explanations more systematically rather than briefly mentioning them.",
+          "flags": [
+            "Mind reading distortion not explicitly labeled or challenged as a cognitive error",
+            "No behavioral experiment proposed to test the automatic thought",
+            "Alternative explanations mentioned but not developed as a structured intervention",
+            "Risk of drift toward social skills coaching in final suggestions",
+            "Lacks collaborative empiricism—should be more focused on testing thoughts rather than exploring feelings"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 82,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:47:32.444Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong empathy and validation while effectively incorporating alternative explanations for the friend's behavior, meeting that requirement. It implicitly addresses mind reading by acknowledging the client's perception but doesn't explicitly label or challenge the cognitive distortion. The most significant issue is the complete absence of a behavioral experiment, a core CBT technique required by the rubric for testing beliefs. Prohibited elements (interpersonal effectiveness/social skills) were successfully avoided. Overall, the response is clinically safe but misses key modality-specific interventions.",
+          "flags": [
+            "Behavioral experiment not addressed",
+            "Mind reading not explicitly labeled/challenged"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student appropriately identifies the potential cognitive distortion of 'mind reading' by suggesting alternative explanations for the friend's behavior. The response effectively acknowledges the client's feelings and fosters introspection by exploring emotional reactions and patterns. While the response lacks a direct suggestion of a behavioral experiment to test the client's beliefs, it subtly encourages considering alternative explanations, which aligns with CBT principles. The student stays focused on the cognitive aspects and avoids interpersonal effectiveness or social skills training.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong empathy and successfully provides 'Alternative Explanations' by suggesting the friend might be late or time-conscious. However, the response fails to meet two of the three specific 'Must Include' criteria. The student does not explicitly label the client's thought process as 'Mind Reading,' nor do they propose a 'Behavioral Experiment' to test the validity of the thought. Instead, the response leans heavily on supportive exploration of feelings and history, which limits its effectiveness as a strict CBT intervention in this context. The student successfully avoided the forbidden topics (Interpersonal Effectiveness and social skills).",
+          "flags": [
+            "Missing component: Explicit labeling of Mind Reading",
+            "Missing component: Behavioral Experiment",
+            "Response leans towards supportive counseling rather than structured CBT techniques"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:00:03.612Z"
+        }
+      ]
     }
   }
 ]

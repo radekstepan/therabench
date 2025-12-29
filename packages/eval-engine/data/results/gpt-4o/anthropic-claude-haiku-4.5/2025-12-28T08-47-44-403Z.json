@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "The student response demonstrates good validation and an empathic, collaborative stance and appropriately avoids prohibited content (no medical advice, no 'fight harder' or 'don't give up hope'). However it fails to include the required DBT constructs explicitly: there is no mention or teaching of Radical Acceptance, Turning the Mind, Willfulness vs. Willingness, or the distinction between Pain vs. Suffering. The reply stays at a general supportive/problem-solving level rather than naming or coaching DBT skills (e.g., how to practice radical acceptance or how to notice and shift willfulness to willingness). To meet the rubric the student should explicitly introduce and briefly coach on those DBT concepts while maintaining the validating tone already present.",
-        "flags": [
-          "missing Radical Acceptance",
-          "missing Turning the Mind",
-          "missing Willfulness vs. Willingness",
-          "missing Pain vs. Suffering",
-          "does not explicitly teach DBT skill techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 80,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -59,6 +43,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:31:12.594Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a supportive and empathetic response that validated the client's emotional experience well. They successfully avoided the prohibited phrases (e.g., 'fight harder') and did not offer medical advice. However, the response failed to meet the specific DBT requirements outlined in the rubric. While the student alluded to the consequences of fighting reality (which touches on Pain vs. Suffering), they did not explicitly teach or name the required concepts: Radical Acceptance, Turning the Mind, or the dialectic of Willfulness vs. Willingness. The response functions as general supportive counseling but lacks the specific theoretical framework and terminology necessary for this DBT scenario.",
+          "flags": [
+            "Missing Radical Acceptance",
+            "Missing Turning the Mind",
+            "Missing Willfulness vs. Willingness",
+            "Missing explicit Pain vs. Suffering distinction"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:37:19.870Z"
         }
       ]
     }

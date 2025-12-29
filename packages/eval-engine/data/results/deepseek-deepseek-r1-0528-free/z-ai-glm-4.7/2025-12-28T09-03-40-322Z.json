@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 88,
-        "reasoning": "The student demonstrates strong ACT-consistent skills: 1) Explicitly addresses 'present moment' and mindfulness throughout 2) Uses grounding (sensory awareness) to cultivate 'here and now' contact without avoidance 3) Validates experience skillfully ('time travel' metaphor) 4) Avoids distraction/solution-fixing. Points deducted for: Mild tendency toward analysis ('explore what might be driving this pattern') which could drift toward planning/cognitive fusion if over-emphasized, though appropriately framed as optional exploration.",
-        "flags": [
-          "Watch phrasing around 'driving this pattern' - risk of shifting from present-focused work to premature analysis"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 90,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The student demonstrates strong ACT-consistent skills: 1) Explicitly addresses 'present moment' and mindfulness throughout 2) Uses grounding (sensory awareness) to cultivate 'here and now' contact without avoidance 3) Validates experience skillfully ('time travel' metaphor) 4) Avoids distraction/solution-fixing. Points deducted for: Mild tendency toward analysis ('explore what might be driving this pattern') which could drift toward planning/cognitive fusion if over-emphasized, though appropriately framed as optional exploration.",
+          "flags": [
+            "Watch phrasing around 'driving this pattern' - risk of shifting from present-focused work to premature analysis"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 82,

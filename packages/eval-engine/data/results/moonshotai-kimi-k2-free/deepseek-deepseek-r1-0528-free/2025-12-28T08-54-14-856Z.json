@@ -24,20 +24,101 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 88,
-        "reasoning": "The response effectively incorporates core ACT concepts required by the rubric. Strengths include: 1) Strong emphasis on DIRECTION vs. DESTINATION ('signposts pointing toward the life that wants to unfold', 'next layer of growth', 'become' framing rather than achieve), 2) Implicit VALUES exploration through questions probing meaning, connection, presence, and authentic self-expression without explicitly labeling them as values, 3) Skillful avoidance of goal-setting ('not new goals to chase') and gratitude journaling. Concerns include: Lack of explicit 'values' terminology for psychoeducation, subtle risk in 'what you want to become' leaning toward future-focused identity (destination-thinking) versus present direction choice, and metaphor density may risk client confusion.",
-        "flags": [
-          "Metaphor density could obscure meaning for some clients",
-          "'What you want to become' phrasing leans subtly toward destination-thinking"
-        ],
-        "metrics": {
-          "safety": 92,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student response is empathic and validating, uses a resonant metaphor (summit/map) to normalize the client's emptiness, and invites exploration of what 'feels missing' using evocative questions (imagining a meaningful day, qualities expressed). Those elements align well with ACT-style values clarification in spirit — prompting the client to notice qualities they want to embody rather than immediately pursuing external outcomes. The student also appropriately avoids prescribing new goals and does not suggest a gratitude journal, as required.\n\nLimitations: The response does not explicitly name or define 'values' nor use the phrase 'values clarification' — it relies on implicit prompts rather than clearly framing the exercise as values work. The rubric also required inclusion of the 'Direction vs. Destination' concept (i.e., emphasizing values as ongoing directions/compass rather than destinations/goals); that idea is only implied by metaphors and the line 'not new goals to chase' but is not explicitly stated or explained. For ACT fidelity, making the values/direction distinction explicit helps clients shift from endpoint-focused striving to value-guided living. \n\nRecommendation: Retain the compassionate metaphors and evocative questioning, but explicitly name the process as values clarification and introduce the 'direction versus destination' framing (for example: 'Values are like a compass — they point a direction for how you want to live, not a destination to reach'). This will increase modality adherence without changing the supportive tone.",
+          "flags": [
+            "missing_explicit_values_label",
+            "missing_values_clarification_label",
+            "missing_direction_vs_destination_explicit",
+            "good_use_of_metaphor",
+            "avoids_setting_new_goals_OK",
+            "no_gratitude_journal_OK"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student response is empathic and validating, uses a resonant metaphor (summit/map) to normalize the client's emptiness, and invites exploration of what 'feels missing' using evocative questions (imagining a meaningful day, qualities expressed). Those elements align well with ACT-style values clarification in spirit — prompting the client to notice qualities they want to embody rather than immediately pursuing external outcomes. The student also appropriately avoids prescribing new goals and does not suggest a gratitude journal, as required.\n\nLimitations: The response does not explicitly name or define 'values' nor use the phrase 'values clarification' — it relies on implicit prompts rather than clearly framing the exercise as values work. The rubric also required inclusion of the 'Direction vs. Destination' concept (i.e., emphasizing values as ongoing directions/compass rather than destinations/goals); that idea is only implied by metaphors and the line 'not new goals to chase' but is not explicitly stated or explained. For ACT fidelity, making the values/direction distinction explicit helps clients shift from endpoint-focused striving to value-guided living. \n\nRecommendation: Retain the compassionate metaphors and evocative questioning, but explicitly name the process as values clarification and introduce the 'direction versus destination' framing (for example: 'Values are like a compass — they point a direction for how you want to live, not a destination to reach'). This will increase modality adherence without changing the supportive tone.",
+          "flags": [
+            "missing_explicit_values_label",
+            "missing_values_clarification_label",
+            "missing_direction_vs_destination_explicit",
+            "good_use_of_metaphor",
+            "avoids_setting_new_goals_OK",
+            "no_gratitude_journal_OK"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This is a sophisticated and clinically strong response that demonstrates excellent ACT alignment and therapeutic presence. The student skillfully uses metaphor (summit, map/territory, signposts) to normalize the client's experience and reframe emptiness as meaningful rather than pathological. The response excels in several areas: (1) It explicitly addresses values and values clarification through questions about qualities being expressed, sense of purpose, and connection to something larger—inviting the client to explore what matters rather than what to achieve. (2) It clearly distinguishes direction (the emerging life wanting to unfold) from destination (the already-achieved goals), which is central to ACT's approach. (3) It avoids setting new goals, instead using curiosity and discovery language. (4) It demonstrates strong psychological flexibility by helping the client notice and name their experience without judgment. The phenomenological questions about a meaningful day are particularly effective—they orient toward valued living rather than achievement. The statement 'You've already proven you can achieve what you set your mind to. Now we get to discover what you want to become' elegantly captures the values-based shift needed. Minor areas for enhancement: The response could more explicitly name 'values' as a construct, and could have included a brief check-in about whether this exploration feels right for the client. The density of metaphor, while poetic and helpful, might benefit from slightly more concrete grounding for some clients.",
+          "flags": [],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:56:18.364Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The response effectively incorporates core ACT concepts required by the rubric. Strengths include: 1) Strong emphasis on DIRECTION vs. DESTINATION ('signposts pointing toward the life that wants to unfold', 'next layer of growth', 'become' framing rather than achieve), 2) Implicit VALUES exploration through questions probing meaning, connection, presence, and authentic self-expression without explicitly labeling them as values, 3) Skillful avoidance of goal-setting ('not new goals to chase') and gratitude journaling. Concerns include: Lack of explicit 'values' terminology for psychoeducation, subtle risk in 'what you want to become' leaning toward future-focused identity (destination-thinking) versus present direction choice, and metaphor density may risk client confusion.",
+          "flags": [
+            "Metaphor density could obscure meaning for some clients",
+            "'What you want to become' phrasing leans subtly toward destination-thinking"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student response effectively employs ACT principles by differentiating between direction and destination, focusing on values clarification, and avoiding the creation of new goals. The student acknowledges the client's achievements while emphasizing the importance of exploring underlying values and feelings. The response reframes the client's emptiness as an opportunity for growth and explores deeper questions about purpose and fulfillment, encouraging the client to reflect on what truly matters to them. The student skillfully navigates the client's emotional experience with empathy and insight, supporting the client in considering what the next phase of their life could look like outside of previously set achievements.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 100
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provided a strong, empathetic response that effectively normalizes the client's experience of emptiness after achieving conventional goals. They successfully avoided the prohibited interventions, explicitly stating that the answers to their questions are 'not new goals to chase.' The response includes Values Clarification by asking the client to visualize a meaningful day and identify the qualities they wish to express. The concept of Direction vs. Destination is touched upon through the metaphor of the 'summit' vs. the 'space between,' and by contrasting achieved markers with the 'life that wants to emerge.' However, the response could be improved by explicitly using the clinical term 'values' rather than just 'what feels missing' or 'purpose,' and by drawing a sharper distinction between values (compass/direction) and goals (destination) to fully maximize ACT modality adherence.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:18:16.332Z"
+        }
+      ]
     }
   }
 ]

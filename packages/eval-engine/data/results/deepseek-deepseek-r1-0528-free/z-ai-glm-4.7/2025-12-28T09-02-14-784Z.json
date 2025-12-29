@@ -17,20 +17,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student response demonstrates strong empathy and effectively validates the client's exhaustion while skillfully avoiding forbidden elements ('try a new technique', 'don't give up'). It implicitly addresses ACT principles but lacks explicit articulation of key rubric components: 1) Creative Hopelessness is present through acknowledgment of failed strategies but not explicitly framed as unworkability; 2) Control-is-the-Problem is suggested indirectly ('applied solutions haven't worked') without naming control as the core issue; 3) Dropping the Rope is strongest ('don't need to solve it' conveys surrender of struggle). Response excellently utilizes acceptance/values orientation and relational framing.",
-        "flags": [
-          "Could explicitly name 'creative hopelessness' to deepen intervention",
-          "Opportunity missed to directly state: 'The effort to control anxiety is worsening exhaustion' (Control-is-the-Problem)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student response demonstrates strong empathy and effectively validates the client's exhaustion while skillfully avoiding forbidden elements ('try a new technique', 'don't give up'). It implicitly addresses ACT principles but lacks explicit articulation of key rubric components: 1) Creative Hopelessness is present through acknowledgment of failed strategies but not explicitly framed as unworkability; 2) Control-is-the-Problem is suggested indirectly ('applied solutions haven't worked') without naming control as the core issue; 3) Dropping the Rope is strongest ('don't need to solve it' conveys surrender of struggle). Response excellently utilizes acceptance/values orientation and relational framing.",
+          "flags": [
+            "Could explicitly name 'creative hopelessness' to deepen intervention",
+            "Opportunity missed to directly state: 'The effort to control anxiety is worsening exhaustion' (Control-is-the-Problem)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

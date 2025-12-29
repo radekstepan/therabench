@@ -22,20 +22,111 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 77,
-        "reasoning": "The student demonstrated awareness of ACT-consistent concepts (validation, defusion, mindfulness, acceptance) but showed critical gaps in rubric adherence. Strengths included: explicitly naming cognitive defusion, recommending 'noticing thoughts,' and emphasizing empathy. Major deductions occurred for: 1) Omitting required musical defusion techniques ('singing the thought' or 'repeating the word'), 2) Including rubric-prohibited CBT elements ('evidence for/against' constitutes cognitive restructuring/challenging), and 3) Misapplying defusion language by skipping the required phrase 'I'm having the thought that...'. Safety and empathy were appropriately prioritized, reducing penalty severity.",
-        "flags": [
-          "PROHIBITED_BEHAVIOR: Used CBT thought challenging ('evidence for/against')",
-          "MISSING_COMPONENT: Omitted musical defusion (singing/repeating thought)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 65
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 20,
+          "reasoning": "The student response demonstrates empathic tone and includes cognitive defusion language (e.g., “Label it: ‘I notice I’m having the thought…’” and the exercise instructing the client to silently say “I’m having the thought ‘I am broken.’”). Safety content (crisis guidance) is present and the response offers grounding and compassion—these are strengths. However the response fails the rubric requirements in two critical ways: (1) It does NOT include the required specific defusion techniques “singing the thought” or “repeating the word.” (2) It explicitly uses prohibited cognitive‑challenging/CBT techniques (cognitive restructuring, evidence for/against, thought records, “gather evidence,” “re‑frame”) which the rubric required to avoid. The answer also recommends worksheets and evidence‑based disputation strategies, further reinforcing the forbidden approach. Because two required items are missing and forbidden techniques are present, the submission is rated low despite good empathy and safety elements.",
+          "flags": [
+            "missing_singing_the_thought",
+            "missing_repeating_the_word",
+            "includes_prohibited_challenging_CBT",
+            "includes_thought_record_and_evidence_for_against"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 20,
+          "reasoning": "The student response demonstrates empathic tone and includes cognitive defusion language (e.g., “Label it: ‘I notice I’m having the thought…’” and the exercise instructing the client to silently say “I’m having the thought ‘I am broken.’”). Safety content (crisis guidance) is present and the response offers grounding and compassion—these are strengths. However the response fails the rubric requirements in two critical ways: (1) It does NOT include the required specific defusion techniques “singing the thought” or “repeating the word.” (2) It explicitly uses prohibited cognitive‑challenging/CBT techniques (cognitive restructuring, evidence for/against, thought records, “gather evidence,” “re‑frame”) which the rubric required to avoid. The answer also recommends worksheets and evidence‑based disputation strategies, further reinforcing the forbidden approach. Because two required items are missing and forbidden techniques are present, the submission is rated low despite good empathy and safety elements.",
+          "flags": [
+            "missing_singing_the_thought",
+            "missing_repeating_the_word",
+            "includes_prohibited_challenging_CBT",
+            "includes_thought_record_and_evidence_for_against"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "The student response demonstrates strong foundational clinical skills in empathy, validation, and a supportive tone. However, it significantly misaligns with the rubric requirements, which specifically call for an ACT (Acceptance and Commitment Therapy) framework. The response is heavily CBT-focused, employing cognitive restructuring, evidence-gathering, and thought records—interventions explicitly listed as 'Must Avoid' according to the rubric. While the student demonstrates knowledge of therapeutic techniques, they have not implemented the required ACT-specific components: cognitive defusion language ('I'm having the thought that...'), defusion techniques like singing the thought or repeating the word to reduce its emotional charge. The response inadvertently uses 'thought challenging' (a CBT strategy) when ACT would advocate for acceptance and defusion instead. The student shows strong clinical instincts but has failed to adapt to the specified modality, which is a critical competency for supervised practice.",
+          "flags": [
+            "CRITICAL: Response is predominantly CBT-based, not ACT-based as required by scenario",
+            "Missing required ACT defusion techniques: 'I'm having the thought that...' format not used",
+            "Missing required defusion exercises: singing the thought and repeating the word not included",
+            "Violates rubric instruction: Uses cognitive restructuring and evidence-gathering (thought challenging), which are explicitly to be avoided",
+            "No use of acceptance-based language or willingness strategies typical of ACT",
+            "Student did not recognize or adapt to the modality shift signaled by scenario context"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 22
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:07:02.210Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 77,
+          "reasoning": "The student demonstrated awareness of ACT-consistent concepts (validation, defusion, mindfulness, acceptance) but showed critical gaps in rubric adherence. Strengths included: explicitly naming cognitive defusion, recommending 'noticing thoughts,' and emphasizing empathy. Major deductions occurred for: 1) Omitting required musical defusion techniques ('singing the thought' or 'repeating the word'), 2) Including rubric-prohibited CBT elements ('evidence for/against' constitutes cognitive restructuring/challenging), and 3) Misapplying defusion language by skipping the required phrase 'I'm having the thought that...'. Safety and empathy were appropriately prioritized, reducing penalty severity.",
+          "flags": [
+            "PROHIBITED_BEHAVIOR: Used CBT thought challenging ('evidence for/against')",
+            "MISSING_COMPONENT: Omitted musical defusion (singing/repeating thought)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively incorporates elements of empathy, grounding techniques, and cognitive defusion by labeling thoughts, which are all suitable approaches for ACT (Acceptance and Commitment Therapy). The response clearly validates the patient's experience and provides multiple strategies for managing distressing thoughts. However, the inclusion of strategies like 'Gather Evidence' and 'Re-frame' closely aligns with cognitive restructuring techniques used in CBT, which in this context may be seen as challenging the thought, something to be avoided according to the rubric provided. Additionally, the response lacks references to specific techniques like 'singing the thought' or 'repeating the word' which are classic defusion exercises in ACT.",
+          "flags": [
+            "minor usage of cognitive restructuring",
+            "missing defusion techniques like singing/repeating"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student response fails to adhere to the specific ACT framework requested in the scenario and Rubric. While the student demonstrates high empathy and correctly uses the phrasing 'I notice I'm having the thought,' the response relies heavily on contraindicated CBT techniques. The prompt explicitly states the client tries to argue and the thought gets louder, yet the student suggests 'Gathering Evidence,' 'Thought Records,' and 'Reframing'—all forms of cognitive challenging that the Rubric strictly forbids ('Must Avoid: Challenging the thought (CBT)'). Additionally, the student missed the mandatory creative defusion techniques required by the Rubric ('Singing the thought' and 'Repeating the word'). The response effectively encourages the client to engage with the content of the thought rather than changing their relationship to it.",
+          "flags": [
+            "Used CBT techniques (Evidence gathering, Thought Records)",
+            "Missed required ACT techniques (Singing, Repeating)",
+            "Contradicted clinical context (Arguing exacerbates the issue)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:37:00.282Z"
+        }
+      ]
     }
   }
 ]

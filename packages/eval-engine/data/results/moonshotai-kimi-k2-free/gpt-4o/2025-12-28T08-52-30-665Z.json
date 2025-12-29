@@ -23,21 +23,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student effectively empathizes with the client's emotions and summarizes the client's catastrophic thinking, indicating high empathy. However, the response lacks adherence to the CBT modality requirement of using the downward arrow technique to identify underlying assumptions and core beliefs. The student should have guided the client to explore these deeper layers by asking questions like, 'What does losing your job say about you as a person?' Without addressing these cognitive aspects, the response misses crucial elements required for a structured CBT intervention.",
-        "flags": [
-          "Missing Downward Arrow Technique",
-          "Not Addressing Core Beliefs",
-          "Not Identifying Underlying Assumptions"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student effectively empathizes with the client's emotions and summarizes the client's catastrophic thinking, indicating high empathy. However, the response lacks adherence to the CBT modality requirement of using the downward arrow technique to identify underlying assumptions and core beliefs. The student should have guided the client to explore these deeper layers by asking questions like, 'What does losing your job say about you as a person?' Without addressing these cognitive aspects, the response misses crucial elements required for a structured CBT intervention.",
+          "flags": [
+            "Missing Downward Arrow Technique",
+            "Not Addressing Core Beliefs",
+            "Not Identifying Underlying Assumptions"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

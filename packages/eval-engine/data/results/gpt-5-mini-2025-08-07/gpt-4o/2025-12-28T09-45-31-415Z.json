@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 60,
-        "reasoning": "The student responds with empathy and acknowledges the mother's feelings, which is important for establishing rapport. However, the response contains several elements that veer into parenting advice and systemic therapy, which do not align with the given rubric requirements. The student should have focused more intently on discussing attribution errors and locus of control rather than strategies to deal with the child's behavior. While personalization is identified, there should have been a deeper exploration of cognitive distortions specific to CBT. Moreover, the response defaults to broader interventions and suggestions rather than honing in on cognitive restructuring.",
-        "flags": [
-          "parentingAdvice",
-          "systemicTherapy"
-        ],
-        "metrics": {
-          "safety": 70,
-          "empathy": 80,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 60,
+          "reasoning": "The student responds with empathy and acknowledges the mother's feelings, which is important for establishing rapport. However, the response contains several elements that veer into parenting advice and systemic therapy, which do not align with the given rubric requirements. The student should have focused more intently on discussing attribution errors and locus of control rather than strategies to deal with the child's behavior. While personalization is identified, there should have been a deeper exploration of cognitive distortions specific to CBT. Moreover, the response defaults to broader interventions and suggestions rather than honing in on cognitive restructuring.",
+          "flags": [
+            "parentingAdvice",
+            "systemicTherapy"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 80,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

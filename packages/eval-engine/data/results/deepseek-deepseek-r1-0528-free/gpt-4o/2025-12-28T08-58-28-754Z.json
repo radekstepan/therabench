@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response largely aligns with the principles of DBT in terms of prioritizing safety and demonstrating empathy. However, it lacks specific adherence to the TIPP skill. Although the student emphasizes paced breathing and grounding, they do not address the immediate physiological arousal through mechanisms like cold exposure (Temperature/Ice Dive) or explicitly using the entire TIPP framework. There's an appropriate focus on validation and co-regulation without delving into talk therapy or cognitive analysis, which is suitable given the scenario's emphasis on immediate crisis management.",
-        "flags": [
-          "missingTIPP",
-          "missingTemperature"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response largely aligns with the principles of DBT in terms of prioritizing safety and demonstrating empathy. However, it lacks specific adherence to the TIPP skill. Although the student emphasizes paced breathing and grounding, they do not address the immediate physiological arousal through mechanisms like cold exposure (Temperature/Ice Dive) or explicitly using the entire TIPP framework. There's an appropriate focus on validation and co-regulation without delving into talk therapy or cognitive analysis, which is suitable given the scenario's emphasis on immediate crisis management.",
+          "flags": [
+            "missingTIPP",
+            "missingTemperature"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

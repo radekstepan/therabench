@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response is empathetic and acknowledges the client's experience of depression. The response appropriately uses metaphors such as the 'storm cloud and sky,' aligning with ACT's 'Sky and the Weather' metaphor, though it does not directly employ the 'Chessboard' metaphor. The student avoids identity work and self-esteem discussions, focusing instead on separating the self from the experienced depression, which is consistent with the concept of Self-as-Context. The invitation to explore undepressed parts hints at the Observing Self. However, to fully meet the criteria, a more direct reference to the 'Chessboard' metaphor and a clearer exploration of the 'Observing Self' could strengthen the response.",
-        "flags": [
-          "missing_chessboard_metaphor",
-          "minimal_observing_self"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is empathetic and acknowledges the client's experience of depression. The response appropriately uses metaphors such as the 'storm cloud and sky,' aligning with ACT's 'Sky and the Weather' metaphor, though it does not directly employ the 'Chessboard' metaphor. The student avoids identity work and self-esteem discussions, focusing instead on separating the self from the experienced depression, which is consistent with the concept of Self-as-Context. The invitation to explore undepressed parts hints at the Observing Self. However, to fully meet the criteria, a more direct reference to the 'Chessboard' metaphor and a clearer exploration of the 'Observing Self' could strengthen the response.",
+          "flags": [
+            "missing_chessboard_metaphor",
+            "minimal_observing_self"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

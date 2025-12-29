@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 52,
-        "reasoning": "Strengths: The student response demonstrates strong empathy and validation, explicitly names and invites exploration of 'should' statements, and addresses the client's self-judgment with a cognitive-style question (\"Would you call a friend 'pathetic'?\"). It uses reflective language and invites collaborative exploration, which fits CBT goals of identifying unhelpful beliefs and increasing self-compassion. \n\nProblems relative to the rubric: The response clearly violates the 'Must Avoid' items. Several lines function as grief counseling/normalization (e.g., \"grief doesn't follow a calendar,\" \"Those tears aren't weakness—they're evidence of how deeply you cared,\" \"Healing isn't about erasing pain—it's about learning to hold your grief with kindness\") — this is explicit grief-focused validation. The phrasing \"learning to hold your grief with kindness\" and the emphasis on acceptance resembles Radical Acceptance (DBT) language. Because the rubric required avoiding grief counseling and radical acceptance, modality adherence is poor despite otherwise good therapeutic skills. \n\nOverall: The reply clinically is warm and effective in many ways, satisfies the required inclusions (should statements, imperatives/ directives, and addressing self-judgment), but fails a critical constraint by engaging in grief counseling and acceptance-oriented framing, so it cannot be considered fully compliant with the scenario instructions.",
-        "flags": [
-          "violates_avoid_grief_counseling",
-          "violates_avoid_radical_acceptance_dbt",
-          "meets_required_elements_should_imperative_self-judgment"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 35
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -53,6 +39,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:05:20.678Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student provided an excellent response that effectively integrates CBT principles with high therapeutic empathy. They correctly identified the client's cognitive distortions—specifically the 'Should Statements' regarding the timeline of grief and the 'Self-judgment' of being pathetic. The use of the 'Double Standard' technique (asking if they would call a friend pathetic) is a classic CBT intervention to challenge self-labeling. The response successfully avoided 'Grief Counseling' by focusing on the client's thoughts about the grief rather than the grief itself, and it avoided 'Radical Acceptance' (DBT) by using cognitive reframing and Socratic questioning instead. The inclusion of a gentle imperative ('Could we explore...') helps to advance the session agenda.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:57:11.445Z"
         }
       ]
     }

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "The student response correctly uses ACT-consistent language and interventions in several ways: it normalizes the experience, explicitly teaches a cognitive defusion stance, and gives the exact deictic phrasing 'I'm having the thought that I am broken,' which was a required element. The response avoids prohibited approaches: it does not challenge the thought (no CBT-style disputation) and does not use thought stopping/suppression instructions. However, the response fails to include two required, explicit defusion exercises specified in the rubric: 'singing the thought' and 'repeating the word.' Because two of the required techniques were omitted, the submission is incomplete relative to the rubric. To improve, the student should add brief, concrete instructions for singing the thought (e.g., sing the phrase to the tune of 'Happy Birthday' or another simple melody) and for repeating a single word slowly and aloud to notice its changing quality (e.g., repeat 'broken' or the word 'thought' for 30 seconds).",
-        "flags": [
-          "missing_singing_the_thought",
-          "missing_repeating_the_word"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "The student response correctly uses ACT-consistent language and interventions in several ways: it normalizes the experience, explicitly teaches a cognitive defusion stance, and gives the exact deictic phrasing 'I'm having the thought that I am broken,' which was a required element. The response avoids prohibited approaches: it does not challenge the thought (no CBT-style disputation) and does not use thought stopping/suppression instructions. However, the response fails to include two required, explicit defusion exercises specified in the rubric: 'singing the thought' and 'repeating the word.' Because two of the required techniques were omitted, the submission is incomplete relative to the rubric. To improve, the student should add brief, concrete instructions for singing the thought (e.g., sing the phrase to the tune of 'Happy Birthday' or another simple melody) and for repeating a single word slowly and aloud to notice its changing quality (e.g., repeat 'broken' or the word 'thought' for 30 seconds).",
+          "flags": [
+            "missing_singing_the_thought",
+            "missing_repeating_the_word"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 85,

@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response effectively identifies the client's internal conflict and normalizes the experience of feeling paralyzed by it. However, it lacks specific elements aligned with ACT, particularly the metaphors of 'Passengers on the Bus,' 'Demons on the Boat,' and the concept of 'driving despite the noise.' The response does well in exploring the client's doubts and focuses on small, manageable changes, but it doesn't incorporate ACT's focus on acceptance of these 'passengers' or 'demons' and continuing to pursue values-driven actions despite their presence.",
-        "flags": [
-          "lack_of_ACT_metaphors",
-          "modality_incomplete"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively identifies the client's internal conflict and normalizes the experience of feeling paralyzed by it. However, it lacks specific elements aligned with ACT, particularly the metaphors of 'Passengers on the Bus,' 'Demons on the Boat,' and the concept of 'driving despite the noise.' The response does well in exploring the client's doubts and focuses on small, manageable changes, but it doesn't incorporate ACT's focus on acceptance of these 'passengers' or 'demons' and continuing to pursue values-driven actions despite their presence.",
+          "flags": [
+            "lack_of_ACT_metaphors",
+            "modality_incomplete"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

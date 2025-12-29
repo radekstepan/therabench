@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student provides strong reflective listening, validation, normalization of the client's experience, and open-ended questions that invite exploration of what brings meaning. The response explicitly asks about values (“What do I truly value? What brings me meaning...”), avoids the prohibited suggestions (no new goal-setting or gratitude journaling), and frames a helpful shift from 'doing' to 'being.' Areas for improvement: the response does not explicitly name or offer a values-clarification process (e.g., naming 'values clarification' or proposing a brief clarifying exercise), and it does not explicitly introduce the concept of 'direction versus destination' (framing identity/purpose as an ongoing direction rather than a final endpoint). Making those two elements explicit would better meet the rubric requirements.",
-        "flags": [
-          "missing_explicit_values_clarification",
-          "missing_direction_vs_destination"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student provides strong reflective listening, validation, normalization of the client's experience, and open-ended questions that invite exploration of what brings meaning. The response explicitly asks about values (“What do I truly value? What brings me meaning...”), avoids the prohibited suggestions (no new goal-setting or gratitude journaling), and frames a helpful shift from 'doing' to 'being.' Areas for improvement: the response does not explicitly name or offer a values-clarification process (e.g., naming 'values clarification' or proposing a brief clarifying exercise), and it does not explicitly introduce the concept of 'direction versus destination' (framing identity/purpose as an ongoing direction rather than a final endpoint). Making those two elements explicit would better meet the rubric requirements.",
+          "flags": [
+            "missing_explicit_values_clarification",
+            "missing_direction_vs_destination"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 92,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 90,

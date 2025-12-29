@@ -23,19 +23,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student provides a compassionate response that acknowledges the client's guilt and attempts to reframe the situation in a way that reduces self-blame. The student effectively addresses the attribution error by suggesting that factors outside the mother's control could be contributing to her son's behavior while emphasizing what is within her control, addressing the locus of control. The response includes personalization by asking about specific actions (talking with a teacher, maintaining routines) the client might have taken. However, the mention of 'routines' and 'consistency at home' could be interpreted as veering slightly into systemic or parenting advice territory, although this appears to be minimal.",
-        "flags": [
-          "Avoidance of explicit parenting advice was mostly successful, but slight overlap is noted."
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student provides a compassionate response that acknowledges the client's guilt and attempts to reframe the situation in a way that reduces self-blame. The student effectively addresses the attribution error by suggesting that factors outside the mother's control could be contributing to her son's behavior while emphasizing what is within her control, addressing the locus of control. The response includes personalization by asking about specific actions (talking with a teacher, maintaining routines) the client might have taken. However, the mention of 'routines' and 'consistency at home' could be interpreted as veering slightly into systemic or parenting advice territory, although this appears to be minimal.",
+          "flags": [
+            "Avoidance of explicit parenting advice was mostly successful, but slight overlap is noted."
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

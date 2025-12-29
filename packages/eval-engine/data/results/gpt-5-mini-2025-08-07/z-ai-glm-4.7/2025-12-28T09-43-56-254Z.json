@@ -19,19 +19,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
-        "flags": [
-          "used_emotion_regulation_techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
+          "flags": [
+            "used_emotion_regulation_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 65,

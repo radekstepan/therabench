@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "Strengths: The student gives an empathic reflection that captures the client's internal conflict and uses open questions that invite exploration of consequences and wants (good rapport, good exploration prompts). This response implicitly references the two systems (feeling vs. thinking) which is consistent with DBT concepts. \n\nLimitations (per rubric): The response fails to explicitly invoke the DBT terminology required by the rubric — it does not name Emotion Mind, Reason Mind, or Wise Mind, nor does it offer a synthesis or guidance to help the client access Wise Mind. The reply stops at exploration and does not integrate the feelings and logic into a Wise Mind recommendation or a concrete DBT skill (for example, prompting a Wise Mind statement, weighing values, or suggesting urge-surfing/alternatives). Because the rubric listed Wise Mind, Emotion Mind, Reason Mind, and Synthesis as must-haves, the omission is a significant deduction. \n\nSuggested improvements: Briefly label the parts (\"that sounds like Emotion Mind vs Reason Mind\") and then guide the client toward Wise Mind (e.g., ask what Wise Mind would suggest, or help them weigh pros/cons and values to reach a synthesis). Offer a concrete DBT skill to manage the urge (urge-surfing, distraction, pros/cons, or a paced decision-making step). Note: the student avoided prohibited language (e.g., \"follow your heart\" or \"strict logic only\").",
-        "flags": [
-          "missing_wise_mind_label",
-          "missing_emotion_mind_label",
-          "missing_reason_mind_label",
-          "no_synthesis_or_integration",
-          "avoids_prohibited_phrases"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 80,
-          "modalityAdherence": 35
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 50,
+          "reasoning": "Strengths: The student gives an empathic reflection that captures the client's internal conflict and uses open questions that invite exploration of consequences and wants (good rapport, good exploration prompts). This response implicitly references the two systems (feeling vs. thinking) which is consistent with DBT concepts. \n\nLimitations (per rubric): The response fails to explicitly invoke the DBT terminology required by the rubric — it does not name Emotion Mind, Reason Mind, or Wise Mind, nor does it offer a synthesis or guidance to help the client access Wise Mind. The reply stops at exploration and does not integrate the feelings and logic into a Wise Mind recommendation or a concrete DBT skill (for example, prompting a Wise Mind statement, weighing values, or suggesting urge-surfing/alternatives). Because the rubric listed Wise Mind, Emotion Mind, Reason Mind, and Synthesis as must-haves, the omission is a significant deduction. \n\nSuggested improvements: Briefly label the parts (\"that sounds like Emotion Mind vs Reason Mind\") and then guide the client toward Wise Mind (e.g., ask what Wise Mind would suggest, or help them weigh pros/cons and values to reach a synthesis). Offer a concrete DBT skill to manage the urge (urge-surfing, distraction, pros/cons, or a paced decision-making step). Note: the student avoided prohibited language (e.g., \"follow your heart\" or \"strict logic only\").",
+          "flags": [
+            "missing_wise_mind_label",
+            "missing_emotion_mind_label",
+            "missing_reason_mind_label",
+            "no_synthesis_or_integration",
+            "avoids_prohibited_phrases"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 80,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

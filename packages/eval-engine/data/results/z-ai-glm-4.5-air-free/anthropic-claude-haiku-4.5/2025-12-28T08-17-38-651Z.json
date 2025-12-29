@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 82,
-        "reasoning": "Strengths: The student shows good empathy (validating the client's worry) and correctly identifies and labels the thought pattern as jumping to the worst possibility (addresses catastrophizing/fortune-telling) and offers decatastrophizing by proposing alternative, more likely explanations and generating options. The response is collaborative and avoids the prohibited DBT phrase \"check the facts\" and does not engage in reassurance-seeking.\n\nShortcoming: The response does not include an explicit probability estimation intervention (e.g., asking the client to rate how likely each scenario is, or to compare the relative likelihoods numerically). Because the rubric required explicit inclusion of probability estimation, the response is incomplete. Also could be slightly more directive in guiding a structured probability exercise or weighing evidence for/against the feared outcome.\n\nRecommendation: Add a brief, concrete probability-estimation step (\"On a scale of 0–100%, how likely do you think a car crash is right now? What makes that number higher or lower?\") and a quick behavioral/action step (call, text, check recent locations) to pair cognitive work with problem-solving.",
-        "flags": [
-          "missing_probability_estimation"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 94,
-          "modalityAdherence": 78
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -49,6 +37,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:22:32.431Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 78,
+          "reasoning": "The student response demonstrates good therapeutic rapport and validation of the client's feelings. They correctly recognize the catastrophic thinking pattern and suggest alternative explanations, which aligns with decatastrophizing. However, the response doesn't explicitly name the cognitive distortions (catastrophizing and fortune telling) as required by the rubric. While they imply probability assessment by noting alternatives 'might be more likely,' they don't explicitly engage the client in probability estimation techniques. The response avoids the prohibited elements (check the facts DBT terminology and reassurance seeking). To improve, the student should specifically identify the cognitive distortions and guide the client through a more structured probability assessment exercise.",
+          "flags": [
+            "Incomplete identification of cognitive distortions",
+            "Could be more explicit with probability estimation technique"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:58:19.812Z"
         }
       ]
     }

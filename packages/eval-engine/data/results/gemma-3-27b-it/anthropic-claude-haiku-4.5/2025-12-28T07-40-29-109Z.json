@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "The student response demonstrates good therapeutic tone, validation, and several CBT-appropriate moves (challenging the \"pathetic\" label, bringing attention to the client's \"should\" expectation, inviting exploration of underlying unresolved material). Specific inclusions required by the rubric are present: a \"should\" statement is echoed back (\"feeling like you *should* be further along\"), imperatives are used (e.g., \"First, let's gently push back...\", \"Let's explore...\", \"Right now, let's focus on self-compassion\"), and the client's self-judgment (\"pathetic\") is explicitly addressed. \n\nHowever the response also contains material the rubric explicitly required to avoid: it frames the situation as grief and normalizes the timeline (\"There’s no timeline for grief... Everyone processes loss differently\"; \"It's completely understandable that you're still crying...\"), which constitutes grief counseling/normalization. It also uses acceptance-oriented language (e.g., normalizing, emphasizing that crying is a natural release and not a sign of weakness), crossing into radical acceptance/DBT-style validation rather than staying strictly within a CBT restructuring and behavioral framework. Those elements reduce modality adherence. \n\nStrengths: empathic, collegial tone; good invitation to explore specifics; addresses cognitive distortion (should statements) and self-critical labeling. \n\nImprovements: remove or reframe grief-normalization and radical-acceptance language to align with CBT (e.g., label the \"should\" cognitive distortion explicitly, use Socratic questions to test the \"should/normal\" belief, introduce behavioral experiments or thought records, operationalize specific coping strategies and goals). Avoid blanket statements about timelines or grief as a disorder-specific process; instead focus on concrete antecedents/maintaining factors and measurable behavioral targets.",
-        "flags": [
-          "includes_should_statements",
-          "uses_imperatives",
-          "addresses_self_judgment",
-          "contains_grief_counseling_normalization",
-          "contains_radical_acceptance_language"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 88,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -58,6 +42,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:22:28.935Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong empathy and rapport-building skills, effectively validating the client's pain and challenging the 'pathetic' label. They correctly identify and gently challenge the 'should' statements and self-judgment present in the client's cognition. However, the response veers too close to general grief counseling techniques (e.g., discussing the lack of a timeline, grieving the future imagined, exploring unresolved feelings) rather than sticking strictly to Cognitive Restructuring. The intervention lacks a specific cognitive behavioral examination of the utility or accuracy of the thought 'I should be over it,' opting instead for a more exploratory/emotional focus. The response also borders on providing imperatives by telling the client 'let's explore' and 'let's focus' rather than eliciting collaboration more subtly.",
+          "flags": [
+            "Approaches Grief Counseling focus",
+            "Could be more directive regarding Cognitive Restructuring"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:23:31.524Z"
         }
       ]
     }

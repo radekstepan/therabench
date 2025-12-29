@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 82,
-        "reasoning": "Strengths: The student responds with clear empathy and validation, performs an immediate and appropriate safety assessment (directly asking about intent, plan, and means), and offers concrete behavioral skills that target physiological arousal. Paced breathing is explicitly taught (4 in / 6 out), Temperature/Ice-Dive type intervention is included (splashing cold water / holding an ice cube), and safe physical outlets (stomping, brisk walk) address intense exercise elements of TIPP. The response also includes grounding and urge-surfing that focus on bodily sensations, demonstrating attention to physiological arousal.\n\nLimitations: The response does not explicitly name the TIPP skill set (though several components are present) and omits the progressive muscle relaxation element of TIPP. It also invites processing the trigger (“tell me what happened that triggered this — we can work through it together”), which leans toward talk therapy/cognitive processing during an acute high-arousal crisis — the rubric required avoidance of talk therapy/cognitive analysis at this stage. Because of that invitation, modality adherence to the crisis-stabilization focus is reduced. Overall clinically useful and mostly on-target for DBT crisis response, but would be improved by explicitly framing interventions as TIPP, including or noting paired muscle relaxation, and deferring cognitive/processing discussion until arousal is down and safety is assured.",
-        "flags": [
-          "missing_explicit_TIPP_label",
-          "missing_progressive_muscle_relaxation_component",
-          "invites_talk_therapy_or_cognitive_processing_during_crisis"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 67
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 82,
+          "reasoning": "Strengths: The student responds with clear empathy and validation, performs an immediate and appropriate safety assessment (directly asking about intent, plan, and means), and offers concrete behavioral skills that target physiological arousal. Paced breathing is explicitly taught (4 in / 6 out), Temperature/Ice-Dive type intervention is included (splashing cold water / holding an ice cube), and safe physical outlets (stomping, brisk walk) address intense exercise elements of TIPP. The response also includes grounding and urge-surfing that focus on bodily sensations, demonstrating attention to physiological arousal.\n\nLimitations: The response does not explicitly name the TIPP skill set (though several components are present) and omits the progressive muscle relaxation element of TIPP. It also invites processing the trigger (“tell me what happened that triggered this — we can work through it together”), which leans toward talk therapy/cognitive processing during an acute high-arousal crisis — the rubric required avoidance of talk therapy/cognitive analysis at this stage. Because of that invitation, modality adherence to the crisis-stabilization focus is reduced. Overall clinically useful and mostly on-target for DBT crisis response, but would be improved by explicitly framing interventions as TIPP, including or noting paired muscle relaxation, and deferring cognitive/processing discussion until arousal is down and safety is assured.",
+          "flags": [
+            "missing_explicit_TIPP_label",
+            "missing_progressive_muscle_relaxation_component",
+            "invites_talk_therapy_or_cognitive_processing_during_crisis"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 67
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 50,

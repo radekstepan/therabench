@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 80,
-        "reasoning": "The student response contains the required CBT elements: Socratic questioning (e.g., 'Can you tell me more... What story are you telling yourself?', 'Have you applied for jobs... What has been the actual feedback?'), explicit identification of an overgeneralization/absolute thought ('completely unemployable' and 'It's an absolute statement – things are rarely always or never'), and examination of the validity of the thought (asking about facts vs. fears and actual feedback). The tone is validating and collaborative, and the response appropriately aims to separate self-worth from the resume gap. However, the response violates the 'Must Avoid' requirement by drifting into career counseling (suggesting how to frame the gap, commenting on employer reactions). That is outside the scope specified by the rubric and warrants score reduction. To improve, the therapist should avoid concrete career/resume advice and instead stick to CBT techniques (e.g., guided discovery, behavioral experiments, thought records, role-play of disclosure) without providing occupational guidance.",
-        "flags": [
-          "career_counseling"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 78
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 82,
@@ -48,6 +36,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:22:34.035Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student response is excellent and strictly adheres to the CBT framework. It effectively identifies the cognitive distortion (Overgeneralization) by explicitly challenging the absolute terms 'never' and 'completely.' The student successfully utilizes Socratic Questioning (e.g., 'What story are you telling yourself?', 'What has been the actual feedback you’ve received?') to guide the patient toward examining the validity of their thoughts rather than accepting them as facts. The response validates the patient's distress while maintaining a focus on cognitive restructuring. Crucially, the student avoids Career Counseling by keeping the focus on the patient's internal narrative and self-worth regarding the gap, rather than providing tactical job search advice or resume editing tips. Values Clarification is also correctly avoided, as the focus remains on the validity of the belief and the evidence for/against it, rather than defining what the patient fundamentally values in life.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:24:15.258Z"
         }
       ]
     }

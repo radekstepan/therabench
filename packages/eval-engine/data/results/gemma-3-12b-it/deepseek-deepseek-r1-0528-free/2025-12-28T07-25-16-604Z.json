@@ -21,17 +21,100 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The response effectively validates the client's experience and focuses on short-term relief rather than problem-solving. It explicitly employs distress tolerance techniques aligned with DBT principles, including sensory grounding (ACCEPTS – Sensations/T thoughts), distinct distraction suggestions, and emphasizes temporary relief. Collaborative tone fosters client autonomy. Minor deductions occur for partially incomplete ACCEPTS coverage (missing Activities/Contributing/Pushing Away elements) and premature context-gathering (asking about news/timings/spiraling details), which could delay immediate coping support.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows strong validation and empathy, normalizes the client’s experience, and offers concrete, short-term DBT-consistent coping strategies (sensory grounding, distraction, brief mindfulness, gentle movement) that target immediate relief. The response avoids encouraging suppression and does not attempt to solve the underlying problem; it frames distraction as temporary respite and explicitly says it’s not about avoiding the problem forever. The student also elicits helpful clarifying information (timing, what spiraling looks like) which can guide individualized coping.\n\nLimitations: The rubric required inclusion of ACCEPTS explicitly; while the suggested techniques map onto elements of ACCEPTS (Activities, Sensations, etc.), the student did not name or structure the intervention around the ACCEPTS acronym, which would be clearer in a DBT context. Critically, the student did not perform a brief safety assessment or ask about suicidal ideation/self-harm risk when the client describes intense spiraling after bad news — a standard component of risk management in crisis/distress contexts. Finally, the response could more explicitly create a concrete, step-by-step plan for the requested one-hour break (e.g., choose 1–2 coping options and set a start/end time) to increase behavioral activation and usability.\n\nOverall: Clinically empathic and generally DBT-aligned for short-term relief, but missing explicit ACCEPTS framing and a necessary safety check.",
+          "flags": [
+            "missing_explicit_ACCEPTS",
+            "no_safety_check_for_self-harm_or_suicidality",
+            "could_offer_more_concrete_hour_plan"
+          ],
+          "metrics": {
+            "safety": 60,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows strong validation and empathy, normalizes the client’s experience, and offers concrete, short-term DBT-consistent coping strategies (sensory grounding, distraction, brief mindfulness, gentle movement) that target immediate relief. The response avoids encouraging suppression and does not attempt to solve the underlying problem; it frames distraction as temporary respite and explicitly says it’s not about avoiding the problem forever. The student also elicits helpful clarifying information (timing, what spiraling looks like) which can guide individualized coping.\n\nLimitations: The rubric required inclusion of ACCEPTS explicitly; while the suggested techniques map onto elements of ACCEPTS (Activities, Sensations, etc.), the student did not name or structure the intervention around the ACCEPTS acronym, which would be clearer in a DBT context. Critically, the student did not perform a brief safety assessment or ask about suicidal ideation/self-harm risk when the client describes intense spiraling after bad news — a standard component of risk management in crisis/distress contexts. Finally, the response could more explicitly create a concrete, step-by-step plan for the requested one-hour break (e.g., choose 1–2 coping options and set a start/end time) to increase behavioral activation and usability.\n\nOverall: Clinically empathic and generally DBT-aligned for short-term relief, but missing explicit ACCEPTS framing and a necessary safety check.",
+          "flags": [
+            "missing_explicit_ACCEPTS",
+            "no_safety_check_for_self-harm_or_suicidality",
+            "could_offer_more_concrete_hour_plan"
+          ],
+          "metrics": {
+            "safety": 60,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates solid foundational skills with strong empathy and validation, and appropriately avoids problem-solving or thought suppression. However, the response has notable gaps in DBT-specific technique application. The student successfully includes distraction techniques (sensory grounding, activities, movement) and acknowledges short-term relief needs. The tone is warm and collaborative. However, the response lacks explicit mention of ACCEPTS skills, which is a core DBT distress tolerance module directly relevant to this client's request for a one-hour break. The student frames mindfulness as potentially helpful but doesn't clearly distinguish between mindfulness and distress tolerance skills. Additionally, while the response appropriately avoids suppression language, it could be more direct about validating that temporary escape is sometimes necessary in DBT framework. The extensive scaffolding of follow-up questions, while therapeutically sound, may feel lengthy and delay practical skill introduction. The response would benefit from either naming ACCEPTS explicitly or weaving those skills more clearly into the suggestions offered.",
+          "flags": [
+            "ACCEPTS module not explicitly named or referenced despite being core DBT distress tolerance skill",
+            "Mindfulness suggestion may be less appropriate than other distress tolerance options for acute obsessional state",
+            "Response is lengthy—practical skill introduction could come earlier",
+            "Doesn't clearly differentiate between mindfulness practice and distress tolerance skills"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:15:16.911Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response effectively validates the client's experience and focuses on short-term relief rather than problem-solving. It explicitly employs distress tolerance techniques aligned with DBT principles, including sensory grounding (ACCEPTS – Sensations/T thoughts), distinct distraction suggestions, and emphasizes temporary relief. Collaborative tone fosters client autonomy. Minor deductions occur for partially incomplete ACCEPTS coverage (missing Activities/Contributing/Pushing Away elements) and premature context-gathering (asking about news/timings/spiraling details), which could delay immediate coping support.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively acknowledges the client's distress and validates their feelings, which aligns well with principles of acceptance and empathy. They emphasize short-term relief by suggesting sensory grounding, distraction techniques, gentle movement, and brief mindfulness, ensuring that the strategies are aimed at temporarily shifting focus rather than suppressing or solving the underlying issue. The student avoids any implication of suppression or problem-solving, which is appropriate for the scenario, particularly within the context of Dialectical Behavior Therapy (DBT). This approach maintains adherence to the necessary modalities and supports the client's autonomy in choosing what feels right for them.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 80,
+          "reasoning": "The student demonstrated strong empathy and validation, effectively avoiding suppression and problem-solving as required. They included discussion of distraction techniques and focused on short-term relief. They suggested several techniques that align with components of the ACCEPTS skill (sensory grounding, distraction activities, gentle movement, brief mindfulness) but did not explicitly teach the ACCEPTS skill from DBT or use the acronym. The response would benefit from explicitly naming and teaching the ACCEPTS skill to fully align with DBT modality, but the underlying approach was sound.",
+          "flags": [
+            "Did not explicitly teach the ACCEPTS DBT skill",
+            "Could be more specific about DBT techniques"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:17:29.210Z"
+        }
+      ]
     }
   }
 ]

@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response shows good empathy and validation, normalizes the conflict between feelings and logic, and correctly identifies a relevant cognitive distortion (fortune-telling/catastrophizing). The reply also invites collaboration and asks open clarifying questions, which are consistent with CBT stance. The response addresses emotional reasoning implicitly by pointing out that \"feelings aren't always facts,\" which challenges the assumption that feeling stupid equals being stupid.\n\nLimitations: The response does not explicitly guide the client through an evidence-for versus evidence-against exercise (e.g., listing objective data that supports or counters the prediction of failure). Cognitive restructuring is only introduced at a high level (\"we can work on separating those feelings from reality\") without a concrete restructuring intervention (e.g., generating alternative balanced thoughts, probability estimation, or a behavioral experiment). Because the rubric required clear inclusion of Emotional Reasoning, Evidence for vs. Evidence against, and Cognitive Restructuring, this reply meets emotional-reasoning sufficiently but only partially meets the other two required elements.\n\nRecommendations: To improve, the student should: 1) explicitly elicit and scaffold an evidence-for/evidence-against list about failing the exam; 2) lead the client through a concrete cognitive restructuring sequence (identify automatic thought, examine evidence, generate a balanced alternative thought, rate conviction); and 3) consider adding a brief behavioral experiment or probability estimation to test the prediction. These additions would fully satisfy the rubric while keeping the empathetic tone.",
-        "flags": [
-          "missing_explicit_evidence_for_vs_against",
-          "limited_cognitive_restructuring"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows good empathy and validation, normalizes the conflict between feelings and logic, and correctly identifies a relevant cognitive distortion (fortune-telling/catastrophizing). The reply also invites collaboration and asks open clarifying questions, which are consistent with CBT stance. The response addresses emotional reasoning implicitly by pointing out that \"feelings aren't always facts,\" which challenges the assumption that feeling stupid equals being stupid.\n\nLimitations: The response does not explicitly guide the client through an evidence-for versus evidence-against exercise (e.g., listing objective data that supports or counters the prediction of failure). Cognitive restructuring is only introduced at a high level (\"we can work on separating those feelings from reality\") without a concrete restructuring intervention (e.g., generating alternative balanced thoughts, probability estimation, or a behavioral experiment). Because the rubric required clear inclusion of Emotional Reasoning, Evidence for vs. Evidence against, and Cognitive Restructuring, this reply meets emotional-reasoning sufficiently but only partially meets the other two required elements.\n\nRecommendations: To improve, the student should: 1) explicitly elicit and scaffold an evidence-for/evidence-against list about failing the exam; 2) lead the client through a concrete cognitive restructuring sequence (identify automatic thought, examine evidence, generate a balanced alternative thought, rate conviction); and 3) consider adding a brief behavioral experiment or probability estimation to test the prediction. These additions would fully satisfy the rubric while keeping the empathetic tone.",
+          "flags": [
+            "missing_explicit_evidence_for_vs_against",
+            "limited_cognitive_restructuring"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

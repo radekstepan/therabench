@@ -6,20 +6,76 @@
     "timestamp": "2025-12-28T19:16:55.081Z",
     "response": "# Therapeutic Response\n\nI'm glad you came to me right now, and I want you to know I take what you're experiencing seriously. Let's work together to help you feel safer immediately.\n\n## First, let's ground you:\n\n**Right now, I'd like you to:**\n- Take a slow breath in through your nose for a count of 4, hold for 4, and out for 4\n- Notice 5 things you can see around you\n- Feel your feet firmly on the ground\n\nThese physical sensations can help calm your nervous system when it's in overdrive.\n\n## What I'm hearing:\n\nYou're experiencing intense physical activation—that pounding heart—along with overwhelming emotion. This is real, it's happening *now*, and it can change.\n\n## Important questions:\n\n- **Are you safe right now?** Do you have any urge to harm yourself or others that we need to address immediately?\n- **What triggered this?** Sometimes understanding the spark helps us make sense of the fire.\n\n## Moving forward:\n\nRage this intense doesn't last forever, even though it feels like it will. We can:\n- Identify what's underneath this anger (often hurt, fear, or powerlessness)\n- Build a safety plan for future moments\n- Explore what's been building up\n\n**Right now, you're doing the right thing by being here and expressing this. That takes strength.**\n\nWhat feels most urgent to address first?",
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 75,
-        "reasoning": "The student demonstrates strong validation, prioritizes safety assessment, and effectively targets physiological arousal with paced breathing and grounding techniques. However, the response fails to include the critical DBT TIPP protocol ('Temperature' component e.g., ice dive stimulation) required in the rubric for acute crisis management. Further, asking about triggers risks premature cognitive analysis. While paced breathing was correctly implemented (avoiding vague 'deep breaths'), the absence of temperature intervention reduces fidelity to DBT crisis protocols.",
-        "flags": [
-          "Missing required Temperature/Ice Dive intervention",
-          "Premature trigger exploration (risks cognitive processing)"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 70
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong validation, prioritizes safety assessment, and effectively targets physiological arousal with paced breathing and grounding techniques. However, the response fails to include the critical DBT TIPP protocol ('Temperature' component e.g., ice dive stimulation) required in the rubric for acute crisis management. Further, asking about triggers risks premature cognitive analysis. While paced breathing was correctly implemented (avoiding vague 'deep breaths'), the absence of temperature intervention reduces fidelity to DBT crisis protocols.",
+          "flags": [
+            "Missing required Temperature/Ice Dive intervention",
+            "Premature trigger exploration (risks cognitive processing)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong validation, prioritizes safety assessment, and effectively targets physiological arousal with paced breathing and grounding techniques. However, the response fails to include the critical DBT TIPP protocol ('Temperature' component e.g., ice dive stimulation) required in the rubric for acute crisis management. Further, asking about triggers risks premature cognitive analysis. While paced breathing was correctly implemented (avoiding vague 'deep breaths'), the absence of temperature intervention reduces fidelity to DBT crisis protocols.",
+          "flags": [
+            "Missing required Temperature/Ice Dive intervention",
+            "Premature trigger exploration (risks cognitive processing)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathic attunement and safety assessment, which are foundational strengths. However, the response has significant gaps in DBT skills application. The rubric explicitly requires TIPP skills (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation) and Temperature/Ice Dive as crisis intervention tools, yet the student only includes paced breathing (4-4-4 breathing). The response also violates the 'must avoid' guideline by incorporating talk therapy elements ('What triggered this?', 'understand the spark', 'explore what's been building up') and cognitive analysis ('identifying what's underneath this anger'). While grounding and 5-4-3-2-1 sensory work are helpful, they are not DBT-specific crisis tools. The student needed to lead with TIPP skills—specifically offering Temperature/Ice Dive (cold water immersion or ice application) as a rapid physiological interrupt, which is the gold standard for acute rage in DBT. The response reads more like general trauma-informed therapy than DBT crisis intervention. The safety questions are appropriate, but should come after skills deployment, not instead of it.",
+          "flags": [
+            "Missing TIPP skills (only paced breathing included; no Temperature/Ice Dive, Intense exercise, or Paired muscle relaxation)",
+            "Violates 'avoid deep breaths' by recommending 4-4-4 breathing as primary intervention",
+            "Incorporates talk therapy ('What triggered this?') contradicting modality adherence",
+            "Delays skills deployment in favor of assessment and empathy statements",
+            "No mention of Temperature/Ice Dive, which is most effective for acute rage presentation",
+            "Cognitive analysis ('what's underneath this anger') violates 'avoid cognitive analysis' guideline"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 42
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T19:57:30.438Z"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student response fails to adhere to the specific constraints of the DBT rubric. While the response demonstrates empathy and a desire to ensure safety, it violates the 'Must Avoid' criteria by suggesting deep breaths (box breathing) and initiating talk therapy/cognitive analysis by asking about triggers and underlying emotions. Crucially, it violates the 'Must Include' criteria by failing to utilize TIPP skills, specifically the Temperature/Ice Dive skill, which is the primary intervention for physiological arousal of this intensity in DBT. The grounding exercise provided is less effective for the described 'exploding' level of arousal than the required TIPP skill.",
+          "flags": [
+            "Used Deep Breaths",
+            "Initiated Talk Therapy",
+            "Missed TIPP Skill",
+            "Missed Temperature Intervention"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T21:58:06.893Z"
+        }
+      ]
     }
   }
 ]

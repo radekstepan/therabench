@@ -21,19 +21,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 90,
-        "reasoning": "The student's response displays a strong understanding of the principles of Acceptance and Commitment Therapy (ACT), particularly the approach of observing thoughts without engaging in them, akin to letting water flow rather than building a dam. The use of metaphors like clouds and the suggestion to recognize and name emotions without delving into analysis align well with the ACT modality, promoting mindfulness and cognitive defusion. There is a minor deviation when discussing analyzing the roots of negative thoughts, which borders on analysis. Otherwise, the response effectively avoids advocating for problematic strategies like overanalysis ('analyzing the water') or resisting thoughts ('building a dam'), while also providing practical, empathetic support.",
-        "flags": [
-          "Minor deviation towards analysis of thought origins"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response displays a strong understanding of the principles of Acceptance and Commitment Therapy (ACT), particularly the approach of observing thoughts without engaging in them, akin to letting water flow rather than building a dam. The use of metaphors like clouds and the suggestion to recognize and name emotions without delving into analysis align well with the ACT modality, promoting mindfulness and cognitive defusion. There is a minor deviation when discussing analyzing the roots of negative thoughts, which borders on analysis. Otherwise, the response effectively avoids advocating for problematic strategies like overanalysis ('analyzing the water') or resisting thoughts ('building a dam'), while also providing practical, empathetic support.",
+          "flags": [
+            "Minor deviation towards analysis of thought origins"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

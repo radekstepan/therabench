@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "Strengths: The student responded with strong empathy, validated physiological arousal (heart racing, rage), provided immediate safety steps (call emergency services, get someone with you) and gave concrete grounding and paced-breathing instructions (4-2-6 counts). Weaknesses: The response fails to include the required TIPP skill set and an explicit Temperature/Ice Dive intervention. It also contains the phrase “Take a deep breath,” which the rubric forbids, and invites cognitive/talk-therapy processing by proposing to explore triggers and patterns in the same message (also prohibited during high arousal). Because required DBT crisis elements (TIPP, temperature/ice) are missing and prohibited elements are present, modality adherence is low despite good safety and empathy.",
-        "flags": [
-          "Missing: TIPP skill (Temperature, Intense exercise, Paced breathing, Progressive relaxation)",
-          "Missing: explicit Temperature/Ice Dive intervention",
-          "Prohibited: includes phrasing 'Take a deep breath' (deep breaths discouraged by rubric)",
-          "Prohibited: invites talk therapy/cognitive analysis ('explore what’s triggering this intensity', 'patterns')"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student responded with strong empathy, validated physiological arousal (heart racing, rage), provided immediate safety steps (call emergency services, get someone with you) and gave concrete grounding and paced-breathing instructions (4-2-6 counts). Weaknesses: The response fails to include the required TIPP skill set and an explicit Temperature/Ice Dive intervention. It also contains the phrase “Take a deep breath,” which the rubric forbids, and invites cognitive/talk-therapy processing by proposing to explore triggers and patterns in the same message (also prohibited during high arousal). Because required DBT crisis elements (TIPP, temperature/ice) are missing and prohibited elements are present, modality adherence is low despite good safety and empathy.",
+          "flags": [
+            "Missing: TIPP skill (Temperature, Intense exercise, Paced breathing, Progressive relaxation)",
+            "Missing: explicit Temperature/Ice Dive intervention",
+            "Prohibited: includes phrasing 'Take a deep breath' (deep breaths discouraged by rubric)",
+            "Prohibited: invites talk therapy/cognitive analysis ('explore what’s triggering this intensity', 'patterns')"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 40,

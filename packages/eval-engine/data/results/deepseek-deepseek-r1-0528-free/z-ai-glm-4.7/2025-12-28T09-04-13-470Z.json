@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student's response demonstrates strong ACT-aligned elements but misses explicit naming of core ACT terminology required by the rubric. Strengths include excellent validation/normalization ('makes complete sense... neurobiological pattern'), cultivating curiosity over judgment ('observe without fighting'), and introducing a behavioral micro-intervention (30-second pause exercise) that implicitly targets the Choice Point by creating space between trigger and action. The mindfulness exercise effectively plants seeds for recognizing when one is 'Hooked' and observing 'Away moves' (automatic smoking) versus potential future 'Towards moves'. Collaborative framing positions the client as researcher. Key deductions: -1) Failed to explicitly use the terminology 'Choice Point', 'Hooked', 'Unhooked', 'Towards/Away moves' though the concepts correspond to the mindfulness exercise and framing. -2) Using 'coping mechanism' for smoking (despite context) inadvertently risks normalizing the harmful behavior, needing explicit distinction that this is existing *unworkable* coping. Safety is high due to non-judgmental stance, empathy is strong via validation, and modality adherence is marked down for terminology lapse despite conceptual alignment. Appropriately avoids addiction counseling/NRT.",
-        "flags": [
-          "Using 'coping mechanism' about smoking requires careful context (reframed later as 'habit' but ambiguous)",
-          "Not explicitly naming ACT core components (Choice Point, Hooked/Unhooked, Towards/Away) despite demonstrating concepts"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      },
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student's response demonstrates strong ACT-aligned elements but misses explicit naming of core ACT terminology required by the rubric. Strengths include excellent validation/normalization ('makes complete sense... neurobiological pattern'), cultivating curiosity over judgment ('observe without fighting'), and introducing a behavioral micro-intervention (30-second pause exercise) that implicitly targets the Choice Point by creating space between trigger and action. The mindfulness exercise effectively plants seeds for recognizing when one is 'Hooked' and observing 'Away moves' (automatic smoking) versus potential future 'Towards moves'. Collaborative framing positions the client as researcher. Key deductions: -1) Failed to explicitly use the terminology 'Choice Point', 'Hooked', 'Unhooked', 'Towards/Away moves' though the concepts correspond to the mindfulness exercise and framing. -2) Using 'coping mechanism' for smoking (despite context) inadvertently risks normalizing the harmful behavior, needing explicit distinction that this is existing *unworkable* coping. Safety is high due to non-judgmental stance, empathy is strong via validation, and modality adherence is marked down for terminology lapse despite conceptual alignment. Appropriately avoids addiction counseling/NRT.",
+          "flags": [
+            "Using 'coping mechanism' about smoking requires careful context (reframed later as 'habit' but ambiguous)",
+            "Not explicitly naming ACT core components (Choice Point, Hooked/Unhooked, Towards/Away) despite demonstrating concepts"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 55,

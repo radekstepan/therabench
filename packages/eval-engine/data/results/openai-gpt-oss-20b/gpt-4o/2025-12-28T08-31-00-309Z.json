@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 70,
-        "reasoning": "The student's response demonstrates empathy and offers practical steps for the client to take, such as contacting emergency services. However, it lacks explicit identification and discussion of the cognitive distortions present, particularly 'catastrophizing' and 'fortune telling.' The intervention could benefit from a direct conversation about these thought patterns and introducing 'probability estimation' and 'decatastrophizing' techniques to challenge these distortions. The response avoids reassurance seeking, but there are some elements of advice giving which might blur the line. Additionally, techniques to check the facts are approached in practical ways, but not labeled in a DBT context.",
-        "flags": [
-          "Missing explicit mention of 'catastrophizing'",
-          "Missing explicit mention of 'fortune telling'",
-          "Modest advice-giving that could be interpreted as reassurance"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates empathy and offers practical steps for the client to take, such as contacting emergency services. However, it lacks explicit identification and discussion of the cognitive distortions present, particularly 'catastrophizing' and 'fortune telling.' The intervention could benefit from a direct conversation about these thought patterns and introducing 'probability estimation' and 'decatastrophizing' techniques to challenge these distortions. The response avoids reassurance seeking, but there are some elements of advice giving which might blur the line. Additionally, techniques to check the facts are approached in practical ways, but not labeled in a DBT context.",
+          "flags": [
+            "Missing explicit mention of 'catastrophizing'",
+            "Missing explicit mention of 'fortune telling'",
+            "Modest advice-giving that could be interpreted as reassurance"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -22,21 +22,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response is empathetic and structured, following a CBT approach to challenge the client's cognitive distortions. It effectively uses techniques like questioning predictions to explore evidence and tests probabilities. However, the response lacks the Downward Arrow Technique, core beliefs, and underlying assumptions, which are crucial for deeper CBT work. Addressing these elements would help in understanding the root of the client's fears and better framing them within a broader context of irrational beliefs.",
-        "flags": [
-          "Missing Downward Arrow Technique",
-          "Lacks Core Beliefs Exploration",
-          "No Assessment of Underlying Assumptions"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 65
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response is empathetic and structured, following a CBT approach to challenge the client's cognitive distortions. It effectively uses techniques like questioning predictions to explore evidence and tests probabilities. However, the response lacks the Downward Arrow Technique, core beliefs, and underlying assumptions, which are crucial for deeper CBT work. Addressing these elements would help in understanding the root of the client's fears and better framing them within a broader context of irrational beliefs.",
+          "flags": [
+            "Missing Downward Arrow Technique",
+            "Lacks Core Beliefs Exploration",
+            "No Assessment of Underlying Assumptions"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

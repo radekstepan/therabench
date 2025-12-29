@@ -22,19 +22,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The therapy student provided a response that effectively validates the patient's feelings of unfairness, anger, and refusal, demonstrating a solid understanding of the patient's emotional state. The student also uses open-ended questions to explore the patient's coping mechanisms further, which is a key element in DBT. However, the response could be improved by integrating more explicit mentions of key DBT concepts such as Radical Acceptance, Turning the Mind, and distinguishing between willfulness and willingness, as well as the difference between pain and suffering. These elements would have strengthened the response by guiding the patient more directly towards a DBT-informed mindset. Additionally, the response appropriately avoids encouraging the patient to fight harder or not give up hope, and it refrains from giving medical advice.",
-        "flags": [
-          "Insufficient use of DBT key concepts"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student provided a response that effectively validates the patient's feelings of unfairness, anger, and refusal, demonstrating a solid understanding of the patient's emotional state. The student also uses open-ended questions to explore the patient's coping mechanisms further, which is a key element in DBT. However, the response could be improved by integrating more explicit mentions of key DBT concepts such as Radical Acceptance, Turning the Mind, and distinguishing between willfulness and willingness, as well as the difference between pain and suffering. These elements would have strengthened the response by guiding the patient more directly towards a DBT-informed mindset. Additionally, the response appropriately avoids encouraging the patient to fight harder or not give up hope, and it refrains from giving medical advice.",
+          "flags": [
+            "Insufficient use of DBT key concepts"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

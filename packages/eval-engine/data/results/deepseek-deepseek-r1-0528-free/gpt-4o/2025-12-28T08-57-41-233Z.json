@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response effectively addresses the client's emotional distress by validating her feelings and inviting exploration of other factors influencing her son's behavior. The therapist personalizes the interaction by acknowledging that the client's self-doubt is indicative of care, reframes the issue by broadening the perspective beyond her own influence, and maintains an empathetic tone throughout. However, while the response touches on attribution error by introducing the multifactorial perspective, it could more explicitly address locus of control by encouraging the client to recognize aspects she can influence without implying total responsibility. Importantly, the student avoids giving parenting advice, which maintains the focus on the client's internal experience rather than on external actions, thus adhering to the scenario's requirement to avoid systemic approaches.",
-        "flags": [
-          "locus_of_control"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively addresses the client's emotional distress by validating her feelings and inviting exploration of other factors influencing her son's behavior. The therapist personalizes the interaction by acknowledging that the client's self-doubt is indicative of care, reframes the issue by broadening the perspective beyond her own influence, and maintains an empathetic tone throughout. However, while the response touches on attribution error by introducing the multifactorial perspective, it could more explicitly address locus of control by encouraging the client to recognize aspects she can influence without implying total responsibility. Importantly, the student avoids giving parenting advice, which maintains the focus on the client's internal experience rather than on external actions, thus adhering to the scenario's requirement to avoid systemic approaches.",
+          "flags": [
+            "locus_of_control"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

@@ -21,20 +21,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student demonstrates empathy and validation, enhancing rapport with the client. They appropriately acknowledge the power of shame and the desire to isolate. However, they do not explicitly focus on DBT principles like opposite action or changing the emotion through behavioral change. The student emphasizes understanding and explores self-criticism, which may lead to analyzing the reasons behind feeling shame, contrary to DBT's emphasis. While the focus on self-compassion is valuable, guiding the client towards opposite actions would align more with DBT therapy goals.",
-        "flags": [
-          "Lack of emphasis on opposite action",
-          "Potential over-analysis of shame"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrates empathy and validation, enhancing rapport with the client. They appropriately acknowledge the power of shame and the desire to isolate. However, they do not explicitly focus on DBT principles like opposite action or changing the emotion through behavioral change. The student emphasizes understanding and explores self-criticism, which may lead to analyzing the reasons behind feeling shame, contrary to DBT's emphasis. While the focus on self-compassion is valuable, guiding the client towards opposite actions would align more with DBT therapy goals.",
+          "flags": [
+            "Lack of emphasis on opposite action",
+            "Potential over-analysis of shame"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

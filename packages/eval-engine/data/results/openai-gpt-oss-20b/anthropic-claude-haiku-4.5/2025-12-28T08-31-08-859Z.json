@@ -21,21 +21,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student response is empathic and appropriately offers alternative explanations for the friend’s watch glance and proposes a behavioral test (asking the friend what was on her mind), and offers self‑compassion strategies. These align with key CBT interventions (challenging automatic negative interpretations and testing them behaviorally). Weaknesses: The response fails to explicitly label the cognitive distortion as \"mind reading\" (the rubric required that be included explicitly). It also gives direct interpersonal‑effectiveness/social skills advice (phrasing to use when confronting the friend), which the rubric specifically required avoiding. Those two issues reduce adherence to the assignment. Overall score reflects presence of required clinical content (alternative explanations and a behavioral experiment) but penalizes the missing explicit mind‑reading label and the forbidden interpersonal/social‑skills focus.",
-        "flags": [
-          "missing_explicit_mind_reading_label",
-          "includes_interpersonal_effectiveness_advice",
-          "focuses_on_social_skills"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -53,6 +39,22 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:14:38.363Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student provides a strong response that adheres well to the CBT modality and the specific constraints of the rubric. They successfully address the client's 'Mind Reading' distortion by challenging the assumption that the friend finds them boring. They offer 'Alternative Explanations' for the behavior (checking the time, anxiety, habit), which helps reframe the situation objectively. The suggestion to ask the friend about her behavior serves as an effective 'Behavioral Experiment' to test the client's negative prediction. Crucially, the response avoids the prohibited areas (Interpersonal Effectiveness and Focus on social skills); the suggestion to speak to the friend is framed as gathering data to test a thought, not as a social skill or relationship-building tactic. The tone is empathetic and safe. Points are deducted for not explicitly using the term 'Mind Reading' and for a slightly lengthy emotional check-in before moving to cognitive restructuring.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:44:51.801Z"
         }
       ]
     }

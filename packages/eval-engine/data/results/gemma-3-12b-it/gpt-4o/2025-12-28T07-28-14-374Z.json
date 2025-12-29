@@ -24,20 +24,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response is empathetic and validating, effectively acknowledging the client's experience. However, it falls short of integrating the required ACT concepts completely. The student talks about depression as a separate experience and hints at self-as-context by differentiating the person from their depression, but it doesn't explicitly utilize the observing self or metaphors such as 'The Sky and the Weather' or the 'Chessboard Metaphor,' which would have been helpful in illustrating the separation of self from current experiences. Additionally, the response inadvertently leans into identity work by challenging the client's self-perception related to depression, which could be reframed using ACT concepts.",
-        "flags": [
-          "Missed metaphors",
-          "Identity work"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response is empathetic and validating, effectively acknowledging the client's experience. However, it falls short of integrating the required ACT concepts completely. The student talks about depression as a separate experience and hints at self-as-context by differentiating the person from their depression, but it doesn't explicitly utilize the observing self or metaphors such as 'The Sky and the Weather' or the 'Chessboard Metaphor,' which would have been helpful in illustrating the separation of self from current experiences. Additionally, the response inadvertently leans into identity work by challenging the client's self-perception related to depression, which could be reframed using ACT concepts.",
+          "flags": [
+            "Missed metaphors",
+            "Identity work"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

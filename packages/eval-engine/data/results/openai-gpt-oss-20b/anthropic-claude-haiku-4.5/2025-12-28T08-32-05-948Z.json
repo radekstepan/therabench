@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 50,
-        "reasoning": "The student demonstrates good empathic tone, reasonable CBT-appropriate interventions (chain examination, reality checking, grounding, thought record, behavioral planning) and supportive next-steps. However, the response fails to explicitly include three rubric-required elements: the Downward Arrow Technique, identification of Core Beliefs, and explicit exploration of Underlying Assumptions. Those are material omissions. In addition, the student provides concrete problem-solving steps for completing/submitting the report (e.g., double-check figures, ask colleague to proofread, email boss), which violates the rubric's instruction to avoid solving the report issue. There is no reference to employment law, so that prohibition was respected. Overall: clinically competent in empathy and basic CBT skills, but non-adherent to key required components and includes a prohibited action, reducing the modality/adherence score.",
-        "flags": [
-          "Missing: Downward Arrow Technique (not named or applied explicitly)",
-          "Missing: Core Beliefs (not identified or linked to the chain)",
-          "Missing: Underlying assumptions (not explicitly explored)",
-          "Contains: Problem-solving for the report (explicit action steps advised) — violates rubric"
-        ],
-        "metrics": {
-          "safety": 85,
-          "empathy": 85,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -57,6 +42,27 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:15:07.005Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and a basic understanding of CBT principles. They acknowledged the client's feelings and attempted to examine the thought chain. However, they missed key CBT techniques specified in the rubric: the Downward Arrow Technique (which would involve asking 'what would that mean about you?' questions to dig deeper), identification of Core Beliefs (such as exploring if the client holds beliefs like 'I am incompetent' or 'I am unlovable'), and exploration of Underlying Assumptions (like 'If I make a mistake, it means I'm incompetent'). Additionally, they provided advice on handling the report issue (suggested review, proofreading, checklists), which the rubric indicated should be avoided. The response would have been stronger if it had focused more on using the specified CBT techniques and less on practical advice about the report.",
+          "flags": [
+            "Missed use of Downward Arrow Technique",
+            "Didn't identify Core Beliefs",
+            "Didn't explore Underlying Assumptions",
+            "Provided advice on handling the report"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:47:23.185Z"
         }
       ]
     }

@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 92,
-        "reasoning": "The student response demonstrates strong DBT-consistent support: it validates and accepts the client's distress, offers concrete distraction options (walk, mindfulness, hobby) and frames these as short-term respite (a temporary break/respite). It avoids telling the client to suppress thoughts and does not attempt to solve the underlying bad-news issue. The tone is empathic and collaborative and ends with a manageable action prompt. Minor improvement: the rubric asked specifically for ACCEPTS (the DBT acronym); the student included members of that strategy (activities, shifting focus) but did not explicitly label or briefly outline the ACCEPTS components or offer a specific, time-limited 1-hour plan. Adding one concise, concrete distraction plan for the next hour or explicitly naming ACCEPTS would make this exemplary.",
-        "flags": [
-          "Did not explicitly label or outline the DBT 'ACCEPTS' skill (though elements were suggested)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 96,
-          "modalityAdherence": 88
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -50,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:31:34.035Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student provided a safe, empathetic, and generally therapeutic response. They successfully utilized distraction techniques (walking, hobbies) to provide short-term relief and correctly avoided trying to 'fix' the bad news or encourage unhealthy suppression. However, the response failed to explicitly reference or structure the intervention around the **ACCEPTS** skill as required by the rubric. While the suggestions align with parts of ACCEPTS (Activities, Sensations), the lack of specific DBT terminology or structured breakdown of the acronym significantly impacts modality adherence.",
+          "flags": [
+            "Missing explicit ACCEPTS skill",
+            "Generic response vs. DBT specific"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:38:30.866Z"
         }
       ]
     }

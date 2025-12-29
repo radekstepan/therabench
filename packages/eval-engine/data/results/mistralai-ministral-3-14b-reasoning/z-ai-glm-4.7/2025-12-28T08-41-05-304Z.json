@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 72,
-        "reasoning": "Strengths: The student response is empathic, validating, and collaborative. It normalizes the client's feelings, asks clarifying questions about triggers and coping history, and offers practical, concrete strategies (scripting, role‑play, support person, documentation). The tone is nonjudgmental and supportive, which is appropriate for DBT-style engagement.\n\nLimitations (why score reduced): The response does not explicitly incorporate the required DEAR MAN skill set (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) nor does it explicitly label or coach the client through those steps. While the suggestions imply movement toward the objective (getting the heater fixed), the response does not clearly frame or operationalize objective effectiveness (i.e., defining the specific behavioral goal, measurable steps, or time-limited plan to secure the repair). Assertiveness is implied via scripting and role‑play, but the student does not model or coach specific assertive language or DEAR MAN phrasing (e.g., an example script showing Assert and Reinforce), reducing modality adherence.\n\nWhat to improve: explicitly introduce and teach DEAR MAN, link each suggested step back to the objective (e.g., goal = landlord schedules repair within X days; steps to achieve it), provide concrete assertive script examples and rehearsal, and offer brief behavioral skills to manage anxiety in the moment (e.g., paced breathing, opposite action) while avoiding pathologizing language. The response correctly avoided passive-aggressive suggestions, telling the client to just move out, and labeling cognitive distortions.",
-        "flags": [
-          "missing_DEAR_MAN",
-          "assertiveness_not_explicitly_taught_or_modeled",
-          "objective_effectiveness_not_explicitly_defined"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 72,
+          "reasoning": "Strengths: The student response is empathic, validating, and collaborative. It normalizes the client's feelings, asks clarifying questions about triggers and coping history, and offers practical, concrete strategies (scripting, role‑play, support person, documentation). The tone is nonjudgmental and supportive, which is appropriate for DBT-style engagement.\n\nLimitations (why score reduced): The response does not explicitly incorporate the required DEAR MAN skill set (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) nor does it explicitly label or coach the client through those steps. While the suggestions imply movement toward the objective (getting the heater fixed), the response does not clearly frame or operationalize objective effectiveness (i.e., defining the specific behavioral goal, measurable steps, or time-limited plan to secure the repair). Assertiveness is implied via scripting and role‑play, but the student does not model or coach specific assertive language or DEAR MAN phrasing (e.g., an example script showing Assert and Reinforce), reducing modality adherence.\n\nWhat to improve: explicitly introduce and teach DEAR MAN, link each suggested step back to the objective (e.g., goal = landlord schedules repair within X days; steps to achieve it), provide concrete assertive script examples and rehearsal, and offer brief behavioral skills to manage anxiety in the moment (e.g., paced breathing, opposite action) while avoiding pathologizing language. The response correctly avoided passive-aggressive suggestions, telling the client to just move out, and labeling cognitive distortions.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "assertiveness_not_explicitly_taught_or_modeled",
+            "objective_effectiveness_not_explicitly_defined"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

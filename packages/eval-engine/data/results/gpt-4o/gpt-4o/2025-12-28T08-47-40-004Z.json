@@ -23,21 +23,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response shows empathy and understanding of the client's emotions, which is a positive aspect. The student correctly identifies the client's emotions and validates them. However, the response lacks the direct incorporation of DBT strategies such as Opposite Action, which involves encouraging the client to engage in activities that are opposite to the urge to withdraw, as this helps change the emotion by changing the action. The student also misses the opportunity to guide the client towards approach behaviors, like reaching out to someone for support. Instead, a lot of focus is placed on discussing the shame and feelings, which could lead to further isolation rather than addressing the behavior change needed.",
-        "flags": [
-          "Lack of Opposite Action",
-          "Risk of Isolation",
-          "Focus on Emotion Analysis"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 85,
-          "modalityAdherence": 30
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response shows empathy and understanding of the client's emotions, which is a positive aspect. The student correctly identifies the client's emotions and validates them. However, the response lacks the direct incorporation of DBT strategies such as Opposite Action, which involves encouraging the client to engage in activities that are opposite to the urge to withdraw, as this helps change the emotion by changing the action. The student also misses the opportunity to guide the client towards approach behaviors, like reaching out to someone for support. Instead, a lot of focus is placed on discussing the shame and feelings, which could lead to further isolation rather than addressing the behavior change needed.",
+          "flags": [
+            "Lack of Opposite Action",
+            "Risk of Isolation",
+            "Focus on Emotion Analysis"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 85,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

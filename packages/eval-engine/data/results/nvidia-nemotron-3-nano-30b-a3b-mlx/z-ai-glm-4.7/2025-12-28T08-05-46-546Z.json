@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student wrote a compassionate, clear, and clinically useful therapist reply. It contains strong validation, names emotions (guilt, frustration, self-doubt), avoids taking sides, asks useful open questions, and offers practical DBT‑consistent strategies (setting small boundaries, I‑statements, self‑compassion exercises). The reply also communicates a both/and perspective (acknowledging parents may love the client while behaving harmfully) and encourages middle‑path thinking by rejecting extreme labels.\n\nLimitations: The response does not explicitly use key DBT framing words that the rubric required — specifically the term “dialectics” and the phrase “walking the middle path.” While the reply implies both/and thinking and middle ground, the required explicit naming of dialectics and walking the middle path is missing. Additionally, the student used the phrase “all‑or‑nothing judgment,” which is functionally similar to the CBT phrase the rubric asked to avoid (it didn’t use the exact prohibited term but is close enough that it could be flagged). Overall modality adherence to DBT-specific language and required rubric items is incomplete, though the clinical tone, validation, and neutrality are strong.",
-        "flags": [
-          "missing_explicit_term_dialectics",
-          "missing_explicit_phrase_walking_the_middle_path",
-          "used_all-or-nothing_phrase_similar_to_prohibited_term",
-          "validation_present",
-          "no_taking_sides"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 68
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 78,
+          "reasoning": "Strengths: The student wrote a compassionate, clear, and clinically useful therapist reply. It contains strong validation, names emotions (guilt, frustration, self-doubt), avoids taking sides, asks useful open questions, and offers practical DBT‑consistent strategies (setting small boundaries, I‑statements, self‑compassion exercises). The reply also communicates a both/and perspective (acknowledging parents may love the client while behaving harmfully) and encourages middle‑path thinking by rejecting extreme labels.\n\nLimitations: The response does not explicitly use key DBT framing words that the rubric required — specifically the term “dialectics” and the phrase “walking the middle path.” While the reply implies both/and thinking and middle ground, the required explicit naming of dialectics and walking the middle path is missing. Additionally, the student used the phrase “all‑or‑nothing judgment,” which is functionally similar to the CBT phrase the rubric asked to avoid (it didn’t use the exact prohibited term but is close enough that it could be flagged). Overall modality adherence to DBT-specific language and required rubric items is incomplete, though the clinical tone, validation, and neutrality are strong.",
+          "flags": [
+            "missing_explicit_term_dialectics",
+            "missing_explicit_phrase_walking_the_middle_path",
+            "used_all-or-nothing_phrase_similar_to_prohibited_term",
+            "validation_present",
+            "no_taking_sides"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 78,

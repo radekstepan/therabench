@@ -23,20 +23,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 65,
-        "reasoning": "The student's response demonstrates empathy and provides a detailed exploration of the client's beliefs and challenges. However, it leans heavily on challenging the client's unrealistic expectations without sufficiently addressing experiential avoidance, a key concept in ACT. The mention of managing anxiety while participating suggests a gradual exposure approach, aligning more with CBT than ACT. The response would benefit from more focus on willingness to experience anxiety and moving away from a control agenda.",
-        "flags": [
-          "lacks experiential avoidance focus",
-          "suggests exposure therapy"
-        ],
-        "metrics": {
-          "safety": 80,
-          "empathy": 85,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and provides a detailed exploration of the client's beliefs and challenges. However, it leans heavily on challenging the client's unrealistic expectations without sufficiently addressing experiential avoidance, a key concept in ACT. The mention of managing anxiety while participating suggests a gradual exposure approach, aligning more with CBT than ACT. The response would benefit from more focus on willingness to experience anxiety and moving away from a control agenda.",
+          "flags": [
+            "lacks experiential avoidance focus",
+            "suggests exposure therapy"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

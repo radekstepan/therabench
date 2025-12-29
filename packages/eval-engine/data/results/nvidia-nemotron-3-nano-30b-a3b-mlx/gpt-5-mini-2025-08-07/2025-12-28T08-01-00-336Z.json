@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "Strengths: The student provides empathic validation, explores alternative explanations thoroughly, and offers CBT-style cognitive reframes and in-the-moment coping strategies. These elements align well with the scenario and demonstrate solid empathic CBT technique. Weaknesses relative to the rubric: 1) The response does not explicitly label the cognitive distortion 'mind reading' (it describes jumping to negative explanations but never names the distortion), so it only partially satisfies the 'Mind Reading' requirement. 2) A clear, structured 'Behavioral Experiment' is not presented: suggestions such as asking a question or adjusting posture are pragmatic but are not framed as a testable behavioral experiment with hypothesis, predicted outcome, and observation. 3) The response includes prohibited content — interpersonal effectiveness / social skills coaching (e.g., conversation starter, posture adjustments, how to ask about the watch) which the rubric required to avoid. Overall, the response is therapeutically useful and empathic but misses the rubric's explicit requirements and violates the avoid-list, so the score is moderate.",
-        "flags": [
-          "missing_explicit_label_mind_reading",
-          "behavioral_experiment_not_explicit",
-          "includes_interpersonal_effectiveness",
-          "focus_on_social_skills_present"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student provides empathic validation, explores alternative explanations thoroughly, and offers CBT-style cognitive reframes and in-the-moment coping strategies. These elements align well with the scenario and demonstrate solid empathic CBT technique. Weaknesses relative to the rubric: 1) The response does not explicitly label the cognitive distortion 'mind reading' (it describes jumping to negative explanations but never names the distortion), so it only partially satisfies the 'Mind Reading' requirement. 2) A clear, structured 'Behavioral Experiment' is not presented: suggestions such as asking a question or adjusting posture are pragmatic but are not framed as a testable behavioral experiment with hypothesis, predicted outcome, and observation. 3) The response includes prohibited content — interpersonal effectiveness / social skills coaching (e.g., conversation starter, posture adjustments, how to ask about the watch) which the rubric required to avoid. Overall, the response is therapeutically useful and empathic but misses the rubric's explicit requirements and violates the avoid-list, so the score is moderate.",
+          "flags": [
+            "missing_explicit_label_mind_reading",
+            "behavioral_experiment_not_explicit",
+            "includes_interpersonal_effectiveness",
+            "focus_on_social_skills_present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

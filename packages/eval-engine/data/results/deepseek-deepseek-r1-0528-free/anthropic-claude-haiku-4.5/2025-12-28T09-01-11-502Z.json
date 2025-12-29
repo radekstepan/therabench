@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 82,
-        "reasoning": "Strengths: The student normalizes the client's reaction, validates emotional overwhelm, and offers a concrete, brief somatic grounding (one breath + hand on heart) that functions as an impulse-control micro-skill and a step-back. The response uses a collaborative tone, offers a small, doable homework commitment, and avoids the prohibited suggestions (no 'time out for kids' or generic 'anger management' platitudes). \n\nLimitations: The response does not explicitly teach or label the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) or walk through its components, which was required by the rubric. While the proposed one-breath pause maps onto STOP, the omission of the explicit acronym and brief guidance on 'Observe' and 'Proceed mindfully' reduces clear modality adherence. A brief addition naming and outlining STOP and explicitly saying 'take a step back' would make this fully compliant. \n\nOverall: clinically appropriate, empathic, and safe; deduct points for not explicitly naming/teaching the STOP skill and for not fully articulating the step-back/observe/proceed elements.",
-        "flags": [
-          "missing_explicit_STOP"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -48,6 +36,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:06:41.715Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a warm, empathetic, and validating response that successfully normalized the parent's experience and established a strong alliance. They avoided generic anger management advice. However, the response failed to adhere to the specific DBT requirements listed in the rubric. The student suggested a somatic grounding exercise (hand over heart) instead of the required STOP skill (Stop, Take a step back, Observe, Proceed mindfully). While the concept of 'pausing' aligns generally, the rubric specifically requested the STOP skill and explicit mention of 'stepping back,' which were absent. The student focused on somatic anchoring rather than the specific DBT module components requested.",
+          "flags": [
+            "Modality mismatch: Used somatic grounding instead of requested STOP skill",
+            "Missing specific rubric elements: Did not explicitly mention STOP skill or 'Step back'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:03:24.718Z"
         }
       ]
     }

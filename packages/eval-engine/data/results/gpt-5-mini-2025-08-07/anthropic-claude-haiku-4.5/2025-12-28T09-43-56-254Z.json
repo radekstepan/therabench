@@ -19,19 +19,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 75,
-        "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
-        "flags": [
-          "used_emotion_regulation_techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 45,
@@ -50,6 +38,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:38:58.332Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student successfully included the required elements: identifying emotional reasoning as a cognitive distortion, suggesting evidence for/against exercises, and providing cognitive restructuring through reframing. They appropriately showed empathy and avoided validation-only responses and 'trust your gut' approaches. However, they explicitly included emotion regulation techniques (5-4-3-2-1 grounding and box breathing) which the rubric specifically states must be avoided. Additionally, they included test-taking tips which, while potentially helpful, go beyond the scope of typical CBT practice. The response demonstrates good CBT knowledge but missed a critical requirement of the rubric.",
+          "flags": [
+            "Included emotion regulation techniques (grounding, breathing exercises) which were explicitly to be avoided per the rubric",
+            "Included test-taking tips that go beyond typical CBT approach"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:44:58.645Z"
         }
       ]
     }

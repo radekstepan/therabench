@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, validates the client's feelings, labels the thinking pattern as 'catastrophizing,' and uses reality-testing questions which fit CBT. The response also offers supportive interventions (self-compassion, balanced thoughts) and invites collaborative work (role-play, brainstorming a safety net).\n\nWeaknesses (led to score reduction): 1) The response does not explicitly use or instruct the Downward Arrow Technique (i.e., iterative questioning to uncover the core, underlying belief). The questions asked probe probabilities and consequences but stop short of repeatedly asking \"If that were true, what would that mean about you?\" to access deeper core beliefs. 2) The response fails to explicitly identify or elicit core beliefs (for example, beliefs like \"I am incompetent,\" \"I am unlovable,\" or \"I am worthless\" were not explored). 3) The response does not sufficiently surface or examine underlying assumptions in a focused way — it gestures toward \"challeng[ing] that assumption\" but does not draw out or test specific conditional assumptions that maintain the chain (e.g., assumptions about worth, competence, or abandonment). 4) The student gave concrete problem-solving advice about the report (\"Double-checking the report or asking for help\"), which violates the rubric instruction to avoid solving the report issue. \n\nOverall: Good therapeutic stance and useful CBT-consistent techniques, but missing the three required CBT elements (explicit Downward Arrow technique, elicitation of core beliefs, and explicit work on underlying assumptions) and includes a forbidden element (practical report-solving).",
-        "flags": [
-          "MissingDownwardArrowTechnique",
-          "CoreBeliefsNotElicited",
-          "UnderlyingAssumptionsNotExplicitlyExplored",
-          "OfferedPracticalHelpOnReport (violates avoid instruction)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student response is empathic, validates the client's feelings, labels the thinking pattern as 'catastrophizing,' and uses reality-testing questions which fit CBT. The response also offers supportive interventions (self-compassion, balanced thoughts) and invites collaborative work (role-play, brainstorming a safety net).\n\nWeaknesses (led to score reduction): 1) The response does not explicitly use or instruct the Downward Arrow Technique (i.e., iterative questioning to uncover the core, underlying belief). The questions asked probe probabilities and consequences but stop short of repeatedly asking \"If that were true, what would that mean about you?\" to access deeper core beliefs. 2) The response fails to explicitly identify or elicit core beliefs (for example, beliefs like \"I am incompetent,\" \"I am unlovable,\" or \"I am worthless\" were not explored). 3) The response does not sufficiently surface or examine underlying assumptions in a focused way — it gestures toward \"challeng[ing] that assumption\" but does not draw out or test specific conditional assumptions that maintain the chain (e.g., assumptions about worth, competence, or abandonment). 4) The student gave concrete problem-solving advice about the report (\"Double-checking the report or asking for help\"), which violates the rubric instruction to avoid solving the report issue. \n\nOverall: Good therapeutic stance and useful CBT-consistent techniques, but missing the three required CBT elements (explicit Downward Arrow technique, elicitation of core beliefs, and explicit work on underlying assumptions) and includes a forbidden element (practical report-solving).",
+          "flags": [
+            "MissingDownwardArrowTechnique",
+            "CoreBeliefsNotElicited",
+            "UnderlyingAssumptionsNotExplicitlyExplored",
+            "OfferedPracticalHelpOnReport (violates avoid instruction)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

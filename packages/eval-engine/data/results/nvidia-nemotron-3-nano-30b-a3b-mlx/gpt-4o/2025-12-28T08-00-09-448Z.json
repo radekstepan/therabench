@@ -20,19 +20,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 90,
-        "reasoning": "The therapy student demonstrated a comprehensive understanding of cognitive-behavioral techniques by effectively validating the client's feelings, identifying the cognitive distortion, and providing evidence-based coping strategies. The student successfully avoided relying solely on emotional validation, addressed emotional reasoning by separating feelings from facts, and facilitated cognitive restructuring. The response included a balance of empathy and practical tools, aligning well with CBT principles. However, there was a slight deviation into emotion regulation techniques with suggestions like box breathing, which is not strictly necessary per the scenario requirements.",
-        "flags": [
-          "Inclusion of Box Breathing as an emotion regulation technique"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 85
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The therapy student demonstrated a comprehensive understanding of cognitive-behavioral techniques by effectively validating the client's feelings, identifying the cognitive distortion, and providing evidence-based coping strategies. The student successfully avoided relying solely on emotional validation, addressed emotional reasoning by separating feelings from facts, and facilitated cognitive restructuring. The response included a balance of empathy and practical tools, aligning well with CBT principles. However, there was a slight deviation into emotion regulation techniques with suggestions like box breathing, which is not strictly necessary per the scenario requirements.",
+          "flags": [
+            "Inclusion of Box Breathing as an emotion regulation technique"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

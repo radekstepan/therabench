@@ -21,19 +21,21 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response is empathetic and validates the client's feelings, effectively addressing the self-judgment without explicitly reinforcing 'should' statements. The student acknowledges the pressure the client is feeling and normalizes the emotional timeline, which aligns with the goals of CBT by challenging irrational beliefs and cognitive distortions. However, the response slightly drifts towards grief counseling by discussing the processing of loss and grief waves, which falls outside the strict boundaries of CBT. Overall, the response is strong in empathy and modality adherence, with minor deviations.",
-        "flags": [
-          "Grief counseling elements noted"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 80
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is empathetic and validates the client's feelings, effectively addressing the self-judgment without explicitly reinforcing 'should' statements. The student acknowledges the pressure the client is feeling and normalizes the emotional timeline, which aligns with the goals of CBT by challenging irrational beliefs and cognitive distortions. However, the response slightly drifts towards grief counseling by discussing the processing of loss and grief waves, which falls outside the strict boundaries of CBT. Overall, the response is strong in empathy and modality adherence, with minor deviations.",
+          "flags": [
+            "Grief counseling elements noted"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

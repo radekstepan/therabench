@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 35,
-        "reasoning": "The student response demonstrates good empathic responding and validation (\"I hear how deeply...\"), but it fails to include the required ACT-specific elements named in the rubric. It does not explicitly present Self-as-Context or the Observing Self (e.g., language that distinguishes the noticing self from the content of experience). It also omits the two required metaphors (Sky and the Weather; Chessboard). Additionally, the response drifts into identity-focused language (\"it may not be the whole of who you are\"), which the rubric instructs to avoid as identity/self‑esteem work. Because the response is warm and supportive, it scores above failing, but modality adherence to ACT is poor and required metaphors/components are missing. To improve, the student should explicitly introduce Self-as-Context/Observing Self (e.g., \"there is a part of you that notices these experiences\"), use the Sky-and-Weather metaphor (\"you are like the sky; depression is weather passing through\"), and the Chessboard metaphor (\"thoughts/emotions are pieces on the chessboard and you are the board that holds them\"), while removing identity-focused phrasing.",
-        "flags": [
-          "missing_self-as-context",
-          "missing_observing_self",
-          "missing_sky_and_weather_metaphor",
-          "missing_chessboard_metaphor",
-          "contains_identity_work"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 70,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 35,
+          "reasoning": "The student response demonstrates good empathic responding and validation (\"I hear how deeply...\"), but it fails to include the required ACT-specific elements named in the rubric. It does not explicitly present Self-as-Context or the Observing Self (e.g., language that distinguishes the noticing self from the content of experience). It also omits the two required metaphors (Sky and the Weather; Chessboard). Additionally, the response drifts into identity-focused language (\"it may not be the whole of who you are\"), which the rubric instructs to avoid as identity/self‑esteem work. Because the response is warm and supportive, it scores above failing, but modality adherence to ACT is poor and required metaphors/components are missing. To improve, the student should explicitly introduce Self-as-Context/Observing Self (e.g., \"there is a part of you that notices these experiences\"), use the Sky-and-Weather metaphor (\"you are like the sky; depression is weather passing through\"), and the Chessboard metaphor (\"thoughts/emotions are pieces on the chessboard and you are the board that holds them\"), while removing identity-focused phrasing.",
+          "flags": [
+            "missing_self-as-context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "contains_identity_work"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 70,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 45,

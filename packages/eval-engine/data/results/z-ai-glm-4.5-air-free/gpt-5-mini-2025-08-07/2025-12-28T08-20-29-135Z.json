@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 65,
-        "reasoning": "The student response demonstrates strong empathic validation and gently warns against isolation, which aligns with DBT principles. However, it fails to explicitly teach or prompt concrete DBT skills required by the rubric: there is no clear Opposite Action instruction (i.e., a specific prompt to do the opposite of the shame-driven urge such as approaching someone, making a brief contact, or re-entering social activities) and no explicit framing of 'change the emotion by changing the action.' While the response suggests not shutting off and asks about kindness to self, these are more supportive/self-compassion statements than actionable approach behaviors. Additionally, the line about magnifying how others perceive us edges into analyzing the cognitive appraisal of the emotion (why it feels shameful), which the rubric required avoiding. Positives: tone, validation, and a reminder that isolation can intensify feelings. Overall, clinically useful but missing the required explicit DBT skills and more concrete behavior-focused coaching.",
-        "flags": [
-          "Missing_Opposite_Action",
-          "Missing_Approach_Behavior",
-          "Analyzes_perception_of_shame"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 88,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "The student response demonstrates strong empathic validation and gently warns against isolation, which aligns with DBT principles. However, it fails to explicitly teach or prompt concrete DBT skills required by the rubric: there is no clear Opposite Action instruction (i.e., a specific prompt to do the opposite of the shame-driven urge such as approaching someone, making a brief contact, or re-entering social activities) and no explicit framing of 'change the emotion by changing the action.' While the response suggests not shutting off and asks about kindness to self, these are more supportive/self-compassion statements than actionable approach behaviors. Additionally, the line about magnifying how others perceive us edges into analyzing the cognitive appraisal of the emotion (why it feels shameful), which the rubric required avoiding. Positives: tone, validation, and a reminder that isolation can intensify feelings. Overall, clinically useful but missing the required explicit DBT skills and more concrete behavior-focused coaching.",
+          "flags": [
+            "Missing_Opposite_Action",
+            "Missing_Approach_Behavior",
+            "Analyzes_perception_of_shame"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

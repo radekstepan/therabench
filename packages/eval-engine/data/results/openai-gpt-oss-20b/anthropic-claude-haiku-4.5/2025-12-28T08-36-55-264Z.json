@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 45,
-        "reasoning": "Strengths: The student response is empathic, normalizing, and collaborative. It accurately describes automaticity and asks useful exploratory questions about triggers, functions of smoking, momentary bodily sensations, prior alternatives, and aftereffects. The practical suggestions (pause-plan, stress-response map, grounding, behavioral alternatives) are concrete and likely helpful. The response avoids recommending addiction counseling or nicotine replacement, satisfying the avoidance requirement.\n\nWeaknesses relative to the rubric: The response fails to include required ACT-specific elements. It does not introduce or name the Choice Point, does not distinguish Hooked vs. Unhooked responses, and does not define or give examples of Towards vs. Away moves. Because those elements were explicitly required, the response is missing core ACT framing and language that guide experiential work and values-based action. Modality adherence is therefore low despite otherwise solid clinical content.\n\nSuggested fixes: Briefly reframe the client’s moment of urge as the Choice Point, label the automatic smoking response as a 'Hooked' move and mindful noticing/alternative actions as 'Unhooked' moves, and give concrete examples of Away moves (reaching for a cigarette to avoid discomfort) versus Towards moves (taking a breath, grounding, calling a friend, or acting on a value like health). Keep the present empathic tone and the practical pause-plan but add these ACT terms and examples so the response meets the rubric.",
-        "flags": [
-          "missing_choice_point",
-          "missing_hooked_vs_unhooked",
-          "missing_towards_vs_away",
-          "no_prohibited_content_found"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 90,
-          "modalityAdherence": 25
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 62,
@@ -57,6 +42,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T21:17:12.089Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a compassionate and clinically sound response that validates the client's experience and offers practical behavioral strategies. However, the response fails to meet the specific modality requirements outlined in the rubric. The student utilized a CBT-style approach (functional analysis, trigger identification, behavioral replacement) but completely omitted the required ACT concepts: 'The Choice Point,' 'Hooked vs. Unhooked,' and 'Towards vs. Away moves.' While the student attempted to address the automaticity of the behavior, they framed it as a 'coping circuit' to be interrupted rather than an opportunity to notice the urge and choose a value-driven action. Consequently, the response lacks the necessary ACT terminology and framework.",
+          "flags": [
+            "Missing ACT Concepts",
+            "CBT Approach Used Instead of ACT"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:56:04.453Z"
         }
       ]
     }

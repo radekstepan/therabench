@@ -23,23 +23,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 68,
-        "reasoning": "Strengths: The student response is empathic and validating, normalizes the client's fear, and offers concrete, behavioral steps (naming the fear, scripted message, backup plan, rehearsal, creating a paper trail). It promotes assertive action (short factual message, rehearsal, rights framing) and avoids prohibited suggestions (no passive-aggressive tactics, no advice to 'just move out', and no labeling of cognitive distortions). Safety is addressed with contingency planning. Weaknesses: The response does not explicitly teach or use the DBT DEAR MAN interpersonal effectiveness framework (missing a structured DEAR MAN script), nor does it explicitly name or teach the principle of objective effectiveness (i.e., focusing on what will realistically get the heater fixed). While assertive content is present, a clearer, skills-based practice using DEAR MAN (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) and more emphasis on objective effectiveness (how to state desired outcome and observable criteria) would be required by the rubric. Suggested improvements: add a sample DEAR MAN phrasing, explicitly discuss objective effectiveness (what outcome to aim for and how to measure it), and provide brief coaching on assertive tone/phrasing.",
-        "flags": [
-          "missing_DEAR_MAN",
-          "missing_explicit_objective_effectiveness",
-          "assertiveness_present",
-          "avoids_passive_aggressive_and_move_out_advice",
-          "no_cognitive_distortion_labeling"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 88,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -57,6 +41,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:55:25.134Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 68,
+          "reasoning": "The student provided a highly empathetic and supportive response that validated the client's dilemma of physical needs versus emotional fears. The advice offered (gradual exposure, rehearsal, having a backup plan) is clinically sound for general anxiety management. However, the score is lowered significantly because the response failed to adhere to the specific 'Must Include' rubric requirements. The prompt explicitly requested the DBT skill **DEAR MAN**, which was completely absent from the intervention. The student did not structure the ask using the components of Describe, Express, Assert, Reinforce, Mindful, Appear Confident, or Negotiate. Furthermore, while the rubric required 'Objective effectiveness,' the student focused primarily on reducing anxiety (emotional regulation) rather than prioritizing the specific goal of getting the landlord to fix the heater (Objective Effectiveness). The response functioned more like general CBT or exposure therapy rather than a DBT Interpersonal Effectiveness intervention.",
+          "flags": [
+            "Missing DEAR MAN skill",
+            "Low DBT Modality Adherence",
+            "Missed Objective Effectiveness priority"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:15:24.700Z"
         }
       ]
     }

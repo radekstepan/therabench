@@ -21,21 +21,23 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "Strengths: The student validated the client's distress, explicitly invited examination of evidence, and queried alternative explanations — meeting the 'Check the Facts' and 'Interpretation vs. Reality' requirements. They also explored the emotional impact and suggested a behavioral step (reach out), which is helpful rapport-building.\n\nLimitations: The response did not teach or coach any specific DBT emotion-regulation skills (e.g., labeling the emotion, using opposite action, self-soothing, or distress-tolerance strategies), so the 'Emotion Regulation' requirement was not met. The reply also contains reassurance language ('understandable', 'it's okay to feel this way'), which the rubric required avoiding. While the student avoided the exact CBT term 'mind reading,' they used related phrasing ('jump to conclusions') that is acceptable but should be paired with skill-teaching rather than reassurance.\n\nRecommendations: Remove reassuring phrases and instead validate then prompt skill-use. Add explicit DBT emotion-regulation coaching (e.g., help name the emotion, check the facts, urge use of opposite action or self-soothing, and offer a brief distress-tolerance strategy).",
-        "flags": [
-          "reassurance",
-          "missing_emotion_regulation_skills",
-          "did_not_offer_specific_DBT_techniques"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 55
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student validated the client's distress, explicitly invited examination of evidence, and queried alternative explanations — meeting the 'Check the Facts' and 'Interpretation vs. Reality' requirements. They also explored the emotional impact and suggested a behavioral step (reach out), which is helpful rapport-building.\n\nLimitations: The response did not teach or coach any specific DBT emotion-regulation skills (e.g., labeling the emotion, using opposite action, self-soothing, or distress-tolerance strategies), so the 'Emotion Regulation' requirement was not met. The reply also contains reassurance language ('understandable', 'it's okay to feel this way'), which the rubric required avoiding. While the student avoided the exact CBT term 'mind reading,' they used related phrasing ('jump to conclusions') that is acceptable but should be paired with skill-teaching rather than reassurance.\n\nRecommendations: Remove reassuring phrases and instead validate then prompt skill-use. Add explicit DBT emotion-regulation coaching (e.g., help name the emotion, check the facts, urge use of opposite action or self-soothing, and offer a brief distress-tolerance strategy).",
+          "flags": [
+            "reassurance",
+            "missing_emotion_regulation_skills",
+            "did_not_offer_specific_DBT_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

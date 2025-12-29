@@ -23,23 +23,25 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 60,
-        "reasoning": "The student response demonstrates good empathy and a useful clinical suggestion (small, low-stakes behavioral experiment) and explicitly invites the client to attend while still feeling some anxiety, which aligns with the ACT concept of willingness. However, the response fails to explicitly name or address two required ACT elements: experiential avoidance and the client's control agenda. The student hints at the latter by calling the belief 'feeding the anxiety,' but does not explicitly frame it as a control agenda (attempts to control or eliminate internal experience) or explain experiential avoidance (how avoidance strategies maintain suffering). Importantly, the suggested graded approach (arriving, greeting one person, staying ten minutes) is framed as an experiment but functions like CBT-style exposure/behavioral activation; per the rubric this is a prohibited exposure therapy framing. The response avoided suggesting confidence-building (which is correct per rubric). To better align with ACT, the therapist should explicitly label and explore experiential avoidance and the control agenda, lean into willingness and values-based motivation for attending, and present the in-vivo experiment as an act of willingness/values-consistent action (not as exposure or a test of anxiety reduction).",
-        "flags": [
-          "missing_experiential_avoidance",
-          "missing_control_agenda",
-          "contains_exposure_framing",
-          "includes_willingness",
-          "avoids_confidence_building"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 45
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The student response demonstrates good empathy and a useful clinical suggestion (small, low-stakes behavioral experiment) and explicitly invites the client to attend while still feeling some anxiety, which aligns with the ACT concept of willingness. However, the response fails to explicitly name or address two required ACT elements: experiential avoidance and the client's control agenda. The student hints at the latter by calling the belief 'feeding the anxiety,' but does not explicitly frame it as a control agenda (attempts to control or eliminate internal experience) or explain experiential avoidance (how avoidance strategies maintain suffering). Importantly, the suggested graded approach (arriving, greeting one person, staying ten minutes) is framed as an experiment but functions like CBT-style exposure/behavioral activation; per the rubric this is a prohibited exposure therapy framing. The response avoided suggesting confidence-building (which is correct per rubric). To better align with ACT, the therapist should explicitly label and explore experiential avoidance and the control agenda, lean into willingness and values-based motivation for attending, and present the in-vivo experiment as an act of willingness/values-consistent action (not as exposure or a test of anxiety reduction).",
+          "flags": [
+            "missing_experiential_avoidance",
+            "missing_control_agenda",
+            "contains_exposure_framing",
+            "includes_willingness",
+            "avoids_confidence_building"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 90,

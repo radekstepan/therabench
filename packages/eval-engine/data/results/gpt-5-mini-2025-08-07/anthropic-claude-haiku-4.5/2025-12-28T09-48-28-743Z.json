@@ -20,20 +20,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 78,
-        "reasoning": "Strengths: The student response is empathic, validates the client's experience, emphasizes bodily autonomy, gives concrete boundary language and behavioral plans (scripts, leaving the room, safety planning), and addresses immediate safety and resources (including RAINN). The response also recommends individual therapy and cautions against couples therapy when coercion is present — all appropriate DBT-aligned and trauma-informed interventions. Areas for improvement per rubric: the response does not explicitly include the FAST self-respect interpersonal effectiveness skill or label/teach its components (Fair, no unnecessary Apologies, Stick to values, Truthful). While elements of FAST are implied (e.g., “You don’t owe long explanations”), the rubric requires explicit inclusion. Also, the phrase about being \"specific about what’s negotiable and what’s not\" risks implying compromise rather than a firm endorsement of non-negotiable consent; the student should avoid framing consent as negotiable. The response correctly avoids DEAR MAN and does not encourage compromise of safety/consent. To reach a higher score, the student should explicitly teach FAST (or the FAST components) and tighten phrasing to avoid any suggestion that sexual consent can be a matter of compromise.",
-        "flags": [
-          "missing_EXPlicit_FAST",
-          "ambiguous_language_regarding_compromise"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 92,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -52,6 +39,26 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:40:29.651Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates high clinical competence in validation and safety assessment. The student correctly identified the risk of coercion, provided essential resources (RAINN), and validated the client's right to refuse. They successfully avoided the restricted items (DEAR MAN and Compromise). However, the response failed to meet the specific DBT rubric requirements. The student did not introduce the **FAST** skill (Fair, Apologies, Stick to values, Truthful), nor did they explicitly frame the intervention as building **Self-Respect Effectiveness**. The advice given (boundaries, scripting) mirrors FAST principles but lacks the specific terminology and structured teaching required for a DBT adherence evaluation.",
+          "flags": [
+            "Missing FAST acronym",
+            "Missing explicit Self-Respect Effectiveness terminology",
+            "Relied on general psychoeducation rather than specific DBT skill instruction"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:52:09.812Z"
         }
       ]
     }

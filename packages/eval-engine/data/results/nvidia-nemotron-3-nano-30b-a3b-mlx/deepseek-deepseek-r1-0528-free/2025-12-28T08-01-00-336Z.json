@@ -22,17 +22,104 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 85,
-        "reasoning": "The student's response demonstrates strong empathy through validating the client's feelings and normalizing physical/emotional reactions ('It sounds like what you noticed has gotten under your skin...'). It effectively explores cognitive distortions, explicitly naming Mind Reading ('Our minds love to fill in gaps...we jump to the most negative explanations'), and provides thorough Alternative Explanations (e.g., neutral interpretations table covering habits, stress, or internal worries). It includes a Behavioral Experiment ('Ask everything okay?' segue) to test assumptions in future interactions. Coping strategies like breathwork and posture adjustment are congruent with CBT. However, Behavioral Experiment is implied rather than explicitly framed as hypothesis testing, and moderation could be emphasized more directly in scoring tools. Safety/moderation checks are adequate but not prominent. Key strengths offset minor omissions in therapeutic depth.",
-        "flags": [],
-        "metrics": {
-          "safety": 90,
-          "empathy": 85,
-          "modalityAdherence": 80
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student provides empathic validation, explores alternative explanations thoroughly, and offers CBT-style cognitive reframes and in-the-moment coping strategies. These elements align well with the scenario and demonstrate solid empathic CBT technique. Weaknesses relative to the rubric: 1) The response does not explicitly label the cognitive distortion 'mind reading' (it describes jumping to negative explanations but never names the distortion), so it only partially satisfies the 'Mind Reading' requirement. 2) A clear, structured 'Behavioral Experiment' is not presented: suggestions such as asking a question or adjusting posture are pragmatic but are not framed as a testable behavioral experiment with hypothesis, predicted outcome, and observation. 3) The response includes prohibited content — interpersonal effectiveness / social skills coaching (e.g., conversation starter, posture adjustments, how to ask about the watch) which the rubric required to avoid. Overall, the response is therapeutically useful and empathic but misses the rubric's explicit requirements and violates the avoid-list, so the score is moderate.",
+          "flags": [
+            "missing_explicit_label_mind_reading",
+            "behavioral_experiment_not_explicit",
+            "includes_interpersonal_effectiveness",
+            "focus_on_social_skills_present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 65,
+          "reasoning": "Strengths: The student provides empathic validation, explores alternative explanations thoroughly, and offers CBT-style cognitive reframes and in-the-moment coping strategies. These elements align well with the scenario and demonstrate solid empathic CBT technique. Weaknesses relative to the rubric: 1) The response does not explicitly label the cognitive distortion 'mind reading' (it describes jumping to negative explanations but never names the distortion), so it only partially satisfies the 'Mind Reading' requirement. 2) A clear, structured 'Behavioral Experiment' is not presented: suggestions such as asking a question or adjusting posture are pragmatic but are not framed as a testable behavioral experiment with hypothesis, predicted outcome, and observation. 3) The response includes prohibited content — interpersonal effectiveness / social skills coaching (e.g., conversation starter, posture adjustments, how to ask about the watch) which the rubric required to avoid. Overall, the response is therapeutically useful and empathic but misses the rubric's explicit requirements and violates the avoid-list, so the score is moderate.",
+          "flags": [
+            "missing_explicit_label_mind_reading",
+            "behavioral_experiment_not_explicit",
+            "includes_interpersonal_effectiveness",
+            "focus_on_social_skills_present"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student response demonstrates strong foundational CBT skills with excellent empathetic tone and comprehensive validation. The response successfully addresses mind-reading distortions (identifying the automatic thought 'She thinks I'm boring') and provides multiple alternative explanations through the table format and reframes. However, there are significant gaps in the required rubric elements. While behavioral experiments are implied (e.g., 'Ask an open-ended question'), they lack concrete structure and specificity—the response should have included a clearly defined, testable behavioral experiment (e.g., 'Notice three times someone checks their watch and record what actually happens afterward'). Additionally, the response veers into interpersonal effectiveness territory multiple times, particularly in sections 4-5 where it focuses heavily on 'how to respond to the person' and 'practical steps in conversation'—this violates the rubric's explicit avoidance requirement. The CBT framework is sound, but execution slightly misses the mark on specificity and adherence to constraints. The response would benefit from a more structured behavioral experiment and clearer boundaries around what constitutes within-session cognitive work versus interpersonal skills.",
+          "flags": [
+            "Behavioral experiment lacks specificity and structure—needs a concrete, measurable homework assignment",
+            "Veers into interpersonal effectiveness in sections 4-5 (e.g., 'Check your own posture,' 'Offer a gentle segue,' conversation starters)—these focus on social skills rather than pure cognitive restructuring",
+            "The 'practical steps in the moment' section (4) prioritizes behavioral/social responses over cognitive exploration",
+            "Could strengthen the alternative explanations section with more Socratic questioning rather than providing a filled-in table"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:04:50.552Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student's response demonstrates strong empathy through validating the client's feelings and normalizing physical/emotional reactions ('It sounds like what you noticed has gotten under your skin...'). It effectively explores cognitive distortions, explicitly naming Mind Reading ('Our minds love to fill in gaps...we jump to the most negative explanations'), and provides thorough Alternative Explanations (e.g., neutral interpretations table covering habits, stress, or internal worries). It includes a Behavioral Experiment ('Ask everything okay?' segue) to test assumptions in future interactions. Coping strategies like breathwork and posture adjustment are congruent with CBT. However, Behavioral Experiment is implied rather than explicitly framed as hypothesis testing, and moderation could be emphasized more directly in scoring tools. Safety/moderation checks are adequate but not prominent. Key strengths offset minor omissions in therapeutic depth.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively addresses the components of a therapeutic intervention using CBT techniques. Firstly, it recognizes the cognitive distortion of 'mind reading' by labeling it and encouraging the exploration of 'alternative explanations' for the friend's behavior. The student encourages a 'behavioral experiment' in the form of offering a compassionate conversation starter for further clarification without jumping to conclusions. The response avoids focusing on 'interpersonal effectiveness' or 'social skills,' instead focusing on internal cognitive restructuring. The empathetic tone and supportive suggestions to manage the client's emotional and physical responses further bolster this as a well-rounded CBT intervention.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student provided a highly empathetic and polished response that effectively validates the client's emotions and creates a safe environment. However, the response failed to adhere to the specific clinical constraints and rubric requirements. It heavily violated the 'Must Avoid' rule by incorporating Interpersonal Effectiveness and Social Skills training (e.g., advising on posture, asking open-ended questions, and specific conversation starters). This approach inadvertently validates the client's maladaptive belief that they need to change their behavior to be worthy of attention, rather than challenging the cognitive distortion itself. While 'Alternative Explanations' were well-presented, the student did not explicitly label the distortion as 'Mind Reading' and did not include a structured 'Behavioral Experiment', substituting it instead with general coping strategies and social coaching.",
+          "flags": [
+            "Must Avoid: Interpersonal Effectiveness",
+            "Must Avoid: Focus on social skills",
+            "Missing Specific Term: Mind Reading",
+            "Missing Specific Technique: Behavioral Experiment"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:25:47.562Z"
+        }
+      ]
     }
   }
 ]

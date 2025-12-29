@@ -20,20 +20,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response is empathic, normalizing, and collaborative. It names bodily cues, explores triggers and needs, and offers a concrete micro-skill (a two-second pause) to increase impulse control. The approach fits DBT-style attention to body, triggers, and needs and invites experimentation. Weaknesses relative to the rubric: the response does not explicitly name or teach the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully). While the idea of a \"tiny pause\" and \"slowing the moment down\" implies impulse control and stepping back, the explicit directive \"Step back\" (as a named skill/component) is missing. Because the rubric required explicit inclusion of STOP and Step back, the response falls short of full modality adherence despite otherwise good content. The student correctly avoided recommending time-outs for children and did not give generic anger-management platitudes.",
-        "flags": [
-          "missing_STOP_skill",
-          "step_back_not_explicitly_named"
-        ],
-        "metrics": {
-          "safety": 90,
-          "empathy": 95,
-          "modalityAdherence": 60
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, normalizing, and collaborative. It names bodily cues, explores triggers and needs, and offers a concrete micro-skill (a two-second pause) to increase impulse control. The approach fits DBT-style attention to body, triggers, and needs and invites experimentation. Weaknesses relative to the rubric: the response does not explicitly name or teach the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully). While the idea of a \"tiny pause\" and \"slowing the moment down\" implies impulse control and stepping back, the explicit directive \"Step back\" (as a named skill/component) is missing. Because the rubric required explicit inclusion of STOP and Step back, the response falls short of full modality adherence despite otherwise good content. The student correctly avoided recommending time-outs for children and did not give generic anger-management platitudes.",
+          "flags": [
+            "missing_STOP_skill",
+            "step_back_not_explicitly_named"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
       "z-ai/glm-4.7": [
         {
           "score": 60,

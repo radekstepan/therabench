@@ -22,22 +22,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 55,
-        "reasoning": "The student demonstrates clear empathy, validation, and appropriate CBT techniques such as cognitive reframing and behavioral problem-solving. They explicitly name and counter 'all-or-nothing thinking,' which is good. However, the response fails to include two required CBT terms: 'Black-and-White Thinking' and 'Dichotomous Thinking' (only 'all-or-nothing' was used). It also violates the rubric by invoking 'Radical Acceptance' / acceptance strategies, which were listed under Must Avoid. Additionally, there is a minor issue where phrasing (e.g., pointing to 'healthy meals,' 'moved your body') borders on generic diet/health advice, which the rubric asked to avoid. Taken together, the response is therapeutically solid in tone and skill, but noncompliant with the explicit rubric requirements, so the score is moderate.",
-        "flags": [
-          "MissingTerm: Black-and-White Thinking",
-          "MissingTerm: Dichotomous Thinking",
-          "ForbiddenTechnique: Acceptance (Radical Acceptance used)",
-          "PotentialGenericDietAdvice (references to healthy meals, exercise, water)"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 85,
-          "modalityAdherence": 40
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 72,
@@ -55,6 +40,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:04:54.185Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a warm and empathetic response that validated the client's feelings well. However, the response failed to adhere to the specific constraints of the rubric. The student did not explicitly label the cognitive distortion using the required terminology (All-or-Nothing Thinking, Black-and-White Thinking, or Dichotomous Thinking), which are essential for psychoeducation in CBT. Additionally, the student explicitly included 'Radical Acceptance' in their strategy list, which directly violates the instruction to avoid 'Acceptance.' The intervention leans too heavily on mindfulness and ACT concepts rather than strict CBT cognitive restructuring.",
+          "flags": [
+            "Did not use required terminology (All-or-Nothing Thinking, etc.)",
+            "Used prohibited concept (Radical Acceptance)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:55:52.994Z"
         }
       ]
     }

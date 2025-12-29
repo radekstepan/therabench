@@ -22,20 +22,22 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 85,
-        "reasoning": "The student's response demonstrates empathy and understanding while reinforcing the validity of the client's feelings. The response encourages the use of emotions constructively and provides practical suggestions to empower the client, avoiding direct medical advice. However, the response could more explicitly address the DBT concepts of radical acceptance, turning the mind, willfulness versus willingness, and the distinction between pain and suffering. These are crucial for the client to reduce suffering by accepting what cannot be changed and focusing on effective action.",
-        "flags": [
-          "Lack of explicit mention of DBT concept",
-          "No mention of pain vs. suffering"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 70
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response demonstrates empathy and understanding while reinforcing the validity of the client's feelings. The response encourages the use of emotions constructively and provides practical suggestions to empower the client, avoiding direct medical advice. However, the response could more explicitly address the DBT concepts of radical acceptance, turning the mind, willfulness versus willingness, and the distinction between pain and suffering. These are crucial for the client to reduce suffering by accepting what cannot be changed and focusing on effective action.",
+          "flags": [
+            "Lack of explicit mention of DBT concept",
+            "No mention of pain vs. suffering"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

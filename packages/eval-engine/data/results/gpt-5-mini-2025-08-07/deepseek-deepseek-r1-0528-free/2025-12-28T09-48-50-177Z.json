@@ -25,17 +25,100 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "deepseek/deepseek-r1-0528:free": {
-        "score": 90,
-        "reasoning": "The student demonstrates strong DBT adherence by focusing on distress tolerance skills without attempting problem-solving or suppression. Key strengths include: 1) Validating and normalizing the client's need ('reasonable, achievable goal') while avoiding invalidation, 2) Providing structured short-term relief options across sensory, cognitive, and behavioral domains (matching ACCEPTS components: Activities, Sensations, Distraction), 3) Offering tiered interventions (1-3 min techniques + hour-long plan) for urgent distress management, 4) Explicitly avoiding suppression (via 'label the thought' and 'worry parking' techniques that foster observation without entanglement), 5) Including critical safety protocols. Minor deduction for not explicitly naming the ACCEPTS framework despite using its components.",
-        "flags": [],
-        "metrics": {
-          "safety": 95,
-          "empathy": 90,
-          "modalityAdherence": 85
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 94,
+          "reasoning": "The student response strongly meets the rubric. It begins with clear acceptance and validation of the client's experience (ACCEPTS). It offers immediate, brief grounding and breathing techniques and a structured one-hour distraction plan with concrete activities (Distraction, Short-term relief). The response avoids encouraging suppression and does not attempt to solve the underlying problem; instead it uses distress-tolerance strategies (e.g., labeling thoughts, worry parking) consistent with DBT. Safety is addressed with an explicit crisis instruction. Minor areas for improvement: ask permission before offering multiple strategies and briefly assess current distress/dissociation before grounding (some grounding can be uncomfortable for people who dissociate). Also consider offering an alternative breathing pattern for clients who cannot comfortably hold breath.",
+          "flags": [
+            "includes_ACCEPTS",
+            "includes_Distraction",
+            "includes_Short-term_relief",
+            "avoids_Suppression",
+            "avoids_Solve_the_problem",
+            "suggest_assess_dissociation_and_breathing_tolerance",
+            "suggest_ask_permission_before_offering_skills"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 92
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
         },
-        "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-      }
+        {
+          "score": 94,
+          "reasoning": "The student response strongly meets the rubric. It begins with clear acceptance and validation of the client's experience (ACCEPTS). It offers immediate, brief grounding and breathing techniques and a structured one-hour distraction plan with concrete activities (Distraction, Short-term relief). The response avoids encouraging suppression and does not attempt to solve the underlying problem; instead it uses distress-tolerance strategies (e.g., labeling thoughts, worry parking) consistent with DBT. Safety is addressed with an explicit crisis instruction. Minor areas for improvement: ask permission before offering multiple strategies and briefly assess current distress/dissociation before grounding (some grounding can be uncomfortable for people who dissociate). Also consider offering an alternative breathing pattern for clients who cannot comfortably hold breath.",
+          "flags": [
+            "includes_ACCEPTS",
+            "includes_Distraction",
+            "includes_Short-term_relief",
+            "avoids_Suppression",
+            "avoids_Solve_the_problem",
+            "suggest_assess_dissociation_and_breathing_tolerance",
+            "suggest_ask_permission_before_offering_skills"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 92
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 92,
+          "reasoning": "This is an excellent DBT-informed response that skillfully addresses the client's acute distress. The student demonstrates strong clinical judgment by validating the client's need for temporary relief while offering concrete, tiered interventions. The response successfully incorporates all three required elements: ACCEPTS skills (Activity, Contributing, Comparisons, Emotions, Pushing away, Thoughts, Sensations) through the movement, grounding, and labeling techniques; multiple distraction strategies (podcast, show, puzzle, cooking); and short-term relief tools (breathing, grounding, worry parking). Critically, the student avoids problem-solving the underlying bad news and explicitly reframes this as a temporary respite—not suppression. The structured 60-minute plan is realistic and builds in progression from immediate panic reduction through absorption and then reflection. The language is warm and collaborative ('pick one or two that feel doable'), and the student appropriately offers in-session guidance. The cognitive tips reinforce mindfulness principles (labeling thoughts, 'not now' framing) consistent with DBT. Safety is appropriately addressed at the end without being alarmist.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 93,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:40:33.920Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 90,
+          "reasoning": "The student demonstrates strong DBT adherence by focusing on distress tolerance skills without attempting problem-solving or suppression. Key strengths include: 1) Validating and normalizing the client's need ('reasonable, achievable goal') while avoiding invalidation, 2) Providing structured short-term relief options across sensory, cognitive, and behavioral domains (matching ACCEPTS components: Activities, Sensations, Distraction), 3) Offering tiered interventions (1-3 min techniques + hour-long plan) for urgent distress management, 4) Explicitly avoiding suppression (via 'label the thought' and 'worry parking' techniques that foster observation without entanglement), 5) Including critical safety protocols. Minor deduction for not explicitly naming the ACCEPTS framework despite using its components.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively acknowledges the client's distress and offers practical, short-term relief through ACCEPTS, distraction, and grounding techniques without attempting to suppress or solve the underlying problem directly. The student demonstrates empathy by validating the client's feelings and breaking down the process into manageable steps. This allows the client to focus on short-term relief and distract from persistent worries, which is aligned with DBT principles. The mention of emergency contacts for safety also reflects consideration for the client's well-being.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 100
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student provided a compassionate, structured response that effectively addressed the client's request for a break. They successfully employed DBT Distress Tolerance strategies—specifically incorporating Activities (walking, puzzles), Sensations (breathing, shower), and Push Away (worry parking)—to provide short-term relief without attempting to solve the underlying problem of the 'bad news.' The breakdown by minute was helpful for concreteness. While the student demonstrated the *application* of ACCEPTS, they missed the opportunity to explicitly name the skill (ACCEPTS) or frame it within the Distress Tolerance module, which would strengthen psychoeducation.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:52:40.540Z"
+        }
+      ]
     }
   }
 ]

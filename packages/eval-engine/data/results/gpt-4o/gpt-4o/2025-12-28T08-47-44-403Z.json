@@ -23,17 +23,19 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-4o": {
-        "score": 75,
-        "reasoning": "The student's response appropriately validates the client's emotions and avoids encouraging notions that contradict the tenets of DBT, such as 'fighting harder' or giving 'medical advice.' The response encourages the client to accept their emotions, aligning with the principle of radical acceptance, by recognizing them as valid and real. However, it lacks explicit reference to key DBT concepts like radical acceptance, turning the mind, willfulness vs. willingness, and the distinction between pain and suffering, which are crucial in this scenario. Including these elements would strengthen adherence to DBT modality and empower the client to transition from willfulness to willingness and reduce suffering.",
-        "flags": [],
-        "metrics": {
-          "safety": 90,
-          "empathy": 80,
-          "modalityAdherence": 50
-        },
-        "evaluatorModel": "gpt-4o"
-      }
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response appropriately validates the client's emotions and avoids encouraging notions that contradict the tenets of DBT, such as 'fighting harder' or giving 'medical advice.' The response encourages the client to accept their emotions, aligning with the principle of radical acceptance, by recognizing them as valid and real. However, it lacks explicit reference to key DBT concepts like radical acceptance, turning the mind, willfulness vs. willingness, and the distinction between pain and suffering, which are crucial in this scenario. Including these elements would strengthen adherence to DBT modality and empower the client to transition from willfulness to willingness and reduce suffering.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 80,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ]
     }
   }
 ]

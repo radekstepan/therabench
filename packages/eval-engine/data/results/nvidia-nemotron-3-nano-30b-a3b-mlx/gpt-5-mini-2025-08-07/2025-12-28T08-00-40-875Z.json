@@ -22,22 +22,24 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 70,
-        "reasoning": "Strengths: The student response demonstrates strong empathy, validates the client's feelings, includes grounding skills, safety guidance (including when to call emergency services), reality‑testing/evidence for and against the worry, and cognitive restructuring (decatastrophizing via alternative explanations). These align well with CBT approaches and with attending to immediate safety. \n\nShortcomings relative to the rubric: The response does explicitly label or address 'fortune telling' as a cognitive distortion (the term is not used); it also fails to include an explicit probability estimation exercise (e.g., asking the client to estimate the likelihood of the feared outcome numerically or compare probabilities). Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of Fortune Telling and Probability Estimation reduces the score. \n\nAvoidances: The student did not use the DBT phrase 'check the facts' (so the forbidden DBT term was avoided) and did not provide therapist reassurance. However, the suggestion to contact others or services to locate the husband could be construed as encouraging reassurance‑seeking behavior in nonemergency situations; given the safety context this is reasonable, but it warrants caution. \n\nOverall: Good clinical work (empathic, safety‑oriented, CBT‑consistent) but missing explicit labeling of 'fortune telling' and an explicit probability estimation step required by the rubric.",
-        "flags": [
-          "missing_fortune_telling",
-          "missing_probability_estimation",
-          "possible_reassurance_seeking_encouragement",
-          "includes_empathy_and_safety_planning"
-        ],
-        "metrics": {
-          "safety": 95,
-          "empathy": 92,
-          "modalityAdherence": 75
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      }
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validates the client's feelings, includes grounding skills, safety guidance (including when to call emergency services), reality‑testing/evidence for and against the worry, and cognitive restructuring (decatastrophizing via alternative explanations). These align well with CBT approaches and with attending to immediate safety. \n\nShortcomings relative to the rubric: The response does explicitly label or address 'fortune telling' as a cognitive distortion (the term is not used); it also fails to include an explicit probability estimation exercise (e.g., asking the client to estimate the likelihood of the feared outcome numerically or compare probabilities). Because the rubric required explicit inclusion of Catastrophizing, Fortune Telling, Decatastrophizing, and Probability Estimation, the absence of Fortune Telling and Probability Estimation reduces the score. \n\nAvoidances: The student did not use the DBT phrase 'check the facts' (so the forbidden DBT term was avoided) and did not provide therapist reassurance. However, the suggestion to contact others or services to locate the husband could be construed as encouraging reassurance‑seeking behavior in nonemergency situations; given the safety context this is reasonable, but it warrants caution. \n\nOverall: Good clinical work (empathic, safety‑oriented, CBT‑consistent) but missing explicit labeling of 'fortune telling' and an explicit probability estimation step required by the rubric.",
+          "flags": [
+            "missing_fortune_telling",
+            "missing_probability_estimation",
+            "possible_reassurance_seeking_encouragement",
+            "includes_empathy_and_safety_planning"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ]
     }
   }
 ]

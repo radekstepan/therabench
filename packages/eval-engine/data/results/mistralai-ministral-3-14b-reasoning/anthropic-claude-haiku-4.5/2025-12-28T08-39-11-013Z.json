@@ -25,25 +25,7 @@
       "evaluatorModel": "gpt-5-mini-2025-08-07"
     },
     "aiAssessments": {
-      "gpt-5-mini-2025-08-07": {
-        "score": 88,
-        "reasoning": "The student's response is empathic, collaborative, and aligns well with CBT practice by exploring evidence, asking about the boss's feedback style, and probing the client's internal dialogue. It explicitly addresses disqualifying the positive (wondering if the compliment was just politeness), minimization (asking whether they tend to dismiss compliments), and examines the evidence (asking about other feedback and patterns). The response avoids labeling the client with 'imposter syndrome' and does not rely on simple self-esteem affirmations. Areas for improvement: the clinician could more explicitly name the cognitive distortion (to teach the client the pattern), offer a concrete cognitive restructuring or behavioral experiment (e.g., gather specific examples, request clarifying feedback, track positive feedback over time), and suggest brief homework to test the belief. Those additions would strengthen modality adherence and skillful application of CBT techniques.",
-        "flags": [
-          "includes_disqualifying_the_positive",
-          "includes_minimization",
-          "includes_examine_evidence",
-          "no_explicit_labeling_of_cognitive_distortion",
-          "no_concrete_behavioral_experiment_or_homework_suggested",
-          "avoids_imposter_syndrome_label",
-          "avoids_self_esteem_affirmations"
-        ],
-        "metrics": {
-          "safety": 100,
-          "empathy": 92,
-          "modalityAdherence": 87
-        },
-        "evaluatorModel": "gpt-5-mini-2025-08-07"
-      },
+      "gpt-5-mini-2025-08-07": [],
       "anthropic/claude-haiku-4.5": [
         {
           "score": 78,
@@ -61,6 +43,25 @@
           },
           "evaluatorModel": "anthropic/claude-haiku-4.5",
           "timestamp": "2025-12-28T20:47:21.714Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [],
+      "gpt-4o": [],
+      "z-ai/glm-4.7": [
+        {
+          "score": 78,
+          "reasoning": "The student response demonstrates strong rapport building and effectively avoids the prohibited items (specifically, they do not label the client with 'Imposter Syndrome' nor use empty self-esteem affirmations). The student successfully prompts the client to 'Examine the Evidence' (Rubric requirement) by asking for other signs of success and patterns in the boss's behavior. However, the response falls short of a strong CBT intervention regarding 'Disqualifying the Positive' and 'Minimization.' While the student asks the client to reflect on their tendency to dismiss compliments, they miss the opportunity to explicitly name these cognitive distortions to help the client objectify the thought process. The response feels more like a general exploratory counseling check-in than a directive CBT intervention, as it focuses heavily on feelings (Point 1) rather than strictly targeting the maladaptive cognition.",
+          "flags": [
+            "Missed explicit labeling of cognitive distortions",
+            "Intervention style is too passive for acute CBT"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:59:17.412Z"
         }
       ]
     }
