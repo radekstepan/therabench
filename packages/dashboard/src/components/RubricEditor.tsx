@@ -81,7 +81,7 @@ export const RubricEditor = ({
   }
 
   return (
-    <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-5">
+    <div className="bg-zinc-950 border border-zinc-800 rounded-md p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-semibold text-white">Edit Rubric</h3>
         <div className="flex gap-2">

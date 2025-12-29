@@ -56,14 +56,14 @@ export const QuestionDetail = ({
             </div>
             <button
               onClick={onEditQuestion}
-              className="p-2 text-zinc-600 hover:text-emerald-400 hover:bg-zinc-900 rounded-lg transition-colors"
+              className="p-2 text-zinc-600 hover:text-emerald-400 hover:bg-zinc-900 rounded transition-colors"
               title="Edit question"
             >
               <Edit2 className="w-5 h-5" />
             </button>
           </div>
           
-          <div className="bg-zinc-950 border border-zinc-800 p-5 rounded-xl text-zinc-300 italic mb-6">
+          <div className="bg-zinc-950 border border-zinc-800 p-5 rounded-md text-zinc-300 italic mb-6">
             "{question.scenario}"
           </div>
 
@@ -87,11 +87,11 @@ export const QuestionDetail = ({
           </div>
 
           {runs.length === 0 ? (
-            <div className="text-center py-20 border border-dashed border-zinc-800 rounded-xl">
+            <div className="text-center py-20 border border-dashed border-zinc-800 rounded-md">
               <p className="text-zinc-500">No models have been run on this question yet.</p>
             </div>
           ) : (
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-visible shadow-lg">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-md overflow-visible shadow-lg">
               <table className="w-full">
                 <thead className="bg-zinc-900/50 border-b border-zinc-800">
                   <tr>
@@ -151,7 +151,7 @@ export const QuestionDetail = ({
                             : 'text-zinc-400'
                         )} />
                         <Info className="w-3 h-3 cursor-help ml-1" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
                           Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
                         </div>
@@ -170,7 +170,7 @@ export const QuestionDetail = ({
                             : 'text-zinc-400'
                         )} />
                         <Info className="w-3 h-3 cursor-help ml-1" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                           Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
                         </div>

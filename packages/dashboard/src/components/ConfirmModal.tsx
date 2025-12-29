@@ -9,7 +9,7 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm }: ConfirmModalProps) 
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" onClick={onClose}>
-      <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-zinc-900 border border-zinc-800 rounded-md p-6 max-w-md w-full mx-4 shadow-2xl" onClick={(e) => e.stopPropagation()}>
         <h3 className="text-lg font-semibold text-white mb-3">Confirm Reset</h3>
         <p className="text-zinc-400 text-sm mb-6">
           Clear all manual reviews and rubric edits? This action cannot be undone.
@@ -23,7 +23,7 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm }: ConfirmModalProps) 
           </button>
           <button
             onClick={onConfirm}
-            className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-sm font-medium transition-colors"
+            className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded text-sm font-medium transition-colors"
           >
             Clear All Data
           </button>

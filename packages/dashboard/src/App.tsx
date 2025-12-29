@@ -9,6 +9,7 @@ import { Dashboard } from './components/Dashboard';
 import { QuestionDetail } from './components/QuestionDetail';
 import { QuestionEditModal } from './components/QuestionEditModal';
 import { ConfirmModal } from './components/ConfirmModal';
+import { WelcomeModal } from './components/WelcomeModal';
 
 // --- Data Importing ---
 import questionsDataRaw from '../../eval-engine/data/questions.json';
@@ -29,6 +30,7 @@ export default function App() {
   const [editingRubric, setEditingRubric] = useState(false);
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+  const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
   const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label'>('score');
@@ -62,10 +64,20 @@ export default function App() {
     setQuestionOverrides(getQuestionOverrides());
   }, []);
 
+  // Show welcome modal on first visit
+  useEffect(() => {
+    const hasSeenWelcome = localStorage.getItem('therabench_has_seen_welcome');
+    if (!hasSeenWelcome) {
+      setIsWelcomeModalOpen(true);
+    }
+  }, []);
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        if (isConfirmModalOpen) {
+        if (isWelcomeModalOpen) {
+          handleCloseWelcome();
+        } else if (isConfirmModalOpen) {
           setIsConfirmModalOpen(false);
         } else if (isQuestionModalOpen) {
           setIsQuestionModalOpen(false);
@@ -74,7 +86,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
-  }, [isConfirmModalOpen, isQuestionModalOpen]);
+  }, [isConfirmModalOpen, isQuestionModalOpen, isWelcomeModalOpen]);
 
   // Merge Data and filter by selected judges
   const augmentedResults = useMemo(() => {
@@ -274,6 +286,82 @@ export default function App() {
     }));
   }, [modelStats]);
 
+  // Calculate missing evaluations
+  const missingEvaluations = useMemo(() => {
+    const totalQuestions = (questionsData as QuestionNode[]).length;
+    
+    // Count expert reviews per model
+    const expertCounts = modelStatsWithRank.map(stat => stat.expertCount);
+    
+    // Find the most frequent expert count (mode)
+    const countFrequency: Record<number, number> = {};
+    expertCounts.forEach(count => {
+      countFrequency[count] = (countFrequency[count] || 0) + 1;
+    });
+    const mostFrequentCount = parseInt(
+      Object.entries(countFrequency).sort((a, b) => b[1] - a[1])[0]?.[0] || '0'
+    );
+    
+    // Find which experts need to review which models (either missing entirely or missing some questions)
+    const expertsNeedingReviews: Record<string, string[]> = {};
+    const allExperts = selectedJudges.size > 0 ? Array.from(selectedJudges) : availableJudges;
+    
+    modelStatsWithRank.forEach(stat => {
+      const modelRuns = augmentedResults.filter(r => r.modelName === stat.name);
+      
+      // Count how many questions each expert has reviewed for this model
+      const expertQuestionCounts: Record<string, Set<string>> = {};
+      
+      modelRuns.forEach(run => {
+        if (run.aiAssessments) {
+          Object.keys(run.aiAssessments).forEach(judge => {
+            if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+              if (!expertQuestionCounts[judge]) {
+                expertQuestionCounts[judge] = new Set();
+              }
+              expertQuestionCounts[judge].add(run.questionId);
+            }
+          });
+        } else if (run.aiAssessment?.evaluatorModel) {
+          const judge = run.aiAssessment.evaluatorModel;
+          if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+            if (!expertQuestionCounts[judge]) {
+              expertQuestionCounts[judge] = new Set();
+            }
+            expertQuestionCounts[judge].add(run.questionId);
+          }
+        }
+      });
+      
+      // Check each expert to see if they've reviewed all questions for this model
+      allExperts.forEach(expert => {
+        const questionsReviewed = expertQuestionCounts[expert]?.size || 0;
+        if (questionsReviewed < totalQuestions) {
+          if (!expertsNeedingReviews[expert]) {
+            expertsNeedingReviews[expert] = [];
+          }
+          expertsNeedingReviews[expert].push(`${stat.name} (${questionsReviewed}/${totalQuestions})`);
+        }
+      });
+    });
+    
+    // Models missing question responses
+    const modelsWithMissingQuestions = modelStatsWithRank
+      .filter(stat => stat.count < totalQuestions)
+      .map(stat => ({
+        name: stat.name,
+        answered: stat.count,
+        missing: totalQuestions - stat.count
+      }));
+    
+    return {
+      expertsNeedingReviews,
+      modelsWithMissingQuestions,
+      mostFrequentExpertCount: mostFrequentCount,
+      totalQuestions
+    };
+  }, [modelStatsWithRank, questionsData, augmentedResults, selectedJudges, availableJudges]);
+
   const topPerformer = useMemo(() => {
     return modelStatsWithRank.find(stat => stat.scoreRank === 1);
   }, [modelStatsWithRank]);
@@ -416,6 +504,11 @@ export default function App() {
     setExpandedRunId(null);
   };
 
+  const handleCloseWelcome = () => {
+    setIsWelcomeModalOpen(false);
+    localStorage.setItem('therabench_has_seen_welcome', 'true');
+  };
+
   return (
     <div className="flex h-screen bg-zinc-950 text-zinc-100 font-sans overflow-hidden">
       <Sidebar
@@ -445,6 +538,7 @@ export default function App() {
             topPerformer={topPerformer}
             totalEvaluations={augmentedResults.length}
             reviewsCompleted={Object.keys(overrides).length}
+            missingEvaluations={missingEvaluations}
             sortBy={leaderboardSortBy}
             sortDirection={leaderboardSortDirection}
             onSort={handleLeaderboardSort}
@@ -493,6 +587,11 @@ export default function App() {
         isOpen={isConfirmModalOpen}
         onClose={() => setIsConfirmModalOpen(false)}
         onConfirm={handleConfirmClear}
+      />
+
+      <WelcomeModal
+        isOpen={isWelcomeModalOpen}
+        onClose={handleCloseWelcome}
       />
     </div>
   );

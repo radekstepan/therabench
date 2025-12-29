@@ -9,6 +9,16 @@ import { saveResults, loadAllResults } from './results-manager';
 
 dotenv.config();
 
+interface ModelConfig {
+  modelName: string;
+  labels: Array<{ text: string; color: string }>;
+  useTextMode?: boolean;
+}
+
+// Load model configuration
+const MODEL_CONFIG_PATH = path.join(__dirname, '../data/model-config.json');
+const modelConfigs: ModelConfig[] = JSON.parse(fs.readFileSync(MODEL_CONFIG_PATH, 'utf-8'));
+
 // Helper function to resolve environment variable references
 function resolveEnvValue(value: string | undefined): string {
   if (!value) return '';
@@ -98,15 +108,26 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     };
   }
 
-  const maxRetries = 3;
+  // Check model config to see if we should use text mode from the start
+  const modelConfig = modelConfigs.find(c => c.modelName === EXPERT_MODEL_NAME);
+  const maxRetries = 5;
+  let useTextFormat = modelConfig?.useTextMode || false;
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      const completion = await openai.chat.completions.create({
+      const requestParams: any = {
         model: EXPERT_MODEL_NAME,
-        messages: [{ role: "user", content: prompt }],
-        response_format: { type: "json_object" }
-      });
+        messages: [{ role: "user", content: prompt }]
+      };
+      
+      // Try json_object first, fall back to text if not supported
+      if (useTextFormat) {
+        requestParams.response_format = { type: "text" };
+      } else {
+        requestParams.response_format = { type: "json_object" };
+      }
+      
+      const completion = await openai.chat.completions.create(requestParams);
 
       const content = completion.choices[0].message.content || '{}';
       
@@ -125,24 +146,34 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 
       } catch (parseError) {
         if (attempt === maxRetries) throw parseError;
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // Exponential backoff: 1s, 2s, 4s, 8s
+        const backoffMs = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
+        await new Promise(resolve => setTimeout(resolve, backoffMs));
       }
     } catch (error: any) {
-      console.warn(`   Attempt ${attempt}/${maxRetries} failed: ${error.message}`);
-      if (attempt === maxRetries) {
-         return {
-          score: 0,
-          reasoning: `Evaluation failed: ${error.message}`,
-          flags: ["api-error"],
-          metrics: { safety: 0, empathy: 0, modalityAdherence: 0 },
-          evaluatorModel: EXPERT_MODEL_NAME,
-          timestamp: new Date().toISOString()
-        };
+      // Check if error is about unsupported response_format
+      const errorMsg = error.message || JSON.stringify(error);
+      const isFormatError = errorMsg.includes("response_format") || 
+                           (error.status === 400 && errorMsg.includes("json_schema"));
+      
+      if (isFormatError && !useTextFormat) {
+        console.warn(`   Model doesn't support json_object format, falling back to text`);
+        useTextFormat = true;
+        attempt--; // Don't count this as a retry
+        continue;
       }
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      console.warn(`   Attempt ${attempt}/${maxRetries} failed: ${errorMsg}`);
+      if (attempt === maxRetries) {
+         // Return null instead of saving a failed result
+         throw new Error(`Evaluation failed after ${maxRetries} attempts: ${errorMsg}`);
+      }
+      // Exponential backoff: 1s, 2s, 4s, 8s
+      const backoffMs = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
+      await new Promise(resolve => setTimeout(resolve, backoffMs));
     }
   }
-  return {} as JudgeAssessment;
+  throw new Error('Evaluation failed: All retries exhausted');
 }
 
 async function main() {
@@ -195,8 +226,14 @@ async function main() {
       const response = await queryCandidateModel(q.scenario);
       
       // 2. Judge Response
-      const assessment = await runJudge(q, response);
-      console.log(`   -> Score: ${assessment.score}/100`);
+      let assessment: JudgeAssessment;
+      try {
+        assessment = await runJudge(q, response);
+        console.log(`   -> Score: ${assessment.score}/100`);
+      } catch (error: any) {
+        console.error(`   ⚠️  Skipping save - evaluation failed: ${error.message}`);
+        continue; // Skip saving this result
+      }
 
       const run: ModelRun = {
         runId: randomUUID(),

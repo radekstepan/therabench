@@ -70,4 +70,5 @@ export interface ModelLabel {
 export interface ModelConfig {
   modelName: string;
   labels: ModelLabel[];
+  useTextMode?: boolean; // If true, skip json_object and use text mode directly for parsing
 }

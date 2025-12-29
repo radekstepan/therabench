@@ -1,6 +1,7 @@
 import { Trophy, Info, ArrowUpDown } from 'lucide-react';
 import { cn, getScoreColor, formatPercentWithColor } from '../utils';
 import { ModelLabels } from './ModelLabels';
+import { ExpertRankingGrid } from './ExpertRankingGrid';
 
 interface ModelStat {
   name: string;
@@ -13,11 +14,19 @@ interface ModelStat {
   judgeScores: Array<{ judge: string; score: number }>;
 }
 
+interface MissingEvaluations {
+  expertsNeedingReviews: Record<string, string[]>;
+  modelsWithMissingQuestions: Array<{ name: string; answered: number; missing: number }>;
+  mostFrequentExpertCount: number;
+  totalQuestions: number;
+}
+
 interface DashboardProps {
   modelStats: ModelStat[];
   topPerformer: ModelStat | undefined;
   totalEvaluations: number;
   reviewsCompleted: number;
+  missingEvaluations: MissingEvaluations;
   sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label';
   sortDirection: 'asc' | 'desc';
   onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label') => void;
@@ -28,6 +37,7 @@ export const Dashboard = ({
   topPerformer,
   totalEvaluations,
   reviewsCompleted,
+  missingEvaluations,
   sortBy,
   sortDirection,
   onSort
@@ -41,7 +51,7 @@ export const Dashboard = ({
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {topPerformer && (
-          <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-2xl relative overflow-hidden flex flex-col">
+          <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-md relative overflow-hidden flex flex-col">
             <div className="absolute top-4 right-4 text-emerald-500/20"><Trophy className="w-16 h-16" /></div>
             <div className="relative z-10">
               <div className="text-emerald-500 text-xs font-mono font-medium uppercase tracking-wide mb-1">Top Performer</div>
@@ -52,13 +62,13 @@ export const Dashboard = ({
             </div>
           </div>
         )}
-        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl flex flex-col">
+        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-md flex flex-col">
           <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Total Evaluations</div>
           <div className="flex-1 flex items-center justify-center">
             <div className="text-4xl font-light text-white">{totalEvaluations}</div>
           </div>
         </div>
-        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl flex flex-col">
+        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-md flex flex-col">
           <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Reviews Completed</div>
           <div className="flex-1 flex items-center justify-center">
             <div className="text-4xl font-light text-amber-400">{reviewsCompleted}</div>
@@ -66,7 +76,67 @@ export const Dashboard = ({
         </div>
       </div>
 
-      <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-visible">
+      {(Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0) && (
+        <div className="bg-amber-900/10 border border-amber-500/30 rounded-md p-6 mb-10 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent pointer-events-none" />
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-4">
+              <Info className="w-5 h-5 text-amber-400" />
+              <h3 className="text-lg font-semibold text-amber-200">Missing Evaluations</h3>
+            </div>
+            
+            {Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 && (
+              <div className="mb-4 last:mb-0">
+                <div className="text-sm text-zinc-400 mb-3">
+                  <span className="font-medium text-amber-300">{Object.keys(missingEvaluations.expertsNeedingReviews).length}</span> {Object.keys(missingEvaluations.expertsNeedingReviews).length === 1 ? 'expert needs' : 'experts need'} to complete reviews:
+                </div>
+                <div className="space-y-3">
+                  {Object.entries(missingEvaluations.expertsNeedingReviews).map(([expert, models]) => (
+                    <div key={expert} className="bg-zinc-900/40 border border-amber-500/20 rounded p-3">
+                      <div className="font-mono text-xs text-amber-300 font-semibold mb-2">{expert}</div>
+                      <div className="flex flex-wrap gap-2">
+                        {models.map((modelInfo) => {
+                          // Parse the model info which is now in format "modelName (x/y)"
+                          const match = modelInfo.match(/^(.*?)\s*\((\d+)\/(\d+)\)$/);
+                          const modelName = match ? match[1] : modelInfo;
+                          const questionCount = match ? `${match[2]}/${match[3]}` : '';
+                          
+                          return (
+                            <div key={modelInfo} className="inline-flex items-center gap-2 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded">
+                              <span className="font-mono text-xs text-white truncate max-w-[180px]" title={modelName}>{modelName}</span>
+                              {questionCount && (
+                                <span className="text-xs text-amber-400 font-semibold">{questionCount}</span>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {missingEvaluations.modelsWithMissingQuestions.length > 0 && (
+              <div>
+                <div className="text-sm text-zinc-400 mb-2">
+                  <span className="font-medium text-amber-300">{missingEvaluations.modelsWithMissingQuestions.length}</span> {missingEvaluations.modelsWithMissingQuestions.length === 1 ? 'model hasn\'t' : 'models haven\'t'} answered all {missingEvaluations.totalQuestions} questions:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {missingEvaluations.modelsWithMissingQuestions.map((model) => (
+                    <div key={model.name} className="inline-flex items-center gap-2 bg-zinc-900/60 border border-amber-500/20 px-3 py-1.5 rounded">
+                      <span className="font-mono text-xs text-white truncate max-w-[200px]" title={model.name}>{model.name}</span>
+                      <span className="text-xs text-amber-400 font-semibold">{model.answered}/{missingEvaluations.totalQuestions}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      <div className="bg-zinc-900 border border-zinc-800 rounded-md overflow-visible">
         <table className="w-full text-left">
           <thead className="bg-zinc-900/50 border-b border-zinc-800">
             <tr>
@@ -126,7 +196,7 @@ export const Dashboard = ({
                       : 'text-zinc-400'
                   )} />
                   <Info className="w-3 h-3 cursor-help ml-1" />
-                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
                     Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
                   </div>
@@ -145,7 +215,7 @@ export const Dashboard = ({
                       : 'text-zinc-400'
                   )} />
                   <Info className="w-3 h-3 cursor-help ml-1" />
-                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                     Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
                   </div>
@@ -182,7 +252,7 @@ export const Dashboard = ({
                 <td className="px-4 py-2 text-right font-bold whitespace-nowrap relative group/score">
                   <span className={cn(getScoreColor(stat.avgScore))}>{stat.avgScore}%</span>
                   {stat.judgeScores && stat.judgeScores.length > 0 && (
-                    <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-xs font-normal shadow-xl" style={{zIndex: 9999}}>
+                    <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal shadow-xl" style={{zIndex: 9999}}>
                       <div className="font-semibold text-white mb-2">Score by Judge</div>
                       <div className="space-y-1.5">
                         {stat.judgeScores.map((js, idx) => (
@@ -203,6 +273,8 @@ export const Dashboard = ({
           </tbody>
         </table>
       </div>
+
+      <ExpertRankingGrid modelStats={modelStats} />
     </div>
   );
 };

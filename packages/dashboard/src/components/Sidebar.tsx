@@ -64,7 +64,7 @@ export const Sidebar = ({
         <button 
           onClick={() => onViewChange('dashboard', null)}
           className={cn(
-            "w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors",
+            "w-full flex items-center gap-3 px-3 py-2 rounded text-sm transition-colors",
             view === 'dashboard' ? "bg-zinc-800 text-white" : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
           )}
         >
@@ -84,7 +84,7 @@ export const Sidebar = ({
               <button
                 onClick={onJudgeDropdownToggle}
                 className={cn(
-                  "w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg text-xs transition-colors border",
+                  "w-full flex items-center justify-between gap-2 px-3 py-2 rounded text-xs transition-colors border",
                   selectedJudges.size === availableJudges.length
                     ? "bg-zinc-900 text-zinc-400 border-zinc-800 hover:bg-zinc-800"
                     : "bg-amber-900/20 text-amber-400 border-amber-500/30 hover:bg-amber-900/30"
@@ -103,7 +103,7 @@ export const Sidebar = ({
                 {judgeDropdownOpen ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
               </button>
               {judgeDropdownOpen && (
-                <div className="mt-2 bg-zinc-900 border border-zinc-800 rounded-lg p-2 space-y-1">
+                <div className="mt-2 bg-zinc-900 border border-zinc-800 rounded p-2 space-y-1">
                   {availableJudges.map(judge => {
                     const isSelected = selectedJudges.has(judge);
                     return (
@@ -188,7 +188,7 @@ export const Sidebar = ({
               key={q.id}
               onClick={() => onViewChange('questions', q.id)}
               className={cn(
-                "w-full text-left px-3 py-2.5 rounded-lg text-xs transition-all relative group",
+                "w-full text-left px-3 py-2.5 rounded text-xs transition-all relative group",
                 selectedQuestionId === q.id ? "bg-emerald-900/10 text-emerald-400" : "text-zinc-400 hover:bg-zinc-900"
               )}
             >

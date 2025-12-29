@@ -92,7 +92,7 @@ export const ComparisonRow = ({
                   <h4 className="text-sm font-medium text-emerald-400 mb-3 flex items-center gap-2">
                     <Brain className="w-4 h-4" /> Model Response
                   </h4>
-                  <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-zinc-300 leading-relaxed text-sm whitespace-pre-wrap">
+                  <div className="bg-zinc-900 border border-zinc-800 rounded p-4 text-zinc-300 leading-relaxed text-sm whitespace-pre-wrap">
                     {run.response}
                   </div>
                 </div>
@@ -127,7 +127,7 @@ export const ComparisonRow = ({
                                 <div 
                                   key={index} 
                                   className={cn(
-                                    "bg-zinc-900 border rounded-lg p-4 transition-colors",
+                                    "bg-zinc-900 border rounded p-4 transition-colors",
                                     index === assessmentArray.length - 1 
                                       ? "border-emerald-800/50" 
                                       : "border-zinc-800 opacity-70"
@@ -178,7 +178,7 @@ export const ComparisonRow = ({
                         <span className="text-xs text-zinc-600 font-mono ml-auto">by {run.aiAssessment.evaluatorModel}</span>
                       )}
                     </h4>
-                    <div className="text-sm text-zinc-400 italic bg-zinc-900/50 p-4 rounded-lg border border-zinc-800/50">
+                    <div className="text-sm text-zinc-400 italic bg-zinc-900/50 p-4 rounded border border-zinc-800/50">
                       "{run.aiAssessment.reasoning}"
                     </div>
                   </div>
@@ -186,7 +186,7 @@ export const ComparisonRow = ({
               </div>
 
               {/* Right: Review Form */}
-              <div className="col-span-4 bg-zinc-950 border border-zinc-800 rounded-xl p-5 h-fit">
+              <div className="col-span-4 bg-zinc-950 border border-zinc-800 rounded-md p-5 h-fit">
                 <h4 className="text-sm font-medium text-white mb-4 flex items-center gap-2">
                   <Gavel className="w-4 h-4 text-amber-500" /> Expert Review
                 </h4>
@@ -199,7 +199,7 @@ export const ComparisonRow = ({
                       min="0" max="100"
                       value={editScore}
                       onChange={(e) => setEditScore(Number(e.target.value))}
-                      className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-emerald-500 transition-colors font-mono"
+                      className="w-full bg-zinc-900 border border-zinc-700 rounded px-3 py-2 text-white focus:outline-none focus:border-emerald-500 transition-colors font-mono"
                     />
                   </div>
 
@@ -210,13 +210,13 @@ export const ComparisonRow = ({
                       value={editNotes}
                       onChange={(e) => setEditNotes(e.target.value)}
                       placeholder="Explain why the score was adjusted..."
-                      className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                      className="w-full bg-zinc-900 border border-zinc-700 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
                     />
                   </div>
 
                   <button 
                     type="submit" 
-                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg py-2 text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white rounded py-2 text-sm font-medium transition-colors flex items-center justify-center gap-2"
                   >
                     <Save className="w-4 h-4" />
                     Save & Rerank

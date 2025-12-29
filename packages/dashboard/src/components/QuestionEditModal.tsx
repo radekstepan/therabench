@@ -58,7 +58,7 @@ export const QuestionEditModal = ({
 
   return (
     <div className="fixed inset-0 bg-black/80 flex items-center justify-center p-4" style={{zIndex: 10000}} onClick={onClose}>
-      <div className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+      <div className="bg-zinc-900 border border-zinc-800 rounded-md max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
         <div className="sticky top-0 bg-zinc-900 border-b border-zinc-800 p-6 flex items-center justify-between">
           <h2 className="text-xl font-semibold text-white">Edit Question</h2>
           <button onClick={onClose} className="text-zinc-500 hover:text-white transition-colors">
@@ -73,7 +73,7 @@ export const QuestionEditModal = ({
               type="text"
               value={editTitle}
               onChange={(e) => setEditTitle(e.target.value)}
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
+              className="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors"
             />
           </div>
 
@@ -83,7 +83,7 @@ export const QuestionEditModal = ({
               rows={4}
               value={editScenario}
               onChange={(e) => setEditScenario(e.target.value)}
-              className="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+              className="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none"
             />
           </div>
 
@@ -185,7 +185,7 @@ export const QuestionEditModal = ({
           </button>
           <button
             onClick={handleSave}
-            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-medium transition-colors flex items-center gap-2"
+            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-medium transition-colors flex items-center gap-2"
           >
             <Save className="w-4 h-4" />
             Save Changes
