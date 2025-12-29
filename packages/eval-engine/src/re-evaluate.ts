@@ -135,11 +135,7 @@ async function main() {
       process.exit(0);
     }
 
-    const SAVE_BATCH_SIZE = 5;
     let processed = 0;
-    
-    // We group updates by candidate model to save efficiently
-    const updatesByCandidate = new Map<string, ModelRun[]>();
 
     for (let i = 0; i < itemsToJudge.length; i++) {
       const run = itemsToJudge[i];
@@ -166,29 +162,10 @@ async function main() {
       currentList.push(assessment);
       run.aiAssessments[judgeModel] = currentList;
 
-      // Queue for saving
-      if (!updatesByCandidate.has(run.modelName)) {
-        updatesByCandidate.set(run.modelName, []);
-      }
-      updatesByCandidate.get(run.modelName)!.push(run);
+      // Save after every question
+      saveResults([run], run.modelName, judgeModel);
 
       processed++;
-
-      if (processed % SAVE_BATCH_SIZE === 0) {
-        console.log('💾 Saving batch...');
-        for (const [candidate, runs] of updatesByCandidate.entries()) {
-          saveResults(runs, candidate, judgeModel);
-        }
-        updatesByCandidate.clear(); // Clear queue after save
-      }
-    }
-
-    // Final save
-    if (updatesByCandidate.size > 0) {
-      console.log('💾 Saving final results...');
-      for (const [candidate, runs] of updatesByCandidate.entries()) {
-        saveResults(runs, candidate, judgeModel);
-      }
     }
 
     console.log(`\n✅ Re-evaluation complete! Processed ${processed} runs.`);

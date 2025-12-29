@@ -163,8 +163,6 @@ async function main() {
     console.log(`   Judge: ${judgeModel}`);
 
     const results: ModelRun[] = [];
-    const SAVE_BATCH_SIZE = 5;
-    let processedCount = 0;
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
@@ -189,16 +187,12 @@ async function main() {
       };
       
       results.push(run);
-      processedCount++;
       
-      if (processedCount % SAVE_BATCH_SIZE === 0) {
-        console.log(`💾 Saving batch...`);
-        saveResults(results, CANDIDATE_MODEL_NAME, judgeModel);
-      }
+      // Save after every question
+      saveResults([run], CANDIDATE_MODEL_NAME, judgeModel);
     }
 
-    console.log(`\n💾 Saving final results...`);
-    saveResults(results, CANDIDATE_MODEL_NAME, judgeModel);
+    console.log(`\n✅ All results saved.`);
     
     console.log(`\n✅ Evaluation complete! Results saved.`);
   } catch (error) {
