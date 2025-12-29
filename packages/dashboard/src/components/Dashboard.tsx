@@ -44,10 +44,10 @@ export const Dashboard = ({
           <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-2xl relative overflow-hidden flex flex-col">
             <div className="absolute top-4 right-4 text-emerald-500/20"><Trophy className="w-16 h-16" /></div>
             <div className="relative z-10">
-              <div className="text-emerald-500 text-sm font-medium uppercase tracking-wide mb-1">Top Performer</div>
+              <div className="text-emerald-500 text-xs font-mono font-medium uppercase tracking-wide mb-1">Top Performer</div>
             </div>
             <div className="flex-1 flex flex-col justify-center relative z-10">
-              <div className="text-2xl font-bold text-white mb-1">{topPerformer.name}</div>
+              <div className="text-xl font-mono font-bold text-white mb-1">{topPerformer.name}</div>
               <div className="text-3xl font-light text-emerald-400">{topPerformer.avgScore}% <span className="text-sm text-emerald-600/70 ml-1">avg</span></div>
             </div>
           </div>
@@ -159,7 +159,7 @@ export const Dashboard = ({
               <tr key={stat.name} className="group hover:bg-zinc-800/50 transition-colors">
                 <td className="px-4 py-2 text-zinc-500 font-mono whitespace-nowrap">#{stat.scoreRank}</td>
                 <td className="px-4 py-2 max-w-0">
-                  <div className="font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
+                  <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
                     {stat.name}
                   </div>
                 </td>

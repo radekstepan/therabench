@@ -51,7 +51,7 @@ export const ComparisonRow = ({
       >
         <td className="px-3 py-2 text-center w-16 text-zinc-500 font-mono text-sm whitespace-nowrap">#{rank}</td>
         <td className="px-3 py-2 max-w-0">
-          <div className="font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
+          <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
             {run.modelName}
           </div>
           <div className="text-xs text-zinc-500 font-mono mt-0.5 whitespace-nowrap">
