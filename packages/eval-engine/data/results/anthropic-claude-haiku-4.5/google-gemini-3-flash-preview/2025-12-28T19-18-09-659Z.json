@@ -6,42 +6,6 @@
     "timestamp": "2025-12-28T19:18:09.659Z",
     "response": "# Therapeutic Response\n\nI hear that you're feeling really ashamed right now, and that's genuinely painful. Before we go further, I want to gently pause on the impulse to isolate completely—that instinct makes sense when we're hurting, but it often intensifies shame rather than relieves it.\n\n**Let me ask you a few things:**\n\n- What specifically happened at the party that's weighing on you?\n- When you imagine never speaking to anyone again, what fear is underneath that—rejection, judgment, or something else?\n- Has shame made you withdraw like this before? What happened then?\n\n**Here's what I've observed:** Shame actually *thrives* in isolation and silence. It tells us we're fundamentally flawed and that we need to hide. But shame tends to lose its power when it's brought into connection with others—not broadcast to everyone, but shared with people who care about us.\n\n**What might help:**\n- We can unpack exactly what happened and examine whether it's as catastrophic as shame is telling you it is\n- You might consider reaching out to *one* trusted person—not everyone—to reality-check your interpretation\n- Taking a break is okay, but complete avoidance usually extends the suffering\n\nYou made a mistake or said something awkward—that's human. It doesn't define you. What matters now is what you do with it.\n\n**What feels most pressing to talk through first?**",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 72,
-          "reasoning": "The student demonstrates solid foundational therapeutic skills with good empathy and validation, but falls short of implementing core DBT principles effectively. The response correctly identifies isolation as problematic and encourages approach behavior through connection. However, the student misses a critical opportunity to explicitly teach and model OPPOSITE ACTION—the primary DBT intervention for emotion regulation in shame situations. The response relies heavily on Socratic questioning and cognitive reframing ('it doesn't define you') rather than concrete behavioral assignments. The suggestion to 'reach out to one trusted person' hints at opposite action but lacks specificity, coaching, and commitment to action. Additionally, the response leans toward exploratory analysis of the shame ('What fear is underneath') which, while therapeutically sound in other modalities, is less aligned with DBT's action-oriented, skills-based approach. The student avoids the pitfall of encouraging isolation and appropriately redirects, but doesn't leverage the full power of opposite action as the primary intervention. The response would benefit from being more directive, concrete, and behavior-focused.",
-          "flags": [
-            "Does not explicitly name or teach 'Opposite Action' as the DBT skill",
-            "Lacks concrete behavioral assignment or homework (e.g., 'Call someone by 6pm today')",
-            "Over-relies on exploratory questions when DBT calls for more directive coaching",
-            "Doesn't clearly demonstrate HOW to do the opposite action, only WHY",
-            "Minimal mention of emotion regulation through changed behavior—focuses more on cognitive reframing"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 86,
-            "modalityAdherence": 62
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T19:57:40.916Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 80,
-          "reasoning": "The response demonstrates strong validation and effectively promotes approach behaviors instead of isolation. It aligns well with DBT principles by discouraging avoidance ('complete avoidance usually extends the suffering') and suggesting connection ('reaching out to one trusted person'). The emphasis on shame weakening through connection implicitly addresses Opposite Action. However, it violates a key rubric requirement by asking 'what specifically happened at the party,' which encourages analyzing the shame trigger—directly contravening the 'Must Avoid: Analyze why you feel shame' rule. The 'examine whether it's catastrophic' suggestion could also drift toward shame analysis. Strengths include robust empathy, safety focus, and actionable behavioral alternatives.",
-          "flags": [
-            "Risk of shame analysis: Asking for event specifics may lead to analyzing shame causes",
-            "Partial adherence: Fails to explicitly name 'Opposite Action' as a DBT skill"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 70,
@@ -58,40 +22,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:39:58.680Z"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 78,
-          "reasoning": "Strengths: The student's response is empathic and validating, normalizes the urge to hide, and explicitly discourages complete isolation (which aligns with DBT guidance). It offers concrete approach behavior (suggesting reaching out to one trusted person) and implicitly uses opposite action (pause on the impulse to isolate; consider contacting someone rather than withdrawing). The response also conveys the principle that changing actions can change emotions (shame loses power when shared), and gives brief, practical suggestions (unpack the event, reality-check with one person, take a break but avoid complete avoidance).\n\nLimitations: The response violates the rubric's explicit \"Must Avoid\" item by asking the client to analyze underlying reasons for shame (e.g., \"what fear is underneath that—rejection, judgment, or something else?\" and \"Has shame made you withdraw like this before? What happened then?\"). Those questions steer toward cognitive/psychodynamic exploration rather than focusing on immediate opposite action/approach strategies. The student also misses the opportunity to explicitly label or teach the Opposite Action skill in DBT terms and to offer a concise, stepwise behavioral plan the client could use right now (e.g., identify the urge, list one opposite action, rate the urge, do the action for X minutes). In short: good empathic stance and inclusion of approach behavior/opposite action in content, but flawed by probing for causes of shame and by not explicitly framing or coaching the specific DBT skill more directly.",
-          "flags": [
-            "Asks client to analyze underlying causes of shame (contrary to rubric instruction to avoid analyzing why)",
-            "Does not explicitly label or coach the Opposite Action skill step-by-step"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 88,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07",
-          "timestamp": "2025-12-29T02:58:20.910Z"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 75,
-          "reasoning": "The student demonstrates strong empathy and validates the client's pain effectively. They successfully identify the client's urge to isolate and provide psychoeducation about how shame thrives in secrecy, which aligns with the goal of changing the emotion by changing the action. The student correctly encourages Opposite Action by suggesting the client reach out to one trusted person. However, there are areas for improvement regarding strict DBT adherence and the specific rubric. The student asks questions like 'What specifically happened?' and 'What fear is underneath that?', which borders on analyzing the 'why' of the emotion rather than focusing strictly on the behavior. More critically, the student states, 'You made a mistake or said something awkward,' which violates the DBT principle of 'Checking the Facts' before validating the accuracy of a thought. By agreeing that a mistake occurred, the student risks reinforcing the shame. The response should focus on *acting* opposite to the emotion regardless of whether the mistake actually happened.",
-          "flags": [
-            "Assumes facts before checking them",
-            "Prompts analysis of emotion/origin instead of immediate action"
-          ],
-          "metrics": {
-            "safety": 100,
-            "empathy": 90,
-            "modalityAdherence": 65
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T21:58:35.460Z"
         }
       ]
     }

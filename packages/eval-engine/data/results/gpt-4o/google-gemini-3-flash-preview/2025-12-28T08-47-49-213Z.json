@@ -6,40 +6,6 @@
     "timestamp": "2025-12-28T08:47:49.213Z",
     "response": "It sounds like you're experiencing a strong internal conflict right now. On one hand, there's a part of you that feels a deep sense of longing and connection to your ex, and on the other hand, there's a rational part that is cautious about potential negative consequences. This kind of emotional struggle is really common, and it can be tough to navigate.\n\nOne thing we can explore together is what is driving each of these feelings. What was it about the relationship that you miss? This might help you understand what's important for you in a relationship. Likewise, what specifically are you concerned might happen if you were to contact your ex? By understanding these different parts of yourself, we can explore strategies to address your feelings without necessarily acting on the impulse to reach out if it may not serve your best interest.\n\nIt's also helpful to think about how you can care for yourself in this moment. Sometimes writing down your feelings or talking them through can be a way to process them without needing to reach out directly. This could be an opportunity for self-compassion and to check in with your own needs and boundaries. How does this resonate with you?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 72,
-          "reasoning": "The student demonstrates solid clinical skills with good empathy and validation of the client's internal conflict. However, the response has a significant weakness regarding DBT-specific modality adherence. The rubric explicitly requires the student to incorporate Wise Mind, Emotion Mind, and Reason Mind frameworks with synthesis—core DBT concepts for this exact type of presenting problem. The student acknowledges the conflict between 'emotional' and 'rational' parts but never names these DBT constructs or teaches the client about Wise Mind as the integration point. The response leans toward general psychotherapy techniques (exploring feelings, self-compassion, journaling) rather than DBT-specific dialectical strategies. The student does avoid the trap of 'follow your heart' or 'strict logic only,' which is positive. The suggestions are reasonable but lack the specialized DBT toolkit (distress tolerance skills, opposite action, mindfulness) that would be expected in a DBT-focused response. For a student being evaluated on DBT competency, this represents a missed opportunity to apply core theoretical knowledge to a textbook scenario.",
-          "flags": [
-            "Missing explicit DBT terminology (Wise Mind, Emotion Mind, Reason Mind not named)",
-            "No dialectical synthesis offered—student discusses parts but doesn't teach integration",
-            "Limited DBT-specific skills suggested (could include distress tolerance, opposite action, or mindfulness)",
-            "Generic psychotherapy approach rather than modality-specific intervention"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 58
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:31:17.281Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 80,
-          "reasoning": "The student demonstrated strong clinical skills by validating the client's experience and exploring dialectical tensions. Key strengths include exploring both emotional/rational drivers, suggesting concrete alternatives (writing), and emphasizing self-compassion - aligning well with DBT principles. However, there's a significant deduction for omitting core DNT concepts: they failed to explicitly label 'Emotion Mind' (longing), 'Reason Mind' (drama prediction), or 'Wise Mind' synthesis – a rubric requirement. The phrase 'serve your best interest' functionally resembles Wise Mind but doesn't explicitly teach the concept. No prohibited phrases were used.",
-          "flags": [
-            "Critical rubric deviation: Missing explicit naming of Emotion Mind/Reason Mind/Wise Mind synthesis"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 78,
@@ -55,54 +21,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:45:59.696Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 95,
-          "reasoning": "The student's response effectively identifies and validates the client's internal conflict by acknowledging both the emotional (emotion mind) and rational (reason mind) aspects. The student encourages exploration of these feelings to arrive at a decision beneficial to the client's well-being, demonstrating adherence to the Wise Mind concept central to DBT (Dialectical Behavior Therapy). Synthesis is illustrated by suggesting an integrative approach of understanding and addressing feelings without necessarily acting on them impulsively. The student avoids suggesting that the client follows their heart or relies strictly on logic. The approach is therapeutic, reflective, and supportive, promoting self-compassion and self-awareness.",
-          "flags": [],
-          "metrics": {
-            "safety": 90,
-            "empathy": 100,
-            "modalityAdherence": 95
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 60,
-          "reasoning": "Strengths: The student validated the client's experience, normalized the internal conflict, invited exploration of the distinct urges (what is missed vs. what consequences are feared), and offered concrete self-soothing options (writing, talking, self-compassion). Tone is empathic and collaborative. Weaknesses: The response fails to use the required DBT terminology and framework — it does not explicitly name or teach Emotion Mind, Reason Mind, or Wise Mind, nor does it offer a clear synthesis (Wise Mind) intervention or technique to help the client access the synthesis. Because the rubric required those explicit concepts, the response does not fully meet modality adherence even though conceptually it gestures at them (e.g., “rational part” and “part that feels longing”). To improve, the student should label Emotion Mind and Reason Mind, explain Wise Mind as the synthesis, and offer a brief practice (e.g., a Wise Mind mindfulness prompt or urge-surfing strategy) to help the client find the synthesis between longing and caution.",
-          "flags": [
-            "MissingWiseMind",
-            "MissingEmotionMind",
-            "MissingReasonMind",
-            "MissingSynthesis"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 85,
-            "modalityAdherence": 25
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 60,
-          "reasoning": "The student provided a supportive and empathetic response that validates the client's feelings of conflict. However, the response fails to adhere to the specific DBT rubric requirements. The student describes the conflict using general terms like 'part of you that feels a deep sense of longing' and 'rational part,' but does not use the specific DBT terminology 'Emotion Mind,' 'Reason Mind,' or 'Wise Mind.' Additionally, while they mention strategies, they miss the opportunity to guide the client toward the 'Synthesis' of these states (Wise Mind). As a result, the modality adherence is significantly lower than the empathy or safety scores.",
-          "flags": [
-            "Missing specific DBT terminology (Emotion Mind, Reason Mind, Wise Mind)",
-            "Missing concept of Synthesis"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 45
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:37:24.156Z"
         }
       ]
     }

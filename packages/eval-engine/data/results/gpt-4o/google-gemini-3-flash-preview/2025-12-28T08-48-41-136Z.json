@@ -6,42 +6,6 @@
     "timestamp": "2025-12-28T08:48:41.136Z",
     "response": "It sounds like you're navigating a challenging internal conflict between your desire to be supportive and your fear of rejection. It's understandable to feel apprehensive about vulnerability in relationships. Let's explore that feeling of fear together. What do you think might happen if you ask her how her day was? And, what do you think it might mean for your relationship if you were able to express that support in the way you wish to? Identifying these aspects can be a powerful step toward understanding and possibly reframing your thoughts around this situation.",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 58,
-          "reasoning": "The student demonstrates strong empathic attunement and validation, which are foundational skills. However, the response significantly misses the mark for ACT-specific intervention. The student identifies the internal conflict well but fails to emphasize committed action and values-congruent behavior despite fear—the core of ACT. Instead, the response pivots to cognitive exploration ('what do you think might happen,' 'reframing your thoughts'), which subtly suggests that understanding or reframing thoughts is prerequisite to action. This runs counter to ACT's fundamental principle of taking valued action even in the presence of fear. The student does not encourage the client to ask about her day despite the fear, nor does it frame fear as an acceptable companion to meaningful action. While the response avoids explicit communication skills training, it also fails to activate committed action or normalize taking steps toward values while experiencing discomfort.",
-          "flags": [
-            "Response leans toward cognitive reframing rather than behavioral activation",
-            "Does not explicitly encourage taking action despite fear",
-            "Exploration-focused approach may inadvertently suggest fear must be understood before action",
-            "Missing direct emphasis on values-congruent behavior as the primary intervention",
-            "Does not normalize or validate fear as acceptable during committed action"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 42
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:32:14.786Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 80,
-          "reasoning": "The response effectively validates the client's struggle and explores fear without suggesting avoidance, aligning with ACT's emphasis on experiential awareness. Key strengths include recognizing the values-conflict ('desire to be supportive'), normalizing fear, and beginning defusion work through exploratory questions. However, it falls short in explicitly addressing 'committed action' – there's no encouragement to act despite fear or concrete planning. Values-congruent behavior is acknowledged but not deepened through specific inquiry about what 'being supportive' means to the client. The avoidance of communication skills training and waiting for fear to subside is handled appropriately.",
-          "flags": [
-            "Needs stronger emphasis on committed action",
-            "Values exploration could be more explicit"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 65,
@@ -57,54 +21,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:46:26.129Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The student's response demonstrates strong empathy by acknowledging the client's internal conflict and fear. The exploration of the client's thoughts about potential outcomes if they take action aligns with ACT principles of working with fear, rather than waiting for it to subside. The student appropriately encourages the client to consider the implications of taking action, which supports committed action and values-congruent behavior. However, the response could be strengthened by more directly encouraging the client to take action despite the fear.",
-          "flags": [],
-          "metrics": {
-            "safety": 90,
-            "empathy": 95,
-            "modalityAdherence": 80
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 55,
-          "reasoning": "Strengths: The student demonstrates clear empathy, normalizes vulnerability, and invites exploration of thoughts and values by asking what it might mean for the relationship if the client expressed support. This aligns partially with ACT by eliciting values (supportive partner) and exploring consequences. Weaknesses: The response does not include an explicit committed action or invitation to take a concrete, values-congruent behavioral step. It also fails to encourage taking action in the presence of fear (e.g., willingness language or planning to act despite fear). The prompts remain reflective rather than steering toward a specific, achievable action the client can commit to. The reply avoided the prohibited items (did not suggest waiting for fear to subside and did not provide communication skills training). To better align with the rubric, the student should elicit a specific value-driven behavior and coach a small committed step to try while acknowledging fear (for example, asking the client what small action they could commit to this week and how they might do it even if afraid).",
-          "flags": [
-            "missing_committed_action",
-            "missing_explicit_values-congruent_behavior",
-            "missing_action_with_fear"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 50
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 72,
-          "reasoning": "The student provides a safe and empathetic response, correctly identifying the client's value of being a supportive partner and avoiding the pitfalls of communication skills training or advising the client to wait for fear to subside. However, the response falls short on key ACT processes required by the rubric. While it touches on values, it fails to explicitly encourage 'Committed Action' or the concept of 'Taking action with fear.' The intervention remains cognitive and exploratory ('exploring fear,' 'reframing thoughts') rather than behavioral or experiential. Notably, the phrase 'reframing your thoughts' utilizes CBT terminology rather than ACT, which focuses on acceptance and defusion rather than cognitive restructuring.",
-          "flags": [
-            "Use of CBT terminology ('reframing')",
-            "Lacks explicit invitation for Committed Action",
-            "Missed opportunity to encourage acting with fear present"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 65
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:41:51.126Z"
         }
       ]
     }

@@ -1,0 +1,28 @@
+[
+  {
+    "runId": "1b98a1fc-00f2-4f13-bfa2-296e8416fdbe",
+    "questionId": "q8",
+    "modelName": "moonshotai/kimi-k2:free",
+    "timestamp": "2025-12-28T08:52:20.601Z",
+    "response": "I hear how much pain you're in right now, and how much you care about your son. It sounds like you're carrying a heavy load of guilt and self-blame. Can you tell me more about what’s been happening with your son at school?",
+    "aiAssessments": {
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrates strong empathetic engagement and avoids parenting advice/systemic approaches appropriately. However, the response fails to address key CBT concepts required in the rubric: (1) Personalization (client's self-attribution of blame) isn't challenged, (2) Attribution error (internalizing son's behavior as solely her fault) remains unexplored, and (3) Locus of control (overemphasis on her responsibility) isn't examined. While clinically safe and relationship-building, the omission of CBT-specific cognitive restructuring represents a significant gap in modality adherence.",
+          "flags": [
+            "Missing Personalization intervention",
+            "Missing Attribution error discussion",
+            "Missing Locus of control exploration"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ]
+    }
+  }
+]

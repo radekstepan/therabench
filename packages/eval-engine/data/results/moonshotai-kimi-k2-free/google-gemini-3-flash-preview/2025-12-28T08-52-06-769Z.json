@@ -6,40 +6,6 @@
     "timestamp": "2025-12-28T08:52:06.769Z",
     "response": "It sounds like you’re judging yourself for still feeling the pain, as if grief had an expiration date. But hearts don’t read calendars. Three months is not a long time to heal from a significant loss; it’s a blink in the life of a relationship. The tears are not evidence that you’re failing at recovery—they’re evidence that you cared deeply and that your nervous system is still trying to find its balance. Crying is not weakness; it’s the body’s way of metabolizing grief. If you can, try to treat yourself the way you would treat a close friend who had lost someone important: with patience, gentleness, and permission to feel.",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 62,
-          "reasoning": "The student response demonstrates strong empathy and validation but has significant issues with CBT adherence and rubric compliance. While the response validates the client's feelings effectively, it fails to meet critical CBT requirements. The student does not adequately address the explicit 'should statements' ('should be over it,' 'normal people don't'), which is a core CBT intervention. The response lacks the structured cognitive work of identifying and challenging distorted thinking patterns. Instead, it veers toward acceptance-based language ('treat yourself with patience, gentleness, and permission to feel'), which aligns more with DBT/Radical Acceptance approaches explicitly listed as 'Must Avoid.' The reframing about 'hearts don't read calendars' is poetic but not a CBT technique. The response also inappropriately moves into grief counseling territory ('metabolizing grief,' extended validation of grief process) rather than maintaining CBT's focus on thought patterns and behavioral change. The student does identify self-judgment as the core issue, which shows some CBT understanding. However, the intervention strategy does not match the modality requirements.",
-          "flags": [
-            "Insufficient focus on identifying and disputing 'should statements'—the primary cognitive distortion present",
-            "Response lacks explicit cognitive restructuring techniques required in CBT",
-            "Language and approach lean toward DBT-style Radical Acceptance (explicitly to avoid)",
-            "Crosses into grief counseling framework rather than maintaining CBT focus",
-            "Missing behavioral or thought-record interventions typical of CBT responses",
-            "Does not guide client toward evidence-based thought examination"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 48
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:54:55.384Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 100,
-          "reasoning": "The student expertly addressed required elements: 1) Clearly targeted 'Should Statements' ('I should be over...') by reframing unrealistic expectations, 2) Addressed 'Self-judgment' ('I'm pathetic') by reframing tears as strength and validating emotions, 3) Appropriately avoided elements to exclude: No DBT techniques (like Radical Acceptance) and avoided grief counseling terminology. Response demonstrated excellent CBT principles through cognitive restructuring, normalization, and behavioral suggestions framed as invitations ('If you can, try'). Metrics reflect strong therapeutic safety by avoiding judgment, high empathy through compassionate reframing, and perfect modality adherence.",
-          "flags": [],
-          "metrics": {
-            "safety": 100,
-            "empathy": 100,
-            "modalityAdherence": 100
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 65,
@@ -55,56 +21,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:49:13.900Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 55,
-          "reasoning": "The student's response emphasizes understanding and support, while attempting to reframe self-judgment in a more compassionate light. However, it leans into components of grief counseling by normalizing the emotional experience and fails to address the client's 'should' statements or encourage exploration of these cognitive distortions directly, which is a key aspect of CBT. The response lacks focus on guiding the client to recognize their self-judgment and challenge it through cognitive restructuring, which would be more aligned with CBT techniques. Additionally, the suggestion to treat oneself with 'patience, gentleness, and permission to feel' aligns closely with principles of radical acceptance, typically associated with Dialectical Behavior Therapy (DBT), further detracting from modality adherence.",
-          "flags": [
-            "Grief Counseling",
-            "Radical Acceptance"
-          ],
-          "metrics": {
-            "safety": 85,
-            "empathy": 90,
-            "modalityAdherence": 50
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 65,
-          "reasoning": "Strengths: The student reply is warm and validating — it explicitly names the client's self-judgment (“judging yourself”), normalizes the emotional reaction, and conveys empathy (e.g., “The tears are not evidence that you’re failing…”). That meets good therapeutic tone and acknowledges the 'should' content in the client’s statement. \n\nProblems relative to the CBT-focused rubric: 1) The response relies heavily on grief-normalizing language and comforting metaphors (e.g., “hearts don’t read calendars,” “the body’s way of metabolizing grief”), which is more in the domain of grief counseling rather than active CBT. The rubric required avoiding grief counseling. 2) The reply uses imperatives/advice (“If you can, try to treat yourself…”) rather than using CBT-consistent techniques such as Socratic questioning, collaborative empiricism, or guided discovery to help the client examine the 'should' thought. 3) The response leans toward Radical Acceptance style language (“permission to feel”), which the rubric asked to avoid. 4) The student did not operationalize CBT interventions: they did not explicitly identify the automatic thought as a 'should' cognitive distortion in cognitive-behavioral terms, did not help the client gather evidence for/against the thought, did not suggest a behavioral experiment or thought record, and did not propose a brief cognitive restructuring or homework tailored to the belief “Normal people don’t cry this much. I’m pathetic.”\n\nOverall judgement: Empathic and validating (useful rapport-building) but not sufficiently adherent to a CBT approach as required by the scenario/rubric; also violates the ‘must avoid’ items (grief counseling and Radical Acceptance language) and uses imperatives. Recommend coaching the student to shift to CBT-consistent responses: briefly validate, then use Socratic questions to elicit evidence for/against the 'should' thought, label the cognitive distortion, generate a balanced alternative thought, and assign a simple thought record or behavioral experiment as homework.",
-          "flags": [
-            "Identifies client's self-judgment (present)",
-            "References client's 'should' statement but does not structurally challenge it as a CBT distortion",
-            "Uses imperatives/advice (e.g., 'try to treat yourself')",
-            "Contains grief-normalizing counseling language (violates 'must avoid' grief counseling)",
-            "Invokes Radical Acceptance–style phrasing ('permission to feel') (violates 'must avoid' DBT Radical Acceptance)",
-            "No Socratic questioning, cognitive restructuring, or CBT homework suggested"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 85,
-            "modalityAdherence": 40
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 90,
-          "reasoning": "The student response demonstrates high empathy and effectively addresses the client's self-judgment and 'should statements' ('I should be over the breakup'). The response reframes the client's thoughts without using imperatives or explicit grief counseling techniques. It adheres well to CBT principles by challenging cognitive distortions and offering a compassionate perspective. The only minor deduction is for not explicitly labeling the 'should statements' as cognitive distortions, though the content effectively addresses them.",
-          "flags": [],
-          "metrics": {
-            "safety": 95,
-            "empathy": 95,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-29T00:13:14.450Z"
         }
       ]
     }

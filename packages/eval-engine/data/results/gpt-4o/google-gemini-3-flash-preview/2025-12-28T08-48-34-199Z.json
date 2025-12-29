@@ -6,42 +6,6 @@
     "timestamp": "2025-12-28T08:48:34.199Z",
     "response": "It sounds like you're feeling really overwhelmed and frustrated with your anxiety and the efforts you've made to manage it. You've clearly put a lot of energy and hope into different strategies, and it's understandable to feel exhausted when things don't seem to change. Let's take a moment to acknowledge the effort you've put into taking care of yourself—finding what works can sometimes be a journey.\n\nIt might be helpful to explore a few things together: understanding what specifically triggers your anxiety, identifying any patterns, and finding personalized strategies that resonate with you. Sometimes, a combination of approaches allows us to address what's going on beneath the surface. Let's work together to find some balance and maybe even discover some new, gentle ways to support you in this journey. How does that sound?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 35,
-          "reasoning": "While the student demonstrates strong empathic attunement and validating language, the response fundamentally misses the core ACT principles required for this scenario. The client is expressing creative hopelessness—exhaustion from struggling against anxiety through multiple control-based strategies. The student's response fails to address the central ACT concept that 'the control is the problem.' Instead, the response pivots toward exploring triggers, identifying patterns, and finding 'personalized strategies'—essentially suggesting more techniques and continued problem-solving efforts. This directly contradicts ACT's core message that experiential avoidance and control strategies perpetuate suffering. The response also subtly implies 'don't give up' through phrases like 'can sometimes be a journey' and 'let's work together to find some balance,' which mirrors the very struggle the client has already exhausted. The student misses the opportunity to introduce 'dropping the rope'—the paradoxical shift from fighting anxiety to accepting it as a passenger while moving toward valued living. This is a critical teachable moment where ACT's counterintuitive stance should replace the traditional problem-solving approach.",
-          "flags": [
-            "Critical: Response reinforces control-based strategies rather than challenging them",
-            "Missing essential ACT concepts: creative hopelessness not validated, control-as-problem not introduced, dropping the rope not offered",
-            "Implicit 'keep trying' message contradicts client's stated exhaustion",
-            "Suggests exploring triggers/patterns—classic CBT/problem-focused approach inappropriate for this ACT scenario",
-            "Student demonstrates empathy but lacks theoretical adherence to modality"
-          ],
-          "metrics": {
-            "safety": 85,
-            "empathy": 88,
-            "modalityAdherence": 25
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:32:04.019Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 68,
-          "reasoning": "The student demonstrates strong empathy and validation ('overwhelmed and frustrated,' 'understandable to feel exhausted'), creating psychological safety. However, the response fails to incorporate core ACT principles: 1) No explicit use of Creative Hopelessness (missing opportunity to highlight the client's efforts' futility), 2) Avoids discussing how control strategies are the problem ('The Control is the Problem'), and 3) Omits 'Dropping the rope' metaphor for disengagement from struggle. Crucially, it violates rubric 'Must Avoids' by recommending new strategies ('personalized strategies...new gentle ways') which perpetuates the exhausting cycle. Modality adherence is low despite good relational skills.",
-          "flags": [
-            "Suggests new techniques (violates rubric)",
-            "Missed core ACT concepts"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 40
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 45,
@@ -58,59 +22,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:46:21.428Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 60,
-          "reasoning": "The student's response demonstrates empathy and acknowledges the client's efforts and feelings of overwhelm. However, it misses the ACT concepts of Creative Hopelessness, recognizing that 'control is the problem,' and 'dropping the rope.' These concepts focus on the idea that efforts to control unwanted thoughts and feelings can be part of the problem rather than the solution. Instead of suggesting personalized strategies, which may inadvertently imply trying new techniques or not giving up, the student should have guided the client towards accepting their anxiety and exploring willingness to experience discomfort without the need to fix or control it.",
-          "flags": [
-            "Missed ACT concepts",
-            "Implied trying new strategies"
-          ],
-          "metrics": {
-            "safety": 85,
-            "empathy": 90,
-            "modalityAdherence": 40
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 35,
-          "reasoning": "Strengths: The student response is empathic, validating, and collaborative — it acknowledges exhaustion and the effort expended, and it invites exploration. Weaknesses relative to the rubric: the response does not demonstrate the ACT-specific elements requested. It fails to elicit or explain creative hopelessness (i.e., reflecting that prior control-oriented attempts haven't worked and inviting evaluation of whether continuing those efforts is helpful). It does not articulate 'the control is the problem' — there is no explicit framing that efforts to control/avoid anxiety may be maintaining it. It also omits the 'dropping the rope' metaphor or an equivalent invitation to stop struggling with internal experience. In addition, the student suggests finding \"new, gentle ways\" and \"personalized strategies,\" which functionally recommends trying new techniques — this contradicts the rubric's instruction to avoid proposing new techniques or urging persistence. Overall, clinically skilled in basic empathic stance but low fidelity to ACT processes required by the scenario.",
-          "flags": [
-            "missing_creative_hopelessness",
-            "missing_control_is_the_problem",
-            "missing_dropping_the_rope",
-            "recommended_new_techniques"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 85,
-            "modalityAdherence": 20
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 45,
-          "reasoning": "The student response demonstrates high levels of empathy and validation, which is clinically sound for general therapy, but it fails to adhere to the specific requirements of Acceptance and Commitment Therapy (ACT) in this scenario. The response misses the core ACT concept of 'Creative Hopelessness.' Instead of helping the client realize that the struggle to control anxiety is the problem (Dropping the rope), the student offers to 'explore triggers,' 'identify patterns,' and find 'new, gentle ways' to support the client. This implies that a new technique is just around the corner, which reinforces the client's reliance on control strategies (the very thing causing the exhaustion) rather than accepting that control is the problem.",
-          "flags": [
-            "Missed Creative Hopelessness",
-            "Missed 'Control is the Problem'",
-            "Missed 'Dropping the Rope'",
-            "Implicitly suggests trying new techniques"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 30
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:40:48.973Z"
         }
       ]
     }

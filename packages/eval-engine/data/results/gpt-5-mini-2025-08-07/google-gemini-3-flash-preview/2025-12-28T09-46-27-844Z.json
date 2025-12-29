@@ -6,42 +6,6 @@
     "timestamp": "2025-12-28T09:46:27.844Z",
     "response": "I hear you — that sounds terrifying and overwhelming. It makes sense you feel desperate to do something when your body is reacting so strongly. I’m glad you said something.\n\nFirst, I need to ask directly because your safety matters: right now, do you feel like you might hurt yourself or someone else? Do you have a plan or access to anything that could be used to do harm?\n\n- If the answer is yes, please get to a safe place immediately and call emergency services (911 in the U.S.) or your local emergency number. If you’re in the U.S. you can also call or text 988 to reach the Suicide & Crisis Lifeline for immediate support. If there are weapons or anything that could be used to hurt someone, try to get them out of reach or ask someone you trust to help remove them. If possible, stay where you are until you’ve reached help.\n\nIf you’re not in immediate danger, here are a few brief things we can do right now to bring your body down and keep you safe. I can guide you through one of them — tell me which you want, or I can pick one for you:\n\n1) Calming breath (simple, quick)\n- Breathe in slowly for 4 counts, then breathe out slowly for 6 counts. Repeat 6 times. (Longer exhale helps calm the nervous system.)\n\n2) 5-4-3-2-1 grounding (use your senses to anchor you)\n- Name 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, 1 thing you can taste or one deep breath. Move through them slowly.\n\n3) Urge surfing (observe, don’t act)\n- Notice where the rage lives in your body, name sensations (“heat,” “tightness,” “pounding”), rate the urge 1–10. Keep watching it without trying to push it away — imagine it as a wave that will rise, crest, and then fall.\n\n4) Safe physical outlet\n- If it’s safe, try stomping your feet, squeezing a stress ball, hitting a pillow, or going for a very brisk 5–10 minute walk (away from anything or anyone you might harm). Splashing cold water on your face or holding an ice cube can also sharply shift your bodily sensations.\n\nWould you like me to guide you through the breathing or the grounding exercise now? Or tell me what happened that triggered this — we can work through it together. If at any point you feel you might act on these urges, please contact emergency services or a crisis line right away. You don’t have to handle this alone.",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 72,
-          "reasoning": "The student demonstrates strong clinical fundamentals in safety assessment, empathy, and crisis de-escalation. However, there are significant gaps in DBT skill application that directly contradict the rubric requirements. The response includes paced breathing (4-count inhale, 6-count exhale) and addresses physiological arousal, which are positive. However, the response fails to include TIPP skills (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation) as a coherent framework and omits the Temperature/Ice Dive intervention that is a cornerstone of DBT distress tolerance. The 5-4-3-2-1 grounding exercise, while helpful, is more aligned with general mindfulness than DBT's specific distress tolerance skills. The urge surfing technique is appropriate but doesn't substitute for the missing TIPP structure. Additionally, the response includes talk therapy elements ('tell me what happened that triggered this — we can work through it together') which the rubric explicitly flags as something to avoid during acute physiological crisis. The student should prioritize immediate physiological regulation through TIPP before any narrative processing. The safety assessment is thorough and appropriately prioritized, and empathy is genuine and validating throughout.",
-          "flags": [
-            "Missing explicit TIPP skills framework (only partial inclusion of paced breathing)",
-            "Temperature/Ice Dive intervention not presented as primary option despite acute physiological arousal",
-            "Includes talk therapy/narrative exploration ('tell me what happened that triggered this') during acute crisis phase",
-            "Does not distinguish between immediate physiological regulation phase and later processing phase",
-            "5-4-3-2-1 grounding is valid but presented alongside rather than after somatic skills"
-          ],
-          "metrics": {
-            "safety": 92,
-            "empathy": 88,
-            "modalityAdherence": 58
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:39:51.163Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 88,
-          "reasoning": "The student demonstrates strong crisis management skills and empathy. Safety protocols were robustly addressed with clear suicide/homicide assessment and emergency instructions. Physiological arousal was acknowledged and addressed through specific DBT distress tolerance techniques. The inclusion of Temperature (cold water/ice), Paced Breathing (structured breath pattern), and Intense Exercise fulfills core TIPP requirements. However, explicit labeling of TIPP framework was missing, Paired Muscle Relaxation was omitted, and talk therapy was introduced prematurely by inviting discussion of the trigger during crisis stabilization.",
-          "flags": [
-            "Premature introduction of talk therapy (trigger exploration during crisis)",
-            "Incomplete TIPP implementation: Paired Muscle Relaxation component missing"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 92,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 65,
@@ -58,54 +22,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:47:01.003Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The therapy student's response effectively demonstrates empathy and prioritizes the client's safety by addressing immediate risk and providing crisis resources. The response includes guided practices for physiological regulation such as paced breathing and grounding, in line with DBT strategies, though it misses specific TIPP techniques like ice dive or temperature control. The student avoids deep cognitive analysis, appropriate for the immediate need. While it provides several options for physiological intervention, it lacks explicit mention of TIPP and Temperature/Ice Dive which are critical components in DBT for managing high distress.",
-          "flags": [],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 82,
-          "reasoning": "Strengths: The student responds with clear empathy and validation, performs an immediate and appropriate safety assessment (directly asking about intent, plan, and means), and offers concrete behavioral skills that target physiological arousal. Paced breathing is explicitly taught (4 in / 6 out), Temperature/Ice-Dive type intervention is included (splashing cold water / holding an ice cube), and safe physical outlets (stomping, brisk walk) address intense exercise elements of TIPP. The response also includes grounding and urge-surfing that focus on bodily sensations, demonstrating attention to physiological arousal.\n\nLimitations: The response does not explicitly name the TIPP skill set (though several components are present) and omits the progressive muscle relaxation element of TIPP. It also invites processing the trigger (“tell me what happened that triggered this — we can work through it together”), which leans toward talk therapy/cognitive processing during an acute high-arousal crisis — the rubric required avoidance of talk therapy/cognitive analysis at this stage. Because of that invitation, modality adherence to the crisis-stabilization focus is reduced. Overall clinically useful and mostly on-target for DBT crisis response, but would be improved by explicitly framing interventions as TIPP, including or noting paired muscle relaxation, and deferring cognitive/processing discussion until arousal is down and safety is assured.",
-          "flags": [
-            "missing_explicit_TIPP_label",
-            "missing_progressive_muscle_relaxation_component",
-            "invites_talk_therapy_or_cognitive_processing_during_crisis"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 90,
-            "modalityAdherence": 67
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 50,
-          "reasoning": "The student response demonstrates high empathy and prioritizes immediate safety through risk assessment, which is commendable. However, the response fails to adhere to the specific DBT requirements outlined in the rubric. The rubric explicitly mandates the use of TIPP skills, specifically Temperature/Ice Dive and Paced Breathing, to address Physiological arousal. The student instead suggests standard 'Calming breath' (inhale 4/exhale 6), which falls under the forbidden category of 'Deep breaths'. Additionally, the student offers 'Urge surfing' and invites the client to 'tell me what happened', which constitute cognitive analysis and 'Talk therapy'—methods to be avoided according to the instructions. By providing general grounding and safe physical outlets instead of the required TIPP protocol, the student missed the critical instruction to use intense physical sensations to rapidly lower arousal.",
-          "flags": [
-            "Missing TIPP protocol",
-            "Used restricted technique (Deep breaths)",
-            "Included Talk Therapy/Cognitive elements"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 20
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:48:06.445Z"
         }
       ]
     }

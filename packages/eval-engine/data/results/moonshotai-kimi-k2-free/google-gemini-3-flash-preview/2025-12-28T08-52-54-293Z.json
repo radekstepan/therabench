@@ -6,43 +6,6 @@
     "timestamp": "2025-12-28T08:52:54.293Z",
     "response": "I hear how painful this feels for you—like the shame is so intense that it makes you want to shut the whole world out. Can we slow it down together and look at what happened, so the shame doesn’t have to stay this overwhelming?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 62,
-          "reasoning": "The student demonstrates strong empathic attunement and validation, which are foundational DBT skills. However, the response falls short of DBT-specific requirements for this scenario. While the student appropriately avoids encouraging isolation and doesn't analyze the origins of shame, the response lacks concrete opposite action or approach behaviors—the core intervention needed here. The phrase 'look at what happened' is vague and risks intellectualizing rather than changing emotion through action. In DBT, the student should have explicitly named and encouraged opposite action (e.g., 'shame tells you to hide, but opposite action would be to reach out to one person you trust, or go to the gathering again'). The response leans toward general therapeutic exploration rather than the behavioral activation that DBT emphasizes for emotion regulation. The student shows promise in empathic foundation but needs to integrate DBT-specific techniques more directly.",
-          "flags": [
-            "Missing explicit opposite action recommendation",
-            "Lacks specific approach behaviors or behavioral activation suggestions",
-            "Vague problem-solving orientation ('look at what happened') could enable rumination",
-            "Does not clearly connect action change to emotion change (DBT principle)"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 52
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:55:29.704Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 80,
-          "reasoning": "The student demonstrates strong empathy and validates the client's emotional experience, creating safety. However, critical DBT requirements were missed: 1) No explicit recommendation of Opposite Action (e.g., encouraging social engagement instead of isolation) 2) No promotion of Approach behaviors to counter avoidance 3) Failure to explicitly link behavioral change to emotional change ('change emotion by changing action'). The suggestion to 'look at what happened' risks analyzing shame's origins—a prohibited tactic per rubric. The collaboration invitation ('slow down together') is clinically sound but lacks modality-specific implementation.",
-          "flags": [
-            "Missing Opposite Action recommendation",
-            "No Approach Behavior guidance",
-            "Potential analysis of shame origins",
-            "Incomplete application of 'change emotion by changing action' principle"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 65,
@@ -58,60 +21,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:49:30.143Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 55,
-          "reasoning": "The student's response demonstrates empathy and acknowledges the client's intense feelings of shame. However, it lacks specific guidance on how to practice 'Opposite Action' by encouraging the client to engage in an approach behavior, such as reaching out to a friend or another social activity, to challenge their impulse to isolate. Additionally, the student missed the opportunity to suggest changing the emotion by changing the action, as required in Dialectical Behavior Therapy (DBT). Fortunately, the student avoided focusing on analyzing why the client feels ashamed, which is not recommended in this scenario.",
-          "flags": [
-            "Missing Opposite Action",
-            "Missing Approach Behavior",
-            "Missing Change Emotion by Action"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 30
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 30,
-          "reasoning": "Strengths: The student response demonstrates strong empathy and validation (reflective listening, normalizing the intensity of shame). It offers to 'slow it down together,' which is collaborative and supportive. Weaknesses: The reply fails to include any DBT-specific behavioral guidance required by the rubric (no Opposite Action is named, no specific Approach behavior is suggested, and it does not explicitly link changing action to changing emotion). It also contains elements the rubric requires to avoid: it echoes/validates the client's urge to 'shut the whole world out,' which can reinforce isolation, and it invites analysis ('look at what happened'), which risks focusing on why the client feels shame rather than promoting behavioral change. Because the core modality requirements are missing and two avoidance rules are violated, the response scores low despite good empathy.",
-          "flags": [
-            "Reinforces/is sympathetic to isolation (echoes 'shut the whole world out')",
-            "Invites analysis of why the client feels shame ('look at what happened')",
-            "Does not include Opposite Action",
-            "Does not suggest an Approach behavior",
-            "Does not link changing action to changing emotion (change emotion by changing action)"
-          ],
-          "metrics": {
-            "safety": 80,
-            "empathy": 85,
-            "modalityAdherence": 15
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 60,
-          "reasoning": "The response demonstrates strong empathy and validation, accurately reflecting the client's pain and establishing a therapeutic alliance. However, it fails to meet the critical requirements of the rubric. The prompt explicitly required the use of Opposite Action and Approach behavior to change the emotion by changing the action. Instead of suggesting the client act opposite to their urge to hide (e.g., make a call, go outside), the student suggests 'looking at what happened.' This shifts the focus toward analyzing the event, which is listed under 'Must Avoid' as it can reinforce rumination rather than alleviating the shame through behavioral change.",
-          "flags": [
-            "Missing Opposite Action",
-            "Missed requirement for Approach behavior",
-            "Risk of analyzing shame instead of changing action"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 30
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-29T00:15:41.900Z"
         }
       ]
     }

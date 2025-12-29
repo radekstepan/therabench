@@ -6,40 +6,6 @@
     "timestamp": "2025-12-28T08:39:11.013Z",
     "response": "It sounds like you're feeling a bit uncertain about the feedback you received from your boss, even though it came with praise. It's understandable to wonder if the compliment was genuine or just a way for them to be polite.\n\nLet’s explore this together:\n\n1. **Your Feelings**: How did hearing that feedback make you feel? Did it leave you feeling validated, or did it bring up doubts about your performance?\n\n2. **Evidence of Your Success**: Are there other signs or pieces of feedback (from peers, clients, or past projects) that suggest your presentation was indeed strong? Sometimes, we focus on one piece of feedback and overlook the bigger picture.\n\n3. **Your Boss’s Style**: You mentioned they say this to everyone—do you notice any patterns in how they give feedback? For example, do they usually provide specific details about what went well, or is it more general?\n\n4. **Self-Reflection**: What’s your internal dialogue when you receive praise like this? Do you tend to dismiss compliments, or do you sometimes believe them but then second-guess yourself later?\n\nIt might also be helpful to think about how you’d feel if someone *didn’t* say anything at all—would that leave you feeling more or less confident in your work?\n\nWould you like to explore any of these areas further?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 78,
-          "reasoning": "The student demonstrates solid CBT fundamentals with good structure and collaborative tone. The response appropriately identifies cognitive distortions (disqualifying the positive) and attempts to examine evidence through multiple angles. However, the execution has notable gaps. The response lacks explicit naming and direct challenging of the 'disqualifying the positive' distortion—it's implied rather than clearly labeled as a cognitive pattern to examine. The evidence exploration is somewhat surface-level; a stronger CBT response would more directly juxtapose the client's belief ('he says this to everyone') against concrete evidence (specific praise details, past successes, behavioral patterns). The question about 'what if he said nothing' is creative but somewhat tangential rather than directly addressing the cognitive distortion. Most importantly, the response risks gentle agreement that feeds into the distortion rather than actively collaborating to test the validity of the thought. The student shows restraint from affirmations and avoids pathologizing language, which is appropriate. The collaborative stance is genuine rather than forced.",
-          "flags": [
-            "Distortion identification is implicit rather than explicit—could more directly name 'disqualifying the positive' as the specific cognitive pattern",
-            "Evidence examination could be more concrete and direct; currently relies on open-ended exploration rather than active collaborative testing of the thought",
-            "Risk of validating the problematic thought ('it's understandable to wonder') without sufficient challenge or evidence-gathering first",
-            "The response could benefit from more direct behavioral experiments or specific prediction-testing language"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 82,
-            "modalityAdherence": 71
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:47:21.714Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 88,
-          "reasoning": "The response effectively implements core CBT principles by directly addressing 'Disqualifying the Positive' through evidence examination (point 2), implicitly tackling 'Minimization' through boss-style analysis (point 3), and avoiding prohibited affirmations/imposter syndrome labels. Strengths include structured Socratic questioning and contextualizing praise authenticity. Key improvements: Could deepen minimization exploration by explicitly naming the distortion and strengthen evidence analysis with behavioral experiments.",
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 85
-          },
-          "flags": [
-            "Slight under-emphasis on minimization as cognitive distortion"
-          ],
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 88,
@@ -52,59 +18,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:47:53.831Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The student's response effectively addresses the cognitive distortion of disqualifying the positive by prompting the client to consider alternative perspectives and evidence of their performance. The student avoids jumping to a premature diagnosis of imposter syndrome, which could derail the focus from addressing the immediate thought pattern distortion. The questions about feedback and self-reflection are aligned with CBT principles, encouraging the examination of evidence and gently challenging the minimization of positive feedback. However, there's a slight inclination towards self-reflection that could border on discussions of self-esteem, which needs monitoring.",
-          "flags": [
-            "minimal inclination towards self-esteem discussions"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 95,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 88,
-          "reasoning": "The student's response is empathic, collaborative, and aligns well with CBT practice by exploring evidence, asking about the boss's feedback style, and probing the client's internal dialogue. It explicitly addresses disqualifying the positive (wondering if the compliment was just politeness), minimization (asking whether they tend to dismiss compliments), and examines the evidence (asking about other feedback and patterns). The response avoids labeling the client with 'imposter syndrome' and does not rely on simple self-esteem affirmations. Areas for improvement: the clinician could more explicitly name the cognitive distortion (to teach the client the pattern), offer a concrete cognitive restructuring or behavioral experiment (e.g., gather specific examples, request clarifying feedback, track positive feedback over time), and suggest brief homework to test the belief. Those additions would strengthen modality adherence and skillful application of CBT techniques.",
-          "flags": [
-            "includes_disqualifying_the_positive",
-            "includes_minimization",
-            "includes_examine_evidence",
-            "no_explicit_labeling_of_cognitive_distortion",
-            "no_concrete_behavioral_experiment_or_homework_suggested",
-            "avoids_imposter_syndrome_label",
-            "avoids_self_esteem_affirmations"
-          ],
-          "metrics": {
-            "safety": 100,
-            "empathy": 92,
-            "modalityAdherence": 87
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 78,
-          "reasoning": "The student response demonstrates strong rapport building and effectively avoids the prohibited items (specifically, they do not label the client with 'Imposter Syndrome' nor use empty self-esteem affirmations). The student successfully prompts the client to 'Examine the Evidence' (Rubric requirement) by asking for other signs of success and patterns in the boss's behavior. However, the response falls short of a strong CBT intervention regarding 'Disqualifying the Positive' and 'Minimization.' While the student asks the client to reflect on their tendency to dismiss compliments, they miss the opportunity to explicitly name these cognitive distortions to help the client objectify the thought process. The response feels more like a general exploratory counseling check-in than a directive CBT intervention, as it focuses heavily on feelings (Point 1) rather than strictly targeting the maladaptive cognition.",
-          "flags": [
-            "Missed explicit labeling of cognitive distortions",
-            "Intervention style is too passive for acute CBT"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:59:17.412Z"
         }
       ]
     }

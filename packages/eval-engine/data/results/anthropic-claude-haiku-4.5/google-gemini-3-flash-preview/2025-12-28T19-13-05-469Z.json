@@ -6,37 +6,6 @@
     "timestamp": "2025-12-28T19:13:05.469Z",
     "response": "# Therapeutic Response\n\nI appreciate you sharing that with me. I'm noticing some pretty absolute language there—\"never\" and \"completely\"—and I want to gently check in with that.\n\nA resume gap is genuinely something many people navigate successfully. It's much more common than you might think, and employers increasingly understand that people have gaps for many valid reasons—health, caregiving, education, or just needing a break.\n\n**A few things to explore together:**\n\n- What's the story behind this gap? Often when we can articulate it clearly, it becomes less of a liability and more of a neutral fact.\n- When you say \"unemployable,\" is that something you *know* to be true, or is it how it *feels* right now? Those are very different things.\n- Can you think of any jobs or employers that might be less concerned with a gap than others?\n\nSometimes when we're anxious about job searching, our mind can catastrophize—taking one concerning thing and making it mean everything about our prospects. That's very human, but it might not be accurate.\n\n**What if we looked at this differently:** not as proof you're unemployable, but as one variable among many—your skills, experience, personality, and how you present yourself matter too.\n\nWhat would it be helpful to focus on first?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 78,
-          "reasoning": "The student demonstrates solid foundational CBT skills with several strengths but has notable areas for refinement. The response effectively identifies overgeneralization ('never,' 'completely') and attempts Socratic questioning by asking about the gap's story and distinguishing feelings from facts. The therapist validates the client's experience while gently challenging cognitive distortion. However, the response edges into career counseling territory with specific advice about employers' perspectives and resume gap narratives, which exceeds the CBT therapist's scope. The validity check ('is that something you know to be true, or is it how it feels') is a strong cognitive intervention. The closing exploration of skills and experience, while well-intentioned, risks becoming practical problem-solving rather than cognitive restructuring. The response would be stronger with more focused behavioral experiments or thought records, and by maintaining clearer boundaries around what belongs in CBT versus career counseling.",
-          "flags": [
-            "Minor drift into career counseling advice ('employers increasingly understand,' 'how you present yourself matters')",
-            "Could have included more structured cognitive technique (e.g., evidence for/against, thought record)",
-            "Response length and detail may reduce focus on the core cognitive distortion"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T19:57:09.887Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 85,
-          "reasoning": "The student effectively identified overgeneralization ('never,' 'completely') and used Socratic questioning to explore the validity of the thought ('Is that something you know to be true...'). They normalized resume gaps and challenged catastrophizing while maintaining CBT focus. Points deducted for not explicitly requesting counter-evidence for the 'unemployable' thought and mild preemptive reframing ('What if we looked...') before thorough exploration. Avoided career counseling/values clarification appropriately.",
-          "flags": [],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 80
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 82,
@@ -51,40 +20,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:39:43.829Z"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 85,
-          "reasoning": "Overall the student response demonstrates solid CBT-consistent skills and an empathic stance, which justify a high score. Strengths: the response uses Socratic questioning (e.g., \"What's the story behind this gap?\" \"is that something you know to be true, or is it how it feels?\") to elicit evidence and examine the client's belief; it explicitly points out overgeneralization/absolute language (\"never\" and \"completely\") and names the likely cognitive distortion (catastrophizing); and it invites testing the validity of the thought by reframing the gap as one variable among many. The tone is validating and collaborative, and the closing question (\"What would it be helpful to focus on first?\") encourages client-led agenda-setting. Areas for improvement that reduce the score from near-perfect: the reply includes mild career-counseling language (\"Can you think of any jobs or employers that might be less concerned with a gap\" and reassurance that \"employers increasingly understand...\") — per the rubric, career counseling should be avoided and this wording moves toward practical job advice rather than purely cognitive work; this also risks offering premature reassurance rather than using Socratic methods to let the client generate evidence. The response could be strengthened by explicitly proposing a CBT-consistent behavioral experiment or homework (e.g., identifying evidence for/against the belief, conducting a small job-application experiment, or specific thought-record prompts) and by avoiding any language that could be interpreted as career coaching. It otherwise meets the Must Include items (Socratic questioning, addressing overgeneralization, checking the validity of the thought) and avoids values clarification. Given the clear strengths and only modest departures from the rubric, a score of 85 reflects good practice with a few actionable refinements needed.",
-          "flags": [
-            "Contains mild career-counseling language (asks about specific jobs/employers) which conflicts with the \"Must Avoid: Career counseling\" requirement.",
-            "Includes reassuring factual claims about employers (\"employers increasingly understand...\") that may be premature reassurance rather than Socratic exploration.",
-            "No explicit behavioral experiment or homework suggestion included — adding this would strengthen CBT adherence."
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 80
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07",
-          "timestamp": "2025-12-29T02:56:14.652Z"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 82,
-          "reasoning": "The student provided a strong, empathetic response that effectively utilized CBT techniques. They correctly identified the client's 'absolute language' ('never', 'completely'), which addresses the distortion of Overgeneralization. The student employed Socratic Questioning by asking the client to distinguish between what they 'know' to be true versus how it 'feels' and by asking for evidence to the contrary (challenging the validity of the thought). However, the response violated the 'Must Avoid' constraint regarding Career Counseling. By asking, 'Can you think of any jobs or employers that might be less concerned with a gap than others?', the student moved from cognitive restructuring into practical job market strategy and problem-solving. While intended to disprove the negative thought, this specific line of inquiry crosses the boundary into career advising rather than strict clinical processing.",
-          "flags": [
-            "Borderline Career Counseling"
-          ],
-          "metrics": {
-            "safety": 100,
-            "empathy": 90,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T21:57:23.700Z"
         }
       ]
     }

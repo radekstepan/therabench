@@ -6,37 +6,6 @@
     "timestamp": "2025-12-28T08:18:39.696Z",
     "response": "I hear how much this is weighing on you. It's painful to see your child struggling and to feel responsible for it. Let me offer some perspective here.\n\nFirst, it's completely understandable that you care deeply and want to be the best parent you can be. That concern shows your love, not your failure as a mother.\n\nWhen children act out in school, it's rarely due to just one factor. Children's behavior is influenced by many things - their own temperament, what's happening in their social world, academic challenges, and yes, parenting styles too. But to place all responsibility on yourself is an unfair burden.\n\nWhat we're looking at is a pattern of behavior that needs addressing - not a reflection of your worth as a parent. Let's explore what might be contributing to your son's behavior and how we might support him (and you) through this. What have you noticed about when and how these behaviors typically occur?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 78,
-          "reasoning": "The student demonstrates solid foundational skills in validation and empathy, and appropriately identifies the cognitive distortion (all-or-nothing thinking about parental responsibility). However, the response has notable gaps in meeting the specific CBT requirements. The student addresses attribution error by normalizing multiple contributing factors to child behavior, which is good. However, the response lacks explicit work on personalization—the core cognitive distortion where the client is internalizing external events as personal failure. The student should have more directly challenged the personalization error using CBT techniques (e.g., 'What evidence supports that belief?' or 'What other explanations might there be?'). The locus of control element is somewhat addressed through discussion of multiple factors, but could be more explicit in helping the client distinguish what is and isn't within their control. The response appropriately avoids giving parenting advice and doesn't veer into systemic therapy. The move toward behavioral exploration at the end is appropriate for CBT. Overall, this is competent clinical work with good therapeutic alliance, but falls short of robust CBT-specific intervention for the identified cognitive errors.",
-          "flags": [
-            "Limited direct challenging of personalization—the core distortion needs more explicit CBT work",
-            "Could strengthen locus of control exploration with clearer delineation of controllable vs. uncontrollable factors",
-            "The response is somewhat reassurance-focused rather than Socratic—could use more guided discovery questions earlier"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T21:22:52.082Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 89,
-          "reasoning": "The student response demonstrates strong CBT application: (1) Explicitly addresses Personalization by reframing 'entirely my fault' to multifactorial causes ('rarely due to just one factor', 'unfair burden') while validating emotion. (2) Correctly identifies Attribution error ('place all responsibility on yourself') via psychoeducation about behavioral influences. (3) Shifts Locus of control toward collaboration ('explore what might be contributing') and present-focused observation ('what have you noticed'). Effectively maintains modality boundaries by avoiding prescriptive parenting advice ('how we might support' remains consultative) and systemic approaches. Minor deduction for not explicitly naming cognitive distortions in terminology and slightly loose structuring.",
-          "flags": [],
-          "metrics": {
-            "safety": 92,
-            "empathy": 88,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 92,
@@ -49,51 +18,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:52:56.895Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The student response effectively addresses the emotional weight the parent is experiencing while gently challenging the client's negative self-assessment. Personalization is evident in the acknowledgment of the client's care and love, and the response addresses attribution error by explaining multiple factors influencing child behavior, not solely parenting. The student successfully navigates the locus of control by shifting focus from self-blame to a broader understanding of the situation. However, the inquiry into the specifics of the child's behavior slightly veers towards systemic exploration, though it remains primarily within a CBT framework by focusing on patterns of behavior rather than systemic relationships.",
-          "flags": [
-            "slight_systemic_tendency"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 95,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 85,
-          "reasoning": "The student response demonstrates strong empathy and personalization (e.g., validating feelings, noting the parent's care) and appropriately challenges the client's overattribution by normalizing multiple influences on child behavior. That addresses two rubric requirements: Personalization and Attribution error. The response also gestures toward locus of control by inviting exploration of contributors and supports, but it stops short of explicitly distinguishing what is within the parent's control versus what is not or offering a CBT-oriented probe (e.g., evidence for/against the belief, alternative attributions, actionable steps). The reply correctly avoids giving direct parenting advice or invoking systemic-therapy framing. To reach full marks the clinician should explicitly name the locus-of-control issue (which elements are controllable vs uncontrollable), and incorporate a brief CBT technique (Socratic question, behavioral experiment, or cognitive restructuring) to operationalize change.",
-          "flags": [
-            "locus_of_control_not_explicit",
-            "no_explicit_CBT_technique_or_actionable_step"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 92,
-            "modalityAdherence": 78
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 88,
-          "reasoning": "The student provided a strong CBT response that effectively addressed the required rubric concepts. They correctly identified and challenged the cognitive distortion of Personalization (the client blaming herself entirely for her son's behavior). The response also tackled Attribution error by introducing external and multi-factorial attributions (temperament, social world) to counter the client's internal, global attribution of being a 'terrible mother.' This helped reframe the Locus of control from a toxic internalization of blame to a more balanced perspective. The student successfully avoided giving parenting advice and maintained an individual focus rather than drifting into systemic therapy, keeping the intervention centered on the client's cognitions. The empathy was high, and the closing question effectively initiated a behavioral analysis.",
-          "flags": [],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 88
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-29T01:00:32.312Z"
         }
       ]
     }

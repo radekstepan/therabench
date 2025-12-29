@@ -6,43 +6,6 @@
     "timestamp": "2025-12-28T19:15:59.450Z",
     "response": "# Therapeutic Response\n\nI appreciate you sharing that chain of thoughts with me. I'm noticing something important: you've connected five different outcomes in a row, each one leading to the next. Let's pause there for a moment.\n\n**What I'm curious about:**\n\nCan we look at each link in that chain separately? For instance:\n- If you make a mistake on the report, does your boss *always* get mad? Have there been times he's responded differently?\n- And if he did get upset, does that automatically mean losing your job? What's actually happened in similar situations before?\n\n**What I'm observing:**\n\nIt sounds like your mind may be doing something called \"catastrophizing\"—jumping from a realistic concern (wanting to do well on the report) all the way to homelessness. That's a pretty big leap, and it often leaves us feeling anxious and stuck.\n\n**A gentler question:**\n\nWhat if we focused on what's actually in your control *right now*—like what you can do to feel confident about this report? That might feel more manageable than managing all five scenarios at once.\n\nWhat's one thing that would help you feel more secure about completing this task well?\n\n---\n\n*Does this resonate with you? Would it help to work through what's realistic versus what anxiety might be adding to the picture?*",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 62,
-          "reasoning": "The student demonstrates solid foundational skills in empathy, validation, and identifying catastrophizing. However, the response has significant gaps relative to CBT standards and the rubric requirements. Most critically, the student fails to implement the Downward Arrow Technique, which is essential for this scenario—the client has already presented a complete chain of thoughts, making it an ideal opportunity to explore it systematically. Instead, the student asks general questions about past experiences without using structured downward arrow methodology to identify the core belief ('I am incompetent,' 'I am unlovable,' 'I am unsafe'). The response also misses the opportunity to uncover underlying assumptions that connect each catastrophic link. While the student appropriately avoids solving the report issue and employment law matters, and successfully identifies catastrophizing, the intervention remains at the surface level. The student uses psychoeducation ('catastrophizing') which is helpful but insufficient without the deeper cognitive work. The redirect to 'what's in your control' feels premature without first exploring the automatic thoughts' roots. The tone is warm and collaborative, which supports the therapeutic relationship, but the technical CBT execution falls short of competency expectations for a clinical student.",
-          "flags": [
-            "Downward Arrow Technique not implemented—critical omission given the client presented a complete thought chain",
-            "Core beliefs not explored or identified",
-            "Underlying assumptions not investigated",
-            "Intervention remains surface-level; lacks depth needed for functional change",
-            "Psychoeducation provided without sufficient cognitive restructuring framework"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 87,
-            "modalityAdherence": 55
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T19:57:25.031Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 75,
-          "reasoning": "The response demonstrates strong empathy and safety by validating the client's experience and using collaborative language ('What if we focused...'). It effectively identifies catastrophizing and appropriately shifts focus to controllable factors while avoiding problem-solving for the report or employment law. However, it misses key rubric requirements: (1) No explicit application of Downward Arrow Technique to explore deeper cognitive layers (e.g., asking 'What would losing your job mean about you?'), (2) Core beliefs (e.g., 'I'm incompetent' or 'The world is dangerous') remain unexplored, and (3) Underlying assumptions (e.g., 'Mistakes equal failure') aren't challenged despite examining the thought chain superficially.",
-          "flags": [
-            "Downward Arrow Technique not explicitly used",
-            "Core beliefs unaddressed",
-            "Underlying assumptions not examined"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 70
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 72,
@@ -59,45 +22,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:39:50.900Z"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 72,
-          "reasoning": "Overall: The student demonstrates a warm, validating tone and a reasonable cognitive-behavioral style: they normalize the process (labeling catastrophizing), break the chain into links, and invite collaborative examination. These are strengths that support rapport and cognitive restructuring.\n\nMeets some rubric aims:\n- The response correctly identifies a cognitive distortion (catastrophizing) and uses Socratic questioning to examine the links, which is appropriate in CBT and empathetic.\n- The student appropriately avoids discussing employment law and does not attempt to give legal or HR advice.\n\nShortcomings vs. rubric requirements:\n- Downward Arrow Technique (required): The response does not explicitly use or model the Downward Arrow technique. While it asks about the chain, it does not push to uncover the deeper implication/core belief behind the fear (e.g., asking “If losing your job happened, what would that mean about you?” or “If that were true, what’s the worst thing that would happen?”). The prompts stayed at the intermediate link-testing level rather than moving toward the core belief.\n- Core Beliefs (required): The response names catastrophizing but does not elicit or formulate the client’s core belief(s) (e.g., “I am incompetent,” “I am unlovable,” “I am worthless”). There is no explicit invitation to identify underlying schemas.\n- Underlying Assumptions (required): The student did ask whether the boss always gets mad and whether being mad equals job loss; however, they did not explicitly surface or test the underlying assumptions (e.g., “If your boss is mad, it means you are a failure”).\n\nOther clinical/process notes:\n- The student’s invitation to focus on what’s in the client’s control is practical and grounding, but it risks veering into problem-solving about the report itself (which the rubric said to avoid). The phrasing is reasonably open-ended and collaborative, but a stronger adherence to the rubric would stay focused on cognitive exploration and downward-arrowing rather than moving toward solution-focused steps about the task.\n- Empathic tone and collaborative stance are good; pacing and gentle questions are appropriate for a client feeling overwhelmed.\n\nRecommendations to improve the response:\n- Use an explicit Downward Arrow question to move from the immediate fear to the core belief (e.g., “If that happened, what would that mean about you?” followed by further probes until a core belief emerges).\n- Reflect back and label any expressed core beliefs and underlying assumptions, then begin to test evidence for and against them.\n- Avoid offering or implying concrete problem-solving steps about the report; keep interventions focused on cognitive exploration, behavioral experiments that test beliefs (if allowed), or emotional validation.\n\nGiven strengths in tone and link-testing but clear omissions of the required techniques and core belief elicitation, the score reflects moderate competency with important gaps.",
-          "flags": [
-            "Missing explicit Downward Arrow technique",
-            "Did not elicit or label core beliefs",
-            "Did not explicitly surface underlying assumptions",
-            "Minor drift toward solving the report (avoid per rubric)",
-            "Avoided employment law — compliant"
-          ],
-          "metrics": {
-            "safety": 92,
-            "empathy": 86,
-            "modalityAdherence": 60
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07",
-          "timestamp": "2025-12-29T02:57:15.506Z"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 40,
-          "reasoning": "The student response demonstrates good rapport and basic CBT listening skills, but fails to meet the specific mandatory requirements of the rubric. The prompt specifically requires the use of the Downward Arrow Technique to uncover core beliefs and underlying assumptions, which this response completely omits. Instead of asking 'And if that happens, what does that mean to you?' to dig deeper, the student attempts to deconstruct the chain logically from the outside in (Socratic questioning) and shifts focus to problem-solving ('what you can do to feel confident'). While the feedback is empathetic and safe, it misses the core instructional objective regarding the Downward Arrow Technique.",
-          "flags": [
-            "Missed Mandatory Instruction: Did not use Downward Arrow Technique",
-            "Missed Mandatory Instruction: Did not identify Core Beliefs",
-            "Missed Mandatory Instruction: Did not identify Underlying Assumptions",
-            "Borderline: Shifted focus toward task management/solving the report issue rather than exploring cognition"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 30
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T21:58:02.627Z"
         }
       ]
     }

@@ -6,40 +6,6 @@
     "timestamp": "2025-12-28T08:23:34.678Z",
     "response": "I hear how challenging this must be for you. When we try to argue with or push away persistent thoughts like \"I am broken,\" it's like trying to not think of a pink elephant—the thought often becomes even louder and more powerful. This is a common experience called thought rebound, where our attempts to suppress thoughts ironically strengthen them.\n\nInstead of arguing with the thought, I wonder if we could try a different approach. Perhaps we could practice noticing the thought without judgment—acknowledging it's there, like noticing a cloud passing in the sky. You might try saying to yourself, \"I'm having the thought that I am broken\" rather than \"I am broken.\"\n\nWhat might happen if you treated this thought like an unhelpful visitor—acknowledging its presence but not inviting it in for tea? Would you be open to exploring some mindfulness or self-compassion techniques that could help create distance from this thought pattern?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 72,
-          "reasoning": "The student demonstrates solid foundational understanding of ACT principles and appropriately avoids CBT thought-challenging and thought-stopping techniques. The response shows good empathy and introduces cognitive defusion concepts effectively. However, the response falls short of the rubric requirements by not including several specific defusion techniques that were marked as 'must include': the student uses 'I'm having the thought that...' (one of four required techniques) but omits singing the thought and repeating the word as alternative defusion strategies. The 'pink elephant' and 'cloud passing' metaphors are helpful but are not substitute techniques for the specific ones listed. The response would be strengthened by explicitly introducing these additional defusion exercises as concrete options for the client to practice. The suggestion to explore mindfulness and self-compassion is appropriate but somewhat vague given the opportunity to provide specific, teachable techniques.",
-          "flags": [
-            "Missing specific defusion techniques: 'singing the thought' not mentioned",
-            "Missing specific defusion technique: 'repeating the word' not mentioned",
-            "While cognitive defusion concept is present, not all required defusion methods are offered as concrete interventions"
-          ],
-          "metrics": {
-            "safety": 92,
-            "empathy": 88,
-            "modalityAdherence": 65
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T21:23:56.130Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 85,
-          "reasoning": "The student effectively demonstrated ACT principles by correctly identifying thought suppression/argument as counterproductive (thought rebound) and introducing cognitive defusion through noticing without judgment and framing ('I'm having the thought that...'). Analogies (pink elephant, clouds, visitor) enhance accessibility. Strong empathy and collaboration were present. Points deducted because required techniques 'Singing the thought' and 'Repeating the word' were omitted despite rubric mandate. Successfully avoided CBT-style challenging and thought-stopping.",
-          "flags": [
-            "Missing 'Singing the thought' technique",
-            "Missing 'Repeating the word' technique"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 85,
-            "modalityAdherence": 80
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 75,
@@ -54,49 +20,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:53:28.659Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The student effectively acknowledged the client's struggle and correctly identified the issue of thought rebound, which is a positive aspect of their response. They introduced a cognitive defusion technique by suggesting the rephrasing of the thought to 'I'm having the thought that I am broken', which aligns with ACT principles. However, the response could have been improved by explicitly mentioning and demonstrating additional cognitive defusion techniques such as 'singing the thought' or 'repeating the word'. While the student avoided challenging the thought directly or using thought stopping strategies, which adheres to the rubric, the lack of explicit mention of other defusion techniques slightly affected the score.",
-          "flags": [],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 72,
-          "reasoning": "The student response correctly uses ACT-consistent language and interventions in several ways: it normalizes the experience, explicitly teaches a cognitive defusion stance, and gives the exact deictic phrasing 'I'm having the thought that I am broken,' which was a required element. The response avoids prohibited approaches: it does not challenge the thought (no CBT-style disputation) and does not use thought stopping/suppression instructions. However, the response fails to include two required, explicit defusion exercises specified in the rubric: 'singing the thought' and 'repeating the word.' Because two of the required techniques were omitted, the submission is incomplete relative to the rubric. To improve, the student should add brief, concrete instructions for singing the thought (e.g., sing the phrase to the tune of 'Happy Birthday' or another simple melody) and for repeating a single word slowly and aloud to notice its changing quality (e.g., repeat 'broken' or the word 'thought' for 30 seconds).",
-          "flags": [
-            "missing_singing_the_thought",
-            "missing_repeating_the_word"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 95,
-            "modalityAdherence": 60
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 85,
-          "reasoning": "The student provided a strong, clinically sound response that adheres well to ACT principles. They successfully utilized Cognitive Defusion, specifically suggesting the 'I'm having the thought that...' rephrasing technique to create distance from the thought 'I am broken.' They effectively provided psychoeducation about 'thought rebound' to normalize the client's experience and avoided the prohibited methods of challenging the thought's validity (CBT) or thought stopping. The tone was empathetic and the metaphor of the 'unhelpful visitor' was appropriate. The score reflects that while the response was high quality, it did not include all specific defusion techniques listed in the 'Must Include' rubric (specifically 'Singing the thought' and 'Repeating the word'), though utilizing every technique in a single intervention is often clinically unnecessary.",
-          "flags": [],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-29T01:06:45.415Z"
         }
       ]
     }

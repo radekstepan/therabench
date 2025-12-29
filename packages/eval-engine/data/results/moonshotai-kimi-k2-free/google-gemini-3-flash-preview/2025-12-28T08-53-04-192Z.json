@@ -6,45 +6,6 @@
     "timestamp": "2025-12-28T08:53:04.192Z",
     "response": "I hear how painful and unfair this feels. It’s not just the illness itself—it’s the loss of the life you expected to have, the sense that your body has betrayed you, and the fear that nothing will ever be the same. When you say “I refuse to accept this is my life,” I hear a deep grief for the life you had and the life you hoped for. That grief is real, and it deserves space and care.\n\nI want to be honest with you: the illness itself may not be something we can change. But the way you live with it, the way you carry it, the way you shape a life that still holds meaning and connection—those are things we can work on together. You don’t have to accept the illness itself, but you can learn to live alongside it in a way that still honors your values and your relationships. That’s a different kind of acceptance, one that still leaves room for resistance and grief and even anger. It’s not about giving up; it’s about finding a way to live that still feels like yours.\n\nIf you’re open to it, we can start by exploring what this illness has changed for you—what you’ve lost, what you fear losing, and what you still want to protect. We can take this one step at a time, and you can decide how much you want to share.",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 72,
-          "reasoning": "The student demonstrates strong empathic attunement and validates the client's pain effectively. The response avoids the prohibited phrases and shows understanding of acceptance as distinct from resignation. However, the response falls short of a DBT-informed intervention in several ways: (1) It does not explicitly address Radical Acceptance—the core DBT skill for this moment. The student hints at acceptance but doesn't name it or teach it as a tool. (2) Willfulness vs. Willingness is not clearly distinguished. The client is expressing willfulness (fighting reality), and the student should more directly contrast this with willingness as a DBT concept. (3) Pain vs. Suffering is mentioned implicitly through the grief framework but isn't explicitly taught as a DBT distinction—that suffering increases when we resist pain. (4) Turning the Mind, a key DBT skill for this scenario, is entirely absent. The student does not offer concrete language or metaphors for redirecting attention (e.g., 'turning your mind toward acceptance' or similar DBT language). The response is therapist-centered and exploratory rather than skills-teaching. Strengths include genuine empathy, validation of grief, normalization of multiple emotions, and appropriate pacing. The student avoids medical advice and false hope while maintaining hope through meaning-making.",
-          "flags": [
-            "Radical Acceptance not explicitly named or taught as a skill",
-            "Turning the Mind (key DBT skill) completely absent from response",
-            "Willfulness vs. Willingness distinction not clearly articulated",
-            "Pain vs. Suffering distinction not explicitly addressed",
-            "Response is more exploratory/validating than skills-teaching (DBT requires skills coaching in this context)",
-            "Missing opportunity to teach the client concrete DBT tools they could practice"
-          ],
-          "metrics": {
-            "safety": 88,
-            "empathy": 90,
-            "modalityAdherence": 58
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:55:36.090Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 78,
-          "reasoning": "The response demonstrates strong empathy and validation while skillfully avoiding forbidden phrases ('fight harder,' etc.). It introduces Radical Acceptance implicitly through the distinction between accepting the illness versus learning to live meaningfully alongside it. Pain (acknowledged emotional distress) vs. Suffering (fight against reality) is partially addressed through the invitation to reduce struggle. However, Turning the Mind (deliberately choosing acceptance) and Willfulness ('refusing to accept') vs. Willingness (active collaboration) aren't explicitly named or operationalized. No medical advice is given.",
-          "flags": [
-            "Radical Acceptance concept present but not named/explained",
-            "Missing explicit reference to Turning the Mind",
-            "Willfulness vs. Willingness not addressed",
-            "Pain vs. Suffering implied but not explicitly defined"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 65
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 78,
@@ -60,56 +21,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:49:32.435Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The student demonstrates a strong understanding of empathy by acknowledging the client's feelings and validating their experience of grief and loss. The response aligns well with the principles of radical acceptance, highlighting the reality that the illness itself may not change, but the approach to living with it can. The student introduces the concept of living alongside the illness, a form of willingness as opposed to willfulness, although these terms are not explicitly used. The distinction between pain and suffering could be more directly addressed, such as emphasizing how acceptance can reduce suffering by altering the reaction to pain. Overall, the response maintains an appropriate therapeutic focus without offering medical advice or false hope.",
-          "flags": [],
-          "metrics": {
-            "safety": 90,
-            "empathy": 95,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 55,
-          "reasoning": "Strengths: The student response is empathic and validating — it mirrors the client's distress, names grief, normalizes feelings, and invites collaborative exploration. It also gestures toward acceptance (\"a different kind of acceptance,\" \"learn to live alongside it\") and avoids prohibited content (no medical advice, no exhortations to \"fight harder\" or the exact phrase \"Don't give up hope\").\n\nLimitations: The response does not explicitly teach or label the required DBT concepts. \"Radical Acceptance\" is only implied rather than named or defined. The response does not describe or use the specific skill of \"Turning the Mind\" (the practice of repeatedly choosing to accept reality when the mind keeps reverting to resistance). It does not contrast \"willfulness vs. willingness\" as distinct stances the client can choose, nor does it outline the DBT distinction of \"pain vs. suffering\" (i.e., pain as often unavoidable vs. suffering as often maintained by resistance). Because the rubric required inclusion of these specific DBT constructs, the answer falls short on modality adherence despite good empathy and safety. \n\nRecommendations: Explicitly introduce and briefly define Radical Acceptance; teach \"Turning the Mind\" as a practiced decision to accept; contrast willfulness (fighting reality) with willingness (making space to act effectively despite reality); and explain pain vs. suffering so the client understands how acceptance can reduce additional suffering. Offer one or two short, concrete practices (e.g., an acceptance phrase or a Turning the Mind prompt) to make the skill usable in-session.",
-          "flags": [
-            "radical_acceptance_not_explicit",
-            "missing_turning_the_mind",
-            "missing_willfulness_vs_willingness",
-            "missing_pain_vs_suffering"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 40
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 70,
-          "reasoning": "The student demonstrates high empathy and creates a strong therapeutic alliance by validating the client's grief and sense of betrayal. However, the response fails to explicitly incorporate the required DBT concepts. 'Radical Acceptance' is alluded to as 'a different kind of acceptance' but is not named or clearly defined as accepting reality as it is to reduce suffering. 'Turning the Mind' is missing as a specific skill for shifting from willfulness to willingness. The concept of 'Pain vs. Suffering' is not addressed; specifically, that pain is inevitable but suffering comes from fighting reality. The response also misses the 'Willfulness vs. Willingness' distinction, potentially reinforcing the 'fight' by saying acceptance 'leaves room for resistance,' which might confuse the concept of willingness. The student avoids restricted content (medical advice, 'fight harder').",
-          "flags": [
-            "Missing term: Radical Acceptance",
-            "Missing term: Turning the Mind",
-            "Missing concept: Pain vs. Suffering",
-            "Missing concept: Willfulness vs. Willingness"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 95,
-            "modalityAdherence": 40
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-29T00:15:47.316Z"
         }
       ]
     }

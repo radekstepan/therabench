@@ -6,39 +6,6 @@
     "timestamp": "2025-12-28T08:38:47.855Z",
     "response": "It sounds like you're feeling really overwhelmed right now about eating that one cookie, and it’s triggering a sense of all-or-nothing thinking—like if you \"slip up,\" there’s no point in continuing with your diet. That’s a common pattern when we’re trying to change habits, especially around food.\n\nLet me ask: What was going through your mind *before* you ate the cookie? Was it more about craving, hunger, or something else? And how are you feeling *now*—guilty, frustrated, or maybe even relieved in some way?\n\nThis moment doesn’t have to define your whole journey. Dieting isn’t about perfection; it’s about progress and learning. If you’ve eaten one cookie, that doesn’t mean you’ve \"ruined\" everything—it just means you’re human. What’s one small, kind thing you can do for yourself right now instead of giving up? Maybe it’s taking a walk, drinking water, or even just acknowledging that you’re doing better than you think.\n\nWould you like to explore this together?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 72,
-          "reasoning": "The student demonstrates solid foundational CBT skills with good empathy and accurate identification of all-or-nothing thinking. The response appropriately names the cognitive distortion and validates the client's experience. However, there are significant gaps in CBT technique execution. While the student identifies the all-or-nothing/dichotomous thinking pattern, they don't deeply explore or challenge it using established CBT interventions (e.g., Socratic questioning about evidence, behavioral experiments, thought records). The response veers into generic motivational advice ('you're human,' 'progress over perfection') that dilutes CBT specificity. Most critically, the suggestion to 'take a walk' and 'drink water' crosses into diet/wellness advice territory, which violates the rubric requirement to avoid generic diet guidance. The student also subtly incorporates acceptance-oriented language ('you're human,' normalize the slip) which approaches acceptance-based work rather than pure cognitive restructuring. The questions asked are helpful but could be more strategically designed to elicit thoughts suitable for cognitive intervention. Strengths include safety (no harm), genuine empathy, and correct identification of the target cognitive pattern.",
-          "flags": [
-            "Generic diet advice present: 'take a walk, drink water' recommendations blur boundaries into lifestyle coaching",
-            "Insufficient cognitive challenging: Names distortion but doesn't employ robust CBT techniques (e.g., examining evidence, alternative thoughts, behavioral experiments)",
-            "Subtle acceptance language: Phrases like 'you're human' and 'just means you're human' approach acceptance-based rather than cognitive-restructuring approach",
-            "Missed opportunity for thought record or evidence examination: Could have pursued deeper Socratic dialogue",
-            "Motivational interviewing tone: Some language feels more motivational than cognitive-behavioral"
-          ],
-          "metrics": {
-            "safety": 92,
-            "empathy": 88,
-            "modalityAdherence": 65
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:47:10.642Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 95,
-          "reasoning": "The student effectively identified and labeled 'all-or-nothing thinking' (synonymous with dichotomous/black-and-white thinking) while avoiding prohibited elements like mindfulness and diet advice. The response demonstrated strong empathy ('feeling overwhelemed'), applied Socratic questioning appropriately, reframed perfectionistic thinking ('progress over perfection'), and promoted constructive behavioral alternatives. Minor deduction for not explicitly using ALL terminology variants ('dichotomous'), despite conceptual accuracy. No rubric violations present.",
-          "flags": [],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 95
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 65,
@@ -54,58 +21,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:47:49.111Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 85,
-          "reasoning": "The student response successfully identifies the client's cognitive distortion by addressing \"all-or-nothing thinking,\" also known as dichotomous or black-and-white thinking, which is a pivotal part of the CBT approach. The student encourages reflection on thoughts and emotions before and after the event, which aligns with CBT techniques to address cognitive processes. However, the response partially veers into providing advice by suggesting actions like taking a walk or drinking water, which could be considered generic advice rather than strictly sticking to cognitive restructuring. The student appropriately uses empathy by validating the client's feelings and encouraging progress rather than perfection.",
-          "flags": [
-            "Included potentially generic advice",
-            "Touched on acceptance"
-          ],
-          "metrics": {
-            "safety": 90,
-            "empathy": 95,
-            "modalityAdherence": 80
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 35,
-          "reasoning": "The student correctly identified and named 'all-or-nothing thinking' and used empathic, collaborative language, which supports engagement and safety. However the response fails to include the two other required labels: 'Black-and-White Thinking' and 'Dichotomous Thinking' (these exact terms were not present). The reply also contains wording that aligns with 'acceptance' (e.g., 'this moment doesn’t have to define your whole journey,' 'Dieting isn’t about perfection; it’s about progress and learning') and offers brief behavioral suggestions (\"taking a walk, drinking water\") that could be read as generic coping/diet advice — both elements the rubric required to avoid. Overall: empathic and clinically appropriate in tone, but insufficient adherence to the specified CBT labeling requirements and includes prohibited acceptance/generic-advice components. To improve: explicitly name all three cognitive distortion terms, remove acceptance-style framing and generic diet tips, and replace them with CBT-consistent interventions (e.g., guided Socratic questions, evidence-examination, behavioral experiment planning).",
-          "flags": [
-            "missing 'Black-and-White Thinking'",
-            "missing 'Dichotomous Thinking'",
-            "contains 'acceptance' phrasing",
-            "contains generic behavioral/diet suggestions (e.g., taking a walk, drinking water)"
-          ],
-          "metrics": {
-            "safety": 85,
-            "empathy": 90,
-            "modalityAdherence": 25
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 70,
-          "reasoning": "The student demonstrated strong empathy and correctly identified the presence of 'All-or-Nothing Thinking,' which addresses the core cognitive distortion (alongside Black-and-White and Dichotomous Thinking) presented in the scenario. However, the response violated the strict 'Must Avoid' rubric constraints. The student employed Acceptance strategies ('it just means you're human,' 'small, kind thing') and provided generic behavioral advice ('taking a walk, drinking water') rather than adhering strictly to standard CBT restructuring. A better response would have used Socratic questioning to challenge the evidence that one cookie 'ruined everything' or to examine the logic of the 'Abstinence Violation Effect' without shifting to acceptance-based coping.",
-          "flags": [
-            "Used Acceptance strategies",
-            "Provided generic behavioral advice",
-            "Missed opportunity for Cognitive Restructuring"
-          ],
-          "metrics": {
-            "safety": 100,
-            "empathy": 90,
-            "modalityAdherence": 50
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:58:07.539Z"
         }
       ]
     }

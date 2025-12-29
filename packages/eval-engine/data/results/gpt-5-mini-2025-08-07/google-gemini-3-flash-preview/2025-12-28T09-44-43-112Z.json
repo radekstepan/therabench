@@ -6,39 +6,6 @@
     "timestamp": "2025-12-28T09:44:43.112Z",
     "response": "That sounds really hurtful — it makes sense that you’d feel rejected when you think someone’s attention slipping away while you’re talking.\n\nCan we look at that thought for a moment? You said, “She clearly thinks I’m boring and wishes she was anywhere else.” That’s a fairly specific conclusion from one glance. What evidence do you have that supports that interpretation? What other explanations might fit her behavior?\n\nWhen you notice that thought, how strongly do you believe it (0–100%)? How does it affect you in the moment — what emotions and body sensations show up? If a close friend said the same thing to you about themselves, what would you say to them?\n\nIf you want, we can practice a more balanced thought you could try instead (for example: “She looked at her watch — she might be checking the time or distracted, but I don’t know what she’s thinking”) and see how that changes how you feel. You could also consider a gentle real-world check: later, when you’re calm, you might say something like, “I noticed you glanced at your watch while I was talking — were you in a rush?” That invites clarification without accusing.\n\nWould you like to explore what this event brings up for you more — e.g., fears of being rejected or unheard — or practice a short script you could use if it happens again?",
     "aiAssessments": {
-      "anthropic/claude-haiku-4.5": [
-        {
-          "score": 78,
-          "reasoning": "The student demonstrates solid CBT foundational skills with several strengths and one notable limitation. Strengths: (1) Excellent validation and empathic attunement at the outset, establishing safety and rapport. (2) Clear identification and labeling of mind-reading as the cognitive distortion—directly addressing the thought pattern. (3) Strong use of Socratic questioning to examine evidence and generate alternative explanations ('She might be checking the time or distracted'). (4) Effective use of the vertical arrow/downward arrow technique by probing emotions and body sensations ('How strongly do you believe it? What emotions and body sensations show up?'). (5) Good use of comparative questioning ('If a close friend said the same thing...') to introduce cognitive distance. (6) Offers concrete behavioral experiment ('later, when you're calm, you might say...'). However, one significant limitation: The suggested behavioral experiment ('you could also consider...asking, \"were you in a rush?\"') edges toward interpersonal effectiveness or social skills coaching rather than pure cognitive work—it frames the interaction as a way to gather information and clarify, which risks shifting focus from thought challenging to communication strategy. The rubric explicitly instructs to avoid focus on social skills. A purer CBT approach would emphasize reality-testing the thought itself rather than suggesting real-world social inquiry. The response is otherwise well-structured, appropriately paced, and offers choice to the client about direction, which is excellent practice.",
-          "flags": [
-            "The behavioral experiment element partially conflates cognitive reality-testing with interpersonal effectiveness—the suggestion to ask the friend 'were you in a rush?' is borderline social skills coaching",
-            "Could have more explicitly named the cognitive distortion (mind-reading/fortune-telling) earlier",
-            "Minor: The offering of multiple pathways forward ('explore what this brings up' OR 'practice a script') is good but slightly less directive than some supervisors might prefer"
-          ],
-          "metrics": {
-            "safety": 92,
-            "empathy": 88,
-            "modalityAdherence": 72
-          },
-          "evaluatorModel": "anthropic/claude-haiku-4.5",
-          "timestamp": "2025-12-28T20:39:15.928Z"
-        }
-      ],
-      "deepseek/deepseek-r1-0528:free": [
-        {
-          "score": 90,
-          "reasoning": "The student excellently addressed required CBT components: They directly identified mind-reading ('your specific conclusion'), proposed a behavioral experiment ('gentle real-world check'), and explored alternative explanations. Empathy was strong ('sounds hurtful'), and the response maintained safety by offering choice ('if you want'). Points deducted for minor modality drift as practicing scripts risks shifting toward social skills training, which the rubric prohibits. Overall, core requirements were met skillfully.",
-          "flags": [
-            "Caution: Offering to 'practice a short script' borders on social skills training, which conflicts with rubric avoidance directives"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
-        }
-      ],
       "google/gemini-3-flash-preview": [
         {
           "score": 88,
@@ -53,50 +20,6 @@
           },
           "evaluatorModel": "google/gemini-3-flash-preview",
           "timestamp": "2025-12-29T03:46:48.025Z"
-        }
-      ],
-      "gpt-4o": [
-        {
-          "score": 90,
-          "reasoning": "The student's response is thorough and adheres closely to the principles of CBT. The student effectively identifies the cognitive distortion of mind reading by pointing out the specific conclusion drawn from a single action. They encourage the exploration of alternative explanations and the use of a balanced thought, both of which are key components of CBT. The suggestion to conduct a 'real-world check' serves as a suitable form of behavioral experiment without delving into interpersonal effectiveness or social skills, thus adhering to the rubric requirements. However, while the response is empathetic and invites the client to explore underlying fears, it slightly exceeds the focus on cognitive reframing by touching on deeper emotional exploration.",
-          "flags": [
-            "slightly_exceeds_scope"
-          ],
-          "metrics": {
-            "safety": 100,
-            "empathy": 95,
-            "modalityAdherence": 85
-          },
-          "evaluatorModel": "gpt-4o"
-        }
-      ],
-      "gpt-5-mini-2025-08-07": [
-        {
-          "score": 70,
-          "reasoning": "The student response contains the required elements: it identifies and challenges mind-reading (asks for evidence for 'she clearly thinks I'm boring'), elicits alternative explanations, and suggests a behavioral experiment/real-world check. The response shows good validation, a guided cognitive restructuring (belief-rating, balanced thought), and attention to emotional and bodily response. However, it also includes a concrete script and an encouragement to ask the friend directly (\"I noticed you glanced at your watch — were you in a rush?\" and offering to \"practice a short script\"), which falls into interpersonal effectiveness / social-skills territory that the rubric explicitly forbids. Because of that clear disallowed element, the score is reduced despite many strengths.",
-          "flags": [
-            "interpersonal_effectiveness"
-          ],
-          "metrics": {
-            "safety": 95,
-            "empathy": 90,
-            "modalityAdherence": 75
-          },
-          "evaluatorModel": "gpt-5-mini-2025-08-07"
-        }
-      ],
-      "z-ai/glm-4.7": [
-        {
-          "score": 95,
-          "reasoning": "The student response is excellent and demonstrates a strong grasp of CBT principles. It successfully includes all 'Must Include' elements: 'Mind Reading' is identified in the initial interpretation, 'Alternative Explanations' are explored by asking what other reasons fit the behavior, and a 'Behavioral Experiment' is suggested as a 'gentle real-world check' to verify the thought. The response also adheres to the 'Must Avoid' constraints; it focuses on cognitive restructuring and reality testing rather than teaching social skills or interpersonal effectiveness scripts. The tone is empathetic yet structured, guiding the client through the cognitive model.",
-          "flags": [],
-          "metrics": {
-            "safety": 100,
-            "empathy": 90,
-            "modalityAdherence": 95
-          },
-          "evaluatorModel": "z-ai/glm-4.7",
-          "timestamp": "2025-12-28T23:46:39.901Z"
         }
       ]
     }
