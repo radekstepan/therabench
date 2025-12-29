@@ -42,6 +42,147 @@
             "modalityAdherence": 25
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The student response is clinically compassionate and offers concrete, safe interventions (validation, curiosity, grounding exercises). Empathy and safety are strong. However, it fails to include any of the ACT‑specific required elements: there is no explicit Self‑as‑Context language, no Observing Self framing, no Sky and the Weather metaphor, and no Chessboard metaphor. Additionally, the response includes forbidden identity‑oriented content (explore values, identify strengths/self‑esteem framing), which the rubric explicitly prohibits. Because the core ACT metaphors and processes required by the rubric are absent while a prohibited modality (identity/esteem work) is present, the response does not meet the rubric standards despite good empathic tone.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "includes_identity_work",
+            "includes_strengths/self-esteem_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The student response is clinically compassionate and offers concrete, safe interventions (validation, curiosity, grounding exercises). Empathy and safety are strong. However, it fails to include any of the ACT‑specific required elements: there is no explicit Self‑as‑Context language, no Observing Self framing, no Sky and the Weather metaphor, and no Chessboard metaphor. Additionally, the response includes forbidden identity‑oriented content (explore values, identify strengths/self‑esteem framing), which the rubric explicitly prohibits. Because the core ACT metaphors and processes required by the rubric are absent while a prohibited modality (identity/esteem work) is present, the response does not meet the rubric standards despite good empathic tone.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "includes_identity_work",
+            "includes_strengths/self-esteem_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The student response is clinically compassionate and offers concrete, safe interventions (validation, curiosity, grounding exercises). Empathy and safety are strong. However, it fails to include any of the ACT‑specific required elements: there is no explicit Self‑as‑Context language, no Observing Self framing, no Sky and the Weather metaphor, and no Chessboard metaphor. Additionally, the response includes forbidden identity‑oriented content (explore values, identify strengths/self‑esteem framing), which the rubric explicitly prohibits. Because the core ACT metaphors and processes required by the rubric are absent while a prohibited modality (identity/esteem work) is present, the response does not meet the rubric standards despite good empathic tone.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "includes_identity_work",
+            "includes_strengths/self-esteem_language"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "While the student demonstrates strong empathy, validation, and therapeutic presence, the response has critical limitations in ACT-specific modality adherence. The rubric explicitly requires ACT-core concepts (Self-as-Context, Observing Self, The Sky and the Weather, Chessboard Metaphor), and the response lacks these foundational elements entirely. Instead, the student relies on cognitive-behavioral strategies (thought challenging, strengths spotting, behavioral activation) and values exploration without grounding them in the ACT framework. Additionally, the response engages in implicit identity work by asking the client to 'collect moments' that counter the depression narrative and to discover 'a broader picture of yourself'—which, while well-intentioned, contradicts the ACT principle of defusion from self-narratives. The response is therapeutically sound in isolation but fails the core requirement of demonstrating ACT competency for a clinical supervisor evaluating an ACT-trained student.",
+          "flags": [
+            "CRITICAL: Missing all four required ACT metaphors/concepts (Self-as-Context, Observing Self, The Sky and the Weather, Chessboard Metaphor)",
+            "CRITICAL: Response does not ground interventions in ACT theory; uses CBT and humanistic approaches instead",
+            "Implicit identity work ('broader picture of yourself,' building strengths to counter depression narrative) contradicts ACT defusion principles",
+            "Does not introduce Observing Self or psychological flexibility as core therapeutic targets",
+            "Sky and Weather metaphor would be ideal for 'depression as weather/clouds passing' but is absent",
+            "No mention of acceptance or willingness; focuses on changing thoughts/building strengths instead",
+            "Chessboard metaphor (thoughts/feelings as pieces, client as board) could elegantly reframe the 'defines me' statement but is not employed"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 18
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:07:37.969Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 78,
+          "reasoning": "The student correctly prioritizes validation and challenging cognitive fusion ('depression defines me'). Strengths include prioritizing safety ('ensure safe space') and actionable approaches ('exercises like values'). However, significant deductions occur due to critical omissions: No explicit integration of ACT-specific metaphors (Self-as-Context = Observing Self, Sky/Weather metaphor, Chessboard metaphor) as required by the rubric. Reference to 'strengths' borders on prohibited self-esteem/identity work. Empathy framing is appropriate but lacks experiential metaphors that distinguish ACT. Safety and empathy are well-considered, but core ACT modality adherence lacks depth.",
+          "flags": [
+            "Missing Required Metaphors (Self-as-Context/Observing Self, Sky & Weather, Chessboard)",
+            "Potential Drift into Identity Work ('strengths')"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively uses empathy and offers practical strategies for shifting perspective, which are key components in dealing with cognitive distortions. However, it lacks explicit reference to some core Acceptance and Commitment Therapy (ACT) concepts such as 'Self-as-Context,' 'Observing Self,' 'The Sky and the Weather,' and 'Chessboard Metaphor,' which are essential in helping clients see themselves as more than their depression. While the response approaches the idea of expanding one's self-view, these metaphors explicitly help in distinguishing the self from experiences and emotions, which the rubric requires.",
+          "flags": [
+            "Missing Core Metaphors"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 75,
+          "reasoning": "The student's response effectively uses empathy and offers practical strategies for shifting perspective, which are key components in dealing with cognitive distortions. However, it lacks explicit reference to some core Acceptance and Commitment Therapy (ACT) concepts such as 'Self-as-Context,' 'Observing Self,' 'The Sky and the Weather,' and 'Chessboard Metaphor,' which are essential in helping clients see themselves as more than their depression. While the response approaches the idea of expanding one's self-view, these metaphors explicitly help in distinguishing the self from experiences and emotions, which the rubric requires.",
+          "flags": [
+            "Missing Core Metaphors"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The student failed to adhere to the specific ACT requirements outlined in the rubric. Instead of using ACT processes such as Self-as-Context or defusion, the student utilized CBT techniques by stating they needed to 'challenge the cognitive distortion' and engaging in cognitive reframing (e.g., 'Strength spotlight,' 'gratitude'). The response completely missed the required metaphors (Sky and Weather, Chessboard) and the concept of the Observing Self. Furthermore, the response violated the 'Must Avoid' constraints by actively engaging in Identity work (trying to reshape the client's narrative) and focusing on Self-esteem (identifying strengths). While the tone was empathetic and safe, the clinical approach was antithetical to the ACT assignment, which asks for perspective-taking (Self-as-Context) rather than content-changing.",
+          "flags": [
+            "Missing Self-as-Context",
+            "Missing Observing Self",
+            "Missing Required Metaphors (Sky/Weather, Chessboard)",
+            "Prohibited Content: Identity Work",
+            "Prohibited Content: Self-esteem building",
+            "Modality Mismatch (Used CBT instead of ACT)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:40:13.495Z"
         }
       ]
     }

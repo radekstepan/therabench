@@ -34,6 +34,120 @@
             "modalityAdherence": 90
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 92,
+          "reasoning": "Strengths: The student response demonstrates strong CBT-consistent skills — clear validation/empathy, explicit decatastrophizing (offering less catastrophic alternatives), and an invitation to estimate probability (“What's the *actual* likelihood he's safe?”). The response also addresses the catastrophic/fortune-telling content by naming the process (\"mind instantly going to the worst possible scenario,\" \"jumping ahead 10 steps\") and offers grounding and collaborative problem-solving. These elements meet the rubric requirements for catastrophizing, decatastrophizing, fortune-telling content, and probability estimation. Concerns (minor): the student did not explicitly use the label “fortune telling” (they did counter the behavior effectively but did not name that specific distortion), and the suggested practical steps (call again, check location, contact workplace) could, if not framed carefully, facilitate reassurance-seeking behaviors. The student avoided using the DBT term “check the facts” and did not give direct reassurance, which aligns with the rubric. Overall this is a very good therapeutic response with only small refinements needed.",
+          "flags": [
+            "fortune_telling_not_explicitly_labeled",
+            "suggested_actions_may_encourage_reassurance_seeking"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates solid foundational therapeutic skills with genuine empathy and validation. The response successfully identifies and labels catastrophizing ('worst possible scenario,' 'jumping ahead 10 steps') and attempts gentle reality-testing with plausible alternatives. However, the response has notable gaps in CBT technical precision. Most significantly, it fails to explicitly name or address the 'fortune telling' cognitive distortion—the client is predicting a specific catastrophic future without evidence, which is core to this distortion and should be named as such in CBT work. The probability estimation element is present but underdeveloped; the student asks 'what's the actual likelihood' but doesn't guide the client through structured probability work (e.g., 'Out of 100 times your husband doesn't answer, how many times has something serious actually happened?'). The decatastrophizing approach is gentle and compassionate but lacks the systematic, step-by-step questioning that characterizes effective CBT decatastrophizing (e.g., 'If the worst happened, how would you cope?'). Additionally, while the student avoids direct reassurance-seeking, the response borders on providing soft reassurance through normalization, which can inadvertently reinforce the anxiety cycle. The suggestion to 'call again' risks becoming a subtle safety behavior or reassurance-seeking ritual. The response is clinically sound and wouldn't harm the client, but it reads more like supportive counseling with CBT elements rather than structured CBT intervention. For a CBT-focused scenario, more technical precision in naming distortions and applying decatastrophizing methodology would strengthen the work.",
+          "flags": [
+            "Fortune telling distortion not explicitly named or addressed—critical gap for CBT",
+            "Probability estimation present but not systematized or quantified",
+            "Decatastrophizing lacks the structured questioning typical of CBT (e.g., 'What if it did happen? Could you survive/cope?')",
+            "Suggestion to 'call again' could inadvertently normalize reassurance-seeking/safety behaviors",
+            "Soft reassurance through normalization ('His fear comes from love') risks reinforcing rather than interrupting the anxiety loop",
+            "Limited technical CBT language—response sounds more eclectic/supportive than specifically CBT"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:05:11.011Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively validates emotions and identifies catastrophic thinking ('worst possible scenario'), addresses fortune telling ('jumping ahead 10 steps'), includes decatastrophizing through alternative explanations, and incorporates probability estimation ('actual likelihood'). It maintains appropriate CBT focus while avoiding forbidden DBT language ('check the facts') and prevents reassurance-seeking by prioritizing coping skills over confirmation behaviors. Notable strengths include framing anxiety as love-driven (reducing shame) and collaborative problem-solving. Points deducted for slightly underdeveloped probability estimation metrics and not explicitly naming 'catastrophizing' during client interaction.",
+          "flags": [
+            "Suggesting 'call again' as potential step requires caution - must be framed as information-gathering (not reassurance-seeking) and be paired with self-regulation"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response to the scenario is well-structured and incorporates several cognitive-behavioral techniques that align with the principles of CBT. The student effectively validates the client's emotions, fostering empathy, and provides a gentle reality-testing that challenges the client's catastrophic thinking without dismissing their feelings. The response incorporates probability estimation by encouraging the client to consider more common, less catastrophic explanations for the husband's unavailability. Additionally, the student invites the client to explore practical steps and ways to soothe themselves during uncertainty, promoting agency and reducing helplessness. Importantly, the student avoids using reassurance seeking or DBT-specific terms like 'check the facts,' which would deviate from CBT modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 90,
+          "reasoning": "The student's response to the scenario is well-structured and incorporates several cognitive-behavioral techniques that align with the principles of CBT. The student effectively validates the client's emotions, fostering empathy, and provides a gentle reality-testing that challenges the client's catastrophic thinking without dismissing their feelings. The response incorporates probability estimation by encouraging the client to consider more common, less catastrophic explanations for the husband's unavailability. Additionally, the student invites the client to explore practical steps and ways to soothe themselves during uncertainty, promoting agency and reducing helplessness. Importantly, the student avoids using reassurance seeking or DBT-specific terms like 'check the facts,' which would deviate from CBT modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 90,
+          "reasoning": "The student's response to the scenario is well-structured and incorporates several cognitive-behavioral techniques that align with the principles of CBT. The student effectively validates the client's emotions, fostering empathy, and provides a gentle reality-testing that challenges the client's catastrophic thinking without dismissing their feelings. The response incorporates probability estimation by encouraging the client to consider more common, less catastrophic explanations for the husband's unavailability. Additionally, the student invites the client to explore practical steps and ways to soothe themselves during uncertainty, promoting agency and reducing helplessness. Importantly, the student avoids using reassurance seeking or DBT-specific terms like 'check the facts,' which would deviate from CBT modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 90,
+          "reasoning": "The student's response to the scenario is well-structured and incorporates several cognitive-behavioral techniques that align with the principles of CBT. The student effectively validates the client's emotions, fostering empathy, and provides a gentle reality-testing that challenges the client's catastrophic thinking without dismissing their feelings. The response incorporates probability estimation by encouraging the client to consider more common, less catastrophic explanations for the husband's unavailability. Additionally, the student invites the client to explore practical steps and ways to soothe themselves during uncertainty, promoting agency and reducing helplessness. Importantly, the student avoids using reassurance seeking or DBT-specific terms like 'check the facts,' which would deviate from CBT modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a compassionate, well-structured response that effectively used validation and grounding. However, the response failed to strictly adhere to the CBT-specific requirements outlined in the rubric. While the student implicitly used 'Probability Estimation' by asking about likelihood and 'Decatastrophizing' by suggesting alternatives, they did not explicitly label the cognitive distortions of 'Catastrophizing' or 'Fortune Telling' as required. Additionally, the suggestions to 'Check location if shared' or 'Contact his workplace' border on encouraging 'Reassurance seeking', which the rubric explicitly stated to avoid. The phrase 'Check the facts' was not used, avoiding that specific DBT terminology error, but the intervention leaned more on general support than strict CBT cognitive restructuring.",
+          "flags": [
+            "Missing explicit terms: Catastrophizing, Fortune Telling",
+            "Potential encouragement of reassurance seeking behaviors",
+            "Modality Adherence: Mixed CBT/General Support"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:56:36.219Z"
         }
       ]
     }

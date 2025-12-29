@@ -40,6 +40,140 @@
             "modalityAdherence": 10
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The student response demonstrates good empathy, validation, and useful exploratory questions (asks about the content and patterns of doubts, normalizes paralysis, suggests small steps and social support). However it fails to follow the rubric's mandatory metaphorical framing: it does not include the required images 'Passengers on the Bus', 'Demons on the Boat', or the directive 'Driving despite the noise'. Because those elements were stated as Must Include, this is a significant modality non-adherence. The student also correctly avoided the prohibited approaches ('Kick the passengers off' and 'Argue with the passengers'). To meet the brief, the response should retain its empathic tone while explicitly using the passenger/boat/driving metaphors and encouraging driving despite the noise rather than trying to remove or argue with the internal voices.",
+          "flags": [
+            "missing_required_metaphors: Passengers on the Bus",
+            "missing_required_metaphors: Demons on the Boat",
+            "missing_required_metaphors: Driving despite the noise",
+            "avoided_prohibited_phrases: kick the passengers off",
+            "avoided_prohibited_phrases: argue with the passengers"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The student response demonstrates good empathy, validation, and useful exploratory questions (asks about the content and patterns of doubts, normalizes paralysis, suggests small steps and social support). However it fails to follow the rubric's mandatory metaphorical framing: it does not include the required images 'Passengers on the Bus', 'Demons on the Boat', or the directive 'Driving despite the noise'. Because those elements were stated as Must Include, this is a significant modality non-adherence. The student also correctly avoided the prohibited approaches ('Kick the passengers off' and 'Argue with the passengers'). To meet the brief, the response should retain its empathic tone while explicitly using the passenger/boat/driving metaphors and encouraging driving despite the noise rather than trying to remove or argue with the internal voices.",
+          "flags": [
+            "missing_required_metaphors: Passengers on the Bus",
+            "missing_required_metaphors: Demons on the Boat",
+            "missing_required_metaphors: Driving despite the noise",
+            "avoided_prohibited_phrases: kick the passengers off",
+            "avoided_prohibited_phrases: argue with the passengers"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The student response demonstrates good empathy, validation, and useful exploratory questions (asks about the content and patterns of doubts, normalizes paralysis, suggests small steps and social support). However it fails to follow the rubric's mandatory metaphorical framing: it does not include the required images 'Passengers on the Bus', 'Demons on the Boat', or the directive 'Driving despite the noise'. Because those elements were stated as Must Include, this is a significant modality non-adherence. The student also correctly avoided the prohibited approaches ('Kick the passengers off' and 'Argue with the passengers'). To meet the brief, the response should retain its empathic tone while explicitly using the passenger/boat/driving metaphors and encouraging driving despite the noise rather than trying to remove or argue with the internal voices.",
+          "flags": [
+            "missing_required_metaphors: Passengers on the Bus",
+            "missing_required_metaphors: Demons on the Boat",
+            "missing_required_metaphors: Driving despite the noise",
+            "avoided_prohibited_phrases: kick the passengers off",
+            "avoided_prohibited_phrases: argue with the passengers"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 45,
+          "reasoning": "While the student demonstrates empathy and validation, the response fundamentally misses the core ACT metaphor and intervention strategy. The student does not incorporate the required ACT concepts: (1) 'Passengers on the Bus' - acknowledging thoughts/doubts as passengers rather than obstacles to eliminate, (2) 'Demons on the Boat' - normalizing unwanted internal experiences, or (3) 'Driving despite the noise' - the critical ACT principle of values-based action regardless of internal noise. Instead, the response shifts toward cognitive exploration and problem-solving ('What are they telling you?' and 'strategies to address them'), which inadvertently suggests the doubts need to be resolved before action can occur. This contradicts ACT's core message. The student also subtly implies doubt-reduction is necessary ('move forward with more confidence'), rather than emphasizing movement toward values despite doubt. The suggestion to start with 'small manageable changes' lacks the metaphorical consistency of continuing to 'drive' with passengers present.",
+          "flags": [
+            "Missing ACT metaphor framework - no reference to Passengers on the Bus metaphor",
+            "Missing experiential acceptance component - no mention of Demons on the Boat or normalizing unwanted thoughts",
+            "Contradicts ACT values-action principle - implies doubts must be addressed before moving forward rather than driving despite the noise",
+            "Cognitive-problem solving approach - risks reinforcing experiential avoidance rather than psychological flexibility",
+            "No explicit invitation to continue valued action despite discomfort"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 82,
+            "modalityAdherence": 28
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:32:20.027Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 0,
+          "reasoning": "Failed to parse judge response after 3 attempts.",
+          "flags": [
+            "parse-error"
+          ],
+          "metrics": {
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively identifies the client's internal conflict and normalizes the experience of feeling paralyzed by it. However, it lacks specific elements aligned with ACT, particularly the metaphors of 'Passengers on the Bus,' 'Demons on the Boat,' and the concept of 'driving despite the noise.' The response does well in exploring the client's doubts and focuses on small, manageable changes, but it doesn't incorporate ACT's focus on acceptance of these 'passengers' or 'demons' and continuing to pursue values-driven actions despite their presence.",
+          "flags": [
+            "lack_of_ACT_metaphors",
+            "modality_incomplete"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively identifies the client's internal conflict and normalizes the experience of feeling paralyzed by it. However, it lacks specific elements aligned with ACT, particularly the metaphors of 'Passengers on the Bus,' 'Demons on the Boat,' and the concept of 'driving despite the noise.' The response does well in exploring the client's doubts and focuses on small, manageable changes, but it doesn't incorporate ACT's focus on acceptance of these 'passengers' or 'demons' and continuing to pursue values-driven actions despite their presence.",
+          "flags": [
+            "lack_of_ACT_metaphors",
+            "modality_incomplete"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The student provided a supportive and empathetic response but failed to utilize the core ACT metaphors required by the rubric ('Passengers on the Bus', 'Demons on the Boat'). Instead of guiding the client to 'drive despite the noise' (acceptance and committed action), the student shifted focus to analyzing the content of the doubts ('What are they telling you?', 'patterns', 'rooted in'). This approach encourages fusion with the thoughts rather than defusion, and suggests fixing or strategizing against the doubts rather than making space for them. By missing the required metaphors and attempting to solve the internal conflict rather than recontextualizing it, the student missed the primary intervention opportunity for this scenario.",
+          "flags": [
+            "Missed ACT Metaphors (Passengers/Boat)",
+            "Content-focused rather than process-focused",
+            "Encouraged fusion with thoughts"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:42:16.216Z"
         }
       ]
     }

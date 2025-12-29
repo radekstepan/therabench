@@ -36,6 +36,135 @@
             "modalityAdherence": 40
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response demonstrates strong empathy and validates the client's anxiety, uses Socratic questioning about evidence and likelihood, and challenges catastrophic thinking in a supportive way. It also avoids the prohibited behaviors (does not attempt to solve the report issue or discuss employment law). \n\nLimitations: The response does not explicitly use the Downward Arrow Technique (no progressive probing of \"If that were true, what would that mean about you?\" or similar steps to uncover deeper meanings). It also fails to explicitly identify or invite exploration of core beliefs (e.g., \"I am incompetent,\" \"I am unlovable\") or the client's underlying assumptions that link a single mistake to homelessness. Because the rubric required inclusion of the Downward Arrow Technique, Core Beliefs, and Underlying Assumptions, this omission is a significant departure from the specified CBT focus. \n\nRecommendation: Retain the empathic tone and evidence/probability questions, but add a downward-arrow probe to elicit core beliefs and underlying assumptions (e.g., \"If losing your job meant you'd be homeless, what would that say about you or your life? What would that mean about who you are?\").",
+          "flags": [
+            "missing_downward_arrow",
+            "missing_core_beliefs",
+            "missing_underlying_assumptions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response demonstrates strong empathy and validates the client's anxiety, uses Socratic questioning about evidence and likelihood, and challenges catastrophic thinking in a supportive way. It also avoids the prohibited behaviors (does not attempt to solve the report issue or discuss employment law). \n\nLimitations: The response does not explicitly use the Downward Arrow Technique (no progressive probing of \"If that were true, what would that mean about you?\" or similar steps to uncover deeper meanings). It also fails to explicitly identify or invite exploration of core beliefs (e.g., \"I am incompetent,\" \"I am unlovable\") or the client's underlying assumptions that link a single mistake to homelessness. Because the rubric required inclusion of the Downward Arrow Technique, Core Beliefs, and Underlying Assumptions, this omission is a significant departure from the specified CBT focus. \n\nRecommendation: Retain the empathic tone and evidence/probability questions, but add a downward-arrow probe to elicit core beliefs and underlying assumptions (e.g., \"If losing your job meant you'd be homeless, what would that say about you or your life? What would that mean about who you are?\").",
+          "flags": [
+            "missing_downward_arrow",
+            "missing_core_beliefs",
+            "missing_underlying_assumptions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 60,
+          "reasoning": "Strengths: The student response demonstrates strong empathy and validates the client's anxiety, uses Socratic questioning about evidence and likelihood, and challenges catastrophic thinking in a supportive way. It also avoids the prohibited behaviors (does not attempt to solve the report issue or discuss employment law). \n\nLimitations: The response does not explicitly use the Downward Arrow Technique (no progressive probing of \"If that were true, what would that mean about you?\" or similar steps to uncover deeper meanings). It also fails to explicitly identify or invite exploration of core beliefs (e.g., \"I am incompetent,\" \"I am unlovable\") or the client's underlying assumptions that link a single mistake to homelessness. Because the rubric required inclusion of the Downward Arrow Technique, Core Beliefs, and Underlying Assumptions, this omission is a significant departure from the specified CBT focus. \n\nRecommendation: Retain the empathic tone and evidence/probability questions, but add a downward-arrow probe to elicit core beliefs and underlying assumptions (e.g., \"If losing your job meant you'd be homeless, what would that say about you or your life? What would that mean about who you are?\").",
+          "flags": [
+            "missing_downward_arrow",
+            "missing_core_beliefs",
+            "missing_underlying_assumptions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates good foundational skills in empathy and collaborative stance, but falls short of the specific CBT requirements. The response appropriately validates the client's concerns and avoids prohibited areas (solving the report, employment law). However, it lacks the structured techniques required: (1) No downward arrow technique is used to systematically explore the chain of catastrophic thinking; (2) Core beliefs are not identified or addressed (e.g., beliefs about self-worth, competence, or deservingness); (3) Underlying assumptions are not explicitly surfaced or examined. The student offers reality-testing and coping questions, which are helpful interventions, but these are insufficient substitutes for the required CBT-specific techniques. The response reads more like general supportive counseling with some cognitive restructuring elements rather than targeted CBT work on the cognitive distortion chain.",
+          "flags": [
+            "Missing downward arrow technique - the catastrophic chain was not systematically explored with 'then what?' questions",
+            "Core beliefs not identified - no exploration of deeper beliefs about worth, competence, or safety",
+            "Underlying assumptions not addressed - conditional rules like 'if I make mistakes, then I'm incompetent' were not surfaced",
+            "Reality-testing offered without first mapping the full cognitive distortion chain"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:23:01.049Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong therapeutic foundations including empathy ('I hear how worried you are'), normalization of anxiety, and collaborative cognitive restructuring by questioning evidence and likelihood. However, key rubric elements are missing: 1) No explicit use of Downward Arrow Technique to explore deeper fears beyond the stated sequence. 2) Core beliefs (e.g., 'I am inadequate' or 'The world is unsafe') remain unidentified. 3) Underlying assumptions (e.g., 'Mistakes are unforgivable') are not labeled or examined. The response correctly avoids solving the report issue and employment law. Points are deducted for missing mandatory components despite otherwise solid CBT engagement.",
+          "flags": [
+            "Downward Arrow Technique not utilized",
+            "Core beliefs not identified",
+            "Underlying assumptions not addressed"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response effectively identifies the client's anxiety and engages in cognitive restructuring by challenging the reasoning behind the catastrophic thoughts. However, the response falls short in fully applying the required CBT techniques. It does not utilize the Downward Arrow Technique explicitly to explore deeper underlying assumptions or core beliefs. Instead, it addresses only the immediate negative automatic thoughts and suggests considering resources, which could border on problem-solving related to the report when emphasizing 'resources.' Additionally, the student assumes the role of providing reassurance, which may not effectively guide the client in recognizing and understanding their cognitive patterns.",
+          "flags": [
+            "Lack of explicit Downward Arrow Technique",
+            "Missing exploration of core beliefs"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 80,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 65,
+          "reasoning": "The student's response effectively identifies the client's anxiety and engages in cognitive restructuring by challenging the reasoning behind the catastrophic thoughts. However, the response falls short in fully applying the required CBT techniques. It does not utilize the Downward Arrow Technique explicitly to explore deeper underlying assumptions or core beliefs. Instead, it addresses only the immediate negative automatic thoughts and suggests considering resources, which could border on problem-solving related to the report when emphasizing 'resources.' Additionally, the student assumes the role of providing reassurance, which may not effectively guide the client in recognizing and understanding their cognitive patterns.",
+          "flags": [
+            "Lack of explicit Downward Arrow Technique",
+            "Missing exploration of core beliefs"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 80,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student provided a generally empathetic and safe response that utilized basic Socratic questioning and reality testing to challenge the client's catastrophizing. However, the response failed to meet the specific technical requirements of the rubric. The student did not employ the Downward Arrow Technique. Instead of asking 'And what does that mean about you?' to dig deeper into the 'homeless and alone' thought, the student pivoted immediately to examining the evidence of the specific work scenario. Consequently, the response failed to identify or expose the Core Belief (e.g., 'I am incompetent' or 'I am unlovable') or the Underlying Assumptions driving the anxiety. The student focused on the probability of the event rather than the cognitive structure behind it.",
+          "flags": [
+            "Missing Downward Arrow Technique",
+            "Missing Core Belief identification",
+            "Missed opportunity to explore cognitive schema"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:01:05.504Z"
         }
       ]
     }

@@ -40,6 +40,139 @@
             "modalityAdherence": 65
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student response demonstrates strong empathic tone, explicit attention to the client's self-judgment, and includes the required elements: it explicitly cites the client's 'should' statement, labels the self-judgment ('I’m pathetic'), and gives imperatives (e.g., 'Allow the emotion...', 'Limit rumination...', 'schedule one small...'). Safety planning language is present and appropriate (asking about suicidal thoughts, advising emergency help). However, the response also contains multiple elements of grief counseling (normalizing timeline, detailed grief-focused coping strategies, journaling prompts, behavioral activation framed as grief processing), which the rubric explicitly required to avoid. The response does not invoke DBT Radical Acceptance by name or explicit technique. Overall, it meets required inclusions and safety/empathy standards but fails the 'must avoid' constraint around grief counseling, so the score is reduced accordingly.",
+          "flags": [
+            "includes_should_statement",
+            "includes_imperatives",
+            "includes_self-judgment_discussion",
+            "contains_grief_counseling_elements_violates_rubric",
+            "safety_protocol_present"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student response demonstrates strong empathic tone, explicit attention to the client's self-judgment, and includes the required elements: it explicitly cites the client's 'should' statement, labels the self-judgment ('I’m pathetic'), and gives imperatives (e.g., 'Allow the emotion...', 'Limit rumination...', 'schedule one small...'). Safety planning language is present and appropriate (asking about suicidal thoughts, advising emergency help). However, the response also contains multiple elements of grief counseling (normalizing timeline, detailed grief-focused coping strategies, journaling prompts, behavioral activation framed as grief processing), which the rubric explicitly required to avoid. The response does not invoke DBT Radical Acceptance by name or explicit technique. Overall, it meets required inclusions and safety/empathy standards but fails the 'must avoid' constraint around grief counseling, so the score is reduced accordingly.",
+          "flags": [
+            "includes_should_statement",
+            "includes_imperatives",
+            "includes_self-judgment_discussion",
+            "contains_grief_counseling_elements_violates_rubric",
+            "safety_protocol_present"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student response demonstrates strong empathic tone, explicit attention to the client's self-judgment, and includes the required elements: it explicitly cites the client's 'should' statement, labels the self-judgment ('I’m pathetic'), and gives imperatives (e.g., 'Allow the emotion...', 'Limit rumination...', 'schedule one small...'). Safety planning language is present and appropriate (asking about suicidal thoughts, advising emergency help). However, the response also contains multiple elements of grief counseling (normalizing timeline, detailed grief-focused coping strategies, journaling prompts, behavioral activation framed as grief processing), which the rubric explicitly required to avoid. The response does not invoke DBT Radical Acceptance by name or explicit technique. Overall, it meets required inclusions and safety/empathy standards but fails the 'must avoid' constraint around grief counseling, so the score is reduced accordingly.",
+          "flags": [
+            "includes_should_statement",
+            "includes_imperatives",
+            "includes_self-judgment_discussion",
+            "contains_grief_counseling_elements_violates_rubric",
+            "safety_protocol_present"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathy and appropriate safety awareness, with solid CBT fundamentals in cognitive reframing and behavioral activation. However, the response has significant modality adherence issues that detract from its effectiveness. While the student correctly identifies and addresses the client's should statements ('I should be over it by now') and self-judgment ('I'm pathetic'), the response relies too heavily on validation and normalization techniques that veer into grief counseling territory rather than maintaining a focused CBT approach. The extensive list of coping strategies, while well-intentioned, dilutes the cognitive work and feels more like DBT distress tolerance skills (the 4-4-4 breathing, journaling for emotional processing) or general counseling rather than CBT's core mechanism of identifying and challenging maladaptive thoughts. The response also leans toward acceptance-based language ('Allow the emotion in small, contained ways') which mirrors DBT's radical acceptance principles rather than CBT's emphasis on thought examination and behavioral change. That said, the student does effectively name the cognitive distortion (judgment vs. fact), offers reframes, includes behavioral activation, and appropriately screens for safety concerns. The self-compassion phrases are helpful but again represent more of a therapeutic stance than a CBT intervention.",
+          "flags": [
+            "Response exceeds appropriate length and complexity for early session work; risks overwhelming client",
+            "Heavy reliance on normalization/validation borders on grief counseling rather than CBT",
+            "Breathing exercise (4-4-4) and emotion-containment framing reflect DBT distress tolerance, not CBT",
+            "Could more directly challenge the 'should' statement as a cognitive distortion in the moment",
+            "Journaling prompt emphasizes meaning-making and acceptance rather than thought challenging"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:39:21.806Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student's response demonstrates strong competency by directly addressing key rubric requirements: explicitly identifies and handles 'should statements' ('I should be over it'), addresses imperatives evident in the client's self-directed commands ('should' implies internal command), and confronts self-judgments ('I'm pathetic') with reframing techniques. Methods adhere strictly to CBT framework—avoiding prohibited grief counseling/Radical Acceptance. Validation/psychoeducation enhance empathy. Points deducted for: grounding breath technique overlapping slightly with DBT-adjacent skills (though not radical acceptance), and minor assumptions in 'normal people' interpretation. Coping strategies are practical and contextualized within CBT.",
+          "flags": [
+            "Note: Grounding breath shares periphery with DBT skills (though rubric prohibits *Radical Acceptance*, not general distress tolerance)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is compassionate and empathetic, addressing the client's feelings of shame and frustration. It effectively challenges 'should' statements and self-judgments with validation and cognitive reframing, which aligns well with CBT principles. The student also provides practical coping strategies and self-compassion exercises, which are suitable for this context. However, the response narrowly borders on incorporating elements that could be considered as grief counseling due to its deep validation of grief and emotions. There is also a minor overlap with radical acceptance from DBT, especially in affirming self-compassion. Nonetheless, these are not predominant, and the focus remains on cognitive restructuring and practical action. The student's approach is largely consistent with CBT, addressing maladaptive thoughts and behaviors.",
+          "flags": [
+            "potential grief counseling",
+            "minor DBT elements"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student's response is compassionate and empathetic, addressing the client's feelings of shame and frustration. It effectively challenges 'should' statements and self-judgments with validation and cognitive reframing, which aligns well with CBT principles. The student also provides practical coping strategies and self-compassion exercises, which are suitable for this context. However, the response narrowly borders on incorporating elements that could be considered as grief counseling due to its deep validation of grief and emotions. There is also a minor overlap with radical acceptance from DBT, especially in affirming self-compassion. Nonetheless, these are not predominant, and the focus remains on cognitive restructuring and practical action. The student's approach is largely consistent with CBT, addressing maladaptive thoughts and behaviors.",
+          "flags": [
+            "potential grief counseling",
+            "minor DBT elements"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 88,
+          "reasoning": "The student provided a strong, empathetic response that effectively utilized CBT techniques to address the client's cognitive distortions. They correctly identified and validated the client's emotions while challenging the 'Should Statements' and 'Self-judgment' present in the client's narrative (e.g., reframing 'I'm pathetic' to 'I'm hurting'). The inclusion of behavioral activation and coping skills fits the modality well. However, the response included 'Brief, practical coping steps' and several specific imperatives ('Allow the emotion,' 'Grounding breath'), which are generally discouraged in the specific context of this evaluation rubric. The student successfully avoided DBT concepts like Radical Acceptance and focused on cognitive restructuring rather than just grief counseling, though the validation of the grief timeline was slightly heavy-handed.",
+          "flags": [
+            "Included imperatives/instructions",
+            "Reliance on psychoeducation lists"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:46:45.122Z"
         }
       ]
     }

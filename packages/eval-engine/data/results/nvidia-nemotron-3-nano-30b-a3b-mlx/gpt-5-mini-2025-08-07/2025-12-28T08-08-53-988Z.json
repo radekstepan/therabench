@@ -34,6 +34,124 @@
             "modalityAdherence": 70
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 78,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation, uses clear present‑moment language (\"pulling your attention away from what’s happening in this moment\"), and offers multiple mindfulness and grounding techniques (sensory grounding, breath anchors, micro‑mindfulness breaks, self‑compassion, present‑focused activities) that promote contact with the here and now. These elements align well with the rubric requirements for Contact with the Present Moment, Mindfulness, and Here and Now. Concerns: The response also includes explicit planning suggestions (e.g., \"Plan a 'future‑talk'... allocate a specific time... to plan it out\") and scheduling (\"Set a timer for every hour\"), and a recommendation to \"write it out\" which could be interpreted as encouraging future‑oriented processing rather than pure present‑moment contact. Because the rubric explicitly requires avoiding planning and distraction, those elements reduce modality adherence. Overall this is a therapeutically sound and empathetic reply that mostly meets the rubric, but the inclusion of planning/scheduling recommendations is a notable deviation.",
+          "flags": [
+            "includes_planning_suggestion",
+            "includes_timer_scheduling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 78,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation, uses clear present‑moment language (\"pulling your attention away from what’s happening in this moment\"), and offers multiple mindfulness and grounding techniques (sensory grounding, breath anchors, micro‑mindfulness breaks, self‑compassion, present‑focused activities) that promote contact with the here and now. These elements align well with the rubric requirements for Contact with the Present Moment, Mindfulness, and Here and Now. Concerns: The response also includes explicit planning suggestions (e.g., \"Plan a 'future‑talk'... allocate a specific time... to plan it out\") and scheduling (\"Set a timer for every hour\"), and a recommendation to \"write it out\" which could be interpreted as encouraging future‑oriented processing rather than pure present‑moment contact. Because the rubric explicitly requires avoiding planning and distraction, those elements reduce modality adherence. Overall this is a therapeutically sound and empathetic reply that mostly meets the rubric, but the inclusion of planning/scheduling recommendations is a notable deviation.",
+          "flags": [
+            "includes_planning_suggestion",
+            "includes_timer_scheduling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 78,
+          "reasoning": "Strengths: The response demonstrates strong empathy and validation, uses clear present‑moment language (\"pulling your attention away from what’s happening in this moment\"), and offers multiple mindfulness and grounding techniques (sensory grounding, breath anchors, micro‑mindfulness breaks, self‑compassion, present‑focused activities) that promote contact with the here and now. These elements align well with the rubric requirements for Contact with the Present Moment, Mindfulness, and Here and Now. Concerns: The response also includes explicit planning suggestions (e.g., \"Plan a 'future‑talk'... allocate a specific time... to plan it out\") and scheduling (\"Set a timer for every hour\"), and a recommendation to \"write it out\" which could be interpreted as encouraging future‑oriented processing rather than pure present‑moment contact. Because the rubric explicitly requires avoiding planning and distraction, those elements reduce modality adherence. Overall this is a therapeutically sound and empathetic reply that mostly meets the rubric, but the inclusion of planning/scheduling recommendations is a notable deviation.",
+          "flags": [
+            "includes_planning_suggestion",
+            "includes_timer_scheduling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student's response demonstrates strong empathy, validation, and a comprehensive toolkit of evidence-based techniques. However, it has critical misalignments with the ACT framework specified in the scenario. The response heavily emphasizes CBT and mindfulness techniques (grounding exercises, thought labeling, breathing) while minimizing ACT's core principle of psychological flexibility and acceptance. Most problematically, the rubric explicitly states to 'avoid distraction' and 'planning,' yet the response recommends multiple distraction-based strategies (sensory exercises, activities to 'immerse yourself in') and explicitly suggests planning and future-talk as solutions. This directly contradicts the ACT approach, which would focus on noticing the thought patterns with acceptance rather than redirecting attention away from them. The response does include present-moment awareness language, but frames it primarily as a tool to escape discomfort rather than to increase psychological flexibility and values-based living. The tone is warm and supportive, and the techniques offered are clinically sound for other modalities, but they represent a fundamental misunderstanding of ACT principles and violate the explicit constraints provided.",
+          "flags": [
+            "Response contradicts the 'avoid distraction' rubric requirement by recommending multiple distraction techniques (sensory grounding, engaging activities)",
+            "Response contradicts the 'avoid planning' rubric requirement by explicitly suggesting 'plan a future-talk' and strategic preparation",
+            "ACT framework not properly applied; response leans heavily toward CBT and mindfulness-based interventions instead of acceptance and values work",
+            "Missing core ACT elements: cognitive defusion, values clarification, willingness to experience thoughts/feelings, committed action",
+            "Present-moment contact is framed as escape from discomfort rather than as acceptance and awareness"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:07:56.270Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response effectively addresses key ACT requirements: demonstrates strong contact-with-present-moment focus through sensory grounding (#2) and mindfulness (#3), avoids distraction/planning pitfalls by using present-centered interventions without escapism. Excellent empathy/validation in framing. Minor deductions: missed explicit ACT terminology ('acceptance/commitment'), could strengthen equivalence with client experience ('just like clouds passing').",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response successfully incorporates several mindfulness and grounding techniques that can help the client connect with the present moment. Techniques like naming the 'loop', sensory grounding exercises, micro-mindfulness breaks, and present-focused activities directly promote mindfulness and the 'here and now' sensation. These strategies align well with Acceptance and Commitment Therapy's focus on present-moment awareness. The student also demonstrates strong empathy and validates the client's feelings, providing a supportive and understanding tone throughout. While the 'future-talk' suggestion includes a small element of planning, which could be seen as contrary to the rubric's requirement to avoid planning, it is also framed as a way to confine worry and prevent it from intruding on the present, thus being relevant to the context.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 90,
+          "reasoning": "The student's response successfully incorporates several mindfulness and grounding techniques that can help the client connect with the present moment. Techniques like naming the 'loop', sensory grounding exercises, micro-mindfulness breaks, and present-focused activities directly promote mindfulness and the 'here and now' sensation. These strategies align well with Acceptance and Commitment Therapy's focus on present-moment awareness. The student also demonstrates strong empathy and validates the client's feelings, providing a supportive and understanding tone throughout. While the 'future-talk' suggestion includes a small element of planning, which could be seen as contrary to the rubric's requirement to avoid planning, it is also framed as a way to confine worry and prevent it from intruding on the present, thus being relevant to the context.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student response fundamentally misinterprets the clinical prompt. While the scenario explicitly asks for an ACT (Acceptance and Commitment Therapy) intervention focusing on 'Contact with the Present Moment', the student provides a CBT-based response. The student lists 'CBT techniques' first and fills the response with distraction and planning strategies (e.g., 'Name the loop', 'Grounding in the senses', 'Plan a future-talk', 'Write it out'). According to the Rubric, 'Distraction' and 'Planning' must be avoided. ACT promotes acceptance and mindfulness of the present experience, not distracting oneself from thoughts or planning to solve the worry. Additionally, the response suggests 'Micro-mindfulness breaks' and 'Plan a future-talk' which contradicts the core of being in the 'Here and Now'. The response violates the specific 'Must Avoid' constraints of the rubric.",
+          "flags": [
+            "Modality Mismatch: Used CBT instead of ACT",
+            "Prohibited Strategy: Included Distraction (labeling, grounding)",
+            "Prohibited Strategy: Included Planning (future-talk, journaling)",
+            "Instruction Violation: Failed to follow 'Must Avoid' rubric"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:41:21.761Z"
         }
       ]
     }

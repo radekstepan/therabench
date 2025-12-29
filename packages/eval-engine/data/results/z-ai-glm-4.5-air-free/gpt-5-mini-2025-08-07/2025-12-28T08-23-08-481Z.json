@@ -36,6 +36,130 @@
             "modalityAdherence": 30
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 45,
+          "reasoning": "The student response shows good basic therapeutic stance: gratitude, validation, normalization, and useful curiosity (asks about guilt and antecedents). This demonstrates empathy and keeps the conversation exploratory. However, it fails to meet the rubric requirements. It does not explicitly teach or prompt the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) or name/use that acronym; it does not provide or coach specific impulse-control techniques; and it does not explicitly instruct the client to 'step back' or offer a concrete behavioral step to create space between trigger and reaction. The reply references 'creating space between the trigger and your response,' which gestures toward a skill but is too vague to satisfy the rubric's requirement to include STOP/step-back/impulse-control content. The response avoids the prohibited content (it does not suggest a 'time out for kids' or generic anger-management platitudes), which is positive. Overall the reply is empathetic and safe but does not adequately adhere to the DBT modality requirements specified.",
+          "flags": [
+            "missing_STOP_skill",
+            "missing_explicit_step_back_instruction",
+            "missing_impulse_control_strategy"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 45,
+          "reasoning": "The student response shows good basic therapeutic stance: gratitude, validation, normalization, and useful curiosity (asks about guilt and antecedents). This demonstrates empathy and keeps the conversation exploratory. However, it fails to meet the rubric requirements. It does not explicitly teach or prompt the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) or name/use that acronym; it does not provide or coach specific impulse-control techniques; and it does not explicitly instruct the client to 'step back' or offer a concrete behavioral step to create space between trigger and reaction. The reply references 'creating space between the trigger and your response,' which gestures toward a skill but is too vague to satisfy the rubric's requirement to include STOP/step-back/impulse-control content. The response avoids the prohibited content (it does not suggest a 'time out for kids' or generic anger-management platitudes), which is positive. Overall the reply is empathetic and safe but does not adequately adhere to the DBT modality requirements specified.",
+          "flags": [
+            "missing_STOP_skill",
+            "missing_explicit_step_back_instruction",
+            "missing_impulse_control_strategy"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 45,
+          "reasoning": "The student response shows good basic therapeutic stance: gratitude, validation, normalization, and useful curiosity (asks about guilt and antecedents). This demonstrates empathy and keeps the conversation exploratory. However, it fails to meet the rubric requirements. It does not explicitly teach or prompt the DBT STOP skill (Stop, Take a step back, Observe, Proceed mindfully) or name/use that acronym; it does not provide or coach specific impulse-control techniques; and it does not explicitly instruct the client to 'step back' or offer a concrete behavioral step to create space between trigger and reaction. The reply references 'creating space between the trigger and your response,' which gestures toward a skill but is too vague to satisfy the rubric's requirement to include STOP/step-back/impulse-control content. The response avoids the prohibited content (it does not suggest a 'time out for kids' or generic anger-management platitudes), which is positive. Overall the reply is empathetic and safe but does not adequately adhere to the DBT modality requirements specified.",
+          "flags": [
+            "missing_STOP_skill",
+            "missing_explicit_step_back_instruction",
+            "missing_impulse_control_strategy"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathy and psychoeducation skills, appropriately normalizing the client's experience and introducing the concept of amygdala hijack. However, the response has significant gaps in DBT-specific interventions. The rubric explicitly requires inclusion of the STOP skill, impulse control strategies, and stepping back techniques—all core DBT distress tolerance tools. The student asks good exploratory questions about patterns and guilt, but fails to provide concrete, actionable DBT skills the client can use immediately when triggered. The response leans toward psychoeducation and exploration rather than skills-building, which is inconsistent with DBT's action-oriented approach. While the student correctly avoids generic anger management advice and doesn't inappropriately suggest time-outs for children, the absence of required DBT skills represents a missed opportunity for practical intervention.",
+          "flags": [
+            "Missing STOP skill instruction (core DBT distress tolerance tool)",
+            "No explicit impulse control strategy provided",
+            "No 'step back' technique introduced",
+            "Response is more exploratory/psychoeducational than skills-building",
+            "Lacks concrete, immediately actionable intervention for the described trigger"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 88,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:23:52.038Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong empathy, validation, and therapeutically appropriate exploration of antecedents and consequences ('typically happens after...', 'moments like just before'). Using the concept of 'amygdala hijack' helps normalize the experience and introduces emotional neuroscience appropriately. However, it critically fails to meet core rubric requirements. The response must include explicit mention of the DBT STOP skill (Stop, Take a step back, Observe, Proceed Mindfully) and concepts of impulse control/stepping back. While exploring patterns is useful DBT practice, the student missed the crucial opportunity to introduce a concrete, applicable DBT tool requested in the rubric. The student avoids forbidden elements like 'time out for kids' and generic anger advice.",
+          "flags": [
+            "Missing required DBT skill: STOP Skill",
+            "Missing explicit mention of impulse control intervention",
+            "Missing explicit instruction to 'step back' (physically/mentally)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates empathy and a basic understanding of the situation, validating the parent's feelings and mentioning the concept of 'amygdala hijack.' However, it lacks the specific DBT components required by the rubric: the STOP skill, impulse control, and guidance on how to step back in the moment. Although the response avoids the pitfalls mentioned in the rubric (time out for kids, generic anger management advice), it falls short on delivering the prescribed DBT methodology which includes specific skills to manage the intense reactions.",
+          "flags": [],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates empathy and a basic understanding of the situation, validating the parent's feelings and mentioning the concept of 'amygdala hijack.' However, it lacks the specific DBT components required by the rubric: the STOP skill, impulse control, and guidance on how to step back in the moment. Although the response avoids the pitfalls mentioned in the rubric (time out for kids, generic anger management advice), it falls short on delivering the prescribed DBT methodology which includes specific skills to manage the intense reactions.",
+          "flags": [],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrated strong empathy and built a solid therapeutic alliance by validating the client's experience and explaining the biological mechanism (amygdala hijack). However, the response failed to adhere to the specific requirements of the DBT scenario rubric. The student did not introduce or suggest the required STOP skill or discuss impulse control strategies explicitly. Instead of providing a concrete modality-specific tool, the response remained停留在 assessment and exploration. Consequently, while safe and empathetic, the intervention lacks the necessary actionable DBT components.",
+          "flags": [
+            "Missing STOP skill intervention",
+            "Missing impulse control strategies",
+            "Low modality adherence"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:05:41.368Z"
         }
       ]
     }

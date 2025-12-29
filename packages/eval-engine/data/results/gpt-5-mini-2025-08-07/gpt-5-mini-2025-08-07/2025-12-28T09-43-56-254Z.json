@@ -32,6 +32,126 @@
             "modalityAdherence": 70
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
+          "flags": [
+            "used_emotion_regulation_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
+          "flags": [
+            "used_emotion_regulation_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student identified emotional reasoning and fortune‑telling, invited an evidence-for/against reality test, and provided a clear cognitive restructuring (quick reframe). Tone is empathetic and appropriately normalizing, and offering to do a brief exercise collaboratively is good practice. Weaknesses: The response includes explicit emotion‑regulation techniques (grounding and paced breathing). Per the rubric, emotion regulation techniques were to be avoided; their inclusion is a clear violation and requires score reduction. Overall, core CBT elements required by the rubric are present and well executed, but the forbidden content lowers the overall rating.",
+          "flags": [
+            "used_emotion_regulation_techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 45,
+          "reasoning": "The student response demonstrates strong empathy and validation but significantly fails the rubric requirements. While the response mentions 'emotional reasoning' by name and attempts cognitive restructuring through reframing, it critically violates the 'Must Avoid' category by heavily emphasizing emotion regulation techniques (grounding, breathing exercises, box breathing). The rubric explicitly states to AVOID emotion regulation techniques, yet these comprise a substantial portion of the response. Additionally, the 'evidence for vs. against' requirement is only mentioned as an optional activity to do together rather than being actively demonstrated or completed by the therapist in the moment. The response reads more like a psychoeducational handout than a focused CBT intervention. The cognitive work is present but diluted by the emphasis on affect regulation strategies. The compassion-based closing is appropriate but doesn't compensate for the structural violations of the rubric constraints.",
+          "flags": [
+            "CRITICAL: Extensive use of emotion regulation techniques (grounding, breathing, box breathing) directly contradicts 'Must Avoid' instruction",
+            "Evidence for/against is offered as optional future activity rather than actively engaged with in the response",
+            "Response is lengthy and unfocused for a CBT intervention - too many simultaneous strategies",
+            "Emotional reasoning is identified but not deeply explored or challenged",
+            "The response prioritizes validation and technique-teaching over targeted cognitive work"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 32
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:38:58.332Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student demonstrates strong CBT application: correctly identifies emotional reasoning and fortune-telling distortion, provides clear cognitive restructuring ('Quick reframe'), incorporates evidence-for/against reality testing, offers structured collaborative behavioral strategies, and maintains empathetic framing ('That sounds really hard'). Major deduction (-15 points) occurs for including prohibited emotion regulation techniques (grounding, breathing) under rubric's 'Must Avoid'. Other elements show clinical sophistication: validating while redirecting cognitive focus, providing actionable test-taking strategies, and ending with collaborative choice.",
+          "flags": [
+            "Included prohibited emotion regulation techniques (grounding/breathing)",
+            "Modality adherence impacted by rubric violation"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student response effectively addresses the client's cognitive distortions and provides practical strategies for cognitive restructuring. The concepts of emotional reasoning and fortune-telling are clearly identified, with a strong emphasis on differentiating between emotions and evidence. The inclusion of reframing techniques and an evidence-for-versus-evidence-against exercise supports cognitive restructuring. However, the response includes emotion regulation techniques such as grounding and breathing exercises, which are outside the scope according to the rubric. It could be improved by focusing more on the cognitive aspects and slightly less on emotion regulation.",
+          "flags": [
+            "Includes emotion regulation techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student response effectively addresses the client's cognitive distortions and provides practical strategies for cognitive restructuring. The concepts of emotional reasoning and fortune-telling are clearly identified, with a strong emphasis on differentiating between emotions and evidence. The inclusion of reframing techniques and an evidence-for-versus-evidence-against exercise supports cognitive restructuring. However, the response includes emotion regulation techniques such as grounding and breathing exercises, which are outside the scope according to the rubric. It could be improved by focusing more on the cognitive aspects and slightly less on emotion regulation.",
+          "flags": [
+            "Includes emotion regulation techniques"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student successfully included the required elements: identifying emotional reasoning as a cognitive distortion, suggesting evidence for/against exercises, and providing cognitive restructuring through reframing. They appropriately showed empathy and avoided validation-only responses and 'trust your gut' approaches. However, they explicitly included emotion regulation techniques (5-4-3-2-1 grounding and box breathing) which the rubric specifically states must be avoided. Additionally, they included test-taking tips which, while potentially helpful, go beyond the scope of typical CBT practice. The response demonstrates good CBT knowledge but missed a critical requirement of the rubric.",
+          "flags": [
+            "Included emotion regulation techniques (grounding, breathing exercises) which were explicitly to be avoided per the rubric",
+            "Included test-taking tips that go beyond typical CBT approach"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:44:58.645Z"
         }
       ]
     }

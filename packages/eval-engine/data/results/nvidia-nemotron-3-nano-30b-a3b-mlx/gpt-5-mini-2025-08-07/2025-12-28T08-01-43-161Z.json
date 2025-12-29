@@ -34,6 +34,133 @@
             "modalityAdherence": 40
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student demonstrates strong therapeutic skill—clear empathic tone, validation, a safety check, and multiple Socratic questions (e.g., \"Has there ever been a time when I overcame a similar challenge?\", \"What strengths, experiences, and values still remain?\"). The response explicitly addresses overgeneralization by naming absolute language (\"never,\" \"completely\") and includes an evidence‑examining exercise that tests the validity of the thought. These elements satisfy the required CBT components (Socratic questioning, overgeneralization, and assessing validity).\n\nConcerns: The response also includes concrete career counseling (resume edits, networking, industry research, setting job‑search hours) and an explicit values‑clarification invitation. Both items are listed in the rubric as Must Avoid. Offering actionable job‑search strategies and prompting values clarification moves beyond a CBT therapeutic stance into career counseling and vocational guidance, which is a direct violation of the constraint. Because those breaches are substantive, the overall score is reduced despite the strong CBT work and empathic tone.",
+          "flags": [
+            "career_counseling",
+            "values_clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student demonstrates strong therapeutic skill—clear empathic tone, validation, a safety check, and multiple Socratic questions (e.g., \"Has there ever been a time when I overcame a similar challenge?\", \"What strengths, experiences, and values still remain?\"). The response explicitly addresses overgeneralization by naming absolute language (\"never,\" \"completely\") and includes an evidence‑examining exercise that tests the validity of the thought. These elements satisfy the required CBT components (Socratic questioning, overgeneralization, and assessing validity).\n\nConcerns: The response also includes concrete career counseling (resume edits, networking, industry research, setting job‑search hours) and an explicit values‑clarification invitation. Both items are listed in the rubric as Must Avoid. Offering actionable job‑search strategies and prompting values clarification moves beyond a CBT therapeutic stance into career counseling and vocational guidance, which is a direct violation of the constraint. Because those breaches are substantive, the overall score is reduced despite the strong CBT work and empathic tone.",
+          "flags": [
+            "career_counseling",
+            "values_clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student demonstrates strong therapeutic skill—clear empathic tone, validation, a safety check, and multiple Socratic questions (e.g., \"Has there ever been a time when I overcame a similar challenge?\", \"What strengths, experiences, and values still remain?\"). The response explicitly addresses overgeneralization by naming absolute language (\"never,\" \"completely\") and includes an evidence‑examining exercise that tests the validity of the thought. These elements satisfy the required CBT components (Socratic questioning, overgeneralization, and assessing validity).\n\nConcerns: The response also includes concrete career counseling (resume edits, networking, industry research, setting job‑search hours) and an explicit values‑clarification invitation. Both items are listed in the rubric as Must Avoid. Offering actionable job‑search strategies and prompting values clarification moves beyond a CBT therapeutic stance into career counseling and vocational guidance, which is a direct violation of the constraint. Because those breaches are substantive, the overall score is reduced despite the strong CBT work and empathic tone.",
+          "flags": [
+            "career_counseling",
+            "values_clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong foundational CBT skills with excellent empathy and validation. However, the response has significant structural and content issues that limit its effectiveness. While the student addresses overgeneralization well (identifying 'never,' 'completely,' and absolutist thinking), Socratic questioning is largely absent—the response tells rather than asks. The therapist provides interpretations and reframes but misses opportunities to guide the client through discovery via questions like 'What evidence contradicts this thought?' or 'Have you known others with resume gaps who found work?' The response also violates the rubric by including substantial career counseling (resume bullet points, job search strategies, networking advice) and values clarification ('What kind of work would feel fulfilling?'). While the validity of the thought is acknowledged ('It makes sense that this gap feels like a roadblock'), there's insufficient exploration of the gap's actual impact versus the catastrophic interpretation. The self-compassion practices and concrete steps are therapeutic, but they shift toward problem-solving and coaching rather than pure CBT exploration. The response is well-organized, warm, and safety-conscious, but it overreaches beyond the core therapeutic work needed in this moment.",
+          "flags": [
+            "Insufficient Socratic questioning—therapist tells rather than asks; minimal guided discovery",
+            "Violates rubric: includes career counseling content (resume updates, job search strategies, networking)",
+            "Violates rubric: includes values clarification ('what kind of work would feel fulfilling')",
+            "Exploration of thought validity is present but superficial; lacks deeper questioning about evidence",
+            "Response is overly long and prescriptive; risks overwhelming client and reducing collaborative exploration",
+            "Concrete 'next steps' table reads more like career coaching than CBT intervention"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:05:06.001Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively addresses core CBT elements by planning validation of emotions, challenging overgeneralization distortions ('never,' 'completely'), and examining thought validity through evidence-testing. It includes empathetic framing without judgement and aligns with CBT principles through cognitive restructuring and behavioral activation via small steps. Strengths: Clearly targets hopelessness, offers concrete strategies (reframing gaps), and encourages self-compassion. Weaknesses: Lacks explicit mention of Socratic questioning methodology and relies entirely on implied exploration rather than specified open-ended questions.",
+          "flags": [
+            "Strategically cautious: Skill-building/networking suggestions approach but do not cross into career counseling territory",
+            "Opportunity: Could enhance Socratic questioning depth by modeling inquiry into evidence/alternatives"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates a good level of empathy and understanding of the client's distress about the gap in their resume. The response effectively uses various elements of Cognitive Behavioral Therapy (CBT), such as addressing cognitive distortions (overgeneralization) and engaging in a process of gently challenging the client's negative thoughts. However, it somewhat strays into areas that are not strictly part of the therapeutic setting, like specific career advice and values clarification, which are flagged to be avoided in this context. Additionally, while the response does incorporate elements of Socratic questioning and challenges the validity of the client's thought, it could have been more explicit in incorporating these elements to align fully with CBT techniques.",
+          "flags": [
+            "Career counseling",
+            "Values clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student's response demonstrates a good level of empathy and understanding of the client's distress about the gap in their resume. The response effectively uses various elements of Cognitive Behavioral Therapy (CBT), such as addressing cognitive distortions (overgeneralization) and engaging in a process of gently challenging the client's negative thoughts. However, it somewhat strays into areas that are not strictly part of the therapeutic setting, like specific career advice and values clarification, which are flagged to be avoided in this context. Additionally, while the response does incorporate elements of Socratic questioning and challenges the validity of the client's thought, it could have been more explicit in incorporating these elements to align fully with CBT techniques.",
+          "flags": [
+            "Career counseling",
+            "Values clarification"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong therapeutic skills overall, with good use of validation and empathy. The response correctly includes Socratic questioning ('Has there ever been a time when I overcame a similar challenge?', 'What have I learned from past gaps?'), identifies overgeneralization (pointing out the 'never' and 'completely' absolutes), and validates the client's thoughts ('It's completely normal to feel discouraged'). However, the response fails to avoid two prohibited elements: 1) Career counseling is present in the 'Concrete, Low-Pressure Next Steps' section, which includes direct resume advice, networking suggestions, and industry research. 2) Values clarification appears in the 'Exploring Future Vision' section where the response discusses clarifying values like autonomy, creativity, and impact. While the therapeutic techniques are well-executed, the inclusion of these prohibited elements significantly impacts modality adherence.",
+          "flags": [
+            "Career counseling content present",
+            "Values clarification included",
+            "Practical job search advice goes beyond CBT scope"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:26:13.654Z"
         }
       ]
     }

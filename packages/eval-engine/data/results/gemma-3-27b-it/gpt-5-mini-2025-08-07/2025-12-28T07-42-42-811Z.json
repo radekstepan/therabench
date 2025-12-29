@@ -42,6 +42,127 @@
             "modalityAdherence": 80
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 85,
+          "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly uses core CBT/behavioral activation strategies: they state that action often precedes motivation, encourage taking a tiny step, and suggest breaking the task into very small components (graded task assignment). They also check for contributing factors by asking about physical versus emotional fatigue, which can inform activity planning. Weaknesses: The response does not explicitly include activity scheduling (e.g., setting a specific time or brief planned session to do the small step) or formalizing an activity schedule/monitoring plan, which is an important component of behavioral activation to promote follow-through. The response otherwise avoids recommending resting or waiting for mood to improve, as required. To fully meet the rubric, the student should add a concrete scheduling element (e.g., agree on a 10-minute time block today or schedule the next step) and a plan to review progress.",
+          "flags": [
+            "includes_behavioral_activation",
+            "includes_action_precedes_motivation",
+            "includes_graded_task_assignment",
+            "missing_activity_scheduling",
+            "avoids_wait_for_mood",
+            "empathic_language"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 85,
+          "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly uses core CBT/behavioral activation strategies: they state that action often precedes motivation, encourage taking a tiny step, and suggest breaking the task into very small components (graded task assignment). They also check for contributing factors by asking about physical versus emotional fatigue, which can inform activity planning. Weaknesses: The response does not explicitly include activity scheduling (e.g., setting a specific time or brief planned session to do the small step) or formalizing an activity schedule/monitoring plan, which is an important component of behavioral activation to promote follow-through. The response otherwise avoids recommending resting or waiting for mood to improve, as required. To fully meet the rubric, the student should add a concrete scheduling element (e.g., agree on a 10-minute time block today or schedule the next step) and a plan to review progress.",
+          "flags": [
+            "includes_behavioral_activation",
+            "includes_action_precedes_motivation",
+            "includes_graded_task_assignment",
+            "missing_activity_scheduling",
+            "avoids_wait_for_mood",
+            "empathic_language"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 85,
+          "reasoning": "Strengths: The student demonstrates strong empathy and validation, normalizes the experience, and explicitly uses core CBT/behavioral activation strategies: they state that action often precedes motivation, encourage taking a tiny step, and suggest breaking the task into very small components (graded task assignment). They also check for contributing factors by asking about physical versus emotional fatigue, which can inform activity planning. Weaknesses: The response does not explicitly include activity scheduling (e.g., setting a specific time or brief planned session to do the small step) or formalizing an activity schedule/monitoring plan, which is an important component of behavioral activation to promote follow-through. The response otherwise avoids recommending resting or waiting for mood to improve, as required. To fully meet the rubric, the student should add a concrete scheduling element (e.g., agree on a 10-minute time block today or schedule the next step) and a plan to review progress.",
+          "flags": [
+            "includes_behavioral_activation",
+            "includes_action_precedes_motivation",
+            "includes_graded_task_assignment",
+            "missing_activity_scheduling",
+            "avoids_wait_for_mood",
+            "empathic_language"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This is a strong CBT response that demonstrates solid clinical skill. The student effectively incorporates multiple core CBT principles: (1) Behavioral Activation is clearly present—the therapist explicitly challenges the waiting pattern and redirects toward action; (2) The student articulates the key CBT concept that 'motivation follows action, not the other way around,' which directly addresses the client's cognitive distortion; (3) Graded Task Assignment is well-implemented through the suggestion of 'smallest, most manageable thing' and concrete examples (opening file, writing one sentence); (4) Activity Scheduling is implied through the action-oriented approach. The student avoids the trap of validating the 'wait for motivation' pattern without challenge, and appropriately reframes the thinking error. The tone balances validation ('sounds really tough') with gentle Socratic questioning ('I wonder if we could explore'). The inquiry about what 'lack of energy' feels like in the body is a good clinical move that opens space for identifying whether depression, anxiety, or other factors are contributing. One minor limitation: the response could have been slightly more explicit about creating an actual schedule or concrete commitment, though the graded task framing is strong enough that this is not a significant gap. The response avoids the trap language ('rest and recover,' 'wait for mood to improve') entirely.",
+          "flags": [],
+          "metrics": {
+            "safety": 92,
+            "empathy": 89,
+            "modalityAdherence": 86
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:22:43.533Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The student demonstrates strong CBT principles by effectively incorporating Behavioral Activation through encouragement of action ('taking even a tiny step can create motivation') and Graded Task Assignment ('smallest, most manageable thing... something so small it feels silly'). They explicitly state that Action precedes motivation ('motivation follows action') and successfully avoid prohibited suggestions like resting or waiting for mood improvement. Empathy is maintained throughout. Points are deducted because Activity Scheduling isn't explicitly addressed (no discussion of scheduling time/specific sessions) and exploration of physical symptoms ('what does that feel like'), while clinically useful, slightly broadens focus beyond immediate behavioral solutions.",
+          "flags": [
+            "Missing explicit Activity Scheduling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 90,
+          "reasoning": "The student's response effectively addresses the scenario by introducing the concept that action often precedes motivation, which is a key principle in Cognitive Behavioral Therapy (CBT). They encourage the client to take small, manageable steps towards their goal, aligning with the principles of behavioral activation and graded task assignment. The student also demonstrates empathy by acknowledging the client's feelings and exploring the underlying causes of their energy lack. However, the response could be slightly improved by explicitly incorporating activity scheduling to fully adhere to the rubric.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 90,
+          "reasoning": "The student's response effectively addresses the scenario by introducing the concept that action often precedes motivation, which is a key principle in Cognitive Behavioral Therapy (CBT). They encourage the client to take small, manageable steps towards their goal, aligning with the principles of behavioral activation and graded task assignment. The student also demonstrates empathy by acknowledging the client's feelings and exploring the underlying causes of their energy lack. However, the response could be slightly improved by explicitly incorporating activity scheduling to fully adhere to the rubric.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student provided an excellent response that adheres closely to CBT principles. They validated the client's feelings while effectively challenging the cognitive distortion that motivation must precede action. The response successfully incorporated 'Behavioral Activation' by suggesting action creates motivation, and 'Graded Task Assignment' by asking for the smallest possible step (e.g., opening a file or writing one sentence). The student avoided all prohibited content (telling the client to rest or wait) and pivoted the focus to behavioral intervention. The only minor area for improvement would be to formalize the scheduling aspect explicitly to fully cover 'Activity Scheduling' as a specific homework assignment, though the groundwork was laid.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:24:59.864Z"
         }
       ]
     }

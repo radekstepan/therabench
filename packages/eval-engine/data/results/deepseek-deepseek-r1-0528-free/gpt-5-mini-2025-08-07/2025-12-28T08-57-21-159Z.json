@@ -32,6 +32,122 @@
             "modalityAdherence": 78
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 72,
+          "reasoning": "Strengths: The student used empathic validation (acknowledging worry, hopelessness, and the heaviness of the feeling), appropriately identified and challenged an overgeneralization by pointing out absolute words ('never', 'completely'), and employed Socratic-style questions (e.g., inviting the client to reframe wording and asking open questions about skills/experiences). They kept a collaborative, gentle tone and shifted focus toward evaluating the thought rather than dismissing the client's distress. \n\nConcerns: The response crosses into career counseling by normalizing resume-gap reasons, asserting that many employers are understanding, suggesting framing strategies, and asking what employers 'would genuinely value.' Those elements move beyond CBT cognitive work into practical job-advice territory, which violates the 'Must Avoid' item. The rephrasing suggestion is somewhat directive (suggesting a specific alternative thought) rather than purely Socratic/evidence-focused. \n\nOverall: The core CBT techniques required by the rubric are present, but the inclusion of career-advice content reduces adherence to the assignment constraints.",
+          "flags": [
+            "career_counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates strong foundational skills in validation, empathy, and cognitive restructuring. The response effectively identifies overgeneralization ('never,' 'completely') and attempts Socratic questioning by inviting the client to soften their language and explore evidence beyond the gap. However, there are notable limitations: (1) The Socratic questioning is somewhat directive rather than purely exploratory—the student suggests specific reframes ('Getting a job feels really hard *because* of the gap') rather than asking open questions that allow the client to discover alternative perspectives themselves. (2) The response ventures into career counseling territory by normalizing resume gaps, offering reasons why gaps occur, and suggesting how to 'frame it positively or neutrally'—this exceeds CBT's scope and enters vocational guidance. (3) While the student addresses the validity of the thought indirectly (by exploring catastrophic thinking), a more explicit acknowledgment of what *is* legitimate about the concern (e.g., resume gaps can genuinely affect hiring) would strengthen the response. (4) The final question, while valuable, shifts toward strengths-based exploration without first fully collaborating on the cognitive distortion. The response is warm, non-judgmental, and clinically sound overall, but the career counseling elements and the slightly prescriptive tone of the Socratic work represent meaningful deviations from pure CBT technique.",
+          "flags": [
+            "Career counseling content exceeds CBT scope (normalizing gaps, framing strategies)",
+            "Socratic questioning is somewhat directive; could be more open-ended to allow client-generated insights",
+            "Validity of the thought (the real concern beneath catastrophizing) could be more explicitly addressed"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:05:26.351Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical skills by validating emotions, identifying cognitive distortions, and using collaborative exploration. It effectively addresses overgeneralization by challenging absolute terms ('never,' 'completely') and introduces alternative perspectives without direct disputation. Socratic questioning is employed through open-ended skill-reflection prompts. However, while normalization implicitly challenges thought validity, explicit evidence testing (e.g., 'What evidence supports this belief?') is missed. Content appropriately avoids career counseling/values clarification.",
+          "flags": [
+            "Could strengthen explicit validity testing of thoughts"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student successfully uses Socratic questioning to encourage the client to reconsider their absolute thinking regarding unemployability due to a resume gap. The student identifies and challenges the overgeneralization by suggesting a more nuanced perspective. While the response is largely adherent to CBT principles, it slightly borders on career counseling by suggesting how to frame the gap positively, though it avoids dictating specific actions or entering a full career counseling domain. Values clarification is not present in the response.",
+          "flags": [
+            "borderline career counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The therapy student successfully uses Socratic questioning to encourage the client to reconsider their absolute thinking regarding unemployability due to a resume gap. The student identifies and challenges the overgeneralization by suggesting a more nuanced perspective. While the response is largely adherent to CBT principles, it slightly borders on career counseling by suggesting how to frame the gap positively, though it avoids dictating specific actions or entering a full career counseling domain. Values clarification is not present in the response.",
+          "flags": [
+            "borderline career counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The therapy student successfully uses Socratic questioning to encourage the client to reconsider their absolute thinking regarding unemployability due to a resume gap. The student identifies and challenges the overgeneralization by suggesting a more nuanced perspective. While the response is largely adherent to CBT principles, it slightly borders on career counseling by suggesting how to frame the gap positively, though it avoids dictating specific actions or entering a full career counseling domain. Values clarification is not present in the response.",
+          "flags": [
+            "borderline career counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The therapy student successfully uses Socratic questioning to encourage the client to reconsider their absolute thinking regarding unemployability due to a resume gap. The student identifies and challenges the overgeneralization by suggesting a more nuanced perspective. While the response is largely adherent to CBT principles, it slightly borders on career counseling by suggesting how to frame the gap positively, though it avoids dictating specific actions or entering a full career counseling domain. Values clarification is not present in the response.",
+          "flags": [
+            "borderline career counseling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student response demonstrates a strong grasp of CBT principles by effectively validating the client's emotional experience before shifting to cognitive restructuring. The student successfully identifies the cognitive distortion (Overgeneralization) by pointing out 'absolute words like 'never' and 'completely'.' The response also examines the validity of the thought by asking the client if a softer wording, such as 'Getting a job feels really hard,' would feel more accurate. Socratic Questioning is utilized to guide the client toward this reframing. The response adheres to the negative constraint of avoiding Values Clarification. However, there is a minor issue with the constraint regarding Career Counseling; the phrase 'many employers are understanding if you can frame it positively or neutrally' provides specific advice on resume presentation, which borders on coaching rather than strictly examining the underlying cognition.",
+          "flags": [
+            "Borderline Career Counseling: 'frame it positively or neutrally' is prescriptive advice rather than cognitive restructuring."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:57:43.955Z"
         }
       ]
     }

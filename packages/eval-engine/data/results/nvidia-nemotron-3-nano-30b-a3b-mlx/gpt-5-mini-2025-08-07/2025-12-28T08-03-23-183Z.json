@@ -34,6 +34,124 @@
             "modalityAdherence": 60
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 62,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, and several evidence‑based, practically useful strategies (exposure hierarchy, in‑the‑moment grounding/breathing, scripting, documentation, alternative routes). Assertiveness is addressed with concrete wording suggestions and boundary language, and the plan is behaviorally focused and objectively effective for reducing avoidance. \n\nPrimary problems relative to the rubric: the response fails to include the DBT interpersonal skill DEAR MAN (an explicit omission given the scenario and rubric requirement). It also uses the phrase “Break the ‘All‑Or‑Nothing’ Lens,” which explicitly names a cognitive‑distortion concept — the rubric required avoiding references to cognitive distortions. These two issues are critical because DEAR MAN is a core DBT interpersonal technique that should have been taught or practiced here, and explicit labeling of cognitive distortions runs counter to the rubric instruction. \n\nOverall: clinically solid and empathic, but missing the required DBT DEAR MAN component and inadvertently violating the instruction to avoid cognitive‑distortion framing. To improve: add a clear DEAR MAN script and practice role‑play of it; remove or reframe cognitive‑distortion language (focus on specific thoughts without diagnostic labels).",
+          "flags": [
+            "missing_DEAR_MAN",
+            "uses_cognitive_distortion_label_all_or_nothing"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 62,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, and several evidence‑based, practically useful strategies (exposure hierarchy, in‑the‑moment grounding/breathing, scripting, documentation, alternative routes). Assertiveness is addressed with concrete wording suggestions and boundary language, and the plan is behaviorally focused and objectively effective for reducing avoidance. \n\nPrimary problems relative to the rubric: the response fails to include the DBT interpersonal skill DEAR MAN (an explicit omission given the scenario and rubric requirement). It also uses the phrase “Break the ‘All‑Or‑Nothing’ Lens,” which explicitly names a cognitive‑distortion concept — the rubric required avoiding references to cognitive distortions. These two issues are critical because DEAR MAN is a core DBT interpersonal technique that should have been taught or practiced here, and explicit labeling of cognitive distortions runs counter to the rubric instruction. \n\nOverall: clinically solid and empathic, but missing the required DBT DEAR MAN component and inadvertently violating the instruction to avoid cognitive‑distortion framing. To improve: add a clear DEAR MAN script and practice role‑play of it; remove or reframe cognitive‑distortion language (focus on specific thoughts without diagnostic labels).",
+          "flags": [
+            "missing_DEAR_MAN",
+            "uses_cognitive_distortion_label_all_or_nothing"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 62,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, and several evidence‑based, practically useful strategies (exposure hierarchy, in‑the‑moment grounding/breathing, scripting, documentation, alternative routes). Assertiveness is addressed with concrete wording suggestions and boundary language, and the plan is behaviorally focused and objectively effective for reducing avoidance. \n\nPrimary problems relative to the rubric: the response fails to include the DBT interpersonal skill DEAR MAN (an explicit omission given the scenario and rubric requirement). It also uses the phrase “Break the ‘All‑Or‑Nothing’ Lens,” which explicitly names a cognitive‑distortion concept — the rubric required avoiding references to cognitive distortions. These two issues are critical because DEAR MAN is a core DBT interpersonal technique that should have been taught or practiced here, and explicit labeling of cognitive distortions runs counter to the rubric instruction. \n\nOverall: clinically solid and empathic, but missing the required DBT DEAR MAN component and inadvertently violating the instruction to avoid cognitive‑distortion framing. To improve: add a clear DEAR MAN script and practice role‑play of it; remove or reframe cognitive‑distortion language (focus on specific thoughts without diagnostic labels).",
+          "flags": [
+            "missing_DEAR_MAN",
+            "uses_cognitive_distortion_label_all_or_nothing"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student response demonstrates strong foundational therapeutic skills with excellent empathy, validation, and a comprehensive toolkit of coping strategies. The response is well-structured, compassionate, and appropriately explores underlying thoughts and fears. However, it has significant gaps relative to the DBT framework specified in the scenario. Most critically, the response fails to explicitly teach or apply DEAR MAN (a core DBT interpersonal effectiveness skill that is essential for this assertiveness-focused problem). While the student mentions assertiveness training and offers exposure planning, there is no direct instruction on DEAR MAN's specific structure (Describe, Express, Assert, Reinforce, stay Mindful, Appear confident, Negotiate). The response also lacks explicit emphasis on 'objective effectiveness'—the DBT principle that focuses on getting the actual need met (the heater fixed) rather than prioritizing relationship maintenance or self-validation. The exposure ladder and cognitive techniques are solid, but they lean more toward anxiety management than toward teaching assertive, effective communication as DBT would frame it. The response avoids the flagged pitfalls (no passive-aggression, no 'just move out' suggestion, and minimal cognitive distortion reinforcement), which is appropriate. The alternative resources (tenant organizations, written complaints) are helpful but should be secondary to teaching the student the core DBT skill. A stronger response would front-load DEAR MAN as the primary intervention, explicitly frame the goal as 'objective effectiveness' (getting the heater fixed), and use that to structure the assertiveness work.",
+          "flags": [
+            "CRITICAL: No explicit mention or teaching of DEAR MAN—the core DBT interpersonal effectiveness skill required for this scenario.",
+            "Missing emphasis on 'objective effectiveness' (DBT principle)—the response prioritizes anxiety reduction over teaching effective assertive communication.",
+            "The exposure hierarchy, while therapeutically sound, is framed more as anxiety management (CBT) than as DBT-informed assertiveness training.",
+            "Alternative resources (tenant organizations, formal complaints) may inadvertently reduce the focus on the student's own assertiveness capacity.",
+            "Could benefit from explicit acknowledgment that this is a DBT intervention and why DEAR MAN is the optimal tool here."
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:05:47.672Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The response demonstrates strong clinical skills with comprehensive validation, practical coping strategies, and implicit DEAR MAN structure. Strengths include: excellent exposure scaffolding, avoidance of prohibited approaches (passive-aggressive solutions or cognitive distortion reinforcement), robust anxiety psychoeducation, and tenant-rights resourcefulness. Deductions: DEAR MAN isn't explicitly named (-5), objective effectiveness could be more foregrounded (-3), and assertiveness training lacks scripted examples (-4). No flags noted for rubric violations.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student’s response effectively captures a range of therapeutic interventions aligned with Dialectical Behavior Therapy (DBT), Cognitive Behavioral Therapy (CBT), and assertiveness training. The focus is on understanding the client's emotions and thoughts, providing empathy, and suggesting reasonable steps for exposure and handling the situation. The student has subtly included elements of DEAR MAN (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) through validating emotions, strategizing communication steps, and preparing the client to assertively make the request for repair. The student avoided passive-aggressiveness, did not suggest moving out, and addressed potential cognitive distortions regarding the landlord’s possible reactions. However, more direct guidance on formulating a DEAR MAN script could have increased the adherence to this modality. Overall, the response is comprehensive and supportive.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student’s response effectively captures a range of therapeutic interventions aligned with Dialectical Behavior Therapy (DBT), Cognitive Behavioral Therapy (CBT), and assertiveness training. The focus is on understanding the client's emotions and thoughts, providing empathy, and suggesting reasonable steps for exposure and handling the situation. The student has subtly included elements of DEAR MAN (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate) through validating emotions, strategizing communication steps, and preparing the client to assertively make the request for repair. The student avoided passive-aggressiveness, did not suggest moving out, and addressed potential cognitive distortions regarding the landlord’s possible reactions. However, more direct guidance on formulating a DEAR MAN script could have increased the adherence to this modality. Overall, the response is comprehensive and supportive.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student provided a supportive and empathetic response, but fundamentally failed to adhere to the specific DBT requirements outlined in the scenario and rubric. While the response demonstrates strong general counseling skills—validation and exploration of anxiety—it relies entirely on CBT interventions (cognitive restructuring, identifying automatic thoughts, evidence gathering) rather than the required DBT skills. The rubric explicitly mandated the inclusion of 'DEAR MAN' and 'Objective effectiveness,' neither of which appear in the response. The student suggested an exposure hierarchy and general coping skills but missed the core DBT intervention for interpersonal effectiveness, which is the primary tool for this type of problem.",
+          "flags": [
+            "Missing DEAR MAN skill",
+            "Missed DBT modality requirements",
+            "CBT techniques used instead of DBT",
+            "Missing Objective effectiveness framework"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:30:05.366Z"
         }
       ]
     }

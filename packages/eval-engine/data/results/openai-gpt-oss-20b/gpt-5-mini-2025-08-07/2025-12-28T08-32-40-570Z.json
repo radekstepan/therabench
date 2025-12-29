@@ -34,6 +34,126 @@
             "modalityAdherence": 70
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response is empathic, validates the client’s fear, and offers concrete, behavioral steps (writing a message, scripts, rehearsal, safety/self-care). It includes clear assertive language suggestions (use of “I” statements, factual scripts, asking for repair time) and practical contingency responses if the landlord is negative — which supports objective effectiveness by focusing on observable facts and the desired outcome (a repair). It avoids passive‑aggressive advice, does not tell the client to simply move out, and does not introduce cognitive distortions. Weaknesses: The response does not explicitly teach or use the DBT DEAR MAN structure (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), nor does it label or explicitly frame the steps in DBT interpersonal effectiveness terms. While objective effectiveness and assertiveness are present implicitly, the rubric requested explicit inclusion of DEAR MAN and clearer framing around objective effectiveness. To improve, the student should explicitly map the suggested script and steps onto DEAR MAN (e.g., show a sample DEAR MAN script), highlight the objective effectiveness principle (stay focused on the concrete goal and criteria for success), and include brief coaching on maintaining Mindfulness and Appearing confident during the interaction.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "objective_effectiveness_not_explicit"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response is empathic, validates the client’s fear, and offers concrete, behavioral steps (writing a message, scripts, rehearsal, safety/self-care). It includes clear assertive language suggestions (use of “I” statements, factual scripts, asking for repair time) and practical contingency responses if the landlord is negative — which supports objective effectiveness by focusing on observable facts and the desired outcome (a repair). It avoids passive‑aggressive advice, does not tell the client to simply move out, and does not introduce cognitive distortions. Weaknesses: The response does not explicitly teach or use the DBT DEAR MAN structure (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), nor does it label or explicitly frame the steps in DBT interpersonal effectiveness terms. While objective effectiveness and assertiveness are present implicitly, the rubric requested explicit inclusion of DEAR MAN and clearer framing around objective effectiveness. To improve, the student should explicitly map the suggested script and steps onto DEAR MAN (e.g., show a sample DEAR MAN script), highlight the objective effectiveness principle (stay focused on the concrete goal and criteria for success), and include brief coaching on maintaining Mindfulness and Appearing confident during the interaction.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "objective_effectiveness_not_explicit"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response is empathic, validates the client’s fear, and offers concrete, behavioral steps (writing a message, scripts, rehearsal, safety/self-care). It includes clear assertive language suggestions (use of “I” statements, factual scripts, asking for repair time) and practical contingency responses if the landlord is negative — which supports objective effectiveness by focusing on observable facts and the desired outcome (a repair). It avoids passive‑aggressive advice, does not tell the client to simply move out, and does not introduce cognitive distortions. Weaknesses: The response does not explicitly teach or use the DBT DEAR MAN structure (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), nor does it label or explicitly frame the steps in DBT interpersonal effectiveness terms. While objective effectiveness and assertiveness are present implicitly, the rubric requested explicit inclusion of DEAR MAN and clearer framing around objective effectiveness. To improve, the student should explicitly map the suggested script and steps onto DEAR MAN (e.g., show a sample DEAR MAN script), highlight the objective effectiveness principle (stay focused on the concrete goal and criteria for success), and include brief coaching on maintaining Mindfulness and Appearing confident during the interaction.",
+          "flags": [
+            "missing_DEAR_MAN",
+            "objective_effectiveness_not_explicit"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student's response demonstrates strong empathy, validation, and practical problem-solving skills. However, it falls short of DBT fidelity by not explicitly teaching or applying DEAR MAN, a core DBT interpersonal effectiveness skill that is essential for this scenario. The response is well-structured with helpful scaffolding (tables, scripts, scenarios) and avoids major pitfalls like dismissiveness or cognitive distortions. The practical steps are concrete and build confidence. However, for a DBT-focused intervention, the absence of formal DEAR MAN framework (Describe, Express, Assert, Reinforce, stay Mind-ful, Appear confident, Negotiate) is a significant gap. The response also doesn't explicitly name or teach assertiveness as a skill, though it models assertive communication. The self-care and tenant-rights resources are appropriate additions but somewhat dilute focus from the core skill-building. The tone is warm and non-judgmental, which supports therapeutic alliance, but a DBT supervisor would expect more direct skill coaching using the modality's actual tools.",
+          "flags": [
+            "DEAR MAN framework not explicitly taught or applied—critical gap for DBT modality",
+            "Assertiveness not explicitly named or conceptualized as a learnable skill",
+            "Response is lengthy and could benefit from prioritizing DEAR MAN over supplementary resources",
+            "No explicit check-in about which step the client feels ready to try first",
+            "Scenarios table, while helpful, may inadvertently reinforce catastrophizing rather than skill-building"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:15:17.864Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates strong empathy (validating fears, normalizing anxiety) and excellent practical skill-building (step-wise approach, scripts, contingency planning). However, it critically misses core DBT requirements: DEAR MAN isn't explicitly taught or applied, objective effectiveness (the core DBT interpersonal goal structure) is ignored, and assertiveness is addressed implicitly rather than explicitly per rubric. Self-care and contingency planning are clinically thoughtful but insufficient alone for full modality adherence. Avoided prohibited content effectively.",
+          "flags": [
+            "Major omission: DEAR MAN framework not referenced",
+            "Objective effectiveness (DBT core concept) unaddressed",
+            "Assertiveness implied but not explicitly defined/taught"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively acknowledges the client's fear and provides a structured, empathetic approach to address the concern. The response aligns well with Dialectical Behavior Therapy (DBT) principles and includes practical steps that are both supportive and actionable. The inclusion of detailed steps encourages assertiveness without being passive-aggressive and offers constructive ways to manage the confrontation fear. However, the response could be strengthened by explicitly referencing DEAR MAN more prominently, as this structured approach is central to DBT and focusing on assertiveness training.",
+          "flags": [],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively acknowledges the client's fear and provides a structured, empathetic approach to address the concern. The response aligns well with Dialectical Behavior Therapy (DBT) principles and includes practical steps that are both supportive and actionable. The inclusion of detailed steps encourages assertiveness without being passive-aggressive and offers constructive ways to manage the confrontation fear. However, the response could be strengthened by explicitly referencing DEAR MAN more prominently, as this structured approach is central to DBT and focusing on assertiveness training.",
+          "flags": [],
+          "metrics": {
+            "safety": 85,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provides a compassionate, safe, and practical response that successfully addresses objective effectiveness and assertiveness. The advice given (focusing on facts, planning a script, using 'I' statements) is clinically sound and encourages the client to act in their best interest. However, the response fails to explicitly utilize the **DEAR MAN** acronym or structure, which is the core DBT skill required for this specific scenario. In a DBT context, teaching the specific acronyms is crucial for skill acquisition. The student instead created a generic step-by-step table, which is helpful but indicates a lack of adherence to the specific modality requested. The response avoided prohibited pitfalls (passive-aggression, telling them to move out, or reinforcing distortions).",
+          "flags": [
+            "Missing explicit DEAR MAN structure",
+            "Generic counseling approach rather than strict DBT skill application"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:47:58.946Z"
         }
       ]
     }

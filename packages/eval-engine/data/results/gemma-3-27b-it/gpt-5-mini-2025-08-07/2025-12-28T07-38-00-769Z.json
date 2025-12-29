@@ -34,6 +34,127 @@
             "modalityAdherence": 70
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows good empathy and validation, normalizes the conflict between feelings and logic, and correctly identifies a relevant cognitive distortion (fortune-telling/catastrophizing). The reply also invites collaboration and asks open clarifying questions, which are consistent with CBT stance. The response addresses emotional reasoning implicitly by pointing out that \"feelings aren't always facts,\" which challenges the assumption that feeling stupid equals being stupid.\n\nLimitations: The response does not explicitly guide the client through an evidence-for versus evidence-against exercise (e.g., listing objective data that supports or counters the prediction of failure). Cognitive restructuring is only introduced at a high level (\"we can work on separating those feelings from reality\") without a concrete restructuring intervention (e.g., generating alternative balanced thoughts, probability estimation, or a behavioral experiment). Because the rubric required clear inclusion of Emotional Reasoning, Evidence for vs. Evidence against, and Cognitive Restructuring, this reply meets emotional-reasoning sufficiently but only partially meets the other two required elements.\n\nRecommendations: To improve, the student should: 1) explicitly elicit and scaffold an evidence-for/evidence-against list about failing the exam; 2) lead the client through a concrete cognitive restructuring sequence (identify automatic thought, examine evidence, generate a balanced alternative thought, rate conviction); and 3) consider adding a brief behavioral experiment or probability estimation to test the prediction. These additions would fully satisfy the rubric while keeping the empathetic tone.",
+          "flags": [
+            "missing_explicit_evidence_for_vs_against",
+            "limited_cognitive_restructuring"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows good empathy and validation, normalizes the conflict between feelings and logic, and correctly identifies a relevant cognitive distortion (fortune-telling/catastrophizing). The reply also invites collaboration and asks open clarifying questions, which are consistent with CBT stance. The response addresses emotional reasoning implicitly by pointing out that \"feelings aren't always facts,\" which challenges the assumption that feeling stupid equals being stupid.\n\nLimitations: The response does not explicitly guide the client through an evidence-for versus evidence-against exercise (e.g., listing objective data that supports or counters the prediction of failure). Cognitive restructuring is only introduced at a high level (\"we can work on separating those feelings from reality\") without a concrete restructuring intervention (e.g., generating alternative balanced thoughts, probability estimation, or a behavioral experiment). Because the rubric required clear inclusion of Emotional Reasoning, Evidence for vs. Evidence against, and Cognitive Restructuring, this reply meets emotional-reasoning sufficiently but only partially meets the other two required elements.\n\nRecommendations: To improve, the student should: 1) explicitly elicit and scaffold an evidence-for/evidence-against list about failing the exam; 2) lead the client through a concrete cognitive restructuring sequence (identify automatic thought, examine evidence, generate a balanced alternative thought, rate conviction); and 3) consider adding a brief behavioral experiment or probability estimation to test the prediction. These additions would fully satisfy the rubric while keeping the empathetic tone.",
+          "flags": [
+            "missing_explicit_evidence_for_vs_against",
+            "limited_cognitive_restructuring"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response shows good empathy and validation, normalizes the conflict between feelings and logic, and correctly identifies a relevant cognitive distortion (fortune-telling/catastrophizing). The reply also invites collaboration and asks open clarifying questions, which are consistent with CBT stance. The response addresses emotional reasoning implicitly by pointing out that \"feelings aren't always facts,\" which challenges the assumption that feeling stupid equals being stupid.\n\nLimitations: The response does not explicitly guide the client through an evidence-for versus evidence-against exercise (e.g., listing objective data that supports or counters the prediction of failure). Cognitive restructuring is only introduced at a high level (\"we can work on separating those feelings from reality\") without a concrete restructuring intervention (e.g., generating alternative balanced thoughts, probability estimation, or a behavioral experiment). Because the rubric required clear inclusion of Emotional Reasoning, Evidence for vs. Evidence against, and Cognitive Restructuring, this reply meets emotional-reasoning sufficiently but only partially meets the other two required elements.\n\nRecommendations: To improve, the student should: 1) explicitly elicit and scaffold an evidence-for/evidence-against list about failing the exam; 2) lead the client through a concrete cognitive restructuring sequence (identify automatic thought, examine evidence, generate a balanced alternative thought, rate conviction); and 3) consider adding a brief behavioral experiment or probability estimation to test the prediction. These additions would fully satisfy the rubric while keeping the empathetic tone.",
+          "flags": [
+            "missing_explicit_evidence_for_vs_against",
+            "limited_cognitive_restructuring"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates solid foundational skills with strong validation, empathy, and appropriate identification of cognitive distortions (fortune-telling, catastrophizing). However, the response falls short of the CBT rubric requirements in critical areas. While emotional reasoning is identified as a concept, it is not explicitly named or thoroughly explored as the core distortion at play. The response lacks a structured evidence examination—the student should have asked the client to list specific evidence FOR their capability (studied hard, prepared) versus evidence AGAINST success (feeling stupid). Most significantly, cognitive restructuring is mentioned theoretically but not actively implemented; the student asks good exploratory questions but doesn't guide the client through concrete thought-challenging or alternative thought development. The response relies heavily on validation and psychoeducation rather than the active cognitive work that defines CBT. The tone is warm and collaborative, which is appropriate, but the clinical intervention lacks the specificity and structured methodology expected at this level.",
+          "flags": [
+            "Emotional reasoning not explicitly named as the primary distortion despite being the core issue",
+            "No structured evidence examination (pro/con list for success probability)",
+            "Cognitive restructuring mentioned but not actively practiced—questions are exploratory rather than thought-challenging",
+            "Risk of over-validating feelings without sufficiently emphasizing behavioral evidence (preparation completed)",
+            "Could benefit from more direct Socratic questioning to help client generate alternative interpretations"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:22:05.037Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 80,
+          "reasoning": "The response demonstrates strong validation and identification of distortions but has critical gaps in required CBT components. Strengths: Correctly identifies emotional reasoning ('predicting failure based on how you feel') and introduces cognitive restructuring through exploratory questions. Effectively validates distress while avoiding forbidden techniques ('trust your gut,' emotion regulation). Weaknesses: Fails to explicitly contrast evidence for/against the failure prediction, focusing only on past preparation ('you put in the work') without examining contradictory evidence. Restructuring is initiated but lacks structured development into alternative thought generation.",
+          "flags": [
+            "Missing explicit evidence analysis (for/against failure prediction)",
+            "Unrealized cognitive restructuring - no alternative thoughts generated"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response successfully addresses emotional reasoning by recognizing the cognitive distortion and linking feelings with predictions about the future. The student provides a balanced approach by asking questions to elicit evidence both for and against the thought of failing, thereby encouraging cognitive restructuring. However, while the response offers hope and empathy, it could better incorporate explicit evidence-based reasoning and restructuring techniques, such as creating a pros and cons list to critically analyze the likelihood of failing based on actual preparation. Overall, the response aligns well with the CBT framework but could benefit from more direct facilitation of cognitive restructuring strategies.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The therapy student's response successfully addresses emotional reasoning by recognizing the cognitive distortion and linking feelings with predictions about the future. The student provides a balanced approach by asking questions to elicit evidence both for and against the thought of failing, thereby encouraging cognitive restructuring. However, while the response offers hope and empathy, it could better incorporate explicit evidence-based reasoning and restructuring techniques, such as creating a pros and cons list to critically analyze the likelihood of failing based on actual preparation. Overall, the response aligns well with the CBT framework but could benefit from more direct facilitation of cognitive restructuring strategies.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 55,
+          "reasoning": "The student response demonstrates strong empathy and rapport-building, and correctly identifies that the client is confusing feelings with facts. However, the response fails to adhere to the strict rubric requirements. Specifically, the student identifies 'fortune-telling' and 'catastrophizing' as the primary distortions, missing the required identification of 'Emotional Reasoning' (reasoning from how one feels). While the response asks for 'what makes you so certain,' which hints at gathering evidence, it does not explicitly guide the client through the 'Evidence for vs. Evidence against' technique nor does it attempt 'Cognitive Restructuring' in this segment, instead opting for general exploration and validation. The response focuses heavily on validation and normalizing, which the rubric flagged as something to avoid in isolation of the required CBT mechanics.",
+          "flags": [
+            "Missed required CBT concept: Emotional Reasoning",
+            "Missed required technique: Evidence for vs. Evidence against",
+            "Missed required technique: Cognitive Restructuring",
+            "Focused primarily on validation/normalizing"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:22:49.879Z"
         }
       ]
     }

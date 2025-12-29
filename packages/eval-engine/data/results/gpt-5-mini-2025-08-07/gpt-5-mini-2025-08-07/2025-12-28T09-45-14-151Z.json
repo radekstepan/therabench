@@ -32,6 +32,123 @@
             "modalityAdherence": 75
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 72,
+          "reasoning": "Strengths: The response is empathic, normalizes the fear, explicitly identifies the cognitive distortion (all-or-nothing/overgeneralization), and uses Socratic-style questions (e.g., 'What other jobs, skills, or references do I have? Have I gotten positive feedback in the past?') to prompt evidence evaluation. It also challenges the validity of the automatic thought and offers a balanced reframe and behavioral experiment, which fit CBT practice. Weakness: The reply includes concrete job-search strategies and scripting (resume/LInkedIn updates, asking for recommendations, applying to 5 jobs, etc.), which constitutes career counseling. The rubric explicitly required avoiding career counseling, so this is a substantive violation and reduces the score despite otherwise strong CBT technique and empathy.",
+          "flags": [
+            "career_counseling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 72,
+          "reasoning": "Strengths: The response is empathic, normalizes the fear, explicitly identifies the cognitive distortion (all-or-nothing/overgeneralization), and uses Socratic-style questions (e.g., 'What other jobs, skills, or references do I have? Have I gotten positive feedback in the past?') to prompt evidence evaluation. It also challenges the validity of the automatic thought and offers a balanced reframe and behavioral experiment, which fit CBT practice. Weakness: The reply includes concrete job-search strategies and scripting (resume/LInkedIn updates, asking for recommendations, applying to 5 jobs, etc.), which constitutes career counseling. The rubric explicitly required avoiding career counseling, so this is a substantive violation and reduces the score despite otherwise strong CBT technique and empathy.",
+          "flags": [
+            "career_counseling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 72,
+          "reasoning": "Strengths: The response is empathic, normalizes the fear, explicitly identifies the cognitive distortion (all-or-nothing/overgeneralization), and uses Socratic-style questions (e.g., 'What other jobs, skills, or references do I have? Have I gotten positive feedback in the past?') to prompt evidence evaluation. It also challenges the validity of the automatic thought and offers a balanced reframe and behavioral experiment, which fit CBT practice. Weakness: The reply includes concrete job-search strategies and scripting (resume/LInkedIn updates, asking for recommendations, applying to 5 jobs, etc.), which constitutes career counseling. The rubric explicitly required avoiding career counseling, so this is a substantive violation and reduces the score despite otherwise strong CBT technique and empathy.",
+          "flags": [
+            "career_counseling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathy, validation, and clear identification of the cognitive distortion (all-or-nothing thinking/overgeneralization). The response appropriately names the thinking pattern and provides a balanced alternative thought. However, the response has significant limitations against the rubric requirements. First, Socratic questioning is largely absent—the student tells rather than asks, offering a prepared reframe instead of guiding the client to discover contradictions themselves through inquiry (e.g., 'Have you known anyone with a gap who got hired?' could be asked, not asserted). Second, while overgeneralization is identified, the exploration of its validity relies on the student's assertions and examples rather than collaborative discovery. The client is not guided to examine their own evidence or generate counterexamples. Third, and critically, the response includes substantial career counseling elements that violate the 'Must Avoid' criterion: specific resume strategies, LinkedIn recommendations, applying to 5 jobs, drafting scripts, role-playing explanations, and bullet point suggestions. These are career services, not CBT interventions. The response also briefly touches on values ('now I'm ready to return because [motivated, refreshed, updated skills]') which edges into values clarification. The behavioral experiment (applying to 5 jobs) is appropriate as a behavioral test of the thought, but it's embedded within career advice. The coping strategies (thought labeling, grounding, breathing) are solid CBT skills. The empathy and validation are excellent, but the modality has drifted significantly toward life coaching/career counseling rather than remaining in a pure CBT frame focused on thought patterns and cognitive restructuring.",
+          "flags": [
+            "Excessive career counseling content (resume tips, LinkedIn strategies, interview prep, job applications)—violates 'Must Avoid' criterion",
+            "Socratic questioning largely absent; student tells rather than asks",
+            "Limited collaborative exploration of thought validity; student provides assertions instead of guided discovery",
+            "Slight values clarification element present ('now I'm ready to return because...')",
+            "Risk of role confusion: client may perceive therapist as career counselor rather than CBT therapist"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:39:28.926Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 83,
+          "reasoning": "The response excels at identifying overgeneralization ('I will never get a job') and addresses thought validity through evidence-based reality checks. Empathic validation is strong. Partial credit for Socratic questioning is earned through cognitive assessment framing ('What other jobs/skills do I have?'), though direct in-session questioning isn't implemented. Concerns include near-career-counseling elements (resume/cover letter drafting support) which blur CBT boundaries, and solution-heavy structure risks therapist-led rather than client discovery. Behavioral experiments are strong CBT elements.",
+          "flags": [
+            "Potential career counseling overlap in resume drafting offers",
+            "Missed opportunity for live Socratic exploration"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 87,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively addresses the core elements required, such as identifying the overgeneralization and questioning the validity of the client's thought through Socratic questioning. The student avoids career counseling by focusing on the cognitive distortions and emotional coping strategies, rather than advising on career paths or exploring client values. The response provides empathy for the client's feelings and offers a clear structure for cognitive restructuring and behavioral experimentation to challenge the thought.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively addresses the core elements required, such as identifying the overgeneralization and questioning the validity of the client's thought through Socratic questioning. The student avoids career counseling by focusing on the cognitive distortions and emotional coping strategies, rather than advising on career paths or exploring client values. The response provides empathy for the client's feelings and offers a clear structure for cognitive restructuring and behavioral experimentation to challenge the thought.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The student demonstrates high empathy and provides a structured response that identifies the cognitive distortion (Overgeneralization) and attempts to reframe the thought. However, the response fails to meet the specific constraints of the rubric. Crucially, it does not use Socratic Questioning to guide the client to their own conclusions; instead, it provides direct advice and solutions. While the 'validity of the thought' is addressed through a 'reality check' section, it is done didactically rather than collaboratively. Furthermore, significant portions of the response (e.g., preparing scripts, LinkedIn updates, resume tips, and applying to specific jobs) cross the line into 'Career counseling', which is explicitly forbidden.",
+          "flags": [
+            "Missing Socratic Questioning",
+            "Career Counseling Content (Resume/Interview advice)",
+            "Didactic vs Collaborative approach"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:46:50.652Z"
         }
       ]
     }

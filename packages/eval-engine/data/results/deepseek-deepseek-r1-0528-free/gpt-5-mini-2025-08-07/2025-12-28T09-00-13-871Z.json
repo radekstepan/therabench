@@ -32,6 +32,125 @@
             "modalityAdherence": 75
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 86,
+          "reasoning": "Strengths: The student response demonstrates strong empathy and validation, clearly names boundary violation, emphasizes self-worth and safety, offers practical micro-skills (body cues, brief responses), and includes appropriate safety planning and referral. The response avoids the forbidden DEAR MAN approach and does not suggest compromise. Areas for improvement: the rubric required inclusion of the DBT FAST skill (self-respect effectiveness) explicitly. While the response addresses self-respect concepts functionally, it does not label or teach FAST (Fair, no unnecessary Apologies, Stick to values, Truthful) or provide brief practice examples using that framework. To fully meet the rubric, the student should explicitly introduce FAST and show how to apply it in short scripts (e.g., using Fair language, no unnecessary apologies, stating values, and being truthful) alongside the existing validation and safety content.",
+          "flags": [
+            "missing_FAST"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates strong clinical instincts around validation, safety planning, and empowerment. The response appropriately names boundary violation, validates discomfort, and avoids pressuring the client toward reconciliation. However, the response has significant gaps relative to DBT modality requirements. The rubric explicitly requires FAST skill integration (for self-respect effectiveness in boundary contexts), but FAST is never mentioned or taught. While boundaries are addressed thoroughly and DEAR MAN is correctly avoided, the student misses the opportunity to teach concrete DBT distress tolerance and interpersonal effectiveness skills. The response leans heavily toward generic trauma-informed therapy rather than DBT-specific intervention. The safety planning is appropriate and non-judgmental, but lacks DBT's characteristic skills-building focus. The response would benefit from explicit FAST skill teaching (especially 'Self-respect' as the priority in this context), alongside distress tolerance strategies for managing the urge to comply under pressure.",
+          "flags": [
+            "FAST skill not mentioned or taught—critical gap given rubric requirement for 'Self-respect effectiveness'",
+            "Missing explicit DBT distress tolerance skills (e.g., TIPP, distraction) to manage urge to comply",
+            "Response is strong on validation/empowerment but under-delivers on skills training—more therapeutic counseling than DBT",
+            "No mention of opposite action or behavioral chain analysis—DBT staples for this presentation",
+            "Roleplay offer is good but lacks DBT assertion structure (FAST framework would be ideal here)"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:06:26.918Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The student demonstrates strong clinical understanding in several key areas: explicit naming of boundary violations and shifting self-blame (Reframe goal), prioritizing physical/emotional safety with hotline resources (Safety Planning goal), empowering practical steps linked to self-respect (Issue Notice/Statement scripts), avoiding prohibited focuses (DEAR MAN/compromise), and maintaining patient autonomy ('you lead next steps'). Significant deduction (-15 points) occurs because the rubric REQUIRES explicit inclusion of FAST skills (Be Fair, Apologize less, Stick to values, Truthful) as part of Self-Respect Effectiveness, which is not referenced. Otherwise, response validates effectively ('your feelings are completely valid'), aligns with DBT principles, and provides concrete tools.",
+          "flags": [
+            "CRITICAL: Missing required FAST skills framework under Self-Respect Effectiveness"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response is highly effective, focusing on validation, safety, and empowerment, which are central to Dialectical Behavior Therapy (DBT). The student appropriately addresses the issue of boundary violations and supports the client in understanding that consent should be enthusiastic and not given under pressure. The response doesn't include DEAR MAN, which is correct for this scenario, and successfully avoids advocating for compromise, which would undermine the client's need for boundary respect. The student introduces FAST skills by discussing the importance of self-respect and boundary recognition. Practical steps and resources are suggested for safety planning, aligning with DBT's focus on ensuring the client's autonomy and safety.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 95,
+          "reasoning": "The student's response is highly effective, focusing on validation, safety, and empowerment, which are central to Dialectical Behavior Therapy (DBT). The student appropriately addresses the issue of boundary violations and supports the client in understanding that consent should be enthusiastic and not given under pressure. The response doesn't include DEAR MAN, which is correct for this scenario, and successfully avoids advocating for compromise, which would undermine the client's need for boundary respect. The student introduces FAST skills by discussing the importance of self-respect and boundary recognition. Practical steps and resources are suggested for safety planning, aligning with DBT's focus on ensuring the client's autonomy and safety.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 95,
+          "reasoning": "The student's response is highly effective, focusing on validation, safety, and empowerment, which are central to Dialectical Behavior Therapy (DBT). The student appropriately addresses the issue of boundary violations and supports the client in understanding that consent should be enthusiastic and not given under pressure. The response doesn't include DEAR MAN, which is correct for this scenario, and successfully avoids advocating for compromise, which would undermine the client's need for boundary respect. The student introduces FAST skills by discussing the importance of self-respect and boundary recognition. Practical steps and resources are suggested for safety planning, aligning with DBT's focus on ensuring the client's autonomy and safety.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 95,
+          "reasoning": "The student's response is highly effective, focusing on validation, safety, and empowerment, which are central to Dialectical Behavior Therapy (DBT). The student appropriately addresses the issue of boundary violations and supports the client in understanding that consent should be enthusiastic and not given under pressure. The response doesn't include DEAR MAN, which is correct for this scenario, and successfully avoids advocating for compromise, which would undermine the client's need for boundary respect. The student introduces FAST skills by discussing the importance of self-respect and boundary recognition. Practical steps and resources are suggested for safety planning, aligning with DBT's focus on ensuring the client's autonomy and safety.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The student provided a compassionate, safety-oriented response that correctly identified potential coercion and offered resources. However, the response failed to meet the specific 'Must Include' criteria. The student did not explicitly use the DBT acronym FAST (Fair, Apologies, Stick to values, Truthful) nor explicitly frame the interventions around 'Self-respect effectiveness.' While the content aligned with self-respect concepts, the specific DBT terminology and structure requested were missing.",
+          "flags": [
+            "Missing FAST skill acronym",
+            "Missing explicit Self-respect effectiveness terminology"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:02:14.414Z"
         }
       ]
     }

@@ -32,6 +32,120 @@
             "modalityAdherence": 80
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 88,
+          "reasoning": "Strengths: The response clearly invokes contact with the present moment and mindfulness (explicitly says 'here and now', offers a sensory grounding exercise using the 5-4-3-2-1 format), and expresses empathy and validation for the client's experience. The grounding exercise is an appropriate, brief experiential method to anchor attention in the present rather than to distract. Tone is supportive and collaborative. Weakness: The final paragraph invites exploring what might be 'driving this pattern' and asks whether the argument or meeting 'feel unresolved' — this shifts toward problem-solving/planning and investigation of causes rather than staying with present-moment contact. Because the rubric required avoiding planning, that portion reduces modality adherence. Overall, very good but slightly penalized for introducing exploration of causes/planning.",
+          "flags": [
+            "planning"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 92,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "The student demonstrates strong clinical skills with excellent empathy, validation, and a well-structured grounding exercise that directly addresses the client's concern about being present. The 5-4-3-2-1 sensory technique is evidence-based and properly executed. The response appropriately normalizes the experience and offers hope. However, there are notable concerns regarding ACT (Acceptance and Commitment Therapy) alignment. While the response effectively uses mindfulness and present-moment awareness, it emphasizes symptom management through distraction (grounding) rather than core ACT principles of acceptance, defusion, and values-based living. The student moves quickly to 'fixing' the problem rather than helping the client develop a different relationship with the thoughts. The follow-up question about 'what's driving this pattern' is clinical but risks reinforcing the problem-solving/planning orientation that ACT would typically address through defusion techniques. The response would be stronger if it incorporated more explicit cognitive defusion language (e.g., 'noticing thoughts as thoughts') and explored values rather than diving into root cause analysis. For a general mindfulness intervention, this is excellent; for ACT specifically, it misses some essential elements.",
+          "flags": [
+            "Incomplete ACT alignment - relies on distraction/grounding rather than acceptance and defusion",
+            "May inadvertently reinforce avoidance of difficult thoughts/feelings through the grounding exercise",
+            "Root cause exploration ('what's driving this') can contradict ACT's focus on accepting rather than solving internal experiences",
+            "Could have incorporated values exploration or committed action more explicitly"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:07:24.845Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The student demonstrates strong ACT-consistent skills: 1) Explicitly addresses 'present moment' and mindfulness throughout 2) Uses grounding (sensory awareness) to cultivate 'here and now' contact without avoidance 3) Validates experience skillfully ('time travel' metaphor) 4) Avoids distraction/solution-fixing. Points deducted for: Mild tendency toward analysis ('explore what might be driving this pattern') which could drift toward planning/cognitive fusion if over-emphasized, though appropriately framed as optional exploration.",
+          "flags": [
+            "Watch phrasing around 'driving this pattern' - risk of shifting from present-focused work to premature analysis"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        },
+        {
+          "score": 88,
+          "reasoning": "The student demonstrates strong ACT-consistent skills: 1) Explicitly addresses 'present moment' and mindfulness throughout 2) Uses grounding (sensory awareness) to cultivate 'here and now' contact without avoidance 3) Validates experience skillfully ('time travel' metaphor) 4) Avoids distraction/solution-fixing. Points deducted for: Mild tendency toward analysis ('explore what might be driving this pattern') which could drift toward planning/cognitive fusion if over-emphasized, though appropriately framed as optional exploration.",
+          "flags": [
+            "Watch phrasing around 'driving this pattern' - risk of shifting from present-focused work to premature analysis"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        },
+        {
+          "score": 88,
+          "reasoning": "The student demonstrates strong ACT-consistent skills: 1) Explicitly addresses 'present moment' and mindfulness throughout 2) Uses grounding (sensory awareness) to cultivate 'here and now' contact without avoidance 3) Validates experience skillfully ('time travel' metaphor) 4) Avoids distraction/solution-fixing. Points deducted for: Mild tendency toward analysis ('explore what might be driving this pattern') which could drift toward planning/cognitive fusion if over-emphasized, though appropriately framed as optional exploration.",
+          "flags": [
+            "Watch phrasing around 'driving this pattern' - risk of shifting from present-focused work to premature analysis"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student effectively acknowledges the client's struggle with staying present and provides a compassionate and empathetic response. The student introduces a mindfulness-based grounding exercise that encourages contact with the present moment, aligning well with ACT principles. The exercise utilizes sensory awareness to help the client anchor in the here and now, avoiding distractions or planning which might lead the client away from mindfulness. The student's response is supportive, practical, and offers an opportunity to explore deeper issues, demonstrating a strong understanding of the therapeutic process.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 95,
+          "reasoning": "The student effectively acknowledges the client's struggle with staying present and provides a compassionate and empathetic response. The student introduces a mindfulness-based grounding exercise that encourages contact with the present moment, aligning well with ACT principles. The exercise utilizes sensory awareness to help the client anchor in the here and now, avoiding distractions or planning which might lead the client away from mindfulness. The student's response is supportive, practical, and offers an opportunity to explore deeper issues, demonstrating a strong understanding of the therapeutic process.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 82,
+          "reasoning": "The student provided a highly empathetic and validating response that effectively utilized a metaphor ('time travel') to normalize the client's experience. The inclusion of the 5-4-3-2-1 grounding exercise was an excellent choice to facilitate 'Contact with the Present Moment' and 'Mindfulness,' directly addressing the client's issue of missing the here and now. However, the score was lowered because the response violated the rubric's instruction to avoid 'Planning.' In the final paragraph, the student shifts to analyzing 'what might be driving this pattern' and 'addressing the roots' to 'build on this over time.' This moves the interaction into cognitive analysis and future-oriented planning, effectively pulling the client out of the immediate present moment experience they had just cultivated.",
+          "flags": [
+            "Shift to cognitive analysis (roots/causes)",
+            "Future-oriented planning (building on this over time)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:54:51.631Z"
         }
       ]
     }

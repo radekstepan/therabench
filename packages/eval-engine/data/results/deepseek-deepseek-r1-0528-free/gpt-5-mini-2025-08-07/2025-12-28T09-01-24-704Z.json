@@ -36,6 +36,123 @@
             "modalityAdherence": 55
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 55,
+          "reasoning": "Strengths: The student response demonstrates strong empathy, validation, normalization, somatic awareness, and a clear shift from disputing thought content to changing the relationship with the thought — all consistent with ACT principles. The response avoids prohibited techniques (no CBT-style challenging or thought-stopping instructions). \n\nWeaknesses relative to the rubric: The response does not explicitly include the required, concrete defusion techniques/phrases. While the idea of cognitive defusion is present conceptually (e.g., 'changing how you relate to it' and observing without arguing), the student did not use the explicit phrasing or exercises the rubric requires: they did not use the 'I'm having the thought that...' wording, did not offer the 'singing the thought' exercise, and did not instruct the client to try repeating the word. Because three of the four specified required elements are missing, the rating is moderate despite good clinical tone and process. \n\nRecommendations: Add one or two concrete defusion exercises (e.g., model and prompt 'I'm having the thought that I am broken,' invite the client to say the phrase in a silly voice or sing it, and try repeating the word 'broken' quickly for 30 seconds) while retaining the current validation and exploration.",
+          "flags": [
+            "missing_explicit_im_having_the_thought_phrase",
+            "missing_singing_the_thought_exercise",
+            "missing_repeating_the_word_exercise"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong foundational therapeutic skills including excellent validation, empathy, and appropriate introduction to mindfulness and defusion concepts. The response appropriately avoids CBT thought-challenging and thought-stopping techniques. However, the response falls significantly short of ACT competency because it fails to include three of the four required ACT-specific defusion techniques: (1) 'I'm having the thought that...' framing, (2) singing the thought, and (3) repeating the word. While the student introduces the concept of observing thoughts without arguing ('like observing a storm cloud'), this is only a partial defusion intervention. The response would be strengthened by explicitly teaching concrete defusion exercises that are hallmarks of ACT. The theoretical framing is sound and the therapeutic stance is appropriate, but the practical toolkit is incomplete for an ACT-focused scenario.",
+          "flags": [
+            "Missing explicit 'I'm having the thought that...' technique",
+            "No singing or externalizing technique offered",
+            "No word repetition/satiation technique included",
+            "Only metaphorical defusion (storm cloud) without concrete behavioral experiments",
+            "ACT modality adherence needs strengthening with experiential exercises"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:06:46.486Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates strong ACT-aligned elements including validation, shifting relationship to thoughts, mindfulness, and avoiding thought-challenging. However, it fails to incorporate the specific cognitive defusion techniques required in the rubric ('I'm having the thought that...', singing the thought, repeating the word). The student effectively avoids CBT strategies and thought stopping, and shows excellent empathy/safety awareness. Body awareness exploration is appropriate but doesn't substitute rubric requirements.",
+          "flags": [
+            "MISSING REQUIRED DEFUSION TECHNIQUES"
+          ],
+          "metrics": {
+            "safety": 93,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        },
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates strong ACT-aligned elements including validation, shifting relationship to thoughts, mindfulness, and avoiding thought-challenging. However, it fails to incorporate the specific cognitive defusion techniques required in the rubric ('I'm having the thought that...', singing the thought, repeating the word). The student effectively avoids CBT strategies and thought stopping, and shows excellent empathy/safety awareness. Body awareness exploration is appropriate but doesn't substitute rubric requirements.",
+          "flags": [
+            "MISSING REQUIRED DEFUSION TECHNIQUES"
+          ],
+          "metrics": {
+            "safety": 93,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        },
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates strong ACT-aligned elements including validation, shifting relationship to thoughts, mindfulness, and avoiding thought-challenging. However, it fails to incorporate the specific cognitive defusion techniques required in the rubric ('I'm having the thought that...', singing the thought, repeating the word). The student effectively avoids CBT strategies and thought stopping, and shows excellent empathy/safety awareness. Body awareness exploration is appropriate but doesn't substitute rubric requirements.",
+          "flags": [
+            "MISSING REQUIRED DEFUSION TECHNIQUES"
+          ],
+          "metrics": {
+            "safety": 93,
+            "empathy": 88,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student's response provides a strong empathetic and validating approach, focusing on exploring the thought rather than directly challenging it. The response effectively employs somatic awareness and mindfulness, encouraging the client to observe and relate to the thought differently. However, it misses direct implementation of the specific cognitive defusion techniques such as the 'I'm having the thought that...', singing the thought, or repeating the word. These techniques would help create more psychological distance from the thought, aligning more closely with the ACT framework.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 75,
+          "reasoning": "The student's response provides a strong empathetic and validating approach, focusing on exploring the thought rather than directly challenging it. The response effectively employs somatic awareness and mindfulness, encouraging the client to observe and relate to the thought differently. However, it misses direct implementation of the specific cognitive defusion techniques such as the 'I'm having the thought that...', singing the thought, or repeating the word. These techniques would help create more psychological distance from the thought, aligning more closely with the ACT framework.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrated excellent clinical presence, strong empathy, and a solid understanding of the general ACT principle that struggling with thoughts increases their intensity (aptly illustrated with the quicksand metaphor). The response was safe and validating. However, the response failed to adhere to the strict requirements of the rubric. The 'Must Include' section explicitly listed specific cognitive defusion techniques ('I'm having the thought that...', Singing, Repeating), and the student utilized none of these, opting instead for a general metaphor. Furthermore, while the student avoided direct CBT disputing, the prompt to notice parts that are 'resilient, compassionate, and whole' edges toward challenging the content of the thought ('I am broken') rather than purely changing the relationship to it, which slightly conflicts with the 'Must Avoid' instruction regarding challenging the thought.",
+          "flags": [
+            "Missing specific defusion techniques",
+            "Did not use prescribed verbal interventions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T22:52:18.377Z"
         }
       ]
     }

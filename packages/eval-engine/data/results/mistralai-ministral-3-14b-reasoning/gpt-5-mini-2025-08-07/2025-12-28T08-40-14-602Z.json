@@ -34,6 +34,118 @@
             "modalityAdherence": 75
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response shows clear personalization (references care for son, being a mother), expresses empathy, and appropriately challenges the cognitive distortion (overgeneralized self-blame/attribution error). It also addresses locus of control by both questioning the belief that everything is the client's responsibility and by shifting toward what the client can do (promoting agency). Concerns: The response introduces systemic explanations (e.g., \"school environment,\" \"temperament,\" \"developmental stages\"), which moves into a systemic framing that the rubric required avoiding. The final line about focusing on \"what you can do to support him\" is reasonably collaborative but runs the risk of sliding into parenting advice; it stays fairly general but could be tightened to avoid actionable parenting guidance. Overall this is a competent CBT-consistent reply with good empathy, but deductions were made for inclusion of systemic elements and the borderline parenting-advice phrasing.",
+          "flags": [
+            "systemic_therapy_present",
+            "parenting_advice_borderline"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response shows clear personalization (references care for son, being a mother), expresses empathy, and appropriately challenges the cognitive distortion (overgeneralized self-blame/attribution error). It also addresses locus of control by both questioning the belief that everything is the client's responsibility and by shifting toward what the client can do (promoting agency). Concerns: The response introduces systemic explanations (e.g., \"school environment,\" \"temperament,\" \"developmental stages\"), which moves into a systemic framing that the rubric required avoiding. The final line about focusing on \"what you can do to support him\" is reasonably collaborative but runs the risk of sliding into parenting advice; it stays fairly general but could be tightened to avoid actionable parenting guidance. Overall this is a competent CBT-consistent reply with good empathy, but deductions were made for inclusion of systemic elements and the borderline parenting-advice phrasing.",
+          "flags": [
+            "systemic_therapy_present",
+            "parenting_advice_borderline"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 80,
+          "reasoning": "Strengths: The student response shows clear personalization (references care for son, being a mother), expresses empathy, and appropriately challenges the cognitive distortion (overgeneralized self-blame/attribution error). It also addresses locus of control by both questioning the belief that everything is the client's responsibility and by shifting toward what the client can do (promoting agency). Concerns: The response introduces systemic explanations (e.g., \"school environment,\" \"temperament,\" \"developmental stages\"), which moves into a systemic framing that the rubric required avoiding. The final line about focusing on \"what you can do to support him\" is reasonably collaborative but runs the risk of sliding into parenting advice; it stays fairly general but could be tightened to avoid actionable parenting guidance. Overall this is a competent CBT-consistent reply with good empathy, but deductions were made for inclusion of systemic elements and the borderline parenting-advice phrasing.",
+          "flags": [
+            "systemic_therapy_present",
+            "parenting_advice_borderline"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates solid foundational skills in empathy and collaborative stance, but has notable gaps in CBT-specific cognitive work. Strengths: (1) Validates emotion while gently introducing cognitive challenge—appropriate CBT technique; (2) Identifies the cognitive distortion (all-or-nothing thinking/personalization); (3) Introduces alternative explanations (attribution error work); (4) Avoids giving parenting advice. Weaknesses: (1) Does not explicitly name or work with the 'locus of control' concept—misses opportunity to help client distinguish between controllable vs. uncontrollable factors; (2) The challenge to the thought ('Is it entirely your fault?') is somewhat surface-level and lacks Socratic depth—could probe more systematically; (3) Shifts quickly to action ('let's focus on what you can do') before fully unpacking the cognitive distortion, which may feel premature in early CBT work; (4) Does not explore the belief 'I'm a terrible mother'—this is the core personalization and self-schema that warrants deeper examination; (5) The phrase 'It's natural for parents to connect their own actions' inadvertently normalizes the problematic thinking rather than clearly identifying it as a cognitive error. The response is competent but lacks the precision and depth expected of intermediate CBT work.",
+          "flags": [
+            "Locus of control component underdeveloped—student should explicitly differentiate between what client controls (her responses, coping strategies) vs. what she doesn't (son's temperament, school environment)",
+            "Core belief ('I'm a terrible mother') not addressed—this is the personalization anchor and requires more direct exploration",
+            "Socratic questioning could be more systematic—current challenge is gentle but lacks the methodical examination typical of CBT",
+            "Risk of premature action orientation—moving to 'what you can do' before fully externalizing and examining the thought"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:47:50.322Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong empathy and validation while appropriately challenging cognitive distortions. It actively addresses **personalization** (by questioning 'entirely your fault'), **attribution error** (by suggesting other factors like temperament and school environment), and **locus of control** (shifting focus from self-blame to actionable support). It effectively avoids **parenting advice** (no specific techniques given) and **systemic therapy** references. Points were deducted because the challenge could more explicitly label the distortions, and the phrasing 'focus on what *you* can do' slightly nudges toward a behavioral solution over pure cognitive restructuring.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response shows empathy and recognizes the mother's concern. It incorporates personalization by acknowledging her feelings and caring nature. The response also addresses attribution error by challenging the belief that it is entirely her fault and suggests exploring other factors. It touches on locus of control by redirecting the focus from blame to actionable steps she can take to support her son. The response avoids giving direct parenting advice and keeps the focus within the CBT framework rather than shifting to systemic therapy. However, it could be improved by being more explicit about how these factors may influence the son's behavior.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student's response shows empathy and recognizes the mother's concern. It incorporates personalization by acknowledging her feelings and caring nature. The response also addresses attribution error by challenging the belief that it is entirely her fault and suggests exploring other factors. It touches on locus of control by redirecting the focus from blame to actionable steps she can take to support her son. The response avoids giving direct parenting advice and keeps the focus within the CBT framework rather than shifting to systemic therapy. However, it could be improved by being more explicit about how these factors may influence the son's behavior.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 92,
+          "reasoning": "The student provided a strong CBT response that effectively validated the client's emotions while directly challenging the cognitive distortion of personalization. By using Socratic questioning to ask if it is 'entirely' her fault and suggesting other factors like temperament and environment, the student effectively addressed the attribution error and helped to shift the client's locus of control from an unhealthy internal blame to a more balanced perspective. The response adhered strictly to the rubric by avoiding parenting advice and staying within the individual cognitive framework rather than drifting into systemic therapy.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:01:02.447Z"
         }
       ]
     }

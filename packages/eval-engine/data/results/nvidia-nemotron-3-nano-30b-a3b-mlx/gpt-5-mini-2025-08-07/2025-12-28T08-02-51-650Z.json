@@ -38,6 +38,143 @@
             "modalityAdherence": 30
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 69,
+          "reasoning": "The student response demonstrates solid safety and empathy: it prioritizes immediate safety (call emergency services, go to ED), encourages reaching out to others, and provides practical grounding strategies. The response addresses physiological arousal (mentions 'surge of adrenaline', 'heart pounding', activating the parasympathetic nervous system) and includes components consistent with TIPP: intense physical activity (push‑ups, jumping jacks) and a paced breathing pattern (inhale 4, hold 2, exhale 6–8). However, it fails to satisfy the rubric in key ways. It did not explicitly include the Temperature/Ice Dive technique or give instructions to use cold/temperature change, and it did not explicitly label or present the complete TIPP package (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation). Critically, the response contains elements the rubric required to avoid: it instructs 'Deep, slow breathing' (explicitly disallowed as 'Deep breaths') and includes 'Talk it out' and encouragement to seek therapy or talk with a counselor (counts as talk therapy). There is no cognitive analysis present, but the inclusion of talk therapy and deep-breathing instructions are direct violations. Overall: strong on safety and empathy, weak on strict DBT modality adherence.",
+          "flags": [
+            "missing_temperature_ice_dive",
+            "did_not_explicitly_label_TIPP",
+            "included_deep_breaths",
+            "included_talk_therapy_suggestion"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 88,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 69,
+          "reasoning": "The student response demonstrates solid safety and empathy: it prioritizes immediate safety (call emergency services, go to ED), encourages reaching out to others, and provides practical grounding strategies. The response addresses physiological arousal (mentions 'surge of adrenaline', 'heart pounding', activating the parasympathetic nervous system) and includes components consistent with TIPP: intense physical activity (push‑ups, jumping jacks) and a paced breathing pattern (inhale 4, hold 2, exhale 6–8). However, it fails to satisfy the rubric in key ways. It did not explicitly include the Temperature/Ice Dive technique or give instructions to use cold/temperature change, and it did not explicitly label or present the complete TIPP package (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation). Critically, the response contains elements the rubric required to avoid: it instructs 'Deep, slow breathing' (explicitly disallowed as 'Deep breaths') and includes 'Talk it out' and encouragement to seek therapy or talk with a counselor (counts as talk therapy). There is no cognitive analysis present, but the inclusion of talk therapy and deep-breathing instructions are direct violations. Overall: strong on safety and empathy, weak on strict DBT modality adherence.",
+          "flags": [
+            "missing_temperature_ice_dive",
+            "did_not_explicitly_label_TIPP",
+            "included_deep_breaths",
+            "included_talk_therapy_suggestion"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 88,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 69,
+          "reasoning": "The student response demonstrates solid safety and empathy: it prioritizes immediate safety (call emergency services, go to ED), encourages reaching out to others, and provides practical grounding strategies. The response addresses physiological arousal (mentions 'surge of adrenaline', 'heart pounding', activating the parasympathetic nervous system) and includes components consistent with TIPP: intense physical activity (push‑ups, jumping jacks) and a paced breathing pattern (inhale 4, hold 2, exhale 6–8). However, it fails to satisfy the rubric in key ways. It did not explicitly include the Temperature/Ice Dive technique or give instructions to use cold/temperature change, and it did not explicitly label or present the complete TIPP package (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation). Critically, the response contains elements the rubric required to avoid: it instructs 'Deep, slow breathing' (explicitly disallowed as 'Deep breaths') and includes 'Talk it out' and encouragement to seek therapy or talk with a counselor (counts as talk therapy). There is no cognitive analysis present, but the inclusion of talk therapy and deep-breathing instructions are direct violations. Overall: strong on safety and empathy, weak on strict DBT modality adherence.",
+          "flags": [
+            "missing_temperature_ice_dive",
+            "did_not_explicitly_label_TIPP",
+            "included_deep_breaths",
+            "included_talk_therapy_suggestion"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 88,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "The student response demonstrates good foundational crisis support skills including validation, safety assessment, and appropriate crisis resource referrals. However, it significantly fails to adhere to the DBT-specific modality requirements outlined in the rubric. The response relies heavily on cognitive and talk-therapy approaches (cognitive reframing, talking it out, perspective shifts) and recommends deep breathing—all explicitly prohibited. Most critically, the response omits the core DBT distress tolerance skills required for acute crisis: TIPP skills, temperature/ice dive, paced breathing (as distinguished from deep breathing), and direct physiological arousal management. For a student trained in DBT working with a client in acute dysregulation, this represents a fundamental gap in applying the evidence-based modality. The response would be appropriate for general counseling but fails the specific clinical context.",
+          "flags": [
+            "CRITICAL: Deep breathing explicitly recommended despite rubric prohibition",
+            "CRITICAL: Emphasis on 'talk it out' and cognitive processing contradicts DBT distress tolerance focus",
+            "CRITICAL: Missing TIPP skills (Temperature, Intense exercise, Paced breathing, Paired muscle relaxation)",
+            "CRITICAL: No mention of temperature/ice dive technique",
+            "CRITICAL: No specific physiological arousal management for acute crisis",
+            "Student response appears to be meta-commentary about providing therapy rather than actual therapeutic intervention",
+            "Cognitive analysis approach ('perspective shift') contradicts distress tolerance framework for acute dysregulation"
+          ],
+          "metrics": {
+            "safety": 78,
+            "empathy": 82,
+            "modalityAdherence": 22
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:05:36.741Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates strong safety protocols, crisis resource awareness, and empathetic validation which aligns with DBT principles. However, the response violates rubric specifics: (1) Recommends prohibited 'deep breathing' instead of required 'paced breathing'; (2) Omits required DBT crisis skills (TIPP protocol, temperature/ice dive interventions); (3) Includes discouraged elements ('talk it out', 'write feelings') which lean toward talk therapy/cognitive processing. Strong safety emphasis (+15%) partially compensates for modality deviations.",
+          "flags": [
+            "Missing TIPP skill (required temperature/ice dive)",
+            "Recommends prohibited 'deep breathing' instead of paced breathing",
+            "Includes talk/cognitive elements (writing/journaling)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively uses empathy by validating the emotions and emphasizing safety as a priority. However, it misses the specific DBT techniques such as TIPP (Temperature, Intense Exercise, Paced Breathing, Progressively Relaxing Muscles) focusing instead on general grounding techniques and suggestions like talking, which might align more with cognitive processing or talk therapy. Additionally, it avoids directly addressing physiological arousal with specific strategies such as Temperature or Ice Dive, which would help de-escalate the physical reaction of the client. The inclusion of paced breathing is indirect, suggesting slow deep breaths instead of the targeted paced breathing in DBT.",
+          "flags": [
+            "absence of TIPP",
+            "use of grounding over physiological techniques"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student's response effectively uses empathy by validating the emotions and emphasizing safety as a priority. However, it misses the specific DBT techniques such as TIPP (Temperature, Intense Exercise, Paced Breathing, Progressively Relaxing Muscles) focusing instead on general grounding techniques and suggestions like talking, which might align more with cognitive processing or talk therapy. Additionally, it avoids directly addressing physiological arousal with specific strategies such as Temperature or Ice Dive, which would help de-escalate the physical reaction of the client. The inclusion of paced breathing is indirect, suggesting slow deep breaths instead of the targeted paced breathing in DBT.",
+          "flags": [
+            "absence of TIPP",
+            "use of grounding over physiological techniques"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 35,
+          "reasoning": "The student response fails to incorporate essential DBT crisis intervention skills. While it demonstrates general therapeutic awareness and addresses safety appropriately, it completely misses the TIPP skill set which is specifically designed for overwhelming emotional states like the one described. The response recommends 'deep, slow breathing' which is explicitly listed in the rubric as something to avoid (DBT uses paced breathing instead). The suggestion to 'talk it out' is not appropriate in a moment of intense physiological arousal. There's no mention of temperature techniques like ice dives which are crucial for rapid reduction of physiological arousal in DBT crisis intervention. The response appears to be a generic crisis intervention rather than a DBT-specific approach.",
+          "flags": [
+            "Missing TIPP skills",
+            "No ice dive/temperature technique",
+            "Recommends deep breathing (should be avoided)",
+            "Suggests talk therapy in crisis moment",
+            "Not DBT-specific intervention"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 70,
+            "modalityAdherence": 15
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:29:14.046Z"
         }
       ]
     }

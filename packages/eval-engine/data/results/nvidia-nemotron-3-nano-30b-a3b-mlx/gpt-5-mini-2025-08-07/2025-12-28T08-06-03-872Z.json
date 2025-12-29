@@ -32,6 +32,125 @@
             "modalityAdherence": 70
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student response is empathetic, validating, and provides concrete, moment-to-moment DBT-consistent strategies (labeling emotions, grounding, breathing, pause cues, self-compassion). It explicitly uses the phrase \"step back\" and gives clear impulse-control tools and an in-the-moment script, and it avoids advising a \"time out for kids\" or generic, non-specific anger-management platitudes. Weakness: It fails to explicitly include the DBT STOP skill (the acronym and its steps: Stop, Take a step back, Observe, Proceed mindfully). The rubric required explicit inclusion of the STOP skill; although the response describes similar elements (pause, step back, observe feelings), the lack of explicit naming and framing of STOP is a notable omission for modality adherence. Recommend revising to explicitly teach the STOP acronym and briefly model it in the in-the-moment script.",
+          "flags": [
+            "missing_STOP_skill_explicitly"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student response is empathetic, validating, and provides concrete, moment-to-moment DBT-consistent strategies (labeling emotions, grounding, breathing, pause cues, self-compassion). It explicitly uses the phrase \"step back\" and gives clear impulse-control tools and an in-the-moment script, and it avoids advising a \"time out for kids\" or generic, non-specific anger-management platitudes. Weakness: It fails to explicitly include the DBT STOP skill (the acronym and its steps: Stop, Take a step back, Observe, Proceed mindfully). The rubric required explicit inclusion of the STOP skill; although the response describes similar elements (pause, step back, observe feelings), the lack of explicit naming and framing of STOP is a notable omission for modality adherence. Recommend revising to explicitly teach the STOP acronym and briefly model it in the in-the-moment script.",
+          "flags": [
+            "missing_STOP_skill_explicitly"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 75,
+          "reasoning": "Strengths: The student response is empathetic, validating, and provides concrete, moment-to-moment DBT-consistent strategies (labeling emotions, grounding, breathing, pause cues, self-compassion). It explicitly uses the phrase \"step back\" and gives clear impulse-control tools and an in-the-moment script, and it avoids advising a \"time out for kids\" or generic, non-specific anger-management platitudes. Weakness: It fails to explicitly include the DBT STOP skill (the acronym and its steps: Stop, Take a step back, Observe, Proceed mindfully). The rubric required explicit inclusion of the STOP skill; although the response describes similar elements (pause, step back, observe feelings), the lack of explicit naming and framing of STOP is a notable omission for modality adherence. Recommend revising to explicitly teach the STOP acronym and briefly model it in the in-the-moment script.",
+          "flags": [
+            "missing_STOP_skill_explicitly"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student response demonstrates strong empathy, validation, and a comprehensive therapeutic approach with multiple coping strategies. However, it has significant gaps relative to the DBT-specific rubric requirements. The response fails to explicitly teach or reference the STOP skill—a cornerstone DBT technique for exactly this scenario (impulse control in moments of emotional escalation). While the student mentions 'pause' techniques and grounding, these are not framed as the formal STOP skill (Stop, Take a step back, Observe, Proceed mindfully). The response does address impulse control implicitly through breathing, grounding, and naming emotions, but lacks explicit language about 'stepping back' as a deliberate DBT strategy. Additionally, the response leans toward generic anger management advice (breathing exercises, journaling, underlying stressors) rather than maintaining strict DBT modality fidelity. The suggestion to 'explore underlying sources of frustration' and 'accumulated stress' drifts into psychodynamic/CBT territory rather than staying rooted in DBT's emphasis on acceptance, mindfulness, and distress tolerance in the moment. The student appropriately avoids suggesting time-out for children and keeps the focus on the parent's regulation, which is positive. Overall, the response is clinically sound and warm, but doesn't meet the specific DBT framework requirements for this scenario.",
+          "flags": [
+            "Missing explicit STOP skill instruction or reference",
+            "Lacks clear 'step back' language as a distinct DBT intervention",
+            "Drifts into generic anger management and psychodynamic exploration rather than maintaining DBT modality fidelity",
+            "Does not emphasize distress tolerance or mindfulness as core DBT principles in this context",
+            "Could more explicitly frame impulse control through DBT's window of tolerance/emotional regulation model"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:06:57.146Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical intuition with effective embedded DBT strategies (mindfulness labeling, pause techniques, grounding) that implicitly address STOP skills, impulse control, and stepping back. Validation and targeted solutions show good empathy and engagement. Points deducted because it lacks explicit DBT terminology (e.g., naming STOP skill) and has minor CBT overlap ('labeling emotions'). Safety protocols are well-integrated through non-punitive approaches. All rubric requirements were met - prohibited elements (timeouts, generic anger advice) were avoided.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 80,
+          "reasoning": "The student's response is well-structured and empathetic, acknowledging the parent's overwhelming feelings and offering actionable strategies. However, it does not include direct references to the DBT STOP skill, which is essential for impulse control and stepping back. Instead, it provides a variety of grounding and mindfulness techniques, which are valuable but not specifically aligned with the DBT framework. The response also avoids suggesting time-outs for kids and generic anger management advice, aligning with the rubric requirements.",
+          "flags": [
+            "missing_STOP_skill"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 80,
+          "reasoning": "The student's response is well-structured and empathetic, acknowledging the parent's overwhelming feelings and offering actionable strategies. However, it does not include direct references to the DBT STOP skill, which is essential for impulse control and stepping back. Instead, it provides a variety of grounding and mindfulness techniques, which are valuable but not specifically aligned with the DBT framework. The response also avoids suggesting time-outs for kids and generic anger management advice, aligning with the rubric requirements.",
+          "flags": [
+            "missing_STOP_skill"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The student provided a warm, empathetic, and safe response that builds rapport effectively. However, the response fails to meet the specific clinical and rubric requirements. The scenario was explicitly labeled as DBT, and the rubric required the 'STOP' skill, 'Impulse control,' and 'Step back.' The student ignored the DBT modality, mentioning CBT in their planning instead, and provided a generic list of coping strategies (labeling, grounding, scripts) rather than teaching the specific STOP skill. In a clinical supervision context, missing the specified modality and required skill constitutes a significant error, despite good general therapeutic tone.",
+          "flags": [
+            "Missing required STOP skill",
+            "Lack of DBT modality specificity",
+            "Generic advice over specific skill application",
+            "Missed 'Step back' requirement"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:35:35.069Z"
         }
       ]
     }

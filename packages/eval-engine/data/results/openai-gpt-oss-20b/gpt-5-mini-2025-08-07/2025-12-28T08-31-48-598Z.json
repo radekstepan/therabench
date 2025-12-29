@@ -34,6 +34,125 @@
             "modalityAdherence": 88
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 90,
+          "reasoning": "Strengths: The student response demonstrates good empathy and reflective listening, normalizes the difficulty, and recommends a concrete, very small step (5 minutes looking at the outline or jotting one idea) which aligns with behavioral activation and graded task assignment. It avoids endorsing waiting for mood to improve or suggesting rest as the primary strategy. Limitations: The response implies but does not explicitly state the CBT principle that action often precedes motivation, and it could more clearly operationalize activity scheduling (e.g., setting a specific time or adding accountability/check-in) and a brief follow-up plan to reinforce the graded task. These are minor omissions rather than contraindicated elements.",
+          "flags": [
+            "implicit_action_precedes_motivation",
+            "partial_activity_scheduling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 90,
+          "reasoning": "Strengths: The student response demonstrates good empathy and reflective listening, normalizes the difficulty, and recommends a concrete, very small step (5 minutes looking at the outline or jotting one idea) which aligns with behavioral activation and graded task assignment. It avoids endorsing waiting for mood to improve or suggesting rest as the primary strategy. Limitations: The response implies but does not explicitly state the CBT principle that action often precedes motivation, and it could more clearly operationalize activity scheduling (e.g., setting a specific time or adding accountability/check-in) and a brief follow-up plan to reinforce the graded task. These are minor omissions rather than contraindicated elements.",
+          "flags": [
+            "implicit_action_precedes_motivation",
+            "partial_activity_scheduling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 90,
+          "reasoning": "Strengths: The student response demonstrates good empathy and reflective listening, normalizes the difficulty, and recommends a concrete, very small step (5 minutes looking at the outline or jotting one idea) which aligns with behavioral activation and graded task assignment. It avoids endorsing waiting for mood to improve or suggesting rest as the primary strategy. Limitations: The response implies but does not explicitly state the CBT principle that action often precedes motivation, and it could more clearly operationalize activity scheduling (e.g., setting a specific time or adding accountability/check-in) and a brief follow-up plan to reinforce the graded task. These are minor omissions rather than contraindicated elements.",
+          "flags": [
+            "implicit_action_precedes_motivation",
+            "partial_activity_scheduling"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The student demonstrates solid foundational skills in empathy and validation, effectively acknowledging the client's emotional state. The response appropriately avoids the pitfall of suggesting rest or waiting for mood improvement. However, the response falls short of full CBT competency in several ways: (1) While graded task assignment is present (the five-minute suggestion), it lacks explicit framing of the behavioral activation principle that 'action precedes motivation'—this crucial cognitive shift is implied but not stated. (2) The response could more directly address the cognitive distortion embedded in the client's statement ('I'll wait until I feel motivated') by explicitly naming and challenging this thought pattern. (3) Activity scheduling is mentioned as a concept but not developed into a concrete plan (e.g., 'Let's schedule this for tomorrow at 2pm'). (4) The phrase 'It's okay to give yourself permission' risks subtly reinforcing avoidance by emphasizing permission to stop rather than emphasizing commitment to the behavioral experiment. The student shows understanding of CBT principles and demonstrates empathic skill, but needs to strengthen technical application of behavioral activation theory and more explicitly link behavioral action to mood improvement.",
+          "flags": [
+            "Lacks explicit statement of 'action precedes motivation' principle",
+            "Does not directly challenge the cognitive distortion about waiting for motivation",
+            "Activity scheduling mentioned conceptually but not concretely scheduled",
+            "Phrase 'permission to pause' may inadvertently reinforce avoidance"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:15:00.942Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response effectively incorporates Graded Task Assignment (concrete 5-minute step) and operationalizes Action Precedes Motivation by encouraging behavioral activation despite low energy. It demonstrates Behavioral Activation principles through shaping approach behavior. Empathetic validation builds rapport. However, it misses explicit Activity Scheduling (time-specific planning) and doesn't sufficiently challenge the 'wait for motivation' fallacy per CBT principles. The 'pause or adjust' caveat slightly undermines behavioral momentum.",
+          "flags": [
+            "Missing explicit Activity Scheduling",
+            "Incomplete challenge to motivation-waiting fallacy",
+            "Potential openness to delay ('pause or adjust')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively acknowledges the client's feelings and offers a practical suggestion following CBT principles. It emphasizes starting with a small, attainable task, which aligns with Graded Task Assignment and hints at Behavioral Activation. However, it could more explicitly mention the importance of action preceding motivation to fully adhere to modality principles. Additionally, while it avoids suggesting rest or waiting for mood improvement, it falls short of explicitly incorporating Activity Scheduling.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student's response effectively acknowledges the client's feelings and offers a practical suggestion following CBT principles. It emphasizes starting with a small, attainable task, which aligns with Graded Task Assignment and hints at Behavioral Activation. However, it could more explicitly mention the importance of action preceding motivation to fully adhere to modality principles. Additionally, while it avoids suggesting rest or waiting for mood improvement, it falls short of explicitly incorporating Activity Scheduling.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The student response demonstrates strong empathy and effectively addresses the client's feelings of being drained. However, it misses specific CBT terminology required by the rubric. While the response implicitly uses Graded Task Assignment (suggesting 5 minutes), it does not explicitly name 'Behavioral Activation' or 'Activity Scheduling.' The concept that 'Action precedes motivation' is alluded to by suggesting a small step to bridge the gap, but could be stated more clearly. The student successfully avoids suggesting 'Rest and recover' or 'Wait for mood to improve,' adhering to the 'Must Avoid' criteria.",
+          "flags": [
+            "Missing explicit mention of Behavioral Activation",
+            "Missing explicit mention of Activity Scheduling"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:45:18.359Z"
         }
       ]
     }

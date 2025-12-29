@@ -36,6 +36,129 @@
             "modalityAdherence": 40
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 62,
+          "reasoning": "Strengths: The response is empathic, validates the client's feelings, names consent and respect, and explicitly asks about communicated boundaries — all appropriate. Weaknesses: It fails to teach or prompt use of the DBT FAST interpersonal skill (Fair, Apologize less, Stick to values, Truthful) or to introduce/coach a self-respect effectiveness strategy to help the client assert and maintain boundaries in-session. The reply also lacks a brief safety assessment for sexual coercion/abuse and concrete behavioral suggestions (e.g., scripts, rehearsal, or safety planning). It avoided DEAR MAN and did not suggest compromise, as required.",
+          "flags": [
+            "missing_FAST_skill",
+            "missing_self-respect_effectiveness",
+            "no_safety_assessment_or_plan"
+          ],
+          "metrics": {
+            "safety": 72,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 62,
+          "reasoning": "Strengths: The response is empathic, validates the client's feelings, names consent and respect, and explicitly asks about communicated boundaries — all appropriate. Weaknesses: It fails to teach or prompt use of the DBT FAST interpersonal skill (Fair, Apologize less, Stick to values, Truthful) or to introduce/coach a self-respect effectiveness strategy to help the client assert and maintain boundaries in-session. The reply also lacks a brief safety assessment for sexual coercion/abuse and concrete behavioral suggestions (e.g., scripts, rehearsal, or safety planning). It avoided DEAR MAN and did not suggest compromise, as required.",
+          "flags": [
+            "missing_FAST_skill",
+            "missing_self-respect_effectiveness",
+            "no_safety_assessment_or_plan"
+          ],
+          "metrics": {
+            "safety": 72,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 62,
+          "reasoning": "Strengths: The response is empathic, validates the client's feelings, names consent and respect, and explicitly asks about communicated boundaries — all appropriate. Weaknesses: It fails to teach or prompt use of the DBT FAST interpersonal skill (Fair, Apologize less, Stick to values, Truthful) or to introduce/coach a self-respect effectiveness strategy to help the client assert and maintain boundaries in-session. The reply also lacks a brief safety assessment for sexual coercion/abuse and concrete behavioral suggestions (e.g., scripts, rehearsal, or safety planning). It avoided DEAR MAN and did not suggest compromise, as required.",
+          "flags": [
+            "missing_FAST_skill",
+            "missing_self-respect_effectiveness",
+            "no_safety_assessment_or_plan"
+          ],
+          "metrics": {
+            "safety": 72,
+            "empathy": 90,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathic attunement and validates the client's experience appropriately. However, the response has significant gaps in DBT skill application. While the student appropriately avoids DEAR MAN (which focuses on getting compliance) and doesn't suggest compromise, the response fails to incorporate the three required DBT components: FAST, Self-respect effectiveness, and concrete boundary-setting skills. The student asks about communication but doesn't teach DBT tools for maintaining boundaries or addressing the self-respect erosion from repeated capitulation. The response also leans heavily into psychoeducation about unhealthy relationships rather than skill-building, which is less aligned with DBT's skills-focused approach. Additionally, while the student appropriately emphasizes consent, there's insufficient assessment of safety concerns that might warrant additional clinical considerations.",
+          "flags": [
+            "Missing FAST skill instruction (Fair, Apologies, Stick to values, Truthful)",
+            "No explicit Self-respect effectiveness focus or TIPP skills consideration",
+            "Limited concrete boundary-setting/communication skill teaching",
+            "Does not model or teach specific DBT language for asserting boundaries",
+            "Minimal attention to distress tolerance skills that might address the avoidance-through-compliance pattern",
+            "Safety assessment incomplete - no clear documentation of coercion severity or risk"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 88,
+            "modalityAdherence": 48
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:23:38.532Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong validation and empathy, correctly identifies boundary violations, and addresses self-respect effectiveness by highlighting long-term emotional harm from compromising boundaries. It avoids DEAR MAN and compromise appropriately. However, it misses explicit integration of the FAST skills framework (Fair, Apologies, Stick to values, Truthful), a required rubric element. Questions about boundary communication are clinically useful but don't fully address the rubric's requirement for teaching/maintaining self-respect through FAST.",
+          "flags": [
+            "Missing explicit FAST skill framework",
+            "Opportunity to deepen self-respect focus with FAST components (e.g., 'don't over-apologize for boundaries')"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is empathetic and validates the client's feelings, a crucial component in building rapport and ensuring safety. It emphasizes the importance of boundaries and self-respect, aligning with the FAST skill from DBT interpersonal effectiveness. However, the response could be strengthened by more explicitly linking the discussion to the concept of Self-respect effectiveness within the FAST framework, instead of broadly discussing boundaries and mutual respect.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student's response is empathetic and validates the client's feelings, a crucial component in building rapport and ensuring safety. It emphasizes the importance of boundaries and self-respect, aligning with the FAST skill from DBT interpersonal effectiveness. However, the response could be strengthened by more explicitly linking the discussion to the concept of Self-respect effectiveness within the FAST framework, instead of broadly discussing boundaries and mutual respect.",
+          "flags": [],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The student provided a warm, empathetic, and safe response that correctly identified the boundary violation and validated the client's feelings. They successfully avoided the prohibited topics (DEAR MAN and Compromise). However, the response failed to meet the core instructional requirements of the rubric. The student did not introduce or explain the FAST skill (Fair, Apologies, Stick to values, Truthful), nor did they explicitly frame the intervention around 'Self-respect effectiveness,' despite the client's distress being a perfect fit for this skill. Consequently, while the clinical instinct was good, the technical DBT execution was incomplete.",
+          "flags": [
+            "Missed required skill: FAST",
+            "Missed required skill: Self-respect effectiveness"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 45
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:05:08.168Z"
         }
       ]
     }

@@ -40,6 +40,143 @@
             "modalityAdherence": 35
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student demonstrates clear empathy, validation, and a safety-oriented mindset (includes a plan to assess suicidal ideation). They suggest concrete approach behaviors (e.g., 'reaching out to someone you trust', 'reconnect') and small actionable steps, which aligns partially with DBT's behavioral change emphasis ('change the emotion by changing the action'). Weaknesses: The response fails to explicitly teach or use the DBT Opposite Action skill (no instruction to identify the action urge and intentionally do the opposite). Instead, it asks the client to analyze the trigger ('What specifically triggered this shame?'), which violates the rubric's 'Must Avoid' directive to not analyze why the client feels shame. The reply also references isolation ('shame can make us feel isolated'), which the rubric said to avoid (and the client statement already expressed a desire to withdraw). Overall, the student scored lower because a required DBT skill (Opposite Action) is missing and the response encourages analysis of the shame trigger. Useful elements are present (empathy, some approach suggestions, safety consideration), but modality adherence to DBT skills is insufficient.",
+          "flags": [
+            "missing_opposite_action",
+            "encourages_analysis_of_shame",
+            "references_isolation",
+            "partial_approach_behavior_present",
+            "good_empathy_and_safety_prompt"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student demonstrates clear empathy, validation, and a safety-oriented mindset (includes a plan to assess suicidal ideation). They suggest concrete approach behaviors (e.g., 'reaching out to someone you trust', 'reconnect') and small actionable steps, which aligns partially with DBT's behavioral change emphasis ('change the emotion by changing the action'). Weaknesses: The response fails to explicitly teach or use the DBT Opposite Action skill (no instruction to identify the action urge and intentionally do the opposite). Instead, it asks the client to analyze the trigger ('What specifically triggered this shame?'), which violates the rubric's 'Must Avoid' directive to not analyze why the client feels shame. The reply also references isolation ('shame can make us feel isolated'), which the rubric said to avoid (and the client statement already expressed a desire to withdraw). Overall, the student scored lower because a required DBT skill (Opposite Action) is missing and the response encourages analysis of the shame trigger. Useful elements are present (empathy, some approach suggestions, safety consideration), but modality adherence to DBT skills is insufficient.",
+          "flags": [
+            "missing_opposite_action",
+            "encourages_analysis_of_shame",
+            "references_isolation",
+            "partial_approach_behavior_present",
+            "good_empathy_and_safety_prompt"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 45,
+          "reasoning": "Strengths: The student demonstrates clear empathy, validation, and a safety-oriented mindset (includes a plan to assess suicidal ideation). They suggest concrete approach behaviors (e.g., 'reaching out to someone you trust', 'reconnect') and small actionable steps, which aligns partially with DBT's behavioral change emphasis ('change the emotion by changing the action'). Weaknesses: The response fails to explicitly teach or use the DBT Opposite Action skill (no instruction to identify the action urge and intentionally do the opposite). Instead, it asks the client to analyze the trigger ('What specifically triggered this shame?'), which violates the rubric's 'Must Avoid' directive to not analyze why the client feels shame. The reply also references isolation ('shame can make us feel isolated'), which the rubric said to avoid (and the client statement already expressed a desire to withdraw). Overall, the student scored lower because a required DBT skill (Opposite Action) is missing and the response encourages analysis of the shame trigger. Useful elements are present (empathy, some approach suggestions, safety consideration), but modality adherence to DBT skills is insufficient.",
+          "flags": [
+            "missing_opposite_action",
+            "encourages_analysis_of_shame",
+            "references_isolation",
+            "partial_approach_behavior_present",
+            "good_empathy_and_safety_prompt"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The student demonstrates strong empathic attunement and validation, which are foundational therapeutic skills. However, the response has significant gaps in DBT-specific intervention application. While the student appropriately acknowledges the client's pain and avoids deep analysis of shame origins, the response fails to incorporate the three core DBT requirements: opposite action, approach behavior, and explicit emotion change through behavioral change. The questions asked are reasonable for building rapport but don't translate into concrete behavioral interventions. Question 3 hints at approach behavior but lacks the specificity and directiveness expected in DBT. The safety note appended at the end is appropriate but feels disconnected from the main intervention. For a DBT framework, the student should have explicitly named the avoidance pattern (hiding, turning off phone) as emotion-driven behavior that maintains suffering, and then introduced opposite action strategies (going to the party, calling a friend, engaging with others despite discomfort) as the primary mechanism for changing the emotional state.",
+          "flags": [
+            "Missing explicit opposite action intervention - the core DBT skill for shame and urges to withdraw",
+            "No clear articulation of approach behavior despite recognizing avoidance pattern",
+            "Focuses on understanding/exploration rather than behavioral change as the emotion-change mechanism",
+            "Risk of inadvertently reinforcing rumination through exploratory questions without behavioral direction",
+            "DBT modality not clearly distinguished from other therapeutic approaches"
+          ],
+          "metrics": {
+            "safety": 85,
+            "empathy": 88,
+            "modalityAdherence": 48
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:48:16.385Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 70,
+          "reasoning": "The response effectively validates emotions and encourages exploration, showing strong empathy and basic engagement. However, it critically misses key DBT principles: (1) No explicit guidance on Opposite Action (acting opposite to shame's urge to isolate isn't suggested), (2) No direct promotion of Approach behavior (reconnection options are offered passively but not actively encouraged), (3) Fails to explicitly link changing actions to changing emotions. Violates rubric prohibitions by asking 'What specifically triggered this shame?' (analyzing causes rather than focusing on behavioral change). The small-step question addresses isolation but doesn't firmly discourage it. Safety protocols are appropriately noted.",
+          "flags": [
+            "Violation: 'Analyze why you feel shame' (trigger question)",
+            "Missing component: Opposite Action",
+            "Missing component: Change emotion via action"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 70,
+          "reasoning": "The student response effectively acknowledges the client's feelings of shame and provides a supportive framework for exploring these emotions. However, it somewhat misses certain key elements of the Dialectical Behavior Therapy (DBT) approach, specifically the application of 'Opposite Action' to deal with overwhelming shame. While the response encourages coping and engagement, it doesn't explicitly guide the client towards taking actionable steps that counteract the impulse to isolate, such as actively seeking connection. Moreover, it touches upon analyzing the root cause of shame, which can increase that feeling rather than address it pragmatically. Suggestions for the client to 'reconnect' align partially with DBT's 'approach behavior,' but could be more explicit in encouraging opposite action strategies.",
+          "flags": [
+            "Lacks explicit Opposite Action strategy",
+            "Analysis of shame's root cause"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 70,
+          "reasoning": "The student response effectively acknowledges the client's feelings of shame and provides a supportive framework for exploring these emotions. However, it somewhat misses certain key elements of the Dialectical Behavior Therapy (DBT) approach, specifically the application of 'Opposite Action' to deal with overwhelming shame. While the response encourages coping and engagement, it doesn't explicitly guide the client towards taking actionable steps that counteract the impulse to isolate, such as actively seeking connection. Moreover, it touches upon analyzing the root cause of shame, which can increase that feeling rather than address it pragmatically. Suggestions for the client to 'reconnect' align partially with DBT's 'approach behavior,' but could be more explicit in encouraging opposite action strategies.",
+          "flags": [
+            "Lacks explicit Opposite Action strategy",
+            "Analysis of shame's root cause"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The student demonstrates strong empathy and provides a supportive, validating environment, including a necessary safety check. However, the response fails to adhere to the specific DBT rubric requirements. First, the student violates the 'Must Avoid' constraint by explicitly asking, 'What specifically triggered this shame?' and suggesting 'understanding the context,' which encourages analyzing the emotion rather than acting opposite to it. Second, the student fails to include the required interventions. While 'reconnecting' is hinted at, the response does not explicitly utilize or name 'Opposite Action' or 'Approach behavior.' The student also misses the opportunity to explain the core DBT concept of 'changing the emotion by changing the action.' Instead, the response remains exploratory and psychoanalytic, rather than directive and behavioral as required by the scenario.",
+          "flags": [
+            "Violated 'Must Avoid' rule (Analyze why you feel shame)",
+            "Missing required skill: Opposite Action",
+            "Missing required skill: Approach behavior",
+            "Missing required concept: Change the emotion by changing the action"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 25
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:02:58.751Z"
         }
       ]
     }

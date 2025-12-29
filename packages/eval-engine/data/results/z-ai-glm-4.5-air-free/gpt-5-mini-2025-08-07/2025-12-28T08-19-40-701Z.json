@@ -34,6 +34,132 @@
             "modalityAdherence": 52
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 74,
+          "reasoning": "Strengths: The student responds empathically, validates the client's physiological arousal (heart pounding), asks a direct question about suicidal thoughts (appropriate risk assessment), and offers immediate DBT-appropriate grounding interventions: a sensory 5-4-3-2-1 grounding exercise, a temperature/ice suggestion (splashing cold water/ice), and a breathing strategy. The student also emphasizes safety (crisis line/ED) which is appropriate.\n\nWeaknesses: The response explicitly uses the phrase \"deep breaths,\" which the rubric requires avoiding. Although the student provided a paced-count breathing pattern (inhale 4, hold 4, exhale 6-8), labeling it \"deep breaths\" risks endorsing a discouraged phrasing. The rubric also required explicit inclusion of TIPP as an identified skill — the student included components but did not name the TIPP skill set. The response avoided cognitive analysis or talk-therapy style interventions, which aligns with the rubric.\n\nOverall: strong empathic and safety content and inclusion of temperature/ice and paced breathing technique, but deduction for the explicit \"deep breaths\" language and for not explicitly naming TIPP.",
+          "flags": [
+            "Uses phrase \"deep breaths\" (prohibited by rubric)",
+            "Does not explicitly label or name the TIPP skill set (required)"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 74,
+          "reasoning": "Strengths: The student responds empathically, validates the client's physiological arousal (heart pounding), asks a direct question about suicidal thoughts (appropriate risk assessment), and offers immediate DBT-appropriate grounding interventions: a sensory 5-4-3-2-1 grounding exercise, a temperature/ice suggestion (splashing cold water/ice), and a breathing strategy. The student also emphasizes safety (crisis line/ED) which is appropriate.\n\nWeaknesses: The response explicitly uses the phrase \"deep breaths,\" which the rubric requires avoiding. Although the student provided a paced-count breathing pattern (inhale 4, hold 4, exhale 6-8), labeling it \"deep breaths\" risks endorsing a discouraged phrasing. The rubric also required explicit inclusion of TIPP as an identified skill — the student included components but did not name the TIPP skill set. The response avoided cognitive analysis or talk-therapy style interventions, which aligns with the rubric.\n\nOverall: strong empathic and safety content and inclusion of temperature/ice and paced breathing technique, but deduction for the explicit \"deep breaths\" language and for not explicitly naming TIPP.",
+          "flags": [
+            "Uses phrase \"deep breaths\" (prohibited by rubric)",
+            "Does not explicitly label or name the TIPP skill set (required)"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 74,
+          "reasoning": "Strengths: The student responds empathically, validates the client's physiological arousal (heart pounding), asks a direct question about suicidal thoughts (appropriate risk assessment), and offers immediate DBT-appropriate grounding interventions: a sensory 5-4-3-2-1 grounding exercise, a temperature/ice suggestion (splashing cold water/ice), and a breathing strategy. The student also emphasizes safety (crisis line/ED) which is appropriate.\n\nWeaknesses: The response explicitly uses the phrase \"deep breaths,\" which the rubric requires avoiding. Although the student provided a paced-count breathing pattern (inhale 4, hold 4, exhale 6-8), labeling it \"deep breaths\" risks endorsing a discouraged phrasing. The rubric also required explicit inclusion of TIPP as an identified skill — the student included components but did not name the TIPP skill set. The response avoided cognitive analysis or talk-therapy style interventions, which aligns with the rubric.\n\nOverall: strong empathic and safety content and inclusion of temperature/ice and paced breathing technique, but deduction for the explicit \"deep breaths\" language and for not explicitly naming TIPP.",
+          "flags": [
+            "Uses phrase \"deep breaths\" (prohibited by rubric)",
+            "Does not explicitly label or name the TIPP skill set (required)"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 52
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathic attunement and appropriate safety assessment, but has significant DBT skill execution issues. Strengths include: excellent validation and rapport-building, appropriate crisis assessment questions, and correct identification of physiological arousal. However, there are critical DBT modality adherence problems: (1) The paced breathing instruction uses 4-4-6/8 counts, which is acceptable but the framing as 'deep breaths' violates the rubric requirement to avoid this language—DBT TIPP skills emphasize natural breathing, not deep breathing; (2) The 5-4-3-2-1 grounding technique is excellent and correctly applied; (3) Temperature/ice dive technique is correctly included and well-explained; (4) The response includes talk therapy elements ('tell me more about those thoughts') which should be minimized in acute crisis moments—TIPP skills should take priority before processing; (5) Some cognitive analysis present ('engage your body's calming response') when focus should remain on behavioral activation. The student appropriately prioritizes safety and maintains good boundaries by mentioning crisis resources. The response would be stronger if it led with TIPP skills more decisively and deferred deeper exploration until after physiological regulation.",
+          "flags": [
+            "Framed breathing as 'deep breaths' when TIPP emphasizes natural paced breathing",
+            "Talk therapy element present (asking about self-harm thoughts) before full skill implementation",
+            "Minor cognitive explanation included; should focus purely on behavioral skills in acute phase",
+            "Could have led more decisively with TIPP before validation to match DBT crisis protocol"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:23:07.192Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The student demonstrates strong clinical skills with effective validation, empathy, and immediate safety focus. Key strengths include naming physiological arousal ('heart pounding'), recommending Temperature intervention (ice/water suggestion), and paced breathing protocol (4-4-6-8 count). However, 'deep breaths' phrasing violates rubric mandate to avoid this term (use instead: 'paced breathing'). While TIPP components are partly covered, Intense Exercise and Paired Muscle Relaxation are missing. The grounding technique is appropriate but non-TIPP. Minimal cognitive inquiry ('could you tell me more') risks talk therapy but is brief/safety-focused. Crisis resources are appropriately prioritized.",
+          "flags": [
+            "Used forbidden phrase 'deep breaths' (replace with 'paced breathing')",
+            "Missing TIPP components: Intense Exercise & Paired Muscle Relaxation",
+            "Non-TIPP grounding technique included (no rubric violation but not prioritized)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 82
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 85,
+          "reasoning": "The student's response is quite empathetic and acknowledges the client's feelings, which is important for building rapport. However, while the student introduces valuable grounding techniques, there's a slight deviation from Dialectical Behavior Therapy (DBT) protocol by emphasizing deep breathing too prominently. Instead, the specific application of DBT skills like TIPP (Temperature, Intense Exercise, Paced Breathing, and Progressive Relaxation) should be more explicit. The student did correctly suggest using cold water, which aligns with the Temperature component and helps in physiological arousal modulation. Nevertheless, the student could improve their response by avoiding the use of deep breaths and providing a more explicit TIPP framework.",
+          "flags": [
+            "emphasis_on_deep_breaths",
+            "incomplete_explicit_use_of_TIPP"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 85,
+          "reasoning": "The student's response is quite empathetic and acknowledges the client's feelings, which is important for building rapport. However, while the student introduces valuable grounding techniques, there's a slight deviation from Dialectical Behavior Therapy (DBT) protocol by emphasizing deep breathing too prominently. Instead, the specific application of DBT skills like TIPP (Temperature, Intense Exercise, Paced Breathing, and Progressive Relaxation) should be more explicit. The student did correctly suggest using cold water, which aligns with the Temperature component and helps in physiological arousal modulation. Nevertheless, the student could improve their response by avoiding the use of deep breaths and providing a more explicit TIPP framework.",
+          "flags": [
+            "emphasis_on_deep_breaths",
+            "incomplete_explicit_use_of_TIPP"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The student demonstrated strong empathy and validation, effectively acknowledging the client's distress. They correctly attempted to address physiological arousal by suggesting cold water/ice (Temperature skill) and a structured breathing pattern (Paced Breathing). However, the response violated critical rubric constraints. First, the student explicitly used the phrase 'deep breaths,' which is a 'Must Avoid' item; in high-arousal states, deep breathing can sometimes induce hyperventilation, whereas Paced Breathing is the required terminology and technique. Second, the student asked the client to 'tell me a bit more about those thoughts.' This constitutes 'Talk therapy/Cognitive analysis,' which is strictly prohibited when a client is in a state of overwhelming physiological arousal. In DBT, one must target the body chemistry first (via TIPP) before the thinking mind can be engaged. Inviting cognitive processing before the client is grounded is unsafe and modality-incongruent.",
+          "flags": [
+            "Used prohibited 'deep breaths' phrasing",
+            "Engaged in prohibited 'cognitive analysis' by asking about thoughts during crisis",
+            "Failed to prioritize physiological regulation over cognitive processing"
+          ],
+          "metrics": {
+            "safety": 75,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T01:02:00.437Z"
         }
       ]
     }

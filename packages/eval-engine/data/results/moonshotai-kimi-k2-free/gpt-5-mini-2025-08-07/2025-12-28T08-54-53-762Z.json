@@ -40,6 +40,140 @@
             "modalityAdherence": 20
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The response demonstrates strong empathy and reflective listening (acknowledging overwhelm, validating the drowning metaphor), but it fails to use the ACT-specific strategies required by the rubric. Missing required elements: there is no invocation of the 'Leaves on a Stream' metaphor, no explicit encouragement to 'observe without engaging,' and no guidance to 'let thoughts pass' (i.e., defusion). Instead, the student invites the client to 'pick one of those thoughts' and to 'examine it... to understand,' which shifts toward analyzing/cognitive restructuring (contrary to the rubric's 'must avoid: Analyze the water'). The phrase 'Let's slow the water down together' also implies attempting to control or modify the flow of thoughts (akin to 'build a dam'), which the rubric prohibits. Strengths: empathic tone, collaborative stance. Primary deficits: omission of core ACT defusion/mindfulness moves and inclusion of analysis/control-oriented language.",
+          "flags": [
+            "missing_leaves_on_a_stream",
+            "missing_observing_without_engaging",
+            "missing_letting_thoughts_pass",
+            "includes_analyzing_thoughts",
+            "suggests_controlling_or_slowing_thoughts"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 80,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The response demonstrates strong empathy and reflective listening (acknowledging overwhelm, validating the drowning metaphor), but it fails to use the ACT-specific strategies required by the rubric. Missing required elements: there is no invocation of the 'Leaves on a Stream' metaphor, no explicit encouragement to 'observe without engaging,' and no guidance to 'let thoughts pass' (i.e., defusion). Instead, the student invites the client to 'pick one of those thoughts' and to 'examine it... to understand,' which shifts toward analyzing/cognitive restructuring (contrary to the rubric's 'must avoid: Analyze the water'). The phrase 'Let's slow the water down together' also implies attempting to control or modify the flow of thoughts (akin to 'build a dam'), which the rubric prohibits. Strengths: empathic tone, collaborative stance. Primary deficits: omission of core ACT defusion/mindfulness moves and inclusion of analysis/control-oriented language.",
+          "flags": [
+            "missing_leaves_on_a_stream",
+            "missing_observing_without_engaging",
+            "missing_letting_thoughts_pass",
+            "includes_analyzing_thoughts",
+            "suggests_controlling_or_slowing_thoughts"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 80,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 30,
+          "reasoning": "The response demonstrates strong empathy and reflective listening (acknowledging overwhelm, validating the drowning metaphor), but it fails to use the ACT-specific strategies required by the rubric. Missing required elements: there is no invocation of the 'Leaves on a Stream' metaphor, no explicit encouragement to 'observe without engaging,' and no guidance to 'let thoughts pass' (i.e., defusion). Instead, the student invites the client to 'pick one of those thoughts' and to 'examine it... to understand,' which shifts toward analyzing/cognitive restructuring (contrary to the rubric's 'must avoid: Analyze the water'). The phrase 'Let's slow the water down together' also implies attempting to control or modify the flow of thoughts (akin to 'build a dam'), which the rubric prohibits. Strengths: empathic tone, collaborative stance. Primary deficits: omission of core ACT defusion/mindfulness moves and inclusion of analysis/control-oriented language.",
+          "flags": [
+            "missing_leaves_on_a_stream",
+            "missing_observing_without_engaging",
+            "missing_letting_thoughts_pass",
+            "includes_analyzing_thoughts",
+            "suggests_controlling_or_slowing_thoughts"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 80,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 45,
+          "reasoning": "The student demonstrates strong empathic attunement and validates the client's experience effectively. However, the response significantly diverges from ACT mindfulness principles and the specified metaphor requirements. The student attempts to 'slow the water down' and 'examine' thoughts, which mirrors the problematic 'analyze the water' approach the rubric explicitly warns against. The response focuses on cognitive analysis ('understand what this particular thought is trying to tell you') rather than ACT's core mechanism of observing thoughts without engagement. The metaphor of 'building a dam' by slowing/stopping the waterfall is present in the implicit problem-solving stance. Critically missing are references to 'Leaves on a Stream' (observing thoughts as passing objects rather than engaging with content) and the principle of letting thoughts pass naturally. While the therapeutic tone is warm and the validation genuine, the modality application contradicts foundational ACT principles that emphasize defusion and acceptance rather than understanding or analysis of thought content.",
+          "flags": [
+            "Suggests analyzing thought content ('understand what this particular thought is trying to tell you') - contradicts ACT defusion",
+            "Proposes slowing/controlling the thought stream rather than accepting its flow",
+            "No reference to Leaves on a Stream metaphor or similar defusion technique",
+            "Misses opportunity to model observing thoughts without engagement",
+            "Problem-focused approach (examining, understanding) rather than acceptance-focused"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 28
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:56:45.878Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 65,
+          "reasoning": "The student demonstrates strong empathy by validating the client's overwhelming experience and refrains from direct thought suppression ('Build a dam'). However, they violate core ACT principles by encouraging analysis ('examine it to understand what it’s trying to tell you') instead of passive observation. The response fails to introduce the 'Leaves on a Stream' metaphor, omits explicit guidance to observe without engagement, and directs the client to select and interact with a thought rather than letting it pass. While collaboration and avoidance of combative language are strengths, the focus on understanding thought content ('Analyze the water') contradicts ACT’s defusion goals.",
+          "flags": [
+            "Missing required Leaves on a Stream metaphor",
+            "Inadvertently encourages analysis ('examine it ... to understand')",
+            "Focuses on thought content rather than detached observation"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates empathy and correctly identifies the client's feeling of being overwhelmed. However, the response leans towards examining the thought, which could equate to 'analyzing the water,' a point that should be avoided according to the rubric. While the student suggests understanding what the thought is trying to say, this might promote engagement with the thought rather than observing and letting it pass as proposed by the 'Leaves on a Stream' metaphor. More focus on observing without engaging and letting the thoughts pass could enhance adherence to the ACT approach.",
+          "flags": [
+            "Analyze the water"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 75,
+          "reasoning": "The student demonstrates empathy and correctly identifies the client's feeling of being overwhelmed. However, the response leans towards examining the thought, which could equate to 'analyzing the water,' a point that should be avoided according to the rubric. While the student suggests understanding what the thought is trying to say, this might promote engagement with the thought rather than observing and letting it pass as proposed by the 'Leaves on a Stream' metaphor. More focus on observing without engaging and letting the thoughts pass could enhance adherence to the ACT approach.",
+          "flags": [
+            "Analyze the water"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student demonstrated strong empathy by validating the client's distress and accurately reflecting the 'waterfall' metaphor. However, the response failed to adhere to the ACT rubric requirements. The client explicitly stated they are 'drowning' because they try to 'catch and analyze' thoughts. The student's response invites the client to continue this struggle by suggesting they 'examine it together' to understand what the thought is 'trying to tell you.' This reinforces cognitive fusion and aligns with the prohibited behavior of 'Analyze the water.' The student missed the required intervention to use the 'Leaves on a Stream' technique and failed to guide the client toward 'observing without engaging' or 'letting thoughts pass.'",
+          "flags": [
+            "Missed modality requirement (Leaves on a Stream)",
+            "Violated 'Must Avoid' rule (Analyze the water/content)",
+            "Reinforced cognitive fusion instead of defusion"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:21:59.265Z"
         }
       ]
     }

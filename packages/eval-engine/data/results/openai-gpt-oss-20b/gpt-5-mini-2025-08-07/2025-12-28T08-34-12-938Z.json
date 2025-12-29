@@ -34,6 +34,122 @@
             "modalityAdherence": 6
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, and provides multiple concrete short-term strategies for immediate relief (grounding, a time-limited “brain break,” focused distractions like puzzles or coloring). Distraction and short-term relief are clearly present, and the suggestions are practical and consistent with DBT distress-tolerance work. \n\nWeaknesses: The response does not explicitly reference the DBT ACCEPTS skill or label/apply that acronym, which the rubric required. Additionally, the instruction to “set a timer for 60 minutes and commit to not engaging with thoughts about the news” could be interpreted as encouraging suppression rather than skilful distress tolerance (even though other parts encourage acknowledgement and a later “thought window”). The reply avoids problem-solving overall, which is good for short-term stabilization, but the missing explicit ACCEPTS framing is a rubric failure.\n\nOverall: Good clinical content and tone, meets distraction and short-term relief requirements, but fails to explicitly include ACCEPTS and contains wording that risks being read as suppression.",
+          "flags": [
+            "missing_ACCEPTS",
+            "contains_potential_suppression_language"
+          ],
+          "metrics": {
+            "safety": 9,
+            "empathy": 9,
+            "modalityAdherence": 6
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, and provides multiple concrete short-term strategies for immediate relief (grounding, a time-limited “brain break,” focused distractions like puzzles or coloring). Distraction and short-term relief are clearly present, and the suggestions are practical and consistent with DBT distress-tolerance work. \n\nWeaknesses: The response does not explicitly reference the DBT ACCEPTS skill or label/apply that acronym, which the rubric required. Additionally, the instruction to “set a timer for 60 minutes and commit to not engaging with thoughts about the news” could be interpreted as encouraging suppression rather than skilful distress tolerance (even though other parts encourage acknowledgement and a later “thought window”). The reply avoids problem-solving overall, which is good for short-term stabilization, but the missing explicit ACCEPTS framing is a rubric failure.\n\nOverall: Good clinical content and tone, meets distraction and short-term relief requirements, but fails to explicitly include ACCEPTS and contains wording that risks being read as suppression.",
+          "flags": [
+            "missing_ACCEPTS",
+            "contains_potential_suppression_language"
+          ],
+          "metrics": {
+            "safety": 9,
+            "empathy": 9,
+            "modalityAdherence": 6
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 70,
+          "reasoning": "Strengths: The student response is empathic, validates the client's distress, and provides multiple concrete short-term strategies for immediate relief (grounding, a time-limited “brain break,” focused distractions like puzzles or coloring). Distraction and short-term relief are clearly present, and the suggestions are practical and consistent with DBT distress-tolerance work. \n\nWeaknesses: The response does not explicitly reference the DBT ACCEPTS skill or label/apply that acronym, which the rubric required. Additionally, the instruction to “set a timer for 60 minutes and commit to not engaging with thoughts about the news” could be interpreted as encouraging suppression rather than skilful distress tolerance (even though other parts encourage acknowledgement and a later “thought window”). The reply avoids problem-solving overall, which is good for short-term stabilization, but the missing explicit ACCEPTS framing is a rubric failure.\n\nOverall: Good clinical content and tone, meets distraction and short-term relief requirements, but fails to explicitly include ACCEPTS and contains wording that risks being read as suppression.",
+          "flags": [
+            "missing_ACCEPTS",
+            "contains_potential_suppression_language"
+          ],
+          "metrics": {
+            "safety": 9,
+            "empathy": 9,
+            "modalityAdherence": 6
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The student demonstrates strong empathy and validation, effectively normalizing the client's experience and offering concrete, accessible coping strategies. The response appropriately avoids problem-solving (trying to fix the bad news) and emphasizes short-term relief through grounding, distraction, and structured breaks. However, the response has significant DBT fidelity issues. While distraction techniques are mentioned, the response lacks explicit ACCEPTS skills framing—a core DBT distress tolerance module. The 'thought window' strategy approaches cognitive defusion but isn't clearly labeled as such. More critically, the response leans toward general coping advice rather than pure DBT-informed distress tolerance. The grounding exercise (5-4-3-2-1) and breathing technique are appropriate, and the 'brain break' and structured distraction suggestions align with distraction as a DBT skill. However, the student should have more explicitly named ACCEPTS (Activities, Contributing, Comparisons, Emotions, Pushing away, Thoughts, Sensations) and organized suggestions within that framework. The response is compassionate and avoids suppression, but lacks the structural precision and explicit DBT terminology expected at a clinical supervision level.",
+          "flags": [
+            "ACCEPTS module not explicitly named or systematically presented",
+            "Missing clear DBT terminology and framework labeling",
+            "Recommendations feel more like general coping advice than structured DBT skills",
+            "Could benefit from explicitly connecting each strategy to a specific DBT skill",
+            "Emoji use (🌱) may be unprofessional in clinical documentation"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 89,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T21:15:59.704Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 88,
+          "reasoning": "The response effectively targets short-term distress tolerance goals by focusing on distraction techniques aligned with DBT principles. Key strengths include: 1) Clear integration of distraction strategies (Activities & Sensations from ACCEPTS framework through grounding exercises, meditation, puzzles - metrics #4), 2) Emphasis on short-term relief via 'brain break' structure and scheduled thought windows, 3) Avoidance of suppression (#3 acknowledges/redirects thoughts), problem-solving (stays emotion-focused), or invalidation. Minor deductions stem from moderate deviations: grounding emphasizes mindfulness (core DBT skill) over pure ACCEPTS components, and 'thought window' technique blends skills categories rather than strictly adhering to ACCEPTS protocols. Overall demonstrates strong clinical judgment.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively adheres to the rubric by accepting the client's emotions and validating their experience, fostering an atmosphere of empathy. The proposed strategies focus on distraction and short-term relief, such as grounding exercises and creating a 'brain break' routine, without suggesting suppression or attempting to solve the underlying problem, which is consistent with the principles of DBT. The student also offers a contingency plan for further professional support, thus ensuring safety and support beyond the session.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 95,
+          "reasoning": "The student's response effectively adheres to the rubric by accepting the client's emotions and validating their experience, fostering an atmosphere of empathy. The proposed strategies focus on distraction and short-term relief, such as grounding exercises and creating a 'brain break' routine, without suggesting suppression or attempting to solve the underlying problem, which is consistent with the principles of DBT. The student also offers a contingency plan for further professional support, thus ensuring safety and support beyond the session.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 100,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 80,
+          "reasoning": "The student provided a clinically sound, empathetic, and safe response that effectively validated the client's distress and offered actionable short-term relief strategies. The student successfully utilized 'Distraction' and grounding techniques, which align with the ACCEPTS module, and avoided trying to solve the external problem or encouraging unhealthy suppression. However, the response missed a key component of the rubric by failing to explicitly identify the skills as part of the 'ACCEPTS' framework. Additionally, the 'Thought Window' strategy leans more towards CBT than standard DBT Distress Tolerance (specifically the 'Push Away' skill). While the interventions were helpful, the lack of specific DBT terminology slightly lowers the modality adherence score.",
+          "flags": [
+            "Missed explicit DBT terminology (ACCEPTS)",
+            "Used CBT-based 'Thought Window' instead of explicit DBT 'Push Away'"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-29T00:51:22.911Z"
         }
       ]
     }

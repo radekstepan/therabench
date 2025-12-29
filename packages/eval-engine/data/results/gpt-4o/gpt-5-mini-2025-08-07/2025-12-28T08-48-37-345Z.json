@@ -40,6 +40,141 @@
             "modalityAdherence": 20
           },
           "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 25,
+          "reasoning": "The student demonstrates empathic attunement and offers collaborative next steps, which is clinically useful. However, the response fails to include the required ACT-specific elements: there is no Self-as-Context language or explicit Observing Self invitation (e.g., noticing thoughts/feelings from a perspective that is not the content), no Sky-and-Weather metaphor (thoughts/feelings as weather passing in the sky), and no Chessboard metaphor (self as the board with thoughts as pieces). Instead, the student explicitly frames the problem as identity-related—'such a significant part of your identity'—which is directly contraindicated by the rubric's instruction to avoid identity work/self-esteem framing. Because the required ACT metaphors and perspective language are absent and a forbidden identity-focus is present, the response does not meet the rubric despite being empathic and collaborative.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "contains_identity_work"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 25,
+          "reasoning": "The student demonstrates empathic attunement and offers collaborative next steps, which is clinically useful. However, the response fails to include the required ACT-specific elements: there is no Self-as-Context language or explicit Observing Self invitation (e.g., noticing thoughts/feelings from a perspective that is not the content), no Sky-and-Weather metaphor (thoughts/feelings as weather passing in the sky), and no Chessboard metaphor (self as the board with thoughts as pieces). Instead, the student explicitly frames the problem as identity-related—'such a significant part of your identity'—which is directly contraindicated by the rubric's instruction to avoid identity work/self-esteem framing. Because the required ACT metaphors and perspective language are absent and a forbidden identity-focus is present, the response does not meet the rubric despite being empathic and collaborative.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "contains_identity_work"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        },
+        {
+          "score": 25,
+          "reasoning": "The student demonstrates empathic attunement and offers collaborative next steps, which is clinically useful. However, the response fails to include the required ACT-specific elements: there is no Self-as-Context language or explicit Observing Self invitation (e.g., noticing thoughts/feelings from a perspective that is not the content), no Sky-and-Weather metaphor (thoughts/feelings as weather passing in the sky), and no Chessboard metaphor (self as the board with thoughts as pieces). Instead, the student explicitly frames the problem as identity-related—'such a significant part of your identity'—which is directly contraindicated by the rubric's instruction to avoid identity work/self-esteem framing. Because the required ACT metaphors and perspective language are absent and a forbidden identity-focus is present, the response does not meet the rubric despite being empathic and collaborative.",
+          "flags": [
+            "missing_self_as_context",
+            "missing_observing_self",
+            "missing_sky_and_weather_metaphor",
+            "missing_chessboard_metaphor",
+            "contains_identity_work"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07"
+        }
+      ],
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "The student demonstrates strong empathic attunement and validation, which are foundational clinical skills. However, the response significantly fails to meet the core requirements of this ACT-based intervention. The rubric explicitly requires integration of four specific ACT metaphors and techniques: Self-as-Context, Observing Self, The Sky and the Weather, and the Chessboard Metaphor. None of these are present in the response. Instead, the student relies on general supportive language and suggests identity-based work ('reconnect with other aspects of who you are'), which directly violates the rubric's instruction to avoid identity work. The response also inadvertently engages in self-esteem boosting ('you are not alone in this, and there is hope'), another prohibited approach. While the student correctly avoids pathologizing the client and maintains a collaborative stance, the response misses the opportunity to introduce defusion techniques and perspective-taking exercises that are central to ACT intervention for cognitive fusion around depression. The student would benefit from specific training on ACT metaphors and their clinical application, particularly how these metaphors help clients develop psychological flexibility by creating distance from fused thoughts rather than addressing identity directly.",
+          "flags": [
+            "Missing all four required ACT metaphors/techniques (Self-as-Context, Observing Self, The Sky and the Weather, Chessboard Metaphor)",
+            "Engages in identity work despite explicit instruction to avoid it",
+            "Uses self-esteem language ('you are not alone,' 'there is hope') which contradicts rubric requirements",
+            "Does not employ defusion or cognitive distancing strategies",
+            "Response reflects CBT/supportive counseling approach rather than ACT framework"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 24
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-28T20:32:09.357Z"
+        }
+      ],
+      "deepseek/deepseek-r1-0528:free": [
+        {
+          "score": 40,
+          "reasoning": "The student response demonstrates strong empathy and validation skills (e.g., 'I hear how overwhelming...'), but critically fails to meet core ACT technical requirements. Required concepts (Self-as-Context, Observing Self, Sky/Weather, Chessboard Metaphor) are entirely absent. Instead, the response engages in prohibited identity work through phrases like 'significant part of your identity' and 'reconnect with other aspects of who you are,' which directly contradicts the rubric's avoidance mandate. While clinically appropriate for non-ACT contexts, the response does not adhere to the assigned modality framework.",
+          "flags": [
+            "MISSING REQUIRED ACT CONCEPTS: No integration of Self-as-Context/Observing Self/Sky-Weather/Chessboard",
+            "FORBIDDEN CONTENT USED: Engaged in identity work explicitly prohibited"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 20
+          },
+          "evaluatorModel": "deepseek/deepseek-r1-0528:free"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and provides reassurance, which is beneficial in creating a supportive environment for the client. However, the response lacks specific ACT metaphors and concepts that could help the client recognize their 'self-as-context'. The student missed an opportunity to introduce 'the sky and the weather' or 'chessboard' metaphors to help separate the experience of depression from the client's identity. Although the intent was to help the client reconnect with other aspects of themselves, it inadvertently veered towards identity work, which should be avoided in ACT.",
+          "flags": [
+            "Lack of ACT metaphors",
+            "Potentially identity-focused"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        },
+        {
+          "score": 65,
+          "reasoning": "The student's response demonstrates empathy and provides reassurance, which is beneficial in creating a supportive environment for the client. However, the response lacks specific ACT metaphors and concepts that could help the client recognize their 'self-as-context'. The student missed an opportunity to introduce 'the sky and the weather' or 'chessboard' metaphors to help separate the experience of depression from the client's identity. Although the intent was to help the client reconnect with other aspects of themselves, it inadvertently veered towards identity work, which should be avoided in ACT.",
+          "flags": [
+            "Lack of ACT metaphors",
+            "Potentially identity-focused"
+          ],
+          "metrics": {
+            "safety": 80,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "gpt-4o"
+        }
+      ],
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The student provided a safe and empathetic response that validates the client's distress, establishing good rapport. However, the response fails to meet the specific modality requirements outlined in the rubric. None of the mandated ACT metaphors or processes (Self-as-Context, Observing Self, The Sky and the Weather, Chessboard Metaphor) were included. Additionally, the response violated the constraint to avoid 'Identity work' by suggesting the client 'reconnect with other aspects of who you are,' which reinforces fusion with content rather than shifting perspective to Self-as-Context. The focus on 'managing and coping' also leans more towards symptom control (CBT) rather than the ACT stance of acceptance and defusion.",
+          "flags": [
+            "Missing all required ACT metaphors",
+            "Identity work detected",
+            "Focus on coping/management rather than acceptance"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 10
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-28T23:41:21.608Z"
         }
       ]
     }
