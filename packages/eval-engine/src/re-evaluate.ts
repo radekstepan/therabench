@@ -113,11 +113,15 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
           console.log(`   ✓ Retry ${attempt} succeeded!`);
         }
         
+        // Ensure evaluatorModel from the judge response doesn't override our intended value
+        const assessmentObj = assessment as any;
+        delete assessmentObj.evaluatorModel; // Remove if judge included it
+        
         return {
-          ...(assessment as JudgeAssessment),
+          ...assessmentObj,
           evaluatorModel: EXPERT_MODEL_NAME,
           timestamp: new Date().toISOString()
-        };
+        } as JudgeAssessment;
       } catch (parseError) {
         const errorMsg = parseError instanceof Error ? parseError.message : String(parseError);
         console.warn(`   ✗ Attempt ${attempt}/${maxRetries}: Failed to parse JSON from judge`);
@@ -358,23 +362,7 @@ async function main() {
         
         skippedCount++;
         
-        // Still add to resultsByRun to ensure it's saved
-        const runKey = `${run.modelName}|${run.timestamp}`;
-        if (!resultsByRun.has(runKey)) {
-          resultsByRun.set(runKey, {
-            candidateModel: run.modelName,
-            timestamp: run.timestamp,
-            runs: []
-          });
-        }
-        
-        const existingRuns = resultsByRun.get(runKey)!.runs;
-        const existingIndex = existingRuns.findIndex(r => r.questionId === run.questionId && r.runId === run.runId);
-        
-        if (existingIndex < 0) {
-          existingRuns.push(run);
-        }
-        
+        // Don't add to resultsByRun - we're not modifying this run, so it should stay in its original file
         continue;
       }
 
