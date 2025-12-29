@@ -1,5 +1,6 @@
-import { Trophy, Info, ArrowUpDown } from 'lucide-react';
-import { cn, getScoreColor, formatPercentWithColor } from '../utils';
+import { useState } from 'react';
+import { Trophy, Info, ArrowUpDown, Sparkles } from 'lucide-react';
+import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { ExpertRankingGrid } from './ExpertRankingGrid';
 
@@ -42,6 +43,19 @@ export const Dashboard = ({
   sortDirection,
   onSort
 }: DashboardProps) => {
+  const [hoveredModel, setHoveredModel] = useState<string | null>(null);
+
+  const getBaseModelName = (modelName: string): string => {
+    return stripEnhancedSuffix(modelName);
+  };
+
+  const isRowHighlighted = (modelName: string): boolean => {
+    if (!hoveredModel) return false;
+    const hoveredBase = getBaseModelName(hoveredModel);
+    const currentBase = getBaseModelName(modelName);
+    return hoveredBase === currentBase;
+  };
+
   return (
     <div className="p-8 max-w-5xl mx-auto w-full overflow-y-auto">
       <header className="mb-8">
@@ -57,7 +71,10 @@ export const Dashboard = ({
               <div className="text-emerald-500 text-xs font-mono font-medium uppercase tracking-wide mb-1">Top Performer</div>
             </div>
             <div className="flex-1 flex flex-col justify-center relative z-10">
-              <div className="text-xl font-mono font-bold text-white mb-1">{topPerformer.name}</div>
+              <div className="text-xl font-mono font-bold text-white mb-1 flex items-center gap-2">
+                {isEnhancedModel(topPerformer.name) && <Sparkles className="w-4 h-4 text-pink-500 flex-shrink-0" />}
+                {stripEnhancedSuffix(topPerformer.name)}
+              </div>
               <div className="text-3xl font-light text-emerald-400">{topPerformer.avgScore}% <span className="text-sm text-emerald-600/70 ml-1">avg</span></div>
             </div>
           </div>
@@ -103,7 +120,8 @@ export const Dashboard = ({
                           
                           return (
                             <div key={modelInfo} className="inline-flex items-center gap-2 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded">
-                              <span className="font-mono text-xs text-white truncate max-w-[180px]" title={modelName}>{modelName}</span>
+                              {isEnhancedModel(modelName) && <Sparkles className="w-3 h-3 text-pink-500 flex-shrink-0" />}
+                              <span className="font-mono text-xs text-white truncate max-w-[180px]" title={stripEnhancedSuffix(modelName)}>{stripEnhancedSuffix(modelName)}</span>
                               {questionCount && (
                                 <span className="text-xs text-amber-400 font-semibold">{questionCount}</span>
                               )}
@@ -239,11 +257,22 @@ export const Dashboard = ({
           </thead>
           <tbody className="divide-y divide-zinc-800">
             {modelStats.map((stat) => (
-              <tr key={stat.name} className="group hover:bg-zinc-800/50 transition-colors">
+              <tr 
+                key={stat.name} 
+                className={cn(
+                  "group transition-colors",
+                  isRowHighlighted(stat.name) 
+                    ? "bg-emerald-900/20" 
+                    : "hover:bg-zinc-800/50"
+                )}
+                onMouseEnter={() => setHoveredModel(stat.name)}
+                onMouseLeave={() => setHoveredModel(null)}
+              >
                 <td className="px-4 py-2 text-zinc-500 font-mono whitespace-nowrap">#{stat.scoreRank}</td>
                 <td className="px-4 py-2 max-w-0">
-                  <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
-                    {stat.name}
+                  <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate flex items-center gap-1.5">
+                    {isEnhancedModel(stat.name) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
+                    <span className="truncate">{stripEnhancedSuffix(stat.name)}</span>
                   </div>
                 </td>
                 <td className="px-2 py-2 align-middle whitespace-nowrap">

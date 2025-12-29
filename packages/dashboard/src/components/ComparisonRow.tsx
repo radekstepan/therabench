@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Save, Gavel, Brain, Shield } from 'lucide-react';
-import { cn, getScoreColor } from '../utils';
+import { ChevronDown, ChevronRight, Save, Gavel, Brain, Shield, Sparkles } from 'lucide-react';
+import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import type { AugmentedResult, HumanOverride } from '../types';
 
@@ -11,6 +11,9 @@ interface ComparisonRowProps {
   onToggle: () => void;
   onSaveOverride: (runId: string, override: HumanOverride) => void;
   selectedJudges: Set<string>;
+  hoveredModel: string | null;
+  onHoverChange: (modelName: string | null) => void;
+  isHighlighted: boolean;
 }
 
 export const ComparisonRow = ({ 
@@ -19,7 +22,10 @@ export const ComparisonRow = ({
   isExpanded, 
   onToggle, 
   onSaveOverride,
-  selectedJudges
+  selectedJudges,
+  hoveredModel,
+  onHoverChange,
+  isHighlighted
 }: ComparisonRowProps) => {
   const [editScore, setEditScore] = useState(run.effectiveScore);
   const [editNotes, setEditNotes] = useState(run.override?.expertNotes || '');
@@ -46,13 +52,16 @@ export const ComparisonRow = ({
         onClick={onToggle} 
         className={cn(
           "cursor-pointer transition-colors border-b border-zinc-800/50",
-          isExpanded ? "bg-zinc-800/40" : "hover:bg-zinc-800/20"
+          isHighlighted ? "bg-emerald-900/20" : isExpanded ? "bg-zinc-800/40" : "hover:bg-zinc-800/20"
         )}
+        onMouseEnter={() => onHoverChange(run.modelName)}
+        onMouseLeave={() => onHoverChange(null)}
       >
         <td className="px-3 py-2 text-center w-16 text-zinc-500 font-mono text-sm whitespace-nowrap">#{rank}</td>
         <td className="px-3 py-2 max-w-0">
-          <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate">
-            {run.modelName}
+          <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate flex items-center gap-1.5">
+            {isEnhancedModel(run.modelName) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
+            <span className="truncate">{stripEnhancedSuffix(run.modelName)}</span>
           </div>
           <div className="text-xs text-zinc-500 font-mono mt-0.5 whitespace-nowrap">
             {new Date(run.timestamp).toLocaleString('en-US', { 

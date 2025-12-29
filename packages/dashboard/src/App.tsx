@@ -64,12 +64,9 @@ export default function App() {
     setQuestionOverrides(getQuestionOverrides());
   }, []);
 
-  // Show welcome modal on first visit
+  // Show welcome modal on initialization
   useEffect(() => {
-    const hasSeenWelcome = localStorage.getItem('therabench_has_seen_welcome');
-    if (!hasSeenWelcome) {
-      setIsWelcomeModalOpen(true);
-    }
+    setIsWelcomeModalOpen(true);
   }, []);
 
   useEffect(() => {

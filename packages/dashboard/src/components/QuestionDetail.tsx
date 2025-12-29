@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { Edit2, History, Info, ArrowUpDown } from 'lucide-react';
-import { cn } from '../utils';
+import { cn, stripEnhancedSuffix } from '../utils';
 import { RubricEditor } from './RubricEditor';
 import { ComparisonRow } from './ComparisonRow';
 import type { QuestionNode, AugmentedResult, Rubric, HumanOverride } from '../types';
@@ -35,6 +36,19 @@ export const QuestionDetail = ({
   onSaveOverride,
   onSort
 }: QuestionDetailProps) => {
+  const [hoveredModel, setHoveredModel] = useState<string | null>(null);
+
+  const getBaseModelName = (modelName: string): string => {
+    return stripEnhancedSuffix(modelName);
+  };
+
+  const isRowHighlighted = (modelName: string): boolean => {
+    if (!hoveredModel) return false;
+    const hoveredBase = getBaseModelName(hoveredModel);
+    const currentBase = getBaseModelName(modelName);
+    return hoveredBase === currentBase;
+  };
+
   return (
     <div className="flex flex-col h-full">
       {/* Question Header */}
@@ -189,6 +203,9 @@ export const QuestionDetail = ({
                       onToggle={() => onToggleRun(run.runId)}
                       onSaveOverride={onSaveOverride}
                       selectedJudges={selectedJudges}
+                      hoveredModel={hoveredModel}
+                      onHoverChange={setHoveredModel}
+                      isHighlighted={isRowHighlighted(run.modelName)}
                     />
                   ))}
                 </tbody>

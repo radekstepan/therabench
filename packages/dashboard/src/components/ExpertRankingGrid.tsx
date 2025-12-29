@@ -1,5 +1,6 @@
-import { useMemo } from 'react';
-import { cn, getScoreColor } from '../utils';
+import { useMemo, useState } from 'react';
+import { Sparkles } from 'lucide-react';
+import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 
 interface ModelStat {
   name: string;
@@ -12,6 +13,19 @@ interface ExpertRankingGridProps {
 }
 
 export const ExpertRankingGrid = ({ modelStats }: ExpertRankingGridProps) => {
+  const [hoveredModel, setHoveredModel] = useState<string | null>(null);
+
+  const getBaseModelName = (modelName: string): string => {
+    return stripEnhancedSuffix(modelName);
+  };
+
+  const isRowHighlighted = (modelName: string): boolean => {
+    if (!hoveredModel) return false;
+    const hoveredBase = getBaseModelName(hoveredModel);
+    const currentBase = getBaseModelName(modelName);
+    return hoveredBase === currentBase;
+  };
+
   // Extract all unique judges
   const allJudges = useMemo(() => {
     const judges = new Set<string>();
@@ -70,15 +84,6 @@ export const ExpertRankingGrid = ({ modelStats }: ExpertRankingGridProps) => {
     return short;
   };
 
-  // Shorten model names for display
-  const shortenModelName = (name: string): string => {
-    let short = name.replace('anthropic/', '').replace('google/', '').replace('openai/', '');
-    if (short.length > 30) {
-      short = short.substring(0, 27) + '...';
-    }
-    return short;
-  };
-
   return (
     <div className="bg-zinc-900 border border-zinc-800 rounded-md p-6 mt-10">
       <div className="overflow-x-auto">
@@ -111,15 +116,26 @@ export const ExpertRankingGrid = ({ modelStats }: ExpertRankingGridProps) => {
             {topModels.map((model, idx) => (
               <tr 
                 key={model.name}
-                className="group hover:bg-zinc-800/50 transition-colors"
+                className={cn(
+                  "group transition-colors",
+                  isRowHighlighted(model.name)
+                    ? "bg-emerald-900/20"
+                    : "hover:bg-zinc-800/50"
+                )}
+                onMouseEnter={() => setHoveredModel(model.name)}
+                onMouseLeave={() => setHoveredModel(null)}
               >
                 <td 
-                  className="px-2 py-1 font-mono text-sm text-white sticky left-0 bg-zinc-900 group-hover:bg-zinc-800/50 z-10 border-r border-zinc-800 transition-colors"
-                  title={model.name}
+                  className={cn(
+                    "px-2 py-1 font-mono text-sm text-white sticky left-0 z-10 border-r border-zinc-800 transition-colors",
+                    isRowHighlighted(model.name) ? "bg-emerald-900/20" : "bg-zinc-900 group-hover:bg-zinc-800/50"
+                  )}
+                  title={stripEnhancedSuffix(model.name)}
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-zinc-500 text-xs">#{idx + 1}</span>
-                    <span className="group-hover:text-emerald-400 transition-colors">{model.name}</span>
+                    {isEnhancedModel(model.name) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
+                    <span className="group-hover:text-emerald-400 transition-colors truncate">{stripEnhancedSuffix(model.name)}</span>
                   </div>
                 </td>
                 {allJudges.map(judge => {

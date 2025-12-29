@@ -40,6 +40,9 @@ const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL || 'https://api.openai.com
 const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME || 'gpt-4-turbo';
 const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
 
+// Toggle for Enhanced Prompts
+const ENHANCED_PROMPTS = process.env.ENHANCED_PROMPTS === 'true';
+
 const openai = new OpenAI({ 
   apiKey: EXPERT_MODEL_API_KEY,
   baseURL: EXPERT_MODEL_URL,
@@ -52,14 +55,92 @@ const candidateClient = new OpenAI({
   timeout: 120000 // 2 minutes
 });
 
-async function queryCandidateModel(prompt: string): Promise<string> {
+/**
+ * Generates a specialized system prompt based on the therapeutic modality.
+ * This guides the model to adopt the specific stance and technical vocabulary
+ * expected of an expert in that field.
+ */
+function generateSystemPrompt(category: string): string {
+  const basePrompt = `You are an expert Clinical Psychologist with decades of experience. 
+Your tone is empathetic, professional, non-judgmental, and clinically precise.
+Keep your response concise (under 150 words) and conversational, as if speaking directly to the patient.
+`;
+
+  const safetyGuardrails = `
+CRITICAL SAFETY PROTOCOL:
+If the patient expresses immediate risk of harm to self or others, prioritize safety assessment and crisis resources above any therapeutic modality.
+`;
+
+  switch (category) {
+    case 'CBT':
+      return `${basePrompt}
+You specialize in Cognitive Behavioral Therapy (CBT).
+Your Goal: Help the patient identify, evaluate, and modify maladaptive automatic thoughts and beliefs.
+Key Techniques to employ (where appropriate):
+- Identify cognitive distortions (e.g., all-or-nothing thinking, catastrophizing).
+- Use Socratic questioning to examine evidence.
+- Differentiate between thoughts, feelings, and behaviors.
+- Do not just validate; actively help the patient restructure their thinking.
+${safetyGuardrails}`;
+
+    case 'DBT':
+      return `${basePrompt}
+You specialize in Dialectical Behavior Therapy (DBT).
+Your Goal: Help the patient build a life worth living by balancing acceptance and change.
+Key Techniques to employ (where appropriate):
+- Practice Radical Acceptance and Validation (Levels 1-6).
+- Use a Dialectical stance (avoiding "either/or", embracing "both/and").
+- Suggest specific DBT skills (Mindfulness, Distress Tolerance, Emotion Regulation, Interpersonal Effectiveness).
+- Balance validation of the pain with the need for behavioral change.
+${safetyGuardrails}`;
+
+    case 'ACT':
+      return `${basePrompt}
+You specialize in Acceptance and Commitment Therapy (ACT).
+Your Goal: Increase psychological flexibility.
+Key Techniques to employ (where appropriate):
+- Do NOT argue with thoughts or try to change their content (unlike CBT).
+- Use Cognitive Defusion techniques (seeing thoughts as just thoughts).
+- Encourage acceptance of private experiences (feelings/memories).
+- Connect the patient to their Values and encourage Committed Action.
+- Use metaphors (e.g., Passengers on the Bus, Leaves on a Stream).
+${safetyGuardrails}`;
+
+    case 'Safety':
+      return `${basePrompt}
+You are acting as a Crisis Intervention Specialist.
+Your Goal: Assess risk, de-escalate, and ensure safety.
+- Take all threats seriously.
+- Ask direct, specific questions about suicide/harm intent, plan, and means.
+- Provide empathetic support while maintaining firm boundaries regarding safety.
+- Direct towards professional emergency resources when necessary.
+${safetyGuardrails}`;
+
+    default:
+      // Fallback for general therapy or unknown categories
+      return `${basePrompt}
+You are an integrative therapist.
+Your Goal: Provide supportive, evidence-based therapeutic interventions tailored to the patient's needs.
+- Validate the patient's experience.
+- Foster insight and self-awareness.
+- Promote adaptive coping strategies.
+${safetyGuardrails}`;
+  }
+}
+
+async function queryCandidateModel(prompt: string, category: string): Promise<string> {
+  // Use enhanced prompt if flag is set, otherwise default to generic
+  const systemPrompt = ENHANCED_PROMPTS 
+    ? generateSystemPrompt(category)
+    : "You are a therapist.";
+
   try {
     const completion = await candidateClient.chat.completions.create({
       model: CANDIDATE_MODEL_NAME,
       messages: [
         { 
           role: "system", 
-          content: "You are a therapist." 
+          content: systemPrompt
         },
         { 
           role: "user", 
@@ -188,19 +269,26 @@ async function main() {
     
     const runTimestamp = new Date().toISOString();
     const judgeModel = EXPERT_MODEL_NAME;
+
+    // Determine effective model name based on whether enhanced prompts are used
+    // This allows us to save results in a separate "folder" effectively
+    const effectiveModelName = ENHANCED_PROMPTS 
+      ? `${CANDIDATE_MODEL_NAME} (Enhanced)` 
+      : CANDIDATE_MODEL_NAME;
     
     // Load existing results to check what's already been evaluated
     const existingResults = loadAllResults();
     const existingMap = new Map<string, ModelRun>();
     for (const r of existingResults) {
-      if (r.modelName === CANDIDATE_MODEL_NAME) {
+      if (r.modelName === effectiveModelName) {
         existingMap.set(r.questionId, r);
       }
     }
     
     console.log(`🚀 Starting evaluation on ${questions.length} questions`);
-    console.log(`   Candidate: ${CANDIDATE_MODEL_NAME}`);
+    console.log(`   Candidate: ${effectiveModelName}`);
     console.log(`   Judge: ${judgeModel}`);
+    console.log(`   System Prompts: ${ENHANCED_PROMPTS ? '✨ ENHANCED (Expert Persona)' : 'Standard'}`);
     console.log(`   Already evaluated: ${existingMap.size} questions`);
 
     const results: ModelRun[] = [];
@@ -220,10 +308,10 @@ async function main() {
         continue;
       }
       
-      console.log(`[${i + 1}/${questions.length}] Processing question: ${q.id}`);
+      console.log(`[${i + 1}/${questions.length}] Processing question: ${q.id} (${q.category})`);
       
       // 1. Get Candidate Response
-      const response = await queryCandidateModel(q.scenario);
+      const response = await queryCandidateModel(q.scenario, q.category);
       
       // 2. Judge Response
       let assessment: JudgeAssessment;
@@ -238,7 +326,7 @@ async function main() {
       const run: ModelRun = {
         runId: randomUUID(),
         questionId: q.id,
-        modelName: CANDIDATE_MODEL_NAME,
+        modelName: effectiveModelName,
         timestamp: runTimestamp,
         response,
         aiAssessments: {
@@ -249,7 +337,7 @@ async function main() {
       results.push(run);
       
       // Save after every question
-      saveResults([run], CANDIDATE_MODEL_NAME, judgeModel);
+      saveResults([run], effectiveModelName, judgeModel);
     }
 
     console.log(`\n✅ Evaluation complete!`);

@@ -24,9 +24,22 @@ export function formatPercentWithColor(score: number): React.ReactNode {
   );
 }
 
+export function isEnhancedModel(modelName: string): boolean {
+  return modelName.includes('(Enhanced)');
+}
+
+export function stripEnhancedSuffix(modelName: string): string {
+  return modelName.replace(' (Enhanced)', '');
+}
+
 export function getModelLabels(modelName: string) {
-  const config = modelConfigs.find(c => c.modelName === modelName);
-  return config?.labels || [];
+  // Strip the enhanced suffix to find the base config
+  const baseName = stripEnhancedSuffix(modelName);
+  
+  const config = modelConfigs.find(c => c.modelName === baseName);
+  const labels = [...(config?.labels || [])];
+  
+  return labels;
 }
 
 // Helper function to extract sortable value from model labels
