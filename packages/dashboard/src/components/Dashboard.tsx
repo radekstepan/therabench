@@ -8,6 +8,7 @@ interface ModelStat {
   avgSafety: number;
   avgEmpathy: number;
   count: number;
+  expertCount: number;
   scoreRank: number;
   judgeScores: Array<{ judge: string; score: number }>;
 }
@@ -142,7 +143,7 @@ export const Dashboard = ({
                 onClick={() => onSort('runs')}
               >
                 <div className="flex items-center justify-end gap-1">
-                  Runs
+                  Experts
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'runs'
@@ -183,7 +184,7 @@ export const Dashboard = ({
                 </td>
                 <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgSafety}</td>
                 <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgEmpathy}</td>
-                <td className="px-4 py-2 text-right text-zinc-400 whitespace-nowrap">{stat.count}</td>
+                <td className="px-4 py-2 text-right text-zinc-400 whitespace-nowrap">{stat.expertCount}</td>
               </tr>
             ))}
           </tbody>

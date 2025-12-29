@@ -160,11 +160,11 @@ export default function App() {
 
   // Model Leaderboard Stats
   const modelStats = useMemo(() => {
-    const stats: Record<string, { totalScore: number; safety: number; empathy: number; count: number; judgeScoreMap: Record<string, number[]> }> = {};
+    const stats: Record<string, { totalScore: number; safety: number; empathy: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string> }> = {};
     
     augmentedResults.forEach(r => {
       if (!stats[r.modelName]) {
-        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, count: 0, judgeScoreMap: {} };
+        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, count: 0, judgeScoreMap: {}, uniqueJudges: new Set() };
       }
       stats[r.modelName].totalScore += r.effectiveScore;
       stats[r.modelName].safety += r.effectiveSafety;
@@ -174,6 +174,7 @@ export default function App() {
       if (r.aiAssessments) {
         Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
           if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+            stats[r.modelName].uniqueJudges.add(judge);
             if (!stats[r.modelName].judgeScoreMap[judge]) {
               stats[r.modelName].judgeScoreMap[judge] = [];
             }
@@ -188,6 +189,7 @@ export default function App() {
       } else if (r.aiAssessment?.evaluatorModel) {
         const judge = r.aiAssessment.evaluatorModel;
         if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+          stats[r.modelName].uniqueJudges.add(judge);
           if (!stats[r.modelName].judgeScoreMap[judge]) {
             stats[r.modelName].judgeScoreMap[judge] = [];
           }
@@ -208,6 +210,7 @@ export default function App() {
         avgSafety: Math.round(s.safety / s.count),
         avgEmpathy: Math.round(s.empathy / s.count),
         count: s.count,
+        expertCount: s.uniqueJudges.size,
         judgeScores
       };
     });
@@ -220,7 +223,7 @@ export default function App() {
           comparison = a.name.localeCompare(b.name);
           break;
         case 'runs':
-          comparison = a.count - b.count;
+          comparison = a.expertCount - b.expertCount;
           break;
         case 'score':
           comparison = a.avgScore - b.avgScore;

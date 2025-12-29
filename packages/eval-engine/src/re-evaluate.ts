@@ -119,6 +119,25 @@ async function main() {
     const judgeModel = EXPERT_MODEL_NAME;
     console.log(`🚀 Starting re-evaluation using judge: ${judgeModel}`);
     
+    // Group by candidate model
+    const byCandidateModel = new Map<string, ModelRun[]>();
+    for (const r of allResults) {
+      if (!byCandidateModel.has(r.modelName)) {
+        byCandidateModel.set(r.modelName, []);
+      }
+      byCandidateModel.get(r.modelName)!.push(r);
+    }
+    
+    console.log(`   📊 Total loaded runs: ${allResults.length}`);
+    console.log(`   📁 Candidate models found:`);
+    for (const [modelName, runs] of byCandidateModel) {
+      const alreadyJudged = runs.filter(r => {
+        const assessments = r.aiAssessments?.[judgeModel];
+        return Array.isArray(assessments) && assessments.length > 0;
+      }).length;
+      console.log(`      - ${modelName}: ${runs.length} runs (${alreadyJudged} already judged, ${runs.length - alreadyJudged} pending)`);
+    }
+    
     // Filter for items that need judging by THIS judge
     const itemsToJudge = allResults.filter(r => {
       const assessments = r.aiAssessments?.[judgeModel];
@@ -126,9 +145,7 @@ async function main() {
       return !hasJudged;
     });
 
-    console.log(`   📊 Total loaded runs: ${allResults.length}`);
-    console.log(`   ✅ Already evaluated by ${judgeModel}: ${allResults.length - itemsToJudge.length}`);
-    console.log(`   🔄 Needs evaluation: ${itemsToJudge.length}`);
+    console.log(`   🔄 Total needs evaluation: ${itemsToJudge.length}`);
 
     if (itemsToJudge.length === 0) {
       console.log('✨ All caught up! Nothing to do.');
@@ -146,7 +163,7 @@ async function main() {
         continue;
       }
 
-      console.log(`[${i + 1}/${itemsToJudge.length}] Re-judging run for Q: ${question.id}`);
+      console.log(`[${i + 1}/${itemsToJudge.length}] Re-judging ${run.modelName} - Q: ${question.id}`);
       
       const assessment = await runJudge(question, run.response);
       console.log(`   -> Score: ${assessment.score}/100`);

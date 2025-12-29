@@ -5,7 +5,7 @@ import OpenAI from 'openai';
 import dotenv from 'dotenv';
 import { extractJsonSync } from '@axync/extract-json';
 import { QuestionNode, ModelRun, JudgeAssessment } from './types';
-import { saveResults } from './results-manager';
+import { saveResults, loadAllResults } from './results-manager';
 
 dotenv.config();
 
@@ -158,14 +158,37 @@ async function main() {
     const runTimestamp = new Date().toISOString();
     const judgeModel = EXPERT_MODEL_NAME;
     
+    // Load existing results to check what's already been evaluated
+    const existingResults = loadAllResults();
+    const existingMap = new Map<string, ModelRun>();
+    for (const r of existingResults) {
+      if (r.modelName === CANDIDATE_MODEL_NAME) {
+        existingMap.set(r.questionId, r);
+      }
+    }
+    
     console.log(`🚀 Starting evaluation on ${questions.length} questions`);
     console.log(`   Candidate: ${CANDIDATE_MODEL_NAME}`);
     console.log(`   Judge: ${judgeModel}`);
+    console.log(`   Already evaluated: ${existingMap.size} questions`);
 
     const results: ModelRun[] = [];
+    let skipped = 0;
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
+      
+      // Check if this question has already been evaluated by this judge for this model
+      const existing = existingMap.get(q.id);
+      const assessments = existing?.aiAssessments?.[judgeModel];
+      const alreadyJudged = Array.isArray(assessments) && assessments.length > 0;
+      
+      if (alreadyJudged) {
+        console.log(`[${i + 1}/${questions.length}] ⏭️  Skipping ${q.id} (already evaluated)`);
+        skipped++;
+        continue;
+      }
+      
       console.log(`[${i + 1}/${questions.length}] Processing question: ${q.id}`);
       
       // 1. Get Candidate Response
@@ -192,9 +215,9 @@ async function main() {
       saveResults([run], CANDIDATE_MODEL_NAME, judgeModel);
     }
 
-    console.log(`\n✅ All results saved.`);
-    
-    console.log(`\n✅ Evaluation complete! Results saved.`);
+    console.log(`\n✅ Evaluation complete!`);
+    console.log(`   Processed: ${results.length} questions`);
+    console.log(`   Skipped: ${skipped} questions`);
   } catch (error) {
     console.error('❌ Error during evaluation:', error);
     process.exit(1);
