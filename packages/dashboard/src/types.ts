@@ -18,6 +18,12 @@ export interface QuestionNode {
   rubric: Rubric;
 }
 
+export interface Usage {
+  inputTokens: number;
+  outputTokens: number;
+  cost: number;
+}
+
 export interface JudgeAssessment {
   score: number;
   reasoning: string;
@@ -29,6 +35,7 @@ export interface JudgeAssessment {
     empathy: number;
     modalityAdherence: number;
   };
+  usage?: Usage;
 }
 
 export interface ModelRun {
@@ -39,6 +46,7 @@ export interface ModelRun {
   response: string;
   aiAssessment?: JudgeAssessment; // Legacy: kept for backward compatibility
   aiAssessments?: Record<string, JudgeAssessment | JudgeAssessment[]>; // All assessments by judge model, with history (supports both old single and new array format)
+  usage?: Usage;
 }
 
 export interface HumanOverride {

@@ -1,7 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import type { ModelConfig, AugmentedResult } from './types';
-import { encode } from 'gpt-tokenizer';
 
 // Import model config
 import modelConfigData from '../../eval-engine/data/model-config.json';
@@ -102,40 +101,51 @@ export function formatModelPricing(modelName: string): string {
 
 // Helper function to count tokens in text
 export function countTokens(text: string): number {
-  try {
-    return encode(text).length;
-  } catch (error) {
-    // Fallback: rough estimation if encoding fails (1 token ≈ 4 characters)
-    return Math.ceil(text.length / 4);
-  }
+  // Lightweight fallback estimation (approx 4 chars per token)
+  // We no longer bundle gpt-tokenizer for the frontend
+  if (!text) return 0;
+  return Math.ceil(text.length / 4);
 }
 
 // Helper function to calculate actual cost for a model based on its runs
 export function calculateModelCost(modelName: string, runs: AugmentedResult[]): number {
-  const pricing = getModelPricing(modelName);
-  if (!pricing) return 0;
-  
   const modelRuns = runs.filter(r => r.modelName === modelName);
   
-  let totalInputTokens = 0;
-  let totalOutputTokens = 0;
+  // PRIMARY: Use precalculated cost injected at build time
+  let totalCost = 0;
+  let missingUsageData = false;
+
+  for (const run of modelRuns) {
+    if (run.usage?.cost !== undefined) {
+      totalCost += run.usage.cost;
+    } else {
+      missingUsageData = true;
+    }
+  }
+
+  // If we have full coverage from pre-calculated data, return it
+  if (!missingUsageData && modelRuns.length > 0) {
+    return totalCost;
+  }
   
+  // FALLBACK: Simple heuristic estimation if build-time data is missing
+  // This allows the UI to degrade gracefully without crashing or showing $0.00 incorrectly
+  const pricing = getModelPricing(modelName);
+  if (!pricing) return totalCost; // Return whatever we found so far
+  
+  // Only calculate for runs that lacked usage data
   modelRuns.forEach(run => {
-    // Input tokens: scenario + rubric context (approximate)
+    if (run.usage?.cost !== undefined) return;
+
     const inputText = run.question.scenario + 
                      JSON.stringify(run.question.rubric) +
-                     "You are a therapist. Respond to this patient."; // Approximate prompt
-    totalInputTokens += countTokens(inputText);
+                     "You are a therapist. Respond to this patient.";
+    const totalInputTokens = countTokens(inputText);
+    const totalOutputTokens = countTokens(run.response);
     
-    // Output tokens: the model's response
-    totalOutputTokens += countTokens(run.response);
+    totalCost += (totalInputTokens / 1_000_000) * pricing.input;
+    totalCost += (totalOutputTokens / 1_000_000) * pricing.output;
   });
-  
-  // Calculate cost: (tokens / 1M) * price per 1M tokens
-  const inputCost = (totalInputTokens / 1_000_000) * pricing.input;
-  const outputCost = (totalOutputTokens / 1_000_000) * pricing.output;
-  
-  const totalCost = inputCost + outputCost;
   
   return totalCost;
 }
@@ -160,67 +170,59 @@ export function formatModelCost(cost: number): string {
 }
 
 // Helper function to get color class for cost display based on relative position
-// Lower cost = better (green), higher cost = worse (red)
-// Uses percentiles to color costs relative to others in the same dataset
 export function getRelativeCostColor(cost: number, allCosts: number[]): string {
   if (cost === 0) return 'text-zinc-600';
   
-  // Filter out zero costs for percentile calculation
   const validCosts = allCosts.filter(c => c > 0);
   if (validCosts.length === 0) return 'text-zinc-600';
   
-  // Sort costs to find percentiles
   const sortedCosts = [...validCosts].sort((a, b) => a - b);
-  
-  // Find percentile position (0-100)
   const position = sortedCosts.filter(c => c < cost).length;
   const percentile = (position / sortedCosts.length) * 100;
   
-  // Apply color bands based on percentile (same as consensus correlation)
-  if (percentile <= 20) return 'text-emerald-400';  // Bottom 20% (cheapest)
-  if (percentile <= 40) return 'text-green-400';     // 20-40%
-  if (percentile <= 60) return 'text-yellow-400';    // 40-60%
-  if (percentile <= 80) return 'text-orange-400';    // 60-80%
-  return 'text-red-400';                             // Top 20% (most expensive)
+  if (percentile <= 20) return 'text-emerald-400';
+  if (percentile <= 40) return 'text-green-400';
+  if (percentile <= 60) return 'text-yellow-400';
+  if (percentile <= 80) return 'text-orange-400';
+  return 'text-red-400';
 }
 
 // Helper function to calculate actual cost for a judge based on their evaluations
 export function calculateJudgeCost(judgeId: string, runs: AugmentedResult[]): number {
+  let totalCost = 0;
   const pricing = getModelPricing(judgeId);
-  if (!pricing) return 0;
   
-  let totalInputTokens = 0;
-  let totalOutputTokens = 0;
-  
-  runs.forEach(run => {
-    // Check if this judge evaluated this run
+  for (const run of runs) {
     const assessments = run.aiAssessments?.[judgeId];
-    if (!assessments) return;
+    if (!assessments) continue;
     
-    // Handle both array and single assessment for backward compatibility
     const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
     
-    assessmentArray.forEach(assessment => {
-      // Input tokens: scenario + rubric + candidate model response
-      const inputText = run.question.scenario + 
-                       JSON.stringify(run.question.rubric) +
-                       run.response +
-                       "Evaluate this therapeutic response."; // Approximate prompt
-      totalInputTokens += countTokens(inputText);
-      
-      // Output tokens: the judge's reasoning + structured output
-      const outputText = assessment.reasoning + 
-                        JSON.stringify(assessment.flags) +
-                        JSON.stringify(assessment.metrics);
-      totalOutputTokens += countTokens(outputText);
-    });
-  });
-  
-  // Calculate cost: (tokens / 1M) * price per 1M tokens
-  const inputCost = (totalInputTokens / 1_000_000) * pricing.input;
-  const outputCost = (totalOutputTokens / 1_000_000) * pricing.output;
-  
-  const totalCost = inputCost + outputCost;
-  
+    for (const assessment of assessmentArray) {
+      // PRIMARY: Use precalculated cost
+      if (assessment.usage?.cost !== undefined) {
+        totalCost += assessment.usage.cost;
+        continue;
+      }
+
+      // FALLBACK: Heuristic estimation
+      if (pricing) {
+        const inputText = run.question.scenario + 
+                         JSON.stringify(run.question.rubric) +
+                         run.response +
+                         "Evaluate this therapeutic response.";
+        const outputText = assessment.reasoning + 
+                          JSON.stringify(assessment.flags) +
+                          JSON.stringify(assessment.metrics);
+        
+        const inputTokens = countTokens(inputText);
+        const outputTokens = countTokens(outputText);
+        
+        totalCost += (inputTokens / 1_000_000) * pricing.input;
+        totalCost += (outputTokens / 1_000_000) * pricing.output;
+      }
+    }
+  }
+
   return totalCost;
 }

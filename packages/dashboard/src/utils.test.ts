@@ -4,21 +4,16 @@ import type { AugmentedResult } from './types';
 
 describe('Token Counting and Cost Calculation', () => {
   describe('countTokens', () => {
-    it('should count tokens in text', () => {
+    it('should estimate tokens (heuristic)', () => {
+      // Since we removed gpt-tokenizer from frontend, this is now a heuristic
       const text = 'Hello, how are you today?';
       const tokens = countTokens(text);
       expect(tokens).toBeGreaterThan(0);
-      expect(tokens).toBeLessThan(text.length); // Should be fewer tokens than characters
+      expect(tokens).toBe(Math.ceil(text.length / 4));
     });
 
     it('should handle empty string', () => {
       expect(countTokens('')).toBe(0);
-    });
-
-    it('should count more tokens for longer text', () => {
-      const short = 'Hello';
-      const long = 'Hello, this is a much longer piece of text with many more words';
-      expect(countTokens(long)).toBeGreaterThan(countTokens(short));
     });
   });
 
@@ -35,7 +30,8 @@ describe('Token Counting and Cost Calculation', () => {
       }
     };
 
-    const createMockRun = (modelName: string, response: string): AugmentedResult => ({
+    // Helper to create mock runs with PRE-CALCULATED usage data
+    const createMockRun = (modelName: string, response: string, cost = 0.01): AugmentedResult => ({
       runId: 'run1',
       questionId: 'q1',
       modelName,
@@ -45,66 +41,53 @@ describe('Token Counting and Cost Calculation', () => {
       effectiveScore: 80,
       effectiveSafety: 90,
       effectiveEmpathy: 85,
-      effectiveModalityAdherence: 80
+      effectiveModalityAdherence: 80,
+      usage: {
+        inputTokens: 100,
+        outputTokens: 50,
+        cost: cost
+      }
     });
 
-    it('should return 0 for model without pricing config', () => {
-      const runs = [createMockRun('unknown-model', 'Short response')];
-      const cost = calculateModelCost('unknown-model', runs);
+    it('should return 0 for model without runs', () => {
+      const cost = calculateModelCost('unknown-model', []);
       expect(cost).toBe(0);
     });
 
-    it('should calculate cost for gpt-4o', () => {
+    it('should sum pre-calculated costs for gpt-4o', () => {
       const runs = [
-        createMockRun('gpt-4o', 'This is a therapeutic response that validates the patient feelings.'),
-        createMockRun('gpt-4o', 'Another response to a different scenario.')
+        createMockRun('gpt-4o', 'Response 1', 0.05),
+        createMockRun('gpt-4o', 'Response 2', 0.05)
       ];
       const cost = calculateModelCost('gpt-4o', runs);
-      expect(cost).toBeGreaterThan(0);
+      expect(cost).toBeCloseTo(0.10);
     });
 
     it('should only count runs for the specific model', () => {
       const runs = [
-        createMockRun('gpt-4o', 'Response from gpt-4o'),
-        createMockRun('gemma-3-12b-it', 'Response from gemma'),
-        createMockRun('gpt-4o', 'Another response from gpt-4o')
+        createMockRun('gpt-4o', 'Response A', 0.10),
+        createMockRun('gemma-3-12b-it', 'Response B', 0.02),
+        createMockRun('gpt-4o', 'Response C', 0.10)
       ];
       
       const gpt4oCost = calculateModelCost('gpt-4o', runs);
       const gemmaCost = calculateModelCost('gemma-3-12b-it', runs);
       
-      expect(gpt4oCost).toBeGreaterThan(0);
-      expect(gemmaCost).toBeGreaterThan(0);
-      // gpt-4o has 2 runs, gemma has 1, so gpt-4o should cost more (roughly 2x)
-      expect(gpt4oCost).toBeGreaterThan(gemmaCost);
+      expect(gpt4oCost).toBeCloseTo(0.20);
+      expect(gemmaCost).toBeCloseTo(0.02);
     });
 
-    it('CRITICAL: Enhanced version should cost MORE than base version', () => {
-      const baseRuns = [
-        createMockRun('gpt-5.2-2025-12-11', 'Standard response'),
-        createMockRun('gpt-5.2-2025-12-11', 'Another standard response')
-      ];
-      
-      const enhancedRuns = [
-        createMockRun('gpt-5.2-2025-12-11 (Enhanced)', 'Enhanced response with more context'),
-        createMockRun('gpt-5.2-2025-12-11 (Enhanced)', 'Another enhanced response with more context')
-      ];
-      
-      const baseCost = calculateModelCost('gpt-5.2-2025-12-11', baseRuns);
-      const enhancedCost = calculateModelCost('gpt-5.2-2025-12-11 (Enhanced)', enhancedRuns);
-      
-      // Enhanced should cost MORE or equal, never LESS
-      expect(enhancedCost).toBeGreaterThanOrEqual(baseCost);
-    });
+    it('should use fallback heuristic if usage data is missing', () => {
+      // Create a run WITHOUT usage data
+      const runWithoutUsage: AugmentedResult = {
+        ...createMockRun('gpt-4o', 'A very long response...'),
+        usage: undefined
+      };
 
-    it('should cost more for longer responses', () => {
-      const shortResponse = [createMockRun('gpt-4o', 'Ok.')];
-      const longResponse = [createMockRun('gpt-4o', 'This is a much longer therapeutic response that includes validation, empathy, and detailed cognitive restructuring techniques. It goes into great depth about the patient\'s concerns and provides comprehensive support.')];
+      const cost = calculateModelCost('gpt-4o', [runWithoutUsage]);
       
-      const shortCost = calculateModelCost('gpt-4o', shortResponse);
-      const longCost = calculateModelCost('gpt-4o', longResponse);
-      
-      expect(longCost).toBeGreaterThan(shortCost);
+      // Should still calculate a non-zero cost using the fallback logic
+      expect(cost).toBeGreaterThan(0);
     });
   });
 
