@@ -43,6 +43,12 @@ export function getModelLabels(modelName: string) {
   return labels;
 }
 
+export function isDefaultJudge(modelName: string): boolean {
+  const config = modelConfigs.find(c => c.modelName === modelName);
+  // Default to true if not explicitly set to false
+  return config?.isDefaultJudge !== false;
+}
+
 // Helper function to extract sortable value from model labels
 export function getModelLabelSortValue(modelName: string): { isOnline: boolean; gb: number; name: string } {
   const labels = getModelLabels(modelName);
@@ -218,4 +224,3 @@ export function calculateJudgeCost(judgeId: string, runs: AugmentedResult[]): nu
   
   return totalCost;
 }
-

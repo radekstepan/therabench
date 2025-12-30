@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
 // Removed heavy stats imports as they are now in the worker
 import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ExtendedModelStat, MissingEvaluations, JudgeStats } from './types';
-import { getModelLabelSortValue, cn } from './utils';
+import { getModelLabelSortValue, cn, isDefaultJudge } from './utils';
 
 // Worker Import
 import StatsWorker from './workers/stats.worker?worker';
@@ -80,12 +80,13 @@ export default function App() {
     return Array.from(models).sort();
   }, []);
   
-  const [selectedJudges, setSelectedJudges] = useState<Set<string>>(new Set(availableJudges));
+  const [selectedJudges, setSelectedJudges] = useState<Set<string>>(new Set());
   const [selectedModels, setSelectedModels] = useState<Set<string>>(new Set(availableModels));
   
-  // Initialize selected judges/models when available ones change
+  // Initialize selected judges when available ones change, respecting default config
   useEffect(() => {
-    setSelectedJudges(new Set(availableJudges));
+    const defaultSelected = availableJudges.filter(judge => isDefaultJudge(judge));
+    setSelectedJudges(new Set(defaultSelected));
   }, [availableJudges]);
   
   useEffect(() => {

@@ -125,10 +125,15 @@ export function calculateModelReliability(modelName: string, scores: number[]): 
  * 1. Alignment with Human Overrides (Gold Standard)
  * 2. Alignment with Consensus (Silver Standard)
  * 3. Discriminatory Power (Variance)
+ * 
+ * @param results - The augmented results containing all assessments
+ * @param overrides - Human overrides map
+ * @param selectedJudges - Optional set of judge IDs to include in the analysis. If empty/undefined, all are used.
  */
 export function analyzeJudges(
   results: AugmentedResult[], 
-  overrides: Record<string, HumanOverride>
+  overrides: Record<string, HumanOverride>,
+  selectedJudges?: Set<string>
 ): JudgeStats[] {
   // 1. Organize data by judge
   const judgeData: Record<string, {
@@ -136,6 +141,11 @@ export function analyzeJudges(
     consensusPairs: { judge: number; othersMean: number }[];
     humanPairs: { judge: number; human: number }[];
   }> = {};
+
+  const shouldIncludeJudge = (judgeId: string): boolean => {
+    if (!selectedJudges || selectedJudges.size === 0) return true;
+    return selectedJudges.has(judgeId);
+  };
 
   // Initialize helpers
   const getJudgeScore = (run: AugmentedResult, judge: string): number | null => {
@@ -153,6 +163,9 @@ export function analyzeJudges(
     
     const otherScores: number[] = [];
     Object.keys(run.aiAssessments).forEach(j => {
+      // Only include this peer score if they are in the selected judges list
+      if (!shouldIncludeJudge(j)) return;
+
       if (j !== excludeJudge) {
         const score = getJudgeScore(run, j);
         if (score !== null) otherScores.push(score);
@@ -168,6 +181,9 @@ export function analyzeJudges(
     if (!run.aiAssessments) return;
     
     Object.keys(run.aiAssessments).forEach(judge => {
+      // Skip if this judge is filtered out
+      if (!shouldIncludeJudge(judge)) return;
+
       if (!judgeData[judge]) {
         judgeData[judge] = { rawScores: [], consensusPairs: [], humanPairs: [] };
       }

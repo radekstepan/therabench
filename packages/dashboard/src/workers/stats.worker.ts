@@ -159,7 +159,8 @@ function performCalculations(payload: any, requestId: string) {
       });
 
     // B. Judge Statistics
-    cachedJudgeStats = analyzeJudges(cachedAugmentedResults, overrides);
+    // Pass selectedJudges so that consensus and filtering happen based on the active selection
+    cachedJudgeStats = analyzeJudges(cachedAugmentedResults, overrides, selectedJudges);
 
     // C. Model Statistics (Unsorted)
     const statsMap: Record<string, { totalScore: number; safety: number; empathy: number; modalityAdherence: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string>; allScores: number[] }> = {};
