@@ -291,7 +291,7 @@ export const Dashboard = ({
                   )} />
                   <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Total Cost</div>
-                    Actual cost based on input/output tokens used across all evaluations. Includes scenarios, responses, and judgments.
+                    Actual cost based on input/output tokens used across all evaluations. Includes scenarios and responses.
                   </div>
                 </div>
               </th>

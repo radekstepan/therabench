@@ -79,8 +79,8 @@ export const JudgeTrustTable = ({ judgeStats }: JudgeTrustTableProps) => {
                 <DollarSign className="w-4 h-4" />
                 Cost
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
-                  <div className="font-semibold text-white mb-1">Total Cost</div>
-                  Actual cost based on input/output tokens used across all evaluations performed by this judge.
+                  <div className="font-semibold text-white mb-1">Cost per Evaluation</div>
+                  Average cost based on input/output tokens used per evaluation performed by this judge.
                 </div>
               </div>
             </th>
@@ -150,14 +150,15 @@ export const JudgeTrustTable = ({ judgeStats }: JudgeTrustTableProps) => {
               </td>
               <td className="px-3 py-2 text-center whitespace-nowrap">
                 {(() => {
-                  const formattedCost = formatModelCost(judge.totalCost);
+                  const costPerEval = judge.evaluationCount > 0 ? judge.totalCost / judge.evaluationCount : 0;
+                  const formattedCost = formatModelCost(costPerEval);
                   if (formattedCost === '-') return (
                     <span className="text-xs text-zinc-500">—</span>
                   );
                   
-                  const allJudgeCosts = judgeStats.map(j => j.totalCost);
+                  const allJudgeCostsPerEval = judgeStats.map(j => j.evaluationCount > 0 ? j.totalCost / j.evaluationCount : 0);
                   return (
-                    <span className={cn("text-sm font-medium font-mono", getRelativeCostColor(judge.totalCost, allJudgeCosts))}>
+                    <span className={cn("text-sm font-medium font-mono", getRelativeCostColor(costPerEval, allJudgeCostsPerEval))}>
                       {formattedCost}
                     </span>
                   );
