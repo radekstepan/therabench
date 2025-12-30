@@ -11,6 +11,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getScoreColor(score: number) {
+  // Thresholds: >=80 green, 61-79 neutral, 41-60 orange, <=40 red
+  if (score >= 80) return "text-emerald-500";
+  if (score <= 40) return "text-red-500";
+  if (score <= 60) return "text-amber-500";
+  return "text-zinc-400";
+}
+
+export function getReliabilityIndexColor(score: number) {
   // Thresholds: >=75 green, 61-74 neutral, 41-60 orange, <=40 red
   if (score >= 75) return "text-emerald-500";
   if (score <= 40) return "text-red-500";

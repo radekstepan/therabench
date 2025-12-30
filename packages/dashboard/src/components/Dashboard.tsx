@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel, DollarSign } from 'lucide-react';
-import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost, getRelativeCostColor } from '../utils';
+import { cn, getScoreColor, getReliabilityIndexColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost, getRelativeCostColor } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
@@ -461,7 +461,7 @@ export const Dashboard = ({
                 <td className="px-3 py-2 text-center whitespace-nowrap">
                    {stat.count > 0 ? (
                      <div className="flex flex-col items-center">
-                       <span className={cn("font-medium", getScoreColor(stat.reliabilityIndex))}>{stat.reliabilityIndex}</span>
+                       <span className={cn("font-medium", getReliabilityIndexColor(stat.reliabilityIndex))}>{stat.reliabilityIndex}</span>
                        <span className="text-[10px] text-zinc-500">±{stat.stdDev}</span>
                      </div>
                    ) : <span className="text-zinc-600">-</span>}
