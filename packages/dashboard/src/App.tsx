@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
 import { analyzeJudges, calculateModelReliability } from './lib/stats';
 import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ModelReliability } from './types';
-import { getModelLabelSortValue } from './utils';
+import { getModelLabelSortValue, calculateModelCost } from './utils';
 
 // Components
 import { Sidebar } from './components/Sidebar';
@@ -29,6 +29,7 @@ export interface ExtendedModelStat extends ModelReliability {
   expertCount: number;
   scoreRank: number;
   judgeScores: Array<{ judge: string; score: number }>;
+  totalCost: number; // Total cost in USD for all runs
 }
 
 export default function App() {
@@ -46,7 +47,7 @@ export default function App() {
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
   const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability'>('reliability');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing'>('reliability');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
@@ -287,7 +288,8 @@ export default function App() {
           meanScore: 0,
           stdDev: 0,
           reliabilityIndex: 0,
-          floorScore: 0
+          floorScore: 0,
+          totalCost: 0
         } as ExtendedModelStat;
       }
       
@@ -299,6 +301,9 @@ export default function App() {
       // Calculate advanced reliability stats
       const reliability = calculateModelReliability(modelName, s.allScores);
       
+      // Calculate total cost based on actual token usage
+      const totalCost = calculateModelCost(modelName, augmentedResults);
+      
       return {
         ...reliability,
         name: modelName,
@@ -308,7 +313,8 @@ export default function App() {
         avgModalityAdherence: Math.round(s.modalityAdherence / s.count),
         count: s.count,
         expertCount: s.uniqueJudges.size,
-        judgeScores
+        judgeScores,
+        totalCost
       } as ExtendedModelStat;
     });
 
@@ -336,6 +342,10 @@ export default function App() {
           break;
         case 'modalityAdherence':
           comparison = a.avgModalityAdherence - b.avgModalityAdherence;
+          break;
+        case 'pricing':
+          // Sort by total cost (ascending = cheapest first)
+          comparison = (a.totalCost || 0) - (b.totalCost || 0);
           break;
         case 'label':
           const labelA = getModelLabelSortValue(a.name);

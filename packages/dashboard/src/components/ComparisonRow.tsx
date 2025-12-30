@@ -83,9 +83,9 @@ export const ComparisonRow = ({
           </div>
           {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><UserCheck className="w-3 h-3"/> Reviewed</div>}
         </td>
-        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
-        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
-        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveModalityAdherence}</td>
+        <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
+        <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
+        <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">{run.effectiveModalityAdherence}</td>
         <td className="px-3 py-2 text-right whitespace-nowrap">
           {isExpanded ? <ChevronDown className="w-5 h-5 ml-auto text-zinc-500" /> : <ChevronRight className="w-5 h-5 ml-auto text-zinc-500" />}
         </td>

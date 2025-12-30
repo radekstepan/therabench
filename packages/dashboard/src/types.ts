@@ -74,6 +74,10 @@ export interface ModelConfig {
   modelName: string;
   labels: ModelLabel[];
   useTextMode?: boolean; // If true, skip json_object and use text mode directly for parsing
+  pricing?: {
+    input: number; // Price per 1M input tokens
+    output: number; // Price per 1M output tokens
+  };
 }
 
 // Re-export stats types for usage in components

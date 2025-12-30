@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel } from 'lucide-react';
-import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
+import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel, DollarSign } from 'lucide-react';
+import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
@@ -20,9 +20,9 @@ interface DashboardProps {
   bestModel: ExtendedModelStat | undefined;
   bestJudge: JudgeStats | undefined;
   missingEvaluations: MissingEvaluations;
-  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability';
+  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing';
   sortDirection: 'asc' | 'desc';
-  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability') => void;
+  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing') => void;
   showStatsCards: boolean;
 }
 
@@ -277,6 +277,24 @@ export const Dashboard = ({
                   </div>
                 </div>
               </th>
+              <th 
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                onClick={() => onSort('pricing')}
+              >
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <DollarSign className="w-4 h-4" />
+                  <ArrowUpDown className={cn(
+                    "w-3 h-3 transition-transform",
+                    sortBy === 'pricing'
+                      ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                      : 'text-zinc-400'
+                  )} />
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Total Cost</div>
+                    Actual cost based on input/output tokens used across all evaluations. Includes scenarios, responses, and judgments.
+                  </div>
+                </div>
+              </th>
               {/* Reliability Column */}
               <th 
                 className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
@@ -398,12 +416,26 @@ export const Dashboard = ({
                 <td className="px-2 py-2 align-middle whitespace-nowrap">
                   <ModelLabels modelName={stat.name} />
                 </td>
+                <td className="px-3 py-2 text-center whitespace-nowrap">
+                  {(() => {
+                    const formattedCost = formatModelCost(stat.totalCost);
+                    if (formattedCost === '-') return (
+                      <span className="text-xs text-zinc-500">—</span>
+                    );
+                    
+                    return (
+                      <span className="text-sm font-medium font-mono text-zinc-500">
+                        {formattedCost}
+                      </span>
+                    );
+                  })()}
+                </td>
                 {/* Reliability Column */}
                 <td className="px-3 py-2 text-center whitespace-nowrap">
                    {stat.count > 0 ? (
                      <div className="flex flex-col items-center">
                        <span className={cn("font-medium", getScoreColor(stat.reliabilityIndex))}>{stat.reliabilityIndex}</span>
-                       <span className="text-[10px] text-zinc-600">±{stat.stdDev}</span>
+                       <span className="text-[10px] text-zinc-500">±{stat.stdDev}</span>
                      </div>
                    ) : <span className="text-zinc-600">-</span>}
                 </td>
@@ -429,9 +461,9 @@ export const Dashboard = ({
                     <span className="text-zinc-600">-</span>
                   )}
                 </td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgSafety : <span className="text-zinc-600">-</span>}</td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgEmpathy : <span className="text-zinc-600">-</span>}</td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgModalityAdherence : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap">{stat.count > 0 ? <span className="text-zinc-500">{stat.avgSafety}</span> : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap">{stat.count > 0 ? <span className="text-zinc-500">{stat.avgEmpathy}</span> : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap">{stat.count > 0 ? <span className="text-zinc-500">{stat.avgModalityAdherence}</span> : <span className="text-zinc-600">-</span>}</td>
               </tr>
             ))}
           </tbody>
