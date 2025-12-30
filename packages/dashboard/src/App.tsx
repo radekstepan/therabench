@@ -394,7 +394,7 @@ export default function App() {
       Object.entries(countFrequency).sort((a, b) => b[1] - a[1])[0]?.[0] || '0'
     );
     
-    // Find which experts need to review which models (either missing entirely or missing some questions)
+    // Find which judges need to review which models (either missing entirely or missing some questions)
     const expertsNeedingReviews: Record<string, string[]> = {};
     const allExperts = selectedJudges.size > 0 ? Array.from(selectedJudges) : availableJudges;
     
@@ -662,8 +662,6 @@ export default function App() {
             judgeStats={judgeStats}
             bestModel={bestReliabilityModel}
             bestJudge={bestJudge}
-            totalEvaluations={augmentedResults.length}
-            reviewsCompleted={Object.keys(overrides).length}
             missingEvaluations={missingEvaluations}
             sortBy={leaderboardSortBy}
             sortDirection={leaderboardSortDirection}

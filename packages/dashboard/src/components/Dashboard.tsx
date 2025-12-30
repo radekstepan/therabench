@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Users } from 'lucide-react';
+import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel } from 'lucide-react';
 import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
-import { ExpertRankingGrid } from './ExpertRankingGrid';
+import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
 import { JudgeStats } from '../lib/stats';
 import { ExtendedModelStat } from '../App';
@@ -19,8 +19,6 @@ interface DashboardProps {
   judgeStats: JudgeStats[];
   bestModel: ExtendedModelStat | undefined;
   bestJudge: JudgeStats | undefined;
-  totalEvaluations: number;
-  reviewsCompleted: number;
   missingEvaluations: MissingEvaluations;
   sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability';
   sortDirection: 'asc' | 'desc';
@@ -33,8 +31,6 @@ export const Dashboard = ({
   judgeStats,
   bestModel,
   bestJudge,
-  totalEvaluations,
-  reviewsCompleted,
   missingEvaluations,
   sortBy,
   sortDirection,
@@ -42,7 +38,7 @@ export const Dashboard = ({
   showStatsCards
 }: DashboardProps) => {
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
-  const [activeView, setActiveView] = useState<'leaderboard' | 'expertGrid' | 'judgeTrust'>('leaderboard');
+  const [activeView, setActiveView] = useState<'leaderboard' | 'judgeComparisonGrid' | 'judgeTrust'>('leaderboard');
 
   const getBaseModelName = (modelName: string): string => {
     return stripEnhancedSuffix(modelName);
@@ -133,21 +129,6 @@ export const Dashboard = ({
           )}
         </button>
         <button
-          onClick={() => setActiveView('expertGrid')}
-          className={cn(
-            "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all relative",
-            activeView === 'expertGrid'
-              ? "text-emerald-400"
-              : "text-zinc-500 hover:text-zinc-300"
-          )}
-        >
-          <Grid3x3 className="w-4 h-4" />
-          Expert Rankings
-          {activeView === 'expertGrid' && (
-            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
-          )}
-        </button>
-        <button
           onClick={() => setActiveView('judgeTrust')}
           className={cn(
             "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all relative",
@@ -156,9 +137,24 @@ export const Dashboard = ({
               : "text-zinc-500 hover:text-zinc-300"
           )}
         >
-          <Users className="w-4 h-4" />
+          <Gavel className="w-4 h-4" />
           Judge Trust Scores
           {activeView === 'judgeTrust' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
+          )}
+        </button>
+        <button
+          onClick={() => setActiveView('judgeComparisonGrid')}
+          className={cn(
+            "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all relative",
+            activeView === 'judgeComparisonGrid'
+              ? "text-emerald-400"
+              : "text-zinc-500 hover:text-zinc-300"
+          )}
+        >
+          <Grid3x3 className="w-4 h-4" />
+          Judge Comparison Grid
+          {activeView === 'judgeComparisonGrid' && (
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
           )}
         </button>
@@ -179,7 +175,7 @@ export const Dashboard = ({
             {Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 && (
               <div className="mb-4 last:mb-0">
                 <div className="text-sm text-zinc-400 mb-3">
-                  <span className="font-medium text-amber-300">{Object.keys(missingEvaluations.expertsNeedingReviews).length}</span> {Object.keys(missingEvaluations.expertsNeedingReviews).length === 1 ? 'expert needs' : 'experts need'} to complete reviews:
+                  <span className="font-medium text-amber-300">{Object.keys(missingEvaluations.expertsNeedingReviews).length}</span> {Object.keys(missingEvaluations.expertsNeedingReviews).length === 1 ? 'judge needs' : 'judges need'} to complete reviews:
                 </div>
                 <div className="space-y-3">
                   {Object.entries(missingEvaluations.expertsNeedingReviews).map(([expert, models]) => (
@@ -444,9 +440,9 @@ export const Dashboard = ({
         </>
       )}
 
-      {/* Expert Rankings Grid View */}
-      {activeView === 'expertGrid' && (
-        <ExpertRankingGrid modelStats={modelStats} />
+      {/* Judge Comparison Grid View */}
+      {activeView === 'judgeComparisonGrid' && (
+        <JudgeComparisonGrid modelStats={modelStats} />
       )}
 
       {/* Judge Trust Scores View */}

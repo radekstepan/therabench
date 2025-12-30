@@ -31,13 +31,13 @@ function resolveEnvValue(value: string | undefined): string {
 const QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
 
 // Candidate Model Configuration (model being tested)
-const CANDIDATE_MODEL_URL = process.env.CANDIDATE_MODEL_URL || 'http://localhost:11434/api/generate';
-const CANDIDATE_MODEL_NAME = process.env.CANDIDATE_MODEL_NAME || 'llama3';
+const CANDIDATE_MODEL_URL = process.env.CANDIDATE_MODEL_URL;
+const CANDIDATE_MODEL_NAME = process.env.CANDIDATE_MODEL_NAME;
 const CANDIDATE_MODEL_API_KEY = resolveEnvValue(process.env.CANDIDATE_MODEL_API_KEY);
 
 // Expert Model Configuration (judge/evaluator)
-const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL || 'https://api.openai.com/v1';
-const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME || 'gpt-4-turbo';
+const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL;
+const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME;
 const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
 
 // Toggle for Enhanced Prompts
@@ -136,7 +136,7 @@ async function queryCandidateModel(prompt: string, category: string): Promise<st
 
   try {
     const completion = await candidateClient.chat.completions.create({
-      model: CANDIDATE_MODEL_NAME,
+      model: CANDIDATE_MODEL_NAME!,
       messages: [
         { 
           role: "system", 
@@ -179,25 +179,22 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
   `;
 
   if (!EXPERT_MODEL_API_KEY) {
-    return {
-      score: 50,
-      reasoning: "Mock Judge: Expert Model API Key missing.",
-      flags: ["mock-eval"],
-      metrics: { safety: 50, empathy: 50, modalityAdherence: 50 },
-      evaluatorModel: 'mock',
-      timestamp: new Date().toISOString()
-    };
+    throw new Error('EXPERT_MODEL_API_KEY is required but not set');
+  }
+  
+  if (!EXPERT_MODEL_NAME) {
+    throw new Error('EXPERT_MODEL_NAME is required but not set');
   }
 
   // Check model config to see if we should use text mode from the start
-  const modelConfig = modelConfigs.find(c => c.modelName === EXPERT_MODEL_NAME);
+  const modelConfig = modelConfigs.find(c => c.modelName === EXPERT_MODEL_NAME!);
   const maxRetries = 5;
   let useTextFormat = modelConfig?.useTextMode || false;
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const requestParams: any = {
-        model: EXPERT_MODEL_NAME,
+        model: EXPERT_MODEL_NAME!,
         messages: [{ role: "user", content: prompt }]
       };
       
@@ -221,7 +218,7 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
         
         return {
           ...assessment,
-          evaluatorModel: EXPERT_MODEL_NAME,
+          evaluatorModel: EXPERT_MODEL_NAME!,
           timestamp: new Date().toISOString()
         } as JudgeAssessment;
 
@@ -259,6 +256,37 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 
 async function main() {
   try {
+    // Validate required configuration
+    if (!CANDIDATE_MODEL_NAME) {
+      console.error('❌ CANDIDATE_MODEL_NAME is required but not set');
+      process.exit(1);
+    }
+    
+    if (!CANDIDATE_MODEL_URL) {
+      console.error('❌ CANDIDATE_MODEL_URL is required but not set');
+      process.exit(1);
+    }
+    
+    if (!CANDIDATE_MODEL_API_KEY) {
+      console.error('❌ CANDIDATE_MODEL_API_KEY is required but not set');
+      process.exit(1);
+    }
+    
+    if (!EXPERT_MODEL_NAME) {
+      console.error('❌ EXPERT_MODEL_NAME is required but not set');
+      process.exit(1);
+    }
+    
+    if (!EXPERT_MODEL_URL) {
+      console.error('❌ EXPERT_MODEL_URL is required but not set');
+      process.exit(1);
+    }
+    
+    if (!EXPERT_MODEL_API_KEY) {
+      console.error('❌ EXPERT_MODEL_API_KEY is required but not set');
+      process.exit(1);
+    }
+    
     if (!fs.existsSync(QUESTIONS_PATH)) {
       console.error('❌ No questions found. Run "npm run gen" first.');
       process.exit(1);
@@ -268,13 +296,13 @@ async function main() {
     const questions: QuestionNode[] = Array.isArray(questionsData) ? questionsData : questionsData.questions;
     
     const runTimestamp = new Date().toISOString();
-    const judgeModel = EXPERT_MODEL_NAME;
+    const judgeModel = EXPERT_MODEL_NAME!;
 
     // Determine effective model name based on whether enhanced prompts are used
     // This allows us to save results in a separate "folder" effectively
     const effectiveModelName = ENHANCED_PROMPTS 
-      ? `${CANDIDATE_MODEL_NAME} (Enhanced)` 
-      : CANDIDATE_MODEL_NAME;
+      ? `${CANDIDATE_MODEL_NAME!} (Enhanced)` 
+      : CANDIDATE_MODEL_NAME!;
     
     // Load existing results to check what's already been evaluated
     const existingResults = loadAllResults();

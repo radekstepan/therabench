@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { 
   LayoutDashboard, 
   Activity, 
+  Gavel,
   Search, 
   Users, 
   ChevronDown, 
@@ -260,7 +261,7 @@ export const Sidebar = ({
           <div className="pt-4 pb-2">
             <div className="px-3 mb-2 flex items-center justify-between">
               <div className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">
-                Experts ({availableJudges.length})
+                Judges ({availableJudges.length})
               </div>
             </div>
             <div className="px-2 relative" ref={judgeDropdownRef}>
@@ -275,14 +276,14 @@ export const Sidebar = ({
                   )}
                 >
                   <div className="flex items-center gap-2 min-w-0 flex-1">
-                    <Users className="w-3 h-3 flex-shrink-0" />
+                    <Gavel className="w-3 h-3 flex-shrink-0" />
                     <span className="truncate">
                       {selectedJudges.size === 0
-                        ? "No experts (showing all)"
+                        ? "No judges (showing all)"
                         : selectedJudges.size === 1
                         ? Array.from(selectedJudges)[0]
                         : selectedJudges.size === availableJudges.length
-                        ? "All experts"
+                        ? "All judges"
                         : `${selectedJudges.size} of ${availableJudges.length} selected`}
                     </span>
                   </div>
@@ -299,7 +300,7 @@ export const Sidebar = ({
                   <input
                     ref={judgeFilterInputRef}
                     type="text"
-                    placeholder="Filter experts..."
+                    placeholder="Filter judges..."
                     value={judgeFilterTerm}
                     onChange={(e) => setJudgeFilterTerm(e.target.value)}
                     onKeyDown={(e) => {
@@ -318,7 +319,7 @@ export const Sidebar = ({
                   <div className="p-2 space-y-1 max-h-60 overflow-y-auto">
                     {filteredJudges.length === 0 ? (
                       <div className="px-2 py-3 text-center text-xs text-zinc-600">
-                        No experts found
+                        No judges found
                       </div>
                     ) : (
                       filteredJudges.map(judge => {

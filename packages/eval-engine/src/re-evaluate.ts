@@ -30,8 +30,8 @@ function resolveEnvValue(value: string | undefined): string {
 const QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
 
 // Expert Model Configuration (judge/evaluator)
-const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL || 'https://api.openai.com/v1';
-const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME || 'gpt-4-turbo';
+const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL;
+const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME;
 const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
 
 const openai = new OpenAI({ 
@@ -62,15 +62,23 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     }
   `;
 
+  if (!EXPERT_MODEL_API_KEY) {
+    throw new Error('EXPERT_MODEL_API_KEY is required but not set');
+  }
+  
+  if (!EXPERT_MODEL_NAME) {
+    throw new Error('EXPERT_MODEL_NAME is required but not set');
+  }
+
   // Check model config to see if we should use text mode from the start
-  const modelConfig = modelConfigs.find(c => c.modelName === EXPERT_MODEL_NAME);
+  const modelConfig = modelConfigs.find(c => c.modelName === EXPERT_MODEL_NAME!);
   const maxRetries = 5;
   let useTextFormat = modelConfig?.useTextMode || false;
   
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       const requestParams: any = {
-        model: EXPERT_MODEL_NAME,
+        model: EXPERT_MODEL_NAME!,
         messages: [{ role: "user", content: prompt }]
       };
       
@@ -94,7 +102,7 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
         
         return {
           ...assessment,
-          evaluatorModel: EXPERT_MODEL_NAME,
+          evaluatorModel: EXPERT_MODEL_NAME!,
           timestamp: new Date().toISOString()
         } as JudgeAssessment;
 
@@ -131,6 +139,22 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
 
 async function main() {
   try {
+    // Validate required configuration
+    if (!EXPERT_MODEL_NAME) {
+      console.error('❌ EXPERT_MODEL_NAME is required but not set');
+      process.exit(1);
+    }
+    
+    if (!EXPERT_MODEL_URL) {
+      console.error('❌ EXPERT_MODEL_URL is required but not set');
+      process.exit(1);
+    }
+    
+    if (!EXPERT_MODEL_API_KEY) {
+      console.error('❌ EXPERT_MODEL_API_KEY is required but not set');
+      process.exit(1);
+    }
+    
     if (!fs.existsSync(QUESTIONS_PATH)) {
       console.error('❌ No questions found.');
       process.exit(1);
@@ -147,7 +171,7 @@ async function main() {
       process.exit(1);
     }
 
-    const judgeModel = EXPERT_MODEL_NAME;
+    const judgeModel = EXPERT_MODEL_NAME!;
     console.log(`🚀 Starting re-evaluation using judge: ${judgeModel}`);
     
     // Group by candidate model

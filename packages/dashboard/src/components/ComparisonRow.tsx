@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Save, Gavel, Brain, Shield, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronRight, Save, Gavel, UserCheck, Brain, Shield, Sparkles } from 'lucide-react';
 import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import type { AugmentedResult, HumanOverride } from '../types';
@@ -81,7 +81,7 @@ export const ComparisonRow = ({
           >
             {run.effectiveScore}%
           </div>
-          {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><Gavel className="w-3 h-3"/> Reviewed</div>}
+          {run.override && <div className="text-[10px] text-amber-500 mt-1 flex justify-end items-center gap-1"><UserCheck className="w-3 h-3"/> Reviewed</div>}
         </td>
         <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
         <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
@@ -110,7 +110,7 @@ export const ComparisonRow = ({
                 {run.aiAssessments && Object.keys(run.aiAssessments).length > 0 ? (
                   <div>
                     <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                      <Shield className="w-4 h-4" /> AI Evaluations
+                      <Gavel className="w-4 h-4" /> Judge Evaluations
                       {selectedJudges.size > 0 && selectedJudges.size < Object.keys(run.aiAssessments).length && (
                         <span className="text-xs text-amber-400">(filtered)</span>
                       )}
@@ -182,7 +182,7 @@ export const ComparisonRow = ({
                 ) : run.aiAssessment ? (
                   <div>
                     <h4 className="text-sm font-medium text-zinc-400 mb-3 flex items-center gap-2">
-                      <Shield className="w-4 h-4" /> AI Evaluation Reasoning
+                      <Gavel className="w-4 h-4" /> Judge Evaluation Reasoning
                       {run.aiAssessment.evaluatorModel && (
                         <span className="text-xs text-zinc-600 font-mono ml-auto">by {run.aiAssessment.evaluatorModel}</span>
                       )}
@@ -197,7 +197,7 @@ export const ComparisonRow = ({
               {/* Right: Review Form */}
               <div className="col-span-4 bg-zinc-950 border border-zinc-800 rounded-md p-5 h-fit">
                 <h4 className="text-sm font-medium text-white mb-4 flex items-center gap-2">
-                  <Gavel className="w-4 h-4 text-amber-500" /> Expert Review
+                  <UserCheck className="w-4 h-4 text-amber-500" /> Expert Review
                 </h4>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">

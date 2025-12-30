@@ -1,4 +1,4 @@
-import { X, Sparkles, BarChart3, Users, Database } from 'lucide-react';
+import { X, Sparkles, BarChart3, UserCheck, Database } from 'lucide-react';
 
 interface WelcomeModalProps {
   isOpen: boolean;
@@ -44,7 +44,7 @@ export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
             />
             
             <Feature
-              icon={<Users className="w-5 h-5" />}
+              icon={<UserCheck className="w-5 h-5" />}
               title="Expert Review & Annotation"
               description="Override AI assessments, rank model responses, edit question rubrics, and add detailed notes. All annotations are stored locally in your browser for complete privacy."
             />
@@ -52,7 +52,7 @@ export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
             <Feature
               icon={<Database className="w-5 h-5" />}
               title="Multi-Dimensional Analysis"
-              description="Track reliability metrics, judge consistency, and expert agreement. Compare models side-by-side and export annotated datasets for fine-tuning or research."
+              description="Track reliability metrics, judge consistency, and judge agreement. Compare models side-by-side and export annotated datasets for fine-tuning or research."
             />
             
             <Feature

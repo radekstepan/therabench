@@ -1,4 +1,4 @@
-import { TrendingUp, Users, Target, AlertCircle, Hash } from 'lucide-react';
+import { TrendingUp, Gavel, Target, AlertCircle, Hash, Scale, FileText } from 'lucide-react';
 import { cn, getScoreColor } from '../utils';
 import { JudgeStats } from '../lib/stats';
 
@@ -56,7 +56,7 @@ export const JudgeTrustTable = ({ judgeStats }: JudgeTrustTableProps) => {
             </th>
             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center">
               <div className="flex items-center justify-center gap-1 group relative">
-                <Target className="w-4 h-4" />
+                <Scale className="w-4 h-4" />
                 Trust
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                   <div className="font-semibold text-white mb-1">Trust Score (0-100)</div>
@@ -66,7 +66,7 @@ export const JudgeTrustTable = ({ judgeStats }: JudgeTrustTableProps) => {
             </th>
             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center">
               <div className="flex items-center justify-center gap-1 group relative">
-                <Users className="w-4 h-4" />
+                <FileText className="w-4 h-4" />
                 Evals
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                   <div className="font-semibold text-white mb-1">Evaluation Count</div>
@@ -76,7 +76,7 @@ export const JudgeTrustTable = ({ judgeStats }: JudgeTrustTableProps) => {
             </th>
             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center">
               <div className="flex items-center justify-center gap-1 group relative">
-                <Target className="w-4 h-4" />
+                <Target className="w-5 h-5" />
                 Avg Score
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                   <div className="font-semibold text-white mb-1">Average Score (%)</div>
@@ -96,7 +96,7 @@ export const JudgeTrustTable = ({ judgeStats }: JudgeTrustTableProps) => {
             </th>
             <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center">
               <div className="flex items-center justify-center gap-1 group relative">
-                <Users className="w-4 h-4" />
+                <Gavel className="w-4 h-4" />
                 Consensus
                 <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-72 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                   <div className="font-semibold text-white mb-1">Consensus Correlation</div>
