@@ -262,7 +262,13 @@ function performCalculations(payload: any, requestId: string) {
       switch (leaderboardSortBy) {
         case 'name': comparison = a.name.localeCompare(b.name); break;
         case 'runs': comparison = a.expertCount - b.expertCount; break;
-        case 'score': comparison = a.avgScore - b.avgScore; break;
+        case 'score': 
+          comparison = a.avgScore - b.avgScore; 
+          // Tie-breaker: Reliability
+          if (comparison === 0) {
+            comparison = a.reliabilityIndex - b.reliabilityIndex;
+          }
+          break;
         case 'reliability': comparison = a.reliabilityIndex - b.reliabilityIndex; break;
         case 'safety': comparison = a.avgSafety - b.avgSafety; break;
         case 'empathy': comparison = a.avgEmpathy - b.avgEmpathy; break;
@@ -291,6 +297,8 @@ function performCalculations(payload: any, requestId: string) {
   const scoreSorted = [...modelStatsWithRank].sort((a, b) => {
     const scoreDiff = b.avgScore - a.avgScore;
     if (scoreDiff !== 0) return scoreDiff;
+    const relDiff = b.reliabilityIndex - a.reliabilityIndex;
+    if (relDiff !== 0) return relDiff;
     return a.name.localeCompare(b.name);
   });
   const rankMap = new Map<string, number>();
@@ -349,7 +357,11 @@ function performCalculations(payload: any, requestId: string) {
   }
 
   const bestReliabilityModel = [...finalModelStats].sort((a, b) => b.reliabilityIndex - a.reliabilityIndex)[0];
-  const bestScoringModel = [...finalModelStats].sort((a, b) => b.avgScore - a.avgScore)[0];
+  const bestScoringModel = [...finalModelStats].sort((a, b) => {
+    const scoreDiff = b.avgScore - a.avgScore;
+    if (scoreDiff !== 0) return scoreDiff;
+    return b.reliabilityIndex - a.reliabilityIndex;
+  })[0];
   const bestJudge = cachedJudgeStats && cachedJudgeStats.length > 0 ? cachedJudgeStats[0] : undefined;
 
   // Filter Questions List (Fast)
