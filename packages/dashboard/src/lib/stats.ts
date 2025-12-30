@@ -1,4 +1,5 @@
 import { AugmentedResult, HumanOverride } from '../types';
+import { calculateJudgeCost } from '../utils';
 
 /**
  * Basic statistical metrics for a dataset
@@ -33,6 +34,9 @@ export interface JudgeStats {
   
   // Composite score 0-100 indicating how much we should trust this judge
   trustScore: number;
+  
+  // Total cost in USD for all evaluations performed by this judge
+  totalCost: number;
 }
 
 /**
@@ -251,6 +255,9 @@ export function analyzeJudges(
     // Fallback for empty data
     if (isNaN(trustScore)) trustScore = 0;
 
+    // Calculate total cost for this judge
+    const totalCost = calculateJudgeCost(judgeId, results);
+
     return {
       judgeId,
       evaluationCount,
@@ -259,7 +266,8 @@ export function analyzeJudges(
       consensusCorrelation,
       humanErrorRMSE: humanRMSE,
       humanCorrelation,
-      trustScore
+      trustScore,
+      totalCost
     };
   }).sort((a, b) => b.trustScore - a.trustScore);
 }

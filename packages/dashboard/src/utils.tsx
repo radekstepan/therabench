@@ -12,8 +12,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getScoreColor(score: number) {
-  // Thresholds: >=80 green, 61-79 neutral, 41-60 orange, <=40 red
-  if (score >= 80) return "text-emerald-500";
+  // Thresholds: >=75 green, 61-74 neutral, 41-60 orange, <=40 red
+  if (score >= 75) return "text-emerald-500";
   if (score <= 40) return "text-red-500";
   if (score <= 60) return "text-amber-500";
   return "text-zinc-400";
@@ -152,3 +152,70 @@ export function formatModelCost(cost: number): string {
     return `$${cost.toFixed(1)}`;
   }
 }
+
+// Helper function to get color class for cost display based on relative position
+// Lower cost = better (green), higher cost = worse (red)
+// Uses percentiles to color costs relative to others in the same dataset
+export function getRelativeCostColor(cost: number, allCosts: number[]): string {
+  if (cost === 0) return 'text-zinc-600';
+  
+  // Filter out zero costs for percentile calculation
+  const validCosts = allCosts.filter(c => c > 0);
+  if (validCosts.length === 0) return 'text-zinc-600';
+  
+  // Sort costs to find percentiles
+  const sortedCosts = [...validCosts].sort((a, b) => a - b);
+  
+  // Find percentile position (0-100)
+  const position = sortedCosts.filter(c => c < cost).length;
+  const percentile = (position / sortedCosts.length) * 100;
+  
+  // Apply color bands based on percentile (same as consensus correlation)
+  if (percentile <= 20) return 'text-emerald-400';  // Bottom 20% (cheapest)
+  if (percentile <= 40) return 'text-green-400';     // 20-40%
+  if (percentile <= 60) return 'text-yellow-400';    // 40-60%
+  if (percentile <= 80) return 'text-orange-400';    // 60-80%
+  return 'text-red-400';                             // Top 20% (most expensive)
+}
+
+// Helper function to calculate actual cost for a judge based on their evaluations
+export function calculateJudgeCost(judgeId: string, runs: AugmentedResult[]): number {
+  const pricing = getModelPricing(judgeId);
+  if (!pricing) return 0;
+  
+  let totalInputTokens = 0;
+  let totalOutputTokens = 0;
+  
+  runs.forEach(run => {
+    // Check if this judge evaluated this run
+    const assessments = run.aiAssessments?.[judgeId];
+    if (!assessments) return;
+    
+    // Handle both array and single assessment for backward compatibility
+    const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
+    
+    assessmentArray.forEach(assessment => {
+      // Input tokens: scenario + rubric + candidate model response
+      const inputText = run.question.scenario + 
+                       JSON.stringify(run.question.rubric) +
+                       run.response +
+                       "Evaluate this therapeutic response."; // Approximate prompt
+      totalInputTokens += countTokens(inputText);
+      
+      // Output tokens: the judge's reasoning + structured output
+      const outputText = assessment.reasoning + 
+                        JSON.stringify(assessment.flags) +
+                        JSON.stringify(assessment.metrics);
+      totalOutputTokens += countTokens(outputText);
+    });
+  });
+  
+  // Calculate cost: (tokens / 1M) * price per 1M tokens
+  const inputCost = (totalInputTokens / 1_000_000) * pricing.input;
+  const outputCost = (totalOutputTokens / 1_000_000) * pricing.output;
+  
+  const totalCost = inputCost + outputCost;
+  
+  return totalCost;
+}
+

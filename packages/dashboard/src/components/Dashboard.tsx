@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel, DollarSign } from 'lucide-react';
-import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost } from '../utils';
+import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost, getRelativeCostColor } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
@@ -138,7 +138,7 @@ export const Dashboard = ({
           )}
         >
           <Gavel className="w-4 h-4" />
-          Judge Trust Scores
+          Judge Leaderboard
           {activeView === 'judgeTrust' && (
             <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
           )}
@@ -423,8 +423,9 @@ export const Dashboard = ({
                       <span className="text-xs text-zinc-500">—</span>
                     );
                     
+                    const allModelCosts = modelStats.map(m => m.totalCost);
                     return (
-                      <span className="text-sm font-medium font-mono text-zinc-500">
+                      <span className={cn("text-sm font-medium font-mono", getRelativeCostColor(stat.totalCost, allModelCosts))}>
                         {formattedCost}
                       </span>
                     );
@@ -477,7 +478,7 @@ export const Dashboard = ({
         <JudgeComparisonGrid modelStats={modelStats} />
       )}
 
-      {/* Judge Trust Scores View */}
+      {/* Judge Leaderboard View */}
       {activeView === 'judgeTrust' && (
         <JudgeTrustTable judgeStats={judgeStats} />
       )}
