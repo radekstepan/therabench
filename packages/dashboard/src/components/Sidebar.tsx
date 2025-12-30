@@ -8,7 +8,8 @@ import {
   ChevronRight,
   Download,
   Trash2,
-  Brain
+  Brain,
+  Info
 } from 'lucide-react';
 import { cn, formatPercentWithColor } from '../utils';
 import type { QuestionNode } from '../types';
@@ -38,6 +39,7 @@ interface SidebarProps {
   onClearAllModels: () => void;
   onExport: () => void;
   onClear: () => void;
+  onShowWelcome: () => void;
 }
 
 export const Sidebar = ({
@@ -64,7 +66,8 @@ export const Sidebar = ({
   onSelectAllModels,
   onClearAllModels,
   onExport,
-  onClear
+  onClear,
+  onShowWelcome
 }: SidebarProps) => {
   const modelDropdownRef = useRef<HTMLDivElement>(null);
   const judgeDropdownRef = useRef<HTMLDivElement>(null);
@@ -419,6 +422,12 @@ export const Sidebar = ({
       </nav>
 
       <div className="p-4 border-t border-zinc-800 space-y-2">
+        <button 
+          onClick={onShowWelcome}
+          className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-emerald-900/20 hover:bg-emerald-900/30 border border-emerald-500/30 rounded text-xs text-emerald-400 transition-colors"
+        >
+          <Info className="w-3 h-3" /> About TheraBench
+        </button>
         <button 
           onClick={onExport}
           className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 rounded text-xs text-zinc-300 transition-colors"

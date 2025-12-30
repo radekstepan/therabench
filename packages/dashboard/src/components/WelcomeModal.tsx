@@ -30,7 +30,7 @@ export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
             <h2 className="text-3xl font-light text-white">Welcome to TheraBench</h2>
           </div>
           <p className="text-zinc-400 text-sm">
-            An evaluation platform for testing how well Language Models respond to therapeutic scenarios
+            A comprehensive benchmarking platform for evaluating how well Language Models handle therapeutic scenarios across CBT, DBT, ACT, and Safety protocols
           </p>
         </div>
 
@@ -39,20 +39,20 @@ export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
           <div className="space-y-4">
             <Feature
               icon={<BarChart3 className="w-5 h-5" />}
-              title="Model Evaluation"
-              description="Synthetic therapeutic scenarios (CBT, DBT, ACT) are generated and used to evaluate how various LLMs and SLMs respond to patient situations."
+              title="Automated Model Evaluation"
+              description="Models respond to therapeutic scenarios and are evaluated by judge models on key metrics: overall score, safety, empathy, and modality adherence (how well they follow CBT/DBT/ACT principles)."
             />
             
             <Feature
               icon={<Users className="w-5 h-5" />}
-              title="Expert Review System"
-              description="Human experts can override AI scores, rank answers, and add notes. All reviews are stored locally in your browser for privacy."
+              title="Expert Review & Annotation"
+              description="Override AI assessments, rank model responses, edit question rubrics, and add detailed notes. All annotations are stored locally in your browser for complete privacy."
             />
             
             <Feature
               icon={<Database className="w-5 h-5" />}
-              title="Comprehensive Analysis"
-              description="View model leaderboards, compare responses side-by-side, and export curated datasets for fine-tuning or further analysis."
+              title="Multi-Dimensional Analysis"
+              description="Track reliability metrics, judge consistency, and expert agreement. Compare models side-by-side and export annotated datasets for fine-tuning or research."
             />
             
             <Feature

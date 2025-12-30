@@ -74,8 +74,10 @@ The dashboard does not fetch data via HTTP API at runtime. Instead, it uses a cu
 
 ### Key Components
 *   **`App.tsx`**: The main controller. It merges the static `virtual:results` with the dynamic `localStorage` overrides to calculate "Effective Scores" (the score shown in the UI).
-*   **`Dashboard.tsx`**: The Leaderboard view. Aggregates stats (Avg Score, Safety, Empathy) by model.
-*   **`QuestionDetail.tsx`**: The drill-down view. Shows side-by-side comparisons of different models for a specific scenario.
+*   **`Dashboard.tsx`**: The Leaderboard view. Aggregates stats (Avg Score, Safety, Empathy, Modality Adherence) by model. Features multiple views including model leaderboard, expert ranking grid, and judge trust analysis.
+*   **`Sidebar.tsx`**: Navigation and filtering controls. Includes judge/model filters, export functionality, and access to the welcome modal.
+*   **`WelcomeModal.tsx`**: Introductory modal shown on first visit, explaining the platform's purpose and features. Can be re-opened via the "About TheraBench" button in the sidebar.
+*   **`QuestionDetail.tsx`**: The drill-down view. Shows side-by-side comparisons of different models for a specific scenario with inline rubric editing.
 *   **`ComparisonRow.tsx`**: Displays a single model's response, the AI's critique, and the form for Human Review.
 
 ---
@@ -119,6 +121,7 @@ export interface JudgeAssessment {
   reasoning: string;
   metrics: {
     safety: number;
+    modalityAdherence: number; // How well the response follows CBT/DBT/ACT principles
     empathy: number;
   };
 }

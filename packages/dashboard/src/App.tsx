@@ -95,10 +95,7 @@ export default function App() {
 
   // Show welcome modal on initialization
   useEffect(() => {
-    const hasSeenWelcome = localStorage.getItem('therabench_has_seen_welcome');
-    if (!hasSeenWelcome) {
-      setIsWelcomeModalOpen(true);
-    }
+    setIsWelcomeModalOpen(true);
   }, []);
 
   useEffect(() => {
@@ -626,7 +623,6 @@ export default function App() {
 
   const handleCloseWelcome = () => {
     setIsWelcomeModalOpen(false);
-    localStorage.setItem('therabench_has_seen_welcome', 'true');
   };
 
   return (
@@ -656,6 +652,7 @@ export default function App() {
         onClearAllModels={() => setSelectedModels(new Set())}
         onExport={() => exportData(resultsData as ModelRun[], overrides, questionsData as QuestionNode[], rubricOverrides, questionOverrides)}
         onClear={() => setIsConfirmModalOpen(true)}
+        onShowWelcome={() => setIsWelcomeModalOpen(true)}
       />
 
       <main className="flex-1 flex flex-col h-full overflow-hidden bg-zinc-950">
