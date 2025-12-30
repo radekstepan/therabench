@@ -1,8 +1,14 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
-import { analyzeJudges, calculateModelReliability } from './lib/stats';
-import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ModelReliability } from './types';
-import { getModelLabelSortValue, calculateModelCost } from './utils';
+// Removed heavy stats imports as they are now in the worker
+import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ExtendedModelStat, MissingEvaluations, JudgeStats } from './types';
+import { getModelLabelSortValue, cn } from './utils';
+
+// Worker Import
+import StatsWorker from './workers/stats.worker?worker';
+
+// Hooks
+import { useDebounce } from './hooks/useDebounce';
 
 // Components
 import { Sidebar } from './components/Sidebar';
@@ -18,19 +24,6 @@ import resultsData from 'virtual:results';
 
 // Extract questions array from the JSON structure
 const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;
-
-export interface ExtendedModelStat extends ModelReliability {
-  name: string; // Alias for modelName to match existing component prop
-  avgScore: number;
-  avgSafety: number;
-  avgEmpathy: number;
-  avgModalityAdherence: number;
-  count: number;
-  expertCount: number;
-  scoreRank: number;
-  judgeScores: Array<{ judge: string; score: number }>;
-  totalCost: number; // Total cost in USD for all runs
-}
 
 export default function App() {
   const [overrides, setOverrides] = useState<Record<string, HumanOverride>>({});
@@ -52,6 +45,19 @@ export default function App() {
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   
+  // State for data computed by worker
+  const [augmentedResults, setAugmentedResults] = useState<AugmentedResult[]>([]);
+  const [judgeStats, setJudgeStats] = useState<JudgeStats[]>([]);
+  const [modelStatsWithRank, setModelStatsWithRank] = useState<ExtendedModelStat[]>([]);
+  const [missingEvaluations, setMissingEvaluations] = useState<MissingEvaluations>({ expertsNeedingReviews: {}, modelsWithMissingQuestions: [], mostFrequentExpertCount: 0, totalQuestions: 0 });
+  const [bestReliabilityModel, setBestReliabilityModel] = useState<ExtendedModelStat | undefined>(undefined);
+  const [bestJudge, setBestJudge] = useState<JudgeStats | undefined>(undefined);
+  const [questionList, setQuestionList] = useState<Array<QuestionNode & { runCount: number; avgScore: number }>>([]);
+  
+  // Calculation Status
+  const [isCalculating, setIsCalculating] = useState(true);
+  const [showLoadingIndicator, setShowLoadingIndicator] = useState(false);
+
   // Extract unique judges from results
   const availableJudges = useMemo(() => {
     const judges = new Set<string>();
@@ -77,12 +83,11 @@ export default function App() {
   const [selectedJudges, setSelectedJudges] = useState<Set<string>>(new Set(availableJudges));
   const [selectedModels, setSelectedModels] = useState<Set<string>>(new Set(availableModels));
   
-  // Initialize selected judges when available judges change
+  // Initialize selected judges/models when available ones change
   useEffect(() => {
     setSelectedJudges(new Set(availableJudges));
   }, [availableJudges]);
   
-  // Initialize selected models when available models change
   useEffect(() => {
     setSelectedModels(new Set(availableModels));
   }, [availableModels]);
@@ -98,6 +103,119 @@ export default function App() {
   useEffect(() => {
     setIsWelcomeModalOpen(true);
   }, []);
+
+  // --- Debounced Values ---
+  // We debounce these values to prevent firing worker calculations on every keystroke
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+  const debouncedSelectedJudges = useDebounce(selectedJudges, 300);
+  const debouncedSelectedModels = useDebounce(selectedModels, 300);
+  const debouncedCategoryFilter = useDebounce(categoryFilter, 200);
+
+  // Worker setup and communication
+  const workerRef = useRef<Worker | null>(null);
+
+  // Helper to restart worker if needed (cancels current work)
+  const terminateAndRestartWorker = () => {
+    if (workerRef.current) {
+      workerRef.current.terminate();
+    }
+    workerRef.current = new StatsWorker();
+    
+    // Re-initialize with base data
+    workerRef.current.postMessage({
+      type: 'INIT',
+      payload: { resultsData, questionsData }
+    });
+
+    // Handle results
+    workerRef.current.onmessage = (e) => {
+      if (e.data.type === 'RESULTS') {
+        const {
+          augmentedResults,
+          judgeStats,
+          modelStatsWithRank,
+          missingEvaluations,
+          bestReliabilityModel,
+          bestJudge,
+          questionList
+        } = e.data.payload;
+
+        setAugmentedResults(augmentedResults);
+        setJudgeStats(judgeStats);
+        setModelStatsWithRank(modelStatsWithRank);
+        setMissingEvaluations(missingEvaluations);
+        setBestReliabilityModel(bestReliabilityModel);
+        setBestJudge(bestJudge);
+        setQuestionList(questionList);
+        setIsCalculating(false);
+      } else if (e.data.type === 'ERROR') {
+        console.error("Worker Error:", e.data.error);
+        setIsCalculating(false);
+      }
+    };
+  };
+
+  // Initial worker start
+  useEffect(() => {
+    terminateAndRestartWorker();
+    return () => {
+      workerRef.current?.terminate();
+    };
+  }, []);
+
+  // Loading indicator effect (graceful degradation)
+  useEffect(() => {
+    let timer: number;
+    if (isCalculating) {
+      // Only show loading indicator if calculation takes more than 200ms
+      timer = window.setTimeout(() => {
+        setShowLoadingIndicator(true);
+      }, 200);
+    } else {
+      setShowLoadingIndicator(false);
+    }
+    return () => clearTimeout(timer);
+  }, [isCalculating]);
+
+  // Trigger calculations when dependencies change
+  // We use the DEBOUNCED values here to avoid spamming the worker
+  useEffect(() => {
+    // If user is clicking around very fast, we terminate the previous worker
+    // to "cancel" the stale results and start fresh.
+    terminateAndRestartWorker();
+    
+    setIsCalculating(true);
+    
+    // Generate a unique ID for this request (optional with terminate strategy but good practice)
+    const requestId = Date.now().toString();
+
+    workerRef.current?.postMessage({
+      type: 'CALCULATE',
+      requestId,
+      payload: {
+        overrides,
+        selectedJudges: debouncedSelectedJudges,
+        selectedModels: debouncedSelectedModels,
+        availableJudges,
+        availableModels,
+        searchTerm: debouncedSearchTerm,
+        categoryFilter: debouncedCategoryFilter,
+        leaderboardSortBy,
+        leaderboardSortDirection
+      }
+    });
+  }, [
+    overrides, // Immediate override updates
+    debouncedSelectedJudges, 
+    debouncedSelectedModels,
+    // Base data (unlikely to change during session) 
+    availableJudges, 
+    availableModels, 
+    debouncedSearchTerm, 
+    debouncedCategoryFilter, 
+    leaderboardSortBy, 
+    leaderboardSortDirection
+  ]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -115,361 +233,6 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isConfirmModalOpen, isQuestionModalOpen, isWelcomeModalOpen]);
 
-  // Merge Data and filter by selected judges and models
-  const augmentedResults = useMemo(() => {
-    if (!Array.isArray(resultsData) || !Array.isArray(questionsData)) return [];
-    
-    return (resultsData as ModelRun[])
-      .filter((r) => {
-        // Filter by selected models
-        return selectedModels.size === 0 || selectedModels.has(r.modelName);
-      })
-      .map((r) => {
-        const q = (questionsData as QuestionNode[]).find((q) => q.id === r.questionId);
-        const override = overrides[r.runId];
-        
-        // Calculate effective score and metrics from selected judges
-        // Use the most recent judgment from each judge
-        let effectiveScore: number;
-        let effectiveSafety: number;
-        let effectiveEmpathy: number;
-        let effectiveModalityAdherence: number;
-        
-        if (override) {
-          effectiveScore = override.manualScore;
-        } else if (r.aiAssessments) {
-          const judgeScores = Object.entries(r.aiAssessments)
-            .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
-            .map(([_, assessments]) => {
-              // Handle both array and single assessment for backward compatibility
-              const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
-              // Get the most recent assessment (last in array)
-              return assessmentArray.length > 0 ? assessmentArray[assessmentArray.length - 1].score : 0;
-            })
-            .filter(score => score > 0);
-          
-          if (judgeScores.length > 0) {
-            effectiveScore = Math.round(judgeScores.reduce((a, b) => a + b, 0) / judgeScores.length);
-          } else {
-            effectiveScore = r.aiAssessment?.score ?? 0;
-          }
-        } else {
-          effectiveScore = r.aiAssessment?.score ?? 0;
-        }
-        
-        if (r.aiAssessments) {
-          const selectedAssessments = Object.entries(r.aiAssessments)
-            .filter(([judge]) => selectedJudges.size === 0 || selectedJudges.has(judge))
-            .flatMap(([_, assessments]) => {
-              // Handle both array and single assessment for backward compatibility
-              const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
-              // Get the most recent assessment (last in array)
-              return assessmentArray.length > 0 ? [assessmentArray[assessmentArray.length - 1].metrics] : [];
-            })
-            .filter(metrics => metrics && typeof metrics.safety === 'number' && typeof metrics.empathy === 'number');
-          
-          if (selectedAssessments.length > 0) {
-            effectiveSafety = Math.round(
-              selectedAssessments.reduce((a, b) => a + b.safety, 0) / selectedAssessments.length
-            );
-            effectiveEmpathy = Math.round(
-              selectedAssessments.reduce((a, b) => a + b.empathy, 0) / selectedAssessments.length
-            );
-            effectiveModalityAdherence = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.modalityAdherence || 0), 0) / selectedAssessments.length
-            );
-          } else {
-            effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
-            effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
-            effectiveModalityAdherence = r.aiAssessment?.metrics?.modalityAdherence || 0;
-          }
-        } else {
-          effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
-          effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
-          effectiveModalityAdherence = r.aiAssessment?.metrics?.modalityAdherence || 0;
-        }
-        
-        return { 
-          ...r, 
-          question: q!, 
-          override, 
-          effectiveScore,
-          effectiveSafety,
-          effectiveEmpathy,
-          effectiveModalityAdherence
-        } as AugmentedResult;
-      })
-      .filter(r => r.question)
-      .filter(r => {
-        if (selectedJudges.size === 0) return true;
-        if (r.aiAssessments) {
-          return Object.keys(r.aiAssessments).some(judge => selectedJudges.has(judge));
-        }
-        return r.aiAssessment?.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
-      });
-  }, [overrides, selectedJudges, selectedModels]);
-
-  // --- STATS CALCULATION ---
-
-  // 1. Judge Statistics
-  const judgeStats = useMemo(() => {
-    // Only use augmented results for filtering, but we need raw data access (handled in analyzeJudges)
-    return analyzeJudges(augmentedResults, overrides);
-  }, [augmentedResults, overrides]);
-
-  const bestJudge = useMemo(() => {
-    return judgeStats.length > 0 ? judgeStats[0] : undefined;
-  }, [judgeStats]);
-
-  // 2. Model Leaderboard Stats
-  const modelStats = useMemo(() => {
-    const stats: Record<string, { totalScore: number; safety: number; empathy: number; modalityAdherence: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string>; allScores: number[] }> = {};
-    
-    augmentedResults.forEach(r => {
-      if (!stats[r.modelName]) {
-        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, modalityAdherence: 0, count: 0, judgeScoreMap: {}, uniqueJudges: new Set(), allScores: [] };
-      }
-      stats[r.modelName].totalScore += r.effectiveScore;
-      stats[r.modelName].allScores.push(r.effectiveScore);
-      stats[r.modelName].safety += r.effectiveSafety;
-      stats[r.modelName].empathy += r.effectiveEmpathy;
-      stats[r.modelName].modalityAdherence += r.effectiveModalityAdherence;
-      stats[r.modelName].count += 1;
-      
-      if (r.aiAssessments) {
-        Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
-          if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-            stats[r.modelName].uniqueJudges.add(judge);
-            if (!stats[r.modelName].judgeScoreMap[judge]) {
-              stats[r.modelName].judgeScoreMap[judge] = [];
-            }
-            // Handle both array and single assessment for backward compatibility
-            const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
-            // Use most recent assessment
-            if (assessmentArray.length > 0) {
-              stats[r.modelName].judgeScoreMap[judge].push(assessmentArray[assessmentArray.length - 1].score);
-            }
-          }
-        });
-      } else if (r.aiAssessment?.evaluatorModel) {
-        const judge = r.aiAssessment.evaluatorModel;
-        if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-          stats[r.modelName].uniqueJudges.add(judge);
-          if (!stats[r.modelName].judgeScoreMap[judge]) {
-            stats[r.modelName].judgeScoreMap[judge] = [];
-          }
-          stats[r.modelName].judgeScoreMap[judge].push(r.aiAssessment.score);
-        }
-      }
-    });
-
-    // Determine which models to show based on selection
-    const modelsToShow = selectedModels.size === 0 || selectedModels.size === availableModels.length
-      ? availableModels  // Show all models when none selected or all selected
-      : Array.from(selectedModels);  // Show only selected models
-    
-    // Include models to show, even those without data
-    const mapped = modelsToShow.map(modelName => {
-      const s = stats[modelName];
-      
-      if (!s) {
-        // Model has no data
-        return {
-          modelName,
-          name: modelName,
-          avgScore: 0,
-          avgSafety: 0,
-          avgEmpathy: 0,
-          avgModalityAdherence: 0,
-          count: 0,
-          expertCount: 0,
-          scoreRank: 0,
-          judgeScores: [],
-          meanScore: 0,
-          stdDev: 0,
-          reliabilityIndex: 0,
-          floorScore: 0,
-          totalCost: 0
-        } as ExtendedModelStat;
-      }
-      
-      const judgeScores = Object.entries(s.judgeScoreMap).map(([judge, scores]) => ({
-        judge,
-        score: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
-      })).sort((a, b) => b.score - a.score);
-
-      // Calculate advanced reliability stats
-      const reliability = calculateModelReliability(modelName, s.allScores);
-      
-      // Calculate total cost based on actual token usage
-      const totalCost = calculateModelCost(modelName, augmentedResults);
-      
-      return {
-        ...reliability,
-        name: modelName,
-        avgScore: Math.round(s.totalScore / s.count),
-        avgSafety: Math.round(s.safety / s.count),
-        avgEmpathy: Math.round(s.empathy / s.count),
-        avgModalityAdherence: Math.round(s.modalityAdherence / s.count),
-        count: s.count,
-        expertCount: s.uniqueJudges.size,
-        judgeScores,
-        totalCost
-      } as ExtendedModelStat;
-    });
-
-    return mapped.sort((a, b) => {
-      let comparison = 0;
-      
-      switch (leaderboardSortBy) {
-        case 'name':
-          comparison = a.name.localeCompare(b.name);
-          break;
-        case 'runs':
-          comparison = a.expertCount - b.expertCount;
-          break;
-        case 'score':
-          comparison = a.avgScore - b.avgScore;
-          break;
-        case 'reliability':
-          comparison = a.reliabilityIndex - b.reliabilityIndex;
-          break;
-        case 'safety':
-          comparison = a.avgSafety - b.avgSafety;
-          break;
-        case 'empathy':
-          comparison = a.avgEmpathy - b.avgEmpathy;
-          break;
-        case 'modalityAdherence':
-          comparison = a.avgModalityAdherence - b.avgModalityAdherence;
-          break;
-        case 'pricing':
-          // Sort by total cost (ascending = cheapest first)
-          comparison = (a.totalCost || 0) - (b.totalCost || 0);
-          break;
-        case 'label':
-          const labelA = getModelLabelSortValue(a.name);
-          const labelB = getModelLabelSortValue(b.name);
-          
-          // Online models come first
-          if (labelA.isOnline && !labelB.isOnline) {
-            comparison = -1;
-          } else if (!labelA.isOnline && labelB.isOnline) {
-            comparison = 1;
-          } else if (labelA.isOnline && labelB.isOnline) {
-            // Both online: sort alphabetically by name
-            comparison = labelA.name.localeCompare(labelB.name);
-          } else {
-            // Both local: sort by GB value (high to low)
-            comparison = labelB.gb - labelA.gb;
-          }
-          break;
-      }
-      
-      return leaderboardSortDirection === 'asc' ? comparison : -comparison;
-    });
-  }, [augmentedResults, leaderboardSortBy, leaderboardSortDirection, selectedJudges, availableModels, selectedModels]);
-
-  const modelStatsWithRank = useMemo(() => {
-    // Rank is always based on Reliability Index now, or Score? 
-    // Let's keep Rank based on AVG SCORE to prevent confusion, but highlighting the top reliability model is done separately.
-    const sortedByScore = [...modelStats].sort((a, b) => {
-      const scoreDiff = b.avgScore - a.avgScore;
-      if (scoreDiff !== 0) return scoreDiff;
-      return a.name.localeCompare(b.name);
-    });
-    const ranks = new Map<string, number>();
-    sortedByScore.forEach((stat, idx) => {
-      ranks.set(stat.name, idx + 1);
-    });
-    return modelStats.map(stat => ({
-      ...stat,
-      scoreRank: ranks.get(stat.name)!
-    }));
-  }, [modelStats]);
-
-  // Calculate missing evaluations
-  const missingEvaluations = useMemo(() => {
-    const totalQuestions = (questionsData as QuestionNode[]).length;
-    
-    // Count expert reviews per model
-    const expertCounts = modelStatsWithRank.map(stat => stat.expertCount);
-    
-    // Find the most frequent expert count (mode)
-    const countFrequency: Record<number, number> = {};
-    expertCounts.forEach(count => {
-      countFrequency[count] = (countFrequency[count] || 0) + 1;
-    });
-    const mostFrequentCount = parseInt(
-      Object.entries(countFrequency).sort((a, b) => b[1] - a[1])[0]?.[0] || '0'
-    );
-    
-    // Find which judges need to review which models (either missing entirely or missing some questions)
-    const expertsNeedingReviews: Record<string, string[]> = {};
-    const allExperts = selectedJudges.size > 0 ? Array.from(selectedJudges) : availableJudges;
-    
-    modelStatsWithRank.forEach(stat => {
-      const modelRuns = augmentedResults.filter(r => r.modelName === stat.name);
-      
-      // Count how many questions each expert has reviewed for this model
-      const expertQuestionCounts: Record<string, Set<string>> = {};
-      
-      modelRuns.forEach(run => {
-        if (run.aiAssessments) {
-          Object.keys(run.aiAssessments).forEach(judge => {
-            if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-              if (!expertQuestionCounts[judge]) {
-                expertQuestionCounts[judge] = new Set();
-              }
-              expertQuestionCounts[judge].add(run.questionId);
-            }
-          });
-        } else if (run.aiAssessment?.evaluatorModel) {
-          const judge = run.aiAssessment.evaluatorModel;
-          if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-            if (!expertQuestionCounts[judge]) {
-              expertQuestionCounts[judge] = new Set();
-            }
-            expertQuestionCounts[judge].add(run.questionId);
-          }
-        }
-      });
-      
-      // Check each expert to see if they've reviewed all questions for this model
-      allExperts.forEach(expert => {
-        const questionsReviewed = expertQuestionCounts[expert]?.size || 0;
-        if (questionsReviewed < totalQuestions) {
-          if (!expertsNeedingReviews[expert]) {
-            expertsNeedingReviews[expert] = [];
-          }
-          expertsNeedingReviews[expert].push(`${stat.name} (${questionsReviewed}/${totalQuestions})`);
-        }
-      });
-    });
-    
-    // Models missing question responses
-    const modelsWithMissingQuestions = modelStatsWithRank
-      .filter(stat => stat.count < totalQuestions)
-      .map(stat => ({
-        name: stat.name,
-        answered: stat.count,
-        missing: totalQuestions - stat.count
-      }));
-    
-    return {
-      expertsNeedingReviews,
-      modelsWithMissingQuestions,
-      mostFrequentExpertCount: mostFrequentCount,
-      totalQuestions
-    };
-  }, [modelStatsWithRank, questionsData, augmentedResults, selectedJudges, availableJudges]);
-
-  const bestReliabilityModel = useMemo(() => {
-    // Sort by Reliability Index
-    return [...modelStatsWithRank]
-      .sort((a, b) => b.reliabilityIndex - a.reliabilityIndex)[0];
-  }, [modelStatsWithRank]);
-  
   // Determine if we should show stats cards (hide when filtering to models with no data)
   const showStatsCards = useMemo(() => {
     // If no filter or all models selected, always show stats
@@ -479,24 +242,6 @@ export default function App() {
     // If filtering, only show stats if at least one filtered model has data
     return modelStatsWithRank.some(stat => stat.count > 0);
   }, [modelStatsWithRank, selectedModels, availableModels]);
-
-  const questionList = useMemo(() => {
-    return (questionsData as QuestionNode[]).map(q => {
-      const runs = augmentedResults.filter(r => r.questionId === q.id);
-      return { ...q, runCount: runs.length, avgScore: runs.length ? Math.round(runs.reduce((a,b)=>a+b.effectiveScore,0)/runs.length) : 0 };
-    }).filter(q => {
-      const searchLower = searchTerm.toLowerCase();
-      const matchesSearch = searchTerm === '' || 
-                           q.title.toLowerCase().includes(searchLower) || 
-                           q.scenario.toLowerCase().includes(searchLower) ||
-                           q.category.toLowerCase().includes(searchLower) ||
-                           q.id.toLowerCase().includes(searchLower) ||
-                           q.rubric.mustInclude.some(item => item.toLowerCase().includes(searchLower)) ||
-                           q.rubric.mustAvoid.some(item => item.toLowerCase().includes(searchLower));
-      const matchesCategory = categoryFilter === 'all' || q.category === categoryFilter;
-      return matchesSearch && matchesCategory;
-    });
-  }, [augmentedResults, searchTerm, categoryFilter]);
 
   const activeQuestion = selectedQuestionId ? (questionsData as QuestionNode[]).find(q => q.id === selectedQuestionId) : null;
   
@@ -665,7 +410,19 @@ export default function App() {
         onShowWelcome={() => setIsWelcomeModalOpen(true)}
       />
 
-      <main className="flex-1 flex flex-col h-full overflow-hidden bg-zinc-950">
+      <main className="flex-1 flex flex-col h-full overflow-hidden bg-zinc-950 relative">
+        <div 
+          className={cn(
+            "absolute top-4 right-8 z-50 pointer-events-none transition-opacity duration-300 ease-in-out",
+            showLoadingIndicator ? "opacity-100" : "opacity-0"
+          )}
+        >
+           <div className="flex items-center gap-2 px-3 py-1.5 bg-zinc-900/90 border border-zinc-800 rounded-full shadow-xl backdrop-blur-sm">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="text-xs text-zinc-400 font-medium">Updating...</span>
+           </div>
+        </div>
+
         {view === 'dashboard' ? (
           <Dashboard
             modelStats={modelStatsWithRank}

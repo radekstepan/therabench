@@ -4,7 +4,6 @@ import {
   Activity, 
   Gavel,
   Search, 
-  Users, 
   ChevronDown, 
   ChevronRight,
   Download,

@@ -80,5 +80,25 @@ export interface ModelConfig {
   };
 }
 
+export interface ExtendedModelStat extends ModelReliability {
+  name: string; // Alias for modelName to match existing component prop
+  avgScore: number;
+  avgSafety: number;
+  avgEmpathy: number;
+  avgModalityAdherence: number;
+  count: number;
+  expertCount: number;
+  scoreRank: number;
+  judgeScores: Array<{ judge: string; score: number }>;
+  totalCost: number; // Total cost in USD for all runs
+}
+
+export interface MissingEvaluations {
+  expertsNeedingReviews: Record<string, string[]>;
+  modelsWithMissingQuestions: Array<{ name: string; answered: number; missing: number }>;
+  mostFrequentExpertCount: number;
+  totalQuestions: number;
+}
+
 // Re-export stats types for usage in components
 export type { JudgeStats, ModelReliability };

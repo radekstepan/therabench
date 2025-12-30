@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Save, Gavel, UserCheck, Brain, Shield, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronRight, Save, Gavel, UserCheck, Brain, Sparkles } from 'lucide-react';
 import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import type { AugmentedResult, HumanOverride } from '../types';

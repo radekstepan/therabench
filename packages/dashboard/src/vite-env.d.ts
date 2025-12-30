@@ -3,3 +3,10 @@ declare module 'virtual:results' {
   const results: ModelRun[];
   export default results;
 }
+
+declare module '*?worker' {
+  const workerConstructor: {
+    new (): Worker;
+  };
+  export default workerConstructor;
+}

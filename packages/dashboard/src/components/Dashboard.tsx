@@ -5,7 +5,7 @@ import { ModelLabels } from './ModelLabels';
 import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
 import { JudgeStats } from '../lib/stats';
-import { ExtendedModelStat } from '../App';
+import { ExtendedModelStat } from '../types';
 
 interface MissingEvaluations {
   expertsNeedingReviews: Record<string, string[]>;
@@ -448,7 +448,7 @@ export const Dashboard = ({
                         <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left shadow-xl" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-2">Score by Judge</div>
                           <div className="space-y-1.5">
-                            {stat.judgeScores.map((js, idx) => (
+                            {stat.judgeScores.map((js: any, idx: number) => (
                               <div key={idx} className="flex items-start justify-between text-zinc-300">
                                 <span className="font-mono text-[10px] truncate flex-1">{js.judge}</span>
                                 <span className="ml-2 font-bold text-right">{formatPercentWithColor(js.score)}</span>
