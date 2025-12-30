@@ -110,12 +110,12 @@ export const QuestionDetail = ({
                 <thead className="bg-zinc-900/50 border-b border-zinc-800">
                   <tr>
                     <th 
-                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase w-16 text-center whitespace-nowrap cursor-help"
+                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase w-16 text-center whitespace-nowrap cursor-pointer"
                       title="Rank"
                     >
                       <div className="flex items-center justify-center gap-1 group relative">
                         <Hash className="w-4 h-4" />
-                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                        <div className="absolute left-full ml-2 top-0 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Rank</div>
                           Position of this model based on overall score for this specific question. Lower numbers indicate better performance.
                         </div>

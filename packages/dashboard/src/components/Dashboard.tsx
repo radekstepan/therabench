@@ -160,12 +160,12 @@ export const Dashboard = ({
           <thead className="bg-zinc-900/50 border-b border-zinc-800">
             <tr>
               <th 
-                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-help"
+                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer"
                 title="Rank"
               >
                 <div className="flex items-center gap-1 group relative">
                   <Hash className="w-4 h-4" />
-                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                  <div className="absolute left-full ml-2 top-0 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Rank</div>
                     Overall ranking based on average score across all evaluated questions. Lower numbers indicate better performance.
                   </div>
@@ -332,13 +332,13 @@ export const Dashboard = ({
                 <td className="px-3 py-2 text-center font-bold whitespace-nowrap relative group/score">
                   <span className={cn(getScoreColor(stat.avgScore))}>{stat.avgScore}%</span>
                   {stat.judgeScores && stat.judgeScores.length > 0 && (
-                    <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal shadow-xl" style={{zIndex: 9999}}>
+                    <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left shadow-xl" style={{zIndex: 9999}}>
                       <div className="font-semibold text-white mb-2">Score by Judge</div>
                       <div className="space-y-1.5">
                         {stat.judgeScores.map((js, idx) => (
-                          <div key={idx} className="flex items-center justify-between text-zinc-300">
+                          <div key={idx} className="flex items-start justify-between text-zinc-300">
                             <span className="font-mono text-[10px] truncate flex-1">{js.judge}</span>
-                            <span className="ml-2 font-bold">{formatPercentWithColor(js.score)}</span>
+                            <span className="ml-2 font-bold text-right">{formatPercentWithColor(js.score)}</span>
                           </div>
                         ))}
                       </div>
