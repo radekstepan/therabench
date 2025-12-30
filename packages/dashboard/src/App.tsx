@@ -40,7 +40,7 @@ export default function App() {
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
   const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing'>('reliability');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
@@ -51,6 +51,7 @@ export default function App() {
   const [modelStatsWithRank, setModelStatsWithRank] = useState<ExtendedModelStat[]>([]);
   const [missingEvaluations, setMissingEvaluations] = useState<MissingEvaluations>({ expertsNeedingReviews: {}, modelsWithMissingQuestions: [], mostFrequentExpertCount: 0, totalQuestions: 0 });
   const [bestReliabilityModel, setBestReliabilityModel] = useState<ExtendedModelStat | undefined>(undefined);
+  const [bestScoringModel, setBestScoringModel] = useState<ExtendedModelStat | undefined>(undefined);
   const [bestJudge, setBestJudge] = useState<JudgeStats | undefined>(undefined);
   const [questionList, setQuestionList] = useState<Array<QuestionNode & { runCount: number; avgScore: number }>>([]);
   
@@ -137,6 +138,7 @@ export default function App() {
           modelStatsWithRank,
           missingEvaluations,
           bestReliabilityModel,
+          bestScoringModel,
           bestJudge,
           questionList
         } = e.data.payload;
@@ -146,6 +148,7 @@ export default function App() {
         setModelStatsWithRank(modelStatsWithRank);
         setMissingEvaluations(missingEvaluations);
         setBestReliabilityModel(bestReliabilityModel);
+        setBestScoringModel(bestScoringModel);
         setBestJudge(bestJudge);
         setQuestionList(questionList);
         setIsCalculating(false);
@@ -429,6 +432,7 @@ export default function App() {
             modelStats={modelStatsWithRank}
             judgeStats={judgeStats}
             bestModel={bestReliabilityModel}
+            bestScoringModel={bestScoringModel}
             bestJudge={bestJudge}
             missingEvaluations={missingEvaluations}
             sortBy={leaderboardSortBy}

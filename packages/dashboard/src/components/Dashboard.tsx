@@ -18,6 +18,7 @@ interface DashboardProps {
   modelStats: ExtendedModelStat[];
   judgeStats: JudgeStats[];
   bestModel: ExtendedModelStat | undefined;
+  bestScoringModel: ExtendedModelStat | undefined;
   bestJudge: JudgeStats | undefined;
   missingEvaluations: MissingEvaluations;
   sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing';
@@ -30,6 +31,7 @@ export const Dashboard = ({
   modelStats,
   judgeStats,
   bestModel,
+  bestScoringModel,
   bestJudge,
   missingEvaluations,
   sortBy,
@@ -59,7 +61,31 @@ export const Dashboard = ({
       </header>
 
       {showStatsCards && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
+          {/* Best Scoring Model Card */}
+          {bestScoringModel && (
+            <div className="bg-orange-900/10 border border-orange-500/20 p-6 rounded-md relative overflow-visible flex flex-col min-h-[160px] group/highscore">
+              <div className="absolute top-3 right-3 text-orange-500/10"><Target className="w-20 h-20" /></div>
+              <div className="relative z-10 flex-1 flex flex-col">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-orange-500 text-xs font-mono font-medium uppercase tracking-wide">Highest Scoring Model</div>
+                </div>
+                <div className="text-xl font-mono font-bold text-white mb-1 flex items-center gap-2">
+                  {isEnhancedModel(bestScoringModel.name) && <Sparkles className="w-4 h-4 text-pink-500 flex-shrink-0" />}
+                  {stripEnhancedSuffix(bestScoringModel.name)}
+                </div>
+                <div className="flex-1" />
+                <div className="flex items-end gap-2 relative">
+                   <div className="text-4xl font-light text-orange-400">{bestScoringModel.avgScore}%</div>
+                   <div className="text-xs text-zinc-500 mb-2 cursor-help">Average Score</div>
+                   <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover/highscore:block w-72 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left text-zinc-300 shadow-xl whitespace-normal z-50">
+                     <div className="font-semibold text-white mb-1">Average Score (0-100%)</div>
+                     Composite score based on rubric adherence, therapeutic quality, and expert judgment. Higher is better.
+                   </div>
+                </div>
+              </div>
+            </div>
+          )}
           {/* Best Model Card */}
           {bestModel && (
             <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-md relative overflow-visible flex flex-col min-h-[160px] group/reliability">

@@ -349,6 +349,7 @@ function performCalculations(payload: any, requestId: string) {
   }
 
   const bestReliabilityModel = [...finalModelStats].sort((a, b) => b.reliabilityIndex - a.reliabilityIndex)[0];
+  const bestScoringModel = [...finalModelStats].sort((a, b) => b.avgScore - a.avgScore)[0];
   const bestJudge = cachedJudgeStats && cachedJudgeStats.length > 0 ? cachedJudgeStats[0] : undefined;
 
   // Filter Questions List (Fast)
@@ -378,6 +379,7 @@ function performCalculations(payload: any, requestId: string) {
       modelStatsWithRank: finalModelStats,
       missingEvaluations: cachedMissingEvaluations,
       bestReliabilityModel,
+      bestScoringModel,
       bestJudge,
       questionList
     }
