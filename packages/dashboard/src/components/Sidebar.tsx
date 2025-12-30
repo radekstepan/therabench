@@ -2,7 +2,7 @@ import {
   LayoutDashboard, 
   Activity, 
   Search, 
-  Gavel, 
+  Users, 
   ChevronDown, 
   ChevronRight,
   Download,
@@ -77,7 +77,7 @@ export const Sidebar = ({
           <div className="pt-4 pb-2">
             <div className="px-3 mb-2 flex items-center justify-between">
               <div className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">
-                Judges ({availableJudges.length})
+                Experts ({availableJudges.length})
               </div>
             </div>
             <div className="px-2">
@@ -91,12 +91,12 @@ export const Sidebar = ({
                 )}
               >
                 <div className="flex items-center gap-2">
-                  <Gavel className="w-3 h-3" />
+                  <Users className="w-3 h-3" />
                   <span>
                     {selectedJudges.size === 0
-                      ? "No judges (showing all)"
+                      ? "No experts (showing all)"
                       : selectedJudges.size === availableJudges.length
-                      ? "All judges"
+                      ? "All experts"
                       : `${selectedJudges.size} of ${availableJudges.length} selected`}
                   </span>
                 </div>

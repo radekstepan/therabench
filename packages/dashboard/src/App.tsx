@@ -31,9 +31,9 @@ export default function App() {
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
-  const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label'>('score');
+  const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label'>('score');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   
@@ -99,6 +99,7 @@ export default function App() {
         let effectiveScore: number;
         let effectiveSafety: number;
         let effectiveEmpathy: number;
+        let effectiveModalityAdherence: number;
         
         if (override) {
           effectiveScore = override.manualScore;
@@ -140,13 +141,18 @@ export default function App() {
             effectiveEmpathy = Math.round(
               selectedAssessments.reduce((a, b) => a + b.empathy, 0) / selectedAssessments.length
             );
+            effectiveModalityAdherence = Math.round(
+              selectedAssessments.reduce((a, b) => a + (b.modalityAdherence || 0), 0) / selectedAssessments.length
+            );
           } else {
             effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
             effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
+            effectiveModalityAdherence = r.aiAssessment?.metrics?.modalityAdherence || 0;
           }
         } else {
           effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
           effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
+          effectiveModalityAdherence = r.aiAssessment?.metrics?.modalityAdherence || 0;
         }
         
         return { 
@@ -155,7 +161,8 @@ export default function App() {
           override, 
           effectiveScore,
           effectiveSafety,
-          effectiveEmpathy
+          effectiveEmpathy,
+          effectiveModalityAdherence
         } as AugmentedResult;
       })
       .filter(r => r.question)
@@ -170,15 +177,16 @@ export default function App() {
 
   // Model Leaderboard Stats
   const modelStats = useMemo(() => {
-    const stats: Record<string, { totalScore: number; safety: number; empathy: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string> }> = {};
+    const stats: Record<string, { totalScore: number; safety: number; empathy: number; modalityAdherence: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string> }> = {};
     
     augmentedResults.forEach(r => {
       if (!stats[r.modelName]) {
-        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, count: 0, judgeScoreMap: {}, uniqueJudges: new Set() };
+        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, modalityAdherence: 0, count: 0, judgeScoreMap: {}, uniqueJudges: new Set() };
       }
       stats[r.modelName].totalScore += r.effectiveScore;
       stats[r.modelName].safety += r.effectiveSafety;
       stats[r.modelName].empathy += r.effectiveEmpathy;
+      stats[r.modelName].modalityAdherence += r.effectiveModalityAdherence;
       stats[r.modelName].count += 1;
       
       if (r.aiAssessments) {
@@ -219,6 +227,7 @@ export default function App() {
         avgScore: Math.round(s.totalScore / s.count),
         avgSafety: Math.round(s.safety / s.count),
         avgEmpathy: Math.round(s.empathy / s.count),
+        avgModalityAdherence: Math.round(s.modalityAdherence / s.count),
         count: s.count,
         expertCount: s.uniqueJudges.size,
         judgeScores
@@ -243,6 +252,9 @@ export default function App() {
           break;
         case 'empathy':
           comparison = a.avgEmpathy - b.avgEmpathy;
+          break;
+        case 'modalityAdherence':
+          comparison = a.avgModalityAdherence - b.avgModalityAdherence;
           break;
         case 'label':
           const labelA = getModelLabelSortValue(a.name);
@@ -409,6 +421,9 @@ export default function App() {
         case 'empathy':
           comparison = a.effectiveEmpathy - b.effectiveEmpathy;
           break;
+        case 'modalityAdherence':
+          comparison = a.effectiveModalityAdherence - b.effectiveModalityAdherence;
+          break;
         case 'label':
           const labelA = getModelLabelSortValue(a.modelName);
           const labelB = getModelLabelSortValue(b.modelName);
@@ -472,7 +487,7 @@ export default function App() {
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setSortBy(column);
-      setSortDirection(column === 'score' || column === 'safety' || column === 'empathy' ? 'desc' : 'asc');
+      setSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' ? 'desc' : 'asc');
     }
   };
 
@@ -481,7 +496,7 @@ export default function App() {
       setLeaderboardSortDirection(leaderboardSortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setLeaderboardSortBy(column);
-      setLeaderboardSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'runs' ? 'desc' : 'asc');
+      setLeaderboardSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' || column === 'runs' ? 'desc' : 'asc');
     }
   };
 

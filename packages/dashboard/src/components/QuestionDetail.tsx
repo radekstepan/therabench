@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Edit2, History, Info, ArrowUpDown } from 'lucide-react';
+import { Edit2, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity } from 'lucide-react';
 import { cn, stripEnhancedSuffix } from '../utils';
 import { RubricEditor } from './RubricEditor';
 import { ComparisonRow } from './ComparisonRow';
@@ -10,7 +10,7 @@ interface QuestionDetailProps {
   runs: Array<AugmentedResult & { scoreRank: number }>;
   expandedRunId: string | null;
   editingRubric: boolean;
-  sortBy: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label';
+  sortBy: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label';
   sortDirection: 'asc' | 'desc';
   selectedJudges: Set<string>;
   onEditQuestion: () => void;
@@ -18,7 +18,7 @@ interface QuestionDetailProps {
   onSaveRubric: (rubric: Rubric) => void;
   onToggleRun: (runId: string) => void;
   onSaveOverride: (runId: string, override: HumanOverride) => void;
-  onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'label') => void;
+  onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label') => void;
 }
 
 export const QuestionDetail = ({
@@ -109,62 +109,88 @@ export const QuestionDetail = ({
               <table className="w-full">
                 <thead className="bg-zinc-900/50 border-b border-zinc-800">
                   <tr>
-                    <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase w-16 text-center whitespace-nowrap">Rank</th>
+                    <th 
+                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase w-16 text-center whitespace-nowrap cursor-help"
+                      title="Rank"
+                    >
+                      <div className="flex items-center justify-center gap-1 group relative">
+                        <Hash className="w-4 h-4" />
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-1">Rank</div>
+                          Position of this model based on overall score for this specific question. Lower numbers indicate better performance.
+                        </div>
+                      </div>
+                    </th>
                     <th 
                       className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase cursor-pointer hover:text-zinc-300 transition-colors w-full"
                       onClick={() => onSort('model')}
+                      title="Candidate Model"
                     >
-                      <div className="flex items-center gap-1">
-                        Model
+                      <div className="flex items-center gap-1 group relative">
+                        Candidate Model
                         <ArrowUpDown className={cn(
                           "w-3 h-3 transition-transform",
                           sortBy === 'model'
                             ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                             : 'text-zinc-400'
                         )} />
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-1">Candidate Model</div>
+                          The name of the AI model being evaluated. Click to sort alphabetically.
+                        </div>
                       </div>
                     </th>
                     <th 
                       className="px-2 py-2 text-xs font-semibold text-zinc-500 uppercase cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => onSort('label')}
+                      title="Type"
                     >
-                      <div className="flex items-center gap-1">
-                        Size
+                      <div className="flex items-center justify-center gap-1 group relative">
+                        <Tag className="w-4 h-4" />
                         <ArrowUpDown className={cn(
                           "w-3 h-3 transition-transform",
                           sortBy === 'label'
                             ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                             : 'text-zinc-400'
                         )} />
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-1">Model Type</div>
+                          Shows the model size in GB for local models, or service type for online API models.
+                        </div>
                       </div>
                     </th>
                     <th 
-                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => onSort('score')}
+                      title="Score"
                     >
-                      <div className="flex items-center justify-end gap-1">
-                        Score
+                      <div className="flex items-center justify-center gap-1 group relative">
+                        <Target className="w-4 h-4" />
                         <ArrowUpDown className={cn(
                           "w-3 h-3 transition-transform",
                           sortBy === 'score'
                             ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                             : 'text-zinc-400'
                         )} />
+                        <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-1">Overall Score (0-100%)</div>
+                          Composite score based on rubric adherence, therapeutic quality, and expert judgment. Higher is better.
+                        </div>
                       </div>
                     </th>
                     <th 
                       className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => onSort('safety')}
+                      title="Safety"
                     >
                       <div className="flex items-center justify-center gap-1 group relative">
-                        Safety
+                        <Shield className="w-4 h-4" />
                         <ArrowUpDown className={cn(
                           "w-3 h-3 transition-transform",
                           sortBy === 'safety'
                             ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                             : 'text-zinc-400'
                         )} />
-                        <Info className="w-3 h-3 cursor-help ml-1" />
                         <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
                           Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
@@ -174,23 +200,41 @@ export const QuestionDetail = ({
                     <th 
                       className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                       onClick={() => onSort('empathy')}
+                      title="Empathy"
                     >
                       <div className="flex items-center justify-center gap-1 group relative">
-                        Empathy
+                        <Heart className="w-4 h-4" />
                         <ArrowUpDown className={cn(
                           "w-3 h-3 transition-transform",
                           sortBy === 'empathy'
                             ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                             : 'text-zinc-400'
                         )} />
-                        <Info className="w-3 h-3 cursor-help ml-1" />
                         <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                           Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
                         </div>
                       </div>
                     </th>
-                    <th className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-right w-16 whitespace-nowrap">Run</th>
+                    <th 
+                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                      onClick={() => onSort('modalityAdherence')}
+                      title="Modality Adherence"
+                    >
+                      <div className="flex items-center justify-center gap-1 group relative">
+                        <Activity className="w-4 h-4" />
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          sortBy === 'modalityAdherence'
+                            ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
+                        <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-1">Modality Adherence (0-100)</div>
+                          Measures how well the response follows the specific therapy modality's principles and techniques (e.g., CBT, DBT, ACT).
+                        </div>
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="bg-zinc-900">

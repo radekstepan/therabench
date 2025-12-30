@@ -60,6 +60,7 @@ export interface AugmentedResult extends ModelRun {
   effectiveScore: number;
   effectiveSafety: number;
   effectiveEmpathy: number;
+  effectiveModalityAdherence: number;
 }
 
 export interface ModelLabel {

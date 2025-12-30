@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Trophy, Info, ArrowUpDown, Sparkles } from 'lucide-react';
+import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Users, Hash, Tag } from 'lucide-react';
 import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { ExpertRankingGrid } from './ExpertRankingGrid';
@@ -9,6 +9,7 @@ interface ModelStat {
   avgScore: number;
   avgSafety: number;
   avgEmpathy: number;
+  avgModalityAdherence: number;
   count: number;
   expertCount: number;
   scoreRank: number;
@@ -28,9 +29,9 @@ interface DashboardProps {
   totalEvaluations: number;
   reviewsCompleted: number;
   missingEvaluations: MissingEvaluations;
-  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label';
+  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label';
   sortDirection: 'asc' | 'desc';
-  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'label') => void;
+  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label') => void;
 }
 
 export const Dashboard = ({
@@ -158,62 +159,88 @@ export const Dashboard = ({
         <table className="w-full text-left">
           <thead className="bg-zinc-900/50 border-b border-zinc-800">
             <tr>
-              <th className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Rank</th>
+              <th 
+                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-help"
+                title="Rank"
+              >
+                <div className="flex items-center gap-1 group relative">
+                  <Hash className="w-4 h-4" />
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Rank</div>
+                    Overall ranking based on average score across all evaluated questions. Lower numbers indicate better performance.
+                  </div>
+                </div>
+              </th>
               <th 
                 className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors w-full"
                 onClick={() => onSort('name')}
+                title="Candidate Model"
               >
-                <div className="flex items-center gap-1">
-                  Model Name
+                <div className="flex items-center gap-1 group relative">
+                  Candidate Model
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'name'
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Candidate Model</div>
+                    The name of the AI model being evaluated. Click to sort alphabetically.
+                  </div>
                 </div>
               </th>
               <th 
                 className="px-2 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                 onClick={() => onSort('label')}
+                title="Type"
               >
-                <div className="flex items-center gap-1">
-                  Size
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <Tag className="w-4 h-4" />
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'label'
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Model Type</div>
+                    Shows the model size in GB for local models, or service type for online API models.
+                  </div>
                 </div>
               </th>
               <th 
-                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                 onClick={() => onSort('score')}
+                title="Score"
               >
-                <div className="flex items-center justify-end gap-1">
-                  Avg Score
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <Target className="w-4 h-4" />
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'score'
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
+                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Average Score (0-100%)</div>
+                    Average composite score across all questions, based on rubric adherence, therapeutic quality, and expert judgment. Higher is better.
+                  </div>
                 </div>
               </th>
               <th 
-                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                 onClick={() => onSort('safety')}
+                title="Safety"
               >
                 <div className="flex items-center justify-center gap-1 group relative">
-                  Safety
+                  <Shield className="w-4 h-4" />
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'safety'
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
-                  <Info className="w-3 h-3 cursor-help ml-1" />
                   <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Safety Score (0-100)</div>
                     Measures risk assessment, crisis detection, and avoidance of harmful advice. High scores indicate appropriate safety protocols and harm prevention.
@@ -221,18 +248,18 @@ export const Dashboard = ({
                 </div>
               </th>
               <th 
-                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                 onClick={() => onSort('empathy')}
+                title="Empathy"
               >
                 <div className="flex items-center justify-center gap-1 group relative">
-                  Empathy
+                  <Heart className="w-4 h-4" />
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'empathy'
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
-                  <Info className="w-3 h-3 cursor-help ml-1" />
                   <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                     Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
@@ -240,17 +267,41 @@ export const Dashboard = ({
                 </div>
               </th>
               <th 
-                className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-right cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                onClick={() => onSort('runs')}
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                onClick={() => onSort('modalityAdherence')}
+                title="Modality Adherence"
               >
-                <div className="flex items-center justify-end gap-1">
-                  Experts
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <Activity className="w-4 h-4" />
+                  <ArrowUpDown className={cn(
+                    "w-3 h-3 transition-transform",
+                    sortBy === 'modalityAdherence'
+                      ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                      : 'text-zinc-400'
+                  )} />
+                  <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Modality Adherence (0-100)</div>
+                    Measures how well the response follows the specific therapy modality's principles and techniques (e.g., CBT, DBT, ACT).
+                  </div>
+                </div>
+              </th>
+              <th 
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                onClick={() => onSort('runs')}
+                title="Experts"
+              >
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <Users className="w-4 h-4" />
                   <ArrowUpDown className={cn(
                     "w-3 h-3 transition-transform",
                     sortBy === 'runs'
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
+                  <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Expert Judges</div>
+                    Number of unique expert judge models that have evaluated this model's responses.
+                  </div>
                 </div>
               </th>
             </tr>
@@ -278,7 +329,7 @@ export const Dashboard = ({
                 <td className="px-2 py-2 align-middle whitespace-nowrap">
                   <ModelLabels modelName={stat.name} />
                 </td>
-                <td className="px-4 py-2 text-right font-bold whitespace-nowrap relative group/score">
+                <td className="px-3 py-2 text-center font-bold whitespace-nowrap relative group/score">
                   <span className={cn(getScoreColor(stat.avgScore))}>{stat.avgScore}%</span>
                   {stat.judgeScores && stat.judgeScores.length > 0 && (
                     <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal shadow-xl" style={{zIndex: 9999}}>
@@ -294,9 +345,10 @@ export const Dashboard = ({
                     </div>
                   )}
                 </td>
-                <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgSafety}</td>
-                <td className="px-4 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgEmpathy}</td>
-                <td className="px-4 py-2 text-right text-zinc-400 whitespace-nowrap">{stat.expertCount}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgSafety}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgEmpathy}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgModalityAdherence}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.expertCount}</td>
               </tr>
             ))}
           </tbody>

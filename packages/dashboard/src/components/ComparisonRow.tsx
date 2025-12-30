@@ -86,6 +86,7 @@ export const ComparisonRow = ({
         </td>
         <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
         <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
+        <td className="px-3 py-2 text-center text-zinc-400 font-mono whitespace-nowrap">{run.effectiveModalityAdherence}</td>
         <td className="px-3 py-2 text-right whitespace-nowrap">
           {isExpanded ? <ChevronDown className="w-5 h-5 ml-auto text-zinc-500" /> : <ChevronRight className="w-5 h-5 ml-auto text-zinc-500" />}
         </td>
@@ -93,7 +94,7 @@ export const ComparisonRow = ({
       
       {isExpanded && (
         <tr>
-          <td colSpan={6} className="bg-zinc-900/30 p-0">
+          <td colSpan={7} className="bg-zinc-900/30 p-0">
             <div className="border-b border-zinc-800/50 p-6 grid grid-cols-12 gap-8">
               {/* Left: Response & Analysis */}
               <div className="col-span-8 space-y-6">
