@@ -28,75 +28,18 @@ function resolveEnvValue(value: string | undefined): string {
   return value;
 }
 
-// Data Paths
-const DATA_DIR = path.join(__dirname, '../data');
-const DEFAULT_QUESTIONS_FILE = path.join(DATA_DIR, 'questions.json');
-const TRANSCRIPTS_FILE = path.join(DATA_DIR, 'transcripts.json');
+// Helper to parse args to allow running specific question files (e.g., transcripts)
+const DEFAULT_QUESTIONS_PATH = path.join(__dirname, '../data/questions.json');
 
-/**
- * Loads questions from a specific file and hydrates context if needed.
- */
-function loadFileAndHydrate(filePath: string): QuestionNode[] {
-  if (!fs.existsSync(filePath)) return [];
-  try {
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(content);
-    const questions = Array.isArray(data) ? data : data.questions || [];
-    
-    // Hydrate context from files if needed
-    for (const q of questions) {
-      if (q.contextFile && !q.context) {
-        const contextPath = path.resolve(path.dirname(filePath), q.contextFile);
-        if (fs.existsSync(contextPath)) {
-          q.context = fs.readFileSync(contextPath, 'utf-8');
-        } else {
-          console.warn(`⚠️ Context file not found: ${contextPath}`);
-        }
-      }
-    }
-    return questions;
-  } catch (e) {
-    console.error(`Error loading ${filePath}:`, e);
-    return [];
-  }
-}
-
-/**
- * Determines which questions to load.
- * If --file is passed, loads only that file.
- * Otherwise, loads both questions.json and transcripts.json.
- */
-function getQuestions(): { questions: QuestionNode[], sourceName: string } {
+function getQuestionsPath(): string {
   const fileArgIndex = process.argv.indexOf('--file');
-  
   if (fileArgIndex > -1 && process.argv[fileArgIndex + 1]) {
-    const customPath = path.resolve(process.cwd(), process.argv[fileArgIndex + 1]);
-    if (!fs.existsSync(customPath)) {
-      console.error(`❌ No questions found at ${customPath}`);
-      process.exit(1);
-    }
-    return {
-      questions: loadFileAndHydrate(customPath),
-      sourceName: path.basename(customPath)
-    };
+    return path.resolve(process.cwd(), process.argv[fileArgIndex + 1]);
   }
-
-  // Default: Load both standard questions and transcripts
-  const standardQuestions = loadFileAndHydrate(DEFAULT_QUESTIONS_FILE);
-  const transcriptQuestions = loadFileAndHydrate(TRANSCRIPTS_FILE);
-  
-  const allQuestions = [...standardQuestions, ...transcriptQuestions];
-
-  if (allQuestions.length === 0) {
-    console.error(`❌ No questions found in ${DATA_DIR}`);
-    process.exit(1);
-  }
-  
-  return {
-    questions: allQuestions,
-    sourceName: 'questions.json + transcripts.json'
-  };
+  return DEFAULT_QUESTIONS_PATH;
 }
+
+const QUESTIONS_PATH = getQuestionsPath();
 
 // Candidate Model Configuration (model being tested)
 const CANDIDATE_MODEL_URL = process.env.CANDIDATE_MODEL_URL;
@@ -403,9 +346,14 @@ async function main() {
       console.error('❌ EXPERT_MODEL_API_KEY is required but not set');
       process.exit(1);
     }
+    
+    if (!fs.existsSync(QUESTIONS_PATH)) {
+      console.error(`❌ No questions found at ${QUESTIONS_PATH}`);
+      process.exit(1);
+    }
 
-    // Load questions based on arguments or default to all
-    const { questions, sourceName } = getQuestions();
+    const questionsData = JSON.parse(fs.readFileSync(QUESTIONS_PATH, 'utf-8'));
+    const questions: QuestionNode[] = Array.isArray(questionsData) ? questionsData : questionsData.questions;
     
     const runTimestamp = new Date().toISOString();
     const judgeModel = EXPERT_MODEL_NAME!;
@@ -425,7 +373,7 @@ async function main() {
     }
     
     console.log(`🚀 Starting evaluation on ${questions.length} questions`);
-    console.log(`   Source: ${sourceName}`);
+    console.log(`   Source: ${path.basename(QUESTIONS_PATH)}`);
     console.log(`   Candidate: ${effectiveModelName}`);
     console.log(`   Judge: ${judgeModel}`);
     console.log(`   System Prompts: ${ENHANCED_PROMPTS ? '✨ ENHANCED (Expert Persona)' : 'Standard'}`);

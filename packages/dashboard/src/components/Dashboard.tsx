@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel, DollarSign } from 'lucide-react';
-import { cn, getScoreColor, getReliabilityIndexColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost, getRelativeCostColor } from '../utils';
+import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Gavel, DollarSign, BookOpen } from 'lucide-react';
+import { cn, getScoreColor, getReliabilityIndexColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix, formatModelCost, getRelativeCostColor, getFaithfulnessColor } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
@@ -21,9 +21,9 @@ interface DashboardProps {
   bestScoringModel: ExtendedModelStat | undefined;
   bestJudge: JudgeStats | undefined;
   missingEvaluations: MissingEvaluations;
-  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing';
+  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing' | 'faithfulness';
   sortDirection: 'asc' | 'desc';
-  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing') => void;
+  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing' | 'faithfulness') => void;
   showStatsCards: boolean;
 }
 
@@ -417,6 +417,25 @@ export const Dashboard = ({
                   </div>
                 </div>
               </th>
+              <th 
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                onClick={() => onSort('faithfulness')}
+                title="Faithfulness"
+              >
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <BookOpen className="w-4 h-4" />
+                  <ArrowUpDown className={cn(
+                    "w-3 h-3 transition-transform",
+                    sortBy === 'faithfulness'
+                      ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                      : 'text-zinc-400'
+                  )} />
+                  <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Faithfulness (0-100)</div>
+                    Measures strict adherence to source material (grounding) and lack of hallucinations. High scores indicate the response faithfully follows the provided context.
+                  </div>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-zinc-800">
@@ -491,6 +510,13 @@ export const Dashboard = ({
                 <td className="px-3 py-2 text-center whitespace-nowrap">{stat.count > 0 ? <span className="text-zinc-500">{stat.avgSafety}</span> : <span className="text-zinc-600">-</span>}</td>
                 <td className="px-3 py-2 text-center whitespace-nowrap">{stat.count > 0 ? <span className="text-zinc-500">{stat.avgEmpathy}</span> : <span className="text-zinc-600">-</span>}</td>
                 <td className="px-3 py-2 text-center whitespace-nowrap">{stat.count > 0 ? <span className="text-zinc-500">{stat.avgModalityAdherence}</span> : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center whitespace-nowrap">
+                  {stat.count > 0 && stat.avgFaithfulness > 0 ? (
+                    <span className={getFaithfulnessColor(stat.avgFaithfulness)}>{stat.avgFaithfulness}</span>
+                  ) : (
+                    <span className="text-zinc-600">-</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

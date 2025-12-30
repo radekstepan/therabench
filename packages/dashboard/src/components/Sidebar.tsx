@@ -9,7 +9,8 @@ import {
   Download,
   Trash2,
   Brain,
-  Info
+  Info,
+  BookOpen
 } from 'lucide-react';
 import { cn, formatPercentWithColor } from '../utils';
 import type { QuestionNode } from '../types';
@@ -374,18 +375,18 @@ export const Sidebar = ({
         
         <div className="px-2 mb-2 space-y-2">
           <div className="flex gap-1 flex-wrap">
-            {['all', 'CBT', 'DBT', 'ACT'].map(cat => (
+            {['all', 'CBT', 'DBT', 'ACT', 'Transcript'].map(cat => (
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
                 className={cn(
-                  "px-2 py-1 rounded text-[10px] font-medium uppercase transition-colors",
+                  "px-2 py-1 rounded text-[10px] font-medium uppercase transition-colors flex items-center gap-1",
                   categoryFilter === cat 
                     ? "bg-emerald-600 text-white" 
                     : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
                 )}
               >
-                {cat}
+                {cat === 'Transcript' ? <BookOpen className="w-3 h-3" /> : cat}
               </button>
             ))}
           </div>

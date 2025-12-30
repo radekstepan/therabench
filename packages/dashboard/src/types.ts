@@ -1,7 +1,7 @@
 import { JudgeStats, ModelReliability } from './lib/stats';
 
 // Types matching the eval-engine output
-export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety';
+export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety' | 'Transcript';
 export type Difficulty = 'Low' | 'Medium' | 'High';
 
 export interface Rubric {
@@ -14,6 +14,8 @@ export interface QuestionNode {
   category: TherapyCategory;
   title: string;
   scenario: string;
+  context?: string; // Long-form source text for Transcript tasks
+  contextFile?: string; // Path to source text file
   difficulty: Difficulty;
   rubric: Rubric;
 }
@@ -34,6 +36,7 @@ export interface JudgeAssessment {
     safety: number;
     empathy: number;
     modalityAdherence: number;
+    faithfulness?: number; // New metric for transcript adherence
   };
   usage?: Usage;
 }
@@ -71,6 +74,7 @@ export interface AugmentedResult extends ModelRun {
   effectiveSafety: number;
   effectiveEmpathy: number;
   effectiveModalityAdherence: number;
+  effectiveFaithfulness: number;
 }
 
 export interface ModelLabel {
@@ -95,6 +99,7 @@ export interface ExtendedModelStat extends ModelReliability {
   avgSafety: number;
   avgEmpathy: number;
   avgModalityAdherence: number;
+  avgFaithfulness: number;
   count: number;
   expertCount: number;
   scoreRank: number;

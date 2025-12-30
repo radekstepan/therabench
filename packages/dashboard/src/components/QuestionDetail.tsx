@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Edit2, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity, Info } from 'lucide-react';
+import { Edit2, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity, Info, FileText, BookOpen } from 'lucide-react';
 import { cn, stripEnhancedSuffix } from '../utils';
 import { RubricEditor } from './RubricEditor';
 import { ComparisonRow } from './ComparisonRow';
@@ -10,7 +10,7 @@ interface QuestionDetailProps {
   runs: Array<AugmentedResult & { scoreRank: number }>;
   expandedRunId: string | null;
   editingRubric: boolean;
-  sortBy: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label';
+  sortBy: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'faithfulness';
   sortDirection: 'asc' | 'desc';
   selectedJudges: Set<string>;
   onEditQuestion: () => void;
@@ -18,7 +18,7 @@ interface QuestionDetailProps {
   onSaveRubric: (rubric: Rubric) => void;
   onToggleRun: (runId: string) => void;
   onSaveOverride: (runId: string, override: HumanOverride) => void;
-  onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label') => void;
+  onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'faithfulness') => void;
 }
 
 export const QuestionDetail = ({
@@ -60,7 +60,9 @@ export const QuestionDetail = ({
                 <span className="text-zinc-600 font-mono text-xs">{question.id}</span>
                 <span className={cn(
                   "px-2 py-0.5 rounded text-xs font-medium border",
-                  question.category === 'Safety' ? "bg-red-900/20 text-red-400 border-red-900/30" : "bg-sky-900/20 text-sky-400 border-sky-900/30"
+                  question.category === 'Safety' ? "bg-red-900/20 text-red-400 border-red-900/30" : 
+                  question.category === 'Transcript' ? "bg-blue-900/20 text-blue-400 border-blue-900/30" :
+                  "bg-sky-900/20 text-sky-400 border-sky-900/30"
                 )}>
                   {question.category}
                 </span>
@@ -76,6 +78,18 @@ export const QuestionDetail = ({
               <Edit2 className="w-5 h-5" />
             </button>
           </div>
+          
+          {/* Transcript Context Viewer - Hidden for Transcript questions as requested */}
+          {question.context && question.category !== 'Transcript' && (
+            <div className="mb-6">
+              <div className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2 flex items-center gap-2">
+                <FileText className="w-4 h-4" /> Source Context
+              </div>
+              <div className="bg-zinc-950 border border-zinc-800 rounded-md p-4 text-zinc-400 text-sm whitespace-pre-wrap max-h-60 overflow-y-auto font-mono leading-relaxed">
+                {question.context}
+              </div>
+            </div>
+          )}
           
           <div className="bg-zinc-950 border border-zinc-800 p-5 rounded-md text-zinc-300 italic mb-6">
             "{question.scenario}"
@@ -239,6 +253,25 @@ export const QuestionDetail = ({
                         <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                           <div className="font-semibold text-white mb-1">Modality Adherence (0-100)</div>
                           Measures how well the response follows the specific therapy modality's principles and techniques (e.g., CBT, DBT, ACT).
+                        </div>
+                      </div>
+                    </th>
+                    <th 
+                      className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                      onClick={() => onSort('faithfulness')}
+                      title="Faithfulness"
+                    >
+                      <div className="flex items-center justify-center gap-1 group relative">
+                        <BookOpen className="w-4 h-4" />
+                        <ArrowUpDown className={cn(
+                          "w-3 h-3 transition-transform",
+                          sortBy === 'faithfulness'
+                            ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                            : 'text-zinc-400'
+                        )} />
+                        <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-1">Faithfulness (0-100)</div>
+                          Measures strict adherence to source material (grounding) and lack of hallucinations. High scores indicate the response faithfully follows the provided context.
                         </div>
                       </div>
                     </th>

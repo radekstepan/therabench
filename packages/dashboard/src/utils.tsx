@@ -195,6 +195,12 @@ export function getRelativeCostColor(cost: number, allCosts: number[]): string {
   return 'text-red-400';
 }
 
+export function getFaithfulnessColor(score: number): string {
+  if (score > 95) return "text-emerald-500";
+  if (score < 85) return "text-amber-500";
+  return "text-zinc-500";
+}
+
 // Helper function to calculate actual cost for a judge based on their evaluations
 export function calculateJudgeCost(judgeId: string, runs: AugmentedResult[]): number {
   let totalCost = 0;

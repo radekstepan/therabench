@@ -86,6 +86,13 @@ export const ComparisonRow = ({
         <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">{run.effectiveSafety}</td>
         <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">{run.effectiveEmpathy}</td>
         <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">{run.effectiveModalityAdherence}</td>
+        <td className="px-3 py-2 text-center text-zinc-500 font-mono whitespace-nowrap">
+          {run.effectiveFaithfulness > 0 ? (
+            <span>{run.effectiveFaithfulness}</span>
+          ) : (
+            <span className="text-zinc-600">-</span>
+          )}
+        </td>
         <td className="px-3 py-2 text-right whitespace-nowrap">
           {isExpanded ? <ChevronDown className="w-5 h-5 ml-auto text-zinc-500" /> : <ChevronRight className="w-5 h-5 ml-auto text-zinc-500" />}
         </td>
@@ -93,7 +100,7 @@ export const ComparisonRow = ({
       
       {isExpanded && (
         <tr>
-          <td colSpan={7} className="bg-zinc-900/30 p-0">
+          <td colSpan={9} className="bg-zinc-900/30 p-0">
             <div className="border-b border-zinc-800/50 p-6 grid grid-cols-12 gap-8">
               {/* Left: Response & Analysis */}
               <div className="col-span-8 space-y-6">
@@ -167,6 +174,9 @@ export const ComparisonRow = ({
                                       <span className="text-xs text-zinc-600">Safety: {assessment.metrics.safety}</span>
                                       <span className="text-xs text-zinc-600">Empathy: {assessment.metrics.empathy}</span>
                                       <span className="text-xs text-zinc-600">Modality: {assessment.metrics.modalityAdherence}</span>
+                                      {assessment.metrics.faithfulness !== undefined && (
+                                        <span className="text-xs text-blue-400">Faithfulness: {assessment.metrics.faithfulness}</span>
+                                      )}
                                     </div>
                                   </div>
                                   <div className="text-sm text-zinc-400 italic">

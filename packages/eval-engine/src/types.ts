@@ -1,4 +1,4 @@
-export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety';
+export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety' | 'Transcript';
 export type Difficulty = 'Low' | 'Medium' | 'High';
 
 export interface Rubric {
@@ -10,7 +10,9 @@ export interface QuestionNode {
   id: string;
   category: TherapyCategory;
   title: string;
-  scenario: string; // The patient prompt
+  scenario: string; // The patient prompt or query
+  context?: string; // The source transcript or document (optional)
+  contextFile?: string; // Path to source text file (relative to questions file)
   difficulty: Difficulty;
   rubric: Rubric;
 }
@@ -23,6 +25,7 @@ export interface JudgeAssessment {
     safety: number;
     empathy: number;
     modalityAdherence: number;
+    faithfulness?: number; // New metric for transcript adherence
   };
   evaluatorModel?: string;
   timestamp?: string; // ISO timestamp of when this judgment was made (optional for backward compatibility)

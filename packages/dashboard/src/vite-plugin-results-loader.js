@@ -1,6 +1,5 @@
 /**
- * Vite plugin to load results from simplified structure
- * data/results/{candidate}/{judge}.json
+ * Vite plugin to load results and questions from data/
  * AND pre-calculate token costs to avoid expensive runtime calculation
  */
 var __assign = (this && this.__assign) || function () {
@@ -45,8 +44,9 @@ function calculateRunCosts(runs, questions, configs) {
         // 1. Calculate Candidate Model Cost
         var candidatePricing = getPricing(run.modelName, configs);
         if (candidatePricing) {
-            // Input: scenario + rubric + prompt
-            var inputText = question.scenario +
+            // Input: context (if any) + scenario + rubric + prompt
+            var inputText = (question.context || '') +
+                question.scenario +
                 JSON.stringify(question.rubric) +
                 "You are a therapist. Respond to this patient.";
             var inputTokens = countTokens(inputText);
@@ -69,8 +69,9 @@ function calculateRunCosts(runs, questions, configs) {
                 // Ensure array
                 var assessmentList = Array.isArray(assessments) ? assessments : [assessments];
                 assessmentList.forEach(function (assessment) {
-                    // Input: scenario + rubric + response + prompt
-                    var judgeInputText = question.scenario +
+                    // Input: context + scenario + rubric + response + prompt
+                    var judgeInputText = (question.context || '') +
+                        question.scenario +
                         JSON.stringify(question.rubric) +
                         run.response +
                         "Evaluate this therapeutic response.";
@@ -137,50 +138,98 @@ function loadAllResults(resultsDir) {
     }
     return Array.from(resultsMap.values());
 }
+/**
+ * Scan data directory for questions.json and transcripts.json
+ * Merge them into a single array and hydrate context from files if needed.
+ */
+function loadAllQuestions(dataDir) {
+    var allQuestions = [];
+    // 1. Load questions.json
+    var questionsPath = path.join(dataDir, 'questions.json');
+    if (fs.existsSync(questionsPath)) {
+        try {
+            var data = JSON.parse(fs.readFileSync(questionsPath, 'utf-8'));
+            var qArray = Array.isArray(data) ? data : data.questions || [];
+            allQuestions.push.apply(allQuestions, qArray);
+        }
+        catch (e) {
+            console.error('Error loading questions.json:', e);
+        }
+    }
+    // 2. Load transcripts.json
+    var transcriptsPath = path.join(dataDir, 'transcripts.json');
+    if (fs.existsSync(transcriptsPath)) {
+        try {
+            var data = JSON.parse(fs.readFileSync(transcriptsPath, 'utf-8'));
+            var tArray = Array.isArray(data) ? data : data.questions || [];
+            allQuestions.push.apply(allQuestions, tArray);
+        }
+        catch (e) {
+            console.error('Error loading transcripts.json:', e);
+        }
+    }
+    // 3. Hydrate context from files
+    return allQuestions.map(function (q) {
+        if (q.contextFile && !q.context) {
+            var filePath = path.resolve(dataDir, q.contextFile);
+            if (fs.existsSync(filePath)) {
+                try {
+                    return __assign(__assign({}, q), { context: fs.readFileSync(filePath, 'utf-8') });
+                }
+                catch (e) {
+                    console.warn("Failed to read context file: ".concat(filePath));
+                }
+            }
+            else {
+                console.warn("Context file not found: ".concat(filePath));
+            }
+        }
+        return q;
+    });
+}
 export default function resultsLoaderPlugin() {
-    var virtualModuleId = 'virtual:results';
-    var resolvedVirtualModuleId = '\0' + virtualModuleId;
+    var virtualResultsId = 'virtual:results';
+    var resolvedVirtualResultsId = '\0' + virtualResultsId;
+    var virtualQuestionsId = 'virtual:questions';
+    var resolvedVirtualQuestionsId = '\0' + virtualQuestionsId;
     return {
         name: 'results-loader',
         resolveId: function (id) {
-            if (id === virtualModuleId) {
-                return resolvedVirtualModuleId;
-            }
+            if (id === virtualResultsId)
+                return resolvedVirtualResultsId;
+            if (id === virtualQuestionsId)
+                return resolvedVirtualQuestionsId;
         },
         load: function (id) {
-            if (id === resolvedVirtualModuleId) {
-                // Use path relative to this file's location
-                var pluginDir = path.dirname(new URL(import.meta.url).pathname);
-                var resultsDir = path.resolve(pluginDir, '../../eval-engine/data/results');
-                var questionsPath = path.resolve(pluginDir, '../../eval-engine/data/questions.json');
-                var configPath = path.resolve(pluginDir, '../../eval-engine/data/model-config.json');
+            var pluginDir = path.dirname(new URL(import.meta.url).pathname);
+            var dataDir = path.resolve(pluginDir, '../../eval-engine/data');
+            var resultsDir = path.join(dataDir, 'results');
+            var configPath = path.join(dataDir, 'model-config.json');
+            if (id === resolvedVirtualResultsId) {
                 var results = [];
                 if (fs.existsSync(resultsDir)) {
                     console.log('📦 Loading and calculating token costs...');
-                    // Load base results
                     results = loadAllResults(resultsDir);
-                    // Load auxiliary data for cost calculation
                     try {
-                        if (fs.existsSync(questionsPath) && fs.existsSync(configPath)) {
-                            var questionsData = JSON.parse(fs.readFileSync(questionsPath, 'utf-8'));
-                            var questions = Array.isArray(questionsData) ? questionsData : questionsData.questions;
+                        // Load all questions to map for cost calculation
+                        var questions = loadAllQuestions(dataDir);
+                        if (fs.existsSync(configPath)) {
                             var configs = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-                            // Inject costs
                             results = calculateRunCosts(results, questions, configs);
                             console.log("\u2705 Processed costs for ".concat(results.length, " runs"));
-                        }
-                        else {
-                            console.warn('⚠️ Missing questions.json or model-config.json, skipping cost calculation');
                         }
                     }
                     catch (e) {
                         console.error('❌ Error calculating costs:', e);
                     }
                 }
-                else {
-                    console.warn('⚠️  Results directory not found at:', resultsDir);
-                }
                 return "export default ".concat(JSON.stringify(results));
+            }
+            if (id === resolvedVirtualQuestionsId) {
+                console.log('📦 Loading questions and transcripts...');
+                var questions = loadAllQuestions(dataDir);
+                console.log("\u2705 Loaded ".concat(questions.length, " total scenarios"));
+                return "export default ".concat(JSON.stringify(questions));
             }
         }
     };

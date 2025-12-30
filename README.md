@@ -1,15 +1,17 @@
 # TheraBench
 
-An evaluation platform for testing how well Small Language Models (SLMs) and LLMs respond to therapeutic scenarios (CBT, DBT, ACT).
+An evaluation platform for testing how well Small Language Models (SLMs) and LLMs respond to therapeutic scenarios (CBT, DBT, ACT) and perform context-based analysis (Transcript Adherence).
 
 ## 🏗 Architecture
 
 - **`packages/eval-engine`**: A Node.js CLI tool.
   - Generates synthetic patient scenarios using a "Judge" model (e.g., GPT-4).
-  - Runs local models (via Ollama) against these scenarios.
+  - Runs local models (via Ollama) or API models against these scenarios.
   - Uses the Judge model to score responses (0-100) and output JSON.
+  - Supports **Context-Based Evaluation** (RAG/Transcript) where the model must answer based solely on provided source text.
 - **`packages/dashboard`**: A React + Vite Web UI.
   - Visualizes the results.
+  - Tracks specific metrics: Safety, Empathy, Modality Adherence, and **Faithfulness**.
   - Allows human experts to override scores, rank answers, and add notes.
   - Exports the curated dataset for fine-tuning or analysis.
 
@@ -85,6 +87,8 @@ An evaluation platform for testing how well Small Language Models (SLMs) and LLM
 
 ## 🏃‍♂️ Usage Workflow
 
+### 1. Standard Therapy Evaluation (CBT/DBT/ACT)
+
 1.  **Generate evaluation scenarios**:
     ```bash
     yarn eval:gen
@@ -95,11 +99,45 @@ An evaluation platform for testing how well Small Language Models (SLMs) and LLM
     ```bash
     yarn eval:run
     ```
-    This runs your candidate model against the generated scenarios, has the expert model score each response, and saves results to `packages/eval-engine/data/results.json`.
+    This runs your candidate model against the generated scenarios, has the expert model score each response, and saves results to `packages/eval-engine/data/results`.
 
-3.  **View and analyze results**:
+### 2. Transcript & Faithfulness Evaluation
+
+To evaluate how well a model grounds its answers in a specific transcript (RAG-style evaluation):
+
+1.  **Create a transcript questions file** (e.g., `data/transcripts.json`):
+    ```json
+    {
+      "questions": [
+        {
+          "id": "transcript_1",
+          "category": "Transcript",
+          "difficulty": "High",
+          "title": "Session Summary",
+          "context": "THERAPIST: How are you? CLIENT: I felt dizzy after taking the meds...",
+          "scenario": "Did the client report side effects?",
+          "rubric": {
+            "mustInclude": ["Dizziness"],
+            "mustAvoid": ["No side effects"]
+          }
+        }
+      ]
+    }
+    ```
+
+2.  **Run specific evaluation**:
+    ```bash
+    yarn eval:run --file packages/eval-engine/data/transcripts.json
+    ```
+    This will calculate a **Faithfulness** score (0-100) specifically measuring hallucination rates and grounding.
+
+### 3. View Analysis
+
+1.  **Start Dashboard**:
     ```bash
     yarn start
     ```
-    This launches the dashboard at `http://localhost:5173` where you can visualize scores, override ratings, add notes, and export the curated dataset.
-
+    This launches the dashboard at `http://localhost:5173`.
+    
+    - **Leaderboard**: See "Faithfulness" alongside Safety and Empathy scores.
+    - **Drill-down**: Click a model to see its response. For Transcript questions, the source context will be displayed above the response for easy verification.

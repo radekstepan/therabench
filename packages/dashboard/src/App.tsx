@@ -19,11 +19,9 @@ import { ConfirmModal } from './components/ConfirmModal';
 import { WelcomeModal } from './components/WelcomeModal';
 
 // --- Data Importing ---
-import questionsDataRaw from '../../eval-engine/data/questions.json';
+// We now load all questions (standard + transcripts) from the virtual module
+import questionsData from 'virtual:questions';
 import resultsData from 'virtual:results';
-
-// Extract questions array from the JSON structure
-const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;
 
 export default function App() {
   const [overrides, setOverrides] = useState<Record<string, HumanOverride>>({});
@@ -38,9 +36,9 @@ export default function App() {
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
-  const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
+  const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'faithfulness'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing'>('score');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability' | 'pricing' | 'faithfulness'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
@@ -278,6 +276,9 @@ export default function App() {
         case 'modalityAdherence':
           comparison = a.effectiveModalityAdherence - b.effectiveModalityAdherence;
           break;
+        case 'faithfulness':
+          comparison = a.effectiveFaithfulness - b.effectiveFaithfulness;
+          break;
         case 'label':
           const labelA = getModelLabelSortValue(a.modelName);
           const labelB = getModelLabelSortValue(b.modelName);
@@ -341,7 +342,7 @@ export default function App() {
       setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setSortBy(column);
-      setSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' ? 'desc' : 'asc');
+      setSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' || column === 'faithfulness' ? 'desc' : 'asc');
     }
   };
 
@@ -350,7 +351,7 @@ export default function App() {
       setLeaderboardSortDirection(leaderboardSortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setLeaderboardSortBy(column);
-      setLeaderboardSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' || column === 'runs' || column === 'reliability' ? 'desc' : 'asc');
+      setLeaderboardSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' || column === 'faithfulness' || column === 'runs' || column === 'reliability' ? 'desc' : 'asc');
     }
   };
 

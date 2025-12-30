@@ -1,6 +1,5 @@
 /**
- * Vite plugin to load results from simplified structure
- * data/results/{candidate}/{judge}.json
+ * Vite plugin to load results and questions from data/
  * AND pre-calculate token costs to avoid expensive runtime calculation
  */
 import type { Plugin } from 'vite';

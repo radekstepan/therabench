@@ -117,21 +117,24 @@ function performCalculations(payload: any, requestId: string) {
               const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
               return assessmentArray.length > 0 ? [assessmentArray[assessmentArray.length - 1].metrics] : [];
             })
-            .filter(metrics => metrics && typeof metrics.safety === 'number');
+            // Only process metrics objects that actually exist
+            .filter(metrics => metrics);
           
           if (selectedAssessments.length > 0) {
-            effectiveSafety = Math.round(
-              selectedAssessments.reduce((a, b) => a + b.safety, 0) / selectedAssessments.length
-            );
-            effectiveEmpathy = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.empathy || 0), 0) / selectedAssessments.length
-            );
-            effectiveModalityAdherence = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.modalityAdherence || 0), 0) / selectedAssessments.length
-            );
-            effectiveFaithfulness = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.faithfulness || 0), 0) / selectedAssessments.length
-            );
+             // Safe reduction helpers
+             const sum = (key: keyof typeof selectedAssessments[0]) => 
+                selectedAssessments.reduce((a, b) => a + (b[key] || 0), 0);
+             const countValid = (key: keyof typeof selectedAssessments[0]) => 
+                selectedAssessments.filter(b => b[key] !== undefined).length;
+
+             // Safety, Empathy, Modality are standard across CBT/DBT/ACT
+             effectiveSafety = Math.round(sum('safety') / (countValid('safety') || 1));
+             effectiveEmpathy = Math.round(sum('empathy') / (countValid('empathy') || 1));
+             effectiveModalityAdherence = Math.round(sum('modalityAdherence') / (countValid('modalityAdherence') || 1));
+             
+             // Faithfulness is specific to Transcript
+             effectiveFaithfulness = Math.round(sum('faithfulness') / (countValid('faithfulness') || 1));
+             
           } else {
             effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
             effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
@@ -176,8 +179,10 @@ function performCalculations(payload: any, requestId: string) {
       empathy: number; 
       modalityAdherence: number; 
       faithfulness: number;
+      
       count: number; 
-      faithfulnessCount: number; // New counter for faithfulness denominator
+      faithfulnessCount: number; // Count only runs that had faithfulness > 0
+      
       judgeScoreMap: Record<string, number[]>; 
       uniqueJudges: Set<string>; 
       allScores: number[] 
@@ -200,16 +205,18 @@ function performCalculations(payload: any, requestId: string) {
       }
       statsMap[r.modelName].totalScore += r.effectiveScore;
       statsMap[r.modelName].allScores.push(r.effectiveScore);
+      
       statsMap[r.modelName].safety += r.effectiveSafety;
       statsMap[r.modelName].empathy += r.effectiveEmpathy;
       statsMap[r.modelName].modalityAdherence += r.effectiveModalityAdherence;
-      statsMap[r.modelName].count += 1;
       
-      // Only track faithfulness for Transcript questions
-      if (r.question.category === 'Transcript') {
+      // Only add to faithfulness average if this was a transcript question (faithfulness > 0)
+      if (r.effectiveFaithfulness > 0) {
         statsMap[r.modelName].faithfulness += r.effectiveFaithfulness;
         statsMap[r.modelName].faithfulnessCount += 1;
       }
+      
+      statsMap[r.modelName].count += 1;
       
       if (r.aiAssessments) {
         Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
@@ -279,7 +286,7 @@ function performCalculations(payload: any, requestId: string) {
         avgSafety: Math.round(s.safety / s.count),
         avgEmpathy: Math.round(s.empathy / s.count),
         avgModalityAdherence: Math.round(s.modalityAdherence / s.count),
-        // Calculate faithfulness only based on relevant questions
+        // Div by faithfulnessCount, not total count, to handle sparse data
         avgFaithfulness: s.faithfulnessCount > 0 ? Math.round(s.faithfulness / s.faithfulnessCount) : 0,
         count: s.count,
         expertCount: s.uniqueJudges.size,
@@ -325,10 +332,6 @@ function performCalculations(payload: any, requestId: string) {
       return leaderboardSortDirection === 'asc' ? comparison : -comparison;
     })
     .map((stat) => {
-      // Re-calculate ranks based on current sort or score? 
-      // Traditionally ranks are score-based. Let's keep rank fixed on Score.
-      // But we need to assign it.
-      // Let's do a separate sort for ranking if we want rank to be purely score based regardless of display sort.
       return stat;
     });
 
