@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, Award } from 'lucide-react';
+import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, BarChart3, Grid3x3, Users } from 'lucide-react';
 import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { ExpertRankingGrid } from './ExpertRankingGrid';
+import { JudgeTrustTable } from './JudgeTrustTable';
 import { JudgeStats } from '../lib/stats';
 import { ExtendedModelStat } from '../App';
 
@@ -15,6 +16,7 @@ interface MissingEvaluations {
 
 interface DashboardProps {
   modelStats: ExtendedModelStat[];
+  judgeStats: JudgeStats[];
   bestModel: ExtendedModelStat | undefined;
   bestJudge: JudgeStats | undefined;
   totalEvaluations: number;
@@ -28,6 +30,7 @@ interface DashboardProps {
 
 export const Dashboard = ({
   modelStats,
+  judgeStats,
   bestModel,
   bestJudge,
   totalEvaluations,
@@ -39,6 +42,7 @@ export const Dashboard = ({
   showStatsCards
 }: DashboardProps) => {
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
+  const [activeView, setActiveView] = useState<'leaderboard' | 'expertGrid' | 'judgeTrust'>('leaderboard');
 
   const getBaseModelName = (modelName: string): string => {
     return stripEnhancedSuffix(modelName);
@@ -111,7 +115,59 @@ export const Dashboard = ({
         </div>
       )}
 
-      {(Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0) && (
+      {/* View Toggle */}
+      <div className="flex gap-3 mb-8 border-b border-zinc-800 pb-0">
+        <button
+          onClick={() => setActiveView('leaderboard')}
+          className={cn(
+            "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all relative",
+            activeView === 'leaderboard'
+              ? "text-emerald-400"
+              : "text-zinc-500 hover:text-zinc-300"
+          )}
+        >
+          <BarChart3 className="w-4 h-4" />
+          Model Leaderboard
+          {activeView === 'leaderboard' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
+          )}
+        </button>
+        <button
+          onClick={() => setActiveView('expertGrid')}
+          className={cn(
+            "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all relative",
+            activeView === 'expertGrid'
+              ? "text-emerald-400"
+              : "text-zinc-500 hover:text-zinc-300"
+          )}
+        >
+          <Grid3x3 className="w-4 h-4" />
+          Expert Rankings
+          {activeView === 'expertGrid' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
+          )}
+        </button>
+        <button
+          onClick={() => setActiveView('judgeTrust')}
+          className={cn(
+            "flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all relative",
+            activeView === 'judgeTrust'
+              ? "text-emerald-400"
+              : "text-zinc-500 hover:text-zinc-300"
+          )}
+        >
+          <Users className="w-4 h-4" />
+          Judge Trust Scores
+          {activeView === 'judgeTrust' && (
+            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-400" />
+          )}
+        </button>
+      </div>
+
+      {/* Model Leaderboard View */}
+      {activeView === 'leaderboard' && (
+        <>
+          {(Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0) && (
         <div className="bg-amber-900/10 border border-amber-500/30 rounded-md p-6 mb-10 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent pointer-events-none" />
           <div className="relative z-10">
@@ -171,7 +227,7 @@ export const Dashboard = ({
         </div>
       )}
 
-      <div className="bg-zinc-900 border border-zinc-800 rounded-md overflow-visible">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-md overflow-visible">
         <table className="w-full text-left">
           <thead className="bg-zinc-900/50 border-b border-zinc-800">
             <tr>
@@ -384,9 +440,19 @@ export const Dashboard = ({
             ))}
           </tbody>
         </table>
-      </div>
+          </div>
+        </>
+      )}
 
-      <ExpertRankingGrid modelStats={modelStats} />
+      {/* Expert Rankings Grid View */}
+      {activeView === 'expertGrid' && (
+        <ExpertRankingGrid modelStats={modelStats} />
+      )}
+
+      {/* Judge Trust Scores View */}
+      {activeView === 'judgeTrust' && (
+        <JudgeTrustTable judgeStats={judgeStats} />
+      )}
     </div>
   );
 };

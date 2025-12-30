@@ -46,7 +46,7 @@ export default function App() {
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
   const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability'>('score');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability'>('reliability');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
@@ -662,6 +662,7 @@ export default function App() {
         {view === 'dashboard' ? (
           <Dashboard
             modelStats={modelStatsWithRank}
+            judgeStats={judgeStats}
             bestModel={bestReliabilityModel}
             bestJudge={bestJudge}
             totalEvaluations={augmentedResults.length}
