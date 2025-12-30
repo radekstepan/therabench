@@ -32,6 +32,7 @@ interface DashboardProps {
   sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label';
   sortDirection: 'asc' | 'desc';
   onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label') => void;
+  showStatsCards: boolean;
 }
 
 export const Dashboard = ({
@@ -42,7 +43,8 @@ export const Dashboard = ({
   missingEvaluations,
   sortBy,
   sortDirection,
-  onSort
+  onSort,
+  showStatsCards
 }: DashboardProps) => {
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
 
@@ -64,7 +66,8 @@ export const Dashboard = ({
         <p className="text-zinc-500">Aggregated performance across therapeutic scenarios.</p>
       </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      {showStatsCards && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {topPerformer && (
           <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-md relative overflow-hidden flex flex-col">
             <div className="absolute top-4 right-4 text-emerald-500/20"><Trophy className="w-16 h-16" /></div>
@@ -93,6 +96,7 @@ export const Dashboard = ({
           </div>
         </div>
       </div>
+      )}
 
       {(Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0) && (
         <div className="bg-amber-900/10 border border-amber-500/30 rounded-md p-6 mb-10 relative overflow-hidden">
@@ -330,25 +334,31 @@ export const Dashboard = ({
                   <ModelLabels modelName={stat.name} />
                 </td>
                 <td className="px-3 py-2 text-center font-bold whitespace-nowrap relative group/score">
-                  <span className={cn(getScoreColor(stat.avgScore))}>{stat.avgScore}%</span>
-                  {stat.judgeScores && stat.judgeScores.length > 0 && (
-                    <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left shadow-xl" style={{zIndex: 9999}}>
-                      <div className="font-semibold text-white mb-2">Score by Judge</div>
-                      <div className="space-y-1.5">
-                        {stat.judgeScores.map((js, idx) => (
-                          <div key={idx} className="flex items-start justify-between text-zinc-300">
-                            <span className="font-mono text-[10px] truncate flex-1">{js.judge}</span>
-                            <span className="ml-2 font-bold text-right">{formatPercentWithColor(js.score)}</span>
+                  {stat.count > 0 ? (
+                    <>
+                      <span className={cn(getScoreColor(stat.avgScore))}>{stat.avgScore}%</span>
+                      {stat.judgeScores && stat.judgeScores.length > 0 && (
+                        <div className="absolute right-0 bottom-full mb-2 hidden group-hover/score:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left shadow-xl" style={{zIndex: 9999}}>
+                          <div className="font-semibold text-white mb-2">Score by Judge</div>
+                          <div className="space-y-1.5">
+                            {stat.judgeScores.map((js, idx) => (
+                              <div key={idx} className="flex items-start justify-between text-zinc-300">
+                                <span className="font-mono text-[10px] truncate flex-1">{js.judge}</span>
+                                <span className="ml-2 font-bold text-right">{formatPercentWithColor(js.score)}</span>
+                              </div>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <span className="text-zinc-600">-</span>
                   )}
                 </td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgSafety}</td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgEmpathy}</td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.avgModalityAdherence}</td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.expertCount}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgSafety : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgEmpathy : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgModalityAdherence : <span className="text-zinc-600">-</span>}</td>
+                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.expertCount : <span className="text-zinc-600">-</span>}</td>
               </tr>
             ))}
           </tbody>

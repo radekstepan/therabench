@@ -36,6 +36,7 @@ export default function App() {
   const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
+  const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   
   // Extract unique judges from results
   const availableJudges = useMemo(() => {
@@ -50,12 +51,27 @@ export default function App() {
     return Array.from(judges).sort();
   }, []);
   
+  // Extract unique candidate models from results
+  const availableModels = useMemo(() => {
+    const models = new Set<string>();
+    (resultsData as ModelRun[]).forEach(r => {
+      models.add(r.modelName);
+    });
+    return Array.from(models).sort();
+  }, []);
+  
   const [selectedJudges, setSelectedJudges] = useState<Set<string>>(new Set(availableJudges));
+  const [selectedModels, setSelectedModels] = useState<Set<string>>(new Set(availableModels));
   
   // Initialize selected judges when available judges change
   useEffect(() => {
     setSelectedJudges(new Set(availableJudges));
   }, [availableJudges]);
+  
+  // Initialize selected models when available models change
+  useEffect(() => {
+    setSelectedModels(new Set(availableModels));
+  }, [availableModels]);
 
   // Load Overrides
   useEffect(() => {
@@ -85,11 +101,15 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleEscape);
   }, [isConfirmModalOpen, isQuestionModalOpen, isWelcomeModalOpen]);
 
-  // Merge Data and filter by selected judges
+  // Merge Data and filter by selected judges and models
   const augmentedResults = useMemo(() => {
     if (!Array.isArray(resultsData) || !Array.isArray(questionsData)) return [];
     
     return (resultsData as ModelRun[])
+      .filter((r) => {
+        // Filter by selected models
+        return selectedModels.size === 0 || selectedModels.has(r.modelName);
+      })
       .map((r) => {
         const q = (questionsData as QuestionNode[]).find((q) => q.id === r.questionId);
         const override = overrides[r.runId];
@@ -173,7 +193,7 @@ export default function App() {
         }
         return r.aiAssessment?.evaluatorModel && selectedJudges.has(r.aiAssessment.evaluatorModel);
       });
-  }, [overrides, selectedJudges]);
+  }, [overrides, selectedJudges, selectedModels]);
 
   // Model Leaderboard Stats
   const modelStats = useMemo(() => {
@@ -216,14 +236,36 @@ export default function App() {
       }
     });
 
-    const mapped = Object.entries(stats).map(([name, s]) => {
+    // Determine which models to show based on selection
+    const modelsToShow = selectedModels.size === 0 || selectedModels.size === availableModels.length
+      ? availableModels  // Show all models when none selected or all selected
+      : Array.from(selectedModels);  // Show only selected models
+    
+    // Include models to show, even those without data
+    const mapped = modelsToShow.map(modelName => {
+      const s = stats[modelName];
+      
+      if (!s) {
+        // Model has no data
+        return {
+          name: modelName,
+          avgScore: 0,
+          avgSafety: 0,
+          avgEmpathy: 0,
+          avgModalityAdherence: 0,
+          count: 0,
+          expertCount: 0,
+          judgeScores: []
+        };
+      }
+      
       const judgeScores = Object.entries(s.judgeScoreMap).map(([judge, scores]) => ({
         judge,
         score: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
       })).sort((a, b) => b.score - a.score);
       
       return {
-        name,
+        name: modelName,
         avgScore: Math.round(s.totalScore / s.count),
         avgSafety: Math.round(s.safety / s.count),
         avgEmpathy: Math.round(s.empathy / s.count),
@@ -277,7 +319,7 @@ export default function App() {
       
       return leaderboardSortDirection === 'asc' ? comparison : -comparison;
     });
-  }, [augmentedResults, leaderboardSortBy, leaderboardSortDirection, selectedJudges]);
+  }, [augmentedResults, leaderboardSortBy, leaderboardSortDirection, selectedJudges, availableModels, selectedModels]);
 
   const modelStatsWithRank = useMemo(() => {
     const sortedByScore = [...modelStats].sort((a, b) => {
@@ -374,6 +416,16 @@ export default function App() {
   const topPerformer = useMemo(() => {
     return modelStatsWithRank.find(stat => stat.scoreRank === 1);
   }, [modelStatsWithRank]);
+  
+  // Determine if we should show stats cards (hide when filtering to models with no data)
+  const showStatsCards = useMemo(() => {
+    // If no filter or all models selected, always show stats
+    if (selectedModels.size === 0 || selectedModels.size === availableModels.length) {
+      return true;
+    }
+    // If filtering, only show stats if at least one filtered model has data
+    return modelStatsWithRank.some(stat => stat.count > 0);
+  }, [modelStatsWithRank, selectedModels, availableModels]);
 
   const questionList = useMemo(() => {
     return (questionsData as QuestionNode[]).map(q => {
@@ -509,6 +561,16 @@ export default function App() {
     }
     setSelectedJudges(newSelected);
   };
+  
+  const handleModelSelect = (model: string) => {
+    const newSelected = new Set(selectedModels);
+    if (newSelected.has(model)) {
+      newSelected.delete(model);
+    } else {
+      newSelected.add(model);
+    }
+    setSelectedModels(newSelected);
+  };
 
   const handleViewChange = (newView: 'dashboard' | 'questions', questionId: string | null) => {
     setView(newView);
@@ -532,6 +594,9 @@ export default function App() {
         availableJudges={availableJudges}
         selectedJudges={selectedJudges}
         judgeDropdownOpen={judgeDropdownOpen}
+        availableModels={availableModels}
+        selectedModels={selectedModels}
+        modelDropdownOpen={modelDropdownOpen}
         onViewChange={handleViewChange}
         onSearchChange={setSearchTerm}
         onCategoryChange={setCategoryFilter}
@@ -539,6 +604,10 @@ export default function App() {
         onJudgeSelect={handleJudgeSelect}
         onSelectAllJudges={() => setSelectedJudges(new Set(availableJudges))}
         onClearAllJudges={() => setSelectedJudges(new Set())}
+        onModelDropdownToggle={() => setModelDropdownOpen(!modelDropdownOpen)}
+        onModelSelect={handleModelSelect}
+        onSelectAllModels={() => setSelectedModels(new Set(availableModels))}
+        onClearAllModels={() => setSelectedModels(new Set())}
         onExport={() => exportData(resultsData as ModelRun[], overrides, questionsData as QuestionNode[], rubricOverrides, questionOverrides)}
         onClear={() => setIsConfirmModalOpen(true)}
       />
@@ -554,6 +623,7 @@ export default function App() {
             sortBy={leaderboardSortBy}
             sortDirection={leaderboardSortDirection}
             onSort={handleLeaderboardSort}
+            showStatsCards={showStatsCards}
           />
         ) : (
           activeQuestionWithOverrides ? (

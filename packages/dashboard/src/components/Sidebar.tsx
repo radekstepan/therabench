@@ -6,7 +6,8 @@ import {
   ChevronDown, 
   ChevronRight,
   Download,
-  Trash2
+  Trash2,
+  Brain
 } from 'lucide-react';
 import { cn, formatPercentWithColor } from '../utils';
 import type { QuestionNode } from '../types';
@@ -20,6 +21,9 @@ interface SidebarProps {
   availableJudges: string[];
   selectedJudges: Set<string>;
   judgeDropdownOpen: boolean;
+  availableModels: string[];
+  selectedModels: Set<string>;
+  modelDropdownOpen: boolean;
   onViewChange: (view: 'dashboard' | 'questions', questionId: string | null) => void;
   onSearchChange: (term: string) => void;
   onCategoryChange: (category: string) => void;
@@ -27,6 +31,10 @@ interface SidebarProps {
   onJudgeSelect: (judge: string) => void;
   onSelectAllJudges: () => void;
   onClearAllJudges: () => void;
+  onModelDropdownToggle: () => void;
+  onModelSelect: (model: string) => void;
+  onSelectAllModels: () => void;
+  onClearAllModels: () => void;
   onExport: () => void;
   onClear: () => void;
 }
@@ -40,6 +48,9 @@ export const Sidebar = ({
   availableJudges,
   selectedJudges,
   judgeDropdownOpen,
+  availableModels,
+  selectedModels,
+  modelDropdownOpen,
   onViewChange,
   onSearchChange,
   onCategoryChange,
@@ -47,6 +58,10 @@ export const Sidebar = ({
   onJudgeSelect,
   onSelectAllJudges,
   onClearAllJudges,
+  onModelDropdownToggle,
+  onModelSelect,
+  onSelectAllModels,
+  onClearAllModels,
   onExport,
   onClear
 }: SidebarProps) => {
@@ -72,6 +87,87 @@ export const Sidebar = ({
           Overview
         </button>
         
+        {/* Model Filter Dropdown */}
+        {availableModels.length > 0 && (
+          <div className="pt-4 pb-2">
+            <div className="px-3 mb-2 flex items-center justify-between">
+              <div className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">
+                Candidate Models ({availableModels.length})
+              </div>
+            </div>
+            <div className="px-2 relative">
+              <button
+                onClick={onModelDropdownToggle}
+                className={cn(
+                  "w-full flex items-center justify-between gap-2 px-3 py-2 rounded text-xs transition-colors border",
+                  selectedModels.size === availableModels.length
+                    ? "bg-zinc-900 text-zinc-400 border-zinc-800 hover:bg-zinc-800"
+                    : "bg-amber-900/20 text-amber-400 border-amber-500/30 hover:bg-amber-900/30"
+                )}
+              >
+                <div className="flex items-center gap-2 min-w-0 flex-1">
+                  <Brain className="w-3 h-3 flex-shrink-0" />
+                  <span className="truncate">
+                    {selectedModels.size === 0
+                      ? "No models (showing all)"
+                      : selectedModels.size === 1
+                      ? Array.from(selectedModels)[0]
+                      : selectedModels.size === availableModels.length
+                      ? "All models"
+                      : `${selectedModels.size} of ${availableModels.length} selected`}
+                  </span>
+                </div>
+                {modelDropdownOpen ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
+              </button>
+              {modelDropdownOpen && (
+                <div className="absolute top-full left-2 right-2 mt-0 bg-zinc-900 border border-zinc-800 rounded overflow-hidden shadow-xl animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                  <div className="p-2 space-y-1 max-h-60 overflow-y-auto">
+                    {availableModels.map(model => {
+                      const isSelected = selectedModels.has(model);
+                      return (
+                        <button
+                          key={model}
+                          onClick={() => onModelSelect(model)}
+                          className={cn(
+                            "w-full text-left px-2 py-1.5 rounded text-xs transition-colors flex items-center gap-2",
+                            isSelected
+                              ? "text-zinc-200 hover:bg-zinc-800/50"
+                              : "text-zinc-400 hover:bg-zinc-800/50"
+                          )}
+                        >
+                          <div
+                            className={cn(
+                              "w-3 h-3 rounded-full flex-shrink-0 border-2 transition-all",
+                              isSelected
+                                ? "bg-emerald-600 border-emerald-600"
+                                : "border-zinc-600 bg-transparent"
+                            )}
+                          />
+                          <span className="font-mono text-[10px] flex-1">{model}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="px-2 pb-2 pt-1 border-t border-zinc-800 flex gap-2 bg-zinc-900">
+                    <button
+                      onClick={onSelectAllModels}
+                      className="flex-1 px-2 py-0.5 text-[10px] text-zinc-500 hover:text-emerald-400 transition-colors"
+                    >
+                      Select All
+                    </button>
+                    <button
+                      onClick={onClearAllModels}
+                      className="flex-1 px-2 py-0.5 text-[10px] text-zinc-500 hover:text-red-400 transition-colors"
+                    >
+                      Clear All
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+        
         {/* Judge Filter Dropdown */}
         {availableJudges.length > 0 && (
           <div className="pt-4 pb-2">
@@ -80,7 +176,7 @@ export const Sidebar = ({
                 Experts ({availableJudges.length})
               </div>
             </div>
-            <div className="px-2">
+            <div className="px-2 relative">
               <button
                 onClick={onJudgeDropdownToggle}
                 className={cn(
@@ -90,11 +186,13 @@ export const Sidebar = ({
                     : "bg-amber-900/20 text-amber-400 border-amber-500/30 hover:bg-amber-900/30"
                 )}
               >
-                <div className="flex items-center gap-2">
-                  <Users className="w-3 h-3" />
-                  <span>
+                <div className="flex items-center gap-2 min-w-0 flex-1">
+                  <Users className="w-3 h-3 flex-shrink-0" />
+                  <span className="truncate">
                     {selectedJudges.size === 0
                       ? "No experts (showing all)"
+                      : selectedJudges.size === 1
+                      ? Array.from(selectedJudges)[0]
                       : selectedJudges.size === availableJudges.length
                       ? "All experts"
                       : `${selectedJudges.size} of ${availableJudges.length} selected`}
@@ -103,42 +201,44 @@ export const Sidebar = ({
                 {judgeDropdownOpen ? <ChevronDown className="w-3 h-3" /> : <ChevronRight className="w-3 h-3" />}
               </button>
               {judgeDropdownOpen && (
-                <div className="mt-2 bg-zinc-900 border border-zinc-800 rounded p-2 space-y-1">
-                  {availableJudges.map(judge => {
-                    const isSelected = selectedJudges.has(judge);
-                    return (
-                      <button
-                        key={judge}
-                        onClick={() => onJudgeSelect(judge)}
-                        className={cn(
-                          "w-full text-left px-2 py-1.5 rounded text-xs transition-colors flex items-center gap-2",
-                          isSelected
-                            ? "bg-zinc-800 text-zinc-200"
-                            : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
-                        )}
-                      >
-                        <div
+                <div className="absolute top-full left-2 right-2 mt-0 bg-zinc-900 border border-zinc-800 rounded overflow-hidden shadow-xl animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                  <div className="p-2 space-y-1 max-h-60 overflow-y-auto">
+                    {availableJudges.map(judge => {
+                      const isSelected = selectedJudges.has(judge);
+                      return (
+                        <button
+                          key={judge}
+                          onClick={() => onJudgeSelect(judge)}
                           className={cn(
-                            "w-3 h-3 rounded-full flex-shrink-0 border-2 transition-all",
+                            "w-full text-left px-2 py-1.5 rounded text-xs transition-colors flex items-center gap-2",
                             isSelected
-                              ? "bg-emerald-600 border-emerald-600"
-                              : "border-zinc-600 bg-transparent"
+                              ? "text-zinc-200 hover:bg-zinc-800/50"
+                              : "text-zinc-400 hover:bg-zinc-800/50"
                           )}
-                        />
-                        <span className="font-mono text-[10px] flex-1">{judge}</span>
-                      </button>
-                    );
-                  })}
-                  <div className="pt-2 mt-2 border-t border-zinc-800 flex gap-2">
+                        >
+                          <div
+                            className={cn(
+                              "w-3 h-3 rounded-full flex-shrink-0 border-2 transition-all",
+                              isSelected
+                                ? "bg-emerald-600 border-emerald-600"
+                                : "border-zinc-600 bg-transparent"
+                            )}
+                          />
+                          <span className="font-mono text-[10px] flex-1">{judge}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="px-2 pb-2 pt-1 border-t border-zinc-800 flex gap-2 bg-zinc-900">
                     <button
                       onClick={onSelectAllJudges}
-                      className="flex-1 px-2 py-1 text-[10px] text-zinc-500 hover:text-emerald-400 transition-colors"
+                      className="flex-1 px-2 py-0.5 text-[10px] text-zinc-500 hover:text-emerald-400 transition-colors"
                     >
                       Select All
                     </button>
                     <button
                       onClick={onClearAllJudges}
-                      className="flex-1 px-2 py-1 text-[10px] text-zinc-500 hover:text-red-400 transition-colors"
+                      className="flex-1 px-2 py-0.5 text-[10px] text-zinc-500 hover:text-red-400 transition-colors"
                     >
                       Clear All
                     </button>

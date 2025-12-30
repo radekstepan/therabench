@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Edit2, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity } from 'lucide-react';
+import { Edit2, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity, Info } from 'lucide-react';
 import { cn, stripEnhancedSuffix } from '../utils';
 import { RubricEditor } from './RubricEditor';
 import { ComparisonRow } from './ComparisonRow';
@@ -101,8 +101,15 @@ export const QuestionDetail = ({
           </div>
 
           {runs.length === 0 ? (
-            <div className="text-center py-20 border border-dashed border-zinc-800 rounded-md">
-              <p className="text-zinc-500">No models have been run on this question yet.</p>
+            <div className="bg-amber-900/10 border border-amber-500/30 rounded-md p-6 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent pointer-events-none" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <Info className="w-5 h-5 text-amber-400" />
+                  <h3 className="text-lg font-semibold text-amber-200">No Model Responses Yet</h3>
+                </div>
+                <p className="text-sm text-zinc-400">No models have been run on this question yet. Run evaluations to see candidate model responses here.</p>
+              </div>
             </div>
           ) : (
             <div className="bg-zinc-900 border border-zinc-800 rounded-md overflow-visible shadow-lg">
