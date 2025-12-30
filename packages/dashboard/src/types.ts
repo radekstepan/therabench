@@ -1,3 +1,5 @@
+import { JudgeStats, ModelReliability } from './lib/stats';
+
 // Types matching the eval-engine output
 export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety';
 export type Difficulty = 'Low' | 'Medium' | 'High';
@@ -73,3 +75,6 @@ export interface ModelConfig {
   labels: ModelLabel[];
   useTextMode?: boolean; // If true, skip json_object and use text mode directly for parsing
 }
+
+// Re-export stats types for usage in components
+export type { JudgeStats, ModelReliability };

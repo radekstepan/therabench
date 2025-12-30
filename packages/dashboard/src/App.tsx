@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
-import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride } from './types';
+import { analyzeJudges, calculateModelReliability } from './lib/stats';
+import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ModelReliability } from './types';
 import { getModelLabelSortValue } from './utils';
 
 // Components
@@ -18,6 +19,18 @@ import resultsData from 'virtual:results';
 // Extract questions array from the JSON structure
 const questionsData = (questionsDataRaw as any).questions || questionsDataRaw;
 
+export interface ExtendedModelStat extends ModelReliability {
+  name: string; // Alias for modelName to match existing component prop
+  avgScore: number;
+  avgSafety: number;
+  avgEmpathy: number;
+  avgModalityAdherence: number;
+  count: number;
+  expertCount: number;
+  scoreRank: number;
+  judgeScores: Array<{ judge: string; score: number }>;
+}
+
 export default function App() {
   const [overrides, setOverrides] = useState<Record<string, HumanOverride>>({});
   const [rubricOverrides, setRubricOverrides] = useState<Record<string, Rubric>>({});
@@ -33,7 +46,7 @@ export default function App() {
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
   const [sortBy, setSortBy] = useState<'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
-  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label'>('score');
+  const [leaderboardSortBy, setLeaderboardSortBy] = useState<'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability'>('score');
   const [leaderboardSortDirection, setLeaderboardSortDirection] = useState<'asc' | 'desc'>('desc');
   const [judgeDropdownOpen, setJudgeDropdownOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
@@ -82,7 +95,10 @@ export default function App() {
 
   // Show welcome modal on initialization
   useEffect(() => {
-    setIsWelcomeModalOpen(true);
+    const hasSeenWelcome = localStorage.getItem('therabench_has_seen_welcome');
+    if (!hasSeenWelcome) {
+      setIsWelcomeModalOpen(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -195,15 +211,28 @@ export default function App() {
       });
   }, [overrides, selectedJudges, selectedModels]);
 
-  // Model Leaderboard Stats
+  // --- STATS CALCULATION ---
+
+  // 1. Judge Statistics
+  const judgeStats = useMemo(() => {
+    // Only use augmented results for filtering, but we need raw data access (handled in analyzeJudges)
+    return analyzeJudges(augmentedResults, overrides);
+  }, [augmentedResults, overrides]);
+
+  const bestJudge = useMemo(() => {
+    return judgeStats.length > 0 ? judgeStats[0] : undefined;
+  }, [judgeStats]);
+
+  // 2. Model Leaderboard Stats
   const modelStats = useMemo(() => {
-    const stats: Record<string, { totalScore: number; safety: number; empathy: number; modalityAdherence: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string> }> = {};
+    const stats: Record<string, { totalScore: number; safety: number; empathy: number; modalityAdherence: number; count: number; judgeScoreMap: Record<string, number[]>; uniqueJudges: Set<string>; allScores: number[] }> = {};
     
     augmentedResults.forEach(r => {
       if (!stats[r.modelName]) {
-        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, modalityAdherence: 0, count: 0, judgeScoreMap: {}, uniqueJudges: new Set() };
+        stats[r.modelName] = { totalScore: 0, safety: 0, empathy: 0, modalityAdherence: 0, count: 0, judgeScoreMap: {}, uniqueJudges: new Set(), allScores: [] };
       }
       stats[r.modelName].totalScore += r.effectiveScore;
+      stats[r.modelName].allScores.push(r.effectiveScore);
       stats[r.modelName].safety += r.effectiveSafety;
       stats[r.modelName].empathy += r.effectiveEmpathy;
       stats[r.modelName].modalityAdherence += r.effectiveModalityAdherence;
@@ -248,6 +277,7 @@ export default function App() {
       if (!s) {
         // Model has no data
         return {
+          modelName,
           name: modelName,
           avgScore: 0,
           avgSafety: 0,
@@ -255,16 +285,25 @@ export default function App() {
           avgModalityAdherence: 0,
           count: 0,
           expertCount: 0,
-          judgeScores: []
-        };
+          scoreRank: 0,
+          judgeScores: [],
+          meanScore: 0,
+          stdDev: 0,
+          reliabilityIndex: 0,
+          floorScore: 0
+        } as ExtendedModelStat;
       }
       
       const judgeScores = Object.entries(s.judgeScoreMap).map(([judge, scores]) => ({
         judge,
         score: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
       })).sort((a, b) => b.score - a.score);
+
+      // Calculate advanced reliability stats
+      const reliability = calculateModelReliability(modelName, s.allScores);
       
       return {
+        ...reliability,
         name: modelName,
         avgScore: Math.round(s.totalScore / s.count),
         avgSafety: Math.round(s.safety / s.count),
@@ -273,7 +312,7 @@ export default function App() {
         count: s.count,
         expertCount: s.uniqueJudges.size,
         judgeScores
-      };
+      } as ExtendedModelStat;
     });
 
     return mapped.sort((a, b) => {
@@ -288,6 +327,9 @@ export default function App() {
           break;
         case 'score':
           comparison = a.avgScore - b.avgScore;
+          break;
+        case 'reliability':
+          comparison = a.reliabilityIndex - b.reliabilityIndex;
           break;
         case 'safety':
           comparison = a.avgSafety - b.avgSafety;
@@ -322,6 +364,8 @@ export default function App() {
   }, [augmentedResults, leaderboardSortBy, leaderboardSortDirection, selectedJudges, availableModels, selectedModels]);
 
   const modelStatsWithRank = useMemo(() => {
+    // Rank is always based on Reliability Index now, or Score? 
+    // Let's keep Rank based on AVG SCORE to prevent confusion, but highlighting the top reliability model is done separately.
     const sortedByScore = [...modelStats].sort((a, b) => {
       const scoreDiff = b.avgScore - a.avgScore;
       if (scoreDiff !== 0) return scoreDiff;
@@ -413,8 +457,10 @@ export default function App() {
     };
   }, [modelStatsWithRank, questionsData, augmentedResults, selectedJudges, availableJudges]);
 
-  const topPerformer = useMemo(() => {
-    return modelStatsWithRank.find(stat => stat.scoreRank === 1);
+  const bestReliabilityModel = useMemo(() => {
+    // Sort by Reliability Index
+    return [...modelStatsWithRank]
+      .sort((a, b) => b.reliabilityIndex - a.reliabilityIndex)[0];
   }, [modelStatsWithRank]);
   
   // Determine if we should show stats cards (hide when filtering to models with no data)
@@ -548,7 +594,7 @@ export default function App() {
       setLeaderboardSortDirection(leaderboardSortDirection === 'asc' ? 'desc' : 'asc');
     } else {
       setLeaderboardSortBy(column);
-      setLeaderboardSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' || column === 'runs' ? 'desc' : 'asc');
+      setLeaderboardSortDirection(column === 'score' || column === 'safety' || column === 'empathy' || column === 'modalityAdherence' || column === 'runs' || column === 'reliability' ? 'desc' : 'asc');
     }
   };
 
@@ -616,7 +662,8 @@ export default function App() {
         {view === 'dashboard' ? (
           <Dashboard
             modelStats={modelStatsWithRank}
-            topPerformer={topPerformer}
+            bestModel={bestReliabilityModel}
+            bestJudge={bestJudge}
             totalEvaluations={augmentedResults.length}
             reviewsCompleted={Object.keys(overrides).length}
             missingEvaluations={missingEvaluations}

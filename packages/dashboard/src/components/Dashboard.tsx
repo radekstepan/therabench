@@ -1,20 +1,10 @@
 import { useState } from 'react';
-import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Users, Hash, Tag } from 'lucide-react';
+import { Trophy, Info, ArrowUpDown, Sparkles, Target, Shield, Heart, Activity, Hash, Tag, Medal, Scale, Award } from 'lucide-react';
 import { cn, getScoreColor, formatPercentWithColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import { ExpertRankingGrid } from './ExpertRankingGrid';
-
-interface ModelStat {
-  name: string;
-  avgScore: number;
-  avgSafety: number;
-  avgEmpathy: number;
-  avgModalityAdherence: number;
-  count: number;
-  expertCount: number;
-  scoreRank: number;
-  judgeScores: Array<{ judge: string; score: number }>;
-}
+import { JudgeStats } from '../lib/stats';
+import { ExtendedModelStat } from '../App';
 
 interface MissingEvaluations {
   expertsNeedingReviews: Record<string, string[]>;
@@ -24,20 +14,22 @@ interface MissingEvaluations {
 }
 
 interface DashboardProps {
-  modelStats: ModelStat[];
-  topPerformer: ModelStat | undefined;
+  modelStats: ExtendedModelStat[];
+  bestModel: ExtendedModelStat | undefined;
+  bestJudge: JudgeStats | undefined;
   totalEvaluations: number;
   reviewsCompleted: number;
   missingEvaluations: MissingEvaluations;
-  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label';
+  sortBy: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability';
   sortDirection: 'asc' | 'desc';
-  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label') => void;
+  onSort: (column: 'name' | 'runs' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'reliability') => void;
   showStatsCards: boolean;
 }
 
 export const Dashboard = ({
   modelStats,
-  topPerformer,
+  bestModel,
+  bestJudge,
   totalEvaluations,
   reviewsCompleted,
   missingEvaluations,
@@ -67,35 +59,56 @@ export const Dashboard = ({
       </header>
 
       {showStatsCards && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        {topPerformer && (
-          <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-md relative overflow-hidden flex flex-col">
-            <div className="absolute top-4 right-4 text-emerald-500/20"><Trophy className="w-16 h-16" /></div>
-            <div className="relative z-10">
-              <div className="text-emerald-500 text-xs font-mono font-medium uppercase tracking-wide mb-1">Top Performer</div>
-            </div>
-            <div className="flex-1 flex flex-col justify-center relative z-10">
-              <div className="text-xl font-mono font-bold text-white mb-1 flex items-center gap-2">
-                {isEnhancedModel(topPerformer.name) && <Sparkles className="w-4 h-4 text-pink-500 flex-shrink-0" />}
-                {stripEnhancedSuffix(topPerformer.name)}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {/* Best Model Card */}
+          {bestModel && (
+            <div className="bg-emerald-900/10 border border-emerald-500/20 p-6 rounded-md relative overflow-visible flex flex-col min-h-[160px] group/reliability">
+              <div className="absolute top-3 right-3 text-emerald-500/10"><Trophy className="w-20 h-20" /></div>
+              <div className="relative z-10 flex-1 flex flex-col">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-emerald-500 text-xs font-mono font-medium uppercase tracking-wide">Most Reliable Model</div>
+                </div>
+                <div className="text-xl font-mono font-bold text-white mb-1 flex items-center gap-2">
+                  {isEnhancedModel(bestModel.name) && <Sparkles className="w-4 h-4 text-pink-500 flex-shrink-0" />}
+                  {stripEnhancedSuffix(bestModel.name)}
+                </div>
+                <div className="flex-1" />
+                <div className="flex items-end gap-2 relative">
+                   <div className="text-4xl font-light text-emerald-400">{bestModel.reliabilityIndex}</div>
+                   <div className="text-xs text-zinc-500 mb-2 cursor-help">Reliability Index</div>
+                   <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover/reliability:block w-72 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left text-zinc-300 shadow-xl whitespace-normal z-50">
+                     <div className="font-semibold text-white mb-1">Reliability Index</div>
+                     Measures model consistency by penalizing variance. Calculated as Mean Score - Standard Deviation. A model with Mean 85 and SD 5 (Index 80) is more reliable than Mean 88 and SD 20 (Index 68).
+                   </div>
+                </div>
               </div>
-              <div className="text-3xl font-light text-emerald-400">{topPerformer.avgScore}% <span className="text-sm text-emerald-600/70 ml-1">avg</span></div>
             </div>
-          </div>
-        )}
-        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-md flex flex-col">
-          <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Total Evaluations</div>
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-4xl font-light text-white">{totalEvaluations}</div>
-          </div>
+          )}
+
+          {/* Best Judge Card */}
+          {bestJudge && (
+            <div className="bg-blue-900/10 border border-blue-500/20 p-6 rounded-md relative overflow-visible flex flex-col min-h-[160px] group/trustscore">
+              <div className="absolute top-3 right-3 text-blue-500/10"><Scale className="w-20 h-20" /></div>
+              <div className="relative z-10 flex-1 flex flex-col">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="text-blue-500 text-xs font-mono font-medium uppercase tracking-wide">Best Judge</div>
+                </div>
+                <div className="text-xl font-mono font-bold text-white mb-1 truncate" title={bestJudge.judgeId}>
+                   {bestJudge.judgeId}
+                </div>
+                <div className="flex-1" />
+                <div className="flex items-end gap-2 relative">
+                   <div className="text-4xl font-light text-blue-400">{Math.round(bestJudge.trustScore)}</div>
+                   <div className="text-xs text-zinc-500 mb-2 cursor-help">Trust Score</div>
+                   <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover/trustscore:block w-72 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal text-left text-zinc-300 shadow-xl whitespace-normal z-50">
+                     <div className="font-semibold text-white mb-1">Trust Score (0-100)</div>
+                     Measures judge reliability by comparing their assessments to expert consensus. Higher scores indicate stronger agreement with domain experts. Calculated from correlation with human overrides and consistency across evaluations.
+                   </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-        <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-md flex flex-col">
-          <div className="text-zinc-500 text-sm font-medium uppercase tracking-wide mb-1 text-center">Reviews Completed</div>
-          <div className="flex-1 flex items-center justify-center">
-            <div className="text-4xl font-light text-amber-400">{reviewsCompleted}</div>
-          </div>
-        </div>
-      </div>
       )}
 
       {(Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0) && (
@@ -118,7 +131,6 @@ export const Dashboard = ({
                       <div className="font-mono text-xs text-amber-300 font-semibold mb-2">{expert}</div>
                       <div className="flex flex-wrap gap-2">
                         {models.map((modelInfo) => {
-                          // Parse the model info which is now in format "modelName (x/y)"
                           const match = modelInfo.match(/^(.*?)\s*\((\d+)\/(\d+)\)$/);
                           const modelName = match ? match[1] : modelInfo;
                           const questionCount = match ? `${match[2]}/${match[3]}` : '';
@@ -213,6 +225,26 @@ export const Dashboard = ({
                   </div>
                 </div>
               </th>
+              {/* Reliability Column */}
+              <th 
+                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
+                onClick={() => onSort('reliability')}
+                title="Reliability Index"
+              >
+                <div className="flex items-center justify-center gap-1 group relative">
+                  <Medal className="w-4 h-4" />
+                  <ArrowUpDown className={cn(
+                    "w-3 h-3 transition-transform",
+                    sortBy === 'reliability'
+                      ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
+                      : 'text-zinc-400'
+                  )} />
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                    <div className="font-semibold text-white mb-1">Reliability Index</div>
+                    Measures model consistency by penalizing variance. Calculated as Mean Score - Standard Deviation. Higher values indicate more reliable and consistent performance.
+                  </div>
+                </div>
+              </th>
               <th 
                 className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
                 onClick={() => onSort('score')}
@@ -264,7 +296,7 @@ export const Dashboard = ({
                       ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
                       : 'text-zinc-400'
                   )} />
-                  <div className="absolute top-full mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
+                  <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Empathy Score (0-100)</div>
                     Evaluates validation, active listening, and emotional attunement. High scores reflect compassionate responses that acknowledge feelings without judgment.
                   </div>
@@ -286,25 +318,6 @@ export const Dashboard = ({
                   <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
                     <div className="font-semibold text-white mb-1">Modality Adherence (0-100)</div>
                     Measures how well the response follows the specific therapy modality's principles and techniques (e.g., CBT, DBT, ACT).
-                  </div>
-                </div>
-              </th>
-              <th 
-                className="px-3 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider text-center cursor-pointer hover:text-zinc-300 transition-colors whitespace-nowrap"
-                onClick={() => onSort('runs')}
-                title="Experts"
-              >
-                <div className="flex items-center justify-center gap-1 group relative">
-                  <Users className="w-4 h-4" />
-                  <ArrowUpDown className={cn(
-                    "w-3 h-3 transition-transform",
-                    sortBy === 'runs'
-                      ? (sortDirection === 'asc' ? 'rotate-180 text-emerald-400' : 'text-emerald-400')
-                      : 'text-zinc-400'
-                  )} />
-                  <div className="absolute top-full right-0 mt-2 hidden group-hover:block w-64 bg-zinc-800 border border-zinc-700 rounded p-3 text-xs font-normal normal-case text-left text-zinc-300 shadow-xl whitespace-normal" style={{zIndex: 9999}}>
-                    <div className="font-semibold text-white mb-1">Expert Judges</div>
-                    Number of unique expert judge models that have evaluated this model's responses.
                   </div>
                 </div>
               </th>
@@ -333,6 +346,15 @@ export const Dashboard = ({
                 <td className="px-2 py-2 align-middle whitespace-nowrap">
                   <ModelLabels modelName={stat.name} />
                 </td>
+                {/* Reliability Column */}
+                <td className="px-3 py-2 text-center whitespace-nowrap">
+                   {stat.count > 0 ? (
+                     <div className="flex flex-col items-center">
+                       <span className={cn("font-medium", getScoreColor(stat.reliabilityIndex))}>{stat.reliabilityIndex}</span>
+                       <span className="text-[10px] text-zinc-600">±{stat.stdDev}</span>
+                     </div>
+                   ) : <span className="text-zinc-600">-</span>}
+                </td>
                 <td className="px-3 py-2 text-center font-bold whitespace-nowrap relative group/score">
                   {stat.count > 0 ? (
                     <>
@@ -358,7 +380,6 @@ export const Dashboard = ({
                 <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgSafety : <span className="text-zinc-600">-</span>}</td>
                 <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgEmpathy : <span className="text-zinc-600">-</span>}</td>
                 <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.avgModalityAdherence : <span className="text-zinc-600">-</span>}</td>
-                <td className="px-3 py-2 text-center text-zinc-400 whitespace-nowrap">{stat.count > 0 ? stat.expertCount : <span className="text-zinc-600">-</span>}</td>
               </tr>
             ))}
           </tbody>
