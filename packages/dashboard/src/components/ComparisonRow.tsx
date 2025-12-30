@@ -58,7 +58,7 @@ export const ComparisonRow = ({
         onMouseLeave={() => onHoverChange(null)}
       >
         <td className="px-3 py-2 text-center w-16 text-zinc-500 font-mono text-sm whitespace-nowrap">#{rank}</td>
-        <td className="px-3 py-2 max-w-0">
+        <td className="px-3 py-2 max-w-0" title={run.modelName}>
           <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate flex items-center gap-1.5">
             {isEnhancedModel(run.modelName) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
             <span className="truncate">{stripEnhancedSuffix(run.modelName)}</span>

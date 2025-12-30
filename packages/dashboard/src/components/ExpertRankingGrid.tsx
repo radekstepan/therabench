@@ -130,7 +130,7 @@ export const ExpertRankingGrid = ({ modelStats }: ExpertRankingGridProps) => {
                     "px-2 py-1 font-mono text-sm text-white sticky left-0 z-10 border-r border-zinc-800 transition-colors",
                     isRowHighlighted(model.name) ? "bg-emerald-900/20" : "bg-zinc-900 group-hover:bg-zinc-800/50"
                   )}
-                  title={stripEnhancedSuffix(model.name)}
+                  title={model.name}
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-zinc-500 text-xs">#{idx + 1}</span>

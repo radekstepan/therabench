@@ -269,7 +269,7 @@ export const Dashboard = ({
                 onMouseLeave={() => setHoveredModel(null)}
               >
                 <td className="px-4 py-2 text-zinc-500 font-mono whitespace-nowrap">#{stat.scoreRank}</td>
-                <td className="px-4 py-2 max-w-0">
+                <td className="px-4 py-2 max-w-0" title={stat.name}>
                   <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate flex items-center gap-1.5">
                     {isEnhancedModel(stat.name) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
                     <span className="truncate">{stripEnhancedSuffix(stat.name)}</span>
