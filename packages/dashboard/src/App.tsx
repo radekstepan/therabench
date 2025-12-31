@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
 // Removed heavy stats imports as they are now in the worker
 import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ExtendedModelStat, MissingEvaluations, JudgeStats } from './types';
-import { getModelLabelSortValue, cn, isDefaultJudge } from './utils';
+import { getModelLabelSortValue, cn, isDefaultJudge, isDefaultCandidate } from './utils';
 
 // Worker Import
 import StatsWorker from './workers/stats.worker?worker';
@@ -89,7 +89,8 @@ export default function App() {
   }, [availableJudges]);
   
   useEffect(() => {
-    setSelectedModels(new Set(availableModels));
+    const defaultSelected = availableModels.filter(model => isDefaultCandidate(model));
+    setSelectedModels(new Set(defaultSelected));
   }, [availableModels]);
 
   // Load Overrides

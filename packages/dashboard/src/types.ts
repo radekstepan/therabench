@@ -87,6 +87,7 @@ export interface ModelConfig {
   labels: ModelLabel[];
   useTextMode?: boolean; // If true, skip json_object and use text mode directly for parsing
   isDefaultJudge?: boolean; // Controls whether this model is selected by default in the judge filter
+  isDefaultCandidate?: boolean; // Controls whether this model is selected by default in the candidate filter
   pricing?: {
     input: number; // Price per 1M input tokens
     output: number; // Price per 1M output tokens

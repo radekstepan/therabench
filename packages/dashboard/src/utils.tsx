@@ -56,6 +56,12 @@ export function isDefaultJudge(modelName: string): boolean {
   return config?.isDefaultJudge !== false;
 }
 
+export function isDefaultCandidate(modelName: string): boolean {
+  const config = modelConfigs.find(c => c.modelName === modelName);
+  // Default to true if not explicitly set to false
+  return config?.isDefaultCandidate !== false;
+}
+
 // Helper function to extract sortable value from model labels
 export function getModelLabelSortValue(modelName: string): { isOnline: boolean; gb: number; name: string } {
   const labels = getModelLabels(modelName);
