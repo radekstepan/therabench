@@ -11,8 +11,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getScoreColor(score: number) {
-  // Thresholds: >=80 green, 61-79 neutral, 41-60 orange, <=40 red
-  if (score >= 80) return "text-emerald-500";
+  // Thresholds: >=85 green, 61-84 neutral, 41-60 orange, <=40 red
+  if (score >= 85) return "text-emerald-500";
   if (score <= 40) return "text-red-500";
   if (score <= 60) return "text-amber-500";
   return "text-zinc-400";
@@ -203,7 +203,7 @@ export function getRelativeCostColor(cost: number, allCosts: number[]): string {
 }
 
 export function getFaithfulnessColor(score: number): string {
-  if (score > 95) return "text-emerald-500";
+  if (score >= 95) return "text-emerald-500";
   if (score < 85) return "text-amber-500";
   return "text-zinc-500";
 }

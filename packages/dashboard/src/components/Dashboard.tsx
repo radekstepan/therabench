@@ -4,15 +4,9 @@ import { cn, getScoreColor, getReliabilityIndexColor, formatPercentWithColor, is
 import { ModelLabels } from './ModelLabels';
 import { JudgeComparisonGrid } from './JudgeComparisonGrid';
 import { JudgeTrustTable } from './JudgeTrustTable';
+import { MissingEvaluationsModal } from './MissingEvaluationsModal';
 import { JudgeStats } from '../lib/stats';
-import { ExtendedModelStat } from '../types';
-
-interface MissingEvaluations {
-  expertsNeedingReviews: Record<string, string[]>;
-  modelsWithMissingQuestions: Array<{ name: string; answered: number; missing: number }>;
-  mostFrequentExpertCount: number;
-  totalQuestions: number;
-}
+import { ExtendedModelStat, MissingEvaluations } from '../types';
 
 interface DashboardProps {
   modelStats: ExtendedModelStat[];
@@ -41,6 +35,7 @@ export const Dashboard = ({
 }: DashboardProps) => {
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
   const [activeView, setActiveView] = useState<'leaderboard' | 'judgeComparisonGrid' | 'judgeTrust'>('leaderboard');
+  const [isMissingEvaluationsModalOpen, setIsMissingEvaluationsModalOpen] = useState(false);
 
   const getBaseModelName = (modelName: string): string => {
     return stripEnhancedSuffix(modelName);
@@ -53,8 +48,29 @@ export const Dashboard = ({
     return hoveredBase === currentBase;
   };
 
+  const hasMissingEvaluations = Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0;
+
   return (
     <div className="p-8 max-w-5xl mx-auto w-full overflow-y-auto">
+      {/* Missing Evaluations Warning - Moved to top */}
+      {hasMissingEvaluations && (
+        <div className="bg-amber-900/10 border border-amber-500/30 rounded-md p-4 mb-6 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Info className="w-5 h-5 text-amber-400" />
+            <div>
+              <h3 className="text-sm font-medium text-amber-200">Missing Evaluations Detected</h3>
+              <p className="text-xs text-amber-500/80 mt-0.5">Some models have incomplete answers or judges have pending reviews.</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setIsMissingEvaluationsModalOpen(true)}
+            className="px-3 py-1.5 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded text-xs font-medium text-amber-300 transition-colors"
+          >
+            View Details
+          </button>
+        </div>
+      )}
+      
       <header className="mb-8">
         <h1 className="text-3xl font-light text-white mb-2">Model Leaderboard</h1>
         <p className="text-zinc-500">Aggregated performance across therapeutic scenarios.</p>
@@ -189,68 +205,10 @@ export const Dashboard = ({
       {/* Model Leaderboard View */}
       {activeView === 'leaderboard' && (
         <>
-          {(Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 || missingEvaluations.modelsWithMissingQuestions.length > 0) && (
-        <div className="bg-amber-900/10 border border-amber-500/30 rounded-md p-6 mb-10 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent pointer-events-none" />
-          <div className="relative z-10">
-            <div className="flex items-center gap-3 mb-4">
-              <Info className="w-5 h-5 text-amber-400" />
-              <h3 className="text-lg font-semibold text-amber-200">Missing Evaluations</h3>
-            </div>
-            
-            {Object.keys(missingEvaluations.expertsNeedingReviews).length > 0 && (
-              <div className="mb-4 last:mb-0">
-                <div className="text-sm text-zinc-400 mb-3">
-                  <span className="font-medium text-amber-300">{Object.keys(missingEvaluations.expertsNeedingReviews).length}</span> {Object.keys(missingEvaluations.expertsNeedingReviews).length === 1 ? 'judge needs' : 'judges need'} to complete reviews:
-                </div>
-                <div className="space-y-3">
-                  {Object.entries(missingEvaluations.expertsNeedingReviews).map(([expert, models]) => (
-                    <div key={expert} className="bg-zinc-900/40 border border-amber-500/20 rounded p-3">
-                      <div className="font-mono text-xs text-amber-300 font-semibold mb-2">{expert}</div>
-                      <div className="flex flex-wrap gap-2">
-                        {models.map((modelInfo) => {
-                          const match = modelInfo.match(/^(.*?)\s*\((\d+)\/(\d+)\)$/);
-                          const modelName = match ? match[1] : modelInfo;
-                          const questionCount = match ? `${match[2]}/${match[3]}` : '';
-                          
-                          return (
-                            <div key={modelInfo} className="inline-flex items-center gap-2 bg-zinc-800/60 border border-zinc-700 px-2.5 py-1 rounded">
-                              {isEnhancedModel(modelName) && <Sparkles className="w-3 h-3 text-pink-500 flex-shrink-0" />}
-                              <span className="font-mono text-xs text-white truncate max-w-[180px]" title={stripEnhancedSuffix(modelName)}>{stripEnhancedSuffix(modelName)}</span>
-                              {questionCount && (
-                                <span className="text-xs text-amber-400 font-semibold">{questionCount}</span>
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            
-            {missingEvaluations.modelsWithMissingQuestions.length > 0 && (
-              <div>
-                <div className="text-sm text-zinc-400 mb-2">
-                  <span className="font-medium text-amber-300">{missingEvaluations.modelsWithMissingQuestions.length}</span> {missingEvaluations.modelsWithMissingQuestions.length === 1 ? 'model hasn\'t' : 'models haven\'t'} answered all {missingEvaluations.totalQuestions} questions:
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {missingEvaluations.modelsWithMissingQuestions.map((model) => (
-                    <div key={model.name} className="inline-flex items-center gap-2 bg-zinc-900/60 border border-amber-500/20 px-3 py-1.5 rounded">
-                      <span className="font-mono text-xs text-white truncate max-w-[200px]" title={model.name}>{model.name}</span>
-                      <span className="text-xs text-amber-400 font-semibold">{model.answered}/{missingEvaluations.totalQuestions}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-md overflow-visible">
-        <table className="w-full text-left">
+            <table className="w-full text-left">
           <thead className="bg-zinc-900/50 border-b border-zinc-800">
             <tr>
               <th 
@@ -534,6 +492,12 @@ export const Dashboard = ({
       {activeView === 'judgeTrust' && (
         <JudgeTrustTable judgeStats={judgeStats} />
       )}
+
+      <MissingEvaluationsModal 
+        isOpen={isMissingEvaluationsModalOpen}
+        onClose={() => setIsMissingEvaluationsModalOpen(false)}
+        missingEvaluations={missingEvaluations}
+      />
     </div>
   );
 };

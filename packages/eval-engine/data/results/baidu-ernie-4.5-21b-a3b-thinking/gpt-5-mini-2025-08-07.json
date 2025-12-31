@@ -835,5 +835,260 @@
         }
       ]
     }
+  },
+  {
+    "runId": "7a12c38d-3452-4fdb-9428-84573ad7dbfd",
+    "questionId": "t1",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "During the homework review, the therapist made a **\"bad therapy joke\"** about \"should\" statements by warning, **\"Do you want to be careful not to *should* all over yourself?\"** This phrase is a play on words, referencing the common therapy expression \"shoulder to the wheel\" (implying burdening others) but twisting it into a humorous warning about overusing \"should\" in one's thinking. The joke highlights how excessive \"should\" statements can lead to self-imposed pressure and anxiety.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "The response correctly identifies the specific 'bad therapy joke' from the transcript: the therapist's line about being careful not to 'should' all over yourself. This matches the context text where the therapist says, 'You wanna be careful not to should all over yourself.' The response's quoted wording is a close paraphrase of the original and captures the joke's target (overuse of 'should' statements).\n\nHowever, the response introduces an unsupported explanation claiming the phrase is a play on the expression 'shoulder to the wheel' and framing it as a deliberate twist on that saying. That origin/interpretation is not present in the transcript and therefore constitutes a minor hallucination. The rest of the interpretation (that the joke highlights how excessive 'should' statements lead to self-imposed pressure and anxiety) is consistent with the session content, but the invented etymology reduces overall faithfulness.\n\nBecause the essential content (the exact joke) is present and accurate but there is a small unsupported addition, the item is rated high but not perfect for faithfulness.",
+          "flags": [
+            "Introduces an unsupported origin/interpretation ('shoulder to the wheel') not present in the transcript",
+            "Paraphrases the therapist's exact wording rather than quoting verbatim (minor)"
+          ],
+          "metrics": {
+            "faithfulness": 85,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:03:09.749Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9a949dee-90e5-4ff9-97fc-7afb19fa9990",
+    "questionId": "t2",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "In the phone call with his friend, the client felt **\"not ready\"** specifically when the friend began **asking about the client's well-being and wanting to discuss his own issues**. This occurred **in the middle of the conversation**, as the friend transitioned from gathering to meet (e.g., coffee) to inquiring about the client's mental state. The client described this moment as a trigger for pulling away, feeling emotionally \"not ready\" to share their struggles or engage in deeper discussions about their feelings. This reaction was accompanied by anxiety, fear, and sadness, which were rated at certain levels during the thought record exercise.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 95,
+          "reasoning": "The response accurately identifies the exact point the client felt 'not ready' — in the middle of the phone call when the friend began asking about the client's well-being / checking in. This matches the transcript where the client says she was fine while the friend talked about gathering for coffee but felt 'not ready' once he started asking about her. The response also correctly notes the accompanying emotions (anxiety, fear, sadness) that were explored and rated in the thought-record. The only minor issue is the response mentioning the transition from planning to meet for coffee; although the reply does not state that the client felt 'not ready' at the coffee request (it correctly locates the moment later), calling out the coffee transition is extraneous and could be misread. Overall the answer is faithful and grounded in the transcript.",
+          "flags": [
+            "Mentions the earlier 'coffee' planning (extraneous detail) — ensure this is not interpreted as the moment she felt 'not ready'."
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:03:23.569Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "90e86242-08b2-41ef-a6c4-f0e5658a16bb",
+    "questionId": "t3",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "The client uses the \"stop sign\" metaphor to describe how her interaction with her friend operates in two distinct ways, as explicitly explained in the transcript:  \n\n1. **Stopping the friend from asking about her feelings**: The client avoids sharing her emotional struggles (e.g., depression, anxiety) when her friend attempts to check in. The stop sign represents her preventing the friend from inquiring further, as she does not want to disclose her vulnerable state. The therapist clarifies this when they state, \"so the stop sign goes both ways. stop and don’t say it to me. right. and it’s stop for you to don’t ask.\"  \n\n2. **Stopping herself from sharing her own feelings**: Conversely, the stop sign also symbolizes the client’s internal censorship—she avoids expressing her own emotional needs or struggles to others, including her friend. This is reflected in the client’s realization that the stop sign \"goes both ways,\" meaning she both prevents the friend from asking and avoids sharing her own feelings.  \n\nIn summary, the stop sign operates as a two-way barrier: one side blocks the friend from asking about her, and the other side blocks the client from disclosing her own emotional reality.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "The response is faithful to the transcript and accurately captures the client's 'stop sign' metaphor operating in two ways. It identifies (1) the client blocking the friend from asking about her (\"stop for the friend: don't ask\") and (2) the client censoring herself and avoiding disclosure (\"stop for the client: don't tell / don't say it\"). The answer references the therapist's phrasing that the stop sign \"goes both ways\" and explicitly links the avoidance to the client's concern that \"people aren't ready to hear the truth\" about her depression and anxiety, which aligns with the transcript. The response also communicates the mutual avoidance dynamic. It avoids the disallowed generic interpretations (e.g., traffic rules or generic boundary-setting) and stays grounded in the session material. The reason the score is not higher is only because the evaluation could have more explicitly quoted the exact line about \"people is not ready to hear it\" from the transcript to further strengthen grounding, but overall the interpretation is accurate and free of hallucination.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:03:36.895Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "be45edac-b628-43c1-90da-bb3c8eff9104",
+    "questionId": "t4",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "The therapist described Judge Judy's personality using two specific descriptors:  \n1. **\"Very strong personality\"**  \n2. **\"A little gruff\"** (or \"gruff,\" implying a firm but slightly rough or abrasive demeanor).\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "The respondent quoted two descriptors that accurately appear in the transcript: \"very strong personality\" and \"a little gruff.\" Those are verbatim from the session. However, the therapist also explicitly characterized Judge Judy as \"sometimes she's a little mean,\" and framed her as not \"wishy-washy\" and not \"gentle\" when asking the client to consider whether Judge Judy would take evidence leniently. The response omitted these additional descriptors required by the rubric (\"a little mean,\" \"not wishy-washy,\" and \"not gentle\"). There are no hallucinations — the included descriptors are grounded in the context — but the answer is incomplete relative to the rubric's required items, so faithfulness is reduced.",
+          "flags": [
+            "Missing required descriptors: 'a little mean', 'not wishy-washy', 'not gentle'.",
+            "Response is accurate for included items but incomplete per rubric requirements."
+          ],
+          "metrics": {
+            "faithfulness": 65,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:03:49.676Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "78c7e12f-e2c2-4f3d-8587-7d45c6c7be47",
+    "questionId": "t5",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "During the evidence gathering phase:  \n- The evidence \"listening to complaining is annoying\" was assigned a **2 (medium strength)**.  \n- The evidence \"friend is a 'support worker'\" was assigned a **3 (strong strength)**.  \nThese ratings reflect the client's evaluation of how strongly each piece of evidence supports or contradicts the hot thought \"I shouldn’t be bothering him.\"\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 30,
+          "reasoning": "The submitted response is partially incorrect. The transcript shows the client: \"listening people complaining about everything is annoying,\" and when asked to rate it the client said \"Almost like a three,\" and the therapist then recorded a three. Later the client explicitly rated the friend being a 'support worker' as \"a three.\" Therefore both items should be rated as 3 (or 'almost like a 3' for complaining). The response correctly gave the 'support worker' rating as 3 but incorrectly reported 'listening to complaining is annoying' as 2. Because one of two ratings is inconsistent with the transcript, the overall faithfulness is low (partial match).",
+          "flags": [
+            "Incorrect rating for 'listening to complaining is annoying' — transcript indicates 'almost like a 3' and therapist recorded 3",
+            "Response contradicts the transcript for one item",
+            "Partially accurate (one correct, one incorrect)"
+          ],
+          "metrics": {
+            "faithfulness": 30,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:04:06.579Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "05c58ed5-2b0b-4ffd-b692-802be127ec3a",
+    "questionId": "t6",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "The client rated the evidence that the friend \"hasn't gossiped about her in the past\" as **strength rating: 1 (weakest)**.  \n**Reasoning for the low rating**:  \nThe client expressed uncertainty about the friend’s discretion, noting they were unaware of whether the friend would gossip or keep her secrets. The client stated, \"I wasn’t aware,\" implying a lack of concrete evidence or confirmation that the friend would prioritize confidentiality. This made the evidence weak because it relied on assumption rather than verified past behavior.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 95,
+          "reasoning": "The response is highly faithful to the transcript. The client explicitly rated the evidence that the friend \"hasn't gossiped about you in the past\" as a 1 (the weakest rating) and explained this with language equivalent to \"Not that I'm aware,\" indicating uncertainty/lack of concrete knowledge. The respondent captured both elements correctly: the numeric rating (1) and the specific rationale (lack of awareness/verification, i.e., we don't know for sure). There are no added facts or hallucinations—the summary accurately reflects the client's wording and the therapist's subsequent placement of that item as a 1.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:04:18.929Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3f2f5f62-bab8-4b44-9fb3-65228e968227",
+    "questionId": "t7",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "It may be true that I'm scared of bothering people, and it is also true that I have good friends who can and do support me.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The submitted balanced thought exactly matches the phrasing agreed upon in the transcript: it begins with \"It may be true that I'm scared of bothering people\" and continues with \"and it is also true that I have good friends who can and do support me.\" The required phrase \"can and do\" is present. The response does not introduce any disallowed or extraneous phrasing (e.g., it does not include \"I shouldn't bother him\" or the forbidden paraphrase). There are no hallucinations or deviations from the context — the output is faithful and accurate.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:04:26.908Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ad97ddf8-f67a-4c93-a2de-733025972dab",
+    "questionId": "t8",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "Before the exercise, the client self-rated their Anxiety at **40%** and Fear at **60%** regarding the 'Hot Thought' (\"I shouldn’t be bothering him\").  \n\nAfter restructuring the thought, their Anxiety was rated at **20–30%** and Fear at **30%**.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "The response is largely faithful to the transcript: it correctly reports the pre-exercise ratings (Anxiety 40%, Fear 60%) and the post-restructuring Fear rating (30%), which matches the session text. However, it reports the post-restructuring Anxiety as a range (20–30%) rather than the specific value of 20% given in the transcript. The rubric requires exact end values (Anxiety End: 20%), and also forbids approximations. The response avoids mentioning forbidden items (e.g., sadness changes) and does not confuse Anxiety and Fear, but the imprecise Anxiety end value is a fidelity error.",
+          "flags": [
+            "Post-restructuring Anxiety reported as a range (20–30%) instead of the exact 20% required",
+            "Uses an approximation/range contrary to rubric instructions"
+          ],
+          "metrics": {
+            "faithfulness": 85,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:04:36.462Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "f8193d19-e8fa-435c-9878-955716a90050",
+    "questionId": "t9",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "The client identified the following physical sensations as indicators that her anxiety is rising:  \n- A knot in her stomach,  \n- Shakiness.  \n\nShe also noted that these sensations could be rated on a scale (e.g., up to a 3 out of 10) to track the intensity of the anxiety.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully faithful to the transcript. The client explicitly identified a \"knot in her stomach\" and feeling \"a little bit shaky\" as bodily indicators of rising anxiety; both are included verbatim (knot in stomach, shakiness). The response also notes rating the anxiety (she predicted it might be around a 3), which matches the transcript where she suggests rating it (and predicts a level of about 3). The response avoids all disallowed items (no mention of sweating, rapid heartbeat, headache, or labeling the event a panic attack). There are no hallucinations or added details beyond what the client stated. Therefore the evaluation is fully accurate.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:04:45.589Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "29b352af-9acb-4682-98f2-f58b4669eb1e",
+    "questionId": "t10",
+    "modelName": "baidu/ernie-4.5-21b-a3b-thinking",
+    "timestamp": "2025-12-31T00:13:09.938Z",
+    "response": "The client identified \"being too anxious to reach out\" as a potential obstacle. To overcome this, they agreed to use a **visual reminder** by taking a picture of the thought record or notes from the session before leaving. This strategy helps them refer back to the positive information (e.g., evidence that their friend is a good listener, supportive, and they have a history of healthy communication) when anxiety peaks, reinforcing confidence in their ability to engage despite anxiety.\n\n",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The assistant's response accurately reflects the transcript. The therapist suggested the client could “take a picture of this” (the whiteboard/thought record) to refer to if anxiety peaks, and the client agreed—writing down “picture” and noting it would be there. The response states the specific coping strategy as a visual reminder (taking a picture of the thought record/notes) and explicitly notes that the client would refer back to that picture to access the positive evidence (friend is supportive, good listener, etc.), which corresponds to “look at the picture” and “picture of the whiteboard/evidence.” The response does not introduce any disallowed strategies (deep breathing, calling the therapist, or waiting until later). There are no hallucinations or extraneous additions; all elements are grounded in the provided transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T04:04:55.128Z"
+        }
+      ]
+    }
   }
 ]

@@ -208,7 +208,10 @@ ${safetyGuardrails}`;
 
 async function queryCandidateModel(question: QuestionNode): Promise<string> {
   // Use enhanced prompt if flag is set, otherwise default to generic
-  const systemPrompt = ENHANCED_PROMPTS 
+  // NOTE: We IGNORE the ENHANCED_PROMPTS flag for Transcript questions as requested
+  const useEnhanced = ENHANCED_PROMPTS && question.category !== 'Transcript';
+  
+  const systemPrompt = useEnhanced 
     ? generateSystemPrompt(question.category)
     : (question.category === 'Transcript' ? "Answer based on the text provided." : "You are a therapist.");
 
@@ -405,45 +408,55 @@ async function main() {
     const runTimestamp = new Date().toISOString();
     const judgeModel = EXPERT_MODEL_NAME!;
 
-    // Determine effective model name based on whether enhanced prompts are used
-    const effectiveModelName = ENHANCED_PROMPTS 
-      ? `${CANDIDATE_MODEL_NAME!} (Enhanced)` 
-      : CANDIDATE_MODEL_NAME!;
+    // Models names
+    const baseName = CANDIDATE_MODEL_NAME!;
+    const enhancedName = `${baseName} (Enhanced)`;
     
     // Load existing results to check what's already been evaluated
+    // We check for both base and enhanced versions because the logic is dynamic per question
     const existingResults = loadAllResults();
     const existingMap = new Map<string, ModelRun>();
+    
     for (const r of existingResults) {
-      if (r.modelName === effectiveModelName) {
-        existingMap.set(r.questionId, r);
+      if (r.modelName === baseName || r.modelName === enhancedName) {
+        // Key by questionId + modelName to distinguish between the two versions
+        existingMap.set(`${r.questionId}|${r.modelName}`, r);
       }
     }
     
     console.log(`🚀 Starting evaluation on ${questions.length} questions`);
     console.log(`   Source: ${sourceName}`);
-    console.log(`   Candidate: ${effectiveModelName}`);
+    console.log(`   Candidate: ${baseName} ${ENHANCED_PROMPTS ? 'with Enhanced Prompts enabled' : ''}`);
     console.log(`   Judge: ${judgeModel}`);
-    console.log(`   System Prompts: ${ENHANCED_PROMPTS ? '✨ ENHANCED (Expert Persona)' : 'Standard'}`);
-    console.log(`   Already evaluated: ${existingMap.size} questions`);
+    console.log(`   System Prompts: ${ENHANCED_PROMPTS ? '✨ ENHANCED (Expert Persona for Therapy, Standard for Transcripts)' : 'Standard'}`);
+    console.log(`   Already evaluated: ${existingMap.size} runs found`);
 
     const results: ModelRun[] = [];
     let skipped = 0;
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
+      const isTranscript = q.category === 'Transcript';
       
-      // Check if this question has already been evaluated by this judge for this model
-      const existing = existingMap.get(q.id);
+      // LOGIC: If ENHANCED_PROMPTS is ON, we use Enhanced model/prompt for everything EXCEPT Transcripts.
+      // Transcripts always run under the Base model name with standard prompts.
+      const useEnhanced = ENHANCED_PROMPTS && !isTranscript;
+      const currentRunModelName = useEnhanced ? enhancedName : baseName;
+      
+      // Check if this specific question has already been evaluated for the correct model version
+      const existingKey = `${q.id}|${currentRunModelName}`;
+      const existing = existingMap.get(existingKey);
+      
       const assessments = existing?.aiAssessments?.[judgeModel];
       const alreadyJudged = Array.isArray(assessments) && assessments.length > 0;
       
       if (alreadyJudged) {
-        console.log(`[${i + 1}/${questions.length}] ⏭️  Skipping ${q.id} (already evaluated)`);
+        console.log(`[${i + 1}/${questions.length}] ⏭️  Skipping ${q.id} (already evaluated for ${currentRunModelName})`);
         skipped++;
         continue;
       }
       
-      console.log(`[${i + 1}/${questions.length}] Processing question: ${q.id} (${q.category})`);
+      console.log(`[${i + 1}/${questions.length}] Processing ${q.id} (${q.category}) -> ${currentRunModelName}`);
       
       // 1. Get Candidate Response
       const response = await queryCandidateModel(q);
@@ -461,7 +474,7 @@ async function main() {
       const run: ModelRun = {
         runId: randomUUID(),
         questionId: q.id,
-        modelName: effectiveModelName,
+        modelName: currentRunModelName,
         timestamp: runTimestamp,
         response,
         aiAssessments: {
@@ -471,8 +484,8 @@ async function main() {
       
       results.push(run);
       
-      // Save after every question
-      saveResults([run], effectiveModelName, judgeModel);
+      // Save after every question using the specific model name
+      saveResults([run], currentRunModelName, judgeModel);
     }
 
     console.log(`\n✅ Evaluation complete!`);

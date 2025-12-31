@@ -768,5 +768,245 @@
         }
       ]
     }
+  },
+  {
+    "runId": "fa994be0-0744-4bf5-9733-fd0e72b2a9c3",
+    "questionId": "t1",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the transcript, the specific \"bad therapy joke\" the therapist made about 'should' statements was: \"You wanna be careful not to should all over yourself.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly grounded in the context text. The transcript explicitly records the therapist asking, 'Do you know my bad therapy joke for shoulds?' and then providing the exact quote: 'You wanna be careful not to should all over yourself.' The response captured this phrase verbatim.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:10.785Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "af601621-9bce-4d66-a762-08cc8977bd93",
+    "questionId": "t2",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the provided transcript, the client felt they were 'not ready' in the middle of the conversation when the friend started asking about the client's own well-being.\n\n**Specific details from the text:**\n*   The therapist asks: \"did it show up right at the beginning of the conversation, near the end, in the middle?\" The client responds: \"Like, in the middle of the conversation\" (lines 121-124).\n*   The client clarifies: \"first he was talking about, um, gathering together, have coffee, and I was kind of okay with that. But when he started talking about, uh, checking in on me and wanting to know how am I doing, I was like, 'No, I'm not ready.'\" (lines 125-130).\n*   The therapist summarizes: \"So middle of the conversation was okay, but when he started to ask you about yourself... That's when you sort of felt... you're not ready.\" (lines 131-134).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the provided context and strictly adheres to the rubric. It correctly identifies the 'middle of the conversation' as the timing and 'asking how I am doing/checking in' as the specific trigger. Furthermore, it accurately distinguishes that the client was 'okay' with the initial part regarding gathering for coffee, as specified in the rubric's 'Must Avoid' section for the 'not ready' trigger. The use of line references for verification further demonstrates high faithfulness.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:12.797Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "17593da3-ac57-4fb3-b066-e6f16e1eba13",
+    "questionId": "t3",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the transcript, the 'stop sign' operates in two ways:\n\n1.  **Stop for the client:** \"don't say it to me\" – The client stops herself from sharing her feelings (\"Bad,\" \"Feeling all upset,\" \"I have been very depressed\").\n2.  **Stop for the friend:** \"don't ask\" – It signals for the friend to stop asking about her.\n\nThe client explicitly states: \"the stop sign goes both ways. Stop and don't... don't say it to me... And it's stop for you to don't ask.\" (Transcript lines: \"People is not ready to hear that... So the stop sign goes both ways. Stop and don't... don't say it to me... And it's stop for you to don't ask.\")",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is exceptionally faithful to the transcript. It accurately identifies the 'two ways' the stop sign operates as explicitly stated by the client: 1) preventing the client from speaking ('don't say it') and 2) signaling the friend to stop asking ('don't ask'). It correctly contextualizes this within the client's belief that people/her friend 'is not ready to hear' the truth about her depression. Every point corresponds directly to the text provided and adheres to all rubric requirements without including any prohibited generic interpretations.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:14.988Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c1244411-6316-405c-a555-057404c0eec1",
+    "questionId": "t4",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the Transcript Context, when introducing the concept of putting thoughts on trial, the therapist described Judge Judy's personality with the following two specific descriptors:\n\n1. \"Very strong personality.\"\n2. \"A little gruff.\" (The therapist states, \"Between you and me, I think she can be a little gruff.\")\n\n**Citations:**\n- The therapist asks, \"How would you describe her personality?\" and the client responds, \"Um, like a very strong personality.\"\n- The therapist then adds, \"Between you and me, I think she can be a little gruff.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context text. It correctly identifies the descriptors 'very strong personality' and 'a little gruff' as used by the therapist (and agreed upon with the client) when discussing Judge Judy. These align perfectly with the transcript and the required descriptors in the rubric (Strong personality, A little gruff). The response also correctly avoids the prohibited terms.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:16.899Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "725a1a92-fe5a-4a45-885a-179ed90e7056",
+    "questionId": "t5",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the Transcript Context:\n\n1. The evidence that \"listening to complaining is annoying\" was assigned a rating of **3** (strong evidence).  \n   *Citation:* The client says, \"Almost like a three,\" and the therapist confirms, \"A three.\"\n\n2. The evidence that the friend is a \"support worker\" was assigned a rating of **3** (strong evidence).  \n   *Citation:* When asked to rate it, the client responds, \"Oh, three,\" and the therapist confirms, \"Three.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. It correctly identifies that the client rated 'listening to complaining is annoying' as a 3 (Transcript: 'Almost like a three') and the fact that the friend is a 'support worker' as a 3 (Transcript: 'Oh, three'). Both citations provided directly match the dialogue.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:19.118Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "30d14275-199b-4e0b-b768-9c899eb6adba",
+    "questionId": "t6",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the provided transcript:\n\nThe client rated the evidence that her friend \"hasn't gossiped about her in the past\" as a **one (1)**. The specific reasoning for this low rating was that she stated, **\"Not that I'm aware,\"** indicating a lack of certain knowledge on the matter.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the provided transcript. It correctly identifies the rating as a 'one' and accurately quotes the client's reasoning ('Not that I'm aware') as the basis for that rating. It adheres to all constraints in the rubric by including the specific numerical rating and the exact textual reasoning while avoiding generic interpretations like 'trustworthiness'.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:21.227Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4073160c-3591-4193-ac1f-a544cc8442b0",
+    "questionId": "t7",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the transcript, the final balanced thought constructed by the client and therapist is:\n\n**\"It may be true that I'm scared of bothering people, and it is also true that I have good friends who can and do support me.\"**\n\nThis is directly stated by the client and therapist in the dialogue:\n*   The client proposes: \"It may be true that I'm scared of bothering people... and it is also true that I have good friends.\"\n*   The therapist then suggests adding \"who can support me,\" to which the client agrees and refines to \"who can and do support me.\"\n*   The therapist then writes down the final version: \"It may be true that I am scared of bothering people, and it is also true that I have good friends who can and do support me.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. It accurately identifies the synthesis of the 'Balanced Thought' which occurred over a series of conversational exchanges. Specifically, it captures the 'It may be true that...' preamble, the specific fear ('scared of bothering people'), and the final refinement of the 'and it is also true' section which includes the precise phrase 'can and do support me' as mandated by the rubric and confirmed in the text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:23.181Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e2d11d58-9ec6-4362-80f5-a3320b89cac8",
+    "questionId": "t8",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the provided transcript:\n\n**Before the exercise:**\n- **Anxiety:** 40%\n- **Fear:** 60%\n\n**After the thought was restructured:**\n- **Anxiety:** 20%\n- **Fear:** 30%\n\n**Citation:** The therapist asks for ratings before the exercise: \"how anxious would you say you were feeling... I think like 40... Same thing with fear... I think 60.\" After restructuring, the client states: \"Anxiety will be like a 20... the fear... maybe at a 30.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text and adheres strictly to the rubric requirements. It accurately identifies the pre-restructuring levels for anxiety (40%) and fear (60%), and correctly captures the post-restructuring reductions to anxiety (20%) and fear (30%). It also correctly avoids including the sadness ratings as specified in the rubric.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:25.168Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7ffee7b8-74f5-42a4-bd22-6c6ec104684d",
+    "questionId": "t9",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the Transcript Context, the client identified \"a knot in my stomach\" and feeling \"a little bit shaky\" as the specific physical sensations that indicate her anxiety is rising.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. The client explicitly states she can feel 'the knot in my stomach' and being 'a little bit shaky' when discussing her body's indicators of rising anxiety during the homework planning phase. The response correctly limits indicators to these specific sensations and excludes other common anxiety symptoms not mentioned in the text (like sweating or heartbeat).",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:26.945Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d40cd8ce-560d-44ee-ae81-6fd9f8d9e080",
+    "questionId": "t10",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the transcript, the client agreed to write down \"picture\" as a specific coping strategy to overcome the obstacle of being too anxious to reach out. This refers to taking a picture of the whiteboard/thought record to review when anxiety peaks, as suggested by the therapist. The client states, \"I'm going to write picture... and I will know that it's... there it is\" (cited from the dialogue near the end of the session).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context text. It correctly identifies 'taking a picture' of the whiteboard/evidence as the specific coping strategy agreed upon. This matches the transcript where the therapist suggests taking a picture of the board to refer to when anxiety hits, and the client confirms, 'I'm going to write picture...'. The response also adheres to the rubric by including the required elements and avoiding excluded terms.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:46:28.803Z"
+        }
+      ]
+    }
   }
 ]

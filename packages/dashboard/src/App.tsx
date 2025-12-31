@@ -257,7 +257,22 @@ export default function App() {
   const activeRuns = useMemo(() => {
     const runs = augmentedResults.filter(r => r.questionId === selectedQuestionId);
     
-    const sorted = [...runs].sort((a, b) => {
+    // Deduplicate runs: keep only the latest run per model
+    const latestRunsMap = new Map<string, AugmentedResult>();
+    runs.forEach(run => {
+      const existing = latestRunsMap.get(run.modelName);
+      // If we haven't seen this model yet, or this run is newer, take it
+      if (!existing || (run.timestamp && existing.timestamp && new Date(run.timestamp) > new Date(existing.timestamp))) {
+        latestRunsMap.set(run.modelName, run);
+      } else if (!existing.timestamp && run.timestamp) {
+        // Prefer runs with timestamps
+        latestRunsMap.set(run.modelName, run);
+      }
+    });
+
+    const uniqueRuns = Array.from(latestRunsMap.values());
+    
+    const sorted = [...uniqueRuns].sort((a, b) => {
       let comparison = 0;
       
       switch (sortBy) {

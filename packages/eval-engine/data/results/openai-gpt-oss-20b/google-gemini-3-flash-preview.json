@@ -799,5 +799,249 @@
         }
       ]
     }
+  },
+  {
+    "runId": "8451a2ec-42c6-4bda-ae74-e4502486b1d0",
+    "questionId": "t1",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "The therapist quipped: **“You wanna be careful not to **should** all over yourself.”**",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the source text. The therapist explicitly says, 'You wanna be careful not to should all over yourself,' which is the exact phrase used in the response. It identifies the correct moment in the transcript during the homework review and accurately quotes the 'bad therapy joke' identifying the wordplay as requested by the rubric.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:24.819Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "64177938-fea6-4ae0-a4e2-dbe07c2bc995",
+    "questionId": "t2",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "In that phone call he said he felt “not ready” **in the middle of the conversation – right after his friend shifted the topic from planning to get coffee to asking him personally how he was doing (i.e., checking in on his state).** In other words, the client was okay with the talk about coffee, but as soon as the friend began asking “How am I doing?” he suddenly felt “I’m not ready.”",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context text and accurately identifies the specific moment Ally felt 'not ready'. It correctly differentiates between the coffee invitation (which Ally was 'okay' with) and the personal check-in (which triggered the 'stop sign' response/feeling of not being ready). The response adheres to all 'Must Include' criteria and successfully avoids the 'Must Avoid' traps, correctly noting the timing occurred in the middle of the conversation rather than at the start. Note: The response uses 'he' while the context implies the client is a woman (Ally), but the factual timing is perfect.",
+          "flags": [
+            "The response uses masculine pronouns ('he') for the client, whereas the transcript refers to the client as 'Ally' and 'she'."
+          ],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:27.005Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "74d1fdcd-49e5-47f3-9784-f58beb22223f",
+    "questionId": "t3",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "**The “stop sign” that Ally refers to in the session can be seen as operating in two distinct directions:**\n\n| **Direction** | **What the “stop sign” is telling you to do** | **Why it feels like a “stop”** |\n|---------------|----------------------------------------------|--------------------------------|\n| **1. Stop the friend from asking** | “When he asks me how I’m doing, I want to stop him from asking.” | Ally says the stop sign goes “both ways.” She feels that the friend’s question (“How are you?”) is something she must block or refuse to receive. In this sense the sign is **telling her **not to let the conversation continue** with that question**. |\n| **2. Stop herself from answering / talking** | “When he turns the conversation towards me, I shut down and don’t want to share.” | The same “stop sign” is also an internal cue to her to disengage – she presses a mental stop button and stops answering, stops talking, stops giving the friend the space to ask. It’s the **internal “stop” she imposes on her own speech**. |\n\nIn the dialogue the therapist confirms this: Ally tells the therapist that the stop sign “goes both ways – stop and don’t… stop for you to don’t ask.” The sign represents both a refusal she feels toward the friend’s questioning and a refusal she feels toward herself speaking in response. Thus the “stop sign” works in a dual‑directional manner: it stops the friend’s request for her life, and it stops the client’s willingness to open up. This metaphor illustrates the circular deflection that keeps her isolated and the feeling of being stuck in a “stop” loop whenever her friend attempts to connect.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the transcript. It correctly identifies the 'two ways' the stop sign operates: 1) To prevent the friend from asking, and 2) To prevent the client from telling or saying the truth. It also appropriately captures the underlying clinical reasoning Ally provides—that people are not ready to hear the truth about her depression—which leads to the mutual avoidance of the topic. The response avoids generic interpretations and sticks to the client's unique metaphor.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:28.988Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5bc8c7ce-a0de-4e91-9e56-6e24f1308aa6",
+    "questionId": "t4",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "The therapist described Judge Judy as **“a very strong personality”** and noted she can be **“gruff.”**",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context text. The therapist explicitly describes Judge Judy's personality as having a 'very strong personality' (confirmed in the dialogue) and uses the word 'gruff' (confirmed by the therapist saying: 'I think she can be a little gruff'). Both descriptors match the rubric's 'Must Include' list and accurately reflect the transcript without including any 'Must Avoid' terms.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:30.894Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1d8cd048-2947-44fb-9514-108672a8dace",
+    "questionId": "t5",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "- **“Listening to complaining is annoying”** was rated as **3** (strong evidence).  \n- **“The friend is a support worker”** was also rated as **3** (strong evidence).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. In the text, the client explicitly rates 'listening to complaining is annoying' with an 'Almost like a 3' which the therapist accepts as a 3. Later, the therapist asks for a rating on the friend being a 'support worker' and the client explicitly answers 'Oh, three'. Both points are accurately captured without hallucination.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:32.915Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3fa3827c-4b51-49cc-bd3a-cefb8a3bf562",
+    "questionId": "t6",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "The client assigned that point **a strength rating of “1”** (i.e., very weak or anecdotal evidence).  \n\n**Reason:** The therapist clarified that the only basis for the item was a single observation (“the friend hasn’t gossiped about her in the past”), and the client was not certain it was a proven fact. Because it was essentially an isolated anecdote with no corroborating data or broader pattern, it was labeled as a weak piece of evidence.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 90,
+          "reasoning": "The response accurately identifies the strength rating as '1' based on the transcript. It captures the essential reasoning provided by the client, which was 'Not that I'm aware,' indicating a lack of definitive knowledge rather than a proven fact. While the therapist helped facilitate the rating, the response correctly identifies the client's uncertainty as the reason for the low score.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:34.614Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e948255d-45be-4a9d-9766-69e21a5da15a",
+    "questionId": "t7",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "It may be true that I’m scared of bothering people. And it is also true that I have good friends who can support me.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response is highly faithful to the context text, capturing the core elements of the balanced thought. However, it slightly misses the final refinement where the therapist and client specifically agreed to include the phrase 'can and do' support me, whereas the response only says 'can' support me.",
+          "flags": [
+            "Minor exclusion of the specific phrase 'and do' which was emphasized in the final moments of the dialogue."
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:36.652Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "12cddf19-20f1-4db9-bdff-f1c9b50a6822",
+    "questionId": "t8",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "**Before the thought‑record exercise (i.e., while the “hot thought” was still unchallenged)**  \n- Anxiety: **40 %**  \n- Fear: **60 %**\n\n**After the thought was restructured (the balanced, more adaptive thought)**  \n- Anxiety: **20 %**  \n- Fear: **30 %**",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. The client explicitly states her initial anxiety was 40% and fear was 60%. After the thought record exercise and restructuring, she re-rates her anxiety as 20% and her fear as 30%. The evaluation follows all rubric requirements and accurately differentiates between these two distinct emotions.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:38.506Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2a7cddfc-967f-40a6-beae-8da02a2fdaf2",
+    "questionId": "t9",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "In the homework experiment the client noted that as her anxiety starts to rise she can see it in her body by “feeling a knot in her stomach and a little bit shaky.”",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text. The client specifically identifies 'the knot in my stomach' and feeling 'a little bit shaky' as the physical sensations of her anxiety. Additionally, the response avoids all the forbidden terms; notably, it does not mention a 'panic attack', which the client explicitly distinguished from her expected level of anxiety during the session.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:40.481Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d240d549-8dac-4a06-b2e6-6aef6aeea123",
+    "questionId": "t10",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2025-12-31T00:14:00.827Z",
+    "response": "The client decided to **keep the evidence in a visual form**—they would *take a photo of their thought‑record paper before the call and keep that picture handy.* If their anxiety starts to spike, they would refer back to that picture to remind themselves of the evidence and the new, balanced thought.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the source text. It accurately identifies the specific obstacle ('too scared to reach out'/'too anxious') and the exact strategy agreed upon. The transcript explicitly shows the therapist suggesting taking a picture of the whiteboard to refer to if anxiety peaks, and the client agrees to this as the plan to overcome the obstacle.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:42.444Z"
+        }
+      ]
+    }
   }
 ]

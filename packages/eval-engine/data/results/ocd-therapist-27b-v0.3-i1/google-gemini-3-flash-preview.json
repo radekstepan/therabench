@@ -782,5 +782,489 @@
         }
       ]
     }
+  },
+  {
+    "runId": "2cbdb229-b951-4ffe-b03f-de03d8c55427",
+    "questionId": "t1",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "The therapist made the joke: \"You wanna be careful not to should all over yourself.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. The context explicitly records the therapist saying: 'You wanna be careful not to should all over yourself.' The response captured this quote exactly, satisfying all requirements of the rubric and avoiding generic variations.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:44.601Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a2f35859-5d55-462f-915e-d327d821b3b1",
+    "questionId": "t2",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "According to the text, the client felt “not ready” in the **middle of the conversation**, specifically when her friend started talking about checking in on *her* and wanting to know how *she* was doing. Before this point, she was okay with discussing plans for coffee.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. It correctly identifies the 'middle of the conversation' as the timing and specifies the exact trigger: the shift from neutral coffee plans to personal inquiry ('checking in on me and wanting to know how am I doing'). It accurately notes her initial comfort with the coffee invitation, which aligns with the transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:46.435Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "71b3e621-a10a-4363-8e92-1d96e77e862f",
+    "questionId": "t3",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "According to the transcript, the \"stop sign\" metaphor operates in two ways: \n\n1. **She puts up a “stop” for herself:** When her friend starts asking about *her* wellbeing (“when he started asking about me”), she feels an immediate urge to shut down and not share, as if putting up a stop sign to prevent herself from going there emotionally. She describes this feeling as \"I don't want to talk about it.\"\n\n2. **She anticipates her friend will put up a “stop” for himself:** The client also believes that when *she* expresses negative feelings (\"if I bother him, then they won’t be my friends anymore\"), her friend might not be ready to hear it and will put up a \"stop\" sign too – refusing to listen or support. She feels he's “not ready” for the truth about how she's feeling.\n\n\n\nIn essence, it represents both her internal self-protection mechanism *and* an anticipation of rejection from her friend if she reveals vulnerability.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context and perfectly captures the specific 'two ways' the client described her 'stop sign' metaphor. It correctly identifies the first way (client side) as 'Stop and don't say it' and the second way (friend side) as 'Stop for you to don't ask.' It grounded the explanation in the client’s concern that people aren't ready to hear the truth about her depression, aligning exactly with the transcript and avoiding the prohibited generic interpretations.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:48.667Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "68a1a090-1e89-4dbe-9599-c7d9359d566b",
+    "questionId": "t4",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "The therapist described Judge Judy’s personality as **strong** and a bit **gruff**, noting she wasn't \"wishy-washy\" or gentle and didn't take any kind of evidence easily.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The therapist's description of Judge Judy is accurately reflected in the response. The therapist specifically used the descriptors 'strong personality', 'a little bit mean', and 'a little bit gruff'. They also used the specific phrases 'wishy-washy' and 'gentle' as negative descriptors (what she is not), all of which appear in the response.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:50.478Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2024a964-a3e7-432e-8b4d-cc65f13f35ca",
+    "questionId": "t5",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "According to the text:\n\n*   The evidence that “listening to complaining is annoying” was assigned a strength rating of **three**.\n*   The evidence that the friend is a “support worker” was assigned a strength rating of **three**.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. For 'listening to complaining is annoying', the client explicitly said 'Almost like a three' and the therapist confirmed 'I'll put the three down'. For 'support worker', the client explicitly rated it as a 'three' when asked, noting it as fact.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:52.297Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "690733d8-742f-4960-9d80-cd748f63bd4e",
+    "questionId": "t6",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "The client rated the evidence that the friend \"hasn't gossiped about her in the past\" as a **one** (weakest level of strength). \n\nThe reasoning given for this low rating was simply that **they don't *know* he hasn't gossiped**, it's just something they haven’t heard or experienced firsthand. It wasn’t stated as absolute fact, and therefore couldn’t be rated higher.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly captures the details found in the transcript. The client explicitly rated the 'no gossip' evidence as a 'one' after stating 'Not that I'm aware' when asked if he kept secrets. The counselor then confirmed this by saying 'We don't know,' which matches the response's reasoning that the evidence is weak because it is based on a lack of knowledge rather than a proven fact.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:54.369Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a4a3f117-71c2-4998-8f24-67b82fad6a2e",
+    "questionId": "t7",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "“It may be true that I’m scared of bothering people, and it is also true that I have good friends who can support me.”",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response is highly faithful to the final dialogue between the therapist and Ally. It captures the 'It may be true that...' and 'It is also true that...' structure perfectly. It includes the specific nuance of 'friends who can support me' which Ally explicitly resonated with. However, it slightly misses the very last-second therapist suggestion of 'can and do,' though the therapist phrased it as a choice ('can and do' or 'can') and Ally had already affirmed the 'can support me' phrasing. Overall, it is an extremely accurate representation of the agreed-upon balanced thought.",
+          "flags": [
+            "Omitted 'and do' from the therapist's final suggestion, though Ally had already voiced agreement with 'can support me'."
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:57.127Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "203e4003-d415-4a86-a449-6653efda5c8c",
+    "questionId": "t8",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "Here’s a comparison of Ally’s self-rated Anxiety and Fear levels before and after restructuring the ‘Hot Thought’:\n\n**Before Restructuring:**\n\n*   **Anxiety:** 40%\n*   **Fear:** 60%\n\n**After Restructuring:**\n\n*   **Anxiety:** 20%\n*   **Fear:** 30%\n\n\n\n",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. Ally initially rates her anxiety at 40% and her fear at 60%. After the thought restructuring exercise, she specifically updates these values to 20% and 30% respectively. The response accurately captures these specific data points without including extraneous ratings like sadness, as specified by the rubric.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:54:59.135Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "444f4a86-2e6c-4d35-9c52-f0d94d8455c2",
+    "questionId": "t9",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "According to the text, the client identified a \"knot in [her] stomach\" and feeling \"shaky\" as physical sensations indicating that her anxiety is rising. She also planned to rate the level of anxiety on a scale of 1-10.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the source text. It accurately identifies 'knot in my stomach' and 'shaky' as the specific physical sensations mentioned by the client. It also correctly captures the secondary detail about rating the anxiety, while strictly following the negative constraints by distinguishing it from a panic attack (as the text states 'it's not having a panic attack').",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:00.981Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "592a2415-2fd7-47bc-81b9-bf3370e34e28",
+    "questionId": "t10",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T23:12:59.505Z",
+    "response": "The client agreed to write down taking a picture of the completed thought record (with all the evidence and restructuring) as a way to remind themselves when feeling anxious about reaching out. This would serve as a reference point to help them challenge their anxiety and remember the positive reasons for connecting with their friend.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is entirely faithful to the transcript. When the therapist suggests taking a picture of the whiteboard to use as a reminder if anxiety peaks, the client explicitly agrees ('I'm going to write picture... and I will know that it's there it is'). The response accurately captures this strategy and its intended purpose without including any forbidden hallucinations like deep breathing.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:02.701Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5d6a69f2-de86-4014-bb22-868b33c3e821",
+    "questionId": "t1",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "The therapist made the joke, \"You wanna be careful not to should all over yourself.\" (Transcript lines 123-124)",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. The therapist explicitly says, 'You wanna be careful not to should all over yourself' (line 124 in the provided text). The response accurately identifies the specific wordplay used and satisfies the rubric requirements exactly.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:04.462Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5b9a418f-280f-4646-b10e-fb3d11d60a6d",
+    "questionId": "t2",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "The client felt “not ready” when her friend started talking about checking in on *her* and wanting to know how *she* was doing, which occurred in the middle of their conversation. (Page 6, lines 125-130).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context. It correctly identifies the 'middle of the conversation' as the timing and labels the specific trigger accurately: when the friend switched from social planning (coffee) to checking in on her well-being. It adheres perfectly to the rubric by including the transition from being 'okay' with the coffee invite to the 'not ready' feeling during the check-in.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:06.428Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e23eae93-5feb-439e-9b03-210163ef5d74",
+    "questionId": "t3",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "According to the transcript, the \"stop sign\" metaphor operates in two ways: it represents Ally’s internal desire for her friend not to ask about how she is doing (\"You don't want to hear it\"), and simultaneously, a desire to not ask her friend how he is doing or share with him (“I don't want to talk about it”). (See lines 218-230).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response accurately identifies the bidirectional nature of the stop sign as described in the transcript (lines 218-230). It correctly highlights that it acts as a barrier for the client ('don't say it') and as a perceived barrier for the friend ('don't ask'). The interpretation of 'you don't want to hear it' aligns perfectly with the client's statement that people aren't ready to hear about her depression. The only minor nuance is the phrasing 'desire to not ask her friend,' whereas the transcript emphasizes the stop sign serves to prevent the friend from asking her, but it captures the core 'mutual avoidance' concept required by the rubric.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:08.657Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8575793b-8922-4112-b86b-130cf16cfb0c",
+    "questionId": "t4",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "The therapist described Judge Judy as \"strong\" and \"not wishy-washy.\" She also mentioned that Judge Judy can be “a little mean.”",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context text. It correctly identifies the therapist's description of Judge Judy as having a 'very strong personality' and not being 'wishy-washy.' It also accurately includes the therapist's additional descriptor of her being 'a little mean.' All three points are explicitly stated in the transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:10.584Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ff0d0cba-1baf-4347-bb1d-e92fabbc66e2",
+    "questionId": "t5",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "According to the transcript, the evidence that \"listening to complaining is annoying\" was assigned a rating of **three**. The evidence that the friend is a “support worker” was assigned a rating of **three** as well.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. In the text, when discussing the evidence that 'listening to complaining is annoying', the client specifically says 'Almost like a three' and the therapist confirms by saying 'I'll put the three down'. Regarding the friend being a 'support worker', the therapist asks for a rating from one to three and the client explicitly responds with 'Oh, three.'",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:12.554Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "24ce686d-5e28-41e5-a551-8e4a017a7804",
+    "questionId": "t6",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "The client rated the evidence that the friend \"hasn’t gossiped about her in the past\" as a one (weak). The reasoning stated was, “we don’t know.” [lines 470-472]",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the source transcript. The therapist and client specifically discuss the evidence that the friend doesn't gossip, and the client assigns it a 'one'. The reasoning given in the transcript matches the response: the client says 'Not that I'm aware' and the therapist clarifies with 'We don't know,' which the client confirms.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:14.579Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9c98c499-53c7-42aa-b572-6781cb4d129c",
+    "questionId": "t7",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "\"It may be true that I'm scared of bothering people, and it is also true that I have good friends who can support me.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response accurately captures the 'Balanced Thought' structured by the therapist and client during the session. It correctly identifies the two halves of the statement: the validation of the fear of bothering others and the acknowledgement of supportive friends. It adheres to the specific phrasing suggested at the end of the dialogue where the client agreed to include 'can and do support me'.",
+          "flags": [
+            "Minor punctuation difference: The final agreed-upon phrase included 'can and do', which the response captures, though the transcript flows between 'can' and 'can and do' repeatedly."
+          ],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:16.984Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4e929899-d352-4839-a10e-571d1eec83f7",
+    "questionId": "t8",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "Before restructuring the thought, the client rated their **Anxiety** at **40%** and their **Fear** at **60%**.\n\nAfter restructuring the thought, the client revised their **Anxiety** to **20%** and their **Fear** to **30%**.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context. It accurately identifies '40%' for anxiety and '60%' for fear as the initial ratings provided by Ally. It also captures the revised ratings correctly: '20%' for anxiety and '30%' for fear, which Ally states as the new ratings after the thought restructuring exercise. The response adheres to the negative constraints by excluding sadness and providing exact numbers rather than approximations.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:19.069Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9c9b341b-7fee-42e9-af22-c00777a222e5",
+    "questionId": "t9",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "The client identified a “knot in [her] stomach” and feeling “a little bit shaky” as physical sensations indicating that her anxiety is rising (lines 849-852).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. In the dialogue, Ally specifically mentions feeling a 'knot in my stomach' and being 'a little bit shaky' to describe her anxiety rising during the homework prediction phase. Furthermore, the response correctly avoids the prohibited terms, as the client explicitly stated, 'it's not having a panic attack.'",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:20.943Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8a9a3316-e230-4e9c-93bc-2e4bc6848754",
+    "questionId": "t10",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2025-12-30T22:55:16.902Z",
+    "response": "The client agreed to write down “picture” and refer to it if their anxiety gets high, reminding themselves of all the positive information gathered during the session (lines 726-731).",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is highly faithful to the context. It accurately identifies that the client agreed to take a picture of the whiteboard/evidence as a coping strategy for the identified obstacle (anxiety). The response correctly reflects the conversation where the therapist suggests taking a picture and the client writes down 'picture' as the plan to combat the anxiety obstacle.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T02:55:22.948Z"
+        }
+      ]
+    }
   }
 ]

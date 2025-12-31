@@ -917,5 +917,297 @@
         }
       ]
     }
+  },
+  {
+    "runId": "fa994be0-0744-4bf5-9733-fd0e72b2a9c3",
+    "questionId": "t1",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the transcript, the specific \"bad therapy joke\" the therapist made about 'should' statements was: \"You wanna be careful not to should all over yourself.\"",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response accurately captures the specific 'bad therapy joke' directly from the transcript. The therapist states: 'Do you know my bad therapy joke for shoulds? No. You wanna be careful not to should all over yourself.' The response includes the exact phrase 'You wanna be careful not to should all over yourself' which is the complete joke as presented in the context. The response is grounded, faithful to the source material, and avoids generic variations or paraphrasing. The only minor consideration is that the response could have noted this was introduced as the therapist's self-identified 'bad therapy joke,' but this is a very minor omission that doesn't affect accuracy.",
+          "flags": [
+            "Minor: Response doesn't explicitly note this was framed as the therapist's 'bad therapy joke' in the original exchange, though the query already establishes this context"
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:46:54.473Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "af601621-9bce-4d66-a762-08cc8977bd93",
+    "questionId": "t2",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the provided transcript, the client felt they were 'not ready' in the middle of the conversation when the friend started asking about the client's own well-being.\n\n**Specific details from the text:**\n*   The therapist asks: \"did it show up right at the beginning of the conversation, near the end, in the middle?\" The client responds: \"Like, in the middle of the conversation\" (lines 121-124).\n*   The client clarifies: \"first he was talking about, um, gathering together, have coffee, and I was kind of okay with that. But when he started talking about, uh, checking in on me and wanting to know how am I doing, I was like, 'No, I'm not ready.'\" (lines 125-130).\n*   The therapist summarizes: \"So middle of the conversation was okay, but when he started to ask you about yourself... That's when you sort of felt... you're not ready.\" (lines 131-134).",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates high faithfulness to the context text. It accurately identifies the key temporal marker ('middle of the conversation') and correctly specifies the triggering moment ('when the friend started asking about the client's own well-being'). The response includes all must-include elements: (1) 'middle of the conversation' - explicitly stated and supported by direct quotes, and (2) 'when he started checking in on me / asking how am I doing' - accurately captured with relevant transcript excerpts. The response appropriately avoids the must-avoid pitfalls: it does not conflate the coffee-gathering portion (which the client was 'okay with') with the 'not ready' moment, and correctly distinguishes between the initial phone call and the specific point of discomfort. The supporting quotes are accurate and well-integrated (lines 121-134). The response provides clear sequential context showing the client was initially receptive to coffee plans but withdrew when personal inquiry began. The only minor limitation is that the response could have been slightly more concise, but this does not constitute a faithfulness issue.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95,
+            "accuracy_of_temporal_details": 95,
+            "inclusion_of_required_elements": 100,
+            "avoidance_of_prohibited_elements": 100,
+            "quote_accuracy": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:46:58.919Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "17593da3-ac57-4fb3-b066-e6f16e1eba13",
+    "questionId": "t3",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the transcript, the 'stop sign' operates in two ways:\n\n1.  **Stop for the client:** \"don't say it to me\" – The client stops herself from sharing her feelings (\"Bad,\" \"Feeling all upset,\" \"I have been very depressed\").\n2.  **Stop for the friend:** \"don't ask\" – It signals for the friend to stop asking about her.\n\nThe client explicitly states: \"the stop sign goes both ways. Stop and don't... don't say it to me... And it's stop for you to don't ask.\" (Transcript lines: \"People is not ready to hear that... So the stop sign goes both ways. Stop and don't... don't say it to me... And it's stop for you to don't ask.\")",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates high faithfulness to the transcript. It accurately identifies and explains the two-way operation of the 'stop sign' metaphor as explicitly stated by the client and therapist. The response correctly captures: (1) the client's direction ('don't say it to me' / don't share feelings), (2) the friend's direction ('don't ask'), and (3) the underlying reason (people aren't ready to hear about depression). The response includes direct quotes from the transcript, which enhances accuracy. The explanation of 'mutual avoidance' is implicit in the bidirectional nature described. All required rubric elements are present: the stop for client (don't tell), stop for friend (don't ask), the belief about people not being ready, and the concept of mutual avoidance. The response avoids generic interpretations and stays grounded in the specific clinical context of the client's depression and anxiety.",
+          "flags": [
+            "Minor: The response could have been more explicit in connecting the 'mutual avoidance' concept to the specific mental health context (depression/anxiety shame), though this is implied rather than stated in the transcript dialogue itself."
+          ],
+          "metrics": {
+            "faithfulness": 92,
+            "rubric_coverage": 100,
+            "quote_accuracy": 95,
+            "contextual_grounding": 90,
+            "avoidance_of_hallucination": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:02.995Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c1244411-6316-405c-a555-057404c0eec1",
+    "questionId": "t4",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the Transcript Context, when introducing the concept of putting thoughts on trial, the therapist described Judge Judy's personality with the following two specific descriptors:\n\n1. \"Very strong personality.\"\n2. \"A little gruff.\" (The therapist states, \"Between you and me, I think she can be a little gruff.\")\n\n**Citations:**\n- The therapist asks, \"How would you describe her personality?\" and the client responds, \"Um, like a very strong personality.\"\n- The therapist then adds, \"Between you and me, I think she can be a little gruff.\"",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 75,
+          "reasoning": "The response accurately identifies two descriptors from the transcript: 'very strong personality' and 'a little gruff.' Both are directly quoted and properly cited from the therapist's dialogue. However, the response is incomplete relative to the rubric requirements. The rubric specifies that the response 'Must Include' five specific descriptors: (1) Strong personality ✓, (2) A little mean ✓ (mentioned by therapist: 'sometimes she's a little mean'), (3) A little gruff ✓, (4) Not wishy-washy ✓ (therapist: 'Is she someone who's kind of wishy-washy'), and (5) Not gentle ✓ (therapist: 'gentle and takes any kind of evidence'). The response provides only 2 of the 5 required descriptors, even though all five are present in the source material. The response is faithful to what it includes but fails to capture the complete set of personality descriptors the therapist actually used. The citations provided are accurate and properly grounded in the transcript.",
+          "flags": [
+            "Incomplete answer: Only 2 of 5 required descriptors listed per rubric",
+            "Missing descriptors: 'a little mean,' 'not wishy-washy,' 'not gentle' were all mentioned by therapist but omitted from response",
+            "Prompt asked for 'at least two' but rubric indicates all five should be included for comprehensive accuracy"
+          ],
+          "metrics": {
+            "faithfulness": 75,
+            "completeness": 40,
+            "accuracy_of_cited_material": 100,
+            "adherence_to_rubric": 40,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:08.314Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "725a1a92-fe5a-4a45-885a-179ed90e7056",
+    "questionId": "t5",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the Transcript Context:\n\n1. The evidence that \"listening to complaining is annoying\" was assigned a rating of **3** (strong evidence).  \n   *Citation:* The client says, \"Almost like a three,\" and the therapist confirms, \"A three.\"\n\n2. The evidence that the friend is a \"support worker\" was assigned a rating of **3** (strong evidence).  \n   *Citation:* When asked to rate it, the client responds, \"Oh, three,\" and the therapist confirms, \"Three.\"",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates strong faithfulness to the context text. Both key pieces of information are accurately extracted and correctly cited:\n\n1. For 'listening to complaining is annoying': The response correctly identifies the rating as 3 (strong evidence) and accurately quotes the client saying 'Almost like a three' and the therapist confirming 'A three.' This is verifiable in the transcript where the therapist explicitly states: 'A three. (laughs)' after the client responds 'Almost like a three.'\n\n2. For 'support worker': The response correctly identifies the rating as 3 (strong evidence) and quotes the client responding 'Oh, three' when asked to rate this evidence. This is accurate to the transcript exchange: 'Therapist: One to three? One, two or three? Client: Oh, three. Therapist: Three.'\n\nThe response includes proper citations for both pieces of evidence, making it fully traceable. The answer directly addresses the query without speculation, and both ratings meet the rubric requirements. The formatting is clear and professional. The only minor limitation is that the response could have noted the therapist's clarifying question about 'constant complaining' versus 'always annoying,' though this doesn't undermine the core accuracy of the final rating assignment.",
+          "flags": [
+            "Minor: The response doesn't note that the therapist briefly probed the 'complaining' evidence with clarifying questions before confirming the 3-rating, though this doesn't affect accuracy of the final assignment"
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "citation_accuracy": 100,
+            "completeness": 90,
+            "relevance_to_query": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:13.177Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "30d14275-199b-4e0b-b768-9c899eb6adba",
+    "questionId": "t6",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the provided transcript:\n\nThe client rated the evidence that her friend \"hasn't gossiped about her in the past\" as a **one (1)**. The specific reasoning for this low rating was that she stated, **\"Not that I'm aware,\"** indicating a lack of certain knowledge on the matter.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates excellent faithfulness to the context text. It accurately identifies the rating of '1' and correctly captures the client's reasoning of 'Not that I'm aware.' The response directly quotes the transcript and maintains precise fidelity to what was stated. The therapist's follow-up clarification ('So, what would you put it-' 'A one maybe? Sure. We don't know.') further reinforces this assessment, and the response appropriately acknowledges the uncertainty implicit in the client's answer. The response avoids the pitfalls listed in the rubric by not inflating the rating or providing generic reasoning about trustworthiness. The only minor limitation is that the response could have included the therapist's confirming statement ('We don't know') for additional grounding, though this is a minimal omission.",
+          "flags": [
+            "Minor: Response could have included the therapist's validation ('We don't know') for additional textual support, though the core answer is entirely accurate"
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "accuracy": 95,
+            "completeness": 90,
+            "rubric_compliance": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:16.943Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4073160c-3591-4193-ac1f-a544cc8442b0",
+    "questionId": "t7",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the transcript, the final balanced thought constructed by the client and therapist is:\n\n**\"It may be true that I'm scared of bothering people, and it is also true that I have good friends who can and do support me.\"**\n\nThis is directly stated by the client and therapist in the dialogue:\n*   The client proposes: \"It may be true that I'm scared of bothering people... and it is also true that I have good friends.\"\n*   The therapist then suggests adding \"who can support me,\" to which the client agrees and refines to \"who can and do support me.\"\n*   The therapist then writes down the final version: \"It may be true that I am scared of bothering people, and it is also true that I have good friends who can and do support me.\"",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates exceptional faithfulness to the context text. The therapist accurately extracted the final balanced thought exactly as it was collaboratively constructed and refined during the session. The response includes all three essential components from the rubric: (1) 'It may be true that I'm scared of bothering people' - directly sourced from client's proposal, (2) 'It is also true that I have good friends' - from client's initial formulation, and (3) critically, 'who can and do support me' - the precise refinement that was negotiated between client and therapist. The response also includes direct quotes from the transcript showing the construction process, which demonstrates rigorous grounding. The response correctly avoids the hot thought ('I shouldn't bother him') and does not substitute an inferior paraphrase. The therapist's final documentation in the transcript ('It may be true that I am scared of bothering people, and it is also true that I have good friends who can and do support me') is accurately represented. The minor variation between 'I'm scared' and 'I am scared' is inconsequential and reflects natural linguistic variation both present in the session.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95,
+            "accuracy_of_extraction": 95,
+            "inclusion_of_required_elements": 100,
+            "avoidance_of_prohibited_elements": 100,
+            "direct_quote_alignment": 98,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:21.485Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e2d11d58-9ec6-4362-80f5-a3320b89cac8",
+    "questionId": "t8",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based solely on the provided transcript:\n\n**Before the exercise:**\n- **Anxiety:** 40%\n- **Fear:** 60%\n\n**After the thought was restructured:**\n- **Anxiety:** 20%\n- **Fear:** 30%\n\n**Citation:** The therapist asks for ratings before the exercise: \"how anxious would you say you were feeling... I think like 40... Same thing with fear... I think 60.\" After restructuring, the client states: \"Anxiety will be like a 20... the fear... maybe at a 30.\"",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates excellent faithfulness to the context text. It accurately identifies all four required emotional rating changes: Anxiety 40%→20%, Fear 60%→30%. The response correctly distinguishes between anxiety and fear (avoiding the common error of conflating them), provides specific numerical data without approximations, and appropriately avoids including sadness ratings in the primary comparison despite sadness also changing during the exercise. The citations are precise, quoting directly from the transcript at the relevant moments when ratings were established. The response is concise, well-organized, and directly answers the query without extraneous information.",
+          "flags": [
+            "Minor: Response could have been slightly more explicit about noting the therapist's color-change technique when re-rating emotions, though this is a very minor omission that doesn't affect accuracy"
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "accuracy_of_numbers": 100,
+            "citation_precision": 100,
+            "avoidance_of_confusion": 100,
+            "relevance_to_rubric": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:25.501Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7ffee7b8-74f5-42a4-bd22-6c6ec104684d",
+    "questionId": "t9",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the Transcript Context, the client identified \"a knot in my stomach\" and feeling \"a little bit shaky\" as the specific physical sensations that indicate her anxiety is rising.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates excellent faithfulness to the context text. The clinician explicitly asked the client about physical sensations of anxiety, and the client provided two specific indicators: (1) 'a knot in my stomach' and (2) 'a little bit shaky.' The response accurately captures both of these direct quotes from the transcript. The response correctly avoids mentioning any symptoms not identified by the client (sweating, rapid heartbeat, headache) and appropriately notes that the client explicitly stated 'it's not having a panic attack,' which the response does not include. The answer is concise, grounded entirely in the dialogue, and directly answers the query with precision. The only minor consideration is that the response could have included slightly more context about how these sensations were elicited during the homework planning discussion, but this omission does not constitute a factual error.",
+          "flags": [
+            "No significant issues detected",
+            "Response is highly accurate and grounded in transcript"
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "accuracy": 100,
+            "completeness": 95,
+            "hallucinationRisk": 0,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:29.290Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d40cd8ce-560d-44ee-ae81-6fd9f8d9e080",
+    "questionId": "t10",
+    "modelName": "deepseek/deepseek-v3.2",
+    "timestamp": "2025-12-30T22:30:39.377Z",
+    "response": "Based on the transcript, the client agreed to write down \"picture\" as a specific coping strategy to overcome the obstacle of being too anxious to reach out. This refers to taking a picture of the whiteboard/thought record to review when anxiety peaks, as suggested by the therapist. The client states, \"I'm going to write picture... and I will know that it's... there it is\" (cited from the dialogue near the end of the session).",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates high faithfulness to the context text. The therapist and client explicitly discussed taking a picture of the thought record as a coping strategy to manage anxiety obstacles. Key supporting evidence from transcript: (1) Therapist states: 'maybe what I could do is... or maybe you could take a picture of this before you leave, and if your anxiety gets really high, you can refer to this pic- to the picture and remind yourself... of all of this positive information you've got for him.' (2) Client confirms: 'I'm going to write picture... and I will know that it's... there it is.' (3) The strategy is tied directly to reviewing evidence: 'to remind yourself... of all of this positive information.' The response accurately captures the core strategy (picture/photograph of the evidence board) and correctly attributes it to the therapy dialogue. The response includes all 'Must Include' elements: picture, looking at the picture, and the connection to evidence. It avoids all 'Must Avoid' strategies. Minor deduction (8 points) only because the response could have been more explicit about the full mechanism (taking a picture AND referring back to it when anxiety peaks, though both elements are present).",
+          "flags": [
+            "Response is highly accurate with minimal room for improvement",
+            "No hallucinated content detected",
+            "Strategy appropriately grounded in explicit therapist-client exchange"
+          ],
+          "metrics": {
+            "faithfulness": 92,
+            "includes_required_elements": true,
+            "avoids_prohibited_content": true,
+            "direct_quotations_accurate": true,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2025-12-31T02:47:34.631Z"
+        }
+      ]
+    }
   }
 ]

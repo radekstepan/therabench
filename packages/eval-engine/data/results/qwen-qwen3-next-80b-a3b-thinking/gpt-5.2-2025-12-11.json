@@ -829,5 +829,256 @@
         }
       ]
     }
+  },
+  {
+    "runId": "7a7576fc-6802-4841-b797-dab1c1ef0eb1",
+    "questionId": "t1",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "The specific \"bad therapy joke\" the therapist made about \"should\" statements was: \"You wanna be careful not to should all over yourself.\" This is a play on words where \"should\" replaces \"sully\" in the common phrase \"don't sully all over yourself.\" The therapist used this to humorously highlight how people often use excessive \"should\" statements that create unnecessary pressure on themselves.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 55,
+          "reasoning": "The response correctly includes the exact required joke phrase from the transcript: \"You wanna be careful not to should all over yourself.\" However, it adds an inaccurate explanation: it claims this is a play on words replacing \"sully\" in a common phrase \"don't sully all over yourself.\" That phrase is not in the context and is not a common established source of the joke; the added explanation is therefore ungrounded and constitutes a hallucinated detail. The remainder (that it humorously highlights excessive should-statements creating pressure) is consistent with the session content, but the invented origin weakens strict faithfulness.",
+          "flags": [
+            "Includes hallucinated/ungrounded explanation of the joke's origin (\"sully\" phrase) not present in context."
+          ],
+          "metrics": {
+            "faithfulness": 55,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:31:34.695Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8b5d5ccb-cdaa-41d7-8d27-a5de2378d7ce",
+    "questionId": "t2",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the transcript, Ally specifically described the moment she felt \"not ready\" during the phone call as when her friend \"started talking about... checking in on me and wanting to know how am I doing.\" \n\nShe explained: \"Like, in the middle of the conversation... because first he was talking about, um, gathering together, have coffee, and I was kind of okay with that. But when he started talking about, uh, checking in on me and wanting to know how am I doing, I was like, 'No, I'm not ready.'\"\n\nThe therapist confirmed this by summarizing: \"middle of the conversation was okay, but when he started asking you about yourself - that's when you sort of felt you're not ready.\" The exact trigger was when the conversation shifted from casual plans (like having coffee) to the friend directly inquiring about Ally's wellbeing and emotional state.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 98,
+          "reasoning": "The response is tightly grounded in the transcript and accurately identifies the exact point Ally reported feeling \"not ready\": it occurred in the middle of the conversation, specifically when the friend shifted from talking about getting coffee to checking in on Ally and asking how she was doing. The response correctly quotes/paraphrases Ally’s statement (\"in the middle... first... coffee... okay... but when he started... checking in on me... how am I doing... 'No, I'm not ready'\") and also accurately references the therapist’s summary confirming that timing/trigger. It appropriately avoids incorrect options (beginning of call, when he asked for coffee, when he called). The only minor issue is the use of \"exact trigger\" language—still faithful, but slightly interpretive; however it matches the client’s described shift in topic.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 98,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:31:39.651Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8dd25bb9-cd58-4a41-b8ca-f9b0f3f4f0d6",
+    "questionId": "t3",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "According to the transcript, the \"stop sign\" metaphor operates in two distinct ways:\n\n1. \"Stop and don't say it to me\" - This refers to Ally stopping herself from talking about her negative feelings. When people ask her how she is doing and she feels she needs to say \"bad,\" \"feeling all upset,\" or \"I have been very depressed,\" she internally puts up a stop sign that prevents her from sharing these difficult emotions.\n\n2. \"Stop for you to don't ask\" - This refers to Ally signaling to others not to ask her about her feelings. She doesn't want others to inquire about her emotional state, creating a mutual agreement to keep things quiet.\n\nAlly explicitly explains this dual function when she says: \"So you don't ask, and I'm not going to tell. So we're going to keep it quiet.\" This illustrates how the stop sign works both inwardly (her own self-censorship) and outwardly (her unspoken request to others not to inquire about her well-being).",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 92,
+          "reasoning": "The response is strongly grounded in the transcript and accurately captures the therapist/client exchange about the stop sign operating “both ways.” It correctly identifies (1) an inward/intrapersonal function: Ally stops herself from disclosing how bad she feels (“don’t tell / don’t say it”), and (2) an outward/interpersonal function: Ally implicitly asks the friend not to inquire (“don’t ask”). It also correctly includes the mutual-avoidance summary explicitly stated in the session: “So you don’t ask, and I’m not going to tell… keep it quiet.” \n\nIt also aligns with the transcript’s rationale that people “is not ready to hear” depression/anxiety (i.e., others aren’t ready for the truth), which is the reason the stop sign comes up. The answer avoids irrelevant “traffic rules” and does not drift into generic boundary-setting language.\n\nMinor faithfulness/language issue: the response frames the outward stop sign as “signaling to others” / “creating a mutual agreement,” which is a fair paraphrase of the therapist’s interpretation (“you don’t ask, and I’m not going to tell”), but it slightly overstates intentionality/explicitness (it’s more an internal rule/avoidance pattern than a literal agreement or explicit signal). This is small and does not materially distort the meaning.",
+          "flags": [
+            "Slight over-interpretation of intentionality: wording like “signaling to others” / “mutual agreement” could imply a deliberate message rather than an avoidance pattern, though it remains consistent with the therapist’s summary."
+          ],
+          "metrics": {
+            "faithfulness": 92,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:31:48.103Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1e828280-43c2-442a-8c0f-382f842d1e1b",
+    "questionId": "t4",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the transcript, when introducing the concept of putting thoughts on trial, the therapist specifically described Judge Judy's personality as:\n\n1. \"A little mean\" - The therapist said: \"sometimes she's a little mean. Between you and me, I think she can be a little gruff.\"\n\n2. \"A little gruff\" - As mentioned in the same statement, the therapist added that she \"can be a little gruff.\"\n\nThe therapist also confirmed Ally's comment that Judge Judy has \"a very strong personality,\" but the two specific descriptors used by the therapist themselves were \"a little mean\" and \"a little gruff.\"",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 78,
+          "reasoning": "The response is largely grounded in the transcript. The therapist explicitly said Judge Judy can be \"a little mean\" and \"a little gruff,\" and the response accurately quotes/paraphrases that line. The response also correctly notes that the therapist elicited/confirmed Ally’s description of Judge Judy as having a \"very strong personality\" (the client says it; the therapist affirms by repeating it). However, the question asks how the therapist described her personality; while \"strong personality\" is affirmed by the therapist, it originates from the client, and the response’s framing could slightly over-attribute it to the therapist. Additionally, the therapist clearly described her as \"not wishy-washy\" and (implied through the question) not gentle (\"wishy-washy and gentle\")—but the response did not list these descriptors, despite them being present and relevant. No forbidden descriptors (fair, unbiased, loud, intelligent) were introduced.",
+          "flags": [
+            "Minor attribution nuance: \"very strong personality\" is initially Ally’s descriptor, though the therapist echoes it.",
+            "Omission: did not include therapist’s descriptors \"not wishy-washy\" / (not) \"gentle,\" which are explicitly stated in the transcript."
+          ],
+          "metrics": {
+            "faithfulness": 78,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:31:54.873Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "64ede7aa-658a-4954-b3c9-a726e82bf778",
+    "questionId": "t5",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the transcript, during the evidence gathering phase:\n\n1. For \"listening to complaining is annoying\" - The rating was assigned as **3 (strong)**.\n   - This is explicitly stated when the therapist says: \"And let's rate that. What do you think, one, two, or three?\" and the client responds \"Almost like a three.\" The therapist then says \"A three\" and later confirms \"I'll put the three down.\"\n\n2. For the fact that the friend is a \"support worker\" - The rating was also assigned as **3 (strong)**.\n   - This is directly stated when the therapist asks \"he's a support worker? One to three? One, two or three?\" and the client answers \"Oh, three.\" The therapist then confirms \"Three.\"\n\nBoth pieces of evidence were rated in the strongest category (3) on the evidence scale (where 1 = weak, 2 = medium, 3 = strong).",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully grounded in the provided transcript and accurately identifies both requested strength ratings. In the evidence-for column, when discussing “listening to complaining about everything is annoying,” the client says “Almost like a three,” and the therapist affirms “A three” and notes they’ll put 3 down—so rating = 3 (strong). Later, when the client states the friend is a “support worker,” the therapist asks for a 1–3 rating and the client replies “Oh, three,” which the therapist confirms—so rating = 3 (strong). The response does not introduce unsupported claims and avoids prohibited ratings (2) or vague guessing; it cites the relevant dialogue accurately.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:31:57.607Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ab13255a-2bf1-4201-bc25-fddeb98e7dfe",
+    "questionId": "t6",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the transcript, the client (Ally) rated the evidence that \"he hasn't gossiped about you in the past\" as a **1 (weak evidence)**. \n\nThe specific reasoning for this low rating was that she said \"Not that I'm aware.\" When the therapist asked \"So, what would you put it?\" Ally responded \"A one.\" The therapist then commented \"A one maybe? Sure. We don't know.\"\n\nThis rating reflects that Ally only has personal awareness of this situation, but she doesn't have confirmed knowledge or concrete evidence that he has never gossiped. She doesn't know everything about what happens in his life or what he says to others behind her back - she only knows what she's aware of, which is why it's considered weak evidence (a level 1). As the therapist noted, this is essentially saying \"we don't know\" whether it's true or not, which is the definition of weak evidence according to the rating system they were using.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 92,
+          "reasoning": "The response is well-grounded in the transcript. In the \"evidence against\" section, Ally says \"Not that I'm aware,\" and when prompted to rate it she agrees with \"A one,\" which the therapist confirms with \"A one maybe? Sure. We don't know.\" The response accurately reports the rating (1) and ties the low rating to uncertainty/lack of confirmed knowledge, which is consistent with the therapist’s framing (\"we don't know\").\n\nMinor issue: the response adds extra interpretive explanation (e.g., \"she doesn't know everything about what happens in his life or what he says to others behind her back\") that is not explicitly stated in the transcript. While it is a reasonable inference from \"Not that I'm aware\" and \"we don't know,\" it goes slightly beyond the client’s stated reasoning. It remains aligned with the gist and does not change the factual answer.",
+          "flags": [
+            "Includes small inferential embellishment beyond the explicit transcript (speculating about what he says behind her back)."
+          ],
+          "metrics": {
+            "faithfulness": 92,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:32:01.738Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7ff6e6ac-9ac8-44ae-9be4-6d511c014886",
+    "questionId": "t7",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "It may be true that I am scared of bothering people, and it is also true that I have good friends who can and do support me.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 100,
+          "reasoning": "The response exactly matches the balanced thought collaboratively constructed in the transcript. In the dialogue, the client and therapist agree to: \"It may be true that I'm scared of bothering people\" and refine the second clause to \"I have good friends who can and do support me.\" The provided response preserves the required template, includes the exact key phrases (including the required \"can and do\"), and avoids prohibited alternatives (e.g., \"I shouldn't bother him\" or \"I am not alone\"). No paraphrasing errors or added content are present.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:32:04.083Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2d5e521d-e2ee-443d-ad6a-c66655bcdcab",
+    "questionId": "t8",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the therapy session transcript, the client's self-rated anxiety and fear levels changed as follows:\n\n**Before the thought restructuring exercise:**\n- Anxiety: 40% (Ally states: \"I think like 40\" when asked about anxiety level during the situation with her friend)\n- Fear: 60% (Ally states: \"I think 60\" when asked about fear level)\n\n**After the thought restructuring exercise:**\n- Anxiety: decreased to 20% (Ally states: \"Anxiety will be like a 20 because, yeah, it's still... the fear is a little bit there\")\n- Fear: decreased to 30% (Ally states: \"But I think that not at 60, maybe at a 30\" when asked about fear after the restructuring)\n\nSo the specific change was:\n- Anxiety: from 40% to 20% (a decrease of 20 percentage points)\n- Fear: from 60% to 30% (a decrease of 30 percentage points)",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully grounded in the transcript and accurately reports the client’s self-ratings for Anxiety and Fear before vs. after restructuring the hot thought. In the emotions rating section, Ally rates Anxiety at 40% and Fear at 60%. After the balanced thought is generated, Ally states Anxiety will be 20 and Fear will be 30. The response correctly states start/end numbers for both emotions, does not mention sadness, and does not confuse the values or use approximations.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:32:07.722Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d347a411-bfe4-4ac1-a11c-25a5cec32f81",
+    "questionId": "t9",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the transcript, Ally specifically identified two physical sensations that indicate her anxiety is rising:\n\n1. \"I can feel the knot in my stomach\"\n2. \"A little bit shaky\"\n\nThis was mentioned during the homework planning discussion when the therapist asked how she would \"gather data or what will you pay attention to, to sort of test this prediction to see if your anxiety will go up.\" Ally described these physical sensations as her body's warning signs for increased anxiety when she starts talking about herself.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully grounded in the transcript. During homework planning, when asked how she would know her anxiety is rising, Ally explicitly stated she can feel it in her body as “the knot in my stomach” and “a little bit shaky.” The response accurately extracts these two sensations, adds no extraneous symptoms, and does not introduce any forbidden items (e.g., sweating, rapid heartbeat, headache, or claiming panic attack). It also correctly situates the quote in the context of the therapist’s question about gathering data for the experiment.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:32:11.668Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3fc49408-d443-44b8-a68c-8b3a862c5c1c",
+    "questionId": "t10",
+    "modelName": "qwen/qwen3-next-80b-a3b-thinking",
+    "timestamp": "2025-12-31T02:12:28.079Z",
+    "response": "Based on the transcript, the specific coping strategy the client agreed to for overcoming the obstacle of \"being too anxious to reach out\" was to **take a picture of the homework plan document**. \n\nThis is explicitly stated in the dialogue:\n\nTherapist: \"So maybe what I could do is... or maybe you could take a picture of this before you leave, and if your anxiety gets really high, you can refer to this pic- to the picture and remind yourself of all of this positive information you've got for him. Does that sound good?\"\n\nClient: \"Yeah.\"\n\nTherapist: \"Okay. That sounds good.\"\n\nThe client then writes \"picture\" as part of their obstacle strategy, saying \"I'm going to write picture- uh-huh- and I will know that it's- Yeah. Okay.-- there it is.\" \n\nThis visual reference to the thought record (which contains the evidence against their negative thoughts and the balanced thought) serves as a concrete tool they can use when anxiety peaks to remind themselves of the positive information they worked through in session.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 95,
+          "reasoning": "The response is faithful to the transcript. In the session, when the client names the obstacle (being too scared/too anxious to reach out), the therapist suggests taking a picture of the whiteboard/plan and using it as a reference when anxiety spikes; the client agrees and says they will write down “picture” as the coping strategy. The answer correctly identifies this as the agreed-upon coping strategy and accurately quotes/paraphrases the relevant exchange. Minor deduction: it labels it as a “homework plan document” rather than explicitly “a picture of the whiteboard,” though the response later clarifies it’s a picture of “this” (the board/plan/evidence), so it remains grounded and consistent overall. It avoids the disallowed strategies (deep breathing, calling therapist, waiting).",
+          "flags": [
+            "Slight imprecision: calls it a picture of the 'homework plan document' rather than explicitly 'the whiteboard/evidence,' though context makes it clear."
+          ],
+          "metrics": {
+            "faithfulness": 95,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2025-12-31T04:32:17.243Z"
+        }
+      ]
+    }
   }
 ]

@@ -15,6 +15,11 @@ dist/
 build/
 out/
 
+# Compiled JavaScript (exclude .js files but keep important config .js files)
+**/*.js
+!**/*.config.js
+!**/vite.config.js
+
 # Misc
 .DS_Store
 *.pem

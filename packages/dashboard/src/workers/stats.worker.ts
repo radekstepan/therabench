@@ -1,5 +1,5 @@
 import { analyzeJudges, calculateModelReliability } from '../lib/stats';
-import { calculateModelCost, getModelLabelSortValue } from '../utils';
+import { calculateModelCost, getModelLabelSortValue, stripEnhancedSuffix } from '../utils';
 import type { 
   ModelRun, 
   QuestionNode, 
@@ -117,21 +117,24 @@ function performCalculations(payload: any, requestId: string) {
               const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
               return assessmentArray.length > 0 ? [assessmentArray[assessmentArray.length - 1].metrics] : [];
             })
-            .filter(metrics => metrics && typeof metrics.safety === 'number');
+            // Only process metrics objects that actually exist
+            .filter(metrics => metrics);
           
           if (selectedAssessments.length > 0) {
-            effectiveSafety = Math.round(
-              selectedAssessments.reduce((a, b) => a + b.safety, 0) / selectedAssessments.length
-            );
-            effectiveEmpathy = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.empathy || 0), 0) / selectedAssessments.length
-            );
-            effectiveModalityAdherence = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.modalityAdherence || 0), 0) / selectedAssessments.length
-            );
-            effectiveFaithfulness = Math.round(
-              selectedAssessments.reduce((a, b) => a + (b.faithfulness || 0), 0) / selectedAssessments.length
-            );
+             // Safe reduction helpers
+             const sum = (key: keyof typeof selectedAssessments[0]) => 
+                selectedAssessments.reduce((a, b) => a + (b[key] || 0), 0);
+             const countValid = (key: keyof typeof selectedAssessments[0]) => 
+                selectedAssessments.filter(b => b[key] !== undefined).length;
+
+             // Safety, Empathy, Modality are standard across CBT/DBT/ACT
+             effectiveSafety = Math.round(sum('safety') / (countValid('safety') || 1));
+             effectiveEmpathy = Math.round(sum('empathy') / (countValid('empathy') || 1));
+             effectiveModalityAdherence = Math.round(sum('modalityAdherence') / (countValid('modalityAdherence') || 1));
+             
+             // Faithfulness is specific to Transcript
+             effectiveFaithfulness = Math.round(sum('faithfulness') / (countValid('faithfulness') || 1));
+             
           } else {
             effectiveSafety = r.aiAssessment?.metrics?.safety || 0;
             effectiveEmpathy = r.aiAssessment?.metrics?.empathy || 0;
@@ -170,70 +173,134 @@ function performCalculations(payload: any, requestId: string) {
     cachedJudgeStats = analyzeJudges(cachedAugmentedResults, overrides, selectedJudges);
 
     // C. Model Statistics (Unsorted)
+    // We now track counts per-metric to avoid diluting averages with 0s from non-applicable questions
     const statsMap: Record<string, { 
       totalScore: number; 
+      scoreCount: number;
+      
       safety: number; 
+      safetyCount: number;
+      
       empathy: number; 
+      empathyCount: number;
+      
       modalityAdherence: number; 
+      modalityAdherenceCount: number;
+      
       faithfulness: number;
-      count: number; 
-      faithfulnessCount: number; // New counter for faithfulness denominator
+      faithfulnessCount: number;
+      
       judgeScoreMap: Record<string, number[]>; 
       uniqueJudges: Set<string>; 
       allScores: number[] 
     }> = {};
+
+    // Helper to store transcript runs for merging into enhanced models
+    const baseTranscriptRuns = new Map<string, AugmentedResult[]>();
     
+    // 1. First Pass: Aggregate everything normally
     cachedAugmentedResults.forEach(r => {
       if (!statsMap[r.modelName]) {
         statsMap[r.modelName] = { 
-          totalScore: 0, 
-          safety: 0, 
-          empathy: 0, 
-          modalityAdherence: 0, 
-          faithfulness: 0,
-          count: 0, 
-          faithfulnessCount: 0,
-          judgeScoreMap: {}, 
-          uniqueJudges: new Set(), 
-          allScores: [] 
+          totalScore: 0, scoreCount: 0,
+          safety: 0, safetyCount: 0,
+          empathy: 0, empathyCount: 0,
+          modalityAdherence: 0, modalityAdherenceCount: 0,
+          faithfulness: 0, faithfulnessCount: 0,
+          judgeScoreMap: {}, uniqueJudges: new Set(), allScores: [] 
         };
       }
-      statsMap[r.modelName].totalScore += r.effectiveScore;
-      statsMap[r.modelName].allScores.push(r.effectiveScore);
-      statsMap[r.modelName].safety += r.effectiveSafety;
-      statsMap[r.modelName].empathy += r.effectiveEmpathy;
-      statsMap[r.modelName].modalityAdherence += r.effectiveModalityAdherence;
-      statsMap[r.modelName].count += 1;
+      const s = statsMap[r.modelName];
+      const isTranscript = r.question.category === 'Transcript';
+
+      // Overall Score
+      s.totalScore += r.effectiveScore;
+      s.scoreCount += 1;
+      s.allScores.push(r.effectiveScore);
       
-      // Only track faithfulness for Transcript questions
-      if (r.question.category === 'Transcript') {
-        statsMap[r.modelName].faithfulness += r.effectiveFaithfulness;
-        statsMap[r.modelName].faithfulnessCount += 1;
+      // Metrics: Only count if relevant for category
+      if (!isTranscript) {
+         s.safety += r.effectiveSafety;
+         s.safetyCount += 1;
+         s.empathy += r.effectiveEmpathy;
+         s.empathyCount += 1;
+         s.modalityAdherence += r.effectiveModalityAdherence;
+         s.modalityAdherenceCount += 1;
+      } else {
+         // It is a transcript
+         if (r.effectiveFaithfulness > 0) {
+            s.faithfulness += r.effectiveFaithfulness;
+            s.faithfulnessCount += 1;
+         }
+         
+         // Store for potential merging if this is a Base model
+         if (!baseTranscriptRuns.has(r.modelName)) {
+           baseTranscriptRuns.set(r.modelName, []);
+         }
+         baseTranscriptRuns.get(r.modelName)!.push(r);
       }
       
+      // Judges aggregation
       if (r.aiAssessments) {
         Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
           if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-            statsMap[r.modelName].uniqueJudges.add(judge);
-            if (!statsMap[r.modelName].judgeScoreMap[judge]) {
-              statsMap[r.modelName].judgeScoreMap[judge] = [];
-            }
+            s.uniqueJudges.add(judge);
+            if (!s.judgeScoreMap[judge]) s.judgeScoreMap[judge] = [];
             const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
             if (assessmentArray.length > 0) {
-              statsMap[r.modelName].judgeScoreMap[judge].push(assessmentArray[assessmentArray.length - 1].score);
+              s.judgeScoreMap[judge].push(assessmentArray[assessmentArray.length - 1].score);
             }
           }
         });
       } else if (r.aiAssessment?.evaluatorModel) {
         const judge = r.aiAssessment.evaluatorModel;
         if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-          statsMap[r.modelName].uniqueJudges.add(judge);
-          if (!statsMap[r.modelName].judgeScoreMap[judge]) {
-            statsMap[r.modelName].judgeScoreMap[judge] = [];
-          }
-          statsMap[r.modelName].judgeScoreMap[judge].push(r.aiAssessment.score);
+          s.uniqueJudges.add(judge);
+          if (!s.judgeScoreMap[judge]) s.judgeScoreMap[judge] = [];
+          s.judgeScoreMap[judge].push(r.aiAssessment.score);
         }
       }
+    });
+
+    // 2. Second Pass: Merge Transcript runs into Enhanced Models
+    // This ensures "Model (Enhanced)" gets the benefit of the high-scoring Transcript runs 
+    // that were technically run on "Model" (Base).
+    Object.keys(statsMap).forEach(modelName => {
+        if (modelName.includes('(Enhanced)')) {
+           const baseName = stripEnhancedSuffix(modelName);
+           const transcriptRuns = baseTranscriptRuns.get(baseName);
+           
+           if (transcriptRuns && transcriptRuns.length > 0) {
+              const s = statsMap[modelName];
+              
+              transcriptRuns.forEach(r => {
+                 // Add to total score
+                 s.totalScore += r.effectiveScore;
+                 s.scoreCount += 1;
+                 s.allScores.push(r.effectiveScore);
+                 
+                 // Add Faithfulness
+                 if (r.effectiveFaithfulness > 0) {
+                    s.faithfulness += r.effectiveFaithfulness;
+                    s.faithfulnessCount += 1;
+                 }
+                 
+                 // Do NOT add Safety/Empathy (Transcripts don't have them)
+                 
+                 // Merge Judge info to ensure Judge Trust stats and details are complete
+                 if (r.aiAssessments) {
+                    Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
+                      if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
+                        s.uniqueJudges.add(judge);
+                        if (!s.judgeScoreMap[judge]) s.judgeScoreMap[judge] = [];
+                        const arr = Array.isArray(assessments) ? assessments : [assessments];
+                        if (arr.length > 0) s.judgeScoreMap[judge].push(arr[arr.length - 1].score);
+                      }
+                    });
+                 }
+              });
+           }
+        }
     });
 
     const modelsToShow: string[] = selectedModels.size === 0 || selectedModels.size === availableModels.length
@@ -275,13 +342,14 @@ function performCalculations(payload: any, requestId: string) {
       return {
         ...reliability,
         name: modelName,
-        avgScore: Math.round(s.totalScore / s.count),
-        avgSafety: Math.round(s.safety / s.count),
-        avgEmpathy: Math.round(s.empathy / s.count),
-        avgModalityAdherence: Math.round(s.modalityAdherence / s.count),
-        // Calculate faithfulness only based on relevant questions
+        // Use the specific counters for averages
+        avgScore: s.scoreCount > 0 ? Math.round(s.totalScore / s.scoreCount) : 0,
+        avgSafety: s.safetyCount > 0 ? Math.round(s.safety / s.safetyCount) : 0,
+        avgEmpathy: s.empathyCount > 0 ? Math.round(s.empathy / s.empathyCount) : 0,
+        avgModalityAdherence: s.modalityAdherenceCount > 0 ? Math.round(s.modalityAdherence / s.modalityAdherenceCount) : 0,
         avgFaithfulness: s.faithfulnessCount > 0 ? Math.round(s.faithfulness / s.faithfulnessCount) : 0,
-        count: s.count,
+        
+        count: s.scoreCount,
         expertCount: s.uniqueJudges.size,
         judgeScores,
         totalCost
@@ -311,7 +379,13 @@ function performCalculations(payload: any, requestId: string) {
         case 'safety': comparison = a.avgSafety - b.avgSafety; break;
         case 'empathy': comparison = a.avgEmpathy - b.avgEmpathy; break;
         case 'modalityAdherence': comparison = a.avgModalityAdherence - b.avgModalityAdherence; break;
-        case 'faithfulness': comparison = a.avgFaithfulness - b.avgFaithfulness; break;
+        case 'faithfulness': 
+          comparison = a.avgFaithfulness - b.avgFaithfulness; 
+          // Tie-breaker: Average Score
+          if (comparison === 0) {
+            comparison = a.avgScore - b.avgScore;
+          }
+          break;
         case 'pricing': comparison = (a.totalCost || 0) - (b.totalCost || 0); break;
         case 'label':
           const labelA = getModelLabelSortValue(a.name);
@@ -325,10 +399,6 @@ function performCalculations(payload: any, requestId: string) {
       return leaderboardSortDirection === 'asc' ? comparison : -comparison;
     })
     .map((stat) => {
-      // Re-calculate ranks based on current sort or score? 
-      // Traditionally ranks are score-based. Let's keep rank fixed on Score.
-      // But we need to assign it.
-      // Let's do a separate sort for ranking if we want rank to be purely score based regardless of display sort.
       return stat;
     });
 
@@ -362,23 +432,47 @@ function performCalculations(payload: any, requestId: string) {
     const allExperts: string[] = selectedJudges.size > 0 ? Array.from(selectedJudges) : availableJudges;
     
     finalModelStats.forEach(stat => {
-      const modelRuns = cachedAugmentedResults!.filter(r => r.modelName === stat.name);
-      const expertQuestionCounts: Record<string, Set<string>> = {};
+      // Reconstruct the set of runs valid for this model
+      let modelRuns = cachedAugmentedResults!.filter(r => r.modelName === stat.name);
+      
+      // If Enhanced, also include Transcript runs from the base model
+      if (stat.name.includes('(Enhanced)')) {
+          const baseName = stripEnhancedSuffix(stat.name);
+          const transcriptRuns = cachedAugmentedResults!.filter(r => 
+             r.modelName === baseName && r.question.category === 'Transcript'
+          );
+          
+          // Add them if not already present (using runId for uniqueness)
+          const existingIds = new Set(modelRuns.map(r => r.runId));
+          transcriptRuns.forEach(tr => {
+              if (!existingIds.has(tr.runId)) {
+                  modelRuns.push(tr);
+              }
+          });
+      }
+      
+      const runsForModel = modelRuns.length;
+      if (runsForModel === 0) return; // No runs to review
+
+      const expertRunCounts: Record<string, Set<string>> = {};
+      
       modelRuns.forEach(run => {
         if (run.aiAssessments) {
           Object.keys(run.aiAssessments).forEach(judge => {
             if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-              if (!expertQuestionCounts[judge]) expertQuestionCounts[judge] = new Set();
-              expertQuestionCounts[judge].add(run.questionId);
+              if (!expertRunCounts[judge]) expertRunCounts[judge] = new Set();
+              expertRunCounts[judge].add(run.runId);
             }
           });
         }
       });
+
       allExperts.forEach(expert => {
-        const questionsReviewed = expertQuestionCounts[expert]?.size || 0;
-        if (questionsReviewed < totalQuestions) {
+        const runsReviewed = expertRunCounts[expert]?.size || 0;
+        // Only show if the judge has reviewed fewer runs than exist for this model
+        if (runsReviewed < runsForModel) {
           if (!expertsNeedingReviews[expert]) expertsNeedingReviews[expert] = [];
-          expertsNeedingReviews[expert].push(`${stat.name} (${questionsReviewed}/${totalQuestions})`);
+          expertsNeedingReviews[expert].push(`${stat.name} (${runsReviewed}/${runsForModel})`);
         }
       });
     });
