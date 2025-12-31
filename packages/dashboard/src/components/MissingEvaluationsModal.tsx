@@ -68,7 +68,8 @@ export const MissingEvaluationsModal = ({ isOpen, onClose, missingEvaluations }:
                 <div className="flex flex-wrap gap-2">
                   {missingEvaluations.modelsWithMissingQuestions.map((model) => (
                     <div key={model.name} className="inline-flex items-center gap-2 bg-zinc-950/50 border border-amber-500/20 px-3 py-1.5 rounded">
-                      <span className="font-mono text-xs text-white truncate max-w-[200px]" title={model.name}>{model.name}</span>
+                      {isEnhancedModel(model.name) && <Sparkles className="w-3 h-3 text-pink-500 flex-shrink-0" />}
+                      <span className="font-mono text-xs text-white truncate max-w-[200px]" title={stripEnhancedSuffix(model.name)}>{stripEnhancedSuffix(model.name)}</span>
                       <span className="text-xs text-amber-400 font-semibold">{model.answered}/{missingEvaluations.totalQuestions}</span>
                     </div>
                   ))}

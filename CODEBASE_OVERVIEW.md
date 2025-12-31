@@ -15,6 +15,16 @@ The repository is a Monorepo managed by Yarn Workspaces/Lerna, consisting of two
     *   Provides a UI for human experts to review, rank, and override AI evaluations.
     *   Runs entirely client-side (SPA), loading data via build-time plugins.
 
+### Root-Level Scripts
+
+The monorepo root provides convenient scripts for common workflows:
+- **`yarn dev`** / **`yarn start`**: Start the dashboard development server
+- **`yarn build`**: Build both packages (compiles eval-engine TypeScript and builds dashboard)
+- **`yarn preview`**: Preview the production build of the dashboard
+- **`yarn test`**: Run dashboard tests using Vitest
+- **`yarn eval`**: Run the evaluation engine (delegate to `@eval/engine`)
+- **`yarn judge`**: Run judge re-evaluation (delegate to `@eval/engine`)
+
 ---
 
 ## 💾 Data Structure & Storage
@@ -25,24 +35,83 @@ The system relies on a file-based database approach located in `packages/eval-en
 The source of truth for evaluation scenarios.
 *   **Structure:** Array of `QuestionNode`.
 *   **Key Fields:**
+    *   `id`: Unique identifier (e.g., `q001`, `t001` for transcripts)
+    *   `title`: Descriptive title for the question
     *   `scenario`: The patient's quote/situation.
-    *   `category`: CBT, DBT, ACT, or Safety.
+    *   `category`: CBT, DBT, ACT, Safety, or Transcript.
+    *   `difficulty`: Low, Medium, or High
+    *   `context`: Optional long-form source text for Transcript tasks
+    *   `contextFile`: Path to source text file for transcript questions
     *   `rubric`: Contains `mustInclude` and `mustAvoid` arrays used by the Judge model.
 
 ### 2. Results (`data/results/{candidate}/{judge}.json`)
 Evaluation results are sharded by Candidate Model and Judge Model to prevent file locking and reduce file size.
 *   **Structure:** Array of `ModelRun`.
 *   **Key Fields:**
+    *   `runId`: Unique identifier for this evaluation run
+    *   `questionId`: Reference to the question being evaluated
+    *   `modelName`: The candidate model evaluated
+    *   `timestamp`: ISO timestamp of when the response was generated
     *   `response`: The raw text output from the Candidate.
-    *   `aiAssessments`: A record keyed by Judge Model name, containing score (0-100), reasoning, and safety metrics.
+    *   `aiAssessment`: Legacy single assessment (for backward compatibility)
+    *   `aiAssessments`: A record keyed by Judge Model name, containing arrays of `JudgeAssessment` objects supporting re-judgments with history
+    *   `usage`: Token counts and cost information (optional)
     *   Note: This file structure supports multiple judgments per run (re-evaluations).
+
+### 3. Transcripts (`data/transcripts/` and `data/transcripts.json`)
+Source text files and metadata for transcript-based evaluation questions.
+- **`transcripts/`**: Directory containing text files referenced by `contextFile` in questions
+- **`transcripts.json`**: Metadata about available transcripts (optional, used for tracking and organization)
 
 ### 3. Human Overrides (Browser `localStorage`)
 The Dashboard stores human interventions locally to allow for persistent manual review without a dedicated backend database.
 *   **Storage Keys:**
-    *   `therapy_eval_overrides`: Manual scores and notes.
+    *   `therapy_eval_overrides`: Manual scores, notes, rank adjustments, and rubric overrides.
     *   `therapy_eval_rubrics`: Edits to question rubrics.
-    *   `therapy_eval_questions`: Edits to question text/scenarios.
+    *   `therapy_eval_questions`: Edits to question text, scenarios, and titles.
+
+### 4. Model Configuration (`data/model-config.json`)
+Configures model metadata used throughout the application:
+*   **Labels**: Visual badges displayed in the leaderboard (e.g., model size, online/offline status)
+*   **Pricing**: Token-based cost calculation (per 1M input/output tokens)
+*   **Default Selection**: `isDefaultJudge` and `isDefaultCandidate` flags control initial filter states
+*   **Model Mode**: `useTextMode` flag for models that require alternative JSON parsing
+
+---
+
+## 🎯 Key Metrics
+
+The system tracks multiple evaluation metrics:
+
+1.  **Average Score**: Composite score (0-100) based on rubric adherence
+2.  **Safety**: How safe and appropriate the response is
+3.  **Empathy**: Demonstrated empathy and understanding
+4.  **Modality Adherence**: How well the response follows CBT/DBT/ACT principles
+5.  **Faithfulness**: Transcript adherence metric for faithfulness to source material
+6.  **Reliability**: Consistency across different evaluations and judges
+7.  **Pricing**: Token-based cost analysis per evaluation
+
+## ⚡ Enhanced Models
+
+The system supports **Enhanced Model** variants:
+- Models with names ending in `" (Enhanced)"` appear alongside their base model versions
+- Enhanced models are highlighted with a sparkle icon (✨) in the UI
+- They share the same base configuration (pricing, labels) from `model-config.json`
+- Can be compared side-by-side with base versions in the leaderboard
+
+---
+
+## 📄 Transcript Support
+
+The system now supports two types of evaluation questions:
+
+1.  **Standard Questions** (`q*`): Synthetic patient scenarios requiring therapeutic responses
+2.  **Transcript Questions** (`t*`): Long-form document-based questions where models must:
+    - Read provided context from `contextFile`
+    - Maintain faithfulness to the source material
+    - Apply appropriate therapeutic modalities
+
+Transcript questions skip candidate cost calculations (only judge costs are tracked) and include an additional `faithfulness` metric.
 
 ---
 
@@ -50,17 +119,35 @@ The Dashboard stores human interventions locally to allow for persistent manual 
 
 This package handles the "Heavy Lifting" of LLM interaction.
 
+### NPM Scripts
+Inside the `packages/eval-engine` directory:
+- **`yarn build`**: Compile TypeScript to JavaScript in the `dist/` directory
+- **`yarn gen`**: Run `bin/gen.js` - Generate new therapeutic scenarios
+- **`yarn eval`**: Run `bin/eval.js` - Execute candidate model evaluations
+- **`yarn judge`**: Run `bin/judge.js` - Re-run judge evaluations on existing responses
+
 ### Key Scripts
-*   **`gen.js` (`src/generate.ts`)**: Uses an Expert Model (e.g., GPT-4) to generate diverse patient scenarios based on therapy modalities.
-*   **`eval.js` (`src/evaluate.ts`)**: The main loop:
+*   **`bin/gen.js` (`src/generate.ts`)**: Uses an Expert Model (e.g., GPT-4) to generate diverse patient scenarios based on therapy modalities.
+*   **`bin/eval.js` (`src/evaluate.ts`)**: The main loop:
     1.  Loads questions.
     2.  Sends scenario to Candidate Model (e.g., Llama 3 via Ollama).
     3.  Sends Candidate response + Rubric to Judge Model.
-    4.  Saves result to disk.
-*   **`re-eval.js` (`src/re-evaluate.ts`)**: Re-runs the *Judge* step on existing responses (useful if you change the grading logic or judge model).
+    4.  Saves result to disk with token usage and cost tracking.
+*   **`bin/judge.js` (`src/re-evaluate.ts`)**: Re-runs the *Judge* step on existing responses (useful if you change the grading logic or judge model).
 
 ### Core Logic (`src/results-manager.ts`)
 Manages the reading and writing of the sharded JSON files. It ensures that new runs are merged intelligently with existing data, preserving history.
+
+---
+
+## Model Configuration (`data/model-config.json`)
+
+A configuration file that defines model labels, pricing, and default selection behavior:
+- **`labels`**: Display labels (e.g., model size, "online" status) shown in the UI leaderboard
+- **`isDefaultJudge`**: Whether the model should be selected by default in judge filters
+- **`isDefaultCandidate`**: Whether the model should be selected by default in candidate filters
+- **`pricing`**: Input/output token pricing (per 1M tokens) for cost calculations
+- **`useTextMode`**: Configuration for models that don't support JSON output mode directly
 
 ---
 
@@ -71,14 +158,33 @@ A React application for analysis.
 ### Data Loading Strategy
 The dashboard does not fetch data via HTTP API at runtime. Instead, it uses a custom Vite plugin:
 *   **`vite-plugin-results-loader.ts`**: At build/dev server start, this plugin scans `packages/eval-engine/data/results`, merges all JSON files into a single array, and exposes it as a virtual module `virtual:results`.
+*   **Question Loading**: Also loads `virtual:questions` for standard questions and transcript-based questions.
+*   **Token Cost Calculation**: The same plugin pre-calculates token counts and costs for candidate and judge models using `gpt-tokenizer` and pricing data from `data/model-config.json`, adding `usage` fields to each `ModelRun`.
+
+### Performance Optimization
+The dashboard uses a Web Worker for heavy statistical calculations:
+*   **`workers/stats.worker.ts`**: Computes model statistics, ranking, and judge reliability in the background to prevent UI blocking.
+
+### NPM Scripts
+Inside the `packages/dashboard` directory:
+- **`yarn dev`**: Start the Vite development server
+- **`yarn build`**: Compile TypeScript with `tsc` and build the production bundle with Vite
+- **`yarn preview`**: Preview the production build locally
+- **`yarn test`**: Run tests using Vitest
 
 ### Key Components
-*   **`App.tsx`**: The main controller. It merges the static `virtual:results` with the dynamic `localStorage` overrides to calculate "Effective Scores" (the score shown in the UI).
-*   **`Dashboard.tsx`**: The Leaderboard view. Aggregates stats (Avg Score, Safety, Empathy, Modality Adherence) by model. Features multiple views including model leaderboard, expert ranking grid, and judge trust analysis.
-*   **`Sidebar.tsx`**: Navigation and filtering controls. Includes judge/model filters, export functionality, and access to the welcome modal.
+*   **`App.tsx`**: The main controller. It merges the static `virtual:results` and `virtual:questions` with the dynamic `localStorage` overrides to calculate "Effective Scores" (the score shown in the UI). Uses a Web Worker (`stats.worker.ts`) for computationally intensive calculations to keep the UI responsive.
+*   **`Dashboard.tsx`**: The Leaderboard view. Aggregates stats (Avg Score, Safety, Empathy, Modality Adherence, Faithfulness) by model. Features multiple views including model leaderboard, expert ranking grid, and judge trust analysis. Includes cost/pricing analysis.
+*   **`Sidebar.tsx`**: Navigation and filtering controls. Includes judge/model filters (with default selection based on model-config.json), export functionality, and access to the welcome modal.
 *   **`WelcomeModal.tsx`**: Introductory modal shown on first visit, explaining the platform's purpose and features. Can be re-opened via the "About TheraBench" button in the sidebar.
-*   **`QuestionDetail.tsx`**: The drill-down view. Shows side-by-side comparisons of different models for a specific scenario with inline rubric editing.
+*   **`QuestionDetail.tsx`**: The drill-down view. Shows side-by-side comparisons of different models for a specific scenario with inline rubric editing and question editing capabilities.
 *   **`ComparisonRow.tsx`**: Displays a single model's response, the AI's critique, and the form for Human Review.
+*   **`JudgeComparisonGrid.tsx`**: Grid view comparing how different judges evaluate the same candidate model responses.
+*   **`JudgeTrustTable.tsx`**: Analyzes judge model reliability and consistency.
+*   **`ExpertRankingGrid.tsx`**: Expert ranking visualization with enhanced model highlighting.
+*   **`MissingEvaluationsModal.tsx`**: Shows models with incomplete evaluations or judges needing reviews.
+*   **`QuestionEditModal.tsx`**: Modal for editing question text/scenarios.
+*   **`RubricEditor.tsx`**: Component for editing evaluation rubrics.
 
 ---
 
@@ -90,7 +196,7 @@ The dashboard does not fetch data via HTTP API at runtime. Instead, it uses a cu
 4.  **Persistence**: `eval.js` writes to `results/{candidate}/{judge}.json`.
 5.  **Loading**: Dashboard boots -> Plugin reads all JSONs -> Injects into App.
 6.  **Review**: User overrides score in UI -> Saved to `localStorage`.
-7.  **Export**: User clicks Export -> Merges JSONs + LocalStorage -> Downloads generic JSON dataset.
+7.  **Export**: User clicks Export -> Downloads only modified results and questions with overrides as `user_edits_YYYY-MM-DD.json`.
 
 ## 🔑 Key Types (`types.ts`)
 
@@ -98,12 +204,23 @@ The dashboard does not fetch data via HTTP API at runtime. Instead, it uses a cu
 // The input scenario
 export interface QuestionNode {
   id: string;
-  category: 'CBT' | 'DBT' | 'ACT' | 'Safety';
+  category: 'CBT' | 'DBT' | 'ACT' | 'Safety' | 'Transcript';
+  title: string;
   scenario: string;
+  context?: string; // Long-form source text for Transcript tasks
+  contextFile?: string; // Path to source text file
+  difficulty: 'Low' | 'Medium' | 'High';
   rubric: {
     mustInclude: string[];
     mustAvoid: string[];
   };
+}
+
+// Token usage and cost information
+export interface Usage {
+  inputTokens: number;
+  outputTokens: number;
+  cost: number;
 }
 
 // The output of an evaluation run
@@ -111,18 +228,48 @@ export interface ModelRun {
   runId: string;
   questionId: string;
   modelName: string;
+  timestamp: string;
   response: string; // The candidate's answer
-  aiAssessments: Record<string, JudgeAssessment[]>; // AI grading
+  aiAssessment?: JudgeAssessment; // Legacy single assessment (for backward compatibility)
+  aiAssessments?: Record<string, JudgeAssessment | JudgeAssessment[]>; // All assessments by judge model, with history
+  usage?: Usage; // Token counts and cost
 }
 
 // The specific grading logic
 export interface JudgeAssessment {
-  score: number;
+  score: number; // 0-100
   reasoning: string;
+  flags: string[];
+  evaluatorModel?: string;
+  timestamp?: string; // ISO timestamp of when this judgment was made
   metrics: {
     safety: number;
-    modalityAdherence: number; // How well the response follows CBT/DBT/ACT principles
     empathy: number;
+    modalityAdherence: number;
+    faithfulness?: number; // New metric for transcript adherence
+  };
+  usage?: Usage; // Token counts and cost for this judgment
+}
+
+// Human override for manual review
+export interface HumanOverride {
+  manualScore: number;
+  expertNotes: string;
+  rankAdjustment: number; // +1, 0, -1
+  lastUpdated: number;
+  rubricOverride?: Rubric;
+}
+
+// Model configuration from model-config.json
+export interface ModelConfig {
+  modelName: string;
+  labels: Array<{ text: string; color: string }>;
+  useTextMode?: boolean; // Skip json_object and use text mode directly
+  isDefaultJudge?: boolean; // Selected by default in judge filter
+  isDefaultCandidate?: boolean; // Selected by default in candidate filter
+  pricing?: {
+    input: number; // Price per 1M input tokens
+    output: number; // Price per 1M output tokens
   };
 }
 ```
