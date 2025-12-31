@@ -327,11 +327,6 @@ async function main() {
       process.exit(1);
     }
     
-    if (!CANDIDATE_MODEL_API_KEY) {
-      console.error('❌ CANDIDATE_MODEL_API_KEY is required but not set');
-      process.exit(1);
-    }
-    
     if (!EXPERT_MODEL_NAME) {
       console.error('❌ EXPERT_MODEL_NAME is required but not set');
       process.exit(1);

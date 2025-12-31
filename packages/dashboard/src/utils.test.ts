@@ -66,12 +66,12 @@ describe('Token Counting and Cost Calculation', () => {
     it('should only count runs for the specific model', () => {
       const runs = [
         createMockRun('gpt-4o', 'Response A', 0.10),
-        createMockRun('gemma-3-12b-it', 'Response B', 0.02),
+        createMockRun('google/gemma-3-12b', 'Response B', 0.02),
         createMockRun('gpt-4o', 'Response C', 0.10)
       ];
       
       const gpt4oCost = calculateModelCost('gpt-4o', runs);
-      const gemmaCost = calculateModelCost('gemma-3-12b-it', runs);
+      const gemmaCost = calculateModelCost('google/gemma-3-12b', runs);
       
       expect(gpt4oCost).toBeCloseTo(0.20);
       expect(gemmaCost).toBeCloseTo(0.02);

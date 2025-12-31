@@ -145,8 +145,15 @@ export function calculateModelCost(modelName: string, runs: AugmentedResult[]): 
   modelRuns.forEach(run => {
     if (run.usage?.cost !== undefined) return;
 
-    const inputText = run.question.scenario + 
-                     JSON.stringify(run.question.rubric) +
+    // Skip transcript questions and only include first 30 regular questions
+    if (run.question.id.startsWith('t') || !run.question.id.startsWith('q')) {
+      return;
+    }
+
+    // We do NOT send the rubric to the candidate model (the student), only to the judge.
+    // So we should not include it in the cost calculation here.
+    const inputText = (run.question.context || '') +
+                     run.question.scenario + 
                      "You are a therapist. Respond to this patient.";
     const totalInputTokens = countTokens(inputText);
     const totalOutputTokens = countTokens(run.response);
@@ -207,6 +214,17 @@ export function calculateJudgeCost(judgeId: string, runs: AugmentedResult[]): nu
   const pricing = getModelPricing(judgeId);
   
   for (const run of runs) {
+    // Skip transcript questions and only include first 30 regular questions
+    if (run.question.id.startsWith('t') || !run.question.id.startsWith('q')) {
+      continue;
+    }
+    
+    // Only include first 30 regular questions (q1-q30)
+    const questionNumber = parseInt(run.question.id.substring(1));
+    if (questionNumber > 30) {
+      continue;
+    }
+    
     const assessments = run.aiAssessments?.[judgeId];
     if (!assessments) continue;
     
@@ -221,6 +239,7 @@ export function calculateJudgeCost(judgeId: string, runs: AugmentedResult[]): nu
 
       // FALLBACK: Heuristic estimation
       if (pricing) {
+        // The Judge DOES see the rubric.
         const inputText = run.question.scenario + 
                          JSON.stringify(run.question.rubric) +
                          run.response +

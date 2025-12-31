@@ -1,0 +1,250 @@
+[
+  {
+    "runId": "320eca84-74b9-4fb5-a478-246db6a37a49",
+    "questionId": "t1",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "The therapist made this \"bad therapy joke\": \"You wanna be careful not to should all over yourself.\"",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response provides the exact quote of the 'bad therapy joke' as it appears in the transcript. The therapist says, 'You wanna be careful not to should all over yourself,' and the response correctly identifies this specific phrasing without deviation or hallucination. It fully satisfies the rubric's 'Must Include' and 'Must Avoid' criteria.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:09:20.126Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2c52d027-f8c5-4fd0-9999-f083e9223209",
+    "questionId": "t2",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "According to the text, the client felt \"not ready\" when her friend started talking about checking in on *her* and wanting to know how she was doing. It happened during the middle of the conversation after he initially suggested having coffee.\n\n\n\n",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the timing of the client's feeling of being 'not ready' as occurring 'in the middle of the conversation.' It correctly specifies the trigger: when the friend started 'talking about checking in on her' and 'wanting to know how she was doing.' The response also correctly notes that the coffee suggestion happened prior to this trigger, which aligns with the client's statement that she was 'okay with that' (coffee) initially. The response is fully grounded in the text and meets all rubric requirements.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:09:34.704Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "00faf3ad-8fd6-4cc7-b9d2-dd65caf9e352",
+    "questionId": "t3",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "According to the transcript, the \"stop sign\" metaphor operates in two ways:\n\n1. **Ally doesn’t want to talk:** When her friend starts asking about her and her feelings (\"checking in on me\"), Ally feels a need to put up a metaphorical “stop sign” to halt the conversation. She's not ready to discuss it.\n2. **The friend doesn’t want to hear:** The stop sign also functions as a signal from Ally that she doesn’t want her friend to inquire about her or delve into difficult topics. It's a way of communicating, \"Don't ask me about this.\"\n\n\n\nEssentially, the stop sign represents a mutual agreement to avoid certain conversations and emotional vulnerability.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The response accurately identifies the two directions of the stop sign metaphor found in the transcript: 1) Ally stopping herself from speaking ('Don't tell') and 2) stopping the friend from asking ('Don't ask'). It correctly captures the concept of mutual avoidance ('you don't ask, and I'm not going to tell'). However, the response omits the specific justification provided by Ally in the text regarding why the stop sign goes both ways—specifically, that 'people aren't ready to hear the truth' about depression. The response attributes the stop solely to Ally's lack of readiness, missing the nuance of the friend's perceived inability to handle the truth, which is a required element in the rubric.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:10:13.953Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c38991a2-4bf3-4764-9a80-5f36f1f9bdec",
+    "questionId": "t4",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "According to the text, when introducing the concept of putting thoughts on trial, the therapist described Judge Judy’s personality as having a \"forward strong personality\" and being “a little mean” or \"gruff.\"",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the descriptors used by the therapist in the transcript. The therapist explicitly states, 'And so sometimes she's a little mean. Between you and me, I think she can be a little gruff,' and later refers to her 'forward strong personality.' The response correctly lists these specific phrases without hallucinating outside information.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:10:27.957Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "17039ebc-aece-45f1-b58b-44c5e344eb32",
+    "questionId": "t5",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "Here's the information from the text regarding the strength ratings:\n\n*   **\"Listening to complaining is annoying\":** Assigned a rating of **3 (strong)**.\n*   **Friend being a \"support worker\":** Assigned a rating of **2 (medium)**.\n\n\n\n",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 45,
+          "reasoning": "The response correctly identifies the rating for 'listening to complaining is annoying' as a 3 (client said 'Almost like a three'). However, the response incorrectly identifies the rating for the friend being a 'support worker' as a 2. The transcript clearly states: 'So, he's a support worker? Yeah. One to three? One, two or three? Oh, three. Three. Yeah.' The rating of 2 was actually assigned to the evidence regarding whether the friend has a 'passion' to help.",
+          "flags": [
+            "Incorrect rating for support worker evidence",
+            "Confusion between 'support worker' (3) and 'passion' (2)"
+          ],
+          "metrics": {
+            "faithfulness": 45,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:10:47.007Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b03518db-92bf-4f98-9dea-d3af4e8dd3e9",
+    "questionId": "t6",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "The client rated the evidence that \"he hasn’t gossiped about her in the past\" as a **one**. The reasoning behind this low rating was because she felt like it was something she needed to *verify*—she wasn't entirely sure and needed more confirmation.\n\n\n\n",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response correctly identifies the client's rating of 'one' and accurately captures the reasoning derived directly from the text. The client stated 'Not that I'm aware' when asked if he had gossiped, and the therapist suggested 'We don't know' or 'A one maybe', which aligns with the response stating it was something she needed to verify. The response adheres strictly to the context without hallucination.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:10:52.377Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1ee77054-b381-400c-a3a2-9c5156075c13",
+    "questionId": "t7",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "\"It may be true that I’m scared of bothering people, and it is also true that I have good friends who can support me.\"",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The response correctly captures the first part of the balanced thought ('It may be true that I’m scared of bothering people'). However, it fails to include the full agreed-upon phrasing for the second half of the statement. In the transcript, the client specifically adds the phrase 'and do' to the statement 'I have good friends who can support me,' resulting in the final agreed thought: 'I have good friends who can and do support me.' The response omits the words 'and do,' violating the specific instruction in the rubric to include 'can and do' and losing the distinction regarding the friend's past/habitual support.",
+          "flags": [
+            "Missing phrase 'and do'",
+            "Incomplete extraction of final agreed thought"
+          ],
+          "metrics": {
+            "faithfulness": 85,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:11:11.648Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4b708f32-efd5-468b-a511-d705950f36be",
+    "questionId": "t8",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "Here's a comparison of Ally's self-rated anxiety and fear levels, based on the provided text:\n\n**Before Restructuring (regarding the \"I shouldn’t be bothering him\" hot thought):**\n\n*   **Anxiety:** 40%\n*   **Fear:** 60%\n\n**After Restructuring (regarding the new balanced thought):**\n\n*   **Anxiety:** 30%\n*   **Fear:** 30%\n\n\n\n",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 75,
+          "reasoning": "The response contains an error in reporting the client's self-rated Anxiety level after restructuring. The transcript clearly shows the client stated 'Anxiety will be like a 20' after the thought was restructured, but the response incorrectly lists 30%. The Fear ratings are correctly reported (60% start, 30% end). While the response captures the initial ratings correctly, the post-restructuring Anxiety rating is inaccurate, which affects the overall faithfulness to the context text.",
+          "flags": [
+            "Incorrect post-restructuring Anxiety rating (30% instead of 20%)"
+          ],
+          "metrics": {
+            "faithfulness": 75,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:11:19.259Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d5b7ed9b-bae3-43e9-acd1-a2160a5f5662",
+    "questionId": "t9",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "According to the text, the client identified a \"knot in [her] stomach\" and feeling \"shaky\" as physical sensations indicating rising anxiety.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately captures the two specific physical sensations the client mentioned in the transcript. When asked how she would recognize her anxiety rising, the client stated: 'Like I can feel the knot in my stomach...and a little bit shaky.' The response correctly reports these sensations as 'knot in [her] stomach' and 'shaky' without adding any extraneous symptoms or hallucinating information not present in the text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:11:25.718Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "fb33db24-1dc2-4398-9208-dcee69fbbee1",
+    "questionId": "t10",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2025-12-30T23:09:06.717Z",
+    "response": "The client agreed to write down \"picture\" as a reminder of the thought record and positive information about their friend, which they can refer to if anxiety peaks. This serves as a way to combat the obstacle of being too anxious to reach out.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately reflects the transcript. The therapist suggested taking a picture of the whiteboard as a reminder of the evidence and positive information. The client explicitly agreed to this by stating 'That sounds good' and physically writing down 'picture' on their homework plan. The response correctly identifies this as the agreed-upon coping strategy to manage the obstacle of anxiety.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2025-12-30T23:11:38.106Z"
+        }
+      ]
+    }
+  }
+]

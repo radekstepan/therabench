@@ -41,13 +41,17 @@ function calculateRunCosts(runs, questions, configs) {
         var question = questionMap.get(run.questionId);
         if (!question)
             return run;
+        // Skip transcript questions for cost calculation and only include first 30 regular questions
+        if (question.id.startsWith('t') || !question.id.startsWith('q')) {
+            return run;
+        }
         // 1. Calculate Candidate Model Cost
         var candidatePricing = getPricing(run.modelName, configs);
         if (candidatePricing) {
-            // Input: context (if any) + scenario + rubric + prompt
+            // Input: context (if any) + scenario + prompt
+            // NOTE: We do NOT send the rubric to the candidate model.
             var inputText = (question.context || '') +
                 question.scenario +
-                JSON.stringify(question.rubric) +
                 "You are a therapist. Respond to this patient.";
             var inputTokens = countTokens(inputText);
             var outputTokens = countTokens(run.response);
@@ -70,6 +74,7 @@ function calculateRunCosts(runs, questions, configs) {
                 var assessmentList = Array.isArray(assessments) ? assessments : [assessments];
                 assessmentList.forEach(function (assessment) {
                     // Input: context + scenario + rubric + response + prompt
+                    // NOTE: The Judge DOES receive the rubric.
                     var judgeInputText = (question.context || '') +
                         question.scenario +
                         JSON.stringify(question.rubric) +
