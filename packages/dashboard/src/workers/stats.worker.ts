@@ -173,22 +173,14 @@ function performCalculations(payload: any, requestId: string) {
     cachedJudgeStats = analyzeJudges(cachedAugmentedResults, overrides, selectedJudges);
 
     // C. Model Statistics (Unsorted)
-    // We now track counts per-metric to avoid diluting averages with 0s from non-applicable questions
     const statsMap: Record<string, { 
-      totalScore: number; 
-      scoreCount: number;
+      totalScore: number; scoreCount: number;
+      safety: number; safetyCount: number;
+      empathy: number; empathyCount: number;
+      modalityAdherence: number; modalityAdherenceCount: number;
+      faithfulness: number; faithfulnessCount: number;
       
-      safety: number; 
-      safetyCount: number;
-      
-      empathy: number; 
-      empathyCount: number;
-      
-      modalityAdherence: number; 
-      modalityAdherenceCount: number;
-      
-      faithfulness: number;
-      faithfulnessCount: number;
+      count: number; // Total runs (for completeness check)
       
       judgeScoreMap: Record<string, number[]>; 
       uniqueJudges: Set<string>; 
@@ -207,18 +199,30 @@ function performCalculations(payload: any, requestId: string) {
           empathy: 0, empathyCount: 0,
           modalityAdherence: 0, modalityAdherenceCount: 0,
           faithfulness: 0, faithfulnessCount: 0,
+          count: 0,
           judgeScoreMap: {}, uniqueJudges: new Set(), allScores: [] 
         };
       }
       const s = statsMap[r.modelName];
       const isTranscript = r.question.category === 'Transcript';
 
-      // Overall Score
+      // Store base transcript runs for later merging
+      if (isTranscript && !r.modelName.includes('(Enhanced)')) {
+         if (!baseTranscriptRuns.has(r.modelName)) {
+           baseTranscriptRuns.set(r.modelName, []);
+         }
+         baseTranscriptRuns.get(r.modelName)!.push(r);
+      }
+
+      // 1. General Completeness
+      s.count += 1;
+      s.allScores.push(r.effectiveScore);
+
+      // 2. Overall Score
       s.totalScore += r.effectiveScore;
       s.scoreCount += 1;
-      s.allScores.push(r.effectiveScore);
       
-      // Metrics: Only count if relevant for category
+      // 3. Metrics
       if (!isTranscript) {
          s.safety += r.effectiveSafety;
          s.safetyCount += 1;
@@ -227,20 +231,13 @@ function performCalculations(payload: any, requestId: string) {
          s.modalityAdherence += r.effectiveModalityAdherence;
          s.modalityAdherenceCount += 1;
       } else {
-         // It is a transcript
          if (r.effectiveFaithfulness > 0) {
             s.faithfulness += r.effectiveFaithfulness;
             s.faithfulnessCount += 1;
          }
-         
-         // Store for potential merging if this is a Base model
-         if (!baseTranscriptRuns.has(r.modelName)) {
-           baseTranscriptRuns.set(r.modelName, []);
-         }
-         baseTranscriptRuns.get(r.modelName)!.push(r);
       }
       
-      // Judges aggregation
+      // 4. Judges aggregation
       if (r.aiAssessments) {
         Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
           if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
@@ -274,20 +271,23 @@ function performCalculations(payload: any, requestId: string) {
               const s = statsMap[modelName];
               
               transcriptRuns.forEach(r => {
-                 // Add to total score
+                 // 1. Completeness: Fix "Missing Evaluations"
+                 s.count += 1; 
+
+                 // 2. Score Aggregation: Fix "Skewed Average"
+                 // We MUST include the score of the transcript runs, otherwise the average
+                 // is calculated on 30 items for Enhanced vs 40 for Base, leading to invalid comparisons.
                  s.totalScore += r.effectiveScore;
                  s.scoreCount += 1;
                  s.allScores.push(r.effectiveScore);
-                 
-                 // Add Faithfulness
+
+                 // 3. Faithfulness: Copy as requested
                  if (r.effectiveFaithfulness > 0) {
                     s.faithfulness += r.effectiveFaithfulness;
                     s.faithfulnessCount += 1;
                  }
                  
-                 // Do NOT add Safety/Empathy (Transcripts don't have them)
-                 
-                 // Merge Judge info to ensure Judge Trust stats and details are complete
+                 // 4. Judge Scores: Ensure tooltip reflects these runs too
                  if (r.aiAssessments) {
                     Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
                       if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
@@ -349,7 +349,7 @@ function performCalculations(payload: any, requestId: string) {
         avgModalityAdherence: s.modalityAdherenceCount > 0 ? Math.round(s.modalityAdherence / s.modalityAdherenceCount) : 0,
         avgFaithfulness: s.faithfulnessCount > 0 ? Math.round(s.faithfulness / s.faithfulnessCount) : 0,
         
-        count: s.scoreCount,
+        count: s.count, // Use total completeness count (including transcripts)
         expertCount: s.uniqueJudges.size,
         judgeScores,
         totalCost
