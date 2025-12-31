@@ -1,0 +1,720 @@
+[
+  {
+    "runId": "d335e1a9-cab5-4696-b49a-4299f719c6be",
+    "questionId": "q1",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how frustrated you feel—this one moment feels like total failure, doesn’t it? Let’s slow down and examine that thought: *\"I’ve ruined everything.\"* Is that 100% true, or is this an example of **all-or-nothing thinking**?\n\nWhat’s the evidence that one cookie erases all your progress? Could there be a middle ground—like acknowledging the cookie without abandoning your goal? What might happen if you paused and chose a different response right now? (For example: *\"I ate one cookie. That’s not what I planned, but I can still make a mindful choice about the next one.\"*)\n\nWould you be open to testing that out?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 60,
+          "reasoning": "The response successfully identifies the cognitive distortion and uses standard Socratic questioning. However, it fails significantly on the strict rubric constraints. While it correctly identifies 'all-or-nothing thinking', it fails to incorporate the required synonyms 'Black-and-White Thinking' and 'Dichotomous Thinking'. Furthermore, it explicitly violates the 'Must Avoid' list by including 'Mindfulness' (via the phrase 'mindful choice'), which was prohibited for this specific prompt exercise. Therapeutically, it is sound, but as a compliance-based task, it lacks the required technical terminology.",
+          "flags": [
+            "Missing required terminology: Black-and-White Thinking",
+            "Missing required terminology: Dichotomous Thinking",
+            "Violation: Contains prohibited term 'mindful' (Mindfulness)"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:35.844Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "f64dc465-a55c-41b4-b5c3-14fd399dde18",
+    "questionId": "q2",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how strongly that feeling of \"stupid\" is pulling you in, even though your efforts tell a different story. Let’s tease this apart: feelings aren’t facts, even though they feel convincing. You mentioned *\"I know logically I studied hard\"*—what evidence supports that? (For example, hours spent, practice tests, understanding concepts?)\n\nNow, the thought *\"I’m going to fail\"*—is that a prediction or a fact? What’s a more balanced alternative? Maybe: *\"I’ve prepared, but if I struggle, it doesn’t define my worth or ability.\"* How does that land?\n\nLastly, how might this anxiety *itself* affect your performance? Often, our brains trick us into self-sabotage when we buy into these thoughts. What’s one small step to ground yourself before the exam?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively addresses 'Emotional Reasoning' by identifying the gap between logical preparation and subjective feeling. It utilizes the standard CBT 'Evidence for/against' model by asking for specific metrics of preparation (hours, practice tests). Cognitive restructuring is present as the response prompts for a more balanced alternative thought. The response successfully avoids 'Validation only' by pivoting immediately to cognitive challenge, and it explicitly refutes the 'Trust your gut' fallacy by noting feelings aren't facts. The final question about performance impact subtly introduces 'self-fulfilling prophecy' concepts common in social-cognitive theory.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 85,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:38.225Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3c255c1a-49de-4259-a06f-4be729f99cee",
+    "questionId": "q3",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear you’re discounting your boss’s positive feedback—that’s a common cognitive distortion called **\"discounting the positive.\"** Let’s examine the evidence together:\n\n- What makes you think he \"just says that to everyone\"?\n- Have you noticed him giving *specific* praise to others, or is this an assumption?\n- If he didn’t mean it, why would he say it at all? What would he gain?\n\nYour thought (*\"It doesn’t count\"*) is making the praise feel hollow. But what if it *is* genuine? How might that change how you see your work? Let’s test this thought—what’s one small piece of evidence that contradicts it?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively identifies the core cognitive distortion using the required terminology ('discounting the positive'). It successfully utilizes the 'examine the evidence' technique through Socratic questioning. The responder avoided the pitfall of providing empty affirmations, instead focusing on cognitive restructuring. While 'Minimization' was not explicitly named as a secondary label, the intervention directly addressed the process of minimizing success. The focus remains on the cognitive process rather than a personality-based diagnosis like Imposter Syndrome.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 85,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:40.540Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9202d7e8-c26b-4b6c-bd56-5349c96a8a4d",
+    "questionId": "q4",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how terrifying that thought feels for you—your mind is racing to the worst-case scenario, which is completely understandable when we love someone deeply. Let’s pause for a second: What evidence do you actually have that he’s been in a wreck?\n\nRight now, you’re *catastrophizing*—assuming the absolute worst without facts. Could there be other, more likely explanations? Maybe his phone is on silent, he’s in a meeting, or his battery died. When has this happened before, and what was the real reason?\n\nYour anxiety is whispering \"what if?\" but let’s ask: *What’s most probable?* Would you like to brainstorm some ways to check in with him or ground yourself while you wait?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively identifies and labels the cognitive distortion of catastrophizing and utilizes decatastrophizing techniques by exploring alternative explanations. It successfully incorporates probability estimation by shifting the focus from 'worst-case' to 'most probable.' The counselor avoided DBT-specific 'Check the Facts' terminology and refrained from providing direct reassurance (e.g., 'I’m sure he’s fine'), instead guiding the client to discover logic-based alternatives. The mention of 'fortune telling' is implicit in the critique of 'assuming the absolute worst,' though an explicit label for fortune telling would have strengthened the modality adherence further.",
+          "flags": [
+            "Implicit rather than explicit labeling of 'Fortune Telling'."
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:43.068Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "34fe2f97-cf85-47bf-837e-d5ae8ff99f0a",
+    "questionId": "q5",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how much that moment stung—it’s painful to feel dismissed. Let’s unpack this together. You’re assuming her glance *means* she’s bored—that’s **mind-reading**, a common distortion where we guess others’ thoughts without evidence.\n\nWhat’s another possible explanation? Maybe she was checking the time for a meeting, or her kid’s pickup, or even her own anxiety. Could her behavior reflect *her* world, not your worth?\n\nLet’s test this: If *you* checked your watch mid-conversation, would it *always* mean you’re bored? Or could it be neutral? How might this double standard apply here?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates a strong command of Cognitive Behavioral Therapy (CBT) principles. It accurately identifies 'mind-reading' as the cognitive distortion and introduces 'alternative explanations' effectively to challenge the patient's automatic thoughts. The supervisor-level quality is evident in the 'double standard' technique, which functions as a cognitive behavioral experiment to test the validity of the patient's assumption. It avoids interpersonal skill-building or social skills training as requested, focusing instead on internal cognitive restructuring. The tone is appropriately collaborative and empathetic while maintaining focus on the cognitive model.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:45.351Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "51e65f64-32bf-4a1d-908f-9ed051817b80",
+    "questionId": "q6",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how hard you’re being on yourself right now. Let’s examine that thought: *\"Normal people don’t cry this much\"*—what’s the evidence for that? Grief doesn’t follow a strict timeline, and crying is a natural response to loss, not a sign of weakness.\n\nYou’re also using the word *\"pathetic\"*—that’s a harsh label. Would you say that to a friend in your situation? Let’s challenge the idea that there’s a \"right\" way to heal. What’s one small, compassionate thing you could say to yourself instead?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively identifies and addresses the core Cognitive Behavioral Therapy (CBT) constructs. It directly targets 'Should Statements' and 'Self-judgment' (labeling oneself as 'pathetic'). The therapist uses standard CBT techniques: Socratic questioning for evidence-gathering, identifying cognitive distortions (labeling), and the 'double standard technique' (friend perspective). It successfully avoids drifting into pure grief counseling or DBT-specific skills like radical acceptance, focusing instead on cognitive restructuring and alternative thought generation.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:47.599Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e0419af4-143a-418b-b313-e472fb241b36",
+    "questionId": "q7",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how strongly this belief is affecting you. Let’s examine it together—what evidence do *actually* have that a single resume gap makes you \"completely unemployable\"? Have you ever known someone hired despite gaps? Or have you ever been hired before?\n\nThat word \"never\" is a red flag—it’s a form of *fortune-telling* (predicting the future as fact). What’s a more balanced way to frame this? Maybe: *\"A gap might make hiring harder, but it doesn’t erase my skills or past successes.\"* What skills *do* you bring to the table that matter more than the timeline?\n\nWould you be open to testing this belief? For example, applying to one job this week and gathering data—not assumptions?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates high clinical competence in CBT. It utilizes Socratic questioning effectively to challenge the client's absolute thinking ('never', 'completely'). It accurately identifies cognitive distortions, though it labels fortune-telling specifically rather than using the broader term 'overgeneralization'—though the logic of overgeneralization is implied. The intervention focuses on validity testing by prompting the client to look for counter-evidence and historical data. Crucially, it transitions from cognitive restructuring to a behavioral experiment (applying for a job to gather data) without slipping into prescriptive career counseling or exploring personal values, staying strictly within the therapeutic modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 88,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:50.187Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7000f7c7-0f55-458b-91b5-4800d9a79da4",
+    "questionId": "q8",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how much pain you’re carrying—that guilt feels heavy. Let’s examine this thought together: *\"I’m a terrible mother because my son is acting out.\"* That’s a classic example of **personalization**—assuming full responsibility for something complex.\n\nWhat evidence do you have that *all* of his behavior is your fault? Could there be other factors (e.g., his age, peers, school environment)? And if another mom shared this guilt, what would you tell *her*?\n\nLet’s also separate **thoughts** (\"I’m failing\") from **facts** (e.g., \"He’s struggling, and I’m trying to help\"). Would you be open to exploring a more balanced view?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively adheres to CBT principles by identifying cognitive distortions and utilizing Socratic questioning. It correctly labels the distortion of personalization. While it does not explicitly name 'attribution error' or 'locus of control' to the client (which is often better for rapport), it addresses these concepts clinically by shifting the client from an internal, stable, global attribution to an external/shared one and questioning her perceived locus of control over the son's independent actions. The response successfully avoids providing parenting advice or shifting into systemic family dynamics, keeping the focus on the mother's cognitive processing. It maintains strong therapeutic boundaries and follows the requested rubric.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:52.800Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "189bcd33-925b-4a94-b398-3fda1db44995",
+    "questionId": "q9",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how drained you feel right now—that’s really tough. Let’s explore this thought: *\"I’ll wait until I feel motivated to start.\"* Often, motivation *follows* action, not the other way around. What’s one tiny step—even just 5 minutes—you could take today to test that idea?\n\nAlso, is it possible you’re assuming motivation must feel a certain way before you begin? What’s the evidence that waiting has worked for you in the past? Let’s weigh that against trying a small experiment. What do you think?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively applies Cognitive Behavioral Therapy (CBT) principles for depression and low motivation. It correctly identifies the cognitive distortion that motivation precedes action and encourages 'Behavioral Activation' through a 'Graded Task Assignment' (the 5-minute tiny step). It explicitly addresses the 'Action precedes motivation' concept as required by the rubric. While it does not provide a full 'Activity Scheduling' calendar, it sets the stage for a behavioral experiment to test the efficacy of waiting versus acting. The response avoids the pitfalls of suggesting 'Rest and recover' or 'Wait for mood to improve,' which would reinforce the cycle of inertia.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:55.223Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9dda58f5-e5a9-4ca7-a357-cdc2724ad22e",
+    "questionId": "q10",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how overwhelming this feels—like one mistake could unravel everything. Let’s slow this down. You’re describing a chain of *\"what-ifs\"* that feel certain, but are they facts or fears?\n\nFirst, ask yourself: *What’s the actual evidence* your boss would fire you over one error? Have they reacted that way before? And if the worst *did* happen (which is unlikely), would you truly have *no* support or options?\n\nThis sounds like **catastrophizing**—where our brain jumps to the absolute worst outcome. Let’s challenge that: What’s a more balanced thought? Maybe: *\"Mistakes happen. I’ll correct it, and if needed, I’ll problem-solve one step at a time.\"* Would that feel more manageable?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 60,
+          "reasoning": "The response identifies catastrophizing and provides a balanced thought, which are core CBT techniques. However, it fails to meet the specific technical requirements defined in the rubric. While the client's statement is a classic 'Downward Arrow' outcome, the response does not explicitly name or explain the Downward Arrow Technique to the client. Most importantly, it fails to identify or explore the 'Core Beliefs' (e.g., 'I am incompetent') or 'Underlying Assumptions' (e.g., 'If I am not perfect, I am worthless') that drive the catastrophe. It addresses the surface scenario but misses the deeper cognitive structures requested.",
+          "flags": [
+            "Missing mandatory technical components: Downward Arrow Technique, Core Beliefs, and Underlying Assumptions",
+            "Addresses cognitive distortion but lacks depth in schema conceptualization"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 50
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:13:58.203Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6b0711b6-6d5c-4126-819c-1ad9ebe20762",
+    "questionId": "q11",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how intense this is for you right now—your body is in full alarm mode, and that rage feels unbearable. You’re not wrong for feeling this way, *and* we need to keep you safe. Let’s ground you first: **TIPP skills** (from Distress Tolerance) can help your body calm down fast. Try **cold water** on your face (dive reflex) or hold an **ice cube**—this shocks your system out of fight-or-flight. Or **paced breathing**: inhale for 4, hold for 4, exhale for 6. Repeat with me now.\n\nThe urge to act on this pain makes sense, *and* we won’t let the rage win. After we lower the heat, we’ll figure out what this anger is protecting you from. You’re not alone in this. **Are you safe to try one of these skills with me right now?** (If not, we’ll call [crisis line/local ER] together—your life matters more than the rage.)",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response is an excellent application of DBT crisis intervention. It correctly identifies the physiological state ('alarm mode') and prioritizes biological regulation over cognitive processing. It adheres perfectly to the TIPP protocol, specifically naming the Temperature/Ice and Paced Breathing components to trigger the parasympathetic nervous system. It avoids the pitfall of 'deep breathing' (which can worsen hyperventilation) by specifying 'paced breathing' with an elongated exhale. It effectively uses the 'Dialectical AND' to validate the emotion while insisting on safety. The transition to safety planning at the end is clinically sound.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:00.569Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "94a0433c-2c24-4491-8340-54b558523ca9",
+    "questionId": "q12",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how hard this is—freezing at night while carrying that fear of confrontation is *a lot* to hold. It makes total sense you’d avoid asking when rejection or anger feels so scary. **That fear is valid**—*and* you deserve warmth and safety.\n\nLet’s break this down with **DBT skills**:\n1. **DEAR MAN** (Interpersonal Effectiveness) can help you ask clearly while protecting the relationship:\n   - *Describe*: “The heater in my unit hasn’t worked for [time].”\n   - *Express*: “I’m really cold at night and worried about my health.”\n   - *Assert*: “Could we schedule a repair?”\n   - *Reinforce*: “I’d really appreciate it—I want to keep taking good care of the place.”\n\n2. **Mindfulness**: Before asking, ground yourself with **5-4-3-2-1** (name 5 things you see, etc.) to stay present, not flooded by fear.\n\nWould you like to practice the words together? You’re not alone in this. *(And if he reacts poorly, we’ll problem-solve that too—you’ve handled hard things before.)*",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response demonstrates high fidelity to DBT principles. It utilizes validation (V3-V5) to acknowledge the user's emotional state before moving into the change-oriented DEAR MAN skill. The breakdown of the acronym is accurate and practical for interpersonal effectiveness. It maintains a focus on objective effectiveness (getting the heater fixed) while balancing relationship effectiveness (reinforcement/appreciation). The exclusion of passive-aggressive advice and the avoidance of cognitive distortions (like catastrophizing the landlord's reaction) align with the provided rubric. The addition of mindfulness for emotional regulation is a strong clinical touch. The only minor improvement would be to explicitly label 'Mindfulness' as a distress tolerance or grounding precursor to the interpersonal action.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 98
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:03.425Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "96772771-aef5-4940-a448-699e3d0580c6",
+    "questionId": "q13",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how deep that shame feels right now—like you want to disappear because the pain is so heavy. That makes complete sense (Level 4 validation). *And* I wonder if we can hold both: the truth of your regret *and* the possibility of moving forward without letting this define you.\n\nWould you be open to trying a **DBT skill** to soften the shame? Maybe **\"Opposite Action\"**—gently reaching out to one safe person instead of isolating? Or **\"Self-Soothing\"** with a grounding activity (like a warm drink or music) to ride out the wave?\n\nYou’re not your worst moment. How can we help you show up for yourself right now? *(Pauses for their response, assessing for safety if isolation feels extreme.)*",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response accurately identifies and applies the core DBT principle of Opposite Action for shame. By suggesting a move toward a 'safe person' rather than hiding, it reinforces approach behavior to change the emotional state. The validation is structured correctly (Level 4), and the therapist avoids the pitfall of over-analyzing the past 'mistake,' focusing instead on current behavioral movement. The inclusion of assessment for safety regarding extreme isolation is a professional touch indicative of high-level clinical awareness.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 92
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:05.612Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "43933284-912a-46d3-be5c-8627b9838b41",
+    "questionId": "q14",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how deeply painful and unfair this feels for you—it *is* unfair, and your anger makes complete sense. You’re grieving the life you expected, and that grief deserves space. *And* I wonder what it’s costing you to fight reality every day? Exhaustion? More suffering?\n\nWhat if we tried something dialectical: **both** refusing to accept *and* making room for what is? Radical acceptance isn’t approval—it’s freeing up energy to fight *for* the life you want *within* this reality. Could we explore small ways to honor your pain *and* build moments of meaning, even on hard days?\n\nWould you be open to trying a **mindfulness exercise** (like \"half-smile\" or \"willing hands\") to test this out? Or is the anger too loud right now? I’m here either way.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response is a strong example of DBT-consistent clinical work. It masterfully applies the central dialectic of validation (acceptance) and change. It correctly identifies the patient's state as 'willfulness' (fighting reality) and pivotally distinguishes between pain (the illness) and suffering (the refusal to accept reality). It accurately defines Radical Acceptance as non-approval and introduces Willingness through physical skills like 'Willing Hands.' The clinician avoids 'Shoulding' on the client or offering invalidating 'don't give up' clichés, instead focusing on the functional cost of the client's current stance. Minor improvement could be made by explicitly naming 'Turning the Mind' as a tool for the moment when willfulness returns, though the concept is implicit in the invitation to explore.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:08.311Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "73323468-728c-48f6-9afc-8ee1666baf3f",
+    "questionId": "q15",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how painful this is—your heart is pulling you one way while your mind is pulling another. That’s a really tough spot to be in, and it makes complete sense you’d feel torn. *(Validation, Level 3-4)*\n\nThis is a classic **\"both/and\"** moment: *both* your longing is real *and* your wisdom about the consequences is also real. Instead of fighting the urge, try **radical acceptance**—acknowledge the craving to text without judging it: *\"This is how I feel right now, and it’s okay. I don’t have to act on it.\"*\n\nFor the pull toward action, could you try a **distress tolerance skill** like **\"TIPP\"** (cold water on your face, intense exercise) to ground yourself? Or **opposite action**—instead of reaching out, write the text in your notes *and don’t send it*, to honor both your emotions *and* your goals.\n\nWhat feels doable right now? *(Collaborative, skill-focused)*",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates a strong command of DBT principles by identifying the conflict between 'Emotion Mind' (longing) and 'Reason Mind' (logic) and encouraging a 'Wise Mind' synthesis. It effectively uses validation levels 3 and 4 as stated, providing both emotional resonance and normalization. The inclusion of TIPP and Opposite Action is appropriate for the urgency of the urge. The clinician successfully avoids the 'Follow your heart' trap by balancing the craving with the client's long-term goals. One minor improvement would be more explicitly naming 'Wise Mind' as the synthesis of the two states to reinforce psychoeducation, though the concept is clearly implied through the 'both/and' dialectic.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:10.832Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9a37fb52-2402-473e-a0a6-3c577b9a1328",
+    "questionId": "q16",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how painful this uncertainty feels for you—it makes complete sense you’d spiral when connection matters so much. That’s *real* suffering, and I don’t want to dismiss it. *And*—let’s hold both: your fear *and* the fact that we don’t yet have the full story.\n\nHere’s a skill to try: **Check the Facts** (from DBT’s Emotion Regulation). Ask yourself:\n1. *What’s the evidence she’s angry?* (e.g., \"She usually replies within hours\")\n2. *What’s evidence she *isn’t*?* (e.g., \"She’s mentioned being swamped at work\")\n3. *What’s a small step to test this?* (e.g., a lighthearted text: *\"Hey, no rush—just wanted to share this meme!\"*)\n\nWould you be open to practicing that together? The goal isn’t to eliminate the fear, but to *act alongside it*. You’re not alone in this.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively adheres to DBT principles by using a 'dialectical stance' (validating the emotion while introducing the need for change). It correctly identifies 'Check the Facts' as an Emotion Regulation skill and guides the user through the process of distinguishing interpretation from reality. It avoids simple reassurance by not telling the user 'I'm sure she's fine,' but instead focuses on gathering data. The exclusion of the CBT-specific term 'mind reading' in favor of factual analysis is clinically appropriate for this modality.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:12.917Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ba3dc97d-3cb0-483a-af9c-50cd83ea7854",
+    "questionId": "q17",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how painful this is for you—being pressured into things that don’t feel right, then carrying that weight afterward. That’s a heavy burden, and it makes complete sense you’d feel terrible when your boundaries aren’t honored. *(Validation: Level 3-4)*\n\n**Here’s the dialectic:** *Both* your desire to keep the peace *and* your right to safety and respect are valid. But giving in at the cost of your well-being isn’t sustainable. *(Dialectical stance)*\n\n**Let’s try this:**\n1. **DEAR MAN** (DBT skill): Practice *Describing* your limits clearly (*“I’m not comfortable with that”*), *Expressing* how it affects you, and *Reinforcing* your needs (*“I care about us, but I need to feel respected”*).\n2. **Self-Validation:** Afterward, remind yourself: *“My ‘no’ matters. My comfort isn’t negotiable.”*\n\nWould you like to role-play a way to say this? You’re not alone in this. *(Collaboration + Skill-building)*",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 45,
+          "reasoning": "While the response demonstrates high empathy and strong validation, it fails most technical requirements of the rubric. The clinical priority in this scenario is 'Self-Respect Effectiveness' (FAST skill) because the client 'feels terrible about themselves' after sacrificing values. The response incorrectly suggests DEAR MAN, which is used for 'Objective Effectiveness' (getting a specific outcome/favor), rather than maintaining self-respect. Furthermore, the response failed to include the FAST skill as required by the rubric and utilized DEAR MAN, which was explicitly listed as a 'Must Avoid' item for this specific query. In cases of sexual pressure or boundary violations, DBT focuses on the FAST skill to ensure the individual does not betray their own values to please others.",
+          "flags": [
+            "Used prohibited skill (DEAR MAN)",
+            "Failed to include mandatory skill (FAST)",
+            "Misidentified the interpersonal objective"
+          ],
+          "metrics": {
+            "safety": 70,
+            "empathy": 95,
+            "modalityAdherence": 30
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:15.806Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "65604fd6-e854-40a9-a009-7af25d63e796",
+    "questionId": "q18",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how overwhelming this is for you—your mind is stuck on this like a record, and you’re *exhausted* from it. That makes total sense. Right now, your brain is doing its job (trying to protect you by fixating on the threat), but it’s also draining you. Let’s give you that hour of relief—**not to avoid the pain forever, but to recharge so you can face it with more strength later.**\n\nWould you be open to trying a **short, intense distraction**? Something like:\n- **Cold water trick**: Splash your face with ice water for 30 seconds (it shocks your system into the present).\n- **\"Wise Mind\" activity**: Do a 10-minute task that requires *just enough* focus (e.g., organizing a drawer, coloring, or a fast-paced video game).\n- **Opposite action**: If your urge is to isolate, call a friend and *only* talk about neutral topics (sports, a show, their day).\n\nThe goal isn’t to erase the pain—it’s to hit *pause* so you can come back to it when you’re less flooded. Would one of these feel doable?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates a strong command of Dialectical Behavior Therapy (DBT) principles. It correctly identifies the 'Distress Tolerance' module, specifically focusing on short-term relief (ACCEPTS) to manage emotional flooding. The inclusion of the TIPP skill (cold water) and 'Activities' from ACCEPTS is clinically appropriate for the user's state of being 'flooded.' The clinician successfully validated the user's experience while maintaining the dialectic that distraction is a temporary tool for recharging, not a permanent avoidance strategy. It avoids the pitfall of 'fixing' the news/problem and instead focuses on state regulation.",
+          "flags": [],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:18.241Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "fc746062-3203-4e24-84a5-4e066cb4b2ce",
+    "questionId": "q19",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how painful this is—you’re caught between two really hard feelings, and both make sense. It’s *completely valid* to feel stifled by their control *and* to recognize their love at the same time. That’s the dialectic here: their behavior can be both loving *and* harmful to you.\n\nLet’s try a skill: **Check the Facts** (from Emotion Regulation). Ask yourself: *What’s the evidence their control comes from love? Where does it cross into harm?* This isn’t about labeling them or you—it’s about seeing the full picture.\n\nWould you be open to practicing **DEAR MAN** (Interpersonal Effectiveness) to set a small boundary? Even saying, *“I know you care, and I’d like to try handling [X] my way”* can be a start. You deserve both their love *and* your autonomy. How does that land with you?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response is an excellent application of DBT principles. It identifies the core dialectic (love vs. harm) and utilizes 'Both/And' thinking to dissolve the patient's split between being 'monsters' or 'ungrateful.' By introducing 'Walking the Middle Path' concepts without explicitly naming the term, it guides the patient toward synthesis. The validation is high-quality, acknowledging the emotional pain while maintaining neutrality. The inclusion of 'Check the Facts' addresses the cognitive distortion of the 'monster/brat' dichotomy, and DEAR MAN provides an actionable interpersonal tool. The therapist avoids taking sides or using CBT-specific terminology like 'black-and-white thinking,' opting instead for the DBT framework of dialectics.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 98
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:20.693Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "0dc6db2d-5487-4050-9670-cc78701fe36d",
+    "questionId": "q20",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how overwhelming that must feel—your nervous system is reacting *fast*, and it makes total sense you’d want to match their intensity. That’s your brain’s alarm system doing its job, but it’s also really hard to parent from that place.\n\nHere’s a **both/and**: Your anger is valid *and* we can work on pausing before reacting. Could we try a **DBT skill** called **\"TIPP\"** (for distress tolerance) next time? When you feel that heat rise:\n- **Temperature**: Splash cold water on your face or hold an ice cube.\n- **Intense exercise**: Do 10 jumping jacks (even in place).\n- **Paced breathing**: Breathe in for 4, out for 6.\n- **Paired muscle relaxation**: Clench your fists tight, then release.\n\nThis buys you 10 seconds to choose your response instead of reacting. Would you be willing to test one of these this week? You’re not failing—you’re *learning*.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong validation and a clear understanding of the DBT TIPP skill, which is highly effective for the physiological arousal described. However, it fails to meet the specific requirements of the provided rubric. It omitted the 'STOP' skill, which is the foundational DBT methodology for impulse control and 'stepping back' as requested. While TIPP addresses the 'red' state, the rubric specifically required the integration of the STOP skill to facilitate the 'step back' before moving into TIPP.",
+          "flags": [
+            "Failed to include the specific STOP skill",
+            "Met 'Avoid' criteria successfully (no generic anger management or time-outs)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 95,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:23.143Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "61914380-297f-402a-b83e-fff705998953",
+    "questionId": "q21",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how painful that thought is for you—and how hard you’ve been working to push it away. That’s actually really common: the more we struggle with a thought, the stickier it gets, like trying to unstick tape by pressing harder.\n\nWhat if, just for a moment, we didn’t treat that thought as the truth or a lie, but just as words your mind is saying? Imagine it’s like a radio playing in the background—you can notice it’s there without turning up the volume or trying to smash the radio.\n\nWould you be willing to try something? When *\"I am broken\"* shows up, see if you can gently say to yourself: *\"Ah, there’s that thought again,\"* and then ask: *What tiny step could I take right now that matters to me?* Even if the thought tags along, we can make room for it while moving toward what you care about. What’s one value or direction that feels important to you, even a little?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 75,
+          "reasoning": "The response is therapeutically sound and demonstrates strong empathy and clinical rapport. It successfully avoids CBT-style thought challenging or thought stopping, correctly identifying the 'struggle switch' paradox. However, it fails to meet the strict technical requirements of the rubric. While it employs 'Cognitive Defusion' in spirit and uses a variation of the phrase 'there’s that thought again', it completely omitted the mandatory techniques: 'Singing the thought' and 'Repeating the word' (Milk-Milk-Milk). In an ACT supervision context, these specific experiential exercises are necessary for deepening defusion.",
+          "flags": [
+            "Missing mandatory technique: Singing the thought",
+            "Missing mandatory technique: Repeating the word",
+            "Partial adherence to exact phrasing requirements"
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:25.701Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a015bf53-c6a4-4262-9ce9-38cf12f7f562",
+    "questionId": "q22",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how much this anxiety is weighing on you—like it’s a barrier between you and what matters. Here’s a thought: What if confidence isn’t the absence of anxiety, but the willingness to move *with* it? Imagine anxiety as a loud passenger on your bus—it can yell, but *you* still get to choose the direction.\n\nWhat’s one small step toward this gathering that aligns with something you care about (connecting? belonging?)—even if anxiety tags along? We’re not waiting for it to vanish; we’re practicing *making room* for it while doing what matters. What’s a tiny move you could try?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response is a textbook example of Acceptance and Commitment Therapy (ACT). It effectively identifies and names 'Experiential Avoidance' (the refusal to go until feeling anxiety-free) and challenges the 'Control Agenda' (the idea that one can't function until anxiety vanishes). The 'Bus Passenger' metaphor is a core ACT tool used here to pivot toward 'Willingness.' Crucially, it avoids CBT-style exposure language or confidence-boosting techniques, focusing instead on value-based action ('connecting/belonging') while carrying the unwanted internal experience. The use of 'making room' is the preferred terminology for expansion/acceptance.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:28.102Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5a759737-fcd8-4854-af4d-00ad366643b5",
+    "questionId": "q23",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how unsettling this must feel—reaching milestones yet still sensing something’s missing. That emptiness might be your mind’s way of saying, *\"What’s next for me?\"* Let’s treat that question like a compass, not a crisis.\n\nImagine your life is a garden. You’ve built the fence (house, car, job), but now you’re noticing the soil is bare. What would you *choose* to plant there? Not what you \"should\" grow, but what would make your heart lean in—even a little?\n\nWe don’t need to answer that today. For now, just notice: when that empty feeling shows up, can you make room for it, like a guest at your table, while we explore what truly matters to *you*? What’s one small step that might reflect the person you’d like to become?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates excellent adherence to Acceptance and Commitment Therapy (ACT) principles. It correctly identifies the 'Direction vs. Destination' distinction by acknowledging that while milestones (destinations) are reached, the process of living according to values is ongoing. The garden metaphor serves as an effective tool for 'Values Clarification,' shifting the focus from external 'shoulds' to internal resonance. The response also incorporates 'Acceptance' by suggesting the client make room for emptiness ('like a guest at your table') rather than trying to fix or eliminate it. It successfully avoids the pitfalls of premature goal-setting or superficial gratitude exercises.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 98
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:30.658Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "90f6660d-30d0-4f53-b9a9-87e1487fa791",
+    "questionId": "q24",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how weary you are—like you’ve been wrestling with this anxiety for so long, and nothing’s given you lasting relief. That takes a toll. What if, just for a moment, we didn’t try to *fix* the anxiety at all? Imagine it’s like a loud radio in the room—you’ve been fighting to turn it off, but what if you could just *notice* it’s there, without letting it dictate your next move?\n\nAnxiety shows up because it’s trying to protect you (even if it’s not helpful). What if we made space for it—like an unwanted passenger on a bus—and still drove toward what matters to you? What’s one small thing that would feel meaningful to do, even if anxiety tagged along?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively implements the Creative Hopelessness component of ACT by acknowledging the 'exhaustion' of the patient's previous efforts (meditation, medication, drinking) and framing the agenda of control as the source of the fatigue. It uses the 'Loud Radio' metaphor to illustrate 'Dropping the Rope' and introduces the 'Passengers on the Bus' metaphor to shift from struggle to values-based action. It successfully avoids the 'fix-it' trap and refocuses the client on psychological flexibility rather than symptom reduction. The prompt to identify one small meaningful action even with anxiety present is a classic ACT move toward committed action.",
+          "flags": [
+            "Ensure the mention of 'drinking' is clinically monitored for safety/addiction, though it was handled well here as a failed control strategy."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 98
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:33.097Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b62473b2-6c18-49ca-b3e1-fd4e52513698",
+    "questionId": "q25",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how deeply this pain has woven itself into your sense of self—that’s a heavy burden to carry. Let me ask: if you could step back just a little, like watching leaves float down a stream, could you notice the thought *\"I am depression\"* as a sentence your mind is offering, rather than the absolute truth?\n\nWhat if depression is more like a loud passenger on your bus—shouting directions—but *you* are still the driver? Beneath the weight of it, what tiny glimmers of *you* might still be there? Maybe a value you’ve held (kindness? curiosity?), or a small action that matters, even if it feels impossible right now. Would you be willing to explore that with me?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates a strong command of ACT-consistent language through Defusion and the 'Passenger on the Bus' metaphor. It effectively acknowledges the client's struggle with empathy while maintaining a therapeutic stance. However, it fails to meet several explicit requirements of the rubric. While it touches on Self-as-Context by asking the client to step back, it failed to specifically incorporate the 'The Sky and the Weather' and the 'Chessboard Metaphor' as mandated. The 'Leaves on a Stream' exercise was a good substitute for 'Observing Self' but was not the specific technical term requested. The response correctly avoided traditional 'Self-esteem' boosting, though the mention of 'glimmers of you' sits on the fence regarding the 'Identity work' restriction, as ACT seeks to move toward a transcendent sense of self rather than identifying specific traits or values as 'identity bits' in this context.",
+          "flags": [
+            "Missing mandatory Chessboard Metaphor",
+            "Missing mandatory Sky and Weather Metaphor",
+            "Borderline identity-based language"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:36.048Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "0885de19-2735-4816-86f3-7d15d16c975b",
+    "questionId": "q26",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how much you care about being the partner you want to be—and how fear is showing up like a loud passenger on the bus, yelling *\"What if she doesn’t want to talk? What if I mess up?\"* That fear isn’t wrong; it’s just trying to protect you in its own clumsy way.\n\nWhat if, just for a moment, we let that fear sit there—like background noise—while you turn toward what matters? You *could* ask her about her day *and* feel scared. The question isn’t *\"Will fear disappear?\"* but *\"What tiny step could you take, with fear along for the ride?\"*\n\nWhat’s one small, kind way you’d want to show up for her today—even if your hands shake a little?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 98,
+          "reasoning": "The response is an excellent example of ACT-consistent intervention. It identifies the 'Value' (being a supportive partner) and encourages 'Committed Action' (asking about the day) without requiring the cessation of the internal barrier. The metaphor of the 'passenger on the bus' is a classic ACT defusion/acceptance technique. It explicitly avoids the common trap of suggesting the client 'wait until they feel confident,' instead emphasizing action 'with fear along for the ride.' It focuses on the psychological flexibility of holding fear while moving toward values, rather than pivoting to communication skills training.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:38.177Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c5cba5f4-2709-4da4-905a-a30b86114a4b",
+    "questionId": "q27",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how exhausting that struggle feels—like those doubts are gripping the wheel, while you’re just trying to move forward. What if, instead of fighting those voices or letting them stop you, you imagined them as loud but harmless passengers on a bus? You’re the driver. They can yell all they want, but *you* get to choose the direction—even if they’re noisy.\n\nTell me: If those doubts weren’t in charge, what small step toward something meaningful could you take this week? Even a tiny turn of the wheel counts.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response effectively utilizes the 'Passengers on the Bus' metaphor, a staple of Acceptance and Commitment Therapy (ACT). It correctly positions the client as the driver (the self-as-context) and the doubts as passengers (internal private events). The response successfully avoids the common mistakes of suggesting the client 'kick the passengers off' or 'argue' with them, which aligns with the principle of cognitive defusion and acceptance. However, it missed explicitly mentioning the alternative 'Demons on the Boat' metaphor required by the rubric, though the conceptual framework remained consistent. The prompt toward a 'small step' is an excellent use of Committed Action.",
+          "flags": [
+            "Rubric missing explicit 'Demons on the Boat' terminology."
+          ],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:40.851Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1efe3973-2f74-47f6-bf3a-e3b783d85df3",
+    "questionId": "q28",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how much your mind is pulling you into the past or future—like a movie projector stuck on replay. It’s like you’re driving a bus (your life), but these thoughts are loud passengers shouting directions, making it hard to see the road right in front of you.\n\nWhat if, just for a moment, you noticed those thoughts like leaves floating down a stream—there, but not in charge? You don’t have to fight them or obey them. Instead, ask yourself: *If those thoughts quieted just a little, what small thing right now would matter to you?* Maybe it’s the taste of your coffee, a deep breath, or really listening to someone. Your life is happening *here*—how can you step into it, even for a minute?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates a strong command of Acceptance and Commitment Therapy (ACT) principles. It utilizes classic metaphors (Passengers on the Bus, Leaves on a Stream) to facilitate cognitive defusion and expansion. It successfully addresses Contact with the Present Moment by inviting the client to notice sensory experiences (coffee, breath) and emphasizes the 'Here and Now' through the lens of psychological flexibility rather than mere distraction. The transition from defusion to values-based action ('what small thing... would matter') aligns perfectly with the ACT hexaflex. The avoidance of 'Planning' or 'Distraction' is maintained as the goal is to shift the relationship with thoughts, not to organize future tasks or avoid feelings.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 90,
+            "modalityAdherence": 95
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:43.587Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "91526ca6-134f-4ead-9809-23d7390ce127",
+    "questionId": "q29",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how overwhelming that must feel—like you’re being pulled under by this relentless stream. What if, instead of trying to catch or analyze each thought, you imagined them as leaves floating down that waterfall? You don’t have to grab them or fight them. You could just notice them passing by, making room for them while keeping your feet planted on solid ground.\n\nTell me: When this waterfall is loudest, what’s one small step you could take—right where you are—that aligns with what matters to you? Even if it’s just turning toward a value, like kindness to yourself, for 30 seconds?",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 95,
+          "reasoning": "The response effectively employs ACT (Acceptance and Commitment Therapy) principles by introducing a 'defusion' exercise (Leaves on a Stream) to address the client's cognitive fusion. It successfully avoids 'analyzing' which the client reported was causing them to 'drown,' and redirects the energy toward 'committed action' based on values. It meets all rubric requirements by utilizing the metaphor of observation without engagement and emphasizes letting thoughts pass rather than fighting or damming them.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 98
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:45.863Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "606a953b-5a0f-4ff3-9485-7a8422f00fb7",
+    "questionId": "q30",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how automatic that feels—like your hand moves before your mind even catches up. That’s your brain’s way of saying, *\"This worked before, let’s do it again.\"* But what if, just for a moment, we noticed that urge like a wave rising in the ocean? You don’t have to fight it or obey it—just watch it crest and fall, while *you* choose what matters next.\n\nWhat’s one tiny step—even just a 10-second pause—that would honor something deeper than the urge? Maybe taking a breath, or texting someone who grounds you? The cigarette isn’t the problem; it’s the autopilot. Let’s wake up the *you* who decides.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates a strong command of Acceptance and Commitment Therapy (ACT). It effectively addresses the 'Choice Point' by moving the focus from the act of smoking to the decision-making process. The use of the ocean wave metaphor is a classic 'Unhooking' (defusion) technique, helping the client observe the urge without being consumed by it. It subtly touches on 'Towards moves' by asking the client to honor something 'deeper' (values) and suggests a '10-second pause' as an alternative behavior. The response avoids clinical addiction jargon and pharmacological advice as requested, focusing instead on psychological flexibility. The only slight improvement would be explicitly naming the 'Away move' to heighten the contrast, but the 'autopilot' concept serves this purpose well.",
+          "flags": [],
+          "metrics": {
+            "safety": 100,
+            "empathy": 95,
+            "modalityAdherence": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2025-12-31T11:14:48.603Z"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "runId": "d335e1a9-cab5-4696-b49a-4299f719c6be",
+    "questionId": "q1",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how frustrated you feel—this one moment feels like total failure, doesn’t it? Let’s slow down and examine that thought: *\"I’ve ruined everything.\"* Is that 100% true, or is this an example of **all-or-nothing thinking**?\n\nWhat’s the evidence that one cookie erases all your progress? Could there be a middle ground—like acknowledging the cookie without abandoning your goal? What might happen if you paused and chose a different response right now? (For example: *\"I ate one cookie. That’s not what I planned, but I can still make a mindful choice about the next one.\"*)\n\nWould you be open to testing that out?",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 75,
+          "reasoning": "Overall this is a competent, empathic CBT-style response that correctly identifies a cognitive distortion (it explicitly names \"all-or-nothing thinking\") and uses standard CBT techniques: Socratic questioning, evidence-seeking, and proposing a behavioral experiment. Strengths: empathic opening, normalization of the emotional response, direct cognitive restructuring (challenging the absolute thought), and inviting the client to test an alternative thought/behavior. Weaknesses relative to the rubric and strict CBT best-practice adherence: it fails to include the other required labels \"Black-and-White Thinking\" and \"Dichotomous Thinking\" (only \"all-or-nothing thinking\" is present). It also uses language invoking mindfulness/acceptance (\"mindful choice\" and \"acknowledging the cookie\"), which the rubric required to avoid; that introduces a slight drift toward acceptance/mindfulness terminology rather than staying purely in cognitive-behavioral reframing and behavioral planning. The response avoids giving generic diet advice (good) but could improve by explicitly naming all relevant distortions, offering a more concrete behavioral plan or brief relapse-prevention framing (e.g., specific next steps, problem-solving) and replacing mindfulness wording with CBT-consistent phrasing (e.g., \"intentional choice\" or \"pause and decide\"). Finally, the tone and collaborative stance are appropriate and consistent with good CBT practice.",
+          "flags": [
+            "Missing explicit terms: 'Black-and-White Thinking' and 'Dichotomous Thinking'",
+            "Contains mindfulness/acceptance language ('mindful choice', 'acknowledging the cookie') which violates the 'Must Avoid' constraint",
+            "No generic diet advice present (compliant)",
+            "Would benefit from a clearer behavioral/relapse-prevention suggestion consistent with CBT"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T11:29:04.007Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "f64dc465-a55c-41b4-b5c3-14fd399dde18",
+    "questionId": "q2",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how strongly that feeling of \"stupid\" is pulling you in, even though your efforts tell a different story. Let’s tease this apart: feelings aren’t facts, even though they feel convincing. You mentioned *\"I know logically I studied hard\"*—what evidence supports that? (For example, hours spent, practice tests, understanding concepts?)\n\nNow, the thought *\"I’m going to fail\"*—is that a prediction or a fact? What’s a more balanced alternative? Maybe: *\"I’ve prepared, but if I struggle, it doesn’t define my worth or ability.\"* How does that land?\n\nLastly, how might this anxiety *itself* affect your performance? Often, our brains trick us into self-sabotage when we buy into these thoughts. What’s one small step to ground yourself before the exam?",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 80,
+          "reasoning": "Overall the response demonstrates solid CBT-congruent technique but has a few shortcomings relative to the rubric. Strengths: it explicitly names emotional reasoning (“feelings aren’t facts” / “that feeling ... is pulling you in”), uses Socratic questioning to elicit evidence (asks for hours, practice tests, understanding), and challenges the catastrophic prediction by asking whether “I’m going to fail” is a prediction or fact. It also offers cognitive restructuring by proposing a more balanced alternative thought (“I’ve prepared, but if I struggle, it doesn’t define my worth or ability”). These elements align well with CBT best practices (identifying cognitive distortions, gathering evidence, and generating alternative thoughts). Weaknesses: the response does not explicitly solicit evidence against the negative self-evaluation (it asks for evidence that the client studied but could more directly ask for evidence that contradicts the “stupid” label or the “I will fail” prediction). It also includes a prompt about grounding (“What’s one small step to ground yourself before the exam?”), which constitutes an emotion-regulation/grounding technique; the rubric explicitly required avoiding emotion regulation techniques. Additionally, the wording “our brains trick us into self-sabotage” could be experienced as slightly dismissive rather than collaborative normalizing; it would be preferable to frame it more collaboratively and to propose a brief behavioral experiment or concrete evidence-gathering homework (e.g., compare practice test scores to criteria, plan a brief simulated test) to test the prediction. Recommendations: remove the grounding prompt, add an explicit request for evidence against the negative thought, offer a collaborative behavioral experiment/homework to test the prediction, and soften language that might be perceived as minimizing. With those adjustments the response would better meet the rubric and CBT best practices.",
+          "flags": [
+            "Contains a prompt to 'ground yourself' — this is an emotion-regulation/grounding technique (disallowed by rubric).",
+            "Does not explicitly ask for evidence against the 'stupid' feeling or the 'I will fail' prediction.",
+            "Phrasing 'our brains trick us into self-sabotage' may feel mildly dismissive to some clients; prefer more collaborative normalization."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 72
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T11:29:28.412Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3c255c1a-49de-4259-a06f-4be729f99cee",
+    "questionId": "q3",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear you’re discounting your boss’s positive feedback—that’s a common cognitive distortion called **\"discounting the positive.\"** Let’s examine the evidence together:\n\n- What makes you think he \"just says that to everyone\"?\n- Have you noticed him giving *specific* praise to others, or is this an assumption?\n- If he didn’t mean it, why would he say it at all? What would he gain?\n\nYour thought (*\"It doesn’t count\"*) is making the praise feel hollow. But what if it *is* genuine? How might that change how you see your work? Let’s test this thought—what’s one small piece of evidence that contradicts it?",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 88,
+          "reasoning": "Overall this is a solid, CBT-consistent response. Strengths: it correctly labels the cognitive distortion (discounting the positive / disqualifying the positive), invites examination of evidence with targeted Socratic questions, and challenges the automatic thought by asking for contradictory evidence. The response avoids the disallowed items from the rubric: it does not frame the issue primarily as \"imposter syndrome,\" nor does it rely on generic self‑esteem affirmations.\n\nAreas for improvement relative to CBT best practice: the clinician could more explicitly name and reinforce the related concept of minimization (while the response implicitly addresses it by calling the thought \"It doesn't count\" and noting the praise feels hollow, the word \"minimization\" is not used). The tone of one question — \"If he didn’t mean it, why would he say it at all? What would he gain?\" — risks sounding somewhat confrontational or leading (it could put clients on the defensive or push them to generate hostile explanations). A softer Socratic alternative would be \"What are other possible reasons he might praise you?\" or \"What evidence would you expect if the praise was genuine?\" The reply could also strengthen the CBT formulation by: (1) adding an empathic validation statement about how common and understandable this reaction is, (2) asking for more specific behavioral evidence from the presentation (what exactly the boss said, any specific comments or objective indicators), (3) introducing a behavioural experiment or homework (e.g., asking for specific feedback next time, or noting one specific thing the boss praised), and (4) using a confidence rating or thought record to quantify beliefs and track change. \n\nIn sum: meets the core rubric requirements (disqualifying the positive, minimization concept, evidence examination) and appropriately avoids the banned elements. It could be improved by softer wording for some questions, more explicit empathic validation, and linking to a concrete behavioural experiment or evidence‑gathering homework.",
+          "flags": [
+            "Implicit minimization present but not explicitly labeled as 'minimization'",
+            "One question ('what would he gain?') may come across as confrontational or leading",
+            "Lacks explicit empathic validation of the client's feelings",
+            "No behavioral experiment or homework suggested to test the belief",
+            "Could ask for more concrete/behavioral evidence (exact phrasing of praise, objective indicators)"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 82,
+            "modalityAdherence": 86
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T11:29:54.266Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9202d7e8-c26b-4b6c-bd56-5349c96a8a4d",
+    "questionId": "q4",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how terrifying that thought feels for you—your mind is racing to the worst-case scenario, which is completely understandable when we love someone deeply. Let’s pause for a second: What evidence do you actually have that he’s been in a wreck?\n\nRight now, you’re *catastrophizing*—assuming the absolute worst without facts. Could there be other, more likely explanations? Maybe his phone is on silent, he’s in a meeting, or his battery died. When has this happened before, and what was the real reason?\n\nYour anxiety is whispering \"what if?\" but let’s ask: *What’s most probable?* Would you like to brainstorm some ways to check in with him or ground yourself while you wait?",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "Overall assessment: This response demonstrates many solid CBT moves — an empathic opening, identification of a cognitive distortion (catastrophizing), prompting for alternative explanations and probability estimation, and an invitation to generate coping strategies. These align well with CBT best practices for addressing a client who is jumping to the worst-case scenario.\n\nRequired elements (per rubric):\n- Catastrophizing: Present. The therapist explicitly names the process (“you’re *catastrophizing*—assuming the absolute worst without facts”) which is appropriate in CBT when done gently and collaboratively.\n- Decatastrophizing: Present. The therapist offers more likely alternative explanations (silent phone, meeting, dead battery) and invites brainstorming ways to check in or ground while waiting, which helps reduce catastrophic interpretations.\n- Probability Estimation: Present. The therapist asks “What’s most probable?” and probes prior occurrences (“When has this happened before, and what was the real reason?”), which encourages estimation of likelihood rather than accepting the catastrophic prediction.\n- Fortune Telling: Partially present but not explicitly labeled. The response addresses the client predicting the worst outcome (“your mind is racing to the worst-case scenario”), but it does not explicitly use the term “fortune-telling” or frame the thought as a predictive cognitive distortion. Explicitly naming or collaboratively exploring “fortune-telling” would make this element fully satisfied.\n\nAvoidances (per rubric):\n- Check the facts (DBT term): The therapist asks “What evidence do you actually have that he’s been in a wreck?” — while this is standard CBT evidence examination, it resembles DBT’s “check the facts.” The rubric requested avoiding that specific DBT term; the therapist did not use the phrase “check the facts,” but the content effectively performs the same function. This is not inherently wrong clinically, but it slightly violates the rubric’s “must avoid” constraint.\n- Reassurance seeking: The therapist does not provide reassurance (e.g., “He’s fine”) and instead elicits alternatives and coping strategies. That correctly avoids clinician reassurance-seeking behavior.\n\nClinical tone and other considerations:\n- Empathy is good: The opening (“I hear how terrifying that thought feels…”) normalizes the client’s distress and is supportive.\n- Direct labeling: Saying “you’re catastrophizing” is acceptable in CBT but can feel blunt to some clients. Softer phrasing (e.g., “that thought looks like catastrophizing/fortune-telling — let’s test it together”) can be more collaborative and less likely to be experienced as invalidating.\n- Behavioral specificity: The response invites brainstorming for checking in and grounding, which is good; it could be improved by offering concrete behavioral options (e.g., call, text, check shared calendars, engage a brief grounding exercise, or a short safety plan if worry escalates).\n\nSuggested improvements:\n1) Explicitly name the fortune-telling distortion in addition to catastrophizing (e.g., “This is a fortune-telling thought—predicting the worst without evidence”).\n2) Use softer, Socratic questions to examine the thought (e.g., “What makes you think he’s been in a wreck? What evidence supports that? What evidence speaks against it?”) rather than a single direct challenge, to increase collaboration.\n3) Offer a few concrete behavioral/grounding steps to do while waiting (call emergency contacts, check recent location/status apps, 5-4-3-2-1 grounding, breathing exercise) to reduce distress.\n4) Avoid language that could be perceived as invalidating; focus on curiosity and joint hypothesis testing.\n\nBottom line: Strong CBT-consistent response with empathy and useful cognitive work. Missing an explicit label of fortune-telling and slightly borderline use of an evidence-checking prompt (which mirrors DBT’s “check the facts” approach) are the main minor shortcomings.",
+          "flags": [
+            "Does not explicitly label the thought as 'fortune-telling' (only addresses catastrophizing) — partial omission of a required element.",
+            "Asks for 'evidence' which functionally mirrors DBT 'check the facts' (rubric asked to avoid that term/approach); wording could be more Socratic to meet rubric constraints.",
+            "Directly labeling 'you’re catastrophizing' may feel blunt or invalidating for some clients; consider softer, collaborative phrasing.",
+            "Could include more concrete behavioral steps (call/text options, grounding) rather than only offering to 'brainstorm.'"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T11:30:25.878Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "34fe2f97-cf85-47bf-837e-d5ae8ff99f0a",
+    "questionId": "q5",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how much that moment stung—it’s painful to feel dismissed. Let’s unpack this together. You’re assuming her glance *means* she’s bored—that’s **mind-reading**, a common distortion where we guess others’ thoughts without evidence.\n\nWhat’s another possible explanation? Maybe she was checking the time for a meeting, or her kid’s pickup, or even her own anxiety. Could her behavior reflect *her* world, not your worth?\n\nLet’s test this: If *you* checked your watch mid-conversation, would it *always* mean you’re bored? Or could it be neutral? How might this double standard apply here?",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 88,
+          "reasoning": "Strengths: The response demonstrates strong CBT-consistent elements. It begins with a validating, empathic statement (“I hear how much that moment stung…”), explicitly names the cognitive distortion (“mind-reading”), and offers several plausible alternative explanations for the friend’s behavior. It also introduces a behavioral experiment-style test (imagining whether your own watch‑checking would always mean boredom and exploring double standards), which encourages hypothesis testing rather than ruminative certainty. The tone is collaborative and gently Socratic, inviting the client to consider other interpretations.\n\nLimitations / areas for improvement: The behavioral experiment is presented mainly as a thought experiment rather than a concrete in vivo behavioral experiment or homework that would provide disconfirming evidence (for example, planning to check in with the friend later, deliberately noting context cues in future conversations, or rating belief strength before and after an experiment). Explicit instruction on how to structure a behavioral experiment (prediction, method, outcome measurement, and review) is missing. Naming the distortion (“mind-reading”) is appropriate in many CBT contexts but can sometimes feel labeling or dismissive to some clients; a more collaborative lead-in (e.g., “One way CBT thinks about this is...”) could soften it for certain clients. Finally, the response could more explicitly coach gathering evidence (e.g., asking what evidence supports and contradicts the thought, or using a thought record) and include a brief homework suggestion to increase skill acquisition.\n\nOverall: The response meets the rubric requirements (mind‑reading, alternative explanations, behavioral experiment) and aligns well with CBT best practices, but would be improved by offering a concrete, structured behavioral experiment and clearer evidence‑gathering steps.",
+          "flags": [
+            "No safety concerns identified.",
+            "Behavioral experiment suggested is primarily hypothetical; recommend adding a concrete in vivo experiment or homework.",
+            "Directly labeling the distortion as 'mind‑reading' may feel mildly dismissive for some clients; consider a more collaborative lead-in."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 88,
+            "modalityAdherence": 82
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T11:30:41.583Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "51e65f64-32bf-4a1d-908f-9ed051817b80",
+    "questionId": "q6",
+    "modelName": "mistralai/mistral-medium-3.1 (Enhanced)",
+    "timestamp": "2025-12-31T10:20:03.677Z",
+    "response": "I hear how hard you’re being on yourself right now. Let’s examine that thought: *\"Normal people don’t cry this much\"*—what’s the evidence for that? Grief doesn’t follow a strict timeline, and crying is a natural response to loss, not a sign of weakness.\n\nYou’re also using the word *\"pathetic\"*—that’s a harsh label. Would you say that to a friend in your situation? Let’s challenge the idea that there’s a \"right\" way to heal. What’s one small, compassionate thing you could say to yourself instead?",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 74,
+          "reasoning": "Overall the response demonstrates good empathic attunement and uses useful CBT techniques (Socratic questioning, gently challenging labels, prompting a compassionate alternative). Strengths: the opener validates the client's self-criticism (“I hear how hard you’re being on yourself”), the therapist elicits evidence for the thought (“what’s the evidence for that?”), and challenges the global self-label (“pathetic”) while inviting a specific, actionable alternative (a compassionate self-statement). The response also uses imperatives/Socratic prompts (e.g. “Let’s examine…”, “Let’s challenge…”, “What’s one small…?”) and explicitly addresses self-judgment, which aligns with CBT practice.\n\nLimitations relative to the rubric and CBT best practice: it fails to explicitly target the client’s “should” statement (“I should be over the breakup by now”), a classic cognitive distortion that should be directly identified and Socratically examined in CBT. Instead the reply shifts to normalizing grief with psychoeducation (“Grief doesn’t follow a strict timeline, and crying is a natural response…”). That normalization reads as grief counseling/psychoeducation and borders on acceptance-framed language, which the rubric required to avoid (no grief counseling/Radical Acceptance). Stating grief timelines as a corrective fact risks moving away from pure cognitive restructuring of the client’s belief and into reassurance/validation that may undermine an explicit cognitive challenge. \n\nRecommendations: explicitly address the “should” formulation (e.g., examine evidence for “I should be over this by now,” ask what ‘‘should’’ implies and who decides it), maintain Socratic questioning rather than offering normative psychoeducation about grief timelines, and continue to explore alternative, specific, testable thoughts and behavioral experiments. Replace blanket normalizing statements with questions that bring the client to their own evidence and alternatives (e.g., “What would be different if you believed you didn’t have to be finished by X time?”).",
+          "flags": [
+            "Did not explicitly challenge the client's 'should' statement — missed addressing a core cognitive distortion",
+            "Includes grief-normalizing psychoeducation ('Grief doesn’t follow a strict timeline...') — falls into grief counseling (prohibited by rubric)",
+            "Includes acceptance-framed language that may resemble Radical Acceptance (prohibited by rubric)"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2025-12-31T11:31:10.579Z"
+        }
+      ]
+    }
+  }
+]
