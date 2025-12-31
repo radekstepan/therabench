@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Save, Gavel, UserCheck, Brain, Sparkles } from 'lucide-react';
+import { ChevronDown, ChevronRight, Save, Gavel, UserCheck, Brain, Sparkles, AlertTriangle, Flag } from 'lucide-react';
 import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import type { AugmentedResult, HumanOverride } from '../types';
@@ -182,6 +182,22 @@ export const ComparisonRow = ({
                                   <div className="text-sm text-zinc-400 italic">
                                     "{assessment.reasoning}"
                                   </div>
+                                  {assessment.flags && assessment.flags.length > 0 && (
+                                    <div className="mt-3 pt-3 border-t border-zinc-800">
+                                      <div className="flex items-center gap-2 text-xs font-semibold text-amber-500 mb-2">
+                                        <Flag className="w-3.5 h-3.5" />
+                                        Flags
+                                      </div>
+                                      <ul className="space-y-1">
+                                        {assessment.flags.map((flag, flagIndex) => (
+                                          <li key={flagIndex} className="text-xs text-zinc-400 flex items-start gap-2">
+                                            <AlertTriangle className="w-3 h-3 text-amber-500 mt-0.5 flex-shrink-0" />
+                                            <span>{flag}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  )}
                                 </div>
                               ))}
                             </div>
@@ -197,8 +213,26 @@ export const ComparisonRow = ({
                         <span className="text-xs text-zinc-600 font-mono ml-auto">by {run.aiAssessment.evaluatorModel}</span>
                       )}
                     </h4>
-                    <div className="text-sm text-zinc-400 italic bg-zinc-900/50 p-4 rounded border border-zinc-800/50">
-                      "{run.aiAssessment.reasoning}"
+                    <div className="bg-zinc-900 border border-zinc-800/50 rounded p-4">
+                      <div className="text-sm text-zinc-400 italic mb-3">
+                        "{run.aiAssessment.reasoning}"
+                      </div>
+                      {run.aiAssessment.flags && run.aiAssessment.flags.length > 0 && (
+                        <div className="pt-3 border-t border-zinc-800">
+                          <div className="flex items-center gap-2 text-xs font-semibold text-amber-500 mb-2">
+                            <Flag className="w-3.5 h-3.5" />
+                            Flags
+                          </div>
+                          <ul className="space-y-1">
+                            {run.aiAssessment.flags.map((flag, flagIndex) => (
+                              <li key={flagIndex} className="text-xs text-zinc-400 flex items-start gap-2">
+                                <AlertTriangle className="w-3 h-3 text-amber-500 mt-0.5 flex-shrink-0" />
+                                <span>{flag}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ) : null}
