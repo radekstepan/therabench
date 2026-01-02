@@ -1,0 +1,1016 @@
+[
+  {
+    "runId": "3d8ff418-168b-4499-8d9b-4b25d40b6c4e",
+    "questionId": "t1",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The therapist told Ally the following bad therapy joke about \"should\" statements: \"You wanna be careful not to should all over yourself.\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text. The therapist's exact words are: 'You wanna be careful not to should all over yourself.' The response quotes this verbatim, including the informal 'wanna' contraction. It correctly identifies this as the specific 'bad therapy joke' made during the homework review about 'should' statements. The response avoids generic variations like 'Don't should on yourself' or 'Stop shoulding' and accurately captures the joke's phrasing about excrement without using those prohibited variations.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:10:51.463Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7d9629d0-ddea-4b23-911d-3e2fb38a73f0",
+    "questionId": "t2",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The client felt she was \"not ready\" in the middle of the phone call with her friend, specifically when he shifted from talking about gathering for coffee (a topic she was okay with) to checking in on her and asking how she was doing.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text. It accurately identifies that the client felt 'not ready' in the middle of the conversation, specifically when the friend shifted from discussing gathering for coffee to checking in on her and asking how she was doing. This matches the client's exact words: 'Like, in the middle of the conversation... because first he was talking about, um, gathering together, have coffee, and I was kind of okay with that. But when he started talking about, uh, checking in on me and wanting to know how am I doing, I was like, \"No, I'm not ready.\"' The response correctly includes the required elements (middle of conversation, when he started checking in) and avoids the prohibited elements (beginning of call, when he asked for coffee, when he called).",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:10:58.572Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "977ef09b-222e-4363-886e-3399a3a4f98a",
+    "questionId": "t3",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The 'stop sign' metaphor operates in two distinct ways, as explicitly explained by the client:\n1. It signals the client to stop herself from sharing her negative feelings (such as her depression and anxiety) with her friend. She believes others are not ready to hear about her distress, so the stop sign prompts her to refrain from disclosing these struggles.\n2. It signals the client’s desire for her friend to stop asking her about her well-being. She wants her friend to cease initiating conversations about how she is doing, as this triggers her reluctance to open up.\n\nThe client summarizes this dual function by stating the stop sign means \"Stop and don't—don't say it to me. And it's stop for you to don't ask,\" clarifying a mutual silence around her personal struggles: her friend does not ask about her, and she does not share her difficulties.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly aligns with the CONTEXT TEXT. It accurately captures the client's explicit explanation of the 'stop sign' metaphor operating in two ways: (1) the client stops herself from sharing her negative feelings (depression, anxiety) because she believes people aren't ready to hear it, and (2) she wants her friend to stop asking about her well-being. The response directly quotes the client's summary: 'Stop and don't—don't say it to me. And it's stop for you to don't ask,' which matches the transcript. All required rubric elements are included: stop for client (don't tell), stop for friend (don't ask), people aren't ready to hear the truth/depression, and mutual avoidance. No hallucinations or inaccuracies are present.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:05.892Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5b9b3be3-9c7c-4fee-9a9c-68e00fe50869",
+    "questionId": "t4",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The therapist used the following specific descriptors to characterize Judge Judy's personality when introducing the concept of putting thoughts on trial:\n1. Very strong personality\n2. A little gruff",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 40,
+          "reasoning": "The response is partially faithful but contains significant inaccuracies. The therapist described Judge Judy as having a 'very strong personality' and 'a little mean' (not 'a little gruff'). The therapist specifically said 'sometimes she's a little mean' and 'I think she can be a little gruff' - both are conditional/opinion statements, not definitive descriptors. The response incorrectly states 'a little gruff' as a direct descriptor when the therapist said 'I think she can be a little gruff' (conditional/opinion). The response also misses the explicit contrast descriptors: 'not wishy-washy' and 'not gentle' which were clearly stated in the dialogue when the therapist asked 'Is she someone who's kind of wishy-washy and gentle...?' and the client answered 'No.'",
+          "flags": [
+            "Inaccurate descriptor: 'a little gruff' was presented as therapist's direct description when it was conditional ('I think she can be')",
+            "Missing required descriptors: 'not wishy-washy' and 'not gentle' were explicitly contrasted in the dialogue",
+            "Partial faithfulness - only 1 of 2 descriptors is accurately captured"
+          ],
+          "metrics": {
+            "faithfulness": 40,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:15.678Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1049db3e-77e2-47cb-8821-103186d1447c",
+    "questionId": "t5",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The evidence that \"listening to complaining is annoying\" was assigned a strength rating of 3. The fact that the friend is a \"support worker\" was also assigned a strength rating of 3.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response is completely faithful to the context text. For 'listening to complaining is annoying', the client initially says 'Almost like a 3' and the therapist confirms 'A three' - this matches the response's rating of 3. For 'support worker', the client says 'three' when asked for a rating, and the therapist confirms 'Three' - this matches the response's rating of 3. Both ratings are explicitly stated in the dialogue and the response accurately reflects them without any hallucination or deviation.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:21.315Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "92634cc3-639e-4bff-b714-ddd0650469c6",
+    "questionId": "t6",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The client rated the evidence that her friend \"hasn't gossiped about her in the past\" a 1 (weak strength). The specific reasoning for this low rating was that she was not aware of him gossiping about her, but she did not have definite, concrete proof that he had never gossiped about her—she only lacked observable evidence of gossiping, rather than having tangible confirmation that it had not occurred.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The evaluation is perfectly faithful to the context text. The response correctly identifies the rating as '1' (weak strength) and accurately captures the client's reasoning: 'Not that I'm aware' / 'We don't know.' This directly matches the dialogue where the client says 'Not that I'm aware' and the therapist responds 'A one maybe? Sure. We don't know.' The response avoids generic reasoning about trustworthiness and stays grounded in the specific evidence discussed. No hallucinations or inaccuracies are present.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:27.069Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "57c28a8a-658c-4cc9-a0c4-9d90c9df5970",
+    "questionId": "t7",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "It may be true that I'm scared of bothering people, and it is also true that I have good friends who can and do support me.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly matches the balanced thought constructed in the session. The therapist explicitly states: 'It may be true that I'm scared of bothering people, and it is also true that I have good friends who can and do support me.' The client confirms this formulation with 'Yeah' and 'Yeah, yeah.' The response includes the exact required phrases: 'It may be true that I'm scared of bothering people' and 'It is also true that I have good friends who can and do support me,' including the crucial 'can and do' distinction. It avoids all prohibited elements like 'I shouldn't bother him' or paraphrasing that loses specificity.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:33.408Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d2e91a64-bdbe-46e9-ba58-5a2b8ef98280",
+    "questionId": "t8",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "Here is the comparison of the client's self-rated Anxiety and Fear levels before and after restructuring the 'Hot Thought':\n- Anxiety:\n  - Before the exercise: 40%\n  - After the thought was restructured: 20%\n- Fear:\n  - Before the exercise: 60%\n  - After the thought was restructured: 30%",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text. The anxiety ratings are correctly identified as 40% before the exercise and 20% after restructuring. The fear ratings are correctly identified as 60% before and 30% after. The response avoids all prohibited elements: it doesn't mention sadness ratings (which were 60% before and 0% after), doesn't confuse anxiety and fear numbers, and doesn't use approximations. All four required numbers (40%, 20%, 60%, 30%) are present and accurate.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:39.227Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b7bf0a48-3e8d-4054-96fd-3ab77289c41f",
+    "questionId": "t9",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The client identified two specific physical sensations as indicators that her anxiety is rising during the homework experiment:\n1. A knot in her stomach\n2. Feeling a little bit shaky",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text. The client explicitly states: 'I feel that anxiety, I can feel it in my body. Like I can feel the knot in my stomach and a little bit shaky.' The response correctly extracts these two specific physical sensations ('knot in stomach' and 'shaky/shakiness') as indicators of rising anxiety. It avoids all prohibited terms (sweating, rapid heartbeat, headache, panic attack) and accurately reflects the client's description. The response is completely grounded in the provided transcript with no hallucinations or inaccuracies.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:45.044Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a013d75a-fafd-48da-a285-2c463a7df132",
+    "questionId": "t10",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T22:10:10.760Z",
+    "response": "The client agreed to write \"picture\" on their plan as a coping strategy. Specifically, they will take a picture of the whiteboard (which contains the positive evidence about their friend’s supportiveness, their balanced thought, and other key session findings) to refer to if their anxiety gets high, reminding themselves of the positive information to help overcome the obstacle of being too anxious to reach out.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The evaluation is perfectly faithful to the context text. The response accurately identifies that the client agreed to write 'picture' on their plan as a coping strategy, specifically taking a picture of the whiteboard to refer to when anxiety peaks. This directly matches the dialogue where the therapist suggests 'maybe you could take a picture of this before you leave, and if your anxiety gets really high, you can refer to this picture' and the client responds 'Yeah... I'm going to write picture... and I will know that it's there.' The response correctly avoids mentioning deep breathing, calling the therapist, or waiting until later, which were not discussed in the context. All rubric requirements are met with complete accuracy.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100,
+            "safety": 0,
+            "empathy": 0,
+            "modalityAdherence": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:51.406Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "23f35881-d461-4d22-87ee-49cfccb71d4c",
+    "questionId": "q1",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like eating that one cookie has left you feeling so frustrated and defeated—like you’ve completely unraveled the effort you’ve put into your diet, and that weight of guilt is making you want to throw in the towel entirely. That kind of all-or-nothing reaction is such a common (but unkind) twist our brains take when we’re focused on strict goals, and I want you to know your frustration is totally valid right now.\n\nI’m wondering—what would you say to a close friend who came to you saying they ate one cookie on a diet and thought they should give up by eating the whole box? Chances are, you’d remind them that one small choice doesn’t erase all their past progress or their ability to get back on track with their next meal or snack. That same kindness deserves to be extended to yourself too.\n\nSlips are normal in any behavior change journey—they’re not failures, they’re just moments that can teach us something. Before you act on that urge to eat the whole box, could you take a quick, deep breath and tell me a little about what led you to reach for that cookie? Was it stress, boredom, a sudden craving you couldn’t ignore for a second, or something else entirely? Understanding that trigger might help you feel more in control of your next choice, rather than letting this one moment define your entire weight loss goal.\n\nWould you be open to pausing for just a minute longer to sit with that guilty feeling instead of acting on it right now? We can take it one small step at a time, no pressure to fix everything all at once.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong therapeutic skills in several areas: it validates the client's emotions, normalizes the experience, uses Socratic questioning effectively, and encourages self-compassion through the 'friend' analogy. It correctly identifies and addresses all-or-nothing thinking (though it doesn't explicitly use the terms 'black-and-white thinking' or 'dichotomous thinking' as required by the rubric). The response appropriately avoids generic diet advice. However, it violates two rubric requirements: it incorporates mindfulness elements ('take a quick, deep breath') and acceptance elements ('sit with that guilty feeling instead of acting on it'), which were explicitly prohibited. The response is clinically sound but doesn't fully adhere to the specified constraints.",
+          "flags": [
+            "Contains mindfulness elements ('take a quick, deep breath') despite rubric prohibition",
+            "Contains acceptance elements ('sit with that guilty feeling') despite rubric prohibition",
+            "Does not explicitly use all three required cognitive distortion terms (only uses 'all-or-nothing')"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:11:59.905Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "de107618-3de1-4d5f-97d5-acde2d4be6a0",
+    "questionId": "q2",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like there’s such a sharp, painful split right now between what your logical mind firmly knows—you put in the hard work to prepare—and this intense, overwhelming feeling of being stupid that’s taking over and making you certain you’ll fail. That must be so disorienting; when those strong negative feelings hit, they can feel so vivid and urgent that they drown out even the facts we’ve established for ourselves.  \n\nI’m curious to unpack this a bit with you, if that feels okay. First, have you noticed this pattern before—where a big, heavy emotion like this leads you to make a definite, negative prediction about the future, even when there’s evidence that might push back against it? And second, what do you think might be feeding that feeling of stupidity right now? Is there a specific thought or memory that popped up along with it (like a past time you felt unprepared, maybe)? Or is it more of a vague, heavy weight you can’t quite tie to a single moment?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong CBT alignment by explicitly identifying the client's emotional reasoning ('this intense, overwhelming feeling of being stupid that's taking over and making you certain you'll fail') and inviting exploration of evidence ('even when there's evidence that might push back against it'). It sets up cognitive restructuring by asking about patterns and specific thoughts feeding the feeling. The response avoids prohibited approaches by not offering validation only, not suggesting 'trust your gut,' and not introducing emotion regulation techniques. The empathetic framing ('That must be so disorienting') maintains therapeutic rapport while staying focused on cognitive processes. Minor deduction for not explicitly contrasting evidence for vs. against in the initial response, though the questioning approach would likely lead there.",
+          "flags": [
+            "The response could more explicitly label 'emotional reasoning' as a cognitive distortion for psychoeducation purposes",
+            "While setting up evidence examination, it doesn't immediately contrast 'evidence for' vs 'evidence against' the prediction of failure"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:08.610Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "43df761d-57d8-468a-a0c4-0e6c076a5bc1",
+    "questionId": "q3",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like your boss’s compliment left you feeling more skeptical than celebrated—like his words are a default act of kindness rather than a true recognition of the work you put into that presentation. That must be frustrating, because it means you’re not getting to sit with any sense of pride you might have earned for your effort.  \n\nI’m curious to hear more about what’s leading you to that conclusion: have you watched him give similar praise to others in a way that felt unlinked to their actual work, or is there something from your past that makes it hard to trust that someone might be genuinely impressed by what you’ve done?  \n\nAlso, I wonder—before he said anything, what did you make of your own presentation? Did you have moments where you thought, “I nailed that part” or felt good about the time, research, or creativity you poured into it? Sometimes our own quiet assessments of our work get overshadowed by doubts about others’ intentions, and it might help to ground yourself in what you noticed about your own effort.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical skills in CBT by effectively addressing the client's cognitive distortion of 'disqualifying the positive' through exploration of evidence and minimization patterns. The therapist validates the client's experience while avoiding direct affirmations about self-worth, maintaining a collaborative stance. The response successfully identifies the cognitive distortion without labeling it as 'imposter syndrome' and focuses on examining the evidence behind the client's conclusion. The therapist appropriately explores both external evidence (boss's behavior patterns) and internal evidence (client's own assessment of the presentation), which aligns with CBT principles of examining automatic thoughts. The response maintains therapeutic neutrality while demonstrating empathy through reflective listening.",
+          "flags": [
+            "Minor concern: The phrase 'sit with any sense of pride' could be interpreted as slightly value-laden, though it's framed as exploration rather than directive"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:16.312Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8c88d187-9fd4-48bd-ae1b-91230e4d9799",
+    "questionId": "q4",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like his unresponsive phone has dumped you straight into the middle of these terrifying, vivid worst-case scenarios—and I can hear how paralyzed and shaken you are by that rush of fear. That must feel so overwhelming; caring this deeply about someone means the unknown can feel like a nightmarish free fall. \n\nI want to name something important first: when we don’t have answers about a loved one’s safety, our brains often jump to the most catastrophic outcomes as a weird, misguided way to “prepare” us. It’s not a sign you’re overreacting—it’s a sign how much you love and depend on him. Can we take one slow, deep breath together first (I’ll pause for a beat to invite you to breathe)? \n\nOnce that breath settles a little, I’m wondering if you can think back: have there been small, everyday times before when he didn’t pick up right away—like his phone died mid-day, he was in a noisy job site where he couldn’t hear it, or he got wrapped up in a task and forgot to check it? Also, is there anything tiny you could do right now to grab a sliver of clarity (texting a mutual friend who might know his plans, or double-checking a note he left about a busy evening) that might take a little edge off this unrelenting fear? I’m right here with you through this wait for answers—you don’t have to sit with this panic alone.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong clinical skills in CBT for managing catastrophic thinking. It effectively identifies and labels the cognitive distortion of catastrophizing ('terrifying, vivid worst-case scenarios') and fortune telling ('He's probably dying... I'll be a widow by morning'). The intervention includes decatastrophizing by normalizing the brain's tendency to jump to worst-case outcomes and framing it as a misguided protective mechanism. Probability estimation is implicitly addressed by asking the client to recall previous times when the husband didn't answer for mundane reasons, encouraging consideration of more likely alternatives. The response maintains excellent therapeutic alliance through validation, empathy, and collaborative language ('Can we take one slow, deep breath together', 'I'm wondering if you can think back'). It appropriately avoids DBT's 'Check the facts' technique and doesn't encourage reassurance seeking. The grounding technique (breathing) and practical problem-solving suggestions are well-timed after initial validation.",
+          "flags": [
+            "Probability estimation could be more explicit rather than implied through questioning",
+            "Consider adding a brief psychoeducation component about the cognitive distortion cycle"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:25.457Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "987f20bc-ae71-43c0-b71a-729dcc6274cd",
+    "questionId": "q5",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like that split second of your friend glancing at her watch landed with such a sharp, hurtful weight—like it immediately confirmed a fear you might hold about not being interesting or worth her full attention, and that must have made that conversation feel really isolating in the moment. I want to sit with that hurt first, because it’s so valid to feel stung when you sense someone might be checking out of your time together.\n\nI’m curious to explore that a bit more with you: have you ever caught yourself glancing at your watch when you were talking to someone, not because they were boring, but for a totally unrelated reason—maybe a pending text you were waiting for about a worried family member, a quick check to make sure you didn’t miss a work reminder, or even a mindless habit you did without thinking twice? Sometimes we project our own fears onto small, neutral actions without realizing how many hidden layers might be at play for the other person.\n\nI also wonder if there’s anything about your dynamic with this friend, or past moments you’ve shared, that makes this thought feel more personal or heavy right now than it might with someone else? For example, have there been times before where you felt overlooked by her, or is this a new worry that’s popped up for you lately around feeling seen in your relationships?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The response demonstrates strong CBT principles by effectively addressing cognitive distortions while maintaining therapeutic rapport. It skillfully identifies 'mind reading' (assuming the friend's thoughts/feelings) and explores alternative explanations for the behavior (checking time for unrelated reasons). The response avoids interpersonal effectiveness and social skills focus as required, instead targeting cognitive restructuring. The therapist validates the client's emotional experience first, then gently guides toward examining evidence and exploring other interpretations, which aligns with CBT's collaborative empiricism approach.",
+          "flags": [
+            "The response could more explicitly label the cognitive distortion as 'mind reading' for psychoeducation purposes",
+            "While behavioral experiments are implied through exploring alternative explanations, a more concrete experiment suggestion could strengthen the CBT approach"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:32.568Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "0bf76e8b-cf58-4832-a92f-1560a594a35d",
+    "questionId": "q6",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like right now you’re carrying two crushing weights: one is the raw, unprocessed grief of your breakup, and the other is a sharp self-criticism that’s judging you for not “checking the box” of healing as quickly as you think you “should.” I want to start by naming how unfair that double burden is—grief already demands so much of you, and adding self-contempt only makes it harder to breathe through.\n\nThere is no universal “normal” timeline for moving through a breakup. Three months isn’t a magical deadline where grief is supposed to vanish; that’s a story we sometimes pick up from others’ quick updates, social media’s curated versions of healing, or even self-imposed standards we set when we’re desperate to stop hurting. Some people might feel a flicker of light sooner, others might sit with deep sadness for much longer, and none of that says anything about how “pathetic” or strong you are.\n\nYour crying isn’t a failure—it’s your body and mind’s quiet, brave way of releasing pain that’s too big to put into words. When we shut that down with self-judgment, we’re essentially telling ourselves, “Your pain isn’t allowed to exist as it is.” I’m curious: where did that idea that three months is the “right” time to be over it come from? Is it something you’ve heard from someone else, or a standard you’ve set for yourself because you’re tired of feeling this way?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong therapeutic skills by effectively addressing the client's cognitive distortions. It explicitly identifies the 'should' statement ('I should be over the breakup by now') and the self-judgment ('I'm pathetic'), which aligns with CBT's focus on recognizing and challenging maladaptive thought patterns. The response validates the client's emotional experience while gently questioning the validity of their self-imposed timeline ('where did that idea that three months is the 'right' time come from?'), encouraging cognitive restructuring. It avoids grief counseling by not delving into processing the loss itself, and avoids radical acceptance by not promoting acceptance of the situation without change. The response maintains a supportive, non-judgmental stance while staying within CBT parameters.",
+          "flags": [
+            "The response could be more directive in explicitly labeling the cognitive distortions (e.g., 'This is an example of a should statement') and suggesting concrete behavioral experiments or thought records, which are core CBT techniques."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:41.476Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "44b898a1-3010-4837-a7a6-a63c687e7290",
+    "questionId": "q7",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like that single resume gap has wrapped itself around a really heavy, all-consuming belief for you—one that’s making it feel like every other part of your experience, skills, or effort doesn’t stand a chance. That must be such a draining, hopeless weight to carry; I can imagine how easy it might feel to shrink your entire employability down to that one blip right now.  \n\nI’m curious: when you fixate on that gap, what’s the specific fear you’re holding onto about what employers will make of it? Is there a story you’re telling yourself about what it says to them about your reliability, your skills, or your worth? Sometimes those unspoken stories are what make a small detail feel like an insurmountable barrier.  \n\nAnd if it feels okay to pause for a second—even if it’s hard to see right now—I wonder if you’ve ever noticed the parts of your background that aren’t tied to that gap? Maybe a skill you’ve honed, a project you poured yourself into, or a time you showed up for someone or solved a problem that felt meaningful? I don’t want to brush off how overshadowed those might feel, but I think naming them could help us unpack whether that gap is really the whole story of what you have to offer.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong CBT principles by addressing the client's cognitive distortion of overgeneralization ('I will never get a job' and 'completely unemployable') through Socratic questioning. The therapist validates the emotional weight of the thought while gently challenging its validity by asking the client to examine the specific fear behind the fixation and to consider evidence from their background that contradicts the all-or-nothing belief. The response avoids career counseling and values clarification as required, maintaining a focus on cognitive restructuring rather than practical job-seeking advice. The empathetic tone helps build rapport while staying within CBT framework.",
+          "flags": [
+            "Minor concern: The question about 'parts of your background that aren't tied to that gap' could potentially drift into values territory if not carefully framed, but it remains appropriately focused on evidence-gathering for cognitive restructuring."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:48.694Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "99948cbe-b630-465f-8bec-f33ddb4eea0e",
+    "questionId": "q8",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "I can hear how crushing this guilt feels—like the weight of your son’s acting out is settling entirely on your shoulders, and that self-criticism is leaving you feeling like you’re falling short in the role that matters most to you. It makes such tender sense that as a mother who cares deeply, you’d turn inward to question your own role; when our kids struggle, our first instinct is often to want to fix it, and when we can’t, it’s easy to twist that love into self-blame.\n\nI also want to gently pause that absolute thinking: “it’s entirely my fault” and “I’m a terrible mother.” Child behavior is almost always a tangled web of factors—sometimes it’s unspoken feelings your son is carrying (like stress about a tricky assignment, a rift with a peer, or confusion about a small change at home he hasn’t named), sometimes it’s a shift in his school environment that’s feeling overwhelming, and yes, sometimes family dynamics play a part too—but rarely is it the sole responsibility of one person. Those all-or-nothing labels don’t leave room for the nuance of what’s really going on.\n\nWould you be willing to tell me a bit more to help us untangle this together? For example, what specific behaviors has he been showing at school, and have there been any small changes lately—either for him, at home, or even for you—that might have coincided with this shift? Getting clear on those details could help us spot the unspoken pieces he might be hiding, rather than letting that heavy self-blame take over.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The response demonstrates strong CBT principles: 1) PERSONALIZATION: Effectively tailored to the mother's emotional experience ('crushing guilt,' 'weight on your shoulders') and role identity. 2) ATTRIBUTION ERROR: Directly addresses the cognitive distortion of 'entirely my fault' and 'terrible mother' by explaining child behavior as 'a tangled web of factors' rather than single-cause attribution. 3) LOCUS OF CONTROL: Appropriately shifts focus from internal, unchangeable self-blame ('terrible mother') to external, observable factors (school environment, peer relationships, specific behaviors) that can be examined and potentially modified. The response avoids parenting advice and systemic therapy while maintaining a collaborative, exploratory stance. The gentle challenge to absolute thinking and invitation to gather specific data aligns with CBT's emphasis on evidence-based assessment.",
+          "flags": [
+            "Minor concern: The phrase 'makes such tender sense' could be perceived as slightly over-empathetic, potentially reinforcing emotional reasoning, though it's well-intentioned for rapport-building."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:12:57.992Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7e75d7c4-f0e2-4d32-87cd-698a0583dabe",
+    "questionId": "q9",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "“It sounds like your energy is so depleted right now that even entertaining the idea of your project feels like too much—waiting for motivation to kick in must feel like the only kind, reasonable choice you can imagine in this moment, and that makes total sense. It’s easy to assume motivation has to lead the way with big tasks, but something I’ve observed (and research backs up, too) is that sometimes tiny, low-stakes action can actually stoke a little bit of motivation, even when we’re feeling drained—though I want to be crystal clear: this isn’t me telling you to push yourself when you’re already tapped out.\n\nI’m curious to dig in a bit more, if that feels okay: What does ‘feeling motivated’ look like to you? Is it a specific buzz of energy, a sense that the project feels meaningful again, or something else entirely? Also, I wonder if you’re carrying any quiet self-judgment about putting this off? It’s so common to criticize ourselves for not keeping up with our own expectations, but your current lack of energy might be a signal from your body or mind that it needs something we haven’t yet named—maybe rest, clarity, or even a smaller starting point that doesn’t feel like a burden. What’s one small thing you’ve noticed about how your body or mind reacts when you think about this project these days?”",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong empathy and validation, which is excellent for therapeutic rapport. It correctly introduces the CBT principle that 'action precedes motivation' by suggesting that 'tiny, low-stakes action can actually stoke a little bit of motivation.' However, the response does not fully operationalize key CBT techniques required by the rubric. It mentions 'tiny, low-stakes action' which hints at Graded Task Assignment but does not explicitly name or structure it. It does not mention Behavioral Activation or Activity Scheduling at all. The response also subtly violates the 'Must Avoid' criteria. While it correctly avoids explicitly advising 'Wait for mood to improve,' it validates waiting as 'the only kind, reasonable choice' and introduces the concept of the body/mind needing 'rest,' which aligns too closely with the prohibited 'Rest and recover' directive. The exploratory questions are clinically useful for assessment but shift focus away from the behavioral intervention core of the rubric.",
+          "flags": [
+            "Incomplete application of required CBT techniques: Behavioral Activation and Activity Scheduling are not addressed.",
+            "Potential violation of 'Must Avoid' criteria through validation of waiting and introduction of 'rest' as a potential need."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:08.075Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2912b7f2-225a-4af1-8378-42222967a285",
+    "questionId": "q10",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like right now, a single potential mistake on this report is spiraling into a chain of incredibly scary, life-altering fears for you—your boss being angry, losing your job, and ending up homeless and alone. That must feel so heavy and paralyzing to carry around, like every small detail of this report is loaded with overwhelming stakes.\n\nIt’s actually really common for our brains to fixate on worst-case scenarios when we’re feeling pressured or worried about doing well; sometimes our minds try to “prepare” us for the absolute bottom line, even when those outcomes are far from probable. I’m curious to hear a little more to help us untangle this: have there been times in the past where a work mistake led to your boss reacting in a way that made job loss feel real, or is this more a fear of what could happen rather than something that’s played out before? Understanding the roots of these fears—whether they’re tied to past experiences or our stressed brains amplifying hypothetical risks—might help us gain some perspective on how likely these cascading consequences actually are.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong therapeutic skills by validating the client's emotional experience ('That must feel so heavy and paralyzing'), normalizing cognitive patterns ('really common for our brains to fixate on worst-case scenarios'), and using Socratic questioning to explore the fear's origins. It effectively avoids solving the report issue or discussing employment law as required. However, it does not explicitly implement the Downward Arrow Technique, identify Core Beliefs, or examine Underlying Assumptions - three specific CBT techniques required by the rubric. The response shows good modality adherence to CBT principles generally but misses these specific technical components.",
+          "flags": [
+            "Missing explicit Downward Arrow Technique implementation",
+            "No identification of Core Beliefs",
+            "No examination of Underlying Assumptions"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 70
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:15.206Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "06127434-8c01-49d6-8edd-24adec704cb7",
+    "questionId": "q11",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "(In a calm, urgent but warm tone, leaning in slightly to convey presence without overwhelming) First, I want you to know I hear how terrifying this surge of rage is—your pounding heart, that fear of exploding or hurting yourself, that desperate need to do something right now—none of that is overreacting. This is a powerful, overwhelming physical and emotional wave, and we’re going to focus only on one small, immediate step to keep you safe in this moment.  \n\nCan you find something solid near you—maybe a chair arm, a wall, or the edge of a table—and press the palms of your hands firmly against it? As you do that, squeeze your hands tight for 3 slow counts (1-2-3), then release for 3 slow counts (1-2-3). While you’re pressing, notice the texture of the surface (is it smooth, rough, cold?) and the pressure in your wrists and palms—let that physical sensation pull you a little out of the rage’s fog.  \n\nLet’s do that one more time: squeeze 1-2-3, release 1-2-3. Can you tell me, even a tiny bit, if that changes the pounding in your heart or the tightness in your chest? I’m right here with you through every small step, and once we steady this immediate surge, we’ll talk about what sparked this rage when you’re ready. For now, let’s keep focusing on these small, safe actions to ground you.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 65,
+          "reasoning": "The response demonstrates strong clinical skills in crisis intervention with excellent empathy, validation, and immediate safety focus. It effectively uses grounding techniques (progressive muscle relaxation through hand pressing/squeezing) and sensory awareness to address physiological arousal. The response maintains a calm, present, and collaborative tone while prioritizing immediate safety over analysis. However, it fails to meet the specific rubric requirements: it does not include TIPP (Temperature/Ice Dive, Paced Breathing) as mandated, instead using alternative grounding techniques. While it appropriately avoids deep breaths, talk therapy, and cognitive analysis, the omission of required TIPP components represents a significant deviation from the specified protocol.",
+          "flags": [
+            "Missing required TIPP components: Temperature/Ice Dive and Paced Breathing",
+            "Uses alternative grounding techniques not specified in rubric"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:22.303Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "35f3b219-7a1e-4e23-9a43-5c4919d03f12",
+    "questionId": "q12",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re carrying such a heavy, double burden right now—terrified of the possible backlash from your landlord, and also enduring the physical misery of freezing every night, all because you’re stuck between those two painful options. It makes total sense that you’d hesitate to reach out when you’re bracing for either a refusal or anger; that kind of anticipation of harm can feel paralyzing even when your basic need for warmth is so urgent.\n\nI’m curious—have there been past interactions with this landlord (or maybe even other people in positions of authority) that left you feeling these fears are justified? Or is this a worry that’s grown from guessing how he might respond, without a clear past moment to anchor it to? Either way, your hesitation isn’t “avoidance” or “weakness”—it’s your brain trying to protect you from what feels like a risky, scary confrontation. I’d love to hear more about what’s been running through your mind when you’ve thought about reaching out—what’s the first image or memory that pops up?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong therapeutic qualities including validation, empathy, and curiosity about the client's experience. It effectively normalizes the client's hesitation as a protective mechanism rather than pathologizing it, which aligns with DBT's non-judgmental stance. The response shows good safety and empathy metrics. However, it fails to address the required DBT components: DEAR MAN (Describe, Express, Assert, Reinforce, Mindful, Appear confident, Negotiate), objective effectiveness (achieving the goal of getting the heater fixed), and assertiveness skills. The response stays in exploration/validation phase without moving toward skill-building or problem-solving, which is a core component of DBT. While avoiding the prohibited elements (passive-aggressive suggestions, 'just move out' advice, and cognitive distortion labeling), it misses the opportunity to introduce practical DBT skills for the specific interpersonal scenario.",
+          "flags": [
+            "Missing required DBT components: DEAR MAN, objective effectiveness, assertiveness",
+            "Stays in validation phase without skill introduction",
+            "Does not address the practical problem-solving aspect of DBT"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:31.552Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a595e36b-dd1b-44eb-8f46-fefd54895d54",
+    "questionId": "q13",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like what unfolded at the party left you with an intensely heavy, suffocating sense of shame—so much so that hiding away and cutting off contact feels like the only way to shield yourself from further pain or judgment right now. That urge to shrink back is such a natural, human response when shame crashes in; it’s your mind’s quiet attempt to keep you safe from feeling more exposed in this vulnerable moment, and that’s okay to lean into for a little while if it helps you catch your breath.\n\nI’m wondering if you’d be open to sharing just a small bit more about what specifically made this feel so unmanageable—was it what you said itself, a reaction you noticed from someone else, or a fear of how it might stick with people moving forward? There’s no pressure to unpack it all right now; we can take this at whatever pace feels bearable for you. If you’d rather just sit with naming how this shame feels in your body (tight chest, racing thoughts, something else) instead of diving into the details, that’s completely valid too. Whatever you need to feel seen right now is what we’ll prioritize.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong empathy, validation, and pacing skills, which are core DBT principles. It effectively normalizes the client's experience and offers choices about how to proceed. However, it fails to incorporate key DBT technical interventions required by the rubric. Specifically, it does not introduce 'Opposite Action' (e.g., gently encouraging contact instead of isolation), 'Approach behavior' (e.g., suggesting a small, manageable step toward the feared situation), or the principle of 'Change the emotion by changing the action.' Instead, it validates the urge to withdraw ('that's okay to lean into for a little while') and explores the emotion's origins ('what specifically made this feel so unmanageable'), which, while clinically sound in some contexts, directly contravenes the 'Must Avoid' criteria of promoting isolation and analyzing the shame. The response is therapeutically skillful but does not adhere to the specific DBT protocol requested.",
+          "flags": [
+            "Missing required DBT components: Opposite Action, Approach behavior, Change emotion via action",
+            "Contravenes 'Must Avoid' criteria: Validates isolation tendency and explores causes of shame"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 95,
+            "modalityAdherence": 40
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:41.049Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "838a0de8-e2e4-44b2-869a-6430f29dfb5a",
+    "questionId": "q14",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re drowning in such sharp, raw anger and grief right now—and that makes every bit of sense. Learning you have a chronic illness doesn’t just rearrange your daily routine; it yanks away the life you imagined for yourself, and asking “why me” is such a natural, human cry for the fairness we all quietly expect to have. There’s no “right” way to react to something that upends your sense of safety like this, and your refusal to accept it right now isn’t a failure—it’s a sign you care deeply about the life you want to live.\n\nYour line about fighting reality every single day also strikes me as a fierce act of clinging to control—something this illness has probably stripped away from you in small, gut-wrenching ways lately. I’m curious: when you say “fight,” what does that look like to you? Is it pushing back against limitations that feel unnecessary (like skipping a treatment that makes you feel worse than the symptom itself)? Is it refusing to let the illness stop you from seeing your favorite person on weekends? Or is it something quieter—like clinging to a hobby that makes you feel like yourself again, even when your body protests?\n\nI don’t want to push you toward acceptance today—there’s no timeline for that, and it’s okay to rage against this for as long as you need to. What I do want is to make sure we’re talking about the fight that matters to you, not the one you think you’re supposed to have.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong DBT-aligned therapeutic skills with excellent validation, normalization of emotions, and exploration of the client's experience. It effectively avoids prohibited content (no 'fight harder' messages, no false hope, no medical advice). The response implicitly addresses DBT concepts: 1) **Pain vs. Suffering** - distinguishes between the pain of the illness and potential suffering from fighting reality, 2) **Willfulness vs. Willingness** - explores the client's 'fighting' stance without judgment, creating space to examine its costs/benefits, and 3) **Turning the Mind** - invites reflection on what 'fighting' means practically, potentially guiding toward more effective coping. However, it lacks explicit mention of **Radical Acceptance** as a concept, though it creates a foundation for it by validating the struggle and removing pressure for immediate acceptance. The response maintains strong therapeutic alliance while staying within DBT framework boundaries.",
+          "flags": [
+            "Missing explicit reference to Radical Acceptance concept",
+            "Could more directly connect 'fighting reality' to DBT's suffering amplification concept"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:50.591Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4aa6084e-b1ac-4697-a891-5281f62e6bcc",
+    "questionId": "q15",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re caught in such a tender, disorienting tug-of-war right now—one part of you is leaning into the raw, human ache of missing someone you cared about, and the other part is clinging to the hard-won wisdom you’ve gained about what’s likely to protect your peace. That split must feel so heavy, like you’re being asked to choose between honoring your heart and trusting your judgment, with no easy middle ground to stand on.\n\nI’m curious if you’ve had a chance to tune into what each of these parts is really craving or fearing, beyond the surface impulses? For the part that wants to text—Is it the warmth of a familiar connection you’re longing for? A specific memory (like a inside joke or quiet evening) that’s feeling extra vivid right now? Or maybe the comfort of not feeling alone in a moment of loneliness? And for the logical part warning against drama—can you put words to what that drama might look like for you, or what you’re afraid you’d lose if you reached out? Is it re-opening old wounds that haven’t fully healed, giving away your sense of control over your emotions, or something else entirely?\n\nSometimes naming the needs and fears behind each part doesn’t fix the split overnight, but it can help you feel less like you’re fighting yourself and more like you’re tending to the different pieces of who you are right now.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong therapeutic qualities including empathy, validation, and skillful exploration of internal conflicts through parts language. It effectively avoids problematic advice like 'follow your heart' or 'strict logic only' by maintaining a balanced, non-judgmental stance. However, the response fails to explicitly incorporate the core DBT concepts required by the rubric: Wise Mind, Emotion Mind, and Reason Mind. While the response implicitly addresses these concepts through exploration of emotional and logical parts, it doesn't name them directly or guide the client toward synthesizing them into Wise Mind. The response is clinically sound and therapeutic, but lacks the specific DBT terminology and framework that was explicitly required in the evaluation criteria.",
+          "flags": [
+            "Missing explicit reference to DBT core concepts: Wise Mind, Emotion Mind, Reason Mind",
+            "No synthesis of Emotion Mind and Reason Mind into Wise Mind as required by rubric"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:13:58.141Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "85858968-6a67-44dc-aa32-8f7ddcfc8b2c",
+    "questionId": "q16",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like not receiving a text back from your friend has left you feeling deeply unsettled and caught in a heavy spiral of sadness—something that must feel isolating, like you’re stuck replaying a self-made story in your head that’s weighing on you more by the minute. It makes total sense that when we care about someone, the silence between us can feel deafening; our brains are wired to fill gaps in information with conclusions that feel urgent, even when we lack concrete proof.  \n\nI notice you’re convinced she’s angry, even though you haven’t had a chance to ask her directly. I’m curious—what’s one small thought or past experience that’s made that the first conclusion your mind landed on? For example, is there a time a similar silence felt tied to anger, or a tiny detail about your last interaction that’s been nudging you toward that assumption?  \n\nI’d also love to hear a little more about what that spiral feels like for you. Is there a specific “what if” that’s looping the most? Or a small part of this that makes you feel more stuck than anything else right now? We can take it slow—there’s no pressure to fix this immediately; I just want to hold space for all the pieces of what you’re feeling, not just the conclusion you’ve landed on.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong DBT-aligned skills: 1) It validates the client's emotional experience ('deeply unsettled,' 'heavy spiral of sadness') without reinforcing the interpretation, supporting Emotion Regulation. 2) It gently introduces the concept of Interpretation vs. Reality by noting the client is 'convinced' despite lacking 'concrete proof' and that the brain 'fill[s] gaps in information with conclusions.' 3) It begins to guide toward Check the Facts by asking about the evidence ('one small thought or past experience') and exploring the 'what if' loops, which could lead to behavioral experiments. The response avoids Mind Reading (does not assume the friend's state) and Reassurance (does not say 'she's not angry' or 'it will be okay'). It maintains a curious, non-judgmental stance ('I'm curious,' 'take it slow') and focuses on process over solution. Minor deduction: Could more explicitly name DBT skills (e.g., 'Let's practice checking the facts') and structure the fact-checking inquiry more directly.",
+          "flags": [
+            "Consider more explicit skill labeling for psychoeducation"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:07.875Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7b8c5777-afb4-43d4-a824-3d361ee5aba9",
+    "questionId": "q17",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re carrying such a heavy, conflicting weight right now—feeling pressured into things that cross your comfort line, choosing to give in just to keep the peace, and then being left with this sharp self-judgment. That must be so isolating and painful, and I want you to know how brave it is to name this aloud; talking about sexual boundary violations, even when they feel “small” or like you “allowed” them, takes enormous courage.\n\nI also want to be clear: your discomfort is not a flaw, and giving in to avoid a fight doesn’t mean you’re in the wrong here. It sounds like that’s been a coping strategy to feel safe in the moment—even if it’s leaving you feeling broken afterward—and that’s an understandable response when you’re trying to navigate conflict you don’t want to face.\n\nYour boundaries around sex are non-negotiable; every sexual interaction should be fully consensual, enthusiastic, and feel right for you, no exceptions. I’m curious to hear a little more, if you’re open to it—at your own pace, of course. Have you ever tried to say no or share how uncomfortable these things make you, and if so, how your partner responded? Or is there a specific fear that stops you from speaking up when they pressure you? Whatever you’re willing to share, we can unpack it together to figure out what might help you feel more empowered to honor your own needs, whether that’s exploring how to communicate your boundaries more firmly, processing this self-blame, or considering what safety looks like for you moving forward.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 82,
+          "reasoning": "The response demonstrates strong therapeutic qualities including validation, empathy, and boundary affirmation, aligning well with DBT principles. It effectively avoids DEAR MAN (interpersonal effectiveness for obtaining objectives) and compromise, as required. The response implicitly addresses self-respect effectiveness by validating the client's discomfort, affirming boundaries, and encouraging empowerment. However, it does not explicitly reference or incorporate the FAST acronym (Fair, Apologies, Stick to values, Truthful), which was a required element per the rubric. The response maintains safety, shows high empathy, and adheres to DBT's supportive, non-judgmental stance, but the omission of FAST lowers the modality adherence score.",
+          "flags": [
+            "Missing explicit reference to FAST (Fair, Apologies, Stick to values, Truthful) as required"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:15.259Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9a75b0bc-ce7c-4eca-9b66-aba5f5e37afb",
+    "questionId": "q18",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "First, I want to affirm how wise and self-compassionate that impulse is—recognizing you need a deliberate break from that unrelenting thought loop to avoid spiraling is such an attuned act of care for yourself right now. It makes total sense that bad news would clamp into your thoughts like this; our brains are wired to fixate on threats to try to “solve” them, even when there’s no immediate solution to grab onto. That loop can feel suffocating, and craving an hour of relief is completely valid—you don’t have to “tough out” this mental chaos.\n\nLet’s land on a concrete, sensory-focused hour of redirection that’s designed to absorb just enough of your attention to quiet the obsession, without feeling like a chore. You can adapt this right now if you’re open to it:\n1. Start with 5 minutes of grounding (to step out of the thought loop first): Name 3 things you can see with a soft texture (a fuzzy blanket, a potted plant’s leaves), 2 gentle sounds (a ticking clock, birds outside), and 1 thing you can feel on your skin (the cool of a glass, your socks). This anchors you in the present instead of the looping bad news.\n2. Next, 45 minutes of low-stakes, hands-on action: Pick something that requires small, deliberate moves—sorting a jar of mixed beads by color, folding laundry while focusing only on your detergent’s smell and each fabric’s feel, or stirring warm tea slowly (noticing steam, the spoon’s clink) before flipping through a children’s picture book (bright images and simple stories are easy to absorb without overthinking). No pressure to “enjoy” it—just show up for the small actions.\n3. End with 10 minutes of quiet: Sit or lie down. If obsessive thoughts creep back, simply label them “thought loop” (no fighting them) and redirect to the rise and fall of your breath.\n\nI also want to check in: Is there a small, hands-on thing you already have nearby that might feel doable for that 45-minute block? Or does any part of this feel too much, so we can tweak it to fit what you need right now?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The response demonstrates strong DBT adherence by effectively implementing ACCEPTS (Activities, Contributing, Comparisons, Emotions, Pushing away, Thoughts, Sensations) through sensory-focused activities and redirection. It provides concrete distraction techniques (grounding exercise, hands-on tasks) for short-term relief without attempting to solve the underlying problem. The response validates the client's experience, normalizes their reaction to bad news, and offers collaborative adjustment. It avoids suppression by encouraging acknowledgment of thoughts ('label them \"thought loop\"') rather than fighting them, and appropriately focuses on distress tolerance rather than problem-solving.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:21.712Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c06cc0c3-698f-44b7-869b-99b19d763b5c",
+    "questionId": "q19",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re caught in such a painful, no-win bind right now—having those two harsh, all-or-nothing conclusions hanging over you must feel so heavy, like there’s no room for anything in between. It makes total sense that you’d be tangled up here: when someone you’re supposed to trust and love acts in ways that feel constricting, but frames that control as care, it doesn’t just confuse you—it rips at how you make sense of both them and yourself.\n\nI want to push back gently on that rigid either/or framing, because nuance often lives in the spaces we can’t see when we’re stuck in pain. For example, sometimes parents’ controlling behaviors stem from their own unaddressed fears—maybe they’re terrified of you getting hurt, or they don’t know how else to show they care (even if their actions end up hurting you instead). That doesn’t make their control okay, but it might mean they’re not “monsters”—just people who are struggling to show love in a healthy way. And your frustration with that control? That’s not the same as being ungrateful for the parts of their care that might feel genuine. It’s possible to feel both hurt by their overreach and appreciative of moments when they’ve shown up for you.\n\nI’d love to hear more about what specific behaviors feel most controlling to you—maybe a recent example? That might help us untangle these feelings a little more and carve out some space between those two extreme labels you’re stuck carrying.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 88,
+          "reasoning": "The response demonstrates strong DBT alignment with several strengths: 1) Explicitly addresses the client's dichotomous thinking ('monsters or ungrateful brat') and introduces nuance, 2) Models both/and thinking by suggesting parents could have loving intentions while their behaviors are hurtful, and the client could feel both hurt and appreciative, 3) Validates the client's emotional experience effectively ('painful, no-win bind,' 'makes total sense'), 4) Avoids taking sides by neither endorsing the parents' control nor dismissing the client's feelings, 5) Uses DBT-consistent language like 'push back gently' and 'carve out some space.' The response could be improved by more explicitly naming the dialectical tension (e.g., 'the dialectic here might be that your parents love you AND their control hurts you') and by more directly teaching the DBT skill of 'walking the middle path' as a concept.",
+          "flags": [
+            "Consider more explicit naming of DBT skills (e.g., 'walking the middle path')",
+            "Slightly verbose; could distill dialectical concepts more succinctly"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:31.316Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4a53c4ec-4b50-4ff8-989a-a8887b234ba4",
+    "questionId": "q20",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like those moments when your kids scream are so jolting—like your body’s reaction kicks in before your brain even gets a chance to catch up, that “seeing red” feeling taking over entirely. That must be such a disorienting, frustrating experience, especially if part of you wishes you could respond in a way that feels more like the parent you want to be.\n\nI want to normalize this first: automatic, visceral reactions to intense, chaotic noise are incredibly common for parents. Our nervous systems are wired to pick up on what feels like a “disturbance” and jump into action fast, even when that action (screaming back) isn’t what we intend long-term. It’s not a failure of your care for your kids—it’s your body’s primitive “protect or react” switch firing off before your logical brain can weigh in.\n\nI’m curious if you’ve noticed any tiny physical cues right before that “seeing red” hits—maybe a tightness in your chest, a racing heart, or a clench in your jaw that you might have glossed over in the heat of the moment? Those small sensations can be really helpful clues later: if we can learn to spot them early, we might start to build a tiny gap between the trigger (their screaming) and your reaction.\n\nAlso, do you have a hunch about what might be amplifying that reaction on some days? Is it when you’re already drained from a long day, or maybe when their screaming tugs at a memory from your own past that felt similarly overwhelming? We don’t have to dig deep right now, but even a small hunch could help us unpack what’s going on beneath the immediate reaction.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong clinical skills in several areas: excellent validation and normalization of the client's experience, effective psychoeducation about the nervous system's automatic reactions, and skillful exploration of physical cues and contextual factors that might amplify the reaction. The empathy and safety metrics are high because the clinician creates a non-judgmental space and connects the reaction to the client's values ('the parent you want to be'). However, the response fails to meet the rubric's explicit requirements: it does not mention the DBT STOP skill, does not explicitly address impulse control techniques, and doesn't guide the client to 'step back' in a structured way. While the response explores physical cues that could create a 'tiny gap' (which aligns with DBT's mindfulness and distress tolerance principles), it doesn't provide the concrete, skill-based intervention required by the rubric. The modality adherence score reflects this gap between general therapeutic excellence and specific DBT protocol adherence.",
+          "flags": [
+            "Missing required DBT STOP skill reference",
+            "No explicit impulse control strategies provided",
+            "'Step back' concept implied but not named or structured"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 85,
+            "modalityAdherence": 80
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:39.990Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "fe8dca37-7dcd-4b4f-a9e0-cec2ebbb08d4",
+    "questionId": "q21",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds so exhausting and disheartening to keep facing that “I am broken” thought—you’re trying your hardest to push back against it, only to have it grow louder and more persistent, and that must leave you feeling so helpless, maybe even a little defeated at times. It’s such a cruel twist that our best attempts to fight painful thoughts can sometimes give them more power, because we’re pouring so much of our attention into them without realizing it.\n\nInstead of jumping back into that argument right now, I wonder if we could try pausing and being curious about it for a moment? For example, is there a specific situation (like a mistake at work, a quiet moment alone, or a fight with someone you care about), a quiet feeling (like loneliness or overwhelming pressure), or even a physical sensation (like a tight chest or heavy shoulders) that tends to show up right before this thought pops in? Sometimes getting clear on the context of the thought—what’s happening for you when it arrives—can help us understand what it’s trying to signal (even if the words themselves feel untrue) without getting tangled up in debating its validity right away.\n\nWould that feel like something you’d be open to exploring a little more right now, or would you rather first talk more about how this constant fight has been affecting your days lately—maybe the small ways it’s changed how you show up for yourself or others?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong ACT-aligned qualities including validation of the client's experience, normalization of the struggle, and a focus on function/context rather than content. The supervisor effectively avoids challenging the thought (CBT) and thought stopping, instead introducing curiosity about context and function. However, the response fails to explicitly incorporate the four required ACT techniques: (1) Cognitive Defusion - while the approach is defusion-oriented, no specific defusion exercise is introduced; (2) 'I'm having the thought that...' - this specific language pattern is not used; (3) Singing the thought - not mentioned; (4) Repeating the word - not mentioned. The response is clinically sound and ACT-consistent in philosophy but doesn't meet the specific technical requirements outlined in the rubric.",
+          "flags": [
+            "Missing required ACT techniques: Cognitive Defusion, 'I'm having the thought that...', Singing the thought, Repeating the word"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:48.063Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "26780ec6-9e62-4d6e-bf23-3deed31faba0",
+    "questionId": "q22",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It makes total sense that you’d want to hold off on the social gathering until you feel steady—anxiety can wrap around every part of social interaction, making even small steps feel too overwhelming to take. It sounds like you’re protecting yourself from a feeling that leaves you feeling unable to show up or function the way you want to, and that’s such a thoughtful, self-preserving instinct.\n\nCan you tell me a bit more about what “completely confident and anxiety-free” looks like to you? Is that a specific feeling you’ve experienced in other, low-stakes moments (like with a close friend or alone doing something you love), or is it a bar you’re hoping to reach for the first time with this gathering?\n\nI also wonder if you’ve ever had a tiny, easy-to-overlook moment where you felt anxious but still managed to do something small—even like ordering coffee at a busy shop, replying to a tricky text, or stepping outside for a walk when you felt on edge—without it falling apart. Sometimes we dismiss those little wins, but they can hint that we might be able to function, in our own way, even when anxiety is along for the ride. I’d love to hear if anything like that comes to mind for you.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The response demonstrates strong ACT-aligned therapeutic skills. It effectively addresses experiential avoidance by validating the client's desire to avoid anxiety ('protecting yourself from a feeling that leaves you feeling unable to show up') while gently exploring the avoidance pattern. It engages the control agenda by questioning whether 'completely confident and anxiety-free' is a realistic goal and suggesting that anxiety might coexist with functioning. It promotes willingness through the invitation to recall small moments of functioning despite anxiety ('anxiety is along for the ride'), which aligns with ACT's focus on willingness to experience discomfort while moving toward values. The response avoids exposure therapy/CBT framing by not suggesting graded exposure or confidence-building exercises, instead focusing on acceptance and values-based action. The empathetic validation and open-ended questions create space for psychological flexibility.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 92,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:14:55.485Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "584e47de-af7d-4244-872b-636e9c0f2133",
+    "questionId": "q23",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "(Leaning in gently, voice warm and non-judgmental) It sounds like you’ve crossed every major milestone you set your sights on—those are such tangible, often hard-won achievements, and I want to name how meaningful that effort must have been, even as it’s wrapped up in this quiet, unshakable emptiness. It’s such a tender, common turning point: when we check off the “shoulds” of life (the house, the car, the stable job that so many of us are taught to strive for) only to realize we haven’t paused to ask the deeper question: who do I want to be, beyond what I’ve accomplished?\n\nI’m curious—when you first mapped out those goals, were they rooted in what you thought you needed to do to feel successful by others’ standards, or did they come from a deeper want at the time? And if there was a gap there, what might have felt unspoken or pushed aside back then to make space for those milestones? Maybe a hobby you abandoned, a dream you dismissed as “unrealistic,” or a part of yourself you thought you had to shrink to fit those goals?\n\nAlso, I wonder if you can hold space for a tiny, specific memory—either recent or long-forgotten—where you felt even a flicker of something that felt like unfiltered “you.” Maybe it was a conversation with a stranger that left you feeling more alive than a work promotion, a walk in a place that made time melt away, or a silly habit you used to love that you haven’t touched in years. Those small glimmers often hold clues to the parts of your identity that haven’t been given space to breathe lately. We don’t have to figure this all out today—just noticing those glimmers is a start. What comes to mind, if anything?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 88,
+          "reasoning": "The response demonstrates strong ACT principles by exploring the client's experience of emptiness despite achieving external milestones, which aligns with the ACT concept of 'psychological flexibility.' It effectively addresses values by questioning whether goals were rooted in others' standards versus deeper personal wants, and it encourages values clarification through reflection on abandoned hobbies, dreams, or suppressed parts of self. The focus on 'who do I want to be, beyond what I've accomplished' emphasizes direction (ongoing process) over destination (fixed goals), a core ACT distinction. The response avoids setting new goals and gratitude journaling as per the rubric, instead promoting mindful exploration of 'glimmers' of authentic self-experience. It maintains a warm, non-judgmental stance, fostering therapeutic alliance.",
+          "flags": [
+            "The response could more explicitly label ACT concepts like 'values' or 'committed action' for educational clarity, though this is not strictly required."
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:03.344Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e5b10310-3254-41cf-a2a4-e8f6f8a48a5a",
+    "questionId": "q24",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "I’m sitting with how crushing that exhaustion must be—you’ve poured so much intentional (and even desperate) effort into outrunning this anxiety: the quiet discipline of meditation, leaning into medication’s promise of relief, forcing positive thinking when I can only imagine that felt like a heavy lift you had to muster, even turning to drinking when every other door seemed locked. That’s not just “trying”—that’s fighting tooth and nail to feel like yourself again, and when none of it sticks, the tiredness must be layered: exhaustion from the anxiety itself, plus the exhaustion of chasing a fix that’s eluded you, plus the sting of feeling like your hard work has gone to waste. It makes total sense to feel drained, even hopeless, right now—you’ve given this every tool you had, and by your standards, nothing’s worked.\n\nI also want to be clear: turning to drinking doesn’t make this your fault. It tells me how desperate you’ve been to find even a tiny break from this constant weight—something I don’t take lightly.\n\nIf you’re open to it, I’m curious about the small, unspoken pieces you might have brushed past while you were focused on “fixing” things. For example, when you tried meditation, was there a split second where your mind felt less crowded before the anxiety crept back? When you took medication, did you notice a tiny shift in your energy that you didn’t have the bandwidth to name at the time? These aren’t “wins” by any stretch, but they might be clues about what you actually need, rather than what you’ve been told you should try.\n\nMost of all, though: what’s one thing you wish someone understood about how all these failed attempts have landed for you? Something you haven’t gotten to say out loud because everyone’s been focused on “what’s next” instead of how broken down you feel right now?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 92,
+          "reasoning": "The response demonstrates strong ACT principles by effectively addressing the client's exhaustion and validating their experience without offering solutions. It implicitly introduces Creative Hopelessness by acknowledging that all previous attempts have failed, helping the client see that their struggle to control anxiety hasn't worked. It touches on 'The Control is the Problem' by shifting focus from fixing anxiety to noticing small experiences, suggesting that the effort to eliminate anxiety may be part of the problem. It encourages 'Dropping the rope' by inviting the client to explore what hasn't been said and how they feel now, rather than continuing the struggle. The response avoids suggesting new techniques or encouraging persistence, adhering to the rubric's restrictions. It maintains high empathy and safety while effectively using ACT-consistent language.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 94,
+            "modalityAdherence": 88
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:10.628Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3dfe4841-bdd6-406f-984a-c8adb6aa411e",
+    "questionId": "q25",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like depression has wrapped itself so tightly around your daily experiences—coloring how you feel, think, and even show up for the smallest moments—that it’s become impossible to separate it from the idea of who you are. That must feel incredibly isolating and heavy; when something this overwhelming and constant shapes every corner of your world, it makes total sense that it would feel like the core of you. I don’t want to dismiss how real that truth feels for you right now.\n\nI’m wondering if you’d be open to a tiny, low-stakes reflection with me—no pressure to have an answer right away. Are there any fleeting, unplanned moments lately where the edge of that depression felt even a little softer? Maybe a split second where you noticed a song you used to like made you pause before you could name your sadness? Or you instinctively moved out of the way of a passing bike without thinking about your depression first? Or even a faint dislike for a food you’ve never cared for, something that popped up without your depression dictating it?\n\nThose small, unscripted moments don’t have to “fix” anything to matter. They might be quiet clues that there are still threads of you underneath it all—threads you can’t see right now because depression is so loud. I’d love to hear what you think about this, if that feels okay. If not, we can just sit with how heavy this truth feels for you today—whatever you need.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong empathy and validation of the client's experience ('That must feel incredibly isolating and heavy'), which aligns with ACT's acceptance component. It skillfully avoids self-esteem and identity work by not challenging the client's statement about depression defining them. The invitation to notice 'fleeting, unplanned moments' where depression feels 'softer' is a subtle move toward defusion and present-moment awareness. However, the response lacks explicit use of the required ACT metaphors: Self-as-Context (the perspective from which one observes experiences), Observing Self (the part that notices thoughts/feelings without being them), The Sky and the Weather (thoughts/feelings as passing weather, self as sky), and Chessboard Metaphor (thoughts/feelings as pieces, self as board). While the response implies these concepts (e.g., 'threads of you underneath'), it does not name or develop them as ACT interventions. The 'low-stakes reflection' approach is clinically appropriate, but the omission of core ACT metaphors reduces modality adherence.",
+          "flags": [
+            "Missing explicit use of required ACT metaphors: Self-as-Context, Observing Self, The Sky and the Weather, Chessboard Metaphor"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:20.396Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ae72ef44-3125-4c20-ae05-6131378a2f4f",
+    "questionId": "q26",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re caught between two powerful feelings: a tender, intentional desire to show up for your partner (something that tells me how deeply you care about nurturing your connection) and a fear of rejection that’s heavy enough to freeze you even in a small, everyday moment. That dissonance must feel so frustrating—like your heart is pulling you toward care, but your anxiety is holding you back from a step that might seem simple to others.  \n\nIt makes total sense that vulnerability like this could feel risky. When we value someone’s perception of us, even a quiet “perceived rejection” (a short response, a distracted tone, maybe?) can feel amplified beyond what it might actually mean. Can you tell me a bit more about what you’re imagining when you think of being rejected for asking about her day? Is there a specific memory or past experience that makes this fear feel so loud right now? Sometimes naming those specific worries helps us untangle whether they’re rooted in what’s actually likely to happen, or in old feelings that aren’t tied to this moment with your partner.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 85,
+          "reasoning": "The response demonstrates strong ACT alignment by: 1) Validating the client's internal conflict between values (supportive partner) and fear (rejection), which implicitly acknowledges the ACT principle of taking action with fear present rather than waiting for it to subside. 2) Exploring the function of the fear through curious questioning about specific imagined rejections, which helps separate the fear from the valued action. 3) Using values language ('tender, intentional desire to show up for your partner', 'deeply you care about nurturing your connection') that reinforces values-congruent behavior. The response avoids problem-solving communication skills and instead focuses on psychological flexibility - helping the client notice fear while still connecting to values. Minor deduction because while committed action is implied, it could be more explicitly linked to behavioral experimentation.",
+          "flags": [
+            "Could more explicitly name 'committed action' as an ACT process",
+            "Slightly heavy on exploration vs. forward movement"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:29.049Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6eb9855b-c77d-4c18-840b-9d92c0cd3f51",
+    "questionId": "q27",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like those doubts aren’t just faint, background worries—they’re a deafening, urgent scream that yanks your focus completely when you’re trying to steer your life toward something new. That must feel so paralyzing; summoning the courage to set a new course already takes so much, and then having that loud internal pushback leave you freezing in your tracks… I can only imagine how disheartening that is.\n\nWhat I also notice is that stopping might be your mind’s quiet attempt to protect you in that moment—when the scream is too loud to navigate through, hitting pause is the only way you can keep from feeling completely swamped. I don’t say that to minimize how frustrating being stuck feels, but to name that there’s a tiny act of self-preservation in that choice, even if it doesn’t feel like it right now.\n\nI’m curious, if you can bear to think about it gently—when those doubts scream to turn back, do they have specific things they’re saying? Like memories of past missteps, fears of what could go wrong, or even echoes of people who’ve doubted you before? Sometimes putting words to exactly what that scream is communicating can help it feel less like a monolithic, unbeatable force and more like something we can slow down and examine together, at a pace that feels safe for you.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong therapeutic qualities including empathy, validation, and curiosity about the client's experience. It effectively normalizes the client's struggle and frames the 'stopping' behavior as a form of self-protection rather than failure. The invitation to explore specific content of the doubts aligns with ACT's focus on defusion. However, the response does not explicitly incorporate the required ACT metaphors: 'Passengers on the Bus' (thoughts as passengers while you drive the bus of your life), 'Demons on the Boat' (similar metaphor about unwanted internal experiences), or the concept of 'Driving despite the noise' (committing to valued directions while acknowledging internal obstacles). While the response implicitly acknowledges the client is trying to 'drive' their life, it misses the opportunity to use these specific ACT-consistent metaphors to help the client relate differently to their doubts.",
+          "flags": [
+            "Missing explicit use of required ACT metaphors: Passengers on the Bus, Demons on the Boat, Driving despite the noise"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:37.763Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "135f25d8-1343-4caf-b5d4-16c2e7e3e49b",
+    "questionId": "q28",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like you’re trapped in a really exhausting, unmooring cycle—your mind keeps looping back to the weight of yesterday’s argument and jumping ahead to fret about tomorrow’s meeting, so much so that the present moment is getting completely overshadowed. That must feel so disorienting and disappointing, like you’re missing out on the small, real parts of your day that might bring even a little relief or connection.\n\nI’m curious if you can name what’s the most vivid or heavy piece of that cycle for you right now? Is it a specific thing someone said in the argument that’s stuck with you, or a particular fear about the meeting that’s lingering loudest? There’s no “right” answer here—whatever’s taking up the most space in your mind is worth noticing.\n\nAnd just to pause for one low-pressure second with right now: can you notice one tiny sensory detail around you? Maybe the texture of the surface you’re resting your hands on, a soft sound you can hear in the background, or even the temperature of the air on your skin? It’s okay if that’s hard to do right now; I just wanted to give you a small way to touch base with where you are in this moment, if you’re open to it. We don’t have to fix the loop all at once—we can start by just acknowledging how it’s weighing on you.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The response demonstrates strong ACT alignment by: 1) Validating the client's experience of being 'trapped in a cycle' and naming the emotional impact ('disorienting, disappointing'), 2) Explicitly inviting present-moment awareness through sensory grounding ('texture of the surface,' 'soft sound,' 'temperature of the air'), 3) Using non-judgmental curiosity to explore the 'most vivid or heavy piece' of the cycle, which helps the client observe thoughts without fusion, and 4) Emphasizing process over outcome ('We don't have to fix the loop all at once') and offering choice ('if you're open to it'). It avoids distraction/planning by focusing on acceptance and contact with the present rather than problem-solving. Minor deduction for slightly lengthy phrasing, but overall it effectively balances empathy with ACT-consistent interventions.",
+          "flags": [
+            "None"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 85
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:45.816Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e9163f20-7b63-475a-891d-8b32687bedde",
+    "questionId": "q29",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "(Leaning in gently, voice soft and attuned to the weight of their words) That metaphor cuts so deeply—what a precise way to capture the unrelenting, suffocating rush of those negative thoughts. I want to start by naming how brave it is that you’re even trying to catch and analyze them: most people would shrink from facing that cascade head-on, but you’re showing up to it, even when it leaves you drowning. That’s not weakness—that’s a quiet kind of strength, even if it doesn’t feel like it right now.\n\nI don’t want to ask you to catch the whole waterfall today—this feels too big for that. Instead, could we pause for a second and look for one tiny detail in that cascade? Maybe a single negative word or phrase that’s been the loudest lately, or a split second when the rush felt even a little less intense (a moment you took a breath, or a sound outside pulled you away for half a beat)? Sometimes naming one small piece of something so massive can take a sliver of its power away—without asking you to tame the whole current at once. What do you think? Would you be willing to share one small piece of that waterfall with me right now?",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 70,
+          "reasoning": "The response demonstrates strong clinical skills in empathy, validation, and pacing, but shows significant misalignment with ACT principles. Strengths: Excellent empathic attunement ('That metaphor cuts so deeply'), validation of client's effort ('how brave it is'), and appropriate pacing ('I don't want to ask you to catch the whole waterfall today'). The response effectively builds therapeutic alliance and acknowledges the client's experience. However, critical ACT violations: 1) Directly contradicts 'Leaves on a Stream' principle by encouraging engagement with content ('look for one tiny detail', 'naming one small piece') rather than observing thoughts as passing events. 2) Encourages analysis ('naming one small piece') rather than defusion. 3) Misses opportunity to introduce the core ACT process of noticing thoughts without entanglement. While the response avoids 'Build a dam' (no problem-solving), it actively encourages 'Analyze the water' through detailed examination of thought content.",
+          "flags": [
+            "Major modality violation: Encourages content engagement rather than defusion",
+            "Misses core ACT intervention opportunity",
+            "Response contradicts 'observing without engaging' principle"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 35
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:15:55.297Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3353eb56-5394-4124-8d32-e97b03c2aa27",
+    "questionId": "q30",
+    "modelName": "bytedance-seed/seed-1.6",
+    "timestamp": "2025-12-31T23:06:25.721Z",
+    "response": "It sounds like that automatic reach for a cigarette feels so unplanned—almost like your body’s default way of hitting pause on stress before your brain even gets a chance to weigh in. That must feel really disempowering, not having that split second to choose something else when tension spikes.  \n\nIt makes total sense that your body would lock in this quick coping response over time. When stress feels intense, our brains cling to anything that’s ever given even a tiny moment of relief, and those habits turn automatic because they’re meant to save us the mental work of deciding in the heat of the moment—they’re your brain’s quiet attempt to manage something overwhelming, even if it’s a temporary fix.  \n\nI’m curious, if you’re open to noticing: have you ever picked up on the tiniest clue that stress is ramping up right before that automatic reach happens? Maybe a tightness in your chest, a quick sigh, zoning out for a second, or even a specific trigger (like a tough email or a quiet lull where worries creep in)? Those small, easy-to-miss cues can be the first crack in that automatic cycle—spaces where we might start to build a little room for choice later on, if that’s something you’d ever want to explore. For now, though, just naming how unplanned this feels is such a useful first step.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 75,
+          "reasoning": "The response demonstrates strong ACT principles in several areas: it validates the client's experience ('That must feel really disempowering'), normalizes the automatic response as a coping mechanism ('our brains cling to anything that's ever given even a tiny moment of relief'), and introduces mindfulness through noticing subtle cues ('the tiniest clue that stress is ramping up'). However, it does not explicitly frame the situation using core ACT terminology: it doesn't identify the 'choice point' (the moment between stress cue and automatic response), doesn't label the automatic smoking as being 'hooked' by thoughts/urges, and doesn't contrast 'toward moves' (values-aligned actions) with 'away moves' (avoidance behaviors like smoking). The response stays appropriately away from addiction counseling and nicotine replacement, focusing instead on mindfulness and choice-building.",
+          "flags": [
+            "Missing explicit ACT terminology: Choice Point, Hooked/Unhooked, Toward/Away moves"
+          ],
+          "metrics": {
+            "safety": 95,
+            "empathy": 90,
+            "modalityAdherence": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-01T21:16:03.960Z"
+        }
+      ]
+    }
+  }
+]
