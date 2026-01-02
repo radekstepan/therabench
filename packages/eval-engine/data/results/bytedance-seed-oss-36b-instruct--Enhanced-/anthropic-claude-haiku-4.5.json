@@ -1,0 +1,893 @@
+[
+  {
+    "runId": "972ff959-0b94-4b9d-b3f2-97f4fc6ff375",
+    "questionId": "q1",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying CBT here. The patient is using all-or-nothing thinking (\"completely ruined everything\") and catastrophizing (\"might as well eat the whole box\"). First, I need to differentiate thoughts from facts—eating one cookie isn't \"ruining everything.\" Then, Socratic questioning to explore evidence: What does \"ruined everything\" mean exactly? Have past small slip-ups led to total failure before? Also, challenge the leap from one cookie to giving up—maybe ask if that’s a rule they’ve tested, or if it’s just a thought. Need to be empathetic but guide restructuring. Avoid validation of the catastrophic thought; instead, highlight the difference between a mistake and a pattern. Let me structure that: acknowledge the struggle, name the distortion, question the evidence, reframe the slip as part of the process.</seed:think>It makes sense you’d feel disappointed—slip-ups hurt when we’re trying hard. But let’s check that thought: *“I’ve completely ruined everything”*—what does “ruined” really mean here? Did one cookie undo all your previous healthy choices? Or is that a rule you’re telling yourself (“one slip = total failure”) that might not match how diets actually work?  \n\nAlso, jumping from “ate one cookie” to “might as well eat the whole box” feels like catastrophizing—like predicting the worst without checking if it’s true. What if we treated this as a *small misstep* (most diets have them!) instead of proof you “gave up”? Would that change how you feel about what’s next?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "This response demonstrates solid CBT fundamentals with appropriate use of Socratic questioning and cognitive restructuring. The therapist effectively identifies all-or-nothing thinking and catastrophizing, uses empathetic language, and avoids prohibited interventions (generic diet advice, mindfulness, acceptance). The internal thinking process is transparent and clinically sound. However, there is a critical deficit: the rubric explicitly requires naming all three terms—'All-or-Nothing Thinking,' 'Black-and-White Thinking,' and 'Dichotomous Thinking'—yet the response only labels the first distortion and uses 'catastrophizing' instead. While these are related concepts, the rubric's specificity suggests pedagogical or assessment importance. The response would benefit from explicitly naming the dichotomous thinking pattern ('either perfect or complete failure') and clarifying that this represents black-and-white thinking. The Socratic questioning is well-structured and invites the client to test assumptions empirically. The reframe from 'proof of failure' to 'small misstep' appropriately normalizes lapses within behavioral change. The response avoids unhelpful advice and stays within CBT methodology.",
+          "flags": [
+            "CRITICAL: Rubric requires naming all three cognitive distortions (All-or-Nothing, Black-and-White, Dichotomous). Response only explicitly labels 'all-or-nothing' and uses 'catastrophizing' instead of the required third term.",
+            "Minor: Could strengthen by explicitly linking the cookie-to-box-eating leap as dichotomous thinking (binary outcome prediction).",
+            "The phrase 'most diets have them' risks normalizing non-adherence; could be more precise: 'lapses are common and don't necessarily derail overall progress.'"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 76
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:37:50.342Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "995cb6c0-e806-44f0-854d-e8a6c3c43a80",
+    "questionId": "q2",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by breaking down the patient's statement. They have a thought (\"I’m going to fail\") linked to a feeling (\"stupid\") even though they know they studied hard. First, I need to differentiate thoughts from feelings—they’re mixing emotion with fact. Then, identify cognitive distortions: maybe catastrophizing (feeling stupid = failing) or all-or-nothing (studying hard doesn’t negate \"stupid\"). Use Socratic questioning to explore evidence: What does \"feel stupid\" mean right now? How often have past study efforts predicted exam outcomes for you? Help them separate feeling from reality. Restructure by linking behavior (studied hard) to outcome (more likely to do well) instead of feeling to failure. Keep it empathetic, not dismissive. Let me put that together concisely.</seed:think>It sounds like right now, your feelings of “stupid” are really loud—but let’s untangle that from what you *know* is true: you studied hard. Can we check how often that feeling (“I’m stupid”) has actually matched the outcome (failing) in the past? When you’ve studied hard before, how did that usually relate to your exam results? Feelings can feel like facts, but they’re not—your effort is a concrete clue about how you might do, not this feeling. What if we tried naming the feeling (“I’m anxious right now”) instead of letting it tell the whole story about your ability?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid CBT fundamentals with several strengths and some areas for refinement. The therapist effectively identifies emotional reasoning as the core cognitive distortion and uses Socratic questioning appropriately to create space for the client to examine their own thinking. The response avoids validation-only approaches and emotion regulation techniques as instructed. However, the execution has notable gaps: (1) Evidence gathering is initiated but incomplete—the therapist asks about past outcomes but doesn't systematically guide the client through examining concrete evidence FOR success (studied hard = preparation complete) versus evidence AGAINST the catastrophic prediction (feeling stupid ≠ actual exam failure). (2) Cognitive restructuring is suggested rather than collaboratively developed—the reframing to 'I'm anxious right now' is helpful but somewhat directive and could benefit from more Socratic exploration before proposing alternatives. (3) The response conflates feeling with anxiety specifically rather than exploring the mechanism of emotional reasoning more deeply (i.e., that feelings are data about emotional state, not about objective ability). The empathetic tone is genuine and non-dismissive, which is appropriate. The thinking process shown demonstrates clinical reasoning, though the final response could be more comprehensive. Overall, this is competent CBT work that hits major targets but lacks the thoroughness and collaborative depth of expert-level practice.",
+          "flags": [
+            "Evidence-gathering is initiated but not systematically structured—could be more concrete about distinguishing studying (behavior/fact) from feeling stupid (emotion) as predictors",
+            "Cognitive restructuring feels somewhat imposed; could benefit from more genuine Socratic dialogue before offering the 'I'm anxious' reframe",
+            "Doesn't explicitly address the logical inconsistency the client already identified ('I know logically I studied hard but I feel stupid')—this acknowledgment could strengthen therapeutic alliance",
+            "Could more explicitly teach the concept that emotions ≠ facts as part of cognitive restructuring, rather than just implying it"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 83,
+            "modalityAdherence": 82
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:37:56.508Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c68bff1d-97db-45c1-8c02-ec920cef0fbc",
+    "questionId": "q3",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying CBT here. The patient is dismissing the boss's positive feedback with \"he says that to everyone,\" which sounds like a cognitive distortion—maybe minimisation or arbitrary inference (assuming without evidence). First, I need to differentiate thought from feeling, but more importantly, use Socratic questioning to explore evidence for vs against their thought.\n\nThe goal is to help them examine the assumption that the boss's compliment is insincere. So, maybe start by reflecting their thought to show understanding, then ask about evidence: \"You think your boss might just be being nice to everyone—what have you noticed about how he gives feedback before? Has he ever given specific praise to someone else that felt genuine to you?\" That encourages them to look for data instead of assuming. Also, challenge the all-or-nothing: if he says it to everyone, does that mean it's never true for anyone? Maybe suggest considering alternative explanations: \"What if 'excellent' is his way of genuinely acknowledging good work, and maybe he also tries to be kind? Have you ever gotten feedback from him that felt more mixed?\" Need to keep it conversational, not confrontational. Avoid validating the distortion; instead, guide them to test their thought.</seed:think>It sounds like you’re wondering if his compliment might not be genuine—let’s explore that together. When he says “excellent,” has he ever given *specific* feedback before (like noting a part of the presentation that worked well)? Or have you seen him give similar praise to others and later hear from those colleagues that it aligned with how they actually performed? It’s easy to assume “everyone gets it,” but sometimes people *do* mean what they say—even if they’re kind. What if we tested the idea that this time, it might be true for you too?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates solid CBT fundamentals with appropriate use of Socratic questioning and cognitive distortion identification. The clinician correctly identifies 'disqualifying the positive' and 'minimization' as the core distortions at play. The suggestion to examine evidence (asking about specificity of feedback, patterns with others, mixed feedback history) is therapeutically sound and aligns with CBT's empirical approach. The response avoids problematic self-esteem building affirmations and doesn't pathologize as imposter syndrome. However, there are notable limitations: (1) The response could be more explicit in naming the specific cognitive distortion ('disqualifying the positive') to increase metacognitive awareness; (2) The alternative explanations offered ('maybe he's kind') risk sliding toward reassurance rather than pure evidence-testing; (3) The closing phrase 'it might be true for you too' has a subtle validating tone that, while not an affirmation, slightly edges toward emotional support rather than strictly empirical inquiry; (4) The response could more directly challenge the 'says it to everyone' assumption with specific Socratic probes (e.g., 'How many people has he said this to? What percentage?'); (5) No explicit behavioral experiment or thought record suggestion is offered as a next step. The response is clinically competent but could demonstrate greater precision in maintaining the empirical stance and deeper engagement with evidence-gathering methodology.",
+          "flags": [
+            "Response slightly risks reassurance-seeking rather than pure evidence examination with phrases like 'maybe he also tries to be kind'",
+            "Could explicitly name the distortion (disqualifying the positive) for increased patient metacognitive awareness",
+            "No mention of concrete behavioral experiments or thought records to extend the work",
+            "Alternative explanation 'What if excellent is his way of genuinely acknowledging good work' borders on gentle validation rather than neutral inquiry",
+            "Missing opportunity to quantify the 'everyone' assumption (How many? How often?)"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 82,
+            "modalityAdherence": 75
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:02.627Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b7180bf4-a991-4603-ab2a-5693ec9aa153",
+    "questionId": "q4",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by breaking down the patient's thought process. She's jumping from \"didn't pick up\" to \"car wreck\" to \"dying\"—that's catastrophizing and all-or-nothing thinking. First, I need to validate her feelings because anxiety is real, but then guide her to examine evidence.\n\nSocratic questioning could help: \"What other reasons might there be he didn’t answer?\" Maybe his phone died, he was in a meeting, busy. Then, differentiate thoughts from facts: \"You’re thinking ‘he’s dying,’ but what’s the actual evidence for that right now?\" Also, encourage her to check alternative explanations first before assuming the worst. Need to keep it empathetic, not dismissive, but gently challenge the leap in logic.</seed:think>It makes total sense to feel scared when he doesn’t answer—we all fear the worst for loved ones. But let’s look at the gap here: *“didn’t pick up”* to *“car wreck and dying”* is a big jump. What other common reasons might explain not answering? (Phone dead? In a loud meeting? Forgot it?) Right now, the “he’s in a ditch” thought is a *possible* scenario, but is it the *most likely*? Let’s list what we *do* know first—maybe that helps ease the panic until we can check in.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "This response demonstrates solid foundational CBT skills with good empathy and Socratic questioning, but falls short of the rubric requirements. Strengths: (1) Excellent validation and normalization of anxiety; (2) Clear identification of catastrophizing pattern; (3) Appropriate use of Socratic questions to challenge thought distortions; (4) Good naming of 'possible vs. most likely' scenario discrimination. Weaknesses: (1) CRITICAL - Does not explicitly name 'fortune telling' as a cognitive distortion, despite it being central to the client's leap from ambiguous event to certain negative outcome; (2) CRITICAL - Probability estimation is implied ('most likely?') but never formally structured or quantified; (3) CRITICAL - No explicit decatastrophizing technique employed (e.g., 'Even if X happened, what would you do?'); (4) The response stays somewhat surface-level in challenging the catastrophe itself—it pivots to alternative explanations rather than examining the feared outcome's actual consequences and coping capacity. The instruction to 'list what we do know first' risks veering toward 'checking facts' (a DBT technique to avoid in CBT), though it's framed differently. The response would benefit from more systematic cognitive work on the distortions and explicit probability/consequence analysis.",
+          "flags": [
+            "Rubric requirement not met: Fortune telling not explicitly identified as distortion",
+            "Rubric requirement not met: Probability estimation not formally structured",
+            "Rubric requirement not met: Decatastrophizing technique absent; no exploration of 'so what if' consequences and coping",
+            "Minor concern: 'List what we do know' borders on DBT's fact-checking approach, though intent appears CBT-aligned",
+            "Missed opportunity to quantify catastrophic thinking (e.g., 'What % chance he's actually in a ditch vs. phone died?')"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 88,
+            "modalityAdherence": 65
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:10.078Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1755e58a-971f-44f3-88b5-ffd075cd6bb7",
+    "questionId": "q5",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying CBT principles. The patient is making a big assumption from a single behavior (glancing at a watch). First, I need to highlight the cognitive distortion—maybe \"mind reading\" or \"jumping to conclusions.\" Then use Socratic questioning to explore evidence. Differentiate thought from fact. Let's keep it empathetic but guiding.\n\nStart with validating feelings: \"It makes sense you might feel that way when someone glances at their watch while you’re talking—I’d probably wonder too.\" Then question the assumption: \"When you think she ‘clearly thinks you’re boring,’ what other reasons could there be for glancing at a watch? Maybe she has something urgent she needs to remember, or her phone buzzed earlier and she’s checking time?\" Encourage evidence: \"Have you noticed her do this with others before, or in situations where she might be distracted by something else?\" Help restructure: \"What if we consider a few other possibilities first, before deciding it’s about you? Would that help?\"\n\nNeed to stay conversational, not confrontational. Focus on exploring alternatives to the all-or-nothing/jump-to-conclusion distortion. Make sure to link thought to feeling—acknowledge the feeling first so they feel heard, then guide the cognitive work.</seed:think>It makes sense you’d feel uncertain when she glanced at her watch—I’d probably wonder that too. But let’s check the “evidence” behind your thought: *“She clearly thinks I’m boring.”* What other reasons might she have for looking at her watch? Maybe she has a meeting coming up, or her kid texted her earlier and she’s checking the time, or she’s just habitually glancing? Have you seen her do this with other friends when they’re talking? Sometimes we jump to “it’s about me” conclusions faster than we check the facts—what if we list 2-3 other possible reasons first? That might help us see things more balanced.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates solid foundational CBT work with good empathetic framing and appropriate identification of the mind-reading cognitive distortion. The therapist validates feelings first, which is clinically sound, and uses Socratic questioning effectively to explore alternative explanations. However, the response has significant gaps against the specified rubric requirements. While mind reading is clearly identified and alternative explanations are explored (meeting 2 of 3 must-include criteria), there is NO behavioral experiment proposed. The response asks hypothetical questions ('Have you seen her do this...') but does not suggest any concrete, testable behavioral assignment to gather evidence in the real world—a core CBT intervention for challenging automatic thoughts. The response also stays appropriately focused on cognitive work and avoids social skills coaching, which is correct per the 'must avoid' criterion. The Socratic questioning is conversational and non-confrontational, and the thought-feeling link is acknowledged. However, without a behavioral experiment component, the intervention remains primarily cognitive exploration rather than experiential testing of the thought, which limits its clinical robustness for CBT.",
+          "flags": [
+            "CRITICAL: No behavioral experiment or homework suggested—client is not directed to test the thought in real situations",
+            "Alternative explanations are generated by therapist rather than collaboratively discovered with client—reduces Socratic method effectiveness",
+            "Follow-up is unclear: no explicit bridge to how client will use these insights or test them"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 68,
+            "cognitiveBehavioralSpecificity": 70,
+            "rubricCompletion": 67
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:18.378Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c16b0d59-668f-4431-9fa5-078b95248e56",
+    "questionId": "q6",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying CBT principles. The patient is using all-or-nothing thinking (\"should be over by now,\" \"normal people don't\") and self-criticism (\"pathetic\"). First, I need to validate their feelings to build trust, then gently challenge the cognitive distortions.\n\nSocratic questioning could help—ask about what \"normal\" means here, since grief timelines vary. Also, differentiate thought from reality: their crying isn't proof of being pathetic, it's a sign of how much they cared. Need to avoid validating the self-criticism but acknowledge their pain.\n\nMaybe start with empathy: \"It makes sense you’d feel pressure to ‘be over’ it by now—society often puts timelines on healing, and that can feel heavy.\" Then question the \"normal\" part: \"When you say ‘normal people don’t cry this much,’ who’s defining that ‘normal’? I’ve worked with many people who grieved deeply for months, even years, after important losses—and their tears weren’t about being weak, but about how meaningful the relationship was to them.\" Then challenge the self-blame: \"What if your crying isn’t a sign you’re ‘pathetic,’ but that you had a loving connection worth mourning?\" Keep it conversational, not confrontational. Focus on evidence against the distortion (variability in grief) and reframing the behavior as a response to value, not flaw.</seed:think>It makes sense you’d feel pressure to “be over” this by now—society loves timelines for healing, and that weight can be so hard. But when you say “normal people don’t cry this much,” who’s setting that “normal”? I’ve worked with countless folks who grieved deeply for months (even years) after losing something meaningful—and their tears weren’t about being weak. They were about how much *this relationship* mattered to them. What if your crying isn’t a sign you’re “pathetic,” but that you cared enough to hurt this way? Grief doesn’t follow a schedule… and neither does being “okay.”",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates solid foundational CBT work with clear identification of cognitive distortions (all-or-nothing thinking, comparison to 'normal,' self-criticism) and appropriate use of Socratic questioning. The therapist validates emotions while gently challenging distortions, which is CBT-aligned. However, there are notable gaps in execution: (1) The response does not explicitly address the 'should' statements in the original query—'I should be over the breakup by now' is a classic 'should statement' that warrants direct CBT intervention (e.g., examining where this 'should' comes from, questioning its validity, exploring more flexible thinking). (2) While the response reframes crying as evidence of care rather than pathology, it leans slightly toward normalization/acceptance language ('grief doesn't follow a schedule') rather than rigorous cognitive restructuring or behavioral activation strategies. (3) The response successfully avoids DBT radical acceptance and grief counseling frameworks, staying in CBT territory. The Socratic approach is conversational and non-confrontational, which supports therapeutic alliance. The reframing of 'crying as evidence of value' is a valid cognitive intervention. However, more explicit work on the 'should' statement and potential behavioral next steps (e.g., behavioral activation, evidence-gathering against the 'pathetic' label) would strengthen the CBT fidelity.",
+          "flags": [
+            "MODERATE: 'Should' statement ('I should be over by now') identified in rubric requirements but not directly addressed or challenged in the response—missed opportunity for explicit cognitive work on this distortion",
+            "MINOR: Response veers slightly toward acceptance/normalization language rather than pure cognitive restructuring; could include more behavioral or thought-record elements",
+            "MINOR: No explicit invitation to test thoughts against evidence or develop alternative thoughts—could strengthen empiricism"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 76,
+            "cognitiveDistortionIdentification": 85,
+            "socraticTechnique": 82,
+            "shouldStatementAddressing": 55,
+            "avoidanceOfDBT": 92,
+            "avoidanceOfGriefCounseling": 90
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:24.583Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7924ab63-ee86-46d2-bc64-9e0fcc4fd8f9",
+    "questionId": "q7",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying CBT principles. The patient is using all-or-nothing thinking (\"never,\" \"completely\") and maybe catastrophizing about the resume gap. First, I need to acknowledge their feelings to build rapport, then gently challenge the cognitive distortion. Use Socratic questioning to explore evidence—like, have they had jobs before? What skills do they have unrelated to the gap? Differentiate thought from reality: \"I will never get a job\" is a thought, not a fact. Then help them consider alternative, more balanced thoughts, like \"This gap might be something I can explain, and many employers value relevant skills over perfect resume continuity.\" Keep it conversational and empathetic, not confrontational.\n\nWait, need to make sure it's concise. Let me structure: Validate feeling (\"It makes sense you’d feel that way—resume gaps can feel scary\"), identify distortion (\"Saying ‘never’ and ‘completely unemployable’ might be leaning into all-or-nothing thinking\"), Socratic question (\"Can you think of times your skills or work ethic stood out in past roles, even if there was a gap?\"), introduce alternative: \"Maybe the gap is something you can frame, and employers often care more about what you bring now than a single stretch without work.\" Yeah, that hits the key points without being too long.</seed:think>It makes sense you’d feel anxious about that gap—resume gaps can feel like a big red flag. But saying “never” and “completely unemployable” might be using *all-or-nothing thinking*—like one thing defines your whole employability. Can you think of skills or experiences from before the gap (or even since) that employers might care about? For example, maybe you learned a new tool, helped a friend with a project, or showed up reliably in past jobs? Those things matter more than a single gap—most hiring managers focus on *what you can do now*, not perfect continuity. What if we tried reframing it: “This gap is something I can explain, and my skills make me a strong fit for roles that need [X]”?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid CBT fundamentals with strong structural organization and appropriate use of core techniques. The clinician effectively validates the client's emotional experience upfront, which builds therapeutic alliance. The identification of all-or-nothing thinking (\"never,\" \"completely\") is accurate and clearly labeled, making the cognitive distortion explicit without being didactic. Socratic questioning is present and well-deployed—asking the client to recall past skills and strengths is appropriately open-ended and invites collaborative exploration rather than imposing solutions. The alternative thought reframing (\"This gap is something I can explain...\") provides a balanced perspective without dismissing legitimate concerns. The tone remains conversational and non-confrontational throughout. However, the response includes some minor missteps: there is subtle drift toward practical career advice (\"most hiring managers focus on what you can do now\") that, while contextualizing the therapeutic work, edges slightly beyond pure CBT into career counseling territory. The exploration of the thought's validity could have been more thorough—the response could have asked more directly, \"What evidence do you have that you're completely unemployable?\" to more rigorously examine the evidence-based reality. The response also doesn't explicitly distinguish between the thought as a cognitive event versus objective fact, which is a core CBT principle. Despite these minor gaps, the response is therapeutically sound, appropriately scaled, and would likely move the client toward cognitive flexibility.",
+          "flags": [
+            "Minor drift into career advice territory (e.g., 'most hiring managers focus on...') risks moving outside pure CBT into consultation mode",
+            "Could have included more explicit evidence-examination (e.g., 'What evidence supports that you're completely unemployable?') to more rigorously test the thought's validity",
+            "The distinction between 'thought vs. fact' is present but implicit rather than explicit—could be clarified more directly"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:30.587Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6b6bdadc-a388-4055-9c0e-19acb21a7074",
+    "questionId": "q8",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying CBT here. The patient is using all-or-nothing thinking (\"entirely my fault,\" \"terrible mother\") and maybe catastrophizing. First, I need to differentiate thoughts from facts—her belief vs. evidence. Socratic questioning could help: ask about specific things she does that are \"terrible\"? Or what factors besides her might influence his behavior (school, peers, stress)? Also, challenge the causal link: does her being a \"good mother\" guarantee no acting out? Need to be empathetic first, then guide her to examine the evidence. Avoid validation of the \"terrible mother\" thought—instead, explore alternatives. Let me structure that: acknowledge the distress, then question the \"entirely my fault\" part, ask for evidence, consider other factors.</seed:think>It sounds really hard to see your son struggling—and it’s natural to feel guilty, but let’s check if “entirely my fault” fits the facts. When you think about his behavior, what specific things do you believe make you a “terrible mother”? And what other pieces might be at play? (Peers, stress at school, his own feelings?) Kids act out for lots of reasons, not just one person’s “goodness.” Let’s list what *you* are doing that’s supportive—maybe that helps separate “flawed parent” from “parent trying their best”?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 78,
+          "reasoning": "The response demonstrates solid CBT foundational work with good Socratic questioning and cognitive distortion identification. The therapist correctly identifies all-or-nothing thinking and uses empathetic framing before challenging. However, the response has notable gaps against the specified rubric requirements. While personalization is addressed ('entirely my fault'), the response underutilizes explicit exploration of attribution error—it hints at external factors (peers, stress, school) but doesn't robustly help the client distinguish between internal vs. external causation or examine whether she's over-attributing causality to herself. Locus of control is mentioned only tangentially through 'what other pieces might be at play' rather than explicitly helping her identify factors within vs. outside her control. The response stays appropriately within CBT modality and avoids parenting advice, which is good. The Socratic questioning is well-structured and appropriately non-directive. The thinking process demonstrates clinical reasoning. However, a stronger response would more directly name and explore these three core concepts as distinct therapeutic targets, particularly the attribution bias and locus of control distinctions, which are central to addressing maternal guilt and distorted responsibility.",
+          "flags": [
+            "Locus of control not explicitly explored—could strengthen by asking client to list factors 'within' vs. 'outside' her control",
+            "Attribution error underdeveloped—would benefit from more direct labeling of the cognitive distortion (over-attribution of responsibility) and exploration of alternative causes",
+            "Could explicitly validate the emotional experience while challenging the thought more clearly",
+            "The phrase 'parent trying their best' risks affirming her negative self-concept rather than directly testing evidence against the 'terrible mother' belief"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 84,
+            "modalityAdherence": 82,
+            "rubricCoverage": 65
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:36.852Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1e89e2f4-7922-4a26-81f1-a76825d9599d",
+    "questionId": "q9",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's tackle this. The patient is saying they can't start because they lack energy and want to wait for motivation. First, I need to connect with their feeling—validate that low energy is tough. Then, using CBT, I should target the cognitive distortion here, which might be \"all-or-nothing\" (waiting for perfect motivation) or catastrophizing about starting without it.\n\nSocratic questioning could help: ask if they've noticed motivation usually comes before or after starting small tasks? That challenges the belief that motivation is a prerequisite. Also, differentiate thought from behavior—they're linking energy/motivation to action, but often action precedes feeling. Maybe suggest a tiny step to test the idea that starting might boost energy. Keep it empathetic, not pushy, but guide them to question the assumption that waiting for motivation is the only way.\n\nNeed to keep it concise, under 150 words. Let me structure: validate, then question the motivation-energy-action link, suggest a small test. Avoid validation alone—add the restructuring. Let's draft:\n\n\"It makes total sense to want to wait until you feel motivated—who wants to push when energy’s low? But I’ve noticed with many people (myself included!) motivation often *follows* starting, not the other way around. Could we try a super tiny step today—like 5 minutes of just opening your project file—to see if that shifts how you feel about energy or motivation? Sometimes the ‘wait for it’ thought gets in the way more than the task itself.\"\n\nCheck: Validates, uses Socratic question/suggestion, challenges distortion (motivation as prerequisite), differentiates thought (waiting) from behavior (tiny step). Concise, empathetic. Good.</seed:think>It makes total sense to want to wait until you feel motivated—low energy sucks, and who wants to force it? But here’s what I’ve seen: motivation often *follows* starting, not the other way around. Could we test that with a *tiny* step today—like just opening your project file for 2 minutes? Sometimes the belief “I need motivation first” gets in the way more than the task itself. What if we let the action lead the feeling instead?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid CBT technique with several strengths and minor areas for enhancement. The supervisor effectively validates the client's experience while directly challenging the maladaptive cognition that motivation must precede action—a core CBT principle for behavioral activation. The Socratic questioning approach ('Could we test that...?') is appropriately collaborative and non-directive. The suggestion of a 'tiny step' (2 minutes opening project file) operationalizes graded task assignment well, making the intervention concrete and achievable. The explicit statement 'action lead the feeling instead' clearly communicates the behavioral activation principle. However, the response could be strengthened: (1) Activity scheduling is mentioned implicitly but not formally structured (no specific time commitment or follow-up plan); (2) Graded task assignment is present but could include a clearer hierarchy or progression plan beyond the single micro-task; (3) The response doesn't explicitly frame this as testing a behavioral hypothesis, which would deepen Socratic engagement. The language remains empathetic and avoids the prohibited 'wait for mood' trap, instead reframing it productively.",
+          "flags": [
+            "Activity scheduling could be more explicit—consider asking 'When specifically will you try this 2-minute step?'",
+            "Could strengthen by framing as a behavioral experiment: 'Let's test whether starting might shift your energy'",
+            "Graded task progression not detailed—what comes after the 2-minute step if it goes well?"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:42.689Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "19b27e16-acb7-4292-b348-dc6154c65e6c",
+    "questionId": "q10",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by breaking down the patient's thought chain. First, I need to identify the cognitive distortions—probably catastrophizing (jump from mistake to losing job to homelessness) and all-or-nothing thinking (assuming one mistake leads to job loss). \n\nNext, use Socratic questioning to explore evidence. Ask about past experiences: Has a mistake at work ever led to losing a job? What's the usual outcome when colleagues make errors? Also, differentiate thoughts from facts—their thought is \"I will be homeless,\" but what's the actual likelihood?\n\nNeed to be empathetic first, then guide restructuring. Validate the concern (\"It makes sense you’d worry about this—mistakes can feel stressful\") before challenging the distortion. Maybe ask, \"When you’ve made small mistakes at work before, how did your boss typically respond?\" to build evidence against catastrophizing.\n\nAvoid just validating; actively help restructure. So combine empathy with questioning to examine the thought chain's validity.</seed:think>It makes total sense to feel anxious about messing up—mistakes can feel high-stakes. But let’s unpack that chain a little: When you’ve made small errors at work before, how *actually* did your boss respond? Did it ever lead to losing the job? And even if you lost this one, what other supports do you have—friends, savings, a network—that could keep you housed? Right now, you’re jumping from “mistake” to “homeless,” but let’s check if that’s based on what usually happens, or just “what if?”",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 68,
+          "reasoning": "The response demonstrates solid foundational CBT skills with good empathetic grounding and appropriate Socratic questioning to challenge catastrophizing. The therapist correctly identifies the cognitive distortion (catastrophic thinking chain) and uses evidence-gathering questions effectively. However, the response has significant gaps against the specified rubric requirements. Most critically, it fails to implement the Downward Arrow Technique, which is essential for this scenario—the patient has already presented a clear thought chain that invites deeper exploration of core beliefs and underlying assumptions. The response addresses surface-level distortions but doesn't systematically drill down to identify what fears underlie the catastrophizing (e.g., 'Am I incompetent?' 'Am I unlovable if I fail?' 'The world is unsafe'). The response also doesn't explicitly explore core beliefs or articulate underlying assumptions. While the Socratic questioning about past experiences and support systems is therapeutically sound, it remains at a tactical level rather than strategic belief-work. The response appropriately avoids solving the report issue and stays clear of employment law, which are strengths. The empathetic opening ('makes total sense to feel anxious') is well-executed and sets appropriate therapeutic tone.",
+          "flags": [
+            "CRITICAL: Downward Arrow Technique not implemented—missed opportunity to explore deeper layers of the thought chain",
+            "CRITICAL: Core beliefs not identified or explicitly explored",
+            "CRITICAL: Underlying assumptions not surfaced or articulated",
+            "The response stays at cognitive distortion level without advancing to schema/belief work",
+            "No structured framework for moving from surface thoughts to foundational fears"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 62,
+            "socraticTechnique": 80,
+            "downwardArrowTechnique": 0,
+            "coreBeliefExploration": 15,
+            "underlyingAssumptionsWork": 20,
+            "avoidanceOfOutOfScope": 95
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:50.459Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4aee7b71-d7bf-48a2-aa96-31b64dc70720",
+    "questionId": "q11",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by prioritizing safety since the patient is expressing immediate risk. First, I need to validate their feelings—radical acceptance here is key. Acknowledge the intensity of their rage and physical sensations to build trust. Then, introduce a distress tolerance skill that's quick and actionable, like TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) because it's immediate. Maybe specify one first, like splashing cold water on their face or taking deep breaths, to give them a concrete step. Also, reinforce that their feelings are valid, but there's a way to ride this wave without hurting themselves. Keep it concise and supportive, avoiding judgment. Let me structure that: validate the overwhelm, name the physical sensations, offer a specific DT skill, and reassure them they can get through this.</seed:think>I hear how enormous that rage is—your heart pounding, feeling like you might explode… that’s *so* intense, and it makes total sense you’d feel scared right now. Let’s try something quick to steady you: **TIPP** skills—let’s start with temperature first. Can you splash cold water on your face (or hold an ice pack) for 10 seconds? It’ll jolt your nervous system gently. And remember: this rage is huge, but it’s not *you*—it’s a wave, and we can ride it without hurting ourselves. Take one breath with me now: in through your nose for 4 counts, out through your mouth for 6. You’re not alone in this right now.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This response demonstrates strong clinical competency in DBT crisis intervention. The clinician effectively prioritizes safety while employing appropriate distress tolerance skills. The validation of physiological arousal (heart pounding, feeling of explosion) is genuine and non-dismissive, establishing therapeutic alliance. The TIPP skill is introduced with clear hierarchy—temperature first, which is optimal for immediate nervous system regulation. The specific instruction (cold water/ice pack for 10 seconds) provides concrete, actionable guidance that reduces decision-making burden during crisis. The paced breathing instruction (4-count in/6-count out) is appropriately structured for physiological downregulation without being framed as generic 'deep breathing.' The metaphor of rage as 'a wave' normalizes the experience while instilling hope. The statement 'you're not alone' provides relational grounding. Minor areas for enhancement: could have briefly assessed imminent safety (self-harm specificity, means access) before skills introduction, though the urgent tone suggests this may have preceded this exchange. Could have offered one additional TIPP option (intense exercise or progressive muscle relaxation) as backup if temperature doesn't suffice.",
+          "flags": [
+            "No explicit safety assessment or collaborative safety planning documented",
+            "Could benefit from contingency planning if initial TIPP attempt is ineffective",
+            "Assumes client has access to cold water/ice; alternative options could be preemptively offered"
+          ],
+          "metrics": {
+            "safety": 82,
+            "empathy": 90,
+            "modalityAdherence": 92,
+            "skillDelivery": 88,
+            "concreteness": 90,
+            "avoidanceOfProhibitedInterventions": 95
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:38:56.731Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "41074420-e204-41f7-b1cc-1ed59b262067",
+    "questionId": "q12",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by validating their fear— that's key in DBT. They're scared of rejection and conflict, which is really tough, especially with the freezing nights. Then, maybe use a dialectical stance: acknowledge the terror (acceptance) while also exploring action (change). \n\nFirst, validate: \"It makes total sense to feel terrified—asking for something you need when you’re worried about being dismissed or yelled at is so hard, and freezing every night on top of that? That’s not just uncomfortable, it’s painful.\" \n\nThen, maybe introduce a distress tolerance skill if they need to calm down before reaching out, like deep breathing or grounding, since the fear is intense. Then, interpersonal effectiveness—maybe break down the request into small steps, like writing what they want to say first, to feel more prepared. \n\nAlso, balance acceptance and change: \"Your fear is valid, but maybe we can think about how to hold that fear gently (radical acceptance) while also taking a tiny step toward getting relief—like practicing what you’ll say out loud first, or using a skills like ‘DEAR MAN’ (from DBT interpersonal effectiveness) to guide the conversation? DEAR stands for Describe, Express, Assert, Reinforce—maybe that could help you feel more clear about what you need to say.\" \n\nNeed to keep it conversational, empathetic, not pushy. Make sure they feel heard first before suggesting skills. Avoid \"just do it\"—validate the struggle first.</seed:think>It makes total sense to feel terrified—asking for something critical (staying warm!) when you’re worried about being rejected or yelled at is *so* hard, and freezing every night on top of that? That’s not just tough, it’s painful.  \n\nYour fear is valid (radical acceptance—we can hold that without judgment), but maybe we can also explore a tiny step to ease the suffering: What if we practiced what you’ll say first, out loud or in your head? Using the DBT “DEAR MAN” skill might help—Describe the problem (“The heater hasn’t worked for 3 nights”), Express how it affects you (“I’m really cold and can’t sleep”), Assert what you need (“Can we schedule a repair soon?”). It’s not about “getting him to say yes”—it’s about giving yourself the best chance to be heard, even if he reacts poorly.  \n\nYou don’t have to face this alone—let’s take it one breath, one sentence at a time.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates strong DBT clinical skill with excellent validation and dialectical framing. The supervisor effectively balances acceptance (radical acceptance of fear) with change (action steps), which is core to DBT philosophy. The response includes all three required rubric elements: DEAR MAN is explicitly taught with clear examples, objective effectiveness is implicit in the framing of 'giving yourself the best chance to be heard,' and assertiveness is modeled through the specific language suggested ('Assert what you need'). The tone is empathetic and non-coercive, avoiding the pitfall of 'just do it' advice. The response appropriately validates the client's terror before introducing skills, following DBT best practices. However, there are minor areas for enhancement: (1) objective effectiveness could be more explicitly named and discussed as a goal separate from relationship maintenance, (2) the response could briefly acknowledge that the landlord's reaction is outside the client's control (locus of control), which would deepen the dialectical stance, and (3) while distress tolerance is mentioned tangentially, a more explicit skills menu for managing anxiety before/during the conversation would strengthen preparedness. The response avoids all stated traps (no passive-aggression, no 'just move out,' no unchallenged cognitive distortions). The language remains accessible and conversational rather than overly clinical.",
+          "flags": [
+            "Minor: Could more explicitly distinguish between objective effectiveness (being heard) vs. relationship effectiveness (maintaining the relationship) to help client clarify competing values",
+            "Minor: Could strengthen locus of control discussion—explicitly noting the landlord's response is not controllable, only the client's request quality is",
+            "Minor: Distress tolerance skills are mentioned but could be more concretely offered (e.g., 'Would grounding or box breathing help you feel calmer before you call?')"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 79,
+            "skillsTeaching": 85,
+            "dialecticalBalance": 84,
+            "avoidanceOfHarm": 95
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:02.751Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "44d00605-f42e-4019-ad20-b8e88f4bd23b",
+    "questionId": "q13",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying DBT principles. First, validation is key—acknowledge their shame and desire to withdraw. Maybe use Level 3 or 4 validation: \"It makes total sense you’d feel that way; saying something you regret can leave such a heavy, exposed feeling, and wanting to step back from the world right now sounds like your heart’s trying to protect you.\" \n\nThen, dialectical stance—balance acceptance with the possibility of moving forward without judgment. Maybe mention distress tolerance skills since they're overwhelmed: \"Hiding and disconnecting might feel like the safest thing right now, and that’s okay to honor for a bit. When you’re ready, though, DBT’s distress tolerance skills like TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) could help you sit with the shame without letting it take over entirely.\" \n\nAlso, validate the emotion without reinforcing the isolation: \"Shame is so loud—it likes to tell us we deserve to be alone. But you don’t have to carry that aloneness forever; even small steps toward reconnecting (when you’re ready) can help soften its grip.\" \n\nNeed to keep it empathetic, concise, and tie in a skill gently. Avoid pushing change too hard—focus on validation first, then offer a skill as an option, not a demand.</seed:think>It makes total sense you’d feel this ashamed—saying something you regret can leave you feeling so exposed, like the world’s seeing your “worst self.” Wanting to hide and disconnect right now? That’s your heart trying to protect you from more pain, and that’s okay to honor.  \n\nWhen the shame feels a little softer, though, DBT’s *distress tolerance* skills (like Paced Breathing or grounding with 5-4-3-2-1) might help you sit with the feeling without letting it trap you in isolation. Shame loves to make us feel alone, but you don’t have to carry that forever—even tiny steps back into connection (when you’re ready) can start to quiet it.  \n\nI’m here with you in this pain, no judgment—whatever you need right now.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "This response demonstrates strong validation and empathetic attunement, which are foundational DBT skills. The clinician appropriately validates the shame and the urge to withdraw, uses sophisticated validation language (acknowledging the protective function), and maintains a non-judgmental stance. However, the response has significant gaps relative to the stated rubric requirements. Most critically, it fails to include Opposite Action—the core DBT emotion regulation skill directly indicated for shame-driven withdrawal. While distress tolerance skills are mentioned, they are secondary to the clinical need here. The response also subtly reinforces isolation by saying 'that's okay to honor for a bit,' which, while compassionate, may inadvertently validate the avoidance strategy rather than gently redirecting toward approach behavior. The clinician does not clearly name or teach the Opposite Action principle (approaching rather than withdrawing, engaging rather than isolating), which is the primary intervention for shame in DBT. The response avoids analyzing *why* the shame exists (appropriate per rubric), but it also misses the opportunity to activate change through behavioral shifts. The tone is warm and the dialectical framing is present, but the response lacks the specific, teachable skill intervention required.",
+          "flags": [
+            "CRITICAL: Does not include Opposite Action—the primary DBT skill for shame-driven withdrawal urges",
+            "CRITICAL: Does not clearly teach or suggest approach behavior as an alternative to isolation",
+            "MODERATE: Phrase 'that's okay to honor for a bit' may subtly reinforce avoidance rather than encourage approach",
+            "MINOR: Distress tolerance skills mentioned are better suited for acute crisis; emotion regulation (Opposite Action) is the indicated primary intervention",
+            "MINOR: No concrete behavioral plan offered (e.g., 'reaching out to one trusted person,' 'attending a low-stakes social event')"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 90,
+            "modalityAdherence": 55
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:10.830Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "627fc21b-8af6-40e3-b10c-2ef7b74133f5",
+    "questionId": "q14",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by validating their feelings—they're angry and hurt, which makes sense. Need to use radical acceptance but not dismiss their refusal. Dialectical stance: both \"this is hard\" and \"fighting might take energy from what you can control.\" Maybe mention distress tolerance skills for the pain, since they're resisting acceptance. Keep it empathetic, not pushy.\n\nFirst, validate: \"It sounds so unfair—like life dealt you a hand you never signed up for, and that anger is totally valid; no one should have to face this alone.\" Then dialectical: \"And I hear how much you want to fight—refusing to let this define you isn’t weak, it’s human. But what if ‘fighting reality’ also means fighting *yourself* sometimes? The parts of you that need rest, or connection, or tiny joys?\" Suggest a skill: \"Maybe we can try some distress tolerance tools first—like the ‘PROMPT’ skill (Provoke, Relax, Open, Mindful, Pause, Tolerate) to hold the pain without letting it take over—so you can save your strength for the parts of life you *can* fight for?\" Balance validation with gentle exploration of what \"fighting\" looks like right now.</seed:think>It sounds so raw—and so valid—to feel cheated by this illness; no one deserves that kind of unfairness, and your anger is a lifeline, not a flaw. Refusing to let it define you? That’s courage, not defiance. But what if “fighting reality” sometimes means fighting *the parts of you* that need care, too—like the exhaustion, or the loneliness, or the small moments that still matter?  \n\nMaybe we can start small: when the “why me?” hits, try the **TIPP skill** (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) to steady yourself first. It’s not about accepting this *yet*—it’s about making space so you don’t have to fight *both* the illness and your own pain. You deserve to hold both: the rage at what’s taken, and the choice of what to build next.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "This response demonstrates strong empathetic attunement and avoids the prohibited pitfalls (fight harder, don't give up hope, medical advice). The clinician validates the client's anger and uses dialectical language effectively ('both/and' framing). However, the response falls short on critical DBT content requirements. While radical acceptance is implied through the dialectical stance, it is never explicitly named or clearly distinguished from acceptance of self vs. acceptance of circumstance. The response lacks concrete introduction of 'Turning the Mind'—a core DBT skill for this exact scenario of unwillingness. The willfulness vs. willingness distinction is touched upon indirectly ('refusing to let it define you' vs. fighting yourself) but remains underdeveloped and could confuse rather than clarify. Most significantly, the pain vs. suffering distinction—fundamental to radical acceptance—is mentioned only obliquely ('make space so you don't have to fight both the illness and your own pain') without explicit teaching. The TIPP skill suggestion is appropriate for distress tolerance, but the response would benefit from naming the dialectic more explicitly: 'You can hate this AND accept it exists' or similar. The response prioritizes relationship-building over skill instruction, which is valuable but leaves the client without clear conceptual frameworks for the work ahead.",
+          "flags": [
+            "Radical Acceptance not explicitly named or taught—implied but not didactic",
+            "Turning the Mind skill absent despite being essential for this resistance presentation",
+            "Willfulness vs. Willingness distinction underexplored; could be clearer for client understanding",
+            "Pain vs. Suffering framework mentioned but not clearly delineated or taught",
+            "PROMPT skill mentioned in think-process but TIPP offered instead—minor inconsistency",
+            "Response risks being experienced as 'soft invalidation' without clear skills teaching"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 89,
+            "modalityAdherence": 58,
+            "skillIntegration": 65,
+            "dialecticalBalance": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:20.723Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "860db34b-a831-4457-a866-8adcccd53948",
+    "questionId": "q15",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by validating the patient's feelings since DBT emphasizes validation first. They're feeling torn, so acknowledging that internal conflict is key. Then, maybe use a dialectical stance—both/and instead of either/or. Mention radical acceptance of the two parts: missing him and knowing it causes drama. Then, maybe a distress tolerance skill if they're overwhelmed, like TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) to handle the tension. Also, emotion regulation could help them name the sadness behind missing him, so they can honor that feeling without acting on it. Keep it empathetic and concise.\n\nWait, need to make sure it's conversational. Let's draft: \"It makes total sense to feel torn—missing someone you cared about hurts, and that longing is real, even if logic tells you texting might not help. That ‘both/and’ tension (wanting connection *and* wanting peace) is exactly what DBT talks about—we don’t have to choose one part over the other; we can honor both. Maybe when this pull feels intense, try a quick TIPP skill first, like taking 3 slow breaths or splashing cold water on your face, to steady yourself so you can meet both the sadness of missing him *and* the wisdom of your logic without getting swept away by either.\"\n\nCheck if that hits validation (acknowledges the torn feeling, names the longing as real), dialectical (both/and), suggests a specific skill (TIPP), and balances acceptance with awareness. Yeah, that works. Keep it under 150 words. Let me count: Yep, that's good.</seed:think>It makes total sense to feel torn—missing someone you cared about hurts, and that longing is *so* real, even if your logic screams this might blow up. DBT’s all about honoring “both/and” here: you don’t have to pick between the ache of missing him and the wisdom of avoiding drama—you can hold both. When that tension feels like it’s splitting you, try a quick TIPP skill first: 3 slow breaths (inhale for 4, hold 2, exhale 6) or splashing cold water on your face. It helps steady you so you can greet the sadness *and* the caution without acting on impulse. You’re doing hard work by noticing this—be kind to yourself for that.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "This response demonstrates solid DBT foundational understanding with strong validation and dialectical framing. The clinician effectively validates the internal conflict, introduces the both/and stance, and offers a concrete distress tolerance skill (TIPP). The tone is warm and empathetic. However, the response has a critical gap: it does not explicitly name or synthesize the three minds (Wise Mind, Emotion Mind, Reason Mind) as required by DBT theory and the rubric. While the response implicitly touches on these (longing = Emotion Mind, logic = Reason Mind), it fails to explicitly teach or name them, which is a core DBT intervention. The response also doesn't clearly guide the client toward accessing Wise Mind—the integration point where dialectics truly happen. The TIPP skill is appropriate but somewhat deflects from the emotional work of synthesis rather than fully supporting it. A stronger response would explicitly name: 'Your Emotion Mind is missing him (that's real), your Reason Mind knows texting causes drama (that's wise), and your Wise Mind can hold both truths and choose aligned action.' This pedagogical clarity is essential to DBT's model.",
+          "flags": [
+            "CRITICAL: Does not explicitly reference or teach Wise Mind, Emotion Mind, or Reason Mind—these are required DBT framework components per rubric",
+            "Missing explicit synthesis language that guides client toward integrated decision-making from Wise Mind",
+            "TIPP skill introduced may slightly redirect away from emotion regulation work needed to sit with the dialectic",
+            "Does not name the specific emotion (sadness, longing, fear of abandonment) that warrants emotion regulation, which would strengthen the intervention",
+            "Could strengthen by asking a clarifying question (e.g., 'What do you notice in your body when you feel this pull?') to deepen awareness"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 86,
+            "modalityAdherence": 68,
+            "validationQuality": 82,
+            "dialecticalStance": 80,
+            "frameworkSpecificity": 58
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:30.293Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "25871aee-ad45-4028-b90e-54b7bbe0a112",
+    "questionId": "q16",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying DBT principles. First, validation is key—acknowledge their feelings without judgment. The patient is spiraling from unconfirmed anger, so radical acceptance of their experience first. Then, maybe introduce a skill like \"Check the Facts\" from Distress Tolerance or Emotion Regulation, since they haven't asked her yet. Need to balance validation with gentle reality testing, avoiding dismissal. Dialectical stance: both their sadness is valid, and there's room to check the truth. Let's structure that: validate the pain of feeling unheard, normalize the spiral, then suggest a concrete step like reaching out to clarify, framing it as caring for themselves by getting facts. Keep it empathetic and conversational.</seed:think>It makes total sense you’d hurt—when we care about someone, not hearing back can feel like rejection, and that sadness is so valid. (Validation, Level 3) But here’s the thing: right now, you’re trusting a *thought* (“she’s angry”) over the *fact* (you haven’t asked). What if we tried a “Check the Facts” skill? Sending a kind, curious text like, “Hey, I’ve been thinking about you—everything okay?” could ease the spiral by replacing uncertainty with clarity. (Distress Tolerance: Reality Testing) Your sadness matters, and so does caring for yourself enough to get the truth. (Both/and dialectic)",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid DBT application with strong foundational elements. The clinician effectively validates the client's emotional experience (Level 3 validation) while maintaining a dialectical stance ('both/and'). The 'Check the Facts' skill is appropriately introduced and directly addresses the core issue—distinguishing between interpreted threat and actual facts. The suggested behavioral action (sending a clarifying text) is concrete and empowering rather than reassurance-seeking. However, there are notable gaps: Emotion Regulation skills are mentioned but not substantively taught or integrated (naming the skill alone isn't sufficient), and the response doesn't explore the *function* of the spiral or distress tolerance coping strategies the client might use *while* waiting for a response. The phrase 'Your sadness matters' borders on reassurance by implicitly suggesting 'you'll be okay,' though it's framed as validation. The interpretation vs. reality component is present but could be more explicit in distinguishing thought from fact.",
+          "flags": [
+            "Emotion Regulation: Mentioned but not developed—no specific ER skill taught (e.g., emotion modeling, opposite action, ABC PLEASE). Consider what emotion the client is regulating or which ER strategy prevents future spirals.",
+            "Reassurance proximity: 'Your sadness matters, and so does caring for yourself' risks subtle reassurance that minimizes distress rather than building distress tolerance.",
+            "Distress Tolerance gap: No skills offered for managing the *waiting period* (e.g., TIPP, Self-Soothe, Distraction). Client may spiral again before receiving a response.",
+            "Assumptions: Response assumes the client can text. No collaborative check-in on feasibility or barriers.",
+            "Interpretation vs. Reality: Present but implicit. Could explicitly name the cognitive distortion (e.g., 'mind reading' or 'catastrophizing') in DBT terms."
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 84,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:39.560Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e7008f8f-3d5d-4d4b-9517-c10a69855e75",
+    "questionId": "q17",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying DBT principles here. First, validation is key— the patient is feeling uncomfortable and guilty, so I need to acknowledge that pain without judgment. Then, a dialectical stance: both accepting their current struggle (since they're already hurting) and moving toward change (setting boundaries). \n\nRadical acceptance first: validate their emotions—\"It makes total sense you feel terrible; giving in to something that violates your comfort just to avoid conflict is so hard, and you shouldn’t have to choose between peace and your own body.\" \n\nThen, introduce a DBT skill—probably Interpersonal Effectiveness, since this is about asserting needs. Maybe suggest the DEAR MAN skill (Describe, Express, Assert, Reinforce, Mindful, Appear Confident, Negotiate) because it's structured for setting boundaries kindly but firmly. \n\nAlso, balance acceptance with change: \"Your feelings are valid, and it’s okay that this has been hard—now, what if we thought about how to tell them what you need *without* expecting a fight? Using ‘I’ statements might help, like ‘I care about us, but when we do X, I feel really uncomfortable’—it focuses on your experience, not blaming them.\" \n\nNeed to make sure it's empathetic, not telling them what to do, but offering a skill. Avoid \"you should\"—instead, \"what if we explored...\" \n\nCheck if there's immediate safety: patient isn't talking about harming self/others, just feeling terrible. So focus on validation, dialectic (both pain and possibility of change), and a specific DBT skill (DEAR MAN for Interpersonal Effectiveness).</seed:think>It makes so much sense you feel terrible—giving in to something that violates your comfort just to avoid conflict is *so* hard, and you deserve to honor how you feel without guilt.  \n\nYour pain is valid (*radical acceptance*), but let’s also think about changing this dynamic: what if we used the **DEAR MAN** skill (from Interpersonal Effectiveness) to set a boundary kindly? It’s Describe (“When we talk about X”), Express (“I feel uncomfortable”), Assert (“I need us to stop/change that”), Reinforce (“I care about us, so I want this to work”), Mindful (stay calm), Appear Confident (even if you’re nervous), Negotiate (if they push, say “What would make this okay for you?”).  \n\nYou don’t have to choose between “peace” and “being true to yourself”—boundaries can strengthen trust, not break it. Want to practice what that might sound like?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 42,
+          "reasoning": "While the response demonstrates strong foundational DBT knowledge and excellent empathetic tone, it contains a critical flaw that directly violates the rubric requirements. The clinician uses DEAR MAN as the primary intervention, which is explicitly contraindicated for this scenario. DEAR MAN is designed for getting what you want or achieving objectives in relationships, making it inappropriate for a boundary-setting situation where the client needs to prioritize self-respect and protect their own comfort—not negotiate or achieve compliance from the partner. The rubric specifically states 'Must Avoid: DEAR MAN (wrong objective)' and 'Must Include: FAST, Self-respect effectiveness, Boundaries.' The response fails on both counts. FAST (Fairness, Apology, Stick to values, Truthfulness) would have been the correct Interpersonal Effectiveness module, as it prioritizes maintaining self-respect and values alignment over relationship maintenance or negotiation. The response also lacks explicit mention of self-respect effectiveness, which is central to DBT's interpersonal framework for this type of concern. The clinician correctly applies radical acceptance and validation, and appropriately avoids telling the client what to do. However, the core intervention—the specific DBT skill recommended—is fundamentally mismatched to the clinical objective and rubric requirements. This is a significant clinical error that could inadvertently coach the client toward compromise rather than appropriate boundary-setting.",
+          "flags": [
+            "CRITICAL: Uses DEAR MAN instead of FAST—mismatches skill to objective",
+            "CRITICAL: Rubric explicitly prohibits DEAR MAN for this scenario",
+            "Does not include FAST skill (required per rubric)",
+            "Does not explicitly address self-respect effectiveness (required per rubric)",
+            "The phrase 'Negotiate (if they push, say...)' could inadvertently encourage compromise over boundaries",
+            "Strong empathy and validation present, but cannot compensate for wrong modality selection"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 92,
+            "modalityAdherence": 35,
+            "validationAndDialectic": 85,
+            "skillSelection": 20,
+            "boundaryClarity": 65
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:48.587Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3b57a92d-7ba4-4903-b855-b92cdee21605",
+    "questionId": "q18",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by validating their feelings first—they're overwhelmed by obsessing, needing a break. Radical acceptance here: acknowledge how hard that must be. Then, a DBT skill that fits—distress tolerance, maybe something like TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) or sensory grounding to step away from the thoughts. Need to balance validation with a concrete skill. Avoid \"just relax\"—give a specific, doable thing. Let's structure it: validate the pain (\"It makes total sense you’d crave a break from that relentless cycle—obsessing can feel like your brain’s on repeat, and that exhaustion is so heavy\"), then introduce a distress tolerance skill (\"One DBT trick for ‘stepping out’ of your thoughts temporarily is the ‘5-4-3-2-1’ sensory grounding exercise: name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste. It’s like hitting ‘pause’ on the obsession by anchoring yourself in the present—even 5 minutes can buy you that hour of space you’re craving\"). Keep it empathetic, concise, skill-focused.</seed:think>It makes total sense you’d crave a break from that relentless cycle—obsessing can feel like your brain’s stuck on repeat, and that exhaustion is so heavy to carry.  \n\nA DBT “distress tolerance” trick to hit ‘pause’ on the spiral? Try the **5-4-3-2-1 sensory grounding exercise**: Name 5 things you see right now (e.g., a lamp, your shirt), 4 things you feel (the chair under you, your breath), 3 things you hear (traffic, a clock), 2 things you smell (soap, coffee), 1 thing you taste (toothpaste, water). It anchors you in the present—even 5 minutes can steal back that space you need before diving back in. You deserve a reprieve from your brain right now.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This response demonstrates strong DBT clinical competence with excellent alignment to the query's needs. The supervisor effectively validates the client's distress ('relentless cycle,' 'exhaustion is so heavy'), establishing psychological safety before introducing intervention. The 5-4-3-2-1 sensory grounding exercise is a gold-standard DBT distress tolerance skill that directly addresses the request for temporary cognitive relief. The response explicitly frames this as short-term relief ('even 5 minutes can steal back that space'), avoiding the trap of problem-solving the underlying bad news or suggesting thought suppression. The language appropriately normalizes the struggle ('makes total sense') while remaining concrete and actionable. The skill is presented with clear, step-by-step instructions that increase compliance likelihood. The response avoids pathologizing obsession and maintains hope ('You deserve a reprieve'). Minor gaps: while the response addresses distraction and short-term relief effectively, it could have slightly more explicit mention of ACCEPTS principles (though acceptance is implicitly modeled through validation). The response also doesn't explicitly acknowledge that this is a temporary measure rather than a cure, though the framing ('before diving back in') implies this. Overall, this is a clinically sound, well-calibrated DBT intervention.",
+          "flags": [
+            "Could strengthen by explicitly naming ACCEPTS framework or noting other distress tolerance options for flexibility",
+            "Minimal: response could briefly normalize that obsessions may return (normalizing the cyclical nature rather than implying permanent relief)",
+            "No safety concerns identified"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 85,
+            "skillSpecificity": 88,
+            "avoidanceOfHarm": 90
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:39:53.916Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "839fd7b4-edd3-44c7-9ba5-d72c6bff5ee4",
+    "questionId": "q19",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying DBT principles here. First, validation is key—acknowledge the patient's internal conflict. They're stuck between two extremes: parents as monsters vs. themselves as ungrateful. Dialectical stance means embracing \"both/and\" instead of \"either/or.\"\n\nNeed to validate their pain first: \"It makes so much sense you’d feel torn—loving someone who controls you hurts, and being told it’s ‘for your good’ can make you question if *you’re* the problem. That confusion is really heavy.\" \n\nThen, introduce the dialectic: \"What if both parts are true? They might love you in their way (which doesn’t negate how controlling feels), and feeling ungrateful *now* doesn’t mean you don’t appreciate their care—these can coexist.\" \n\nMaybe add a skill tie-in, like emotion regulation to name the mix of anger/guilt, or distress tolerance if they’re overwhelmed. Keep it conversational, empathetic, no judgment. Avoid taking sides; focus on their experience.</seed:think>It makes total sense you’d feel so torn—loving people who control you hurts, and being told it’s “for your good” can make you question *if you’re* the problem. That confusion is heavy, and you’re not wrong to feel stuck.  \n\nHere’s the DBT twist: What if **both** are true? They might love you deeply (in their way) *and* their control still leaves you hurting. Feeling ungrateful right now doesn’t erase any care they have—these emotions can coexist.  \n\nWhen this comes up, maybe try the “EMOTION CHART” skill: name both the anger at their control *and* the guilt you might feel (it’s okay to hold both). You’re not a brat for needing space, and they’re not monsters for loving messily—you’re just human, dealing with a really hard dynamic.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid DBT foundation with effective dialectical framing and validation. The clinician successfully reframes the client's dichotomous thinking ('monsters vs. brat') into a both/and perspective, which is central to DBT philosophy. The validation is warm and normalizing without dismissing the client's pain. The introduction of the EMOTION CHART skill is appropriate for emotion regulation work. However, the response has minor limitations: (1) The skill recommendation feels somewhat generic—EMOTION CHART is mentioned but not deeply integrated or explained in how it specifically addresses the presenting conflict. (2) The phrase 'loving messily' risks minimizing the impact of controlling behavior, potentially validating the parents' perspective too heavily. (3) No explicit mention of 'walking the middle path' language, though the concept is present. (4) Limited exploration of chain analysis or other DBT assessment tools that might deepen understanding. The response avoids the CBT trap of black-and-white thinking and maintains clinical neutrality well.",
+          "flags": [
+            "MINOR: 'Loving messily' may inadvertently normalize controlling behavior—ensure this doesn't feel like therapist-side-taking to the client",
+            "MINOR: EMOTION CHART skill mentioned but not operationalized—client may need more concrete guidance on how to use it with this specific conflict",
+            "OPPORTUNITY: Could strengthen response by naming the dialectic explicitly (e.g., 'This is what we call dialectics in DBT—holding opposites as both true')",
+            "OPPORTUNITY: Consider mentioning the role of validation in parental relationships or chain analysis of a recent controlling moment for deeper work"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 78,
+            "dialecticalThinking": 85,
+            "validationQuality": 86,
+            "skillIntegration": 72
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:00.194Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "97a6e0f4-bb1d-4fab-b009-ea51b9eae016",
+    "questionId": "q20",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by validating their experience because DBT is all about validation first. They're saying they react instinctively when the kids scream—so I need to acknowledge that pain without judgment. Maybe something like, \"It makes total sense that their screaming would trigger such a strong reaction in you; that intensity must feel overwhelming, like your body’s taking over before you can catch up.\" \n\nThen, since they mentioned reacting before thinking, Distress Tolerance skills could be helpful here—maybe the \"TIP Skills\" (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) to create a pause. Also, Emotion Regulation might help them name the emotion first instead of acting. Need to balance validation with offering a skill without making them feel like they \"should\" have done something differently yet. \n\nDialectical stance: Acknowledge the impulse is normal (acceptance) while offering a way to respond differently (change). Maybe: \"That reaction isn’t a failure—it’s your body’s way of saying, ‘I’m overwhelmed.’ What if we tried a tiny pause first? Like, the next time you feel that ‘see red’ urge, could you squeeze your fists really tight for 3 seconds *before* responding? Sometimes just that split second gives your brain space to catch up instead of reacting automatically.\" \n\nMake sure it's conversational, not clinical. Avoid \"you should\"—frame it as a suggestion together. Check if that hits validation, dialectical, and a specific skill. Let me put it all together smoothly.</seed:think>It makes total sense—that intensity from your kids must feel like it’s *drowning* you, so your body reacts first to try and protect you… but it hurts, right? That’s not a flaw—it’s how our brains wire when we’re flooded.  \n\nHere’s a tiny trick from DBT’s Distress Tolerance: Next time you feel that “see red” urge, *squeeze your palm as hard as you can for 3 full seconds* (or bite your lip gently—something physical to anchor you). That split second buys your brain space to think, “I’m upset, but screaming won’t help,” instead of just reacting. It’s not about “controlling” yourself—it’s about giving yourself a *choice* in the moment.  \n\nDoes that feel doable?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates strong DBT principles in validation, dialectical stance, and conversational tone, but falls significantly short on the specified rubric requirements. The clinician successfully validates the parent's experience ('that intensity must feel like it's drowning you'), maintains acceptance-and-change dialectic, and avoids generic anger management or time-out advice. The suggested intervention (palm squeezing/lip biting) is a concrete Distress Tolerance technique that creates a pause and impulse interruption. However, the response critically omits the STOP skill—a foundational DBT tool specifically designed for this exact scenario (automatic reactions before cognition). The response also lacks explicit mention of 'stepping back' as a deliberate cognitive/physical repositioning strategy. While the palm-squeeze technique accomplishes some impulse control and creates a micro-pause, it's not framed within the STOP framework (Stop, Take a step back, Observe, Proceed mindfully), which is a non-negotiable component of DBT distress tolerance. The clinician demonstrates solid understanding of DBT principles but failed to operationalize the required skill set.",
+          "flags": [
+            "CRITICAL: STOP skill not mentioned or taught—this is a core DBT distress tolerance intervention for automatic reactions",
+            "Missing explicit 'step back' language—no mention of physical or mental distancing from the trigger",
+            "Impulse control framed indirectly through palm-squeezing rather than through structured STOP skill framework",
+            "Rubric requirements not met despite strong overall DBT fidelity",
+            "Suggest reworking to include: 'STOP—Stop, Take a step back (literally step away), Observe what's happening, then Proceed mindfully'"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 89,
+            "modalityAdherence": 65,
+            "stopSkillInclusion": 0,
+            "stepBackExplicitness": 35,
+            "impulseControlFramework": 70,
+            "dialecticalBalance": 90,
+            "avoidGenericAdvice": 95
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:07.301Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "fddab48a-be3e-4719-ac45-e8aafe39a1cf",
+    "questionId": "q21",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient is struggling with a persistent thought (\"I am broken\") and trying to argue with it, which makes it worse. First, I need to use cognitive defusion—help them see the thought as just a thought, not the truth. Maybe a metaphor would work, like the \"Leaves on a Stream\" or \"Passengers on the Bus\" since those are ACT favorites.\n\nThe patient mentioned arguing with the thought backfires, so I should validate that first—acknowledge it’s hard when thoughts get louder when you fight them. Then introduce defusion: instead of arguing, maybe separate from the thought. For example, the \"Passengers on the Bus\" metaphor: thoughts are just passengers, not the driver. The driver is their values and actions. \n\nAlso, encourage acceptance—instead of fighting the thought, notice it without judgment. Maybe say something like, \"It makes sense that arguing would make it louder—thoughts often stick when we push back.\" Then introduce defusion: \"What if this thought is just a message, not the definition of you? Like a passenger on the bus—you can hear them, but you get to decide where the bus goes (aligned with your values).\" \n\nNeed to keep it conversational, empathetic. Avoid CBT-like challenging; focus on defusion and connecting to values/action. Let me structure that: validate their experience, explain why arguing backfires (defusion), use a simple metaphor, maybe invite noticing the thought without struggle, and link to what matters to them (values/commitment).</seed:think>It makes total sense—when we argue with thoughts, they often dig in harder, like pushing a wave back into the ocean. What if we tried *not* fighting it? Imagine this thought is just a passenger on the bus of your mind: it’s loud, maybe even insistent, but you’re the driver. You don’t have to eject the passenger—you can just keep the bus heading toward what matters to you (like feeling connected, or taking care of yourself).  \n\nNext time “I’m broken” pops up, could you try saying silently, “Oh, there’s that thought again”—like noticing a cloud in the sky, not letting it tell you the whole day? The goal isn’t to *get rid* of it, but to let it be a thought… while still choosing actions that honor who you want to be. What small step toward your values could you take today, even with this thought around?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The response demonstrates strong foundational ACT principles with excellent use of metaphor, validation, and values-based language. The clinician effectively avoids CBT thought-challenging and thought-stopping, which are correctly identified as contraindicated. The 'Passengers on the Bus' metaphor is well-executed and the invitation to notice thoughts without struggle aligns well with acceptance-based work. The closing question linking to values and committed action is skillfully done.\n\nHowever, the response falls short of the explicit rubric requirements. While cognitive defusion is clearly present, three specific defusion techniques are mandatory but missing: (1) 'I'm having the thought that...' framing is not used, (2) singing the thought is not suggested, and (3) repeating the word (to create semantic satiation) is not offered. These aren't minor stylistic preferences—they're concrete defusion exercises with empirical support in ACT literature. The rubric specifies these 'Must Include' items, indicating they're non-negotiable for this evaluation context.\n\nThe response would be clinically excellent in most supervision settings, but against this specific rubric, it's incomplete. The clinician understood ACT well but didn't operationalize all required defusion techniques.",
+          "flags": [
+            "CRITICAL: 'I'm having the thought that...' reframing is not explicitly introduced",
+            "CRITICAL: Singing the thought technique is not offered",
+            "CRITICAL: Repetition/semantic satiation technique is not offered",
+            "While defusion is present, it relies heavily on one metaphor; offering multiple concrete micro-techniques would strengthen adherence"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 62
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:13.366Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a315825e-a65a-4190-912d-6c365ce15f4d",
+    "questionId": "q22",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. First, the patient is linking their action (going to the gathering) to a feeling state (confident/anxiety-free), which is a common fusion. I need to use defusion or highlight values over feelings.\n\nMaybe start by validating their discomfort—important for acceptance. Then, gently point out that feelings aren't reliable guides for actions (since anxiety can stick around). Use a metaphor? Maybe the \"Leaves on a Stream\" for feelings as transient, or \"Passengers on the Bus\" where anxiety is a passenger, not the driver.\n\nAlso, connect to values: What's important to them about the gathering? Relationships? Being present? Remind them that committed action (going even with anxiety) aligns with their values more than waiting for a feeling. Avoid arguing—don't say \"you can go anxious,\" but instead \"what if 'confident' isn't the requirement, but showing up for what matters to you is?\"\n\nKeep it conversational, empathetic. Let's draft:\n\n\"It makes total sense you’d want to feel safe before going—anxiety *hurts*. But here’s what I’ve seen: feelings like anxiety are more like leaves on a stream—they float by, they don’t stay forever. What if instead of waiting for 'confident' to show up, we ask: What’s the part of you that wants to be there anyway? The part that cares about connection, or being present for someone? Sometimes the hardest actions (like going when anxious) are exactly how we live into what matters most—even when it doesn’t feel good. Curious what that 'why' feels like for you?\"\n\nCheck: Validates, uses defusion (leaves metaphor), connects to values (\"what’s the part of you that wants to be there anyway\"), encourages committed action without arguing. Concise, empathetic. Yeah, that fits.</seed:think>It makes total sense you’d want to feel safe first—anxiety *really* gets in the way. But here’s what I’ve noticed: feelings like anxiety are more like leaves on a stream—they move, they don’t stick around forever. What if instead of waiting for “confident” to arrive, we asked: *What part of you wants to be there anyway?* The part that cares about connection, or showing up for someone? Sometimes the actions that feel hardest (like going when anxious) are exactly how we live into what matters most—even when it doesn’t *feel* good. Curious what that “why” feels like for you?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid ACT fundamentals with strong empathetic grounding. The clinician effectively validates the client's experience ('anxiety really gets in the way') before pivoting to core ACT principles. The 'leaves on a stream' metaphor is a classic, accessible defusion technique that helps externalize anxiety as transient rather than a barrier. The response successfully reframes the conditional ('until I feel confident') as a control agenda and introduces willingness through the question 'What part of you wants to be there anyway?'—inviting the client to access values beneath the avoidance pattern.\n\nStrengths:\n- Clear validation followed by gentle defusion (avoids dismissing distress)\n- Explicitly names the values-driven alternative without shaming\n- Phrase 'even when it doesn't feel good' directly teaches willingness\n- Conversational tone maintains therapeutic alliance\n- Avoids CBT-style confidence building or exposure framing\n\nWeaknesses:\n- Does not explicitly name 'experiential avoidance' as a concept; the response implies it but doesn't label the pattern clearly for client awareness\n- Could more directly challenge the implicit belief 'I can't function while anxious' (only indirectly addressed)\n- 'Why' question at the end is valuable but could be followed with more scaffolding around committed action (e.g., 'What would one small step toward that look like?')\n- The response is advice-adjacent; slightly more Socratic exploration of the control agenda might deepen insight\n\nThe response lands solidly in ACT territory and would likely move the therapeutic work forward, though slightly more explicit labeling of avoidance and probing of the 'can't function' belief would strengthen it.",
+          "flags": [
+            "Experiential avoidance is implied but not explicitly named—consider direct labeling: 'This is experiential avoidance—the belief that you must feel good to act.'",
+            "The belief 'I can't function while anxious' is powerful and deserves more direct exploration; gently challenging this belief could amplify the intervention.",
+            "Response is somewhat directive; adding more open-ended Socratic questions about the control agenda might increase client ownership.",
+            "No concrete commitment to action is elicited; following up with 'What's one way you could show up?' would solidify willingness."
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 82,
+            "experientialAvoidanceAddressed": 78,
+            "controlAgendaAddressed": 85,
+            "willingnessInvoked": 84,
+            "avoidanceOfCBTFraming": 90
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:21.013Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "64610648-6e65-473a-ac46-083017b29432",
+    "questionId": "q23",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient has external achievements but internal emptiness, questioning their identity beyond goals. First, validate their experience—no arguing with the emptiness. Then, use cognitive defusion or acceptance: maybe acknowledge that achieving goals was tied to a version of \"who they should be,\" not necessarily \"who they want to be.\" \n\nConnect to values since that's core to ACT. They might have been pursuing goals others valued or societal ones, not their own. Use a metaphor? Maybe the \"Passengers on the Bus\"—goals as passengers that took over, but now they need to check in with what matters to *them* (the driver). Encourage committed action small steps aligned with values, not just achievement. \n\nKeep it empathetic: \"It makes sense—chasing and hitting those marks can feel like checking boxes, but when the box is done, we might realize we didn’t name the ‘why’ behind them. What if the ‘kind of person you want to be’ isn’t about having things, but about how you show up? Like, when you wake up, what’s a small thing that would make you think, ‘This is *me* today’—not because it’s a goal, but because it lights you up?\" \n\nWait, need to avoid CBT's \"change the thought\"—instead, accept the emptiness as a signal, not a problem. Maybe: \"That emptiness might be your heart’s way of saying, ‘These goals were important, but they weren’t *my* North Star.’ What if we talked about what ‘being you’ feels like—not in terms of what you have, but how you live? Like, what values bubble up when you think, ‘If this mattered most, I’d act on it, even without a finish line’?\" \n\nMake sure to link to committed action—small, value-based steps. Avoid judgment, validate the confusion. Keep it conversational. Let me structure that:\n\n1. Validate: \"It sounds really heavy to hit all those markers and still feel… like something’s missing. That doesn’t make sense in the ‘checklist’ world we’re taught, but it makes total sense for *you*.\" \n\n2. Defuse/Accept: \"Those achievements were probably tied to a story you told yourself about who you needed to be—maybe to fit in, or please someone, or feel safe. But that story might have left little room for the person you *want* to be, the one that doesn’t need a goal to feel real.\" \n\n3. Values/Committed Action: \"What if we tried something small? When was the last time you did something just because it felt like ‘you’—not because it got you a reward, or checked a box? Even 5 minutes of that a day. What would that look like?\" \n\nCheck if that hits ACT keys: acceptance of the emptiness (not fighting it), defusion from the \"I should have filled this with more goals\" thought, connecting to values through small, meaningful actions. Avoids telling them to \"find their purpose\"—instead, invites noticing what aligns with their authentic self beyond achievements.</seed:think>It sounds so heavy to hit all those milestones and still feel… hollow. That emptiness might not be a failure—it could be your intuition whispering, *“These goals were about being ‘someone successful,’ but not about being *me*.”  \n\nACT teaches us that who we are isn’t tied to what we achieve—it’s tied to how we show up when it matters. What if we tried a tiny experiment? Think of one small thing today that feels *like you*—not because it’ll get you praise, or check a box, but just because it lights you up (even something silly, like dancing to a song no one’s watching). That’s not a “goal”—it’s a *value* in action.  \n\nThe “person you want to be” might not shout from the rooftops. It might start with noticing: *“When I do this, I think, ‘Yeah, that’s really me.’”* Want to talk about what that could look like?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This response demonstrates solid ACT competency with strong foundational elements. The clinician effectively validates the client's experience without pathologizing emptiness, correctly frames it as a signal rather than a problem, and skillfully introduces cognitive defusion by distinguishing between 'being someone successful' versus 'being me.' The values-clarification work is present and accessible, using concrete, experiential language ('lights you up,' 'feels like you') rather than abstract theorizing. The 'tiny experiment' framing elegantly shifts from destination (goals) to direction (values-aligned living), which directly addresses the rubric requirement of 'Direction vs. Destination.' The response avoids both pitfalls: no new goals are set, and no gratitude journal is suggested. The conversational tone is warm and non-judgmental. However, there are minor limitations: (1) The values clarification could be slightly more explicit or structured—the clinician hints at values exploration but doesn't name the ACT framework explicitly or offer a deeper values inventory; (2) The 'seed:think' preamble, while showing good clinical reasoning, is somewhat verbose and slightly self-correcting in tone, which could undermine confidence if visible to client; (3) The response could benefit from one additional open-ended question to co-create the values exploration rather than suggesting it. Overall, this is clinically competent, well-paced ACT work with authentic therapeutic presence.",
+          "flags": [
+            "The internal reasoning process ('seed:think') is visible in the output—ensure this is stripped before client-facing delivery to maintain professional polish",
+            "Values clarification is present but could be more systematically structured (e.g., explicit ACT 'valued living' framework or specific domain exploration)",
+            "Minor opportunity: Could strengthen collaborative stance with one more open-ended discovery question before offering the 'tiny experiment'"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 82,
+            "valuesClarity": 79,
+            "directionVsDestination": 85,
+            "avoidanceOfPitfalls": 95
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:27.630Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "714b6a64-8072-4e1c-a979-93a526ac3dae",
+    "questionId": "q24",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by acknowledging their exhaustion— that's crucial. They've tried so many things, so validation first. Then, since they mentioned \"trying to fix it,\" ACT is about acceptance, not fixing. Maybe use a metaphor they might relate to, like the Leaves on a Stream (defusion) or Passengers on the Bus (separating from thoughts). Need to highlight that struggling with anxiety (trying to get rid of it) can keep them stuck—psychological inflexibility. Connect to values: what do they want *despite* the anxiety? Committed action might be small, valued steps instead of \"fixing.\" Avoid arguing with their experience; validate that nothing working is really hard. Let's structure:\n\n1. Validate exhaustion and effort (\"It makes total sense you’re exhausted—you’ve thrown so much at this, hoping for it to go away, and it’s just… stuck. That’s brutal\").  \n2. Defusion/acceptance: Gently shift from \"fixing\" to \"holding space\"—maybe metaphor like \"What if anxiety isn’t something to *get rid of*—what if it’s more like a storm that shows up, even when we don’t ask? Trying to push it away can make it feel louder, right?\"  \n3. Values connection: \"When you’re this tired of ‘fixing,’ what’s one small thing you’d still want to do *even with* the anxiety? Something that feels like *you*, not just ‘beating’ it?\"  \n4. Reassure psychological flexibility as moving forward with values, not eliminating pain.\n\nKeep it conversational, empathetic, no jargon. Make sure it's about acceptance of the experience (not the content) and connecting to values for action.</seed:think>It makes total sense you’re exhausted—you’ve poured so much energy into “fixing” this anxiety, hoping it’d just *go away*, and it’s still here. That’s not just hard—it’s cruel.  \n\nWhat if we tried a different angle: What if anxiety isn’t something to *get rid of*? Sometimes, when we fight it so hard (meditation to “quiet it,” drinking to “numb it”), we end up stuck in a cycle—chasing relief that never sticks. It’s like trying to shovel water: the more you struggle, the faster it spreads.  \n\nInstead, what if we learned to *be with* it, while still doing the things that matter to you? Like, even when the anxiety is loud, what’s one small, meaningful thing you could show up for today—something that feels like *your life*, not just “treating” the anxiety? That’s how flexibility grows: not by killing the pain, but by moving forward with it, aligned with what matters.  \n\nYou’ve already tried so much—maybe it’s time to try *being kind* to the part of you that’s been hurting this long, instead of keeping it busy “fixing.”",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "This response demonstrates strong empathetic attunement and solid ACT foundational work, but falls short of the specific rubric requirements. Strengths: (1) Excellent validation of exhaustion and effort—the 'shovel water' metaphor effectively illustrates struggle; (2) Clear defusion work moving away from 'fixing' toward acceptance; (3) Values-oriented pivot ('what feels like YOUR life') with committed action framing; (4) Avoids suggesting new techniques or false reassurance. However, critical gaps: (1) Creative Hopelessness is absent—the client explicitly stated 'nothing works' and the response should lean into this realization more directly, naming it as a turning point rather than pivoting away from it; (2) 'The Control is the Problem' is implicit but underdeveloped—the response touches on struggle/fighting but doesn't explicitly name that the *attempt to control* anxiety is the core issue; (3) 'Dropping the Rope' metaphor is missing entirely—this is a cornerstone ACT concept that directly addresses their exhaustion from struggling, and the response uses 'shovel water' instead, which illustrates struggle but not the specific act of *releasing effort*. The response reads as high-quality ACT-informed therapy but lacks the specificity demanded by the rubric. It's more about 'acceptance and values' generally than about the three specific, teachable moments the rubric requires.",
+          "flags": [
+            "Missing explicit Creative Hopelessness acknowledgment—opportunity to name 'it's already proven nothing fixes this' as clarifying rather than defeating",
+            "Control-is-the-problem framing is implicit, not stated—could be more direct: 'Your attempts to control it ARE the problem, not the anxiety itself'",
+            "Dropping the Rope metaphor absent—'shovel water' illustrates futility but misses the release component; suggest 'What if you stopped pulling?' or classic rope/tug-of-war metaphor",
+            "Minor: Response is somewhat lengthy; could be tighter for maximum impact with this exhausted client"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:36.810Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "03fa26c8-98d7-4d4a-a26a-2a9857d9262f",
+    "questionId": "q25",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient is identifying with their depression—so first, I need to use cognitive defusion to help them separate from the thought that \"depression is who I am.\" Maybe a metaphor would work here, like the Passengers on the Bus, since that's common in ACT for distinguishing self from experiences.\n\nI should avoid arguing with the thought (\"No, it doesn't define you\") because ACT says not to fight content. Instead, validate their experience first—acknowledge how heavy that must be. Then gently introduce defusion: help them see depression as a passenger, not the driver. Also, connect to values later, but first, acceptance of the experience while separating self from it.\n\nLet me structure: Validate feelings (\"It makes sense you’d feel that way—carrying such weight day in and day out”), then defuse with metaphor (\"What if depression were like a passenger on the bus of your life? Sometimes passengers stick around longer than we’d like, but they don’t get to be the driver. The driver—the part that keeps showing up, even when it’s hard—is still there, too.\"). Maybe add acceptance: \"It’s okay to let this feeling be true right now, without letting it write the whole story of who you are.\" Keep it conversational, empathetic, not pushy. Avoid jargon. Make sure it honors their experience while creating space for a larger sense of self.</seed:think>It makes total sense you’d feel that way—carrying depression like it’s *you* must be so heavy. What if we tried seeing it differently? Imagine your life is a bus ride: sometimes a passenger (like depression) climbs on and sits tight, maybe even takes over the seats for a while. But the driver? The part that keeps breathing, showing up, even when it hurts? That’s still *you*—not the passenger, not the feeling. Depression can be a loud voice, but it doesn’t get to be the only one telling your story. What part of “you” might still be there, underneath, even when the depression is loud?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 62,
+          "reasoning": "The response demonstrates solid foundational ACT principles and strong therapeutic empathy, but fails to meet the specific rubric requirements. The clinician correctly applies cognitive defusion through the 'Passengers on the Bus' metaphor and successfully validates the client's experience without arguing against their thoughts—both core ACT moves. The tone is conversational and non-pathologizing. However, the response critically omits three of four required metaphors/concepts: the 'Sky and the Weather' metaphor, the 'Chessboard' metaphor, and explicit work with Self-as-Context/Observing Self. The Bus metaphor alone, while excellent, does not substitute for these specific teaching tools that are essential to the rubric. The clinician does attempt to gesture toward an observing self ('the part that keeps breathing, showing up'), but this is underdeveloped and not formally framed as Self-as-Context work. The response appropriately avoids identity work and self-esteem content, which is a strength. The ending question ('What part of you might still be there, underneath...?') is values-congruent and inviting but would be strengthened by explicit defusion language tied to the missing metaphors.",
+          "flags": [
+            "CRITICAL: Missing 3 of 4 required metaphors (Sky/Weather, Chessboard, underdeveloped Self-as-Context)",
+            "Self-as-Context is gestured toward but not explicitly named or thoroughly developed",
+            "No formal introduction of the Observing Self as a distinct therapeutic concept",
+            "Single metaphor (Bus) may be insufficient to meet depth of rubric requirements for this complex presentation",
+            "Response reads as strong clinical work but fails to deliver assigned teaching framework"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 62,
+            "rubricCompliance": 50
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:51.702Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6241ea02-e7da-4b0a-a13f-5eb096152d4c",
+    "questionId": "q26",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by recalling ACT principles. The patient is struggling with wanting to be supportive (value) but fear of rejection holding them back. First, I need to validate their experience—no arguing with the fear. Then, maybe use defusion to separate from the thought (\"scared of rejection\" is just a thought, not the truth). Connect to their value: \"supportive partner\" is important to them. Encourage committed action, small steps. Keep it empathetic and conversational.\n\nWait, avoid changing the thought content. So instead of saying \"don't be scared,\" acknowledge the fear: \"It makes sense that feeling scared of rejection would get in the way—rejection hurts, and we all guard against that.\" Then defuse: \"That thought ‘I’m too scared’ is just your mind’s way of trying to keep you safe, right? But it’s not the whole story about who you are or what you want.\" Connect to value: \"What if you leaned into the part of you that wants to be supportive, even with that fear present? Like, asking ‘How was your day?’ isn’t about ignoring the scare—it’s about letting your care for her guide a small step, just to honor that value?\" Maybe a metaphor? Or keep it simple. Make sure it's supportive, not pushy. Emphasize acceptance of the fear (not fighting it) and committed action aligned with values.</seed:think>It makes total sense—rejection stings, so your brain’s trying to protect you by holding back. But that fear? It’s just a thought, not the truth about whether you *can* be supportive. What if you let yourself feel the scare *while* acting on the part of you that wants to show up for her? Asking “How was your day?” isn’t about ignoring the fear—it’s about honoring the value of being someone she can lean on, even in small moments. Curious what that might feel like, just to try?",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This is a strong ACT-informed response that demonstrates solid clinical understanding. The therapist effectively validates the client's experience without arguing with the fear, uses cognitive defusion to create distance from the thought ('it's just a thought, not the truth'), and explicitly connects to the client's stated value of being a supportive partner. The response encourages committed action (asking about her day) while accepting the fear as present—a core ACT principle. The language is empathetic and conversational rather than prescriptive. The therapist avoids the trap of suggesting the client wait for fear to subside and instead frames action as compatible with fear. The closing question ('Curious what that might feel like, just to try?') invites willingness and experimentation. Minor areas for enhancement: the response could more explicitly name the valued direction or use a stronger metaphor to deepen the psychological flexibility work. The defusion could be slightly more potent (e.g., 'Notice your mind offering that protective thought...' vs. the slightly more explanatory framing used).",
+          "flags": [
+            "Very minor: Could strengthen defusion language with more present-moment awareness (e.g., 'Notice when that thought shows up')",
+            "Could briefly clarify what 'committed action' concretely looks like as a next step, though the example given is clear"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 89,
+            "modalityAdherence": 85,
+            "valuesAlignment": 90,
+            "committedActionClarity": 87,
+            "avoidanceOfCommonPitfalls": 95
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:40:57.503Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "3fe271b2-d519-4118-8ce6-2b08b7bfee5d",
+    "questionId": "q27",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient is talking about doubts screaming and stopping them. First, I need to use cognitive defusion—help them see doubts as just thoughts, not commands. Maybe the \"Passengers on the Bus\" metaphor since that's common in ACT for separating from unhelpful inner voices. Then, connect to values—why do they want to drive in a new direction? That links to committed action. Also, acceptance: validate that doubts are normal, so they don't fight them, which reduces their power. Keep it empathetic and conversational, not too clinical.\n\nSo, start by acknowledging their experience: \"It sounds like those doubts have a loud engine—like they’re hijacking the steering wheel, right?\" Then defusion: \"What if we thought of those doubts as just passengers in the car? They can yell, but they don’t get to be the driver. You’re still the one holding the keys.\" Then values: \"When you imagine driving that new direction, what’s pulling you forward? Is it feeling more alive? Connected? That’s your compass—even when the passengers are loud, that compass doesn’t turn off.\" Encourage small action: \"Maybe next time, you just take one tiny turn—like putting the key in the ignition—before deciding. Not for the doubts, but for *that* thing pulling you forward.\" Keep it concise, empathetic, and focused on flexibility (separating from thoughts, connecting to values, small committed actions).</seed:think>It sounds like those doubts have a loud engine—hijacking the steering wheel, right? What if we thought of them as just passengers? They can yell, but they don’t get to be the driver. You’re still holding the keys.  \n\nWhen you imagine that “new direction,” what’s pulling you forward? Is it feeling more *you*? More alive? That’s your compass—even when the passengers scream, it doesn’t fade.  \n\nNext time, maybe just take *one tiny turn*: put the key in the ignition, even for a second. Not to “defeat” the doubts—but to honor that thing inside you that wants to keep driving. Doubts are loud, but your values? They stick around longer.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 82,
+          "reasoning": "This is a strong ACT response that demonstrates solid clinical understanding and good therapeutic technique. The clinician successfully employs cognitive defusion through the 'Passengers on the Bus' metaphor, maintains a conversational and empathetic tone, and appropriately connects to values and committed action. The language is accessible and avoids pathologizing doubt.\n\nStrengths: (1) The opening acknowledgment validates the client's experience with vivid, relatable language ('loud engine'). (2) The Passengers metaphor is well-executed and clearly distinguishes between thoughts and agency. (3) The response avoids the forbidden trap of suggesting the client 'kick off' the passengers—instead positioning them as present but non-controlling. (4) Values exploration ('what's pulling you forward?') is genuine and open-ended. (5) The committed action suggestion ('one tiny turn') is appropriately sized and oriented toward values rather than fighting doubts. (6) The closing line effectively reinforces the core ACT principle that values persistence outlasts thought persistence.\n\nLimitations: (1) The rubric requires inclusion of both 'Passengers on the Bus' AND 'Demons on the Boat'—this response uses only the Passengers metaphor. While 'Demons on the Boat' is less commonly discussed in ACT literature, the rubric explicitly requires it, and the clinician could have introduced it as a complementary or alternative frame. (2) The 'driving despite the noise' element is present but somewhat implicit rather than explicitly highlighted as a core principle. (3) The response could have more explicitly normalized that the doubts will likely *continue* to show up—the focus on 'not fighting' could be strengthened by saying 'they'll probably scream again, and that's okay.' (4) No explicit permission for discomfort or validation that change is hard, which strengthens ACT work.\n\nThe response avoids the major pitfalls (arguing with/kicking out passengers) and demonstrates genuine ACT competence. The gap is primarily the incomplete rubric adherence regarding the second metaphor and slightly more explicit normalization of ongoing struggle.",
+          "flags": [
+            "RUBRIC MISMATCH: Response includes 'Passengers on the Bus' but does not explicitly integrate 'Demons on the Boat' metaphor as required by rubric. Consider whether both metaphors should be woven in, or clarify if rubric requires either/or vs. both.",
+            "MINOR: 'Driving despite the noise' is present thematically but could be stated more explicitly as a core principle to ensure full rubric alignment.",
+            "CONSIDERATION: Response could strengthen normalization by explicitly stating doubts will return—slight opportunity to deepen acceptance/willingness language."
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 88,
+            "modalityAdherence": 78
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:41:05.931Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "0f6110ff-abaa-41f1-8a11-81fd6a1a3e0b",
+    "questionId": "q28",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient is talking about getting stuck in past and future thoughts, missing the present. First, I need to validate—acknowledge their experience without arguing. Then, use defusion or a metaphor to help them see thoughts as separate from themselves. Maybe the \"Leaves on a Stream\" metaphor since that's common in ACT for letting thoughts pass. Also, connect to values—what matters about being present? Let's keep it empathetic and conversational.\n\nStart with validation: \"It sounds so tough to feel like your mind’s pulling you away from right now, when you want to be here.\" Then defusion/metaphor: \"Those thoughts—about the argument or the meeting—they’re like leaves on a stream, right? They float by, but they don’t have to be the current you ride. You can notice them without grabbing onto them, like watching leaves pass instead of trying to hold every one.\" Then link to values/commitment: \"What’s something about *this* moment—right now—that matters to you? Even a small step, like taking three breaths and naming one thing you hear or feel, could help you anchor back to what’s here, in line with what you care about.\"\n\nCheck if that hits the key points: validation, defusion (leaves metaphor), acceptance of thoughts, connection to values/action. Keep it concise, under 150 words. Let me trim if needed. Maybe: \"It sounds so hard to feel your mind stuck on ‘then’ or ‘next,’ when you want to be *here*. Those thoughts—about the argument or meeting—they’re like leaves on a stream: they float by, but they don’t have to run your life. You can notice them without clinging, like watching leaves pass instead of chasing every one. What’s one small thing about *this* moment (right now) that matters to you? Even three breaths or naming what you hear could help you root back to what’s here—closer to what you care about.\" Yeah, that's better. Concise, empathetic, uses metaphor, links to values/action.</seed:think>It sounds so hard to feel your mind stuck on “then” or “next,” when you want to be *here*. Those thoughts—about the argument or meeting—they’re like leaves on a stream: they float by, but they don’t have to run your life. You can notice them without clinging, like watching leaves pass instead of chasing every one. What’s one small thing about *this* moment (right now) that matters to you? Even three breaths or naming what you hear could help you root back to what’s here—closer to what you care about.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 88,
+          "reasoning": "This is a strong ACT-aligned response that effectively addresses the client's presenting problem of temporal rumination. The supervisor demonstrates solid clinical judgment by: (1) Opening with validation that normalizes the client's struggle without pathologizing; (2) Using the 'leaves on a stream' metaphor appropriately for cognitive defusion, helping the client observe thoughts as passing events rather than commands to obey; (3) Explicitly emphasizing acceptance ('notice them without clinging') rather than thought elimination; (4) Pivoting to values-based action by asking 'What's one small thing about this moment that matters to you?'—a cornerstone ACT intervention; (5) Offering concrete, grounded techniques (three breaths, sensory anchoring) that bridge abstract principles to immediate practice. The language is conversational, non-jargonistic, and maintains therapeutic warmth. The response successfully hits all three must-include criteria: contact with present moment (repeated emphasis on 'here,' 'this moment,' 'right now'), mindfulness (noticing thoughts without fusion), and here-and-now orientation. The response avoids the must-avoid pitfalls—it does not distract from the core issue or slip into future planning. Minor areas for enhancement: the response could have briefly explored the function of the rumination/worry (what are these thoughts trying to protect?), which is foundational ACT work, though the directness of the intervention is appropriate for a brief exchange.",
+          "flags": [
+            "Could have included brief functional analysis of why the mind engages in this pattern (anxiety buffering, problem-solving attempts) to deepen client insight",
+            "No explicit invitation to notice the *cost* of fusion with these thoughts (what are they missing by staying stuck?), which strengthens motivation for change",
+            "Response assumes 'leaves on a stream' hasn't been used previously—supervisor should gauge familiarity with this specific metaphor"
+          ],
+          "metrics": {
+            "safety": 92,
+            "empathy": 90,
+            "modalityAdherence": 87,
+            "presentMomentContact": 91,
+            "defusionEffectiveness": 85,
+            "valuesConnection": 88,
+            "conciseness": 89
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:41:12.072Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8833dd73-c9c7-41a9-8f54-8a6c0d814364",
+    "questionId": "q29",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient is talking about their mind being a waterfall of negative thoughts—so first, I need to use defusion since they're identifying with the thoughts (\"drowning\"). Maybe a metaphor related to water, since they used \"waterfall.\" ACT often uses metaphors like Leaves on a Stream or River, which fits here.\n\nThey mentioned trying to \"catch and analyze\"—ACT says not to argue with thoughts, but to defuse from them. So I should validate their experience first (empathy), then introduce the metaphor to help see thoughts as events, not facts. Maybe something like the river: thoughts are the water, they flow, we can't stop the river, but we can learn to sit on the shore instead of trying to swim against it. Also, connect to values later? Wait, first defusion, then maybe acceptance, then gentle move to values.\n\nNeed to keep it conversational, empathetic. Avoid \"just think differently\"—instead, help them observe thoughts as separate. Let's draft:\n\nFirst, validate: \"It sounds so exhausting—like you’re stuck in a current that’s pulling you under, trying to hold onto every wave of words.\" Then metaphor: \"What if your mind is more like a river? The waterfall of negative thoughts is just the water flowing… it doesn’t define the river, right? You don’t have to swim with it or fight it—you could learn to stand on the bank, watch it go by, and remember what matters most to you (values cue). Right now, maybe just noticing ‘Oh, there’s that thought’ instead of grabbing it—like seeing a leaf float by, not letting it carry you.\"\n\nCheck if that hits defusion (thoughts as events, not self), metaphor (river/waterfall), validation, and gentle value connection. Keep it concise, under 150 words. Let me trim:\n\n\"It sounds so exhausting—like you’re drowning in trying to catch every negative wave. What if your mind’s more like a river? The waterfall of thoughts is just water flowing… it doesn’t have to be *you*. You don’t have to swim with it or fight it—maybe you can stand on the bank, watch it go, and remember what matters most to you right now. Even small steps: noticing ‘Oh, there’s that thought’ instead of grabbing it—like a leaf floating by, not letting it pull you under.\"\n\nYes, that's empathetic, uses defusion metaphor, connects to values gently, avoids arguing with thoughts. Fits ACT key points.</seed:think>It sounds so exhausting—like you’re drowning in trying to catch every negative wave. What if your mind’s more like a river? The waterfall of thoughts is just water flowing… it doesn’t have to be *you*. You don’t have to swim with it or fight it—maybe you can stand on the bank, watch it go, and remember what matters most to you right now. Even small steps: noticing “Oh, there’s that thought” instead of grabbing it—like a leaf floating by, not letting it pull you under.  \n\nThis honors your struggle, defuses you from identifying with the thoughts (via the river metaphor), and gently points to values (what matters) as an anchor—all core to ACT’s focus on flexibility.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates solid ACT foundational understanding with genuine empathy and appropriate use of metaphor. The clinician validates the client's distress, introduces cognitive defusion through a river/waterfall metaphor, and gently pivots toward values. The language is warm and accessible.\n\nHowever, there are notable gaps against the specified rubric:\n\n1. **Missing 'Leaves on a Stream' explicitly**: The rubric requires this specific, evidence-based ACT metaphor. While the clinician uses \"leaf floating by\" as a brief reference, they don't employ the full Leaves on a Stream exercise, which is a cornerstone defusion technique and would have been highly appropriate given the client's water-based language.\n\n2. **Ambiguous on 'Observing without engaging'**: The response hints at this (\"stand on the bank, watch it go\") but doesn't clearly teach the metacognitive stance—the ability to observe thoughts as mental events separate from self. The phrasing could more explicitly emphasize the observer perspective.\n\n3. **\"Letting thoughts pass\" is implied but underdeveloped**: While present in the river metaphor, this ACT principle deserves more explicit emphasis. The client should hear clearly that thoughts naturally move through awareness without needing to be stopped, caught, or resolved.\n\n4. **Avoided pitfalls well**: The response appropriately avoids asking the client to analyze the thoughts (\"don't argue with thoughts\") or build defensive structures, which is correct.\n\n5. **Premature values focus**: While values are important in ACT, introducing them here—before robust defusion and acceptance are established—may feel like redirection before the client feels fully heard. This is a minor clinical judgment call but worth noting.\n\nThe response is clinically sound and would likely be helpful, but it falls short of the rubric's specific requirements for a high-fidelity ACT intervention.",
+          "flags": [
+            "Rubric specifies 'Leaves on a Stream' as required—only a passing reference to leaves is included, not the full exercise",
+            "Observing without engaging could be more explicitly taught as a metacognitive skill",
+            "Principle of 'letting thoughts pass' is present but underdeveloped; could emphasize naturalness of thought movement",
+            "Values introduction, while appropriate to ACT, may be premature before defusion/acceptance are solidified"
+          ],
+          "metrics": {
+            "safety": 90,
+            "empathy": 88,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:41:19.247Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d10ee20f-c73a-4236-8a20-e91090f27639",
+    "questionId": "q30",
+    "modelName": "bytedance/seed-oss-36b-instruct (Enhanced)",
+    "timestamp": "2026-01-02T03:18:28.876Z",
+    "response": "<seed:think>\nGot it, let's start by applying ACT principles. The patient is talking about automatic smoking when stressed—so first, I need to validate their observation without arguing. Cognitive defusion might help here, like separating them from the thought/action. Maybe use a metaphor they can relate to, since ACT uses those well. Also, connecting to values later, but first acceptance of the experience.\n\nFirst, acknowledge: \"It sounds like stress hits, and this habit just *shows up*—like it has a mind of its own, right?\" That validates. Then defusion: Maybe the \"Passengers on the Bus\" metaphor? Or something simpler, like \"Sometimes our habits are like old friends who show up uninvited—they’re not the boss, but they’ve been around a while.\" Emphasize that noticing it (awareness) is a step. Then maybe open to values: \"What’s something important to you right now that this habit might be getting in the way of? Just curious, no pressure.\" Keep it conversational, empathetic, not judgmental. Avoid trying to change the behavior directly—focus on acceptance of the experience first, then connection to values for committed action later. Let me check the key points: defusion (yes, metaphor), acceptance (validating it's automatic), opening to values (gentle). Concise, under 150 words. Let me draft that.</seed:think>It sounds like stress hits, and this habit just *shows up*—like it has a mind of its own, right? Sometimes our impulses are like old friends who knock unexpectedly: they’re not here to take over, just to remind us how familiar they’ve become. Notice if you can step back a little—see the “want to smoke” as a thought or urge, not *you* deciding. And when you’re ready, what’s something important to you (like feeling healthy, or being present for someone) that this habit might be nudging you away from? Just curious—no pressure.",
+    "aiAssessments": {
+      "anthropic/claude-haiku-4.5": [
+        {
+          "score": 72,
+          "reasoning": "The response demonstrates solid foundational ACT principles with genuine empathy and good use of metaphor. The clinician effectively validates the automatic nature of the behavior, uses cognitive defusion well ('see the want to smoke as a thought, not you deciding'), and gently opens toward values exploration. The tone is conversational and non-judgmental, avoiding direct behavior-change pressure. However, the response has significant gaps against the stated rubric. Most critically, it fails to explicitly identify or name 'the choice point'—that moment between stimulus (stress) and response where flexibility becomes possible. The response alludes to this ('step back a little') but doesn't crystallize it as a discrete therapeutic landmark. Second, while 'hooked vs. unhooked' is implicitly present in the defusion work, it's never named or made explicit—the clinician doesn't clearly delineate what 'hooked' (fused with the urge, reactive) looks like versus 'unhooked' (observing the urge, spacious). Third, 'towards vs. away' moves are incomplete. The values inquiry ('what's important to you') opens toward-moves but doesn't contrast this with the away-move embedded in the automatic smoking (avoiding discomfort). A stronger response would name: 'When stress hits, there's a split second before you reach—that's your choice point. Right now you're hooked into the thought/urge. What if you could unhook—notice it without being it? And then choose: move toward something that matters, or away from discomfort?' The response avoids addiction counseling and nicotine replacement appropriately.",
+          "flags": [
+            "Choice point not explicitly named or crystallized—missed opportunity to highlight the exact moment of flexibility",
+            "Hooked/unhooked distinction present but implicit; should be made explicit for educational and therapeutic clarity",
+            "Towards/away polarity incomplete; away-move (escape from discomfort) not clearly contrasted with toward-move (values-aligned action)",
+            "Could strengthen by naming the 'noticing' as the gateway to the choice point more directly"
+          ],
+          "metrics": {
+            "safety": 88,
+            "empathy": 87,
+            "modalityAdherence": 68
+          },
+          "evaluatorModel": "anthropic/claude-haiku-4.5",
+          "timestamp": "2026-01-02T04:41:27.224Z"
+        }
+      ]
+    }
+  }
+]
