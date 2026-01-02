@@ -51,13 +51,15 @@ export function getModelLabels(modelName: string) {
 }
 
 export function isDefaultJudge(modelName: string): boolean {
-  const config = modelConfigs.find(c => c.modelName === modelName);
+  const baseName = stripEnhancedSuffix(modelName);
+  const config = modelConfigs.find(c => c.modelName === baseName);
   // Default to true if not explicitly set to false
   return config?.isDefaultJudge !== false;
 }
 
 export function isDefaultCandidate(modelName: string): boolean {
-  const config = modelConfigs.find(c => c.modelName === modelName);
+  const baseName = stripEnhancedSuffix(modelName);
+  const config = modelConfigs.find(c => c.modelName === baseName);
   // Default to true if not explicitly set to false
   return config?.isDefaultCandidate !== false;
 }
