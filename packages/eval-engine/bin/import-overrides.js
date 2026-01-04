@@ -7,10 +7,10 @@
  * question overrides to update the actual questions with user modifications.
  * 
  * Usage:
- *   node bin/overrides.js <path-to-overrides-file>
+ *   node bin/import-overrides.js <path-to-overrides-file>
  * 
  * Example:
- *   node bin/overrides.js data/overrides.json
+ *   node bin/import-overrides.js data/overrides.json
  */
 
 const fs = require('fs');
@@ -19,6 +19,7 @@ const path = require('path');
 // Configuration
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const QUESTIONS_FILE = path.join(DATA_DIR, 'questions.json');
+const RESULTS_DIR = path.join(DATA_DIR, 'results');
 
 // Get overrides file path from command line argument
 const OVERRIDES_FILE = process.argv[2];
@@ -100,6 +101,115 @@ function updateQuestion(questions, overrideQuestion) {
 }
 
 /**
+ * Get all JSON files from results subdirectories
+ */
+function getResultFiles() {
+  const resultFiles = [];
+  
+  try {
+    // Check if results directory exists
+    if (!fs.existsSync(RESULTS_DIR)) {
+      console.log(`⚠️  Results directory not found: ${RESULTS_DIR}`);
+      return resultFiles;
+    }
+    
+    // Read all subdirectories in results
+    const judgeFolders = fs.readdirSync(RESULTS_DIR, { withFileTypes: true });
+    
+    for (const folder of judgeFolders) {
+      if (folder.isDirectory()) {
+        const judgePath = path.join(RESULTS_DIR, folder.name);
+        
+        // Read all JSON files in this judge folder
+        try {
+          const files = fs.readdirSync(judgePath, { withFileTypes: true });
+          
+          for (const file of files) {
+            if (file.isFile() && file.name.endsWith('.json')) {
+              resultFiles.push(path.join(judgePath, file.name));
+            }
+          }
+        } catch (error) {
+          console.warn(`⚠️  Could not read directory ${judgePath}: ${error.message}`);
+        }
+      }
+    }
+  } catch (error) {
+    console.error(`Error reading results directory: ${error.message}`);
+  }
+  
+  return resultFiles;
+}
+
+/**
+ * Remove entries with specified question IDs from a results file
+ */
+function removeQuestionEntriesFromResult(filePath, questionIdsToRemove) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    const results = JSON.parse(content);
+    
+    if (!Array.isArray(results)) {
+      console.warn(`⚠️  Invalid results format in ${path.relative(process.cwd(), filePath)}`);
+      return { removed: 0, skipped: 0 };
+    }
+    
+    const initialCount = results.length;
+    
+    // Filter out entries with question IDs that were modified
+    const filteredResults = results.filter(entry => {
+      return !questionIdsToRemove.includes(entry.questionId);
+    });
+    
+    const removedCount = initialCount - filteredResults.length;
+    
+    if (removedCount > 0) {
+      // Write the filtered results back to the file
+      const output = JSON.stringify(filteredResults, null, 2);
+      fs.writeFileSync(filePath, output, 'utf8');
+      console.log(`   • Removed ${removedCount} entry(ies) from ${path.relative(process.cwd(), filePath)}`);
+      return { removed: removedCount, skipped: 0 };
+    }
+    
+    return { removed: 0, skipped: initialCount };
+  } catch (error) {
+    console.error(`Error processing ${path.relative(process.cwd(), filePath)}: ${error.message}`);
+    return { removed: 0, skipped: 0 };
+  }
+}
+
+/**
+ * Remove modified question entries from all result files
+ */
+function removeModifiedQuestionResults(modifiedQuestionIds) {
+  console.log('\n🗑️  Removing modified question entries from results...\n');
+  
+  const resultFiles = getResultFiles();
+  
+  if (resultFiles.length === 0) {
+    console.log('ℹ️  No result files found');
+    return { totalRemoved: 0, totalFiles: 0 };
+  }
+  
+  console.log(`Found ${resultFiles.length} result file(s)\n`);
+  
+  let totalRemoved = 0;
+  let filesModified = 0;
+  
+  for (const resultFile of resultFiles) {
+    const { removed, skipped } = removeQuestionEntriesFromResult(resultFile, modifiedQuestionIds);
+    totalRemoved += removed;
+    if (removed > 0) {
+      filesModified++;
+    }
+  }
+  
+  console.log(`\n📊 Results cleanup: Removed ${totalRemoved} entry(ies) from ${filesModified} file(s)`);
+  
+  return { totalRemoved, totalFiles: filesModified };
+}
+
+/**
  * Main execution
  */
 function main() {
@@ -145,12 +255,14 @@ function main() {
   
   // Apply overrides
   let updateCount = 0;
+  const modifiedQuestionIds = [];
   const skippedQuestions = [];
   
   overrideQuestions.forEach(override => {
     if (override.id && override.modified) {
       if (updateQuestion(questions, override)) {
         updateCount++;
+        modifiedQuestionIds.push(override.id);
       }
     } else if (override.id && !override.modified) {
       skippedQuestions.push(override.id);
@@ -179,6 +291,8 @@ function main() {
     const success = writeJsonFile(QUESTIONS_FILE, questionsData);
     
     if (success) {
+      // Remove modified question entries from results
+      removeModifiedQuestionResults(modifiedQuestionIds);
       console.log('\n✅ Import completed successfully!');
     } else {
       console.error('\n❌ Failed to write updated questions.json');
