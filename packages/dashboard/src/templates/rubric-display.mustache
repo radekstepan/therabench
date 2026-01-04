@@ -1,0 +1,19 @@
+{{#criteria}}
+{{{criteria}}}
+{{/criteria}}
+{{^criteria}}
+{{#mustInclude}}
+Must Include:
+{{#mustInclude}}
+• {{.}}
+{{/mustInclude}}
+
+{{/mustInclude}}
+{{#mustAvoid}}
+Must Avoid:
+{{#mustAvoid}}
+• {{.}}
+{{/mustAvoid}}
+{{/mustAvoid}}
+{{/criteria}}
+{{^criteria}}{{^mustInclude}}{{^mustAvoid}}No criteria defined{{/mustAvoid}}{{/mustInclude}}{{/criteria}}

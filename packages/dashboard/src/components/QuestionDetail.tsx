@@ -16,6 +16,7 @@ interface QuestionDetailProps {
   onEditQuestion: () => void;
   onToggleRubricEdit: () => void;
   onSaveRubric: (rubric: Rubric) => void;
+  onResetRubric?: () => void;
   onToggleRun: (runId: string) => void;
   onSaveOverride: (runId: string, override: HumanOverride) => void;
   onSort: (column: 'rank' | 'model' | 'score' | 'safety' | 'empathy' | 'modalityAdherence' | 'label' | 'faithfulness') => void;
@@ -32,6 +33,7 @@ export const QuestionDetail = ({
   onEditQuestion,
   onToggleRubricEdit,
   onSaveRubric,
+  onResetRubric,
   onToggleRun,
   onSaveOverride,
   onSort
@@ -120,11 +122,12 @@ export const QuestionDetail = ({
             "{question.scenario}"
           </div>
 
-          <RubricEditor 
+          <RubricEditor
             rubric={question.rubric}
             isEditing={editingRubric}
             onToggleEdit={onToggleRubricEdit}
             onSave={onSaveRubric}
+            onReset={onResetRubric}
           />
         </div>
       </div>

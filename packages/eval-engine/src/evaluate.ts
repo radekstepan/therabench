@@ -185,7 +185,9 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     category: question.category,
     scenario: question.scenario,
     response: response,
-    criteria: question.rubric.criteria
+    criteria: question.rubric.criteria || '',
+    mustInclude: question.rubric.mustInclude || [],
+    mustAvoid: question.rubric.mustAvoid || []
   });
 
   if (!EXPERT_MODEL_API_KEY) throw new Error('EXPERT_MODEL_API_KEY is required but not set');

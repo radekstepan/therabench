@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
+import { getOverrides, saveOverride, exportData, getRubricOverrides, saveRubricOverride, clearRubricOverride, getQuestionOverrides, saveQuestionOverride, type HumanOverride } from './lib/storage';
 // Removed heavy stats imports as they are now in the worker
 import type { QuestionNode, ModelRun, AugmentedResult, Rubric, QuestionOverride, ExtendedModelStat, MissingEvaluations, JudgeStats } from './types';
 import { getModelLabelSortValue, cn, isDefaultJudge, isDefaultCandidate } from './utils';
@@ -98,6 +98,15 @@ export default function App() {
     setOverrides(getOverrides());
     setRubricOverrides(getRubricOverrides());
     setQuestionOverrides(getQuestionOverrides());
+    // One-time migration: Clear stale rubric overrides from old array-based format
+    const staleOverrides = getRubricOverrides();
+    Object.keys(staleOverrides).forEach(questionId => {
+      const rubric = staleOverrides[questionId];
+      // If rubric has mustInclude/mustAvoid arrays (old format), clear it
+      if (rubric && (rubric.mustInclude || rubric.mustAvoid) && !rubric.criteria) {
+        clearRubricOverride(questionId);
+      }
+    });
   }, []);
 
   // Show welcome modal on initialization
@@ -483,6 +492,10 @@ export default function App() {
                   const updated = saveRubricOverride(activeQuestionWithOverrides.id, newRubric);
                   setRubricOverrides(updated);
                   setEditingRubric(false);
+                }}
+                onResetRubric={() => {
+                  clearRubricOverride(activeQuestionWithOverrides.id);
+                  setRubricOverrides(getRubricOverrides());
                 }}
                 onToggleRun={(runId) => setExpandedRunId(expandedRunId === runId ? null : runId)}
                 onSaveOverride={handleSaveOverride}

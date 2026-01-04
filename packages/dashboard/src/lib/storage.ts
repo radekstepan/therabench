@@ -30,6 +30,15 @@ export const saveRubricOverride = (questionId: string, rubric: Rubric) => {
     return current;
 };
 
+export const clearRubricOverride = (questionId: string) => {
+    const current = getRubricOverrides();
+    if (current[questionId]) {
+        delete current[questionId];
+        localStorage.setItem(RUBRIC_KEY, JSON.stringify(current));
+    }
+    return current;
+};
+
 export const getQuestionOverrides = (): Record<string, QuestionOverride> => {
     const raw = localStorage.getItem(QUESTION_KEY);
     return raw ? JSON.parse(raw) : {};

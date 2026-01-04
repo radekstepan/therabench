@@ -1,13 +1,28 @@
 import { analyzeJudges, calculateModelReliability } from '../lib/stats';
 import { calculateModelCost, getModelLabelSortValue, stripEnhancedSuffix } from '../utils';
-import type { 
-  ModelRun, 
-  QuestionNode, 
-  AugmentedResult, 
+import type {
+  ModelRun,
+  QuestionNode,
+  AugmentedResult,
   ExtendedModelStat,
   MissingEvaluations,
   JudgeStats
 } from '../types';
+
+// Helper to get rubric searchable content (both formats)
+function getRubricSearchString(rubric: any): string {
+  const parts: string[] = [];
+  if (rubric.criteria) {
+    parts.push(rubric.criteria);
+  }
+  if (rubric.mustInclude && Array.isArray(rubric.mustInclude)) {
+    parts.push(...rubric.mustInclude);
+  }
+  if (rubric.mustAvoid && Array.isArray(rubric.mustAvoid)) {
+    parts.push(...rubric.mustAvoid);
+  }
+  return parts.join(" ");
+}
 
 // --- State Management ---
 // We keep data and cached calculations in the worker scope
@@ -503,12 +518,13 @@ function performCalculations(payload: any, requestId: string) {
     return { ...q, runCount: runs.length, avgScore: runs.length ? Math.round(runs.reduce((a,b)=>a+b.effectiveScore,0)/runs.length) : 0 };
   }).filter(q => {
     const searchLower = searchTerm.toLowerCase();
-    const matchesSearch = searchTerm === '' || 
-                         q.title.toLowerCase().includes(searchLower) || 
+
+    const matchesSearch = searchTerm === '' ||
+                         q.title.toLowerCase().includes(searchLower) ||
                          q.scenario.toLowerCase().includes(searchLower) ||
                          q.category.toLowerCase().includes(searchLower) ||
                          q.id.toLowerCase().includes(searchLower) ||
-                         q.rubric.criteria.toLowerCase().includes(searchLower);
+                         getRubricSearchString(q.rubric).toLowerCase().includes(searchLower);
     const matchesCategory = categoryFilter === 'all' || q.category === categoryFilter;
     return matchesSearch && matchesCategory;
   });

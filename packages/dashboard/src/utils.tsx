@@ -283,14 +283,16 @@ export function formatJudgePromptForLLM(
 ): string {
   const isTranscript = isTranscriptQuestion;
 
-  // Use the actual judge template
+  // Use the actual judge template - pass rubric data directly and let template handle formatting
   const rendered = Mustache.render(judgeTemplate, {
     isTranscript,
     context,
     category,
     scenario,
     response,
-    criteria: rubric.criteria
+    criteria: rubric.criteria || '',
+    mustInclude: rubric.mustInclude || [],
+    mustAvoid: rubric.mustAvoid || []
   });
 
   return rendered;

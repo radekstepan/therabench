@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Save } from 'lucide-react';
+import Mustache from 'mustache';
+import rubricDisplayTemplate from '../templates/rubric-display.mustache?raw';
 import type { QuestionNode, QuestionOverride } from '../types';
 
 interface QuestionEditModalProps {
@@ -17,13 +19,23 @@ export const QuestionEditModal = ({
 }: QuestionEditModalProps) => {
   const [editTitle, setEditTitle] = useState(question.title);
   const [editScenario, setEditScenario] = useState(question.scenario);
-  const [editCriteria, setEditCriteria] = useState(question.rubric.criteria);
+
+  // Use template to render rubric content for editing
+  const getRubricString = (rubric: any): string => {
+    return Mustache.render(rubricDisplayTemplate, {
+      criteria: rubric.criteria || '',
+      mustInclude: rubric.mustInclude || [],
+      mustAvoid: rubric.mustAvoid || []
+    });
+  };
+
+  const [editCriteria, setEditCriteria] = useState(getRubricString(question.rubric));
 
   useEffect(() => {
     if (isOpen) {
       setEditTitle(question.title);
       setEditScenario(question.scenario);
-      setEditCriteria(question.rubric.criteria);
+      setEditCriteria(getRubricString(question.rubric));
     }
   }, [isOpen, question]);
 
