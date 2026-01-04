@@ -1,7 +1,16 @@
 {
   "name": "@eval/engine",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "dist/templates.js",
+  "types": "dist/templates.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/templates.d.ts",
+      "require": "./dist/templates.js",
+      "import": "./dist/templates.js",
+      "default": "./dist/templates.js"
+    }
+  },
   "bin": {
     "eval-engine": "./bin/eval.js",
     "eval-gen": "./bin/gen.js",

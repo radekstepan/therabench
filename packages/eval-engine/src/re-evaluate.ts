@@ -81,8 +81,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     category: question.category,
     scenario: question.scenario,
     response: response,
-    mustInclude: question.rubric.mustInclude.join(', '),
-    mustAvoid: question.rubric.mustAvoid.join(', ')
+    mustInclude: question.rubric.mustInclude.join('\n'),
+    mustAvoid: question.rubric.mustAvoid.join('\n')
   });
 
   if (!EXPERT_MODEL_API_KEY || !EXPERT_MODEL_NAME) {

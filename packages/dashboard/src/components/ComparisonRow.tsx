@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Save, Gavel, UserCheck, Brain, Sparkles, AlertTriangle, Flag } from 'lucide-react';
-import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
+import { ChevronDown, ChevronRight, Save, Copy, Gavel, UserCheck, Brain, Sparkles, AlertTriangle, Flag } from 'lucide-react';
+import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix, formatJudgeResponseJSON, formatJudgePromptForLLM } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import type { AugmentedResult, HumanOverride } from '../types';
 
@@ -43,6 +43,21 @@ export const ComparisonRow = ({
       rankAdjustment: 0,
       lastUpdated: Date.now()
     });
+  };
+
+  const copyJudgeResponse = (assessment: import('../types').JudgeAssessment, judgeModel: string) => {
+    const judgePrompt = formatJudgePromptForLLM(
+      judgeModel,
+      run.question.scenario,
+      run.response,
+      run.question.rubric,
+      run.question.category,
+      run.question.category === 'Transcript',
+      run.question.context
+    );
+
+    const combinedText = `=== JUDGE PROMPT ===\n${judgePrompt}\n\n=== MODEL RESPONSE ===\n${run.response}\n\n=== JUDGE EVALUATION ===\n${formatJudgeResponseJSON(assessment)}`;
+    navigator.clipboard.writeText(combinedText);
   };
 
   return (
@@ -128,11 +143,24 @@ export const ComparisonRow = ({
                         .map(([judgeModel, assessments]) => {
                           // Handle both array and single assessment for backward compatibility
                           const assessmentArray = Array.isArray(assessments) ? assessments : [assessments];
+                          const latestAssessment = assessmentArray[assessmentArray.length - 1];
                           
                           return (
                             <div key={judgeModel} className="space-y-2">
                               <div className="text-xs font-mono text-zinc-500 flex items-center gap-2">
-                                {judgeModel}
+                                <div className="flex items-center gap-1.5 relative">
+                                  {judgeModel}
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      copyJudgeResponse(latestAssessment, judgeModel);
+                                    }}
+                                    className="p-1 hover:bg-zinc-800 rounded transition-colors group relative"
+                                    title="Copy model response and judge evaluation"
+                                  >
+                                    <Copy className="w-3 h-3 text-zinc-600 group-hover:text-emerald-400" />
+                                  </button>
+                                </div>
                                 {assessmentArray.length > 1 && (
                                   <span className="text-xs text-emerald-400">
                                     ({assessmentArray.length} judgments)

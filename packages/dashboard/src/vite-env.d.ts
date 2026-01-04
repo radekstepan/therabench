@@ -16,3 +16,8 @@ declare module '*?worker' {
   };
   export default workerConstructor;
 }
+
+declare module '*.mustache?raw' {
+  const template: string;
+  export default template;
+}

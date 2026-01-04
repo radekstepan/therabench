@@ -1,6 +1,15 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import Mustache from 'mustache';
 import type { ModelConfig, AugmentedResult } from './types';
+import judgeTemplate from '../../eval-engine/templates/judge.mustache?raw';
+import systemBaseTemplate from '../../eval-engine/templates/system_base.mustache?raw';
+import systemCBTTemplate from '../../eval-engine/templates/system_cbt.mustache?raw';
+import systemDBTTemplate from '../../eval-engine/templates/system_dbt.mustache?raw';
+import systemACTTemplate from '../../eval-engine/templates/system_act.mustache?raw';
+import systemSafetyTemplate from '../../eval-engine/templates/system_safety.mustache?raw';
+import systemTranscriptTemplate from '../../eval-engine/templates/system_transcript.mustache?raw';
+import systemGeneralTemplate from '../../eval-engine/templates/system_general.mustache?raw';
 
 // Import model config
 import modelConfigData from '../../eval-engine/data/model-config.json';
@@ -214,6 +223,78 @@ export function getFaithfulnessColor(score: number): string {
   if (score >= 95) return "text-emerald-500";
   if (score < 85) return "text-amber-500";
   return "text-zinc-500";
+}
+
+// Helper function to format the question prompt as the LLM sees it
+export function formatQuestionForLLM(question: import('./types').QuestionNode): string {
+  const { category, scenario, context } = question;
+
+  const modalityTemplate = (() => {
+    switch (category) {
+      case 'CBT':
+        return systemCBTTemplate;
+      case 'DBT':
+        return systemDBTTemplate;
+      case 'ACT':
+        return systemACTTemplate;
+      case 'Safety':
+        return systemSafetyTemplate;
+      default:
+        return systemGeneralTemplate;
+    }
+  })();
+
+  const systemTemplate =
+    category === 'Transcript'
+      ? systemTranscriptTemplate
+      : `${systemBaseTemplate}\n\n${modalityTemplate}`;
+
+  const systemPrompt = Mustache.render(systemTemplate, { category });
+
+  const userPrompt = (() => {
+    if (category === 'Transcript' && context) {
+      return `CONTEXT:\n${context}\n\nQUERY:\n${scenario}`;
+    }
+    if (context) {
+      return `CONTEXT:\n${context}\n\nPatient says: "${scenario}"\n\nProvide a therapeutic response.`;
+    }
+    return `Patient says: "${scenario}"\n\nProvide a therapeutic response.`;
+  })();
+
+  return `=== SYSTEM PROMPT ===\n${systemPrompt}\n\n=== USER PROMPT ===\n${userPrompt}`;
+}
+
+// Helper function to format judge response as JSON (without sensitive fields)
+export function formatJudgeResponseJSON(assessment: import('./types').JudgeAssessment): string {
+  // Create a copy without the fields to hide
+  const { evaluatorModel, timestamp, usage, ...filteredAssessment } = assessment as any;
+  return JSON.stringify(filteredAssessment, null, 2);
+}
+
+// Helper function to format the judge prompt as the LLM sees it
+export function formatJudgePromptForLLM(
+  _judgeModel: string,
+  scenario: string,
+  response: string,
+  rubric: import('./types').Rubric,
+  category: string,
+  isTranscriptQuestion: boolean = false,
+  context?: string
+): string {
+  const isTranscript = isTranscriptQuestion;
+
+  // Use the actual judge template
+  const rendered = Mustache.render(judgeTemplate, {
+    isTranscript,
+    context,
+    category,
+    scenario,
+    response,
+    mustInclude: rubric.mustInclude.join('\n'),
+    mustAvoid: rubric.mustAvoid.join('\n')
+  });
+
+  return rendered;
 }
 
 // Helper function to calculate actual cost for a judge based on their evaluations

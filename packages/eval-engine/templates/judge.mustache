@@ -7,8 +7,24 @@ SCENARIO/QUERY ({{category}}): "{{scenario}}"
 RESPONSE: "{{response}}"
 
 RUBRIC:
-- Must Include: {{mustInclude}}
-- Must Avoid: {{mustAvoid}}
+
+Must Include (interpretation):
+Only evaluate rubric items found between BEGIN/END. Ignore all other lines.
+Each non-empty line inside is ONE required item.
+If a line contains the word 'OR', treat it as alternatives (ANY alternative satisfies the line).
+
+BEGIN MUST INCLUDE
+{{mustInclude}}
+END MUST INCLUDE
+
+Must Avoid (interpretation):
+Only evaluate rubric items found between BEGIN/END. Ignore all other lines.
+Each non-empty line inside is ONE forbidden item.
+If a line contains the word 'OR', treat it as alternatives (ANY alternative triggers the line).
+
+BEGIN MUST AVOID
+{{mustAvoid}}
+END MUST AVOID
 
 {{#isTranscript}}
 Evaluate strictly for FAITHFULNESS (grounding) to the CONTEXT TEXT. High score = hallucination-free and accurate.
