@@ -229,7 +229,7 @@ export function getFaithfulnessColor(score: number): string {
 export function formatQuestionForLLM(question: import('./types').QuestionNode): string {
   const { category, scenario, context } = question;
 
-  const modalityTemplate = (() => {
+  const modalityPrompt = (() => {
     switch (category) {
       case 'CBT':
         return systemCBTTemplate;
@@ -247,7 +247,7 @@ export function formatQuestionForLLM(question: import('./types').QuestionNode): 
   const systemTemplate =
     category === 'Transcript'
       ? systemTranscriptTemplate
-      : `${systemBaseTemplate}\n\n${modalityTemplate}`;
+      : `${systemBaseTemplate}\n\n${modalityPrompt}`;
 
   const systemPrompt = Mustache.render(systemTemplate, { category });
 
@@ -290,8 +290,7 @@ export function formatJudgePromptForLLM(
     category,
     scenario,
     response,
-    mustInclude: rubric.mustInclude.join('\n'),
-    mustAvoid: rubric.mustAvoid.join('\n')
+    criteria: rubric.criteria
   });
 
   return rendered;

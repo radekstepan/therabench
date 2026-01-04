@@ -508,8 +508,7 @@ function performCalculations(payload: any, requestId: string) {
                          q.scenario.toLowerCase().includes(searchLower) ||
                          q.category.toLowerCase().includes(searchLower) ||
                          q.id.toLowerCase().includes(searchLower) ||
-                         q.rubric.mustInclude.some(item => item.toLowerCase().includes(searchLower)) ||
-                         q.rubric.mustAvoid.some(item => item.toLowerCase().includes(searchLower));
+                         q.rubric.criteria.toLowerCase().includes(searchLower);
     const matchesCategory = categoryFilter === 'all' || q.category === categoryFilter;
     return matchesSearch && matchesCategory;
   });

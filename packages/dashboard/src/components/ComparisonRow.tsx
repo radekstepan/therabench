@@ -56,7 +56,7 @@ export const ComparisonRow = ({
       run.question.context
     );
 
-    const combinedText = `=== JUDGE PROMPT ===\n${judgePrompt}\n\n=== MODEL RESPONSE ===\n${run.response}\n\n=== JUDGE EVALUATION ===\n${formatJudgeResponseJSON(assessment)}`;
+    const combinedText = `=== JUDGE PROMPT ===\n${judgePrompt}\n\n=== JUDGE EVALUATION ===\n${formatJudgeResponseJSON(assessment)}`;
     navigator.clipboard.writeText(combinedText);
   };
 

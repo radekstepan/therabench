@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { X, Save, Plus } from 'lucide-react';
+import { X, Save } from 'lucide-react';
 import type { QuestionNode, QuestionOverride } from '../types';
 
 interface QuestionEditModalProps {
@@ -17,17 +17,13 @@ export const QuestionEditModal = ({
 }: QuestionEditModalProps) => {
   const [editTitle, setEditTitle] = useState(question.title);
   const [editScenario, setEditScenario] = useState(question.scenario);
-  const [editMustInclude, setEditMustInclude] = useState<string[]>(question.rubric.mustInclude);
-  const [editMustAvoid, setEditMustAvoid] = useState<string[]>(question.rubric.mustAvoid);
-  const [newInclude, setNewInclude] = useState('');
-  const [newAvoid, setNewAvoid] = useState('');
+  const [editCriteria, setEditCriteria] = useState(question.rubric.criteria);
 
   useEffect(() => {
     if (isOpen) {
       setEditTitle(question.title);
       setEditScenario(question.scenario);
-      setEditMustInclude(question.rubric.mustInclude);
-      setEditMustAvoid(question.rubric.mustAvoid);
+      setEditCriteria(question.rubric.criteria);
     }
   }, [isOpen, question]);
 
@@ -48,8 +44,7 @@ export const QuestionEditModal = ({
       title: editTitle,
       scenario: editScenario,
       rubric: {
-        mustInclude: editMustInclude,
-        mustAvoid: editMustAvoid
+        criteria: editCriteria
       },
       lastUpdated: Date.now()
     });
@@ -78,7 +73,7 @@ export const QuestionEditModal = ({
           </div>
 
           <div>
-            <label className="text-sm font-semibold text-zinc-400 mb-2 block">Scenario</label>
+            <label className="text-sm font-semibold text-zinc-400 mb-2 block">Scenario / Query</label>
             <textarea
               rows={4}
               value={editScenario}
@@ -87,92 +82,15 @@ export const QuestionEditModal = ({
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-sm font-semibold text-emerald-500 mb-2 block">Must Include</label>
-              <div className="space-y-2">
-                {editMustInclude.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm">
-                    <span className="flex-1 text-zinc-300">{item}</span>
-                    <button
-                      onClick={() => setEditMustInclude(editMustInclude.filter((_, idx) => idx !== i))}
-                      className="text-zinc-600 hover:text-red-400 transition-colors"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </div>
-                ))}
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={newInclude}
-                    onChange={(e) => setNewInclude(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && newInclude.trim()) {
-                        setEditMustInclude([...editMustInclude, newInclude.trim()]);
-                        setNewInclude('');
-                      }
-                    }}
-                    placeholder="Add item..."
-                    className="flex-1 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
-                  />
-                  <button
-                    onClick={() => {
-                      if (newInclude.trim()) {
-                        setEditMustInclude([...editMustInclude, newInclude.trim()]);
-                        setNewInclude('');
-                      }
-                    }}
-                    className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-emerald-400 rounded"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label className="text-sm font-semibold text-red-500 mb-2 block">Must Avoid</label>
-              <div className="space-y-2">
-                {editMustAvoid.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm">
-                    <span className="flex-1 text-zinc-300">{item}</span>
-                    <button
-                      onClick={() => setEditMustAvoid(editMustAvoid.filter((_, idx) => idx !== i))}
-                      className="text-zinc-600 hover:text-red-400 transition-colors"
-                    >
-                      <X className="w-3 h-3" />
-                    </button>
-                  </div>
-                ))}
-                <div className="flex gap-2">
-                  <input
-                    type="text"
-                    value={newAvoid}
-                    onChange={(e) => setNewAvoid(e.target.value)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' && newAvoid.trim()) {
-                        setEditMustAvoid([...editMustAvoid, newAvoid.trim()]);
-                        setNewAvoid('');
-                      }
-                    }}
-                    placeholder="Add item..."
-                    className="flex-1 bg-zinc-950 border border-zinc-800 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-red-500"
-                  />
-                  <button
-                    onClick={() => {
-                      if (newAvoid.trim()) {
-                        setEditMustAvoid([...editMustAvoid, newAvoid.trim()]);
-                        setNewAvoid('');
-                      }
-                    }}
-                    className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-red-400 rounded"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div>
+            <label className="text-sm font-semibold text-zinc-400 mb-2 block">Evaluation Criteria (Rubric)</label>
+            <textarea
+              rows={8}
+              value={editCriteria}
+              onChange={(e) => setEditCriteria(e.target.value)}
+              placeholder="Describe what the judge model should look for in the response..."
+              className="w-full bg-zinc-950 border border-zinc-800 rounded px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors resize-none font-mono"
+            />
           </div>
         </div>
 

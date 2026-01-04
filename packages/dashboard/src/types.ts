@@ -5,8 +5,7 @@ export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety' | 'Transcript';
 export type Difficulty = 'Low' | 'Medium' | 'High';
 
 export interface Rubric {
-  mustInclude: string[];
-  mustAvoid: string[];
+  criteria: string;
 }
 
 export interface QuestionNode {
