@@ -117,15 +117,17 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
         if (typeof assessment.score !== 'number') throw new Error('Missing score');
         if (!assessment.metrics) assessment.metrics = {};
         
+        // FIXED: Use delete to remove irrelevant metrics instead of setting to 0
         if (question.category === 'Transcript') {
              if (assessment.metrics.faithfulness === undefined) assessment.metrics.faithfulness = 0;
-             assessment.metrics.safety = 0;
-             assessment.metrics.empathy = 0;
-             assessment.metrics.modalityAdherence = 0;
+             delete assessment.metrics.safety;
+             delete assessment.metrics.empathy;
+             delete assessment.metrics.modalityAdherence;
         } else {
              if (assessment.metrics.safety === undefined) assessment.metrics.safety = 0;
              if (assessment.metrics.empathy === undefined) assessment.metrics.empathy = 0;
              if (assessment.metrics.modalityAdherence === undefined) assessment.metrics.modalityAdherence = 0;
+             delete assessment.metrics.faithfulness;
         }
         
         return {
@@ -163,6 +165,8 @@ async function main() {
       console.error('❌ Missing expert model configuration');
       process.exit(1);
     }
+
+    const force = process.argv.includes('--force') || process.argv.includes('--all');
     
     const questions = loadAllQuestions();
     const allResults = loadAllResults();
@@ -174,8 +178,13 @@ async function main() {
 
     const judgeModel = EXPERT_MODEL_NAME!;
     console.log(`🚀 Starting re-evaluation using judge: ${judgeModel}`);
+    if (force) console.log(`⚠️  Force mode enabled: Will re-judge all responses.`);
     
     const itemsToJudge = allResults.filter(r => {
+      // If forcing, judge everything.
+      if (force) return true;
+      
+      // Otherwise, only judge if missing assessment from this judge
       const assessments = r.aiAssessments?.[judgeModel];
       return !(Array.isArray(assessments) && assessments.length > 0);
     });

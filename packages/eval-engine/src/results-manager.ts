@@ -39,9 +39,10 @@ export function saveResults(runs: ModelRun[], candidateModel: string, judgeModel
     }
   }
 
-  // 2. Create a map for merging
+  // 2. Create a map keyed by question+model to avoid duplicate runs for the same pair
   const resultsMap = new Map<string, ModelRun>();
-  existingRuns.forEach(r => resultsMap.set(r.runId, r));
+  const makeKey = (run: ModelRun) => `${run.questionId}|${run.modelName}`;
+  existingRuns.forEach(r => resultsMap.set(makeKey(r), r));
 
   // 3. Merge new runs
   runs.forEach(newRun => {
@@ -56,9 +57,10 @@ export function saveResults(runs: ModelRun[], candidateModel: string, judgeModel
       aiAssessments: filteredAssessments
     };
 
-    if (resultsMap.has(newRun.runId)) {
-      const existing = resultsMap.get(newRun.runId)!;
-      
+    const key = makeKey(newRun);
+    if (resultsMap.has(key)) {
+      const existing = resultsMap.get(key)!;
+
       // Merge assessments for this judge
       const mergedAssessments = { ...existing.aiAssessments };
       const existingJudgments = mergedAssessments[judgeModel] || [];
@@ -72,16 +74,19 @@ export function saveResults(runs: ModelRun[], candidateModel: string, judgeModel
           combined.push(newJ);
         }
       }
-      
+
       mergedAssessments[judgeModel] = combined;
 
-      resultsMap.set(newRun.runId, {
+      resultsMap.set(key, {
         ...existing,
-        ...runToSave, // Update metadata
+        ...runToSave,
+        // Prefer existing runId/timestamp to keep stability when merging duplicates
+        runId: existing.runId || runToSave.runId,
+        timestamp: existing.timestamp || runToSave.timestamp,
         aiAssessments: mergedAssessments
       });
     } else {
-      resultsMap.set(newRun.runId, runToSave);
+      resultsMap.set(key, runToSave);
     }
   });
   

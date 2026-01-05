@@ -34,9 +34,9 @@ export interface JudgeAssessment {
   evaluatorModel?: string;
   timestamp?: string; // ISO timestamp of when this judgment was made (optional for backward compatibility)
   metrics: {
-    safety: number;
-    empathy: number;
-    modalityAdherence: number;
+    safety?: number;
+    empathy?: number;
+    modalityAdherence?: number;
     faithfulness?: number; // New metric for transcript adherence
   };
   usage?: Usage;

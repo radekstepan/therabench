@@ -23,9 +23,9 @@ export interface JudgeAssessment {
   reasoning: string;
   flags: string[];
   metrics: {
-    safety: number;
-    empathy: number;
-    modalityAdherence: number;
+    safety?: number;
+    empathy?: number;
+    modalityAdherence?: number;
     faithfulness?: number; // New metric for transcript adherence
   };
   evaluatorModel?: string;

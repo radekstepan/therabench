@@ -156,20 +156,30 @@ async function queryCandidateModel(question: QuestionNode): Promise<string> {
     userContent = `CONTEXT:\n${question.context}\n\n${userContent}`;
   }
 
-  try {
-    const completion = await candidateClient.chat.completions.create({
-      model: CANDIDATE_MODEL_NAME!,
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userContent }
-      ],
-      stream: false
-    });
-    
-    return completion.choices[0].message.content || '';
-  } catch (e) {
-    throw new Error(`Could not reach candidate model at ${CANDIDATE_MODEL_URL}: ${e instanceof Error ? e.message : String(e)}`);
+  const maxRetries = 3;
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      const completion = await candidateClient.chat.completions.create({
+        model: CANDIDATE_MODEL_NAME!,
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userContent }
+        ],
+        stream: false
+      });
+      
+      return completion.choices[0].message.content || '';
+    } catch (e) {
+      const errorMsg = e instanceof Error ? e.message : String(e);
+      if (attempt === maxRetries) {
+        throw new Error(`Candidate model failed after ${maxRetries} attempts. Last error: ${errorMsg}`);
+      }
+      console.warn(`⚠️ Candidate model query failed (attempt ${attempt}/${maxRetries}). Retrying...`);
+      // Simple backoff
+      await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+    }
   }
+  return ''; // Should not reach here
 }
 
 async function runJudge(question: QuestionNode, response: string): Promise<JudgeAssessment> {
@@ -215,15 +225,17 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
         if (typeof assessment.score !== 'number') throw new Error('Missing score');
         if (!assessment.metrics) assessment.metrics = {};
 
+        // FIXED: Use delete to remove irrelevant metrics instead of setting to 0
         if (question.category === 'Transcript') {
              if (assessment.metrics.faithfulness === undefined) assessment.metrics.faithfulness = 0;
-             assessment.metrics.safety = 0;
-             assessment.metrics.empathy = 0;
-             assessment.metrics.modalityAdherence = 0;
+             delete assessment.metrics.safety;
+             delete assessment.metrics.empathy;
+             delete assessment.metrics.modalityAdherence;
         } else {
              if (assessment.metrics.safety === undefined) assessment.metrics.safety = 0;
              if (assessment.metrics.empathy === undefined) assessment.metrics.empathy = 0;
              if (assessment.metrics.modalityAdherence === undefined) assessment.metrics.modalityAdherence = 0;
+             delete assessment.metrics.faithfulness;
         }
         
         return {
@@ -266,16 +278,37 @@ async function main() {
     const runTimestamp = new Date().toISOString();
     const judgeModel = EXPERT_MODEL_NAME!;
     const baseName = CANDIDATE_MODEL_NAME!;
+    const force = process.argv.includes('--force');
     
-    const existingResults = loadAllResults();
-    const existingMap = new Map<string, ModelRun>();
+    const existingResults = loadAllResults().filter(r => r.modelName === baseName);
+    const existingMap = new Map<string, {
+      hasJudgeAssessment: boolean;
+      response?: string;
+      runId?: string;
+      timestamp?: string;
+    }>();
+
     for (const r of existingResults) {
-      if (r.modelName === baseName) {
-        existingMap.set(`${r.questionId}|${r.modelName}`, r);
+      const key = `${r.questionId}|${r.modelName}`;
+      const entry = existingMap.get(key) || { hasJudgeAssessment: false };
+
+      if (!entry.response && r.response) entry.response = r.response;
+      if (!entry.runId && r.runId) {
+        entry.runId = r.runId;
+        entry.timestamp = r.timestamp;
       }
+
+      const judgeAssessments = r.aiAssessments?.[judgeModel];
+      if (!entry.hasJudgeAssessment && Array.isArray(judgeAssessments) && judgeAssessments.length > 0) {
+        entry.hasJudgeAssessment = true;
+      }
+
+      existingMap.set(key, entry);
     }
     
     console.log(`🚀 Starting evaluation on ${questions.length} questions`);
+    if (force) console.log(`⚠️  Force mode enabled: Will re-evaluate everything.`);
+    
     const results: ModelRun[] = [];
     let skipped = 0;
 
@@ -285,27 +318,44 @@ async function main() {
       
       const existingKey = `${q.id}|${currentRunModelName}`;
       const existing = existingMap.get(existingKey);
-      const assessments = existing?.aiAssessments?.[judgeModel];
-      
-      if (Array.isArray(assessments) && assessments.length > 0) {
-        console.log(`[${i + 1}/${questions.length}] ⏭️  Skipping ${q.id} (already evaluated)`);
+
+      // Skip ONLY if we already have a judgment AND we are not forcing a re-run
+      if (existing?.hasJudgeAssessment && !force) {
+        console.log(`[${i + 1}/${questions.length}] ⏭️  Skipping ${q.id} (already evaluated by ${judgeModel})`);
         skipped++;
         continue;
       }
-      
-      console.log(`[${i + 1}/${questions.length}] Processing ${q.id} (${q.category}) -> ${currentRunModelName}`);
-      const response = await queryCandidateModel(q);
-      
+
+      // If forcing, we regenerate response (to ensure prompt changes are picked up).
+      // If not forcing, we reuse existing response if available.
+      let response: string;
+      let responseSource: string;
+
+      if (force) {
+        response = await queryCandidateModel(q);
+        responseSource = 'freshly generated (force)';
+      } else {
+        response = existing?.response ?? await queryCandidateModel(q);
+        responseSource = existing?.response ? 'reusing cached response' : 'freshly generated';
+      }
+
+      console.log(`[${i + 1}/${questions.length}] Processing ${q.id} (${q.category}) -> ${currentRunModelName} (${responseSource})`);
+
       try {
         const assessment = await runJudge(q, response);
+
         const run: ModelRun = {
-          runId: randomUUID(),
+          // If reusing response, reuse ID. If generating fresh, new ID.
+          runId: (existing?.runId && !force) ? existing.runId : randomUUID(),
           questionId: q.id,
           modelName: currentRunModelName,
-          timestamp: runTimestamp,
+          timestamp: (existing?.timestamp && !force) ? existing.timestamp : runTimestamp,
           response,
-          aiAssessments: { [assessment.evaluatorModel || judgeModel]: [assessment] }
+          aiAssessments: {
+            [assessment.evaluatorModel || judgeModel]: [assessment]
+          }
         };
+
         results.push(run);
         saveResults([run], currentRunModelName, judgeModel);
       } catch (error: any) {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Edit2, Copy, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity, Info, FileText, BookOpen } from 'lucide-react';
-import { cn, formatQuestionForLLM } from '../utils';
+import { Edit2, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity, Info, FileText, BookOpen } from 'lucide-react';
+import { cn } from '../utils';
 import { RubricEditor } from './RubricEditor';
 import { ComparisonRow } from './ComparisonRow';
 import type { QuestionNode, AugmentedResult, Rubric, HumanOverride } from '../types';
@@ -39,7 +39,6 @@ export const QuestionDetail = ({
   onSort
 }: QuestionDetailProps) => {
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
-  const [copiedQuestion, setCopiedQuestion] = useState(false);
 
   const getBaseModelName = (modelName: string): string => {
     return modelName;
@@ -50,14 +49,6 @@ export const QuestionDetail = ({
     const hoveredBase = getBaseModelName(hoveredModel);
     const currentBase = getBaseModelName(modelName);
     return hoveredBase === currentBase;
-  };
-
-  const copyQuestionForLLM = () => {
-    const formattedQuestion = formatQuestionForLLM(question);
-    navigator.clipboard.writeText(formattedQuestion).then(() => {
-      setCopiedQuestion(true);
-      setTimeout(() => setCopiedQuestion(false), 2000);
-    });
   };
 
   return (
@@ -82,20 +73,6 @@ export const QuestionDetail = ({
               <h2 className="text-2xl font-light text-white">{question.title}</h2>
             </div>
             <div className="flex items-center gap-2">
-              <button
-                onClick={copyQuestionForLLM}
-                className="p-2 text-zinc-600 hover:text-emerald-400 hover:bg-zinc-900 rounded transition-colors relative"
-                title="Copy question as LLM sees it"
-              >
-                {copiedQuestion ? (
-                  <>
-                    <Copy className="w-5 h-5" />
-                    <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-1 rounded whitespace-nowrap">Copied!</span>
-                  </>
-                ) : (
-                  <Copy className="w-5 h-5" />
-                )}
-              </button>
               <button
                 onClick={onEditQuestion}
                 className="p-2 text-zinc-600 hover:text-emerald-400 hover:bg-zinc-900 rounded transition-colors"

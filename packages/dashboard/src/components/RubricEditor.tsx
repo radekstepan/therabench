@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Save } from 'lucide-react';
+import { Save, ChevronRight } from 'lucide-react';
 import Mustache from 'mustache';
 import rubricDisplayTemplate from '../templates/rubric-display.mustache?raw';
 import type { Rubric } from '../types';
@@ -26,6 +26,7 @@ export const RubricEditor = ({
     mustAvoid: rubric.mustAvoid || []
   });
   const [editedCriteria, setEditedCriteria] = useState<string>(rubricContent);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     setEditedCriteria(rubricContent);
@@ -37,11 +38,27 @@ export const RubricEditor = ({
 
   if (!isEditing) {
     return (
-      <div className="bg-zinc-950 border border-zinc-800 rounded-md p-5">
-        <div className="text-zinc-500 font-semibold text-xs uppercase tracking-wider mb-2">Evaluation Criteria</div>
-        <div className="text-sm text-zinc-400 whitespace-pre-wrap leading-relaxed">
-          {rubricContent}
-        </div>
+      <div className="bg-zinc-950 border border-zinc-800 rounded-md overflow-hidden">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="w-full flex items-center justify-between px-5 py-3 hover:bg-zinc-900 transition-colors"
+        >
+          <div className="text-zinc-500 font-semibold text-xs uppercase tracking-wider">
+            Evaluation Criteria
+          </div>
+          <ChevronRight
+            className={`w-4 h-4 text-zinc-500 transition-transform ${
+              isExpanded ? 'rotate-90' : ''
+            }`}
+          />
+        </button>
+        {isExpanded && (
+          <div className="px-5 pb-5">
+            <div className="text-sm text-zinc-400 whitespace-pre-wrap leading-relaxed">
+              {rubricContent}
+            </div>
+          </div>
+        )}
       </div>
     );
   }
