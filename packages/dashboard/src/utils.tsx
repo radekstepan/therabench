@@ -41,34 +41,21 @@ export function formatPercentWithColor(score: number): React.ReactNode {
   );
 }
 
-export function isEnhancedModel(modelName: string): boolean {
-  return modelName.includes('(Enhanced)');
-}
-
-export function stripEnhancedSuffix(modelName: string): string {
-  return modelName.replace(' (Enhanced)', '');
-}
-
 export function getModelLabels(modelName: string) {
-  // Strip the enhanced suffix to find the base config
-  const baseName = stripEnhancedSuffix(modelName);
-  
-  const config = modelConfigs.find(c => c.modelName === baseName);
+  const config = modelConfigs.find(c => c.modelName === modelName);
   const labels = [...(config?.labels || [])];
   
   return labels;
 }
 
 export function isDefaultJudge(modelName: string): boolean {
-  const baseName = stripEnhancedSuffix(modelName);
-  const config = modelConfigs.find(c => c.modelName === baseName);
+  const config = modelConfigs.find(c => c.modelName === modelName);
   // Default to true if not explicitly set to false
   return config?.isDefaultJudge !== false;
 }
 
 export function isDefaultCandidate(modelName: string): boolean {
-  const baseName = stripEnhancedSuffix(modelName);
-  const config = modelConfigs.find(c => c.modelName === baseName);
+  const config = modelConfigs.find(c => c.modelName === modelName);
   // Default to true if not explicitly set to false
   return config?.isDefaultCandidate !== false;
 }
@@ -99,10 +86,7 @@ export function getModelLabelSortValue(modelName: string): { isOnline: boolean; 
 
 // Helper function to get pricing information for a model
 export function getModelPricing(modelName: string): { input: number; output: number } | null {
-  // Strip the enhanced suffix to find the base config
-  const baseName = stripEnhancedSuffix(modelName);
-  
-  const config = modelConfigs.find(c => c.modelName === baseName);
+  const config = modelConfigs.find(c => c.modelName === modelName);
   return config?.pricing || null;
 }
 

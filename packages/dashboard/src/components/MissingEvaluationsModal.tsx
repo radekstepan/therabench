@@ -1,5 +1,4 @@
-import { X, Info, Sparkles } from 'lucide-react';
-import { isEnhancedModel, stripEnhancedSuffix } from '../utils';
+import { X, Info } from 'lucide-react';
 import type { MissingEvaluations } from '../types';
 
 interface MissingEvaluationsModalProps {
@@ -45,8 +44,7 @@ export const MissingEvaluationsModal = ({ isOpen, onClose, missingEvaluations }:
                           
                           return (
                             <div key={modelInfo} className="inline-flex items-center gap-2 bg-zinc-900/60 border border-zinc-700 px-2.5 py-1 rounded">
-                              {isEnhancedModel(modelName) && <Sparkles className="w-3 h-3 text-pink-500 flex-shrink-0" />}
-                              <span className="font-mono text-xs text-white truncate max-w-[180px]" title={stripEnhancedSuffix(modelName)}>{stripEnhancedSuffix(modelName)}</span>
+                              <span className="font-mono text-xs text-white truncate max-w-[180px]" title={modelName}>{modelName}</span>
                               {questionCount && (
                                 <span className="text-xs text-amber-400 font-semibold">{questionCount}</span>
                               )}
@@ -68,8 +66,7 @@ export const MissingEvaluationsModal = ({ isOpen, onClose, missingEvaluations }:
                 <div className="flex flex-wrap gap-2">
                   {missingEvaluations.modelsWithMissingQuestions.map((model) => (
                     <div key={model.name} className="inline-flex items-center gap-2 bg-zinc-950/50 border border-amber-500/20 px-3 py-1.5 rounded">
-                      {isEnhancedModel(model.name) && <Sparkles className="w-3 h-3 text-pink-500 flex-shrink-0" />}
-                      <span className="font-mono text-xs text-white truncate max-w-[200px]" title={stripEnhancedSuffix(model.name)}>{stripEnhancedSuffix(model.name)}</span>
+                      <span className="font-mono text-xs text-white truncate max-w-[200px]" title={model.name}>{model.name}</span>
                       <span className="text-xs text-amber-400 font-semibold">{model.answered}/{missingEvaluations.totalQuestions}</span>
                     </div>
                   ))}

@@ -1,5 +1,5 @@
 import { analyzeJudges, calculateModelReliability } from '../lib/stats';
-import { calculateModelCost, getModelLabelSortValue, stripEnhancedSuffix } from '../utils';
+import { calculateModelCost, getModelLabelSortValue } from '../utils';
 import type {
   ModelRun,
   QuestionNode,
@@ -201,9 +201,6 @@ function performCalculations(payload: any, requestId: string) {
       uniqueJudges: Set<string>; 
       allScores: number[] 
     }> = {};
-
-    // Helper to store transcript runs for merging into enhanced models
-    const baseTranscriptRuns = new Map<string, AugmentedResult[]>();
     
     // 1. First Pass: Aggregate everything normally
     cachedAugmentedResults.forEach(r => {
@@ -220,14 +217,6 @@ function performCalculations(payload: any, requestId: string) {
       }
       const s = statsMap[r.modelName];
       const isTranscript = r.question.category === 'Transcript';
-
-      // Store base transcript runs for later merging
-      if (isTranscript && !r.modelName.includes('(Enhanced)')) {
-         if (!baseTranscriptRuns.has(r.modelName)) {
-           baseTranscriptRuns.set(r.modelName, []);
-         }
-         baseTranscriptRuns.get(r.modelName)!.push(r);
-      }
 
       // 1. General Completeness
       s.count += 1;
@@ -272,50 +261,6 @@ function performCalculations(payload: any, requestId: string) {
           s.judgeScoreMap[judge].push(r.aiAssessment.score);
         }
       }
-    });
-
-    // 2. Second Pass: Merge Transcript runs into Enhanced Models
-    // This ensures "Model (Enhanced)" gets the benefit of the high-scoring Transcript runs 
-    // that were technically run on "Model" (Base).
-    Object.keys(statsMap).forEach(modelName => {
-        if (modelName.includes('(Enhanced)')) {
-           const baseName = stripEnhancedSuffix(modelName);
-           const transcriptRuns = baseTranscriptRuns.get(baseName);
-           
-           if (transcriptRuns && transcriptRuns.length > 0) {
-              const s = statsMap[modelName];
-              
-              transcriptRuns.forEach(r => {
-                 // 1. Completeness: Fix "Missing Evaluations"
-                 s.count += 1; 
-
-                 // 2. Score Aggregation: Fix "Skewed Average"
-                 // We MUST include the score of the transcript runs, otherwise the average
-                 // is calculated on 30 items for Enhanced vs 40 for Base, leading to invalid comparisons.
-                 s.totalScore += r.effectiveScore;
-                 s.scoreCount += 1;
-                 s.allScores.push(r.effectiveScore);
-
-                 // 3. Faithfulness: Copy as requested
-                 if (r.effectiveFaithfulness > 0) {
-                    s.faithfulness += r.effectiveFaithfulness;
-                    s.faithfulnessCount += 1;
-                 }
-                 
-                 // 4. Judge Scores: Ensure tooltip reflects these runs too
-                 if (r.aiAssessments) {
-                    Object.entries(r.aiAssessments).forEach(([judge, assessments]) => {
-                      if (selectedJudges.size === 0 || selectedJudges.has(judge)) {
-                        s.uniqueJudges.add(judge);
-                        if (!s.judgeScoreMap[judge]) s.judgeScoreMap[judge] = [];
-                        const arr = Array.isArray(assessments) ? assessments : [assessments];
-                        if (arr.length > 0) s.judgeScoreMap[judge].push(arr[arr.length - 1].score);
-                      }
-                    });
-                 }
-              });
-           }
-        }
     });
 
     const modelsToShow: string[] = selectedModels.size === 0 || selectedModels.size === availableModels.length
@@ -364,7 +309,7 @@ function performCalculations(payload: any, requestId: string) {
         avgModalityAdherence: s.modalityAdherenceCount > 0 ? Math.round(s.modalityAdherence / s.modalityAdherenceCount) : 0,
         avgFaithfulness: s.faithfulnessCount > 0 ? Math.round(s.faithfulness / s.faithfulnessCount) : 0,
         
-        count: s.count, // Use total completeness count (including transcripts)
+        count: s.count, 
         expertCount: s.uniqueJudges.size,
         judgeScores,
         totalCost
@@ -449,22 +394,6 @@ function performCalculations(payload: any, requestId: string) {
     finalModelStats.forEach(stat => {
       // Reconstruct the set of runs valid for this model
       let modelRuns = cachedAugmentedResults!.filter(r => r.modelName === stat.name);
-      
-      // If Enhanced, also include Transcript runs from the base model
-      if (stat.name.includes('(Enhanced)')) {
-          const baseName = stripEnhancedSuffix(stat.name);
-          const transcriptRuns = cachedAugmentedResults!.filter(r => 
-             r.modelName === baseName && r.question.category === 'Transcript'
-          );
-          
-          // Add them if not already present (using runId for uniqueness)
-          const existingIds = new Set(modelRuns.map(r => r.runId));
-          transcriptRuns.forEach(tr => {
-              if (!existingIds.has(tr.runId)) {
-                  modelRuns.push(tr);
-              }
-          });
-      }
       
       const runsForModel = modelRuns.length;
       if (runsForModel === 0) return; // No runs to review

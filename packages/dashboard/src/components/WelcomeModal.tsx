@@ -54,12 +54,6 @@ export const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
               title="Multi-Dimensional Analysis"
               description="Track reliability metrics, judge consistency, and judge agreement. Compare models side-by-side and export annotated datasets for fine-tuning or research."
             />
-            
-            <Feature
-              icon={<Sparkles className="w-5 h-5 text-pink-500" />}
-              title="Enhanced Prompts"
-              description="Models marked with the sparkles symbol used an enhanced system prompt with detailed therapeutic guidelines and response structure. This tests how prompt engineering affects therapeutic response quality compared to baseline prompts."
-            />
           </div>
 
           <div className="pt-4 border-t border-zinc-800">

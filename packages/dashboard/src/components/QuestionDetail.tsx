@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Edit2, Copy, History, ArrowUpDown, Hash, Tag, Target, Shield, Heart, Activity, Info, FileText, BookOpen } from 'lucide-react';
-import { cn, stripEnhancedSuffix, formatQuestionForLLM } from '../utils';
+import { cn, formatQuestionForLLM } from '../utils';
 import { RubricEditor } from './RubricEditor';
 import { ComparisonRow } from './ComparisonRow';
 import type { QuestionNode, AugmentedResult, Rubric, HumanOverride } from '../types';
@@ -42,7 +42,7 @@ export const QuestionDetail = ({
   const [copiedQuestion, setCopiedQuestion] = useState(false);
 
   const getBaseModelName = (modelName: string): string => {
-    return stripEnhancedSuffix(modelName);
+    return modelName;
   };
 
   const isRowHighlighted = (modelName: string): boolean => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Save, Copy, Gavel, UserCheck, Brain, Sparkles, AlertTriangle, Flag } from 'lucide-react';
-import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix, formatJudgeResponseJSON, formatJudgePromptForLLM } from '../utils';
+import { ChevronDown, ChevronRight, Save, Copy, Gavel, UserCheck, Brain, AlertTriangle, Flag } from 'lucide-react';
+import { cn, getScoreColor, formatJudgeResponseJSON, formatJudgePromptForLLM } from '../utils';
 import { ModelLabels } from './ModelLabels';
 import type { AugmentedResult, HumanOverride } from '../types';
 
@@ -74,8 +74,7 @@ export const ComparisonRow = ({
         <td className="px-3 py-2 text-center w-16 text-zinc-500 font-mono text-sm whitespace-nowrap">#{rank}</td>
         <td className="px-3 py-2 max-w-0" title={run.modelName}>
           <div className="font-mono text-sm font-medium text-white group-hover:text-emerald-400 transition-colors truncate flex items-center gap-1.5">
-            {isEnhancedModel(run.modelName) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
-            <span className="truncate">{stripEnhancedSuffix(run.modelName)}</span>
+            <span className="truncate">{run.modelName}</span>
           </div>
           <div className="text-xs text-zinc-500 font-mono mt-0.5 whitespace-nowrap">
             {new Date(run.timestamp).toLocaleString('en-US', { 

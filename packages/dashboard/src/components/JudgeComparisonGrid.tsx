@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Sparkles } from 'lucide-react';
-import { cn, getScoreColor, isEnhancedModel, stripEnhancedSuffix } from '../utils';
+import { cn, getScoreColor } from '../utils';
 
 interface ModelStat {
   name: string;
@@ -16,7 +15,7 @@ export const JudgeComparisonGrid = ({ modelStats }: JudgeComparisonGridProps) =>
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
 
   const getBaseModelName = (modelName: string): string => {
-    return stripEnhancedSuffix(modelName);
+    return modelName;
   };
 
   const isRowHighlighted = (modelName: string): boolean => {
@@ -70,7 +69,13 @@ export const JudgeComparisonGrid = ({ modelStats }: JudgeComparisonGridProps) =>
   };
 
   if (allJudges.length === 0 || topModels.length === 0) {
-    return null;
+    return (
+      <div className="bg-zinc-900 border border-zinc-800 rounded-md p-6 mt-10">
+        <div className="text-center text-zinc-500">
+          No data available for comparison
+        </div>
+      </div>
+    );
   }
 
   // Shorten judge names for display
@@ -134,8 +139,7 @@ export const JudgeComparisonGrid = ({ modelStats }: JudgeComparisonGridProps) =>
                 >
                   <div className="flex items-center gap-2">
                     <span className="text-zinc-500 text-xs">#{idx + 1}</span>
-                    {isEnhancedModel(model.name) && <Sparkles className="w-3.5 h-3.5 text-pink-500 flex-shrink-0" />}
-                    <span className="group-hover:text-emerald-400 transition-colors truncate">{stripEnhancedSuffix(model.name)}</span>
+                    <span className="group-hover:text-emerald-400 transition-colors truncate">{model.name}</span>
                   </div>
                 </td>
                 {allJudges.map(judge => {

@@ -104,8 +104,6 @@ const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL;
 const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME;
 const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
 
-const ENHANCED_PROMPTS = process.env.ENHANCED_PROMPTS === 'true';
-
 const openai = new OpenAI({ 
   apiKey: EXPERT_MODEL_API_KEY,
   baseURL: EXPERT_MODEL_URL,
@@ -148,11 +146,7 @@ function generateSystemPrompt(category: string): string {
 }
 
 async function queryCandidateModel(question: QuestionNode): Promise<string> {
-  const useEnhanced = ENHANCED_PROMPTS && question.category !== 'Transcript';
-  
-  const systemPrompt = useEnhanced 
-    ? generateSystemPrompt(question.category)
-    : (question.category === 'Transcript' ? "Answer based on the text provided." : "You are a therapist.");
+  const systemPrompt = generateSystemPrompt(question.category);
 
   let userContent = `Patient says: "${question.scenario}"\n\nProvide a therapeutic response.`;
   
@@ -272,12 +266,11 @@ async function main() {
     const runTimestamp = new Date().toISOString();
     const judgeModel = EXPERT_MODEL_NAME!;
     const baseName = CANDIDATE_MODEL_NAME!;
-    const enhancedName = `${baseName} (Enhanced)`;
     
     const existingResults = loadAllResults();
     const existingMap = new Map<string, ModelRun>();
     for (const r of existingResults) {
-      if (r.modelName === baseName || r.modelName === enhancedName) {
+      if (r.modelName === baseName) {
         existingMap.set(`${r.questionId}|${r.modelName}`, r);
       }
     }
@@ -288,9 +281,7 @@ async function main() {
 
     for (let i = 0; i < questions.length; i++) {
       const q = questions[i];
-      const isTranscript = q.category === 'Transcript';
-      const useEnhanced = ENHANCED_PROMPTS && !isTranscript;
-      const currentRunModelName = useEnhanced ? enhancedName : baseName;
+      const currentRunModelName = baseName;
       
       const existingKey = `${q.id}|${currentRunModelName}`;
       const existing = existingMap.get(existingKey);

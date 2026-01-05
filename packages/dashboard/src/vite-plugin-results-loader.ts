@@ -40,10 +40,6 @@ interface ModelConfig {
   [key: string]: any;
 }
 
-function stripEnhancedSuffix(modelName: string): string {
-  return modelName.replace(' (Enhanced)', '');
-}
-
 function countTokens(text: string): number {
   if (!text) return 0;
   try {
@@ -55,8 +51,7 @@ function countTokens(text: string): number {
 }
 
 function getPricing(modelName: string, configs: ModelConfig[]) {
-  const baseName = stripEnhancedSuffix(modelName);
-  const config = configs.find(c => c.modelName === baseName);
+  const config = configs.find(c => c.modelName === modelName);
   return config?.pricing || null;
 }
 
