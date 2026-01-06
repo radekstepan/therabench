@@ -183,6 +183,20 @@ async function queryCandidateModel(question: QuestionNode): Promise<string> {
 }
 
 async function runJudge(question: QuestionNode, response: string): Promise<JudgeAssessment> {
+  // Get modality-specific judge guidance
+  let modalityGuidance = '';
+  switch (question.category) {
+    case 'CBT':
+      modalityGuidance = renderTemplate('judge_cbt', {});
+      break;
+    case 'DBT':
+      modalityGuidance = renderTemplate('judge_dbt', {});
+      break;
+    case 'ACT':
+      modalityGuidance = renderTemplate('judge_act', {});
+      break;
+  }
+
   const prompt = renderTemplate('judge', {
     isTranscript: question.category === 'Transcript',
     context: question.context || '',
@@ -191,7 +205,8 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     response: response,
     criteria: question.rubric.criteria || '',
     mustInclude: question.rubric.mustInclude || [],
-    mustAvoid: question.rubric.mustAvoid || []
+    mustAvoid: question.rubric.mustAvoid || [],
+    modalityGuidance: modalityGuidance
   });
 
   if (!EXPERT_MODEL_API_KEY) throw new Error('EXPERT_MODEL_API_KEY is required but not set');
