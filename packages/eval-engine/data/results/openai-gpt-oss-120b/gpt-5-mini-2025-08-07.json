@@ -929,5 +929,229 @@
         }
       ]
     }
+  },
+  {
+    "runId": "790e3c67-5ae3-459f-8465-a162a7078dfc",
+    "questionId": "t11",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "When the two mage‑hunters burst into Bow’s End Tavern, Rootie hurriedly grabs an “improvised wand” from his satchel – a big root‑vegetable (a parsnip/​celery‑root) he pulls out of his bag of vegetables.  The vegetable‑focus snaps apart as he tries to cast a fireball, and the spell doesn’t hit the mage‑hunter at all; it flies off toward a corner of the tavern and ends up igniting the room (or at least missing the target and starting a fire in the corner).【Excerpt: “Rootie reaches into his bag of root vegetables and pulls out a… let’s say a celery root this time… He tries to cast a fireball. But the top of the parsnip just snaps off, and the fireball… goes straight to the corner and maybe start’s a fire.”】",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 95,
+          "reasoning": "The response accurately reflects the scene in the transcript: it identifies the improvised casting focus as a root vegetable (parsnip/celery-root) used as an improvised wand/focus, states that the top/tip of the parsnip snaps off while casting, and reports that the spell misses the mage‑hunter and flies into a corner (potentially starting a fire). Those are the required MUST elements and the response avoids the MUST AVOID items (it is not described as a generic wand/staff, the spell does not hit the mage‑hunter, and it does not say it was a potato). Minor note: the transcript specifically says the parsnip was \"carved into this beautiful wand;\" the response uses \"improvised wand\" which conveys the same idea but does not use the exact word \"carved.\" This is a trivial omission and does not change the factual fidelity of the answer.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:12:23.726Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "0bf4107e-b2ae-4f87-9116-3c5176cab5d9",
+    "questionId": "t12",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "**What Paddles does while Abraham is down**  \n\n1. **How he positions himself while waiting** – After Abraham is suplexed by Tulk and lies “dead on the floor,” Paddles “crawls into a corner and sits on his haunches, watching the scene from the ground.”  (The narration notes that he “waits on his haunches, looking up at the chaos while Abraham lies still.”)  \n\n2. **What he eats (and what he does to it first)** – While the party is dealing with the suplex, “Paddles pulls a snack‑cake out of his little satchel, **licks the frosting off the top of the cake** and then shoves the now‑frosting‑free bite into his mouth.”  (The description says he “licks the frosting off the snack‑cake, then eats it” right before he helps revive Abraham.)  ",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The response partially matches the transcript but omits key required details. It correctly reports that Paddles eats a snack‑cake (matches context). However it fails to state that Paddles sits \"crisscross applesauce on Abraham's corpse/body\" while waiting — instead it invents that he \"crawls into a corner and sits on his haunches,\" which contradicts the transcript. It also omits the crucial detail that Paddles wipes extra blood from Abraham onto the snack‑cake (the transcript explicitly says he wipes blood onto it before eating). The response adds an unreferenced detail (licking frosting off the cake) that is not in the provided text. No MUST‑AVOID items (apple, bread, coffee/latte) are present. To improve: explicitly state Paddles sits crisscross applesauce on Abraham's corpse and that he wipes extra blood from Abraham onto the snack‑cake before eating, and remove the frosting‑licking detail unless supported by the transcript.",
+          "flags": [
+            "Missing required detail: did not state Paddles sits crisscross applesauce on Abraham's corpse/body.",
+            "Missing required detail: did not state Paddles wipes extra blood from Abraham onto the snack‑cake before eating.",
+            "Hallucination: adds detail about licking frosting that is not in the transcript."
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:13:05.186Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d7d2c6cf-abbb-40b7-a607-86e7a9691576",
+    "questionId": "t13",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "- **The check:** When Sigrid tries to reproduce the psychic Draconic she heard, the DM asks for a **Performance check – with disadvantage**.  \n\n- **The help offered:** To cancel that disadvantage the DM hands her **Bardic Inspiration**, letting her add the inspiration die to the roll (effectively removing the penalty).  \n\n- **What the “grow‑l‑ing static” sounds like:** The DM describes the Draconic sound as a mixture of three familiar noises – **beat‑boxing, a bad French accent, and the sound of a dog chewing on a toy**.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "The response correctly identifies that the check was a Performance check made with disadvantage, and it accurately lists the three descriptive elements the DM used for the 'growling static' (beat‑boxing, a bad French accent, and a dog chewing on a toy). It also notes Bardic Inspiration as the mechanical help that the DM offered to mitigate the penalty. The response misses one required detail from the transcript: Abraham (the character who speaks Draconic) explicitly offers help by explaining Draconic phonemes/structure, which the DM allows as a help action that changes the roll from disadvantage to advantage. To fully match the context the answer should have included that Abraham offers phoneme/structure coaching (granting advantage) in addition to the Bardic Inspiration/beatboxing assistance. No MUST‑AVOID items were violated.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:13:23.761Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1f311a3a-7314-4dcb-9abf-908be0332ac0",
+    "questionId": "t14",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "- **First threat:** Dean Augusta Tullus tells the students that whoever caused the blaze “will be worse than dead. They will be expelled and exiled from the magical community forever.” (​the fire‑responsibility threat​)\n\n- **Second, absurd threat:** She adds, “If coffee doesn’t appear in five minutes, I am going to kick everyone out of Lorehold, then it will just be me!” The condition attached to the coffee threat is that **the coffee must be served within five minutes; otherwise she will eject the whole group from Lorehold.**​",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies both threats Dean Augusta Tullus makes in the transcript: (1) the primary threat that whoever caused the fire \"will be worse than dead\" and \"will be expelled and exiled from the magical community forever,\" and (2) the more absurd coffee-related threat that if coffee does not appear in five minutes she will \"kick everyone out of Lorehold, then it will just be me.\" The five-minute condition is explicitly and correctly described as the requirement that the coffee appear (be served) within five minutes. The answer includes the exact scope of the coffee threat (ejecting everyone from Lorehold) and does not introduce any hallucinated details or any of the prohibited claims (e.g., no threat to kill, no threat to burn the school, and it does not limit the threat only to the main characters). Overall, the response is fully faithful to the provided context.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:13:36.107Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e8a41e7c-dad5-4259-9bde-67ea63120d76",
+    "questionId": "t15",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "Conflegra shouts the tap‑dance step **“shuffle”**, and the passing minotaur replies with a single‑word **“cool.”**",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 0,
+          "reasoning": "The response is not faithful to the provided transcript. The transcript explicitly records Conflegra vocalizing the tap‑dance step “Buffalo change” and the passing minotaur replying with the single word “Rude.” The submitted answer instead gives “shuffle” and “cool,” which contradicts both required items. The response does not introduce any of the MUST AVOID behaviors (the minotaur does not attack, join in, or ignore her), but it fails to include the exact required quotes and therefore fails the rubric. Concrete improvement: replace “shuffle” with the exact phrase “Buffalo change” and replace “cool” with the exact minotaur reply “Rude.”",
+          "flags": [
+            "Missing required phrase: 'Buffalo change'.",
+            "Missing required minotaur reply: 'Rude'.",
+            "Contradicts the transcript by inventing different words ('shuffle', 'cool')."
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:13:44.968Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "04996180-f95b-43ee-82cc-9637a91e0de0",
+    "questionId": "t16",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "**Eyewear:** A **monocle** – the single‑lensed glass the bear‑professor puts on.  \n\n**Two of the DM’s early mis‑pronunciations:**  \n* “Monokle” (with a hard *k* sound)  \n* “Monocul” (ending like *‑cul*)  \n\n**Final, repeated (still a little off) pronunciation the group settles on:** They all keep saying **“mon‑o‑cle”** – the word is said over and over, but with the same slightly mangled accent.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 10,
+          "reasoning": "The response is largely unfaithful to the provided transcript. It answers 'monocle' (and variants) rather than the correct eyewear 'pince-nez' required by the prompt, so it directly violates the MUST INCLUDE and MUST AVOID items. It also fails to list any of the actual mispronunciations from the transcript (e.g., 'pin-nez', 'pin-wa', 'pin-snez') and does not state the final settled pronunciation 'Pin-snez'. What the response did: attempted to identify an eyewear item and gave multiple pronunciations. What it did wrong: (1) misidentified the item as a monocle (explicitly prohibited), (2) supplied fabricated mispronunciations (“Monokle”, “Monocul”) not present in the transcript, and (3) gave an incorrect final pronunciation. Concrete improvements: state the eyewear as 'pince-nez', cite at least two of the DM/cast's attempted pronunciations from the transcript (examples: 'pin-nez', 'pin-wa', 'pin-snez'), and indicate the final repeated pronunciation exactly as in the transcript ('Pin-snez'). Because the core identification and required pronunciations are incorrect or missing, the faithfulness score is very low.",
+          "flags": [
+            "MUST_AVOID violation: response identifies the eyewear as 'monocle' (contradicts transcript 'pince-nez')",
+            "Missing MUST items: did not state 'pince-nez', did not list transcript pronunciations ('pin-nez', 'pin-wa', 'pin-snez'), did not give final settled pronunciation 'Pin-snez'"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:14:17.071Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c459ddd6-cb40-4a8b-a467-4fa5af9f93e5",
+    "questionId": "t17",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "Rootie says that the only way he can make use of the dead mage‑hunter is to “grow potatoes” with his druidic magic – but not from ordinary soil. He wants to sprout the crop out of the odd, magical organ that was left on Muffy’s body, the large purple “spike” that was protruding from Muffy’s head/mouth.  \n\n*“I’d love to grow potatoes… out of that big purple spike on Muffy’s head.”* (transcript – Rootie’s suggestion after Muffy is killed)  \n\nThus the crop is **potatoes**, and the made‑up body part he wants to grow them from is **the purple spike (the magical organ) on Muffy’s head/mouth**.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies that Rootie wants to grow potatoes from material taken from the dead mage-hunter (matches the transcript). It also accurately references the long purple spike protruding from Muffy’s head/mouth as the magical body part Rootie wants to use, which is supported by the context. However, the response fails to include the specific made-up organ name that the rubric required: 'counter spelling gland' (the transcript explicitly contains Rootie saying, 'Now this is the counter spelling gland'). The response also presents an invented direct quote attributed to the transcript, which is not verbatim in the provided text and counts as adding a fabricated detail. The response avoided the prohibited organs (stomach, heart, brain). To improve: explicitly mention the phrase 'counter spelling gland' as Rootie’s named made-up organ and avoid inventing or attributing exact quotes not present in the context.",
+          "flags": [
+            "missing_required_phrase: 'counter spelling gland'",
+            "invented_quote_attributed_to_transcript"
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:14:37.592Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c3471df1-ccd7-4ff3-86f8-4e4acb7b2d0f",
+    "questionId": "t18",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "Abraham tells Belladros that, if his breath ever starts to “smell weed” or gets “a little rank,” he wants Belladros to just point it out – even to shout, “Hey, hey man, how about a shower?” He adds that he won’t be offended because his nose “hasn’t worked in years” and he’s “so firmly detached from my material corpse,” so he won’t even notice the odor.【Excerpt: “while we’re here, if I ever smell weed, my nose hasn’t worked in years. So please feel free to tell me I won’t be insulted… if it’s getting a little rank, just feel free to shout out and say, ‘Hey, Hey man, how about a shower?’”】",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately captures both required points from the transcript: Abraham asks Belladros to call out (even shout) if he ever smells of 'weed' or gets 'a little rank,' and he explicitly says he won't be insulted because his nose 'hasn't worked in years.' The reply avoids all MUST AVOID items (no suggestion that Belladros should clean, kill, or ignore him). The extra phrasing about being 'detached from my material corpse' is consistent with the context and does not contradict or add problematic facts. No corrections needed.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:14:48.960Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ecfebaad-01f7-4b49-8345-b9c0cb904d9f",
+    "questionId": "t19",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "When the characters examine the fire‑jolt table they notice a small, round piece of glass that slips out of a charred “egg‑cup‑like” holder. The DM describes that little glass shard as **radiating a very strong evocation aura**. He then clarifies that **the egg‑cup itself isn’t magical – the magical effect is coming from the glass piece that rolled out, not from the cup**. These details are given in the description of the blast site:\n\n- “You hear the clinking of a piece of shrapnel ceramic… you see just like a little rounded glass that rolls out of what looks like a chard egg‑cup holder… it’s definitely throwing off incredibly strong evocation.”  \n- The DM then says, “The egg‑cup itself was not the magic item.” (Transcript)",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately and succinctly matches the transcript. It states that a small curved/rounded glass piece (shard) rolls out of the charred egg‑cup/holder, that the glass piece is radiating a very strong evocation aura, and that the DM explicitly clarified the egg‑cup itself is not magical while the glass/shard is the magical item. All three MUST items are present, and the reply avoids the MUST AVOID errors (it does not claim the egg‑cup itself is the magical artifact). No extraneous or contradicted facts were added—faithful to the provided context.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:14:55.388Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e993590a-f241-4001-a52c-f0522878c424",
+    "questionId": "t20",
+    "modelName": "openai/gpt-oss-120b",
+    "timestamp": "2026-01-07T16:14:37.707Z",
+    "response": "- **Franchise:** Digimon (the “digital monsters” anime).  \n- **Identifying line:** The cast calls it out with the tagline **“Digimon, digital monsters.”**  \n- **Aabria’s pun:** She riffs on the phrase and the “daddy” talk, shouting **“Digi‑daddy!”**",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response exactly matches the context: it names the franchise (Digimon), gives the identifying phrase ('Digimon, digital monsters'), and cites Aabria's pun ('Digi-daddy!'). It does not introduce any disallowed items (no mention of Pokémon or Dragon Ball Z) and does not give a generic daddy-ending answer. All MUST requirements are met and no MUST AVOID items were violated.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:14:59.548Z"
+        }
+      ]
+    }
   }
 ]

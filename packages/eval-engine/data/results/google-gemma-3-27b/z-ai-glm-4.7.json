@@ -918,5 +918,215 @@
         }
       ]
     }
+  },
+  {
+    "runId": "e9011f03-2fb9-4798-a651-c45ca87ff518",
+    "questionId": "t11",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "Rootie pulls out a celery root as his improvised casting focus. However, the parsnip snaps off during the cast, causing the fireball to miss its intended target and instead go into the corner of the tavern.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies that the tip of the focus snaps off and that the spell misses and goes into the corner of the tavern. However, it fails the 'Must Include' criteria regarding the specific casting focus. The context text explicitly states Rootie pulls out a 'massive parsnip, carved into this beautiful wand,' whereas the response incorrectly identifies it as a 'celery root.' The response contradicts itself by mentioning 'parsnip' later in the sentence, indicating a confusion of the source material.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:22:22.733Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b0bc62c5-5695-4f20-9831-3a59b8c3c3f6",
+    "questionId": "t12",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "According to the transcript:\n\n(1) Paddles positions himself by “sitting crisscross applesauce on Abraham’s corpse.” \n(2) He eats a snack cake that is covered in Abraham's blood, and then just goes to town on it.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The response correctly identifies Paddles' position as 'sitting crisscross applesauce on Abraham’s corpse' and correctly identifies the food item as a 'snack cake.' It also accurately reflects the presence of blood. However, the query specifically requested the detail of 'what he does to it right before eating.' The text states Paddles 'wipes extra blood from Abraham onto it,' but the response only describes the cake as 'covered in Abraham's blood,' missing the specific action of wiping/smearing requested. No MUST AVOID items were present.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:23:43.106Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "088490b5-8565-46f0-8630-24c8489d202b",
+    "questionId": "t13",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "Here's the answer based solely on the provided transcript:\n\nThe DM calls for an **Arcana check with advantage** when Sigrid attempts to recall the Draconic. \n\nHelp is offered in the form of **Rootie explaining Draconic phonemes and sentence structure**.\n\nThe three elements the DM says the sound resembles through the \"growling static\" are:\n1.  **Nasal sounds**\n2.  **A dog chewing on a toy**\n3.  **Beatboxing**",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 0,
+          "reasoning": "The response fails to meet almost all Must Include criteria and contains significant hallucinations. First, it incorrectly identifies the initial check as an 'Arcana check with advantage' when the text specifies it began as a 'Performance check with disadvantage.' Second, it attributes the help that changed the disadvantage (explaining Draconic phonemes/structure) to 'Rootie' instead of Abraham. Third, it completely omits Conflegra's contribution of beatboxing as bardic inspiration. Fourth, regarding the sound descriptors, it lists 'nasal sounds' instead of the required 'bad French accent' found in the transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:25:08.023Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c02efde2-ae20-4805-8338-96926e0fb4e6",
+    "questionId": "t14",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "Here are Dean Tullus’s two threats from the transcript:\n\n1.  **Threat to Students:** She states that whoever is responsible for burning down the café “will be worse than dead…they will be expelled and exiled from the magical community forever.”\n2.  **Coffee Threat:** If coffee doesn't appear in five minutes, \"I am going to kick everyone out of Lorehold.\"",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 95,
+          "reasoning": "The response accurately identifies and quotes both threats made by Dean Tullus from the transcript. It correctly captures the first threat regarding expulsion and exile ('worse than dead') for the arsonists. It also correctly identifies the second threat regarding kicking everyone out of Lorehold if coffee does not appear in five minutes. The response meets all Must Include criteria and avoids all Must Avoid criteria, demonstrating high faithfulness to the context text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:26:15.452Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "c600600c-61b8-4b43-98ae-15432631a32e",
+    "questionId": "t15",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "Conflegra vocalizes the step name \"shuffle ball change\" while tap dancing. The passing minotaur responds with “Rude.”",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The response correctly identifies the minotaur's response as 'Rude'. However, it fails the 'Must Include' criteria regarding the step name. In the context of the scene near the stadium where the minotaur interaction occurs, the transcript records Conflegra asking 'Buffalo change?' in response to the DM describing the 'shuffle of the buffalo'. The response incorrectly attributes the step 'shuffle ball change' (which was used in a combat scene earlier in the transcript) to this specific moment.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 25
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:28:03.437Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "dc16427e-1f91-4bbc-93ab-673eaa25c1f1",
+    "questionId": "t16",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "The eyewear is **pince-nez**. \n\nThe DM initially attempts to say \"**pin-wa**\" and then \"**pin-snez**\" before the cast corrects her and repeatedly says \"**pince-nez**\".",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response demonstrates high faithfulness to the context text. It correctly identifies the eyewear as pince-nez and cites the specific fumbled pronunciations 'pin-wa' and 'pin-snez' made by the DM and cast. Furthermore, the response correctly states that the group settled on and repeatedly said 'pince-nez', which aligns with the transcript ending ('Cast: Pince-nez. - Yeah. Pince-nez. - Pince-nez, on his nose'). While the evaluation rubric incorrectly listed 'Pin-snez' as the required final pronunciation, the response accurately reflects the transcript's outcome.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:31:55.967Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e19d9289-25f7-4e6a-9571-0f3e39f81dc1",
+    "questionId": "t17",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "Rootie proposes growing **potatoes** from the “nastiest, most like… viscous bile and some sort of strange organo chemical mixture” found within Muffy’s corpse. He specifically wants to use parts of Muffy's rotting, arcane detritus to grow them.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies that Rootie wants to grow potatoes. However, it fails to include the specific made-up organ name 'counter spelling gland' as required by the 'Must Include' rubric. While the response accurately quotes Rootie's description of the substance ('viscous bile', 'organo chemical mixture'), it misses the specific invented body part name ('counter spelling gland') that answers the second part of the query. No 'Must Avoid' items were violated.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:33:15.777Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a2d5f3b2-1917-48c2-87b0-031ab2158094",
+    "questionId": "t18",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "Abraham asks Belladros to tell him if he ever smells like “weed,” as his nose hasn’t worked in years. He specifies that he won’t be insulted if told, because he doesn't have the ability to smell it himself.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately and concisely answers the query based on the provided transcript. It correctly identifies that Abraham asks Belladros to tell him if he smells like weed or gets rank, and accurately cites his non-functioning nose as the reason he won't be insulted. The response fully satisfies the 'Must Include' criteria and avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:34:56.497Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b6cf1a07-b5db-4b18-8e9e-1cb238aff915",
+    "questionId": "t19",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "While inspecting the blast site at their table, the group finds a charred egg-cup. A small piece of glass rolls out of it. The DM clarifies that the *egg-cup itself* isn’t magical, but the *piece of glass inside* is emitting a strong, old magic aura. \n\nThe DM describes the glass as having intricate filigree and being covered in char, noting it's from something very old.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 85,
+          "reasoning": "The response correctly identifies that a piece of glass rolls out of the charred egg-cup and accurately conveys the DM's clarification that the egg-cup itself is not magical, but the glass inside is. However, the response misses specific details present in the text: the glass is described as 'rounded' or 'curved,' and the initial aura detected is specifically 'strong evocation,' whereas the response generalizes it as 'strong, old magic' (though 'old' is mentioned later in the text). These omissions prevent a perfect score, but the core answer is faithful and clinically usable.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:35:34.189Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "92d73811-bb79-4fa6-963f-7b85f8746cea",
+    "questionId": "t20",
+    "modelName": "google/gemma-3-27b",
+    "timestamp": "2026-01-07T16:54:44.234Z",
+    "response": "The cast references **Digimon**. They say \"**If you love Digimon**\" before being cut off for not singing the theme song. \n\nAabria lands the pun by saying, \"**It's Digi-daddy.**\"",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The response correctly identifies the franchise as Digimon and the pun as 'Digi-daddy,' which are critical components. However, it fails to meet the specific MUST INCLUDE requirement regarding the identifying phrase. The transcript clearly shows the characters saying 'Digimon, digital monsters' as the reference to the theme song, which prompts the 'We can't sing that' response. The response incorrectly claims 'If you love Digimon' is the identifying phrase and misrepresents the dialogue flow, suggesting they were cut off during that line when it was actually spoken fully afterwards as a joke. This misattribution constitutes a significant omission of the required detail.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T20:36:44.057Z"
+        }
+      ]
+    }
   }
 ]

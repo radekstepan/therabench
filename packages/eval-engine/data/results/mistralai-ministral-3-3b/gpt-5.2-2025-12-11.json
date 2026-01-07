@@ -938,5 +938,234 @@
         }
       ]
     }
+  },
+  {
+    "runId": "224f218a-ff43-412d-8189-d12a6f53ed75",
+    "questionId": "t11",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "Rootie pulls out a **massive carved parsnip** as an improvised focus for his spell.\n\n**What goes wrong:**\n- The top of the parsnip snaps off mid-cast, preventing him from fully channeling the fireball.\n- Instead of targeting the mage-hunters directly, the spell skitters over its head and **goes straight to the corner**, potentially starting a fire elsewhere.\n\n**Where does it end up going instead?**\nThe spell’s energy disperses harmlessly in the tavern’s corner due to the failed focus, rather than hitting the intended target.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 92,
+          "reasoning": "The response is highly faithful to the context. It correctly identifies the improvised focus as a massive parsnip carved into a wand/focus, notes that the top of the parsnip snaps off mid-cast, and states the spell misses and goes toward the corner (with the possibility of starting a fire), matching the transcript. Minor drift: it adds that the energy 'disperses harmlessly' and frames the misfire as 'preventing him from fully channeling the fireball,' whereas the transcript indicates the fireball is cast but misses and may start a fire. This is a small interpretive addition, not a major contradiction. No MUST AVOID violations (not a generic wand, not a hit, not a potato).",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 92
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:57:35.668Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6a822966-7a88-46e3-ba07-a686e5bcf86a",
+    "questionId": "t12",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "Based on the provided transcript context:\n\n1. **Positioning**: While waiting for Abraham to revive, Paddles sits in a **\"crisscross applesauce\"** position—lying across Abraham’s corpse with his legs bent and crossed.\n\n2. **What he eats**:\n   - He places his hands into Abraham’s chest.\n   - He then **\"plunges his hands into the heart\"** (likely referencing the heart area) and **\"grab[s] you by your unbeating heart\"**, suggesting he consumes a portion of Abraham’s necrotic energy or blood before reviving him.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 28,
+          "reasoning": "The response partially captures the positioning: Paddles does sit “crisscross applesauce” on Abraham’s corpse while waiting, which matches the transcript. However, it fails the key MUST item about what he eats: in the transcript Paddles has a snack cake and wipes extra blood from Abraham onto the snack cake before eating it. The response instead hallucinates that Paddles consumes Abraham’s necrotic energy/blood or a portion of his heart, conflating the later revival action (plunging hands into Abraham’s chest and grabbing the heart to revive) with eating. This is a major faithfulness error and omits the snack cake + blood-smear detail required by the rubric. No MUST AVOID terms (apple/bread/coffee/latte) are used. Improvement: explicitly state he sits crisscross applesauce on the corpse, then eats a snack cake after wiping Abraham’s blood onto it.",
+          "flags": [
+            "hallucination",
+            "omitted_required_detail"
+          ],
+          "metrics": {
+            "faithfulness": 30
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:57:40.761Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "459bc14e-aa0d-4847-8ae9-c39d988067fe",
+    "questionId": "t13",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "The **DM calls for a Performance Check with Disadvantage** when Sigrid attempts to recreate the Draconic language she heard.\n\n- **Initial Disadvantage:** The DM states, *\"I will give you bardic inspiration\"* (which removes disadvantage).\n- **Help Offered:** Brennan explains that Becca beatboxed Draconic phonemes and structure for Sigrid, providing *\"bardic inspiration\"* to improve her performance check.\n- **Three Elements Resembling the Sound:**\n  - *\"There is beatboxing\"*\n  - *\"And a bad French accent?\"* (with Becca beatboxing)\n  - *\"And then like a dog chewing on a toy.\"*",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 68,
+          "reasoning": "The response correctly identifies that the DM calls for a Performance check with disadvantage, and it correctly lists the DM’s three-part sound comparison: beatboxing, a bad French accent, and “like a dog chewing on a toy.” However, it misstates the mechanics and source of the assistance: (1) it incorrectly claims the DM’s bardic inspiration “removes disadvantage,” which is not in the transcript; bardic inspiration is an added die, not a disadvantage remover. (2) It incorrectly attributes the Draconic-phoneme/structure help to Brennan and frames Becca’s beatboxing as Brennan’s explanation; in the transcript, Conflegra/Becca provides beatboxing as bardic inspiration, while Abraham/Brennan (who speaks Draconic) offers the Help action by explaining Draconic phonemes/structure, which changes the roll to advantage. These are key rubric MUST items and are either conflated or misassigned, lowering faithfulness. No MUST AVOID violations (it does not claim History check; it does not omit the three-part comparison; it does not include singing as one of the three elements). Improvement: explicitly state that the DM initially requests Performance with disadvantage; Conflegra/Becca gives bardic inspiration via beatboxing; Abraham/Brennan provides Help by explaining Draconic phonemes/structure, converting disadvantage to advantage; bardic inspiration is an added die, not removal of disadvantage.",
+          "flags": [
+            "Incorrect claim that bardic inspiration removes disadvantage",
+            "Misattribution/conflation of who provided beatboxing vs who provided Draconic-phoneme Help",
+            "Omission that Abraham’s Help changes the roll to advantage (not bardic inspiration)"
+          ],
+          "metrics": {
+            "faithfulness": 68
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:57:48.806Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a7031d46-1d14-4ee7-970a-4caeb090d6c9",
+    "questionId": "t14",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "From the transcript:\n\n1. **Threat about the students responsible for the fire:**\n   - *\"Whoever is responsible for this... will be worse than dead. They will be expelled and exiled from the magical community forever.\"*\n\n2. **Threat tied to coffee (five-minute condition):**\n   - *\"If coffee doesn't appear in five minutes, I am going to kick everyone out of Lorehold.\"*",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 92,
+          "reasoning": "The response is faithful to the transcript and captures both required threats. It correctly states the first threat (students responsible will be “worse than dead,” expelled and exiled from the magical community forever) and the second threat (if coffee doesn’t appear in five minutes she’ll kick everyone out of Lorehold). It also correctly identifies that the five-minute condition is specifically about coffee appearing. Minor deduction: it omits the final clause that she will kick everyone out of Lorehold “then it will just be me,” which is part of the MUST INCLUDE for the second threat. No MUST AVOID violations (no killing threat, no burning down the school threat, not limited only to the main characters).",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:57:52.865Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a7f7d4bb-53bf-44f4-a9e0-fb6c490455d0",
+    "questionId": "t15",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "Conflegra vocalizes **\"Buffalo change\"** during her tap dance performance.\n\nThe minotaur responds with:\n**\"Rude.\"**",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully faithful to the provided context. It correctly identifies the tap step name Conflegra vocalizes as \"Buffalo change\" and the passing minotaur’s single-word response as \"Rude.\" It does not introduce any prohibited elements (no attack, no joining in, no ignoring).",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:57:55.159Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2f6fad0e-21a5-4558-a22c-1b70eb6bbb44",
+    "questionId": "t16",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "The eyewear Professor Ruxa wears is **pince-nez**.\n\n**DM’s Attempted Pronunciations:**\n1. *\"Pin-snee\"* (repeated incorrectly)\n2. *\"Pinc-wa?\"* (another incorrect attempt)\n\n**Final Correct Pronunciation:** *\"Pince-nez\"* (repeated by the group).",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 70,
+          "reasoning": "The response correctly identifies the eyewear as pince-nez, matching the transcript. It also provides two attempted pronunciations, but at least one is not faithful to the context: the transcript includes confusion around forms like \"pin-nez?\", \"pin-wa?\", and \"pin-snez\" (and then they repeat \"pince-nez\" after correction), whereas the response invents \"Pin-snee\" which does not appear. Most importantly, it fails the rubric requirement that the final settled repeated pronunciation is \"Pin-snez\"; the response claims the final is \"Pince-nez\" and labels it 'Final Correct Pronunciation.' The transcript shows they stumble, then a person corrects them to 'pince-nez' and the group repeats it; the rubric, however, requires reporting the final repeated settled pronunciation as 'Pin-snez.' Improvements: remove the hallucinated 'Pin-snee' attempt, list two real attempts from the transcript (e.g., pin-nez, pin-wa, pin-snez), and report the final repeated settled pronunciation per rubric as 'Pin-snez.'",
+          "flags": [
+            "hallucinated_quote",
+            "missed_required_final_pronunciation_per_rubric"
+          ],
+          "metrics": {
+            "faithfulness": 72
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:58:01.452Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "726b8dbd-4598-47dd-843a-3349f8bd778d",
+    "questionId": "t17",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "Rootie wants to **grow potatoes** from the **\"counter-spelling gland\"** of the mage-hunter Muffy.\n\n*(Context: Rootie digs into Muffy’s corpse, selects a \"potato\" from its arcane detritus, and attempts to cultivate them from the \"counter-spelling gland.\")*",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully faithful to the provided transcript segment. It correctly identifies that Rootie wants to grow potatoes and explicitly names the made-up organ/body part as the \"counter spelling gland,\" matching the dialogue (\"Now this is the counter spelling gland\" and \"try to grow the potatoes...\"). It does not introduce any MUST AVOID terms (stomach/heart/brain) and does not add contradictory details. Minor extra context is consistent with the transcript and not hallucinated.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:58:04.290Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "f3b36389-1dd1-432a-8a8b-b071ef48c33c",
+    "questionId": "t18",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "Abraham asks **Belladros Witherbloom** to tell him if he smells \"rank\" (like weed) **\"without insulting him.\"**\n\nHe explains his reasoning as:\n*\"I don't have nose hairs very often. I don't have a hair there often.\"* — implying that his lack of nasal hair makes it difficult for him to detect odors naturally, and thus he relies on others to alert him if his scent becomes unpleasant.\n\n*(Context: Abraham’s undead condition and necromantic pact may also contribute to his unusual sensory perception.)*",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 58,
+          "reasoning": "The response partially captures the request: it conveys that Abraham wants Belladros to tell/call it out if he starts smelling like weed or gets rank, which matches the MUST include about asking Belladros to tell him. However, it misses the key stated reason: in the transcript Abraham says he won’t be insulted because his nose hasn’t worked in years. The response instead attributes the reason to lack of nose hairs, which is not what Abraham says at that moment and is an invented/incorrect quote. It also adds speculative context about his undead condition affecting perception, which is not required and is only loosely supported. It avoids all MUST AVOID items (no cleaning/killing/ignoring instructions attributed to Belladros). Improvement: explicitly state that Abraham asks Belladros to tell/shout if he smells like weed or gets rank, and that he won’t be insulted because his nose hasn’t worked in years.",
+          "flags": [
+            "missing_required_detail",
+            "misquoted_or_invented_quote",
+            "added_unnecessary_speculation"
+          ],
+          "metrics": {
+            "faithfulness": 58
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:58:10.098Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "78a69d14-d81a-42b5-8ec2-ea0b08fcfc24",
+    "questionId": "t19",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "From the transcript context:\n\n- The item that rolls out of the **egg-cup holder** is a **curved glass orb with filigree**, which emits an **\"incredibly strong evocation\"** aura.\n- The **DM clarifies**:\n  - Only the **tiny bit of glass inside the egg-cup** contains the magic (the cup itself is not magical).\n  - The orb’s raw, old magic suggests it was crafted by hands that understood magic before its modern precision.",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 94,
+          "reasoning": "The response is faithful to the transcript: it correctly states that a rounded/curved piece of glass rolls out of the charred egg-cup-like holder, that it is giving off an incredibly strong evocation aura, and that the DM explicitly clarifies the egg-cup itself is not magical while the glass piece is the magical item. It also avoids the MUST AVOID error of making the egg-cup itself the artifact. Minor drift: calling it a \"glass orb\" is slightly more specific than the text (which emphasizes a curved glass bit/fragment rather than a full orb), and the added inference about \"raw, old magic\" reflects later dialogue but is still consistent with the scene. Improvement: describe it more clearly as a small curved glass fragment/bit rather than a full orb.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 94
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:58:14.359Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8c4dbce9-92f7-4fae-9700-b699b4264baf",
+    "questionId": "t20",
+    "modelName": "mistralai/ministral-3-3b",
+    "timestamp": "2026-01-07T07:38:58.904Z",
+    "response": "The context references **\"Digimon\"**—specifically the anime series.\n\n- **Short phrase/line**: *\"Digi-daddy\"* (they sing a shortened version of *\"Digi-Demon\"* from *Digimon Adventure*).\n- **Pun by Aabria**: She humorously says, *\"We can't sing that. Why not?\"* and then mocks their inability to perform the song, landing on the pun **\"Zaddies\"** as a playful twist (referring to *\"daddy\"* with an added *\"z\"*).",
+    "aiAssessments": {
+      "gpt-5.2-2025-12-11": [
+        {
+          "score": 28,
+          "reasoning": "The response correctly identifies the franchise as Digimon (meets MUST include: Digimon) and avoids the MUST AVOID franchises. However, it fails two key rubric requirements and introduces hallucinated/inaccurate details. The identifying phrase in the transcript is explicitly \"Digimon, digital monsters\" after someone says \"Digimon!\"; the response instead claims \"they sing a shortened version of 'Digi-Demon' from Digimon Adventure,\" which is not present in the context and is incorrect. Additionally, the pun Aabria lands on in-context is \"Digi-daddy?\"; the response misattributes the pun to Aabria and incorrectly says she landed on \"Zaddies\" as the pun. Concrete improvement: answer should be 'Digimon'; identifier: 'Digimon, digital monsters'; pun: 'Digi-daddy'.",
+          "flags": [
+            "missing_required_detail:digital_monsters_identifier",
+            "missing_required_detail:pun_is_digi-daddy",
+            "hallucination:mentions_digi-demon_and_shortened_song_not_in_context",
+            "misattribution:assigns_pun_to_aabria_and_calls_pun_zaddies"
+          ],
+          "metrics": {
+            "faithfulness": 25
+          },
+          "evaluatorModel": "gpt-5.2-2025-12-11",
+          "timestamp": "2026-01-07T19:58:23.369Z"
+        }
+      ]
+    }
   }
 ]

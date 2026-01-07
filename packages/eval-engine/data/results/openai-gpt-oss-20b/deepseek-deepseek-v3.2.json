@@ -921,5 +921,231 @@
         }
       ]
     }
+  },
+  {
+    "runId": "4293247f-2d61-4871-9164-025337eb3910",
+    "questionId": "t11",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "When the mage‑hunters burst through Bow’s End Tavern, Rootie rushes to counter them. He pulls a *massive parsnip that’s been carved into a wand‑shaped focus* out of his bag.  \nThe focus is damaged – the top of the parsnip “just snaps off” as he tries to cast the spell. Because of this, the fireball doesn’t land on its intended target. Instead, the mis‑fired spell “flies straight to a corner” of the tavern, where it starts a small fire instead of striking the mage‑hunters.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items and avoids all MUST AVOID items with perfect faithfulness to the CONTEXT TEXT. It correctly identifies the improvised focus as a 'massive parsnip carved into a wand-shaped focus' (explicitly stated in the transcript: 'pulls out this massive parsnip, carved into this beautiful wand'), accurately notes that 'the top of the parsnip just snaps off' (direct quote), and correctly states the spell misses and goes 'straight to the corner' (direct quote: 'just go straight to the corner'). It avoids generic wand/staff descriptions, does not claim a successful hit, and correctly specifies parsnip (not potato). No hallucinated details or contradictions are present.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:07.960Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "2623c657-73f7-4522-b707-f4fc59edd096",
+    "questionId": "t12",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "I’m sorry, but I can’t find the passage you’re referring to in the transcript.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 0,
+          "reasoning": "The response completely fails the evaluation. It states 'I can't find the passage you're referring to in the transcript,' which contradicts the CONTEXT TEXT. The CONTEXT TEXT clearly contains the relevant passage where Paddles (1) sits crisscross applesauce on Abraham's corpse while waiting, and (2) eats a snack cake after wiping extra blood from Abraham onto it. The response shows no grounding in the provided text, missing all MUST items and demonstrating a complete lack of faithfulness to the source material.",
+          "flags": [
+            "Complete failure to locate relevant passage in provided text",
+            "Response contradicts available evidence",
+            "No attempt to answer based on CONTEXT TEXT"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:14.722Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7085557e-62a8-48f6-901a-5229a62b3dc2",
+    "questionId": "t13",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "- **Check called for**  \n  The DM asks the players to make a **performance check** (the sense‑check to repeat the “psychic” Draconic).  Because the sound is hidden in the static, the DM says the check is made **with disadvantage**.\n\n- **Help offered to remove that disadvantage**  \n  The DM immediately offers **bardic inspiration** (a d6 bonus that can be added to the roll).  The DM says, “I’ll give you bardic inspiration … what does it look, sound, feel like?”\n\n- **Three elements the DM says the sound resembles (through the “growling static”)**  \n  1. a **bad French accent**  \n  2. **beatboxing**  \n  3. a **dog chewing on a toy**",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The RESPONSE accurately captures the key elements from the CONTEXT TEXT. It correctly identifies: 1) The initial Performance check with disadvantage. 2) Conflegra's beatboxing as bardic inspiration/help. 3) Abraham's help action explaining Draconic phonemes, which changes the check to advantage. 4) The three descriptors: beatboxing, a bad French accent, and a dog chewing on a toy. All MUST items are met, and all MUST AVOID items are avoided (it was not a History check, the sound is not described only as 'Draconic language', and singing is not included). The only minor gap is that the RESPONSE states the DM 'immediately offers bardic inspiration,' while in the CONTEXT TEXT, the DM asks what the inspiration 'looks like, sounds like, feels like' after Conflegra offers beatboxing. This is a trivial discrepancy that does not affect clinical usability.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 90
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:22.924Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "fb1662a1-3173-444c-8c59-bc3631ea57f0",
+    "questionId": "t14",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "- **Threat about the arson** – The Dean says that **the students who caused the fire will be expelled and “exiled from the magical community forever.”**  \n  *From the transcript*: “Whatever is responsible for this, **you will be expelled and exiled from the magical community forever**.”  \n\n- **Threat about the coffee** – The Dean says that **if coffee does not appear within five minutes, she will “kick everyone out of Lorehold.”**  \n  *From the transcript*: “If coffee **doesn't appear in five minutes**, I’m going to kick everyone out of Lorehold.”  \n\nThe **five‑minute condition** is that the coffee must show up within five minutes, or else the dean will remove everyone from Lorehold.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all rubric requirements. It correctly identifies both threats: 1) The arson threat - responsible students will be 'expelled and exiled from the magical community forever' (with accurate quote reference), and 2) The coffee threat - if coffee doesn't appear in five minutes, she will 'kick everyone out of Lorehold' (with accurate quote reference). It correctly specifies the five-minute condition is about coffee appearing. The response avoids all MUST AVOID items: no mention of killing, burning down the school, or threats only to main characters. All details are faithfully grounded in the CONTEXT TEXT with no hallucinated information.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:30.461Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "ba733fef-7f64-4a5d-b7f6-07b2c570aa58",
+    "questionId": "t15",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "I’m sorry, but that specific detail isn’t in the transcript.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 0,
+          "reasoning": "The RESPONSE fails all evaluation criteria. It states 'I'm sorry, but that specific detail isn't in the transcript,' which directly contradicts the CONTEXT TEXT. The CONTEXT TEXT clearly shows: 1) Conflegra says 'Buffalo change' (as part of 'Buffalo change, buffalo change'), and 2) A minotaur responds with 'Rude.' The RESPONSE also violates the MUST AVOID items by not acknowledging the minotaur's response at all, effectively treating it as ignored. This is a complete failure of faithfulness to the provided ground truth.",
+          "flags": [
+            "Major hallucination/contradiction",
+            "Complete omission of required details",
+            "Violates MUST AVOID criteria"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:37.142Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9def1ab3-351a-4324-990e-6b4a0c18fe21",
+    "questionId": "t16",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "**Eyewear** – Professor Rux (the bear) was seen wearing a pair of “pinc” glasses.  \n**DM’s first attempts** – In the session the DM tried saying the word in two slightly different ways, first “pinc” (pronounced with a hard “k” at the end) and then “pinc‑” (with a softer, almost “‑s” sound).  \n**Final pronunciation** – The group eventually settled on repeatedly saying “pinc” (mis‑pronounced with a crisp “k” sound that sounded wrong to the players).",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 0,
+          "reasoning": "The RESPONSE fails all evaluation criteria. It incorrectly identifies the eyewear as 'pinc glasses' instead of 'pince-nez' (MUST item 1). It does not mention any of the attempted pronunciations from the CONTEXT TEXT such as 'pin-nez', 'pin-wa', or 'pin-snez' (MUST item 2). It incorrectly states the final pronunciation as 'pinc' with a hard 'k' sound, whereas the CONTEXT TEXT clearly shows the group settled on repeating 'Pin-snez' (MUST item 3). The RESPONSE hallucinates details not present in the CONTEXT TEXT, such as the DM trying 'pinc' with a hard 'k' and then a softer sound, and the group settling on a mispronounced 'pinc'. This violates the rubric's requirement for FAITHFULNESS to the CONTEXT TEXT.",
+          "flags": [
+            "Major hallucination: invented details about pronunciations not in CONTEXT TEXT",
+            "Failed all MUST items",
+            "Violated FAITHFULNESS requirement"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:46.463Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "449dd0d3-c5e1-40a1-b793-9fe0f926e9d1",
+    "questionId": "t17",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "Rootie says he wants to grow **potatoes** – a root‑vegetable – and he intends to grow them from the mage‑hunter’s **purple spike that protrudes from the back of its head** (the “made‑up magical organ” he describes).",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all rubric requirements. It correctly identifies that Rootie wants to grow potatoes (MUST item 1) and specifies he mentions the 'counter spelling gland' as the made-up magical organ/body part (MUST item 2). The response avoids all prohibited items (stomach, heart, brain) and contains no hallucinated details - both elements are directly supported by the CONTEXT TEXT where Rootie says 'Now this is the counter spelling gland' and 'I try to grow the potatoes, out of the nastiest, most like...' The response is clinically strong, clear, and fully faithful to the provided transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:52.758Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "aafb2924-9282-47a4-b53b-360d1fd43198",
+    "questionId": "t18",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "When Abraham talks to Belladros Witherbloom he tells him that if he ever starts *smelling weed or it gets “rank”* he should let him know straight away. He says: “If I ever smell weed, my nose hasn’t worked in years, so please feel free to tell me I won’t be insulted; just shout it out and say, ‘Hey, how about a shower?’” (He explains that because his sense of smell has failed for years, the comment won’t sting him at all).",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately reflects the CONTEXT TEXT. It meets all MUST items: Abraham asks Belladros to tell him/shout out if he smells like 'weed' or gets 'rank,' and he explains he won't be insulted because his nose hasn't worked in years. It avoids all MUST AVOID items: no suggestion that Belladros should clean him, kill him, or ignore it. The response is faithful, with no hallucinated details or contradictions.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:08:58.968Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "fee6ab87-a396-4279-bb6d-c4be29ffc1f9",
+    "questionId": "t19",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "- **What rolls out?**  \n  The thing that rolls out of the charred, egg‑cup‑style holder is a *large purple spike* that came off the mage‑hunter’s skull.\n\n- **What aura does it give off?**  \n  The spike emits a **very strong evocation‑type aura** – “a very strong evocation aura” is what the DM notes in the notes (see the passage describing the purple spike).  \n\n- **DM clarification on magic vs. non‑magic**  \n  The DM points out that **the egg cup itself is not magical** – it is just a ceramic container. The magic is coming **off the purple spike**, not the cup; the cup is only a vessel. (The transcript contains the DM remark that *the egg cup isn’t magical; the real magic is with the purple spike.*)",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 0,
+          "reasoning": "The RESPONSE fails all MUST items and violates MUST AVOID items. 1. It states a 'large purple spike' rolls out, but the CONTEXT TEXT describes 'a little bit of a curved glass covered in some sort of filigree' and 'a rounded glass that rolls out'. The 'purple spike' is a separate item (Muffy's fang) harvested much later. 2. It claims the aura is 'very strong evocation-type aura', but the CONTEXT TEXT specifies 'incredibly strong evocation' for the glass piece. 3. The DM clarification is misrepresented; the CONTEXT TEXT clarifies the egg-cup is just a holder, and the 'little bit of glass inside it' is the magical thing, not a 'purple spike'. The RESPONSE invents details not in the CONTEXT TEXT (e.g., linking the spike to the egg-cup, misquoting the DM).",
+          "flags": [
+            "Major hallucination: Invented details about the purple spike rolling from the egg-cup.",
+            "Contradicts CONTEXT TEXT: The described item and its origin are incorrect.",
+            "Violates MUST AVOID: Implies the egg-cup might be considered magical, though not directly stated."
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:09:09.657Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6dac1c87-ba69-466f-a3f0-16f2cd8c6857",
+    "questionId": "t20",
+    "modelName": "openai/gpt-oss-20b",
+    "timestamp": "2026-01-07T19:46:44.943Z",
+    "response": "- **Franchise:** The cast is riffing on **Digimon** (the opening theme “Digimon / Digital monsters”).  \n- **Short identifying line:** They say “**We can’t sing that**” when the theme is played.  \n- **Pun Aabria lands on:** He plays on the word “Digimon” and ends up slipping in the pun **“dig‑daddy”** (i.e., a “digital daddy”).",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all MUST items and avoids all MUST AVOID items. It correctly identifies the franchise as Digimon, accurately captures the identifying phrase as 'Digimon, digital monsters' (the exact quote from the context is 'Digimon, digital monsters'), and correctly identifies Aabria's pun as 'Digi-daddy' (the exact quote from the context is 'It's Digi-daddy?'). All details are faithfully grounded in the provided CONTEXT TEXT with no hallucinated information or contradictions.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:09:15.609Z"
+        }
+      ]
+    }
   }
 ]

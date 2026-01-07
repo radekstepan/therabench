@@ -929,5 +929,218 @@
         }
       ]
     }
+  },
+  {
+    "runId": "bda70eda-8c0f-4451-a634-60878eb4a789",
+    "questionId": "t11",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Rootie pulls out a **massive parsnip** carved into a wand. The top of the parsnip snaps off during the cast, causing the fireball to miss its target and instead skitter over the mage-hunter's head, potentially starting a fire in the corner.\n\n*(Context: \"So, Rootie reaches into his bag of root vegetables and pulls out this massive parsnip, carved into this beautiful wand and tries to cast a fireball. But top of the parsnip just snaps off, and the fireball just hits, or misses, and just go straight to the corner and maybe start's a fire.\")*",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response exactly matches the CONTEXT: it identifies an improvised focus as a carved parsnip, states that the top/tip of the parsnip snaps off during casting, and reports the fireball misses and skitters into/over toward the corner (possibly starting a fire). All MUST items are present and all MUST AVOID items are respected (not a generic wand/staff, not a potato, and the spell does not successfully hit the mage-hunter). No extraneous or contradicted details were introduced.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:03:56.368Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1dd10c8a-e837-41ae-bee1-554717c220a9",
+    "questionId": "t12",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n(1) **Positioning**: Paddles sits down in a crisscross applesauce position on Abraham's corpse.\n(2) **Eating**: He plunges his hands into Abraham's chest, grabs his unbeating heart with a jolt of dark enervation (like in *The Matrix*), and wipes extra blood from Abraham onto it before eating it.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 40,
+          "reasoning": "The response correctly reports that Paddles sat “crisscross applesauce” on Abraham’s corpse while waiting (matches the transcript). It also describes Paddles plunging his hands into Abraham’s chest and grabbing the un-beating heart (this action appears in the transcript). However the response fails the critical MUST items: the transcript says Paddles eats a snack cake and that he wipes extra blood from Abraham onto the snack cake before eating it. The reply instead implies he wiped blood onto and ate Abraham’s heart, not a snack cake, which is a substantive inaccuracy versus the provided context. The reply does not use any prohibited words (apple, bread, coffee/latte). To improve: state both required items exactly — (1) Paddles sits crisscross applesauce on Abraham’s body, and (2) he wipes extra blood from Abraham onto a snack cake and then eats the snack cake — and avoid implying he consumed the heart.",
+          "flags": [
+            "Missing/incorrect MUST item: response omits that Paddles ate a snack cake and instead implies he ate Abraham's heart",
+            "Missing/incorrect MUST item: response does not state that blood was wiped onto a snack cake before eating"
+          ],
+          "metrics": {
+            "faithfulness": 40
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:05:03.336Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b38ee12b-9681-4343-9099-d307997326b0",
+    "questionId": "t13",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "The DM calls for a **performance check with disadvantage** when Sigrid tries to reproduce the psychic Draconic she heard. She is then given **bardic inspiration**, which changes her disadvantage into advantage.\n\nThe three elements that the DM says the sound resembles through the \"growling static\" are:\n1. A **bad French accent**\n2. **Beatboxing**\n3. A **dog chewing on a toy**",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 85,
+          "reasoning": "The response is largely faithful to the transcript. It correctly identifies that the DM called for a performance check with disadvantage and it correctly lists the three descriptive elements the DM used for the growling static (a bad French accent, beatboxing, and a dog chewing on a toy). It also correctly notes that bardic inspiration/beatboxing was offered as help. The one omission: the response does not explicitly mention that Abraham (the character who speaks Draconic) offers to explain Draconic phonemes/structure to change the disadvantage to advantage. The transcript shows both the beatboxing/bardic inspiration help and Abraham's phoneme/structure help that results in rolling with advantage; the answer only attributes the change to bardic inspiration and omits Abraham's specific offered help. No MUST AVOID items are violated. To be fully complete, the response should explicitly name Abraham's phoneme/structure help as the offered assist that converted the disadvantage into advantage (in addition to the beatboxing/bardic inspiration).",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:05:19.284Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "beaf75d2-bc08-400f-8714-51cd15556eb5",
+    "questionId": "t14",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided transcript context:\n\n1. **First Threat (About the Students Responsible for the Fire):**\n   - Dean Augusta Tullus says: *\"Whoever is responsible for this, and I'm not saying I know who, but I did see some first year students fleeing from the back of the café. But whomever is responsible for this will be worse than dead. They will be expelled and exiled from the magical community forever.\"*\n\n2. **Second Threat (About Coffee):**\n   - Dean Augusta Tullus says: *\"I said, what in the fuck I said! I didn't get my coffee! And if coffee doesn't appear in five minutes, I am going to kick everyone out of Lorehold, then it will just be me!\"*\n\n**Five-Minute Condition:**\n- The condition attached to the coffee threat is that if Dean Augusta Tullus does not receive her coffee within **five minutes**, she will kick everyone out of Lorehold College, leaving only herself in charge.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately states both threats from Dean Augusta Tullus: (1) those responsible “will be worse than dead” and will be expelled and exiled from the magical community forever, and (2) if her coffee does not appear in five minutes she will kick everyone out of Lorehold so it will be just her. The five-minute condition is explicitly tied to the coffee. The answer does not add unsupported facts or violate the MUST AVOID items (no claim she threatened to kill anyone, burn the school, or targeted only the main characters). Faithful to the provided transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:05:27.798Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "29d48353-1da3-4b5e-ac92-239339d1ee91",
+    "questionId": "t15",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n- **Step name**: \"Buffalo change\"\n- **Single-word response from the minotaur**: \"Rude\"",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response exactly matches the transcript. It correctly reports the step name Conflegra vocalizes as 'Buffalo change' and the minotaur's single-word reply as 'Rude'. Both required items are present and there are no additions or contradictions to the context. The response also avoids all MUST AVOID items (the minotaur neither attacks, joins in, nor ignores her). No improvements needed beyond this exact faithful extraction.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:05:34.678Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7dfeb36a-977a-4d02-ae31-01e9b0353226",
+    "questionId": "t16",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n1. **Eyewear**: The eyewear in question is described as \"a tiny set of spectacles\" that Professor Ruxa puts on his nose.\n\n2. **DM's attempted pronunciations**:\n   - Pince-nez (attempted by Aabria, Becca, and Brennan)\n   - Pin-snez (attempted by Aabria and Becca)\n\n3. **Final pronunciation**: The group settles on the pronunciation \"pince-nez,\" which is repeated multiple times by the DM and cast.\n\nSo, the eyewear is a tiny set of spectacles called pince-nez.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 65,
+          "reasoning": "The response correctly identifies the eyewear as pince-nez (meets one MUST). It also lists pronunciations the cast grappled with, but it does not fully match the rubric requirements: the response names 'Pince-nez' and 'Pin-snez' as attempted pronunciations rather than listing two of the clearly fumbled variants (e.g., 'pin-nez' and 'pin-wa'/'pin-snez') as required. Critically, the response says the final settled pronunciation repeated by the group is 'pince-nez', whereas the evaluation rubric requires that the final repeated settled pronunciation be recorded as 'Pin-snez'. The reply avoids forbidden items (no monocle claim) and does not claim correct pronunciation from the start, so it avoids the MUST AVOID violations. To improve: explicitly cite at least two of the fumbling pronunciations from the transcript (for example 'pin-nez' and 'pin-wa' or 'pin-snez') and state the final repeated pronunciation as 'Pin-snez' per the rubric.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 65
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:06:02.339Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "017990ba-bbc2-4bba-bf2e-0319b9ef1ab2",
+    "questionId": "t17",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Rootie wants to grow **potatoes** from the **\"counterspelling gland\"** of Muffy's rotting, arcane detritus.\n\nFrom the transcript:\n> *\"And I wanna drew and craft, which I secretly know how to do. And I don't like to do stuff about living things... And I wanna grow the potatoes out of the weirdest, most magical parts of the creature... And just try to grow it out of the weirdest, most magical parts of the creature... And I try to grow the potatoes, out of the nastiest, most like... Oh, that smells like viscous bile and some sort of strange organo chemical mixture. Mmh, ooh a little bit, you know like... And just try to grow it out of the weirdest, most magical parts of the creature.\"*\n\n> *\"I go to the weirdest, where I'm like, 'Now this is the counterspelling gland.'\"*",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response faithfully reflects the transcript: it states Rootie wants to grow potatoes and explicitly names the made-up organ as the \"counterspelling gland.\" Both required items are present and correctly quoted/attributed. The response does not mention any of the MUST AVOID items (stomach, heart, brain) and does not introduce extraneous or hallucinated facts beyond what appears in the context.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:06:10.507Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9f5377bb-84a5-4974-9801-a7c330e18613",
+    "questionId": "t18",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context, Abraham asks Belladros Witherbloom to shout out and say, \"Hey, Hey man, how about a shower?\" if he smells weed or gets rank. He gives the reason that he won't be insulted because his nose hasn't worked in years due to being detached from his material corpse.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately captures both required elements from the transcript: Abraham asks Belladros to call out (shout) if he smells like weed or gets 'rank' — specifically giving the example phrased as, \"Hey, Hey man, how about a shower?\" — and he states he won't be insulted because his nose \"hasn't worked in years\" due to being detached from his material corpse. The answer does not add or invent any instructions (e.g., to clean, kill, or ignore him) and therefore avoids all MUST AVOID items. No extraneous or contradictory details were introduced.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:06:25.048Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a70c4018-e63d-4b71-a5fd-46e777dcb101",
+    "questionId": "t19",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "The group finds a **charred glass** that rolls out from the egg-cup holder.\n\n- The glass gives off an **\"incredibly strong evocation\"** aura.\n- The DM clarifies that the **egg-cup itself is not magical**, but it contains a small, fragile piece of glass with the magic. Specifically, she states: *\"The egg-cup's just an egg-cup. Because if you are trying to carry a magical, round, small thing and you don't want it to look like... Yeah, I'm sorry. This is my first day y'all.\"*\n\nSo, only the **tiny bit of glass inside** the holder is magical, not the egg-cup itself.",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response is fully faithful to the transcript. It states that a curved/charred glass piece rolls out of the egg-cup/holder, that the piece gives off an \"incredibly strong evocation\" aura, and it correctly reports the DM's clarification that the egg-cup itself is not magical while the small glass/shard inside is the magical item. It does not assert any of the MUST AVOID claims (it does not claim the egg-cup itself is magical). No extraneous or fabricated facts were added.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:06:42.710Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9a69f5e6-0d79-49f1-a839-7aed8829d993",
+    "questionId": "t20",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n1. **Franchise**: The cast references the anime franchise \"Digimon\".\n2. **Short identifying phrase/line**: They mention \"digital monsters\" when describing Digimon.\n3. **Pun by Aabria**: Aabria lands a pun by saying, \"Digi-daddy\".",
+    "aiAssessments": {
+      "gpt-5-mini-2025-08-07": [
+        {
+          "score": 100,
+          "reasoning": "The response matches the context exactly: it names the franchise as Digimon, quotes the identifying phrase 'digital monsters,' and records Aabria's pun 'Digi-daddy.' All three MUST items are present and the MUST AVOID items (Pokemon, Dragonball Z, or a generic daddy-ending answer) are not present. The answer is faithful to the transcript and adds no extraneous or incorrect details.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "gpt-5-mini-2025-08-07",
+          "timestamp": "2026-01-07T20:06:50.216Z"
+        }
+      ]
+    }
   }
 ]

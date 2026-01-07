@@ -923,5 +923,218 @@
         }
       ]
     }
+  },
+  {
+    "runId": "aa3dfef1-7137-4d5a-a1a6-9f9814dbcbdf",
+    "questionId": "t11",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nRootie pulls a \"massive parsnip carved into this beautiful wand\" from his bag. The top of the parsnip wand snaps off. The spell, a fireball, skitters over the head of the mage-hunter and hits the corner of the tavern, starting a fire.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the context text and meets all the specific rubric requirements. It accurately identifies the parsnip carved into a wand, notes that the top snapped off, and correctly describes the spell missing the target and hitting a corner (including the detail about starting a fire). It successfully avoided all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:37:00.223Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b67844bb-1379-4b96-ba23-22759b843c03",
+    "questionId": "t12",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\n(1) After Abraham is suplexed and is dead, Paddles \"crawls into the back of [Abraham's] big black coat\" and waits.\n\n(2) Before eating, Paddles \"wipes extra blood from Abraham onto it.\" The \"it\" refers to the snack cake that Abraham offered him as a payment for being revived. Paddles then \"just, goes to town on it.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 67,
+          "reasoning": "The response failed to mention the specific 'crisscross applesauce' sitting position required by the rubric. Additionally, it accurately described wiping the blood on the snack cake but incorrectly stated that Abraham offered the snack cake as payment; in the transcript, Rootie is the one who hands the snack cake to Paddles while Abraham is still dead. It correctly avoids the prohibited keywords.",
+          "flags": [
+            "Omission of specific sitting position requirement.",
+            "Incorrectly attributes the source of the snack cake to the dead character."
+          ],
+          "metrics": {
+            "faithfulness": 70
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:37:12.136Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d1eef892-53ac-45e4-b519-93dc3f356f79",
+    "questionId": "t13",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the transcript:\n\n*   **Check:** The DM calls for a Performance check with disadvantage.\n*   **Help:** To overcome the disadvantage, Sigrid is given Bardic inspiration and gets help from Conflegra, who offers a help action by explaining Draconic phonemes and sentence structure.\n*   **Sound Elements:** The DM says the sound resembles a beatbox, a bad French accent, and a dog chewing on a toy.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 90,
+          "reasoning": "The response accurately identifies the Performance check, the initial disadvantage, and the three sound descriptors (beatboxing, bad French accent, and dog chewing on a toy). However, it slightly misattributes the help actions: the DM specifically credits Becca (Conflegra) with the beatboxing 'bardic inspiration' and Brennan (Abraham) with the 'help action' via Draconic phonemes to create the advantage. The response grouped the phonemes and general help under Conflegra, which is a minor clinical error in character attribution.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 90
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:37:27.058Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "99c8b1b3-befb-403f-ae1f-5dfffe91f220",
+    "questionId": "t14",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nDean Augusta Tullus makes two threats:\n\n1.  **The Arson Threat:** \"Whoever is responsible for this... will be worse than dead. They will be expelled and exiled from the magical community forever.\"\n\n2.  **The Coffee Threat:** \"If coffee doesn't appear in five minutes, I am going to kick everyone out of Lorehold, then it will just be me!\"\n\nThe five-minute condition is that coffee must appear within five minutes.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies both threats made by Dean Augusta Tullus as per the transcript context. It correctly captures the 'worse than dead' / 'expelled and exiled' threat regarding the arson and the specific threat to kick everyone out of Lorehold if coffee is not provided. It also explicitly states the five-minute condition regarding the coffee. It successfully avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:37:33.667Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "45e5d60a-e2bb-4134-a7b8-30fc87d8a619",
+    "questionId": "t15",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nConflegra tap dances and vocalizes the step name: \"Buffalo change.\"\n\nThe passing minotaur gives the single-word response: \"Rude.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the tap dancing step ('Buffalo change') and the minotaur's specific response ('Rude') as stated in the provided transcript. The response meets both 'Must Include' criteria and avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:37:38.688Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "14f6f86f-0215-48bb-8242-b3ba2b75e763",
+    "questionId": "t16",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nThe eyewear is pince-nez glasses.\n\nThe DM's attempted pronunciations were \"pin-nez\" and \"pin-wa\".\n\nThe final pronunciation the group repeats is \"pin-snez\".",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the eyewear as pince-nez from the transcript. It correctly lists the DM's early attempts ('pin-nez' and 'pin-wa') and specifies the final incorrectly-pronounced version the group settled on ('pin-snez'). It meets all 'Must Include' criteria and avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:37:51.732Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5d16c2d7-1f15-4ab0-bf9b-a883e4519cbc",
+    "questionId": "t17",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the transcript, Rootie wants to grow \"root vegetables\" from the \"counter spelling gland\" of the dead mage-hunter.\n\nSpecifically, he says:\n> \"I wanna drew and craft, which I secretly know how to do... I wanna drew and craft some root vegetables... Having come from the rotting, arcane detritus. And I wanna... I'll do that. Just give me a slight of tan check. See if you can kind of secret it away... I go to the weirdest, where I'm like, 'Now this is the counter spelling gland.' And all the weird, reflective stuff. And I try to grow the potatoes, out of the nastiest, most like... Oh, that smells like viscous bile and some sort of strange organo chemical mixture.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the specific crop (potatoes) and the made-up magical body part (counter spelling gland) as described in the transcript. It also includes the supporting quote to verify the context and avoids all negative constraints like mentioning the stomach, heart, or brain.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:38:03.301Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4cce3a75-d6b7-45ac-951c-1669ee20e562",
+    "questionId": "t18",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Abraham asks Belladros to let him know if he starts to smell like \"weed\" or gets \"rank,\" so he can take a shower. The reason he gives for not being insulted is that his nose hasn't worked in years, so he wouldn't be able to smell it himself anyway.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. It correctly identifies that Abraham asks Belladros to tell him or 'shout out' if he smells ('weed' or 'rank') so he can take a shower, and it accurately provides the reason: that his nose hasn't worked in years. The response followed all 'Must Include' and 'Must Avoid' instructions.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:38:15.132Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "f669eedd-f799-40c7-9a37-31917c36cb93",
+    "questionId": "t19",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the provided Transcript Context:\n\n*   **What rolls out:** A \"little bit of a rounded glass.\"\n*   **What kind of magic aura it gives off:** \"Incredibly strong evocation.\"\n*   **Clarification from the DM:** Aabria clarifies that the egg-cup itself is not magical. She states: \"The egg-cup's just an egg-cup. ... The only magical piece is just that one tiny bit.\" She explains the magical item was being concealed by being placed inside the mundane egg-cup holder.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly grounded in the provided transcript. It identifies that a piece of rounded glass rolled out, accurately notes the 'incredibly strong evocation' aura, and includes the DM's clarification that the egg-cup holder itself was mundane while the glass was the magical component. It meets all 'Must Include' criteria and avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:38:22.541Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4a6aa8c2-beda-4195-8f6b-c30a6a73166a",
+    "questionId": "t20",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the provided Transcript Context:\n\n*   **Franchise referenced:** Digimon\n*   **Identifying phrase/line:** \"Digimon, digital monsters.\"\n*   **Pun landed by Aabria:** \"It's Digi-daddy?\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the Digimon franchise, correctly quotes the identifying phrase used by the cast, and captures Aabria's specific 'Digi-daddy' pun exactly as it appears in the transcript. It meets all 'Must Include' criteria and avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T07:38:51.771Z"
+        }
+      ]
+    }
   }
 ]

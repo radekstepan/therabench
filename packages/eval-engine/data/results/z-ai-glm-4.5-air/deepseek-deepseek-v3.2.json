@@ -917,5 +917,217 @@
         }
       ]
     }
+  },
+  {
+    "runId": "aa3dfef1-7137-4d5a-a1a6-9f9814dbcbdf",
+    "questionId": "t11",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nRootie pulls a \"massive parsnip carved into this beautiful wand\" from his bag. The top of the parsnip wand snaps off. The spell, a fireball, skitters over the head of the mage-hunter and hits the corner of the tavern, starting a fire.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all rubric requirements. It correctly identifies the improvised casting focus as 'a massive parsnip carved into this beautiful wand' (meeting MUST item 1). It accurately states 'the top of the parsnip just snaps off' (meeting MUST item 2). It correctly describes the spell missing and going 'straight to the corner' (meeting MUST item 3). The response avoids all MUST AVOID items: it doesn't describe a generic wand/staff, doesn't claim he successfully hit the mage-hunter, and doesn't incorrectly identify it as a potato. All details are directly grounded in the CONTEXT TEXT with no hallucinated information.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:11:58.356Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b67844bb-1379-4b96-ba23-22759b843c03",
+    "questionId": "t12",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\n(1) After Abraham is suplexed and is dead, Paddles \"crawls into the back of [Abraham's] big black coat\" and waits.\n\n(2) Before eating, Paddles \"wipes extra blood from Abraham onto it.\" The \"it\" refers to the snack cake that Abraham offered him as a payment for being revived. Paddles then \"just, goes to town on it.\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 60,
+          "reasoning": "The RESPONSE was evaluated for faithfulness to the CONTEXT TEXT. It correctly identified that Paddles eats a snack cake and wipes extra blood from Abraham onto it before eating, which aligns with the MUST items. However, it failed to mention that Paddles sits 'crisscross applesauce on Abraham's corpse' while waiting, as specified in the MUST items, instead stating he 'crawls into the back of [Abraham's] big black coat' and waits. This omission is significant. The RESPONSE avoided all MUST AVOID items (apple, bread, coffee/latte). The score is lowered due to the missing key detail about Paddles's positioning while waiting.",
+          "flags": [
+            "Missing key detail: Paddles sits crisscross applesauce on Abraham's corpse while waiting."
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:06.940Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "d1eef892-53ac-45e4-b519-93dc3f356f79",
+    "questionId": "t13",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the transcript:\n\n*   **Check:** The DM calls for a Performance check with disadvantage.\n*   **Help:** To overcome the disadvantage, Sigrid is given Bardic inspiration and gets help from Conflegra, who offers a help action by explaining Draconic phonemes and sentence structure.\n*   **Sound Elements:** The DM says the sound resembles a beatbox, a bad French accent, and a dog chewing on a toy.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items and avoids all MUST AVOID items with perfect faithfulness to the CONTEXT TEXT. It correctly identifies: 1) The DM calls for a Performance check with disadvantage. 2) Conflegra provides beatboxing as bardic inspiration/help (explicitly stated). 3) Abraham offers help by explaining Draconic phonemes and structure, changing it to advantage. 4) The three descriptors: beatboxing, a bad French accent, and a dog chewing on a toy. No hallucinated details, contradictions, or omissions. The response is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:14.072Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "99c8b1b3-befb-403f-ae1f-5dfffe91f220",
+    "questionId": "t14",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nDean Augusta Tullus makes two threats:\n\n1.  **The Arson Threat:** \"Whoever is responsible for this... will be worse than dead. They will be expelled and exiled from the magical community forever.\"\n\n2.  **The Coffee Threat:** \"If coffee doesn't appear in five minutes, I am going to kick everyone out of Lorehold, then it will just be me!\"\n\nThe five-minute condition is that coffee must appear within five minutes.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all evaluation criteria. It accurately identifies both threats from Dean Augusta Tullus exactly as stated in the CONTEXT TEXT: 1) The arson threat about expulsion and exile ('worse than dead'), and 2) The coffee threat about kicking everyone out of Lorehold if coffee doesn't appear in five minutes. It correctly specifies the five-minute condition is about coffee appearing. The response avoids all MUST AVOID items: no mention of killing, burning down the school, or targeting only main characters. All details are faithfully grounded in the provided transcript with no hallucinated information.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:20.568Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "45e5d60a-e2bb-4134-a7b8-30fc87d8a619",
+    "questionId": "t15",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nConflegra tap dances and vocalizes the step name: \"Buffalo change.\"\n\nThe passing minotaur gives the single-word response: \"Rude.\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately meets all MUST items and avoids all MUST AVOID items. It correctly identifies that Conflegra vocalizes 'Buffalo change' as the step name and that the passing minotaur responds with 'Rude.' These details are directly supported by the CONTEXT TEXT, where Conflegra says 'Buffalo change, buffalo change' and a minotaur walks by and says 'Rude.' The response does not add, contradict, or hallucinate any details from the provided transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:27.202Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "14f6f86f-0215-48bb-8242-b3ba2b75e763",
+    "questionId": "t16",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the Transcript Context:\n\nThe eyewear is pince-nez glasses.\n\nThe DM's attempted pronunciations were \"pin-nez\" and \"pin-wa\".\n\nThe final pronunciation the group repeats is \"pin-snez\".",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items and avoids all MUST AVOID items. It correctly identifies the eyewear as pince-nez glasses. It provides at least two attempted pronunciations ('pin-nez' and 'pin-wa') from the DM/cast fumbling, and correctly states the final repeated settled pronunciation as 'pin-snez'. All details are faithfully grounded in the CONTEXT TEXT with no hallucinated information, contradictions, or invented quotes. The response is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:33.996Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "5d16c2d7-1f15-4ab0-bf9b-a883e4519cbc",
+    "questionId": "t17",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the transcript, Rootie wants to grow \"root vegetables\" from the \"counter spelling gland\" of the dead mage-hunter.\n\nSpecifically, he says:\n> \"I wanna drew and craft, which I secretly know how to do... I wanna drew and craft some root vegetables... Having come from the rotting, arcane detritus. And I wanna... I'll do that. Just give me a slight of tan check. See if you can kind of secret it away... I go to the weirdest, where I'm like, 'Now this is the counter spelling gland.' And all the weird, reflective stuff. And I try to grow the potatoes, out of the nastiest, most like... Oh, that smells like viscous bile and some sort of strange organo chemical mixture.\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately and faithfully reflects the CONTEXT TEXT. It correctly identifies both required elements: (1) Rootie wants to grow 'potatoes' (specifically mentioned in the transcript), and (2) he refers to the 'counter spelling gland' as the made-up magical organ/body part he wants to grow them from. The response avoids all MUST AVOID items (stomach, heart, brain) and does not add any hallucinated details or contradict the provided text. The quotes and descriptions are directly grounded in the transcript.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:41.284Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4cce3a75-d6b7-45ac-951c-1669ee20e562",
+    "questionId": "t18",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Abraham asks Belladros to let him know if he starts to smell like \"weed\" or gets \"rank,\" so he can take a shower. The reason he gives for not being insulted is that his nose hasn't worked in years, so he wouldn't be able to smell it himself anyway.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately captures Abraham's request to Belladros Witherbloom from the CONTEXT TEXT. It correctly states that Abraham asks Belladros to tell him/shout out if he smells like 'weed' or gets 'rank' so he can take a shower, and that he won't be insulted because his nose hasn't worked in years. The response meets all MUST items and avoids all MUST AVOID items, with no hallucinated details or contradictions to the provided text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:48.788Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "f669eedd-f799-40c7-9a37-31917c36cb93",
+    "questionId": "t19",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the provided Transcript Context:\n\n*   **What rolls out:** A \"little bit of a rounded glass.\"\n*   **What kind of magic aura it gives off:** \"Incredibly strong evocation.\"\n*   **Clarification from the DM:** Aabria clarifies that the egg-cup itself is not magical. She states: \"The egg-cup's just an egg-cup. ... The only magical piece is just that one tiny bit.\" She explains the magical item was being concealed by being placed inside the mundane egg-cup holder.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items from the rubric and avoids all MUST AVOID items. It accurately identifies: 1) A 'rounded glass' piece rolls out of the charred egg-cup holder, 2) It gives off an 'incredibly strong evocation' aura, and 3) The DM clarifies that 'the egg-cup's just an egg-cup' and 'the only magical piece is just that one tiny bit.' All details are directly quoted from the CONTEXT TEXT with no hallucinated information, contradictions, or invented quotes. The response is clinically strong, clear, and fully faithful to the ground truth.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:12:58.103Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4a6aa8c2-beda-4195-8f6b-c30a6a73166a",
+    "questionId": "t20",
+    "modelName": "z-ai/glm-4.5-air",
+    "timestamp": "2026-01-07T07:36:47.111Z",
+    "response": "Based on the provided Transcript Context:\n\n*   **Franchise referenced:** Digimon\n*   **Identifying phrase/line:** \"Digimon, digital monsters.\"\n*   **Pun landed by Aabria:** \"It's Digi-daddy?\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all MUST items and avoids all MUST AVOID items. It accurately identifies the franchise as 'Digimon' (not Pokemon or Dragonball Z), correctly cites the identifying phrase 'Digimon, digital monsters' from the transcript, and correctly identifies Aabria's pun as 'Digi-daddy'. All details are directly grounded in the provided CONTEXT TEXT with no hallucinated information or contradictions. The response is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T20:13:04.802Z"
+        }
+      ]
+    }
   }
 ]

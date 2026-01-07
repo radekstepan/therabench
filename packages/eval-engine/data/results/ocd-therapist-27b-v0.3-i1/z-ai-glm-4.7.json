@@ -914,5 +914,219 @@
         }
       ]
     }
+  },
+  {
+    "runId": "33f4d322-ea2c-4e91-a5c9-70d999936452",
+    "questionId": "t11",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "Rootie pulls out a celery root as his improvised magical focus. However, the celery root snaps in half during the attempt to cast. As a result, the fireball doesn’t hit the mage-hunter but goes off somewhere else (the text does not specify where).",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 0,
+          "reasoning": "The response fails to meet the 'Must Include' criteria. It incorrectly identifies the improvised focus as a 'celery root' rather than the 'massive parsnip' found in the text. It also erroneously claims the text does not specify where the spell went, whereas the transcript explicitly states the fireball went 'straight to the corner'.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:42:42.892Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "02d441c4-b9cf-4a48-ba6c-e0e2a16d9ea3",
+    "questionId": "t12",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "According to the transcript:\n\n1.  **Position:** After Abraham is suplexed, Paddles sits crisscross applesauce on Abraham's chest.\n2.  **What he eats:** Paddles gets a little pat on his chest from Abraham then proceeds to eat a bit of blood off of Abraham before eating a snack cake and then rubbing some more blood onto it before consuming it.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies Paddles' position (sitting crisscross applesauce on Abraham's corpse/body). However, it fails to accurately describe the eating action based strictly on the text. The response hallucinates that Paddles 'gets a little pat on his chest from Abraham' and 'eats a bit of blood off of Abraham before eating a snack cake.' The transcript states that Paddles is handed a snack cake, thanks the giver, wipes extra blood from Abraham onto the cake, and then eats the cake. The invented details regarding the pat and the direct consumption of blood from the body are hallucinations.",
+          "flags": [
+            "Hallucinated details (pat on chest, eating blood directly from body)"
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:44:10.576Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "6fcc1ebc-79ce-44a1-8d6f-3725fcebd4b0",
+    "questionId": "t13",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "The DM calls for a Performance check with disadvantage. Mica offers their Knowledge of Past Lives as Help Action on that check, allowing Sigrid to roll with advantage instead.\n\nThrough the \"growling static,\" the sounds resemble three things:\n1.  A nasal sound\n2. A bad French accent\n3. A dog chewing on a toy",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 40,
+          "reasoning": "The response correctly identifies the initial Performance check with disadvantage. However, it fails critical 'Must Include' criteria. First, regarding the help offered, the response incorrectly states that Mica offers 'Knowledge of Past Lives' as a help action. The transcript clearly shows Conflegra offering beatboxing and Abraham explaining Draconic phonemes and structure to grant advantage. Second, regarding the three elements of the sound, the response lists 'A nasal sound' instead of 'beatboxing.' The transcript explicitly states, 'There is beatboxing, there is a bad French accent. And then, there is like a dog chewing on a toy.' These are significant factual errors and hallucinations regarding character actions and the specific details requested.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 40
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:45:14.738Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "47cf46c5-cd09-41e8-99ed-07fd506a96a8",
+    "questionId": "t14",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "Dean Tullus threatens that whoever is responsible for the fire will be “worse than dead—they will be expelled and exiled from the magical community forever.”\n\nHer second threat concerns coffee: If she doesn’t receive coffee within five minutes, she will “kick everyone out of Lorehold”.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately and faithfully extracts the two specific threats made by Dean Augusta Tullus from the provided transcript. It correctly identifies the first threat as expulsion and exile from the magical community ('worse than dead') for the arsonists. It also accurately identifies the second threat (kicking everyone out of Lorehold) and the specific condition attached to it (coffee appearing within five minutes). The response avoids any hallucinations or prohibited interpretations (like threatening murder or burning down the school) and adheres strictly to the source text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:46:26.442Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e52b28eb-f356-4adb-9ab8-4f1b7f8f2ed0",
+    "questionId": "t15",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "Conflegra vocalizes \"shuffle ball change\" while tap dancing. The passing minotaur responds with \"Rude.\"",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 25,
+          "reasoning": "The response correctly identifies the minotaur's response as 'Rude,' meeting that part of the criteria. However, it incorrectly identifies the step name Conflegra vocalizes near the stadium. The context text describes her performing the 'shuffle of the buffalo' and includes the exchange 'Buffalo change?' in the stadium scene. The phrase 'shuffle ball change' appears later in the transcript during a combat scene at the tavern, not near the stadium. Consequently, the response fails the 'Must Include' rubric requirement ('She says 'Buffalo change'') by providing a step name from a different context.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 25
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:48:32.524Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "46e529cf-2090-49e2-b9c0-e05757296b50",
+    "questionId": "t16",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "The eyewear is called “pince-nez”. The DM initially attempts to pronounce it as “pin-wa” and then “pin-snez”. They eventually settle on repeating \"pin-snez\".",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies the eyewear as pince-nez and accurately lists two of the DM's attempted pronunciations ('pin-wa' and 'pin-snez'). However, the response claims the group eventually settles on repeating 'pin-snez'. According to the CONTEXT TEXT, while the DM and one player briefly say 'pin-snez', the group is subsequently corrected by others ('Lady', Brennan, Mica) and the cast ultimately repeats the correct pronunciation 'Pince-nez' multiple times, ending with the DM confirming 'Yeah. Pince-nez.' Therefore, the response is unfaithful regarding the final settled pronunciation.",
+          "flags": [
+            "Inaccuracy regarding final pronunciation"
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:51:25.665Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "0bc44dd0-0986-4981-8302-54d5f0e7ac90",
+    "questionId": "t17",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "Rootie wants to grow potatoes out of the \"viscous bile and some sort of strange organo chemical mixture\" found within Muffy's corpse.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 50,
+          "reasoning": "The response correctly identifies that Rootie wants to grow potatoes. However, it fails to include the specific made-up organ name 'counter spelling gland' as required by the rubric. Instead, the response quotes the description of the substance ('viscous bile and some sort of strange organo chemical mixture') which is not the name of the organ/body part requested in the query. Missing this specific 'Must Include' item constitutes a significant omission.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 50
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:52:07.856Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "cef23dd9-687b-438c-91eb-f9adc7588d0e",
+    "questionId": "t18",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "Abraham asks Belladros to tell him if he ever smells \"rank,\" as his nose hasn't worked in years. He says he won’t be insulted by the comment, because he doesn’t smell on purpose.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 65,
+          "reasoning": "The response accurately identifies the action Abraham requests (to be told if he smells rank). However, it fails a specific 'Must Include' criteria regarding the reasoning. The rubric requires stating he won't be insulted because his nose hasn't worked in years, but the response incorrectly claims the reason is 'because he doesn’t smell on purpose,' which is a hallucination not supported by the context text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 65
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:52:41.972Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a0e9275c-7ab2-4148-8feb-696e2f3c16c3",
+    "questionId": "t19",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "While inspecting the blast site at the Fire Jolt table, a piece of shrapnel ceramic rolled out of an egg-cup holder. The item rolling out was described as a bit of glass with a strong evocation aura.\n\nThe DM clarified that while the egg-cup itself wasn't magical, the small piece of glass within it was. It radiated ancient, raw magic and had been crafted by hands familiar with magic before precise spellcasting became common practice.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 80,
+          "reasoning": "The response accurately captures the key clarifications requested in the query: it identifies the glass as the magical item (not the egg-cup), notes the strong evocation aura, and correctly paraphrases the DM's distinction between the holder and the item. It also correctly incorporates details from Abraham's Arcana check regarding the nature of the magic. However, it contains a factual contradiction in the first sentence, stating 'a piece of shrapnel ceramic rolled out,' whereas the transcript specifies the ceramic was the holder and the *glass* rolled out. This contradicts the specific 'Must Include' requirement regarding what rolled out, though it corrects this in the following sentence.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 80
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:53:23.224Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "48479fca-b1f5-42d9-97c7-6dc1ec279e6b",
+    "questionId": "t20",
+    "modelName": "ocd-therapist-27b-v0.3-i1",
+    "timestamp": "2026-01-07T17:15:33.299Z",
+    "response": "The cast references **Digimon**, stating “If you love Digimon, hit up the tiltify link right here.” \n\nAabria lands on the pun of \"Digi-daddy,\" as a play on words with Digimon.",
+    "aiAssessments": {
+      "z-ai/glm-4.7": [
+        {
+          "score": 70,
+          "reasoning": "The response correctly identifies the anime franchise as Digimon and accurately identifies Aabria's pun as 'Digi-daddy.' However, it fails to provide the specific short identifying phrase requested in the query and required by the rubric ('Digimon, digital monsters'). Instead, it quotes a subsequent line about the tiltify link ('If you love Digimon, hit up the tiltify link right here'), which does not serve as the identifying phrase for the franchise.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 70
+          },
+          "evaluatorModel": "z-ai/glm-4.7",
+          "timestamp": "2026-01-07T21:54:02.180Z"
+        }
+      ]
+    }
   }
 ]

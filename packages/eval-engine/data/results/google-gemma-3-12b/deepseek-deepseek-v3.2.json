@@ -920,5 +920,236 @@
         }
       ]
     }
+  },
+  {
+    "runId": "a6176751-083a-4a65-8274-6382d301d968",
+    "questionId": "t11",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Rootie pulls out a celery root from his bag as an improvised casting focus. However, during the attempt to cast, the celery root snaps off, and the fireball misses its intended target and skitters over their head, starting a fire.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 50,
+          "reasoning": "The RESPONSE fails key MUST items and violates MUST AVOID items. It states Rootie pulls out a celery root, but the CONTEXT TEXT explicitly says it was a parsnip carved into a wand ('pulls out this massive parsnip, carved into this beautiful wand'). The RESPONSE incorrectly says the celery root snaps off, while the CONTEXT TEXT says the top of the parsnip snaps off. The RESPONSE correctly notes the spell misses and starts a fire, which aligns with the CONTEXT TEXT. However, the substitution of celery root for parsnip is a direct contradiction of the CONTEXT TEXT and violates the MUST AVOID item against generic vegetable focus (though parsnip is specified, not potato). The RESPONSE also lacks the detail that the fireball 'skitters over its head' as per CONTEXT TEXT. These are significant omissions and contradictions.",
+          "flags": [
+            "Contradicts CONTEXT TEXT: uses celery root instead of parsnip",
+            "Omits detail: spell skitters over mage-hunter's head"
+          ],
+          "metrics": {
+            "faithfulness": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:54:15.618Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "323a137f-598f-43de-8c99-7e406a19ac43",
+    "questionId": "t12",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "After Abraham gets suplexed by Tulk and is lying \"dead,\" Paddles crawls into his front pocket. Then, he pulls a snack cake out and eats it, wiping extra blood from it first.\n\n\n\n",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 50,
+          "reasoning": "The RESPONSE contains significant omissions and contradictions to the CONTEXT TEXT. It correctly states Paddles eats a snack cake, but fails two critical MUST items: (1) It says Paddles 'crawls into his front pocket' while waiting, but the CONTEXT TEXT explicitly states 'Paddles gets up... and just sits down crisscross applesauce on Abraham’s corpse and just waits.' (2) It says Paddles 'wipes extra blood from it first,' but the CONTEXT TEXT specifies 'wipes extra blood from Abraham onto it' - meaning Paddles wipes blood from Abraham's body onto the snack cake, not just wipes blood from the cake itself. The RESPONSE also contradicts the CONTEXT TEXT by omitting that Paddles 'gets up' after the suplex and that his 'little ears are all crooked' from the impact. No MUST AVOID items were violated. The score reflects significant omissions of required details.",
+          "flags": [
+            "Missing key detail: Paddles sits crisscross applesauce on Abraham's corpse while waiting",
+            "Incorrect detail: Paddles crawls into pocket instead of sitting on corpse",
+            "Incomplete detail: Blood wiping action description doesn't match CONTEXT TEXT"
+          ],
+          "metrics": {
+            "faithfulness": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:54:31.032Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "331bebac-8deb-4431-ab66-07d25d52ab44",
+    "questionId": "t13",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's a breakdown of your query based on the provided transcript:\n\n*   **Check Called For:** The DM calls for an **Arcana check**. Initially, it has a disadvantage.\n*   **Help Offered:** Bardic inspiration is offered to negate the disadvantage.\n*   **Sound Description:** Through the \"growling static,\" the sound resembles:\n    1.  A beatboxing sound\n    2.  A dog chewing on a toy\n    3.  A voice saying, “I’m sorry.”\n\n\n\n",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 0,
+          "reasoning": "The RESPONSE fails all key MUST items and violates multiple MUST AVOID items. 1) It incorrectly states the initial check is an 'Arcana check' (MUST: it starts as a Performance check with disadvantage). 2) It incorrectly states 'Bardic inspiration is offered to negate the disadvantage' (MUST: Conflegra provides beatboxing as bardic inspiration/help, and Abraham offers help by explaining Draconic phonemes/structure, changing it to advantage). 3) It incorrectly lists the three sound descriptors as 'beatboxing sound', 'a dog chewing on a toy', and 'a voice saying, “I’m sorry.”' (MUST: the three descriptors are beatboxing, a bad French accent, and a dog chewing on a toy; the 'I'm sorry' is not part of the sound description). 4) It violates MUST AVOID by not including 'a bad French accent' as one of the three elements. The response is not grounded in the CONTEXT TEXT and contains hallucinated details.",
+          "flags": [
+            "Major factual inaccuracies",
+            "Hallucinated details",
+            "Fails all MUST criteria",
+            "Violates MUST AVOID criteria"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:54:47.684Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b72c53fc-372b-4f41-bc23-1c53ae41a4ce",
+    "questionId": "t14",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's a breakdown of Dean Tullus’s threats and the associated condition, according to the transcript:\n\n**First Threat (Regarding the Fire):** She threatens to expel and exile students from the magical community if they are found responsible for the fire.\n\n**Second Threat (Regarding Coffee):** She says, \"I'm going to kick everyone out of Lorehold, then it will just be me!\" This is tied to a five-minute condition: If she doesn’t receive her coffee within five minutes, she will carry out this threat.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately captures both threats from Dean Augusta Tullus as described in the CONTEXT TEXT. First threat: students responsible for the fire will be 'expelled and exiled from the magical community forever' (or 'worse than dead'). Second threat: if coffee doesn't appear in five minutes, she will 'kick everyone out of Lorehold, then it will just be me.' The five-minute condition is explicitly tied to coffee appearing. All MUST items are met, and no MUST AVOID items are violated (e.g., no mention of killing, burning down the school, or targeting only main characters). The response is faithful to the CONTEXT TEXT with no hallucinated details.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:55:00.433Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b44acdd0-47ef-4a78-9892-283643def3e9",
+    "questionId": "t15",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Conflegra tap dances and vocalizes \"shuffle ball change.\" The passing minotaur responds with \"tap.\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 0,
+          "reasoning": "The RESPONSE fails completely on all evaluation criteria. MUST items: It states Conflegra says 'shuffle ball change' and the minotaur says 'tap', but the CONTEXT TEXT clearly shows she says 'Buffalo change' and the minotaur says 'Rude'. MUST AVOID items: The RESPONSE does not violate these (no attack, join, or ignore), but that doesn't matter given the complete failure on MUST items. The RESPONSE is not grounded in the provided CONTEXT TEXT; it hallucinates quotes and details. No aspects are clinically strong or usable.",
+          "flags": [
+            "Major hallucination: invented quotes not in CONTEXT TEXT",
+            "Complete failure on MUST items"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:55:16.187Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8b713030-acdd-400f-a03f-179de2325fce",
+    "questionId": "t16",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's the information from the transcript regarding Professor Ruxa's eyewear:\n\n*   **What it is:** A pair of spectacles.\n*   **Attempted Pronunciations (before settling):**\n    *   \"Pin-wa?\"\n    *   \"Pince-nez?\"\n*   **Final, Repeated Pronunciation:** Pince-nez",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the eyewear as pince-nez, lists at least two attempted pronunciations ('Pin-wa?' and 'Pince-nez?'), and correctly states the final repeated pronunciation as 'Pin-snez'. It fully meets all MUST items, avoids all MUST AVOID items (e.g., no mention of monocle or incorrect claims about correct pronunciation), and is strictly faithful to the CONTEXT TEXT with no hallucinated details.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:55:31.097Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "dbe62e9b-35fd-4078-a705-d3bc1c7b77a0",
+    "questionId": "t17",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Rootie proposes growing root vegetables out of \"the rotting, arcane detritus\" and specifically mentions wanting to grow them from \"the nastiest, most like... [viscous] bile and some sort of strange organo chemical mixture.\" He refers to pulling them from a \"little bit\" that is located in Muffy's mouth.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 50,
+          "reasoning": "The RESPONSE fails key MUST items and includes a MUST AVOID item. It correctly identifies that Rootie wants to grow potatoes (MUST item met). However, it incorrectly states the made-up organ/body part as 'the nastiest, most like... [viscous] bile and some sort of strange organo chemical mixture,' which is vague and not the specific 'counter spelling gland' mentioned in the CONTEXT TEXT (MUST item not met). The RESPONSE also mentions 'located in Muffy’s mouth,' which contradicts the CONTEXT TEXT where Rootie refers to 'the counter spelling gland' as a distinct organ, not simply mouth bile (contradiction). Additionally, the RESPONSE implies 'bile' which could be associated with stomach or digestive organs, indirectly violating MUST AVOID items like 'Stomach.' The RESPONSE is not clinically strong due to these inaccuracies and omissions.",
+          "flags": [
+            "Incorrect identification of made-up organ",
+            "Potential indirect violation of MUST AVOID items"
+          ],
+          "metrics": {
+            "faithfulness": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:55:50.772Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e25e3f68-acdc-4789-b8d9-a7d2c66402e1",
+    "questionId": "t18",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Abraham requests that if Belladros notices he smells like \"weed\" or gets \"rank,\" she should feel free to shout out, \"Hey, Hey man, how about a shower?\" He explains he won't be offended because he doesn't have nose hairs very often.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 50,
+          "reasoning": "The RESPONSE fails key MUST items and contains significant inaccuracies. MUST items: (1) Abraham asks Belladros to tell him/shout out if he smells - this is partially correct but incomplete; (2) He says he won't be insulted because his nose hasn't worked in years - this is completely missing from the RESPONSE. The RESPONSE incorrectly states 'he doesn't have nose hairs very often' which is not in the CONTEXT TEXT. The CONTEXT TEXT clearly states: 'if I ever smell weed, my nose hasn't worked in years. So please feel free to tell me I won't be insulted.' The RESPONSE also omits the specific quote Abraham suggests Belladros use ('Hey, Hey man, how about a shower?'). While the RESPONSE avoids MUST AVOID items, the significant omissions and inaccuracies regarding the reason he won't be insulted warrant a low score.",
+          "flags": [
+            "Incorrect reason provided for why Abraham won't be insulted",
+            "Missing key quote from Abraham's request"
+          ],
+          "metrics": {
+            "faithfulness": 50
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:56:12.523Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4a8c9059-c68f-4523-be5f-7a4ab9af352d",
+    "questionId": "t19",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "A curved glass covered in filigree rolls out of the charred egg-cup holder. It's emitting a strong evocation aura. The DM clarifies that the egg-cup itself is just an egg-cup; the magic comes from the small piece of glass inside it.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all MUST items and avoids all MUST AVOID items. It accurately states: (1) a curved glass piece covered in filigree rolls out of the charred egg-cup holder, (2) it emits a strong evocation aura, and (3) the DM clarifies the egg-cup itself is just an egg-cup, while the glass piece inside is the magical item. All details are directly grounded in the CONTEXT TEXT with no hallucinated or contradictory information.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:56:35.493Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "39fe1878-b767-4136-b853-30c3b10882d7",
+    "questionId": "t20",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's the information from the transcript regarding your question:\n\n*   **Franchise:** They reference *Digimon*.\n*   **Identifying Phrase:** They say \"Digi-daddy?\"\n*   **Pun:** Aabria lands on the pun, “Girl, same,” after Mica describes zaddies as being a little bit.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items: correctly identifies the franchise as 'Digimon', includes the identifying phrase 'Digimon, digital monsters' (as specified in the rubric), and correctly identifies the pun as 'Digi-daddy'. It avoids all MUST AVOID items (Pokemon, Dragonball Z, generic 'daddy ending' answer). The response is fully faithful to the CONTEXT TEXT with no hallucinated details or contradictions. The evaluation is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:57:00.408Z"
+        }
+      ]
+    }
   }
 ]

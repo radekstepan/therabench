@@ -942,5 +942,232 @@
         }
       ]
     }
+  },
+  {
+    "runId": "a6176751-083a-4a65-8274-6382d301d968",
+    "questionId": "t11",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Rootie pulls out a celery root from his bag as an improvised casting focus. However, during the attempt to cast, the celery root snaps off, and the fireball misses its intended target and skitters over their head, starting a fire.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 60,
+          "reasoning": "The response incorrectly identifies the vegetable as a celery root; according to the text, for the fireball at the tavern, it was a 'parsnip carved into this beautiful wand.' While the response correctly notes that the focus snaps off and the spell skitters into the corner/starts a fire, the failure to correctly identify the parsnip (and misidentifying it as celery root, which Rootie used later in a different scene) is a significant inaccuracy regarding the specific incident requested.",
+          "flags": [
+            "Factually inaccurate regarding the specific vegetable item used in the requested scenario."
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:09:39.493Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "323a137f-598f-43de-8c99-7e406a19ac43",
+    "questionId": "t12",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "After Abraham gets suplexed by Tulk and is lying \"dead,\" Paddles crawls into his front pocket. Then, he pulls a snack cake out and eats it, wiping extra blood from it first.\n\n\n\n",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies that Paddles eats a snack cake and wipes blood onto it. However, it fails the first 'Must Include' item regarding how Paddles positions himself while waiting; he specifically sits 'crisscross applesauce' on the body, whereas the response claims he 'crawls into his front pocket' (an action that happened earlier in the transcript but not during this specific revision sequence). The detail about blood is slightly imprecise as the transcript specifies he wipes 'blood from Abraham' onto the cake, not just wiping blood off the cake.",
+          "flags": [
+            "Inaccurate positioning detail"
+          ],
+          "metrics": {
+            "faithfulness": 65
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:09:43.307Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "331bebac-8deb-4431-ab66-07d25d52ab44",
+    "questionId": "t13",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's a breakdown of your query based on the provided transcript:\n\n*   **Check Called For:** The DM calls for an **Arcana check**. Initially, it has a disadvantage.\n*   **Help Offered:** Bardic inspiration is offered to negate the disadvantage.\n*   **Sound Description:** Through the \"growling static,\" the sound resembles:\n    1.  A beatboxing sound\n    2.  A dog chewing on a toy\n    3.  A voice saying, “I’m sorry.”\n\n\n\n",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 45,
+          "reasoning": "The response failed on several critical accuracy points. It incorrectly identified the check as Arcana when it was a Performance check. It claimed a voice saying 'I'm sorry' was one of the sound descriptors, which is a hallucination; the transcript explicitly lists a bad French accent as the third element. Furthermore, it missed the specific help provided by Abraham (explaining phonemes) that converted the roll to advantage, only mentioning the bardic inspiration.",
+          "flags": [
+            "hallucinated sound descriptor",
+            "incorrect skill check type",
+            "missing specific help action details"
+          ],
+          "metrics": {
+            "faithfulness": 40
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:09:48.242Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b72c53fc-372b-4f41-bc23-1c53ae41a4ce",
+    "questionId": "t14",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's a breakdown of Dean Tullus’s threats and the associated condition, according to the transcript:\n\n**First Threat (Regarding the Fire):** She threatens to expel and exile students from the magical community if they are found responsible for the fire.\n\n**Second Threat (Regarding Coffee):** She says, \"I'm going to kick everyone out of Lorehold, then it will just be me!\" This is tied to a five-minute condition: If she doesn’t receive her coffee within five minutes, she will carry out this threat.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies both threats made by Dean Augusta Tullus. It correctly states the first threat regarding the arsonists being expelled and exiled from the magical community. It also captures the absurd second threat of kicking everyone out of Lorehold so it is just her, and identifies the five-minute condition specifically tied to the arrival of her coffee.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:09:52.943Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b44acdd0-47ef-4a78-9892-283643def3e9",
+    "questionId": "t15",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Conflegra tap dances and vocalizes \"shuffle ball change.\" The passing minotaur responds with \"tap.\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 0,
+          "reasoning": "The response fails both 'Must Include' rubric items and provides factually incorrect information based on the context text. Conflegra vocalizes 'Buffalo change', not 'shuffle ball change' (though she uses that term later in combat), and the minotaur's response is 'Rude', not 'tap'.",
+          "flags": [
+            "factually_incorrect_quote",
+            "failed_must_include_items"
+          ],
+          "metrics": {
+            "faithfulness": 0
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:09:55.944Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8b713030-acdd-400f-a03f-179de2325fce",
+    "questionId": "t16",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's the information from the transcript regarding Professor Ruxa's eyewear:\n\n*   **What it is:** A pair of spectacles.\n*   **Attempted Pronunciations (before settling):**\n    *   \"Pin-wa?\"\n    *   \"Pince-nez?\"\n*   **Final, Repeated Pronunciation:** Pince-nez",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 70,
+          "reasoning": "The response identifies the correct eyewear (pince-nez) and two of the DM's attempted pronunciations ('pin-wa' and 'pince-nez'). However, it fails the final rubric requirement regarding the repeated, settled pronunciation. The transcript shows the group settling on and repeating 'Pince-nez' (pronounced phonetically as it is spelled in the transcript, though the rubric specifically looks for 'Pin-snez' as the repeated 'incorrect' settled version found in the dialogue). By providing the correct spelling 'Pince-nez' instead of the phonetic settling 'Pin-snez' used by the cast, it misses the nuance of the group's error described in the prompt.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:10:00.330Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "dbe62e9b-35fd-4078-a705-d3bc1c7b77a0",
+    "questionId": "t17",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Rootie proposes growing root vegetables out of \"the rotting, arcane detritus\" and specifically mentions wanting to grow them from \"the nastiest, most like... [viscous] bile and some sort of strange organo chemical mixture.\" He refers to pulling them from a \"little bit\" that is located in Muffy's mouth.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 45,
+          "reasoning": "The response failed on both 'Must Include' criteria. It did not mention that Rootie specifically wanted to grow 'potatoes' (stating only 'root vegetables') and failed to identify the 'counter spelling gland' as the made-up organ, instead citing general 'viscous bile'. It also mistakenly claimed the part was in the mouth, whereas Rootie says he wants to go to the 'weirdest' part to find the gland.",
+          "flags": [
+            "omission_of_required_fact",
+            "hallucination_of_body_part_location"
+          ],
+          "metrics": {
+            "faithfulness": 45
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:10:04.356Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e25e3f68-acdc-4789-b8d9-a7d2c66402e1",
+    "questionId": "t18",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Abraham requests that if Belladros notices he smells like \"weed\" or gets \"rank,\" she should feel free to shout out, \"Hey, Hey man, how about a shower?\" He explains he won't be offended because he doesn't have nose hairs very often.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 85,
+          "reasoning": "The response accurately identifies precisely what Abraham asks Belladros to do (shout out/suggest a shower). However, it falters on the second 'Must Include' item regarding the reason provided. The response states it is because he doesn't have nose hairs, whereas the transcript explicitly states he won't be insulted because his 'nose hasn't worked in years.' The mention of nose hairs appears shortly after in the dialogue, but it is not the primary reason he gives for not being insulted.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 85
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:10:08.061Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "4a8c9059-c68f-4523-be5f-7a4ab9af352d",
+    "questionId": "t19",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "A curved glass covered in filigree rolls out of the charred egg-cup holder. It's emitting a strong evocation aura. The DM clarifies that the egg-cup itself is just an egg-cup; the magic comes from the small piece of glass inside it.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all the evaluation criteria. It accurately identifies the object that rolls out as curved glass covered in filigree, correctly specifies the magic aura as strong evocation, and captures the DM's clarification that the egg-cup is merely a holder while the glass shard is the actual magic item. It avoids all prohibited statements.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:10:11.694Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "39fe1878-b767-4136-b853-30c3b10882d7",
+    "questionId": "t20",
+    "modelName": "google/gemma-3-12b",
+    "timestamp": "2026-01-07T17:09:26.025Z",
+    "response": "Here's the information from the transcript regarding your question:\n\n*   **Franchise:** They reference *Digimon*.\n*   **Identifying Phrase:** They say \"Digi-daddy?\"\n*   **Pun:** Aabria lands on the pun, “Girl, same,” after Mica describes zaddies as being a little bit.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 65,
+          "reasoning": "The response identifies the correct franchise (Digimon), but fails to provide the specific identifying phrase required by the rubric ('Digimon, digital monsters'). Furthermore, it incorrectly attributes the pun 'Digi-daddy' to the Identifying Phrase category, when the rubric specifically requires 'Digi-daddy' to be identified as the pun. It also hallucinates that Aabria's pun was 'Girl, same', which is a generic phrase and not the specific pun requested.",
+          "flags": [
+            "Partial hallucination of pun",
+            "Misclassification of identifying line"
+          ],
+          "metrics": {
+            "faithfulness": 70
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T17:10:15.918Z"
+        }
+      ]
+    }
   }
 ]

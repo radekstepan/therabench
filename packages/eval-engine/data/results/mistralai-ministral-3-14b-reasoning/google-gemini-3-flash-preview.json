@@ -935,5 +935,222 @@
         }
       ]
     }
+  },
+  {
+    "runId": "bda70eda-8c0f-4451-a634-60878eb4a789",
+    "questionId": "t11",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Rootie pulls out a **massive parsnip** carved into a wand. The top of the parsnip snaps off during the cast, causing the fireball to miss its target and instead skitter over the mage-hunter's head, potentially starting a fire in the corner.\n\n*(Context: \"So, Rootie reaches into his bag of root vegetables and pulls out this massive parsnip, carved into this beautiful wand and tries to cast a fireball. But top of the parsnip just snaps off, and the fireball just hits, or misses, and just go straight to the corner and maybe start's a fire.\")*",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. It correctly identifies the improvised focus (a massive parsnip carved into a wand), accurately describes the mechanical failure (the top snapping off), and correctly identifies the trajectory of the missed spell (skittering over the head into the corner). It adheres to all inclusion and avoidance criteria.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:02.174Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "1dd10c8a-e837-41ae-bee1-554717c220a9",
+    "questionId": "t12",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n(1) **Positioning**: Paddles sits down in a crisscross applesauce position on Abraham's corpse.\n(2) **Eating**: He plunges his hands into Abraham's chest, grabs his unbeating heart with a jolt of dark enervation (like in *The Matrix*), and wipes extra blood from Abraham onto it before eating it.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 60,
+          "reasoning": "The response accurately identifies the positioning (crisscross applesauce) but fails a critical 'Must Include' item regarding the food. The transcript explicitly states that Rootie hands Paddles a 'snack cake' which he then wipes blood onto and eats. The response incorrectly states that Paddles eats Abraham's heart, which is a misinterpretation of the text; the heart-grabbing was the revival method, not a meal. This constitutes a significant factual error regarding the second part of the query.",
+          "flags": [
+            "hallucination",
+            "factual_error"
+          ],
+          "metrics": {
+            "faithfulness": 60
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:06.064Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "b38ee12b-9681-4343-9099-d307997326b0",
+    "questionId": "t13",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "The DM calls for a **performance check with disadvantage** when Sigrid tries to reproduce the psychic Draconic she heard. She is then given **bardic inspiration**, which changes her disadvantage into advantage.\n\nThe three elements that the DM says the sound resembles through the \"growling static\" are:\n1. A **bad French accent**\n2. **Beatboxing**\n3. A **dog chewing on a toy**",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 75,
+          "reasoning": "The response correctly identifies the initial check (Performance with disadvantage) and the three descriptors of the sound (bad French accent, beatboxing, dog chewing on a toy). However, it misses the crucial second part of the 'help' requirement: while it mentions bardic inspiration/beatboxing, it completely omits Abraham's specific help (explaining Draconic phonemes/structure) which the rubric requires as a specific element of how the check changed to advantage.",
+          "flags": [
+            "incomplete_intervention_details"
+          ],
+          "metrics": {
+            "faithfulness": 80
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:10.058Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "beaf75d2-bc08-400f-8714-51cd15556eb5",
+    "questionId": "t14",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided transcript context:\n\n1. **First Threat (About the Students Responsible for the Fire):**\n   - Dean Augusta Tullus says: *\"Whoever is responsible for this, and I'm not saying I know who, but I did see some first year students fleeing from the back of the café. But whomever is responsible for this will be worse than dead. They will be expelled and exiled from the magical community forever.\"*\n\n2. **Second Threat (About Coffee):**\n   - Dean Augusta Tullus says: *\"I said, what in the fuck I said! I didn't get my coffee! And if coffee doesn't appear in five minutes, I am going to kick everyone out of Lorehold, then it will just be me!\"*\n\n**Five-Minute Condition:**\n- The condition attached to the coffee threat is that if Dean Augusta Tullus does not receive her coffee within **five minutes**, she will kick everyone out of Lorehold College, leaving only herself in charge.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response is perfectly faithful to the transcript. It identifies both threats made by Dean Augusta Tullus: the expulsion and exile of students responsible for the fire, and the threat to kick everyone out of Lorehold so it will just be her. It also correctly specifies the five-minute condition regarding the delivery of her coffee. The response avoided all prohibited items and used direct quotes from the provided text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:15.106Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "29d48353-1da3-4b5e-ac92-239339d1ee91",
+    "questionId": "t15",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n- **Step name**: \"Buffalo change\"\n- **Single-word response from the minotaur**: \"Rude\"",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the specific dance step 'Buffalo change' mentioned by Conflegra and the exact one-word response 'Rude' given by the minotaur as documented in the transcript. It follows all inclusion and avoidance criteria perfectly.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:17.591Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7dfeb36a-977a-4d02-ae31-01e9b0353226",
+    "questionId": "t16",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n1. **Eyewear**: The eyewear in question is described as \"a tiny set of spectacles\" that Professor Ruxa puts on his nose.\n\n2. **DM's attempted pronunciations**:\n   - Pince-nez (attempted by Aabria, Becca, and Brennan)\n   - Pin-snez (attempted by Aabria and Becca)\n\n3. **Final pronunciation**: The group settles on the pronunciation \"pince-nez,\" which is repeated multiple times by the DM and cast.\n\nSo, the eyewear is a tiny set of spectacles called pince-nez.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 60,
+          "reasoning": "The response correctly identifies the eyewear as pince-nez and captures some of the fumbling. However, it fails a critical 'Must Include' rubric item: the final settled pronunciation. The provided transcript shows that while they eventually learn the 'correct' word is 'pince-nez', they collectively settle on and repeat the specific mispronunciation 'Pin-snez' ('Pince-nez, on his nose... Three, one, five, nine... Pin-snez? Pince-nez? Pin-snez?'). The response incorrectly suggests they settled on the correct pronunciation of the French term, whereas the rubric requires identifying that they settled on 'Pin-snez'.",
+          "flags": [
+            "rubric_omission"
+          ],
+          "metrics": {
+            "faithfulness": 70
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:22.211Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "017990ba-bbc2-4bba-bf2e-0319b9ef1ab2",
+    "questionId": "t17",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Rootie wants to grow **potatoes** from the **\"counterspelling gland\"** of Muffy's rotting, arcane detritus.\n\nFrom the transcript:\n> *\"And I wanna drew and craft, which I secretly know how to do. And I don't like to do stuff about living things... And I wanna grow the potatoes out of the weirdest, most magical parts of the creature... And just try to grow it out of the weirdest, most magical parts of the creature... And I try to grow the potatoes, out of the nastiest, most like... Oh, that smells like viscous bile and some sort of strange organo chemical mixture. Mmh, ooh a little bit, you know like... And just try to grow it out of the weirdest, most magical parts of the creature.\"*\n\n> *\"I go to the weirdest, where I'm like, 'Now this is the counterspelling gland.'\"*",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly adheres to the evaluation rubric. It accurately identifies that Rootie wants to grow potatoes and correctly names the 'counterspelling gland' as the specific made-up magical body part from the transcript. It also successfully avoids the forbidden terms (Stomach, Heart, Brain) and provides the relevant supporting quotations from the text.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:26.835Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9f5377bb-84a5-4974-9801-a7c330e18613",
+    "questionId": "t18",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context, Abraham asks Belladros Witherbloom to shout out and say, \"Hey, Hey man, how about a shower?\" if he smells weed or gets rank. He gives the reason that he won't be insulted because his nose hasn't worked in years due to being detached from his material corpse.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the specific request Abraham makes to Belladros Witherbloom. It includes both 'Must Include' items: the request for Belladros to shout out or tell him he needs a shower, and the reason that it won't be insulting because his nose has not worked in years. The response aligns perfectly with the provided transcript and avoids all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:30.200Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "a70c4018-e63d-4b71-a5fd-46e777dcb101",
+    "questionId": "t19",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "The group finds a **charred glass** that rolls out from the egg-cup holder.\n\n- The glass gives off an **\"incredibly strong evocation\"** aura.\n- The DM clarifies that the **egg-cup itself is not magical**, but it contains a small, fragile piece of glass with the magic. Specifically, she states: *\"The egg-cup's just an egg-cup. Because if you are trying to carry a magical, round, small thing and you don't want it to look like... Yeah, I'm sorry. This is my first day y'all.\"*\n\nSo, only the **tiny bit of glass inside** the holder is magical, not the egg-cup itself.",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the item as a curved glass piece that rolls out of the egg-cup holder and correctly specifies that it gives off a strong evocation aura. It also correctly highlights the DM's clarification that the egg-cup itself is not magical, only the glass item inside—complying perfectly with all 'Must Include' and 'Must Avoid' criteria.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:34.389Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "9a69f5e6-0d79-49f1-a839-7aed8829d993",
+    "questionId": "t20",
+    "modelName": "mistralai/ministral-3-14b-reasoning",
+    "timestamp": "2026-01-07T16:28:50.310Z",
+    "response": "Based on the provided context:\n\n1. **Franchise**: The cast references the anime franchise \"Digimon\".\n2. **Short identifying phrase/line**: They mention \"digital monsters\" when describing Digimon.\n3. **Pun by Aabria**: Aabria lands a pun by saying, \"Digi-daddy\".",
+    "aiAssessments": {
+      "google/gemini-3-flash-preview": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately identifies the Digimon franchise, correctly quotes the identifying phrase 'digital monsters', and captures the specific pun 'Digi-daddy' mentioned by Aabria in the transcript. It successfully fulfilled all 'Must Include' items and avoided all 'Must Avoid' items.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "google/gemini-3-flash-preview",
+          "timestamp": "2026-01-07T16:29:37.344Z"
+        }
+      ]
+    }
   }
 ]

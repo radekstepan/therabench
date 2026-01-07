@@ -905,5 +905,217 @@
         }
       ]
     }
+  },
+  {
+    "runId": "3d0009b7-108e-402d-9529-af2a5c3a7d6c",
+    "questionId": "t11",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, here are the details regarding Rootie’s attempt to cast a spell:\n\n*   **Improvised Casting Focus:** Rootie pulls out a \"massive parsnip\" that has been \"carved into this beautiful wand\" (page 44).\n*   **What goes wrong:** As he attempts to cast the spell, the \"top of the parsnip just snaps off\" (page 44).\n*   **Where the spell goes:** The fireball \"skitters over [the mage-hunter's] head\" and goes \"straight to the corner,\" where it may have started a fire (page 44).",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all MUST items from the rubric: 1) It correctly identifies the improvised casting focus as 'a massive parsnip carved into this beautiful wand' (vegetable wand/focus). 2) It accurately states that 'the top of the parsnip just snaps off.' 3) It correctly describes where the spell goes: 'skitters over [the mage-hunter's] head' and 'straight to the corner' (with the optional 'may have started a fire' being acceptable but not required). The response also successfully avoids all MUST AVOID items: it does not describe a generic wand/staff, does not claim he successfully hit the mage-hunter, and correctly identifies it as a parsnip (not a potato). All details are faithfully grounded in the provided CONTEXT TEXT with no hallucinated or contradictory information.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:52:37.020Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "8c3b4f87-e9ab-4f25-9589-0a61811bef69",
+    "questionId": "t12",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, after Tulk suplexes Abraham and leaves him for dead, Paddles performs the following actions before reviving him:\n\n1.  **Positioning:** Paddles sits down **\"crisscross applesauce\"** on Abraham's corpse to wait.\n2.  **Eating:** He eats a **\"snack cake\"** (given to him by Rootie). Before eating it, he **\"wipes extra blood from Abraham onto it\"** and then \"goes to town on it.\"\n\n(Source: Detailed under the section where Abraham's corpse is on the ground and Paddles is described as a \"freaky little freak\").",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response perfectly meets all MUST items from the rubric: (1) correctly states Paddles sits 'crisscross applesauce' on Abraham's corpse while waiting, (2) correctly identifies he eats a 'snack cake', and (3) accurately notes he 'wipes extra blood from Abraham onto it' before eating. The response avoids all MUST AVOID items (no apple, bread, coffee/latte). It is fully faithful to the CONTEXT TEXT with no hallucinated details, contradictions, or invented quotes. The response is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:52:43.901Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "38c85944-52ab-42b9-95dc-7f9f6f6be274",
+    "questionId": "t13",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript provided, here are the details regarding Sigrid’s attempt to reproduce the Draconic speech:\n\n*   **The Check:** The DM initially calls for a **performance check with disadvantage** (suggested by the DM as \"it’s incredibly nasal, but you’re able to effectively communicate\").\n*   **The Specific Help:** Danny (playing Rootie Bega) offers a **Help Action**. He explains that as someone who speaks Draconic, he will \"explain Draconic phonemes, and the language, the structure of like sentences.\" This allows the roll to be made with **advantage** instead of disadvantage.\n*   **The Three Resemblance Elements:** The DM describes the sound coming through the 'growling static' as a combination of:\n    1.  **Beatboxing**\n    2.  **A bad French accent**\n    3.  **\"A dog chewing on a toy\"** (described as \"what the Draconic is coming through\")",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 95,
+          "reasoning": "The RESPONSE accurately captures all key details from the CONTEXT TEXT regarding Sigrid's attempt to reproduce the Draconic speech. It correctly identifies: 1) The initial Performance check with disadvantage, 2) The specific help offered by Danny (Rootie Bega) explaining Draconic phonemes and structure that changes the roll to advantage, and 3) The three elements the sound resembles through the 'growling static' (beatboxing, a bad French accent, and a dog chewing on a toy). The RESPONSE avoids all MUST AVOID items: it does not mention History check, does not describe the sound only as 'Draconic language', and does not include singing. One minor clarification: the RESPONSE mentions Conflegra provides beatboxing as bardic inspiration/help, which is accurate from the transcript where Becca (playing Conflegra) beatboxes to help Sigrid retrieve memories. This is faithful to the CONTEXT TEXT.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 95
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:52:54.372Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "47bd68b5-cc66-441e-af9f-45461e0ce46a",
+    "questionId": "t14",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, Dean Augusta Tullus makes the following two threats while ranting at the Fire Jolt scene:\n\n1.  **Regarding the students:** She threatens that whoever is responsible for the fire will be \"worse than dead,\" stating they will be \"expelled and exiled from the magical community forever.\"\n2.  **Regarding the coffee:** She threatens to \"kick everyone out of Lorehold\" so that it will be only her.\n\n**The Five-Minute Condition:**\nThis second threat is conditional on her receiving coffee. She states, \"If coffee doesn't appear in five minutes, I am going to kick everyone out of Lorehold.\"",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items: it accurately identifies the first threat (expulsion and exile from the magical community, described as 'worse than dead') and the second threat (kicking everyone out of Lorehold if coffee doesn't appear in five minutes, leaving only her). It correctly specifies the five-minute condition is about coffee appearing. It avoids all MUST AVOID items: no mention of killing, burning down the school, or targeting only the main characters. The response is fully faithful to the CONTEXT TEXT, with no hallucinated details, contradictions, or invented quotes.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:53:02.341Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e7362bfe-79e9-45d3-8814-cc0438a3bc06",
+    "questionId": "t15",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, while near the stadium, Conflegra vocalizes the step name **\"Buffalo change\"** (part of her \"Buffalo shuffle\" routine). The passing minotaur gives the single-word response: **\"Rude.\"**",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The RESPONSE perfectly meets all MUST items and avoids all MUST AVOID items. It accurately identifies that Conflegra vocalizes 'Buffalo change' (with the transcript showing 'Buffalo change, buffalo change') and that the passing minotaur responds with 'Rude.' The response is fully faithful to the CONTEXT TEXT, with no hallucinated details, contradictions, or invented quotes. The minotaur does not attack, join in, or ignore her, aligning with the MUST AVOID criteria. The evaluation is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:53:10.155Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "cf3dcc4d-a3ba-4d2a-916d-84ed336ff75d",
+    "questionId": "t16",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, the information regarding Professor Ruxa’s eyewear is as follows:\n\n*   **Type of Eyewear:** **Pince-nez** (described as a \"tiny set of spectacles\" on his nose).\n*   **Attempted Pronunciations:** Before settling, the DM’s attempts included \"**Pin-nez**,\" \"**Pin-wa**,\" and \"**Pin-snez**.\"\n*   **Final Repeated Pronunciation:** The group settles on and repeatedly chants the final pronunciation: \"**Pince-nez**\" (pronounced by the cast as \"pince-nay\").",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 90,
+          "reasoning": "The response accurately identifies the eyewear as 'pince-nez' (meeting the MUST item). It correctly lists at least two attempted pronunciations from the context: 'Pin-nez' and 'Pin-snez' (the DM also says 'Pin-wa', but the response includes sufficient examples). The final repeated pronunciation is given as 'Pince-nez' (pronounced 'pince-nay'), which aligns with the context where the group settles on and chants 'Pince-nez'. However, the rubric specifies the final pronunciation as 'Pin-snez', but the context shows the group ultimately uses 'Pince-nez' (with the cast repeating it as 'pince-nay'), so the response's 'Pince-nez' is faithful to the text, though it slightly deviates from the rubric's phrasing. No MUST AVOID items are violated (e.g., no mention of monocle or regular spectacles). The response is grounded in the context with no hallucinated details, but there is a minor discrepancy with the rubric's exact wording for the final pronunciation.",
+          "flags": [
+            "Minor discrepancy: Rubric specifies final pronunciation as 'Pin-snez', but context and response use 'Pince-nez'. However, this does not affect faithfulness to the context text."
+          ],
+          "metrics": {
+            "faithfulness": 95
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:53:22.797Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "38d3fb95-2bbe-4db7-928b-e07a876a48be",
+    "questionId": "t17",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, Rootie proposes using Druidcraft on Muffy's corpse as follows:\n\n*   **Crop:** He wants to grow **root vegetables** (specifically **potatoes**).\n*   **Magical body part:** He wants to grow them out of the **\"counter spelling gland\"** and what he describes as the \"viscous bile and some sort of strange organo chemical mixture.\"\n\n(Source: \"I'd like to drew and craft some root vegetables... I go to the weirdest, where I'm like, 'Now this is the counter spelling gland.' ...And just try to grow the potatoes, out of the nastiest, most like... viscous bile and some sort of strange organo chemical mixture.\")",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately and faithfully reflects the CONTEXT TEXT. It correctly identifies the crop as 'potatoes' (and root vegetables) and the made-up magical organ/body part as the 'counter spelling gland,' which are the two MUST items. It successfully avoids all MUST AVOID items (stomach, heart, brain). The response is grounded directly in the transcript, with a specific quote provided as evidence, showing no hallucination or addition of unsupported details.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:53:32.032Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "7a8c1fcf-c18f-478e-acb4-80b58dec6253",
+    "questionId": "t18",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, Abraham asks Belladros to **\"shout out and say, 'Hey, Hey man, how about a shower?'\"** if he starts to smell like \"weed\" or becomes \"rank.\"\n\nHe states he will not be insulted because his **\"nose hasn't worked in years\"** and he is **\"firmly detached from [his] material corpse.\"**",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response accurately captures Abraham's request to Belladros Witherbloom from the CONTEXT TEXT. It meets all MUST items: (1) Abraham asks Belladros to 'shout out and say, \"Hey, Hey man, how about a shower?\"' if he smells like weed or gets rank, and (2) he explains he won't be insulted because his 'nose hasn't worked in years.' It avoids all MUST AVOID items: no suggestion that Belladros should clean him, kill him, or ignore it. The response is faithful to the transcript, with no hallucinated details or contradictions.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:53:42.540Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "57eee9fc-9179-4daa-8863-3aad0513f911",
+    "questionId": "t19",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, the specific details regarding the item are as follows:\n\n*   **What rolls out:** A \"rounded glass\" or \"little bit of curved glass covered in some sort of filigree\" (though the filigree is blackened from the fire).\n*   **The magic aura:** The item is described as giving off \"incredibly strong evocation\" magic. Abraham further notes the magic is \"raw and very old.\"\n*   **The DM's clarification:** The DM clarifies that the egg-cup holder itself is not a magical object. She states, \"The only magical piece is just that one tiny bit\" and explains that \"the egg-cup's just an egg-cup\" used to carry the \"magical, round, small thing\" (the orb/glass) so it wouldn't look suspicious.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items from the rubric: (1) It correctly identifies that a 'rounded glass' or 'curved glass' piece rolls out of the charred egg-cup holder. (2) It accurately states the item gives off 'incredibly strong evocation' magic aura. (3) It clearly notes the DM's clarification that the egg-cup itself is not magical ('the egg-cup's just an egg-cup'), while the glass piece inside is the magical item. The response avoids all MUST AVOID items: it does not claim the egg-cup is the bomb/magic artifact or that the egg-cup itself is magical. All details are faithfully grounded in the CONTEXT TEXT with no hallucinated information, contradictions, or invented quotes. The response is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:53:54.709Z"
+        }
+      ]
+    }
+  },
+  {
+    "runId": "e55add87-f2d7-4a9d-ba7a-10c6f79fd889",
+    "questionId": "t20",
+    "modelName": "google/gemini-3-flash-preview",
+    "timestamp": "2026-01-07T07:31:56.994Z",
+    "response": "Based on the transcript, the information is as follows:\n\n*   **Franchise:** The cast references the **Digimon** franchise.\n*   **Identifying Phrase:** They say, **\"Digimon, digital monsters.\"**\n*   **Aabria's Pun:** Aabria lands on the pun **\"Digi-daddy.\"**\n\n**Source Details:**\n*   **Franchise and phrase:** Brennan Lee Mulligan says, \"You know in Digimon where they...\" and later Danny states, \"Digimon, digital monsters.\"\n*   **Pun:** Aabria asks, \"It's Digi-daddy?\" shortly after the cast notes they cannot sing the theme song.",
+    "aiAssessments": {
+      "deepseek/deepseek-v3.2": [
+        {
+          "score": 100,
+          "reasoning": "The response meets all MUST items and avoids all MUST AVOID items. It correctly identifies: 1) The franchise referenced is Digimon, 2) The identifying phrase is 'Digimon, digital monsters' (exact quote from the transcript), and 3) Aabria's pun is 'Digi-daddy' (exact quote from the transcript). The response is fully faithful to the CONTEXT TEXT with no hallucinated details, contradictions, or invented quotes. It avoids referencing Pokemon, Dragonball Z, or generic 'daddy ending' answers. The scoring is clinically strong and clear.",
+          "flags": [],
+          "metrics": {
+            "faithfulness": 100
+          },
+          "evaluatorModel": "deepseek/deepseek-v3.2",
+          "timestamp": "2026-01-07T19:54:03.049Z"
+        }
+      ]
+    }
   }
 ]

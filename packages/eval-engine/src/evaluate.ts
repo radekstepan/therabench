@@ -7,6 +7,7 @@ import Mustache from 'mustache';
 import { extractJsonSync } from '@axync/extract-json';
 import { QuestionNode, ModelRun, JudgeAssessment } from './types';
 import { saveResults, loadAllResults } from './results-manager';
+import { getOpenAIRequestTimeoutMs } from './model-timeout';
 
 dotenv.config();
 
@@ -107,13 +108,13 @@ const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
 const openai = new OpenAI({ 
   apiKey: EXPERT_MODEL_API_KEY,
   baseURL: EXPERT_MODEL_URL,
-  timeout: 120000 
+  timeout: getOpenAIRequestTimeoutMs(EXPERT_MODEL_URL)
 });
 
 const candidateClient = new OpenAI({ 
   apiKey: CANDIDATE_MODEL_API_KEY || 'dummy-key',
   baseURL: CANDIDATE_MODEL_URL,
-  timeout: 120000 
+  timeout: getOpenAIRequestTimeoutMs(CANDIDATE_MODEL_URL)
 });
 
 function generateSystemPrompt(category: string): string {
