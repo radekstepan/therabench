@@ -20,17 +20,23 @@ export const RubricEditor = ({
   onReset
 }: RubricEditorProps) => {
   // Use template to render rubric content (handles both string criteria and array formats)
+  const mustInclude = rubric.mustInclude || [];
+  const mustAvoid = rubric.mustAvoid || [];
+  
   const rubricContent = Mustache.render(rubricDisplayTemplate, {
     criteria: rubric.criteria || '',
-    mustInclude: rubric.mustInclude || [],
-    mustAvoid: rubric.mustAvoid || []
+    mustInclude,
+    mustAvoid,
+    hasMustInclude: mustInclude.length > 0,
+    hasMustAvoid: mustAvoid.length > 0
   });
+  
   const [editedCriteria, setEditedCriteria] = useState<string>(rubricContent);
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     setEditedCriteria(rubricContent);
-  }, [rubric, isEditing]);
+  }, [rubric, isEditing, rubricContent]);
 
   const handleSave = () => {
     onSave({ criteria: editedCriteria });

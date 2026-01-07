@@ -22,10 +22,14 @@ export const QuestionEditModal = ({
 
   // Use template to render rubric content for editing
   const getRubricString = (rubric: any): string => {
+    const mustInclude = rubric.mustInclude || [];
+    const mustAvoid = rubric.mustAvoid || [];
     return Mustache.render(rubricDisplayTemplate, {
       criteria: rubric.criteria || '',
-      mustInclude: rubric.mustInclude || [],
-      mustAvoid: rubric.mustAvoid || []
+      mustInclude,
+      mustAvoid,
+      hasMustInclude: mustInclude.length > 0,
+      hasMustAvoid: mustAvoid.length > 0
     });
   };
 

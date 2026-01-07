@@ -220,6 +220,8 @@ export function formatJudgePromptForLLM(
   context?: string
 ): string {
   const isTranscript = isTranscriptQuestion;
+  const mustInclude = rubric.mustInclude || [];
+  const mustAvoid = rubric.mustAvoid || [];
 
   // Use the actual judge template - pass rubric data directly and let template handle formatting
   const rendered = Mustache.render(judgeTemplate, {
@@ -229,8 +231,10 @@ export function formatJudgePromptForLLM(
     scenario,
     response,
     criteria: rubric.criteria || '',
-    mustInclude: rubric.mustInclude || [],
-    mustAvoid: rubric.mustAvoid || []
+    mustInclude,
+    mustAvoid,
+    hasMustInclude: mustInclude.length > 0,
+    hasMustAvoid: mustAvoid.length > 0
   });
 
   return rendered;

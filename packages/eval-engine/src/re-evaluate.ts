@@ -75,6 +75,9 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
   const templatePath = path.join(TEMPLATES_DIR, 'judge.mustache');
   const template = fs.readFileSync(templatePath, 'utf-8');
 
+  const mustInclude = question.rubric.mustInclude || [];
+  const mustAvoid = question.rubric.mustAvoid || [];
+
   const prompt = Mustache.render(template, {
     isTranscript: question.category === 'Transcript',
     context: question.context || '',
@@ -82,8 +85,10 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     scenario: question.scenario,
     response: response,
     criteria: question.rubric.criteria || '',
-    mustInclude: question.rubric.mustInclude || [],
-    mustAvoid: question.rubric.mustAvoid || []
+    mustInclude,
+    mustAvoid,
+    hasMustInclude: mustInclude.length > 0,
+    hasMustAvoid: mustAvoid.length > 0
   });
 
   if (!EXPERT_MODEL_API_KEY || !EXPERT_MODEL_NAME) {

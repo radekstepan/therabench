@@ -117,6 +117,7 @@ const candidateClient = new OpenAI({
 });
 
 function generateSystemPrompt(category: string): string {
+  // NOTE: System prompts are general role instructions and do NOT contain rubric details.
   if (category === 'Transcript') {
     return renderTemplate('system_transcript', {});
   }
@@ -148,6 +149,9 @@ function generateSystemPrompt(category: string): string {
 async function queryCandidateModel(question: QuestionNode): Promise<string> {
   const systemPrompt = generateSystemPrompt(question.category);
 
+  // SECURITY CHECK: Explicitly construct the user prompt using ONLY scenario and context.
+  // We NEVER include the rubric/criteria here to prevent data leakage ("cheating").
+  // The candidate model sees the patient's scenario (and context for transcripts), but not the answer key.
   let userContent = `Patient says: "${question.scenario}"\n\nProvide a therapeutic response.`;
   
   if (question.category === 'Transcript' && question.context) {
@@ -197,6 +201,10 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
       break;
   }
 
+  const mustInclude = question.rubric.mustInclude || [];
+  const mustAvoid = question.rubric.mustAvoid || [];
+
+  // NOTE: The Judge DOES receive the rubric criteria to evaluate the response.
   const prompt = renderTemplate('judge', {
     isTranscript: question.category === 'Transcript',
     context: question.context || '',
@@ -204,8 +212,10 @@ async function runJudge(question: QuestionNode, response: string): Promise<Judge
     scenario: question.scenario,
     response: response,
     criteria: question.rubric.criteria || '',
-    mustInclude: question.rubric.mustInclude || [],
-    mustAvoid: question.rubric.mustAvoid || [],
+    mustInclude,
+    mustAvoid,
+    hasMustInclude: mustInclude.length > 0,
+    hasMustAvoid: mustAvoid.length > 0,
     modalityGuidance: modalityGuidance
   });
 

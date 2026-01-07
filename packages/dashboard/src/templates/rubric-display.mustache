@@ -2,18 +2,18 @@
 {{{criteria}}}
 {{/criteria}}
 {{^criteria}}
-{{#mustInclude}}
+{{#hasMustInclude}}
 Must Include:
 {{#mustInclude}}
 • {{.}}
 {{/mustInclude}}
 
-{{/mustInclude}}
-{{#mustAvoid}}
+{{/hasMustInclude}}
+{{#hasMustAvoid}}
 Must Avoid:
 {{#mustAvoid}}
 • {{.}}
 {{/mustAvoid}}
-{{/mustAvoid}}
+{{/hasMustAvoid}}
 {{/criteria}}
-{{^criteria}}{{^mustInclude}}{{^mustAvoid}}No criteria defined{{/mustAvoid}}{{/mustInclude}}{{/criteria}}
+{{^criteria}}{{^hasMustInclude}}{{^hasMustAvoid}}No criteria defined{{/hasMustAvoid}}{{/hasMustInclude}}{{/criteria}}
