@@ -2,6 +2,8 @@
 
 An evaluation platform for testing how well Small Language Models (SLMs) and LLMs respond to therapeutic scenarios (CBT, DBT, ACT) and perform context-based analysis (Transcript Adherence).
 
+![Screenshot](./screenshot.png)
+
 ## 🏗 Architecture
 
 - **`packages/eval-engine`**: A Node.js CLI tool.
