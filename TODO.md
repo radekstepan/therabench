@@ -1,0 +1,3 @@
+- Susie: go through questions and specify "either or"
+- Radek: judge.mustache specify "must include for each item in a rubric"
+- Radek: sometimes editing the text of a rubric does not work/is hard to edit

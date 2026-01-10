@@ -1,0 +1,22 @@
+{
+  "name": "therabench",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace @eval/dashboard dev",
+    "dev": "yarn workspace @eval/dashboard dev",
+    "build": "yarn workspaces run build",
+    "preview": "yarn workspace @eval/dashboard preview",
+    "test": "yarn workspace @eval/dashboard test",
+    "eval": "yarn workspace @eval/engine eval",
+    "judge": "yarn workspace @eval/engine judge",
+    "remove-results": "yarn workspace @eval/engine remove-results"
+  },
+  "devDependencies": {
+    "lerna": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT"
+}
