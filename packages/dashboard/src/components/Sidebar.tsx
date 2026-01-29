@@ -10,7 +10,8 @@ import {
   Trash2,
   Brain,
   Info,
-  BookOpen
+  BookOpen,
+  AlertOctagon
 } from 'lucide-react';
 import { cn, formatPercentWithColor } from '../utils';
 import type { QuestionNode } from '../types';
@@ -375,7 +376,7 @@ export const Sidebar = ({
         
         <div className="px-2 mb-2 space-y-2">
           <div className="flex gap-1 flex-wrap">
-            {['all', 'CBT', 'DBT', 'ACT', 'Transcript'].map(cat => (
+            {['all', 'CBT', 'DBT', 'ACT', 'Safety', 'Transcript', 'Adversarial'].map(cat => (
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
@@ -386,7 +387,7 @@ export const Sidebar = ({
                     : "bg-zinc-800 text-zinc-400 hover:bg-zinc-700"
                 )}
               >
-                {cat === 'Transcript' ? <BookOpen className="w-3 h-3" /> : cat}
+                {cat === 'Transcript' ? <BookOpen className="w-3 h-3" /> : cat === 'Adversarial' ? <AlertOctagon className="w-3 h-3" /> : cat}
               </button>
             ))}
           </div>

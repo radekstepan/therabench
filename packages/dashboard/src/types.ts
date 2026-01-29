@@ -1,7 +1,7 @@
 import { JudgeStats, ModelReliability } from './lib/stats';
 
 // Types matching the eval-engine output
-export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety' | 'Transcript';
+export type TherapyCategory = 'CBT' | 'DBT' | 'ACT' | 'Safety' | 'Transcript' | 'Adversarial';
 export type Difficulty = 'Low' | 'Medium' | 'High';
 
 export interface Rubric {
