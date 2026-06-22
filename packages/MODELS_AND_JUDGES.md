@@ -21,7 +21,7 @@ Extracted from CBT Evaluator project on 2026-01-04
 | 13 | `google/gemma-3-27b` |
 | 14 | `gpt-4o` |
 | 15 | `gpt-5-mini-2025-08-07` |
-| 16 | `gpt-5.2-2025-12-11` |
+| 16 | `gpt-5.4` |
 | 17 | `minimax/minimax-m2.1` |
 | 18 | `mistralai/ministral-3-14b-reasoning` |
 | 19 | `mistralai/mistral-medium-3.1` |
@@ -57,7 +57,7 @@ These models appear as candidate (evaluated) models in the results directory.
 | 12 | `google-gemma-3-27b` |
 | 13 | `gpt-4o` |
 | 14 | `gpt-5-mini-2025-08-07` |
-| 15 | `gpt-5.2-2025-12-11` |
+| 15 | `gpt-5.4` |
 | 16 | `minimax-minimax-m2.1` |
 | 17 | `mistralai-ministral-3-14b-reasoning` |
 | 18 | `mistralai-mistral-medium-3.1` |
@@ -85,7 +85,7 @@ These models are used as judges (evaluators) in the results.
 | 3 | `deepseek-deepseek-v3.2` |
 | 4 | `google-gemini-3-flash-preview` |
 | 5 | `gpt-5-mini-2025-08-07` |
-| 6 | `gpt-5.2-2025-12-11` |
+| 6 | `gpt-5.4` |
 | 7 | `xiaomi-mimo-v2-flash-free` |
 | 8 | `z-ai-glm-4.7` |
 
