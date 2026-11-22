@@ -100,7 +100,7 @@ Inside the `packages/eval-engine` directory:
     3.  Sends scenario (and `context` if present) to Candidate Model (e.g., Llama 3 via Ollama).
     4.  Sends Candidate response + Rubric + Source Context to Judge Model.
     5.  Saves result to disk with token usage and cost tracking.
-*   **`bin/judge.js` (`src/re-evaluate.ts`)**: Re-runs the *Judge* step on existing responses (useful if you change the grading logic or judge model).
+*   **`bin/judge.js` (`src/re-evaluate.ts`)**: Re-runs the *Judge* step on existing responses (useful if you change the grading logic or judge model). Supports `--model <name>` (repeatable or comma-separated) to judge only specific candidate models.
 *   **`bin/deduplicate-results.js`**: Utility script to remove duplicate evaluation runs.
 *   **`bin/fix-data.js`**: Utility script to fix data inconsistencies.
 

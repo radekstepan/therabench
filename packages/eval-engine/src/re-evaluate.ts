@@ -62,6 +62,29 @@ function loadAllQuestions(): QuestionNode[] {
     return [...q1, ...q2];
 }
 
+function sanitizeFileName(name: string): string {
+  return name.replace(/[^a-zA-Z0-9.-]/g, '-');
+}
+
+// Collects --model filters. Supports repeat flags and comma-separated values:
+//   --model google/gemma-3-12b --model deepseek/deepseek-v3.2
+//   --model google/gemma-3-12b,deepseek/deepseek-v3.2
+// Matches both the stored model name (org/model) and the sanitized results-dir name.
+function getModelFilter(): string[] {
+  const models: string[] = [];
+  for (let i = 0; i < process.argv.length; i++) {
+    if (process.argv[i] === '--model' && process.argv[i + 1] && !process.argv[i + 1].startsWith('--')) {
+      models.push(...process.argv[i + 1].split(',').map(s => s.trim()).filter(Boolean));
+    }
+  }
+  return models;
+}
+
+function matchesModelFilter(modelName: string, filter: string[]): boolean {
+  if (filter.length === 0) return true;
+  return filter.some(m => m === modelName || sanitizeFileName(m) === sanitizeFileName(modelName));
+}
+
 const EXPERT_MODEL_URL = process.env.EXPERT_MODEL_URL;
 const EXPERT_MODEL_NAME = process.env.EXPERT_MODEL_NAME;
 const EXPERT_MODEL_API_KEY = resolveEnvValue(process.env.EXPERT_MODEL_API_KEY);
@@ -183,10 +206,24 @@ async function main() {
     }
 
     const judgeModel = EXPERT_MODEL_NAME!;
+    const modelFilter = getModelFilter();
     console.log(`🚀 Starting re-evaluation using judge: ${judgeModel}`);
     if (force) console.log(`⚠️  Force mode enabled: Will re-judge all responses.`);
-    
+    if (modelFilter.length > 0) console.log(`🎯 Filtering to models: ${modelFilter.join(', ')}`);
+
+    if (modelFilter.length > 0) {
+      const available = [...new Set(allResults.map(r => r.modelName))];
+      const matched = available.filter(name => matchesModelFilter(name, modelFilter));
+      if (matched.length === 0) {
+        console.error(`❌ No results match --model filter: ${modelFilter.join(', ')}`);
+        console.error(`   Available models:\n   - ${available.join('\n   - ')}`);
+        process.exit(1);
+      }
+    }
+
     const itemsToJudge = allResults.filter(r => {
+      if (!matchesModelFilter(r.modelName, modelFilter)) return false;
+
       // If forcing, judge everything.
       if (force) return true;
       
